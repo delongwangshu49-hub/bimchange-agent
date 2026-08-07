@@ -131,5 +131,6 @@ Complete the fixed evaluation set, reproducible experiments, failure analysis, d
 
 ## Current Status
 
-Repository initialization is in progress. The project direction is provisional and will be reconsidered if Gate 1 or Gate 2 shows that the proposed workflow is not technically or experimentally viable.
+Gate 1 technical feasibility is complete on Windows with Python 3.13.15, IfcOpenShell 0.8.5, and IfcDiff 0.8.5. A public IFC4 sample can be loaded, a controlled property revision can be generated, and the resulting change can be detected and verified against generated ground truth.
 
+This result covers one property change in a small single-storey sample. It does not establish performance on additions, deletions, geometry changes, relationship changes, larger models, or natural-language queries. Gate 2 will determine whether a broader controlled revision set and auditable reference answers are viable.

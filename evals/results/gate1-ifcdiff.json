@@ -1,0 +1,16 @@
+{
+    "added": [],
+    "deleted": [],
+    "changed": {
+        "2ddLgAnQf4mBfh5IpUp54U": {
+            "properties_changed": {
+                "values_changed": {
+                    "root['Pset_BeamCommon']['IsExternal']": {
+                        "new_value": true,
+                        "old_value": false
+                    }
+                }
+            }
+        }
+    }
+}

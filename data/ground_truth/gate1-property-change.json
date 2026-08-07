@@ -1,0 +1,17 @@
+{
+  "source_ifc": "data/raw/Building-Structural.ifc",
+  "source_sha256": "68be722391e7aaa53bb9278645a02aa4b6382f13cc07548a1612e9b1dc3def67",
+  "revised_ifc": "data/generated/Building-Structural-gate1-v2.ifc",
+  "revised_sha256": "679db9861f835b5702161ccb4d3b0d6525f845aeaff6af3b1e70e1c3350e810f",
+  "changes": [
+    {
+      "change_type": "property_modified",
+      "entity_type": "IfcBeam",
+      "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+      "property_set": "Pset_BeamCommon",
+      "property": "IsExternal",
+      "old_value": false,
+      "new_value": true
+    }
+  ]
+}
