@@ -2,9 +2,27 @@
 
 ## Purpose
 
-This protocol fixes comparable inputs, outputs, tool access, and deterministic checks for the three planned workflows before a model or API is selected.
+This protocol fixes comparable inputs, outputs, tool access, and deterministic checks for the three planned workflows.
 
-No model was called to produce or test these artifacts. The current results verify data plumbing and scoring behavior only.
+The contracts and offline tests described below do not constitute model-performance results.
+
+## Locked Development Configuration
+
+- Provider: DeepSeek;
+- Model: `deepseek-v4-flash` for all three development conditions;
+- API: DeepSeek's Responses-compatible API with strict JSON Schema output;
+- Reasoning effort: `high` for all three conditions;
+- Maximum answer-generation output per request: 16,000 tokens, including provider reasoning tokens;
+- Proposed's auxiliary claim-validator call may use up to 16,000 tokens because its reasoning and complete claim ledger are not part of the cross-condition answer-generation comparison;
+- Structured generations are instructed to return exactly one JSON object with no surrounding text or second object; local Schema validation remains authoritative;
+- Response storage: unavailable and always reported as `store: false` by the provider;
+- Repetitions: once per development question and condition;
+- Transient retries: at most two; schema and factual failures are not infrastructure retries;
+- A provider-success response with completely empty structured output is treated as a documented DeepSeek JSON-output transient and may be retried; malformed non-empty JSON is not retried;
+- Development cost ceiling: configurable, with a default hard ceiling of USD 0.50;
+- `deepseek-v4-pro` is reserved for a later cross-model replication after the Flash development workflow is frozen.
+
+The current Responses-compatible API does not expose a fixed seed in this runner. The omission is recorded rather than described as deterministic sampling. DeepSeek currently maps `low` and `medium` reasoning effort to `high`, so the runner records `high` explicitly.
 
 ## Experimental Conditions
 
@@ -15,6 +33,8 @@ No model was called to produce or test these artifacts. The current results veri
 | Proposed | Same question and query-tool contract as Tool-Using Agent | One deterministic query per question | Structured prediction and evidence validation | At most one controlled repair |
 
 The Tool-Using and Proposed conditions receive the same query capability. The proposed condition differs only through its independent validation and one bounded repair opportunity.
+
+The query contract constrains `change_types` to the lowercase development vocabulary: `added`, `deleted`, `property_modified`, and the negative-control category `geometry_modified`. Case variants and unknown change types are rejected before query execution rather than interpreted as an empty result.
 
 ## Direct LLM Input
 
@@ -69,7 +89,11 @@ This separation allows a run to identify the right change but cite the wrong sou
 - query evidence must cite a real Change Record whose semantic fact exactly matches the prediction;
 - `answered`, `not_found`, and `insufficient_evidence` must obey basic result and limitation rules.
 
-The validator reports `free_text_semantics_validated: false`. It does not claim that arbitrary prose is entailed by structured evidence. That remaining check requires a separately approved strategy, such as claim-level model judging with manual audit or deterministic rendering from verified facts.
+The deterministic evidence validator continues to report `free_text_semantics_validated: false`. The Proposed runner therefore adds a separate same-model validation call that decomposes the answer into atomic claims and labels each `supported`, `unsupported`, or `indeterminate` using only the returned Change Records and structured predictions. It also performs a reference-free deterministic completeness check: the prediction facts must exactly cover the Change Records returned by the model-selected query. An initial candidate-Schema failure, missing or unexpected facts, an `unsupported` claim, an evidence failure, or a status violation permits one controlled repair. Tool-Using Agent does not receive this repair path. All eight development questions remain subject to manual audit; the model judge is not treated as ground truth.
+
+## Minimal Runners
+
+`scripts/run_gate3_workflows.py` implements the three conditions. Without `--live` it only validates and prints the locked run plan; no API request is sent. With `--live`, results and safe usage metadata are written under `evals/results/development/`. `DEEPSEEK_API_KEY` is read from the process environment or the ignored local `.env.local` file and is never written to result artifacts.
 
 ## Reproduction
 
@@ -89,15 +113,10 @@ The contract test confirms that:
 
 These are harness tests, not model performance figures.
 
-## Remaining Approval Point
+## Post-Development Freeze
 
-Before the first model call, the project must select:
+The paid smoke test and complete eight-question development run are complete. Their retained artifacts and limitations are documented in `docs/gate3-development-results.md` and `evals/results/development/summary.json`.
 
-- the free-text validation strategy;
-- model provider and exact model version;
-- temperature and other randomness controls;
-- repetitions per question and workflow;
-- API-key setup through local environment variables only;
-- estimated call volume, cost ceiling, retry policy, and stopping rules.
+Before held-out evaluation, the prompts, schemas, and workflow logic must be frozen. The held-out revision and question set must be created separately, and held-out outcomes must not be used to tune the frozen workflow. Repeated runs, uncertainty reporting, and failure analysis belong to Gate 4.
 
-The held-out evaluation set must be created only after prompts, schemas, and workflow logic are frozen.
+On Windows, `scripts/set_deepseek_key.ps1` prompts for a fresh key with hidden input and replaces `.env.local` without printing the key. A key pasted into chat, an issue, a commit, or a screenshot must be revoked rather than reused.

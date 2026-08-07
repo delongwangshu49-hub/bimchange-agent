@@ -1,95 +1,111 @@
-# BIMChange-Agent
+# BIMChange-Agent / BIM 变更分析智能体
 
-Research prototype for evidence-grounded IFC/BIM revision analysis using deterministic tools and AI agents.
+Evidence-grounded IFC/BIM revision analysis with deterministic tools and AI agents.
 
-> **Status:** Gate 2 is complete, and the initial Gate 3 evaluation contract is reproducible. The repository does not yet contain an IFC revision-analysis agent or validated model-performance results.
+基于确定性工具与 AI 智能体、可追溯到 IFC 证据的 BIM 版本变更分析。
 
-## Research Goal
+> **Status:** Gates 1–3 are complete for the controlled development scope. Gate 4—independent evaluation and release preparation—is next.
+>
+> **当前状态：** 受控开发范围内的 Gate 1–3 已完成；下一阶段为 Gate 4，即独立评测与发布准备。
 
-BIMChange-Agent explores whether an AI agent can use deterministic IFC comparison and query tools to produce revision explanations that are accurate, traceable, and useful to AEC practitioners.
+## Overview / 项目概述
 
-The proposed workflow will be evaluated against simpler baselines. Every material change claim should be traceable to IFC entities and deterministic tool output. See [PROJECT_PLAN.md](PROJECT_PLAN.md) for the research questions, proposed workflow, scope, and decision gates.
+BIMChange-Agent explores whether an AI agent can turn deterministic IFC comparison results into accurate, traceable revision explanations for AEC practitioners. Material claims are linked to structured Change Records rather than inferred from fluent text alone.
 
-## Currently Verified
+BIMChange-Agent 探索 AI 智能体能否将确定性的 IFC 比较结果转化为面向 AEC 从业者的准确、可追溯版本说明。关键结论需关联结构化 Change Record，而不是仅依赖语言模型生成的流畅文本。
 
-The following limited feasibility result has been reproduced on Windows:
+The repository currently contains a reproducible Windows pipeline for loading IFC files, generating controlled revisions, detecting and normalizing changes, querying Change Records, running three model workflows, and scoring structured evidence.
 
-- Python 3.13.15 (64-bit);
-- IfcOpenShell 0.8.5 installed from PyPI;
-- IfcDiff 0.8.5 installed from PyPI;
-- successful loading of a public IFC4 structural sample;
-- deterministic reporting of the file hash, schema, total entity count, and selected entity-type counts;
-- generation of a controlled property change while preserving the target GlobalId;
-- detection and automated verification of that property change with IfcDiff.
-- generation of one added beam, one deleted wall, and one property modification in a single controlled revision;
-- normalization of all three changes into versioned Change Records;
-- exact automated comparison of the records with file hashes, both IFC models, and IfcDiff output.
-- an eight-question Gate 3 development set with deterministic reference answers;
-- JSON Schemas and a scorer for answer status and exact structured IFC evidence;
-- positive, wrong-answer, and schema-invalid scoring checks.
-- a model-independent Change Record query tool with versioned request and response schemas;
-- tested filtering by change type, entity type, GUID, storey, and property fields.
-- a fixed non-diff model-pair summary for the Direct LLM condition;
-- one common prediction schema across Direct LLM, Tool-Using Agent, and Proposed;
-- separate semantic-change scoring and deterministic evidence-support validation.
+本仓库目前包含一套可在 Windows 上复现的流程：读取 IFC、生成受控版本、检测并规范化变更、查询 Change Record、运行三种模型工作流，以及评估结构化证据。
 
-The current sample contains 407 IFC entities, including six beams, four walls, and one footing. It has only one building storey and contains no columns or slabs, so it is an initial loading sample rather than the final benchmark model.
+## Current Progress / 当前进度
 
-## Not Yet Implemented
+- **Gate 1 — Technical feasibility:** IfcOpenShell and IfcDiff load a public IFC4 model and verify a controlled property change.
+- **Gate 1 — 技术可行性：** IfcOpenShell 与 IfcDiff 已能读取公开 IFC4 模型，并验证受控属性变更。
+- **Gate 2 — Data and reference answers:** one added beam, one deleted wall, and one property modification are normalized into three auditable Change Records.
+- **Gate 2 — 数据与参考答案：** 一个新增梁、一个删除墙和一个属性修改已规范化为三条可审计的 Change Record。
+- **Gate 3 — Agent prototype:** Direct LLM, Tool-Using Agent, and Proposed workflows run against the same eight-question development set with common schemas and scoring.
+- **Gate 3 — 智能体原型：** Direct LLM、Tool-Using Agent 与 Proposed 三种流程已在同一组八题开发集上运行，并采用统一 Schema 与评分方式。
+- **Gate 4 — Next:** freeze the current contracts, create an independent held-out revision set, repeat the comparison, analyze failures, and prepare release materials.
+- **Gate 4 — 下一步：** 冻结当前契约，建立独立留出版本与问题集，重复对比实验，分析失败案例并准备发布材料。
 
-- geometry and relationship-change test cases;
-- runtime natural-language query interpretation;
-- an LLM or agent workflow;
-- an independent semantic validator for arbitrary free-text claims;
-- baseline experiments or performance evaluation.
+## Gate 3 Development Snapshot / Gate 3 开发集概览
 
-## Quick Start on Windows
+All retained runs used DeepSeek V4 Flash with the same eight development questions and one retained answer per question and condition.
 
-Prerequisite: Python 3.13 (64-bit). The current environment was validated with Python 3.13.15.
+所有保留运行均使用 DeepSeek V4 Flash，并采用相同的八道开发问题；每个问题与实验条件保留一次最终答案。
+
+| Workflow / 工作流 | Completion / 完成率 | Status accuracy / 状态准确率 | Exact match / 精确匹配 | Change F1 / 变更 F1 | Evidence support / 证据支持率 |
+|---|---:|---:|---:|---:|---:|
+| Direct LLM | 100% | 87.5% | 37.5% | 0.600 | 0.700 |
+| Tool-Using Agent | 100% | 100% | 87.5% | 0.947 | 1.000 |
+| Proposed | 100% | 100% | 100% | 1.000 | 1.000 |
+
+These figures are preliminary development-set results produced after iterative prompt and contract debugging. They are not held-out benchmark results, do not estimate variance, and must not be interpreted as general model performance.
+
+上述数据是在提示词与契约反复调试后得到的初步开发集结果，并非独立留出基准；目前没有方差估计，也不能据此推断模型的通用性能。
+
+See [Gate 3 development results](docs/gate3-development-results.md) for the recorded configuration, cost, failure modes, and limitations. The machine-readable summary is stored in [evals/results/development/summary.json](evals/results/development/summary.json).
+
+运行配置、成本、失败模式与局限详见 [Gate 3 开发集结果](docs/gate3-development-results.md)；机器可读汇总位于 [evals/results/development/summary.json](evals/results/development/summary.json)。
+
+## Reproduce Locally / 本地复现
+
+Prerequisite: 64-bit Python 3.13 on Windows. The current environment was validated with Python 3.13.15.
+
+前置条件：Windows 上的 64 位 Python 3.13；当前环境使用 Python 3.13.15 完成验证。
 
 ```powershell
 git clone https://github.com/delongwangshu49-hub/bimchange-agent.git
 cd bimchange-agent
 py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe scripts\check_ifc.py
 .\.venv\Scripts\python.exe scripts\run_gate1_diff.py
 .\.venv\Scripts\python.exe scripts\run_gate2_diff.py
 .\.venv\Scripts\python.exe scripts\generate_gate3_reference_answers.py
-.\.venv\Scripts\python.exe scripts\score_gate3_answers.py
 .\.venv\Scripts\python.exe scripts\test_gate3_scoring.py
-.\.venv\Scripts\python.exe scripts\run_change_query.py evals\fixtures\gate3-added-query.json
 .\.venv\Scripts\python.exe scripts\test_change_query.py
-.\.venv\Scripts\python.exe scripts\generate_gate3_direct_input.py
 .\.venv\Scripts\python.exe scripts\test_gate3_candidate_contract.py
+.\.venv\Scripts\python.exe scripts\test_gate3_workflows.py
 ```
 
-The smoke test prints a JSON summary. The absolute file path will depend on the local checkout, while the checked-in sample's SHA-256 should be:
+The Gate 3 runner defaults to a dry run and sends no API request. Live runs require a locally stored `DEEPSEEK_API_KEY`; copy `.env.example` to the ignored `.env.local`, or use the hidden-input helper.
 
-```text
-68be722391e7aaa53bb9278645a02aa4b6382f13cc07548a1612e9b1dc3def67
-```
-
-You can inspect another IFC file by passing its path:
+Gate 3 运行器默认仅执行 dry run，不会发送 API 请求。实时运行需要在本地配置 `DEEPSEEK_API_KEY`；可将 `.env.example` 复制为已被忽略的 `.env.local`，或使用隐藏输入辅助脚本。
 
 ```powershell
-.\.venv\Scripts\python.exe scripts\check_ifc.py C:\path\to\model.ifc
+.\scripts\set_deepseek_key.ps1
+.\.venv\Scripts\python.exe scripts\run_gate3_workflows.py
+# Add --live only when an API call and its cost are intended.
 ```
 
-The Gate 1 command reproduces the single-property feasibility case. The Gate 2 command regenerates the multi-change revision and its Change Records, runs IfcDiff, and verifies all three records. A passing Gate 2 run ends with `"status": "PASS"` and `"records_validated": 3`.
+Never commit API keys, `.env.local`, diagnostic runs, or smoke-test outputs.
 
-See [docs/gate1-feasibility.md](docs/gate1-feasibility.md) for the evidence, limitations, and the initial negative result.
-See [docs/gate2-data-validation.md](docs/gate2-data-validation.md) for the controlled revision set, Change Record contract, evidence, and limitations.
-See [docs/gate3-evaluation-contract.md](docs/gate3-evaluation-contract.md) for the fixed pilot questions, scoring rules, and decisions that remain before any model experiment.
-See [docs/gate3-tool-interface.md](docs/gate3-tool-interface.md) for the deterministic agent-tool boundary and its current tests.
-See [docs/gate3-agent-protocol.md](docs/gate3-agent-protocol.md) for the fixed cross-workflow inputs, common prediction format, and validation boundary.
+请勿提交 API 密钥、`.env.local`、诊断运行或冒烟测试输出。
 
-## Data and Licensing
+## Repository Guide / 仓库导览
 
-The initial sample is sourced from the buildingSMART `Sample-Test-Files` repository and remains licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). Its source, attribution, retrieval date, and checksum are recorded in [data/README.md](data/README.md).
+- `src/bimchange_agent/` — deterministic query, evidence validation, and Gate 3 runner logic.
+- `src/bimchange_agent/` — 确定性查询、证据验证与 Gate 3 运行逻辑。
+- `schemas/` — versioned JSON Schemas for Change Records, requests, answers, and claim validation.
+- `schemas/` — Change Record、请求、答案及声明验证所用的版本化 JSON Schema。
+- `scripts/` — reproducible generation, comparison, scoring, testing, and workflow commands.
+- `scripts/` — 可复现的生成、比较、评分、测试与工作流命令。
+- `evals/` — fixed development questions, references, inputs, and retained result artifacts.
+- `evals/` — 固定的开发问题、参考答案、输入与保留结果。
+- `docs/` — experiment contracts, evidence, findings, and limitations.
+- `docs/` — 实验契约、证据、发现与局限说明。
 
-The repository's MIT license applies to the original project code and documentation. It does not replace the sample dataset's original license.
+The public roadmap and decision gates are described in [PROJECT_PLAN.md](PROJECT_PLAN.md).
 
-## Scope and Safety
+公开路线图与决策门详见 [PROJECT_PLAN.md](PROJECT_PLAN.md)。
 
-This research prototype is not a substitute for professional BIM coordination, engineering review, structural-safety assessment, or formal regulatory-compliance checking. No such conclusions should be inferred from language-model output.
+## Data, License, and Safety / 数据、许可与安全边界
+
+The initial IFC sample comes from buildingSMART's `Sample-Test-Files` repository under CC BY 4.0. Source, attribution, retrieval date, and checksum are recorded in [data/README.md](data/README.md). Original project code and documentation are licensed under MIT.
+
+初始 IFC 样本来自 buildingSMART 的 `Sample-Test-Files` 仓库，采用 CC BY 4.0 许可；来源、署名、获取日期与校验和记录于 [data/README.md](data/README.md)。项目原创代码与文档采用 MIT 许可。
+
+This research prototype is not a substitute for professional BIM coordination, engineering review, structural-safety assessment, or formal regulatory-compliance checking.
+
+本研究原型不能替代专业 BIM 协调、工程审查、结构安全评估或正式法规合规检查。

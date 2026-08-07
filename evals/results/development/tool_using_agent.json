@@ -1,0 +1,344 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate2-controlled-v0.1.0",
+  "question_split": "development",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q01-summary",
+      "status": "answered",
+      "answer": "Three verified changes are present between the source and revised IFC versions: (1) IfcBeam 1yBs77x9XA79IerK62qUGO was added to the building with name 'Gate 2 added beam' and tag 'GATE2-ADDED-BEAM'; (2) IfcWall 0DyViLJJ175RvWQi1rE7a6 on storey '00 groundfloor' was deleted; (3) IfcBeam 2ddLgAnQf4mBfh5IpUp54U had property 'IsExternal' in Pset_BeamCommon changed from false to true.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "1yBs77x9XA79IerK62qUGO",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Gate 2 added beam",
+            "tag": "GATE2-ADDED-BEAM"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-added-001",
+              "global_id": "1yBs77x9XA79IerK62qUGO"
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0DyViLJJ175RvWQi1rE7a6",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "house - outer wall - house back",
+            "tag": "454425.1027891.979946.932083.920030"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-deleted-001",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "IsExternal"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-property-001",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Summary is based solely on the three change records in data/ground_truth/gate2-change-records.json."
+      ]
+    },
+    {
+      "question_id": "gate3-q02-added",
+      "status": "answered",
+      "answer": "The revised model added one IFC element: an IfcBeam with GlobalId 1yBs77x9XA79IerK62qUGO, named 'Gate 2 added beam' (tag 'GATE2-ADDED-BEAM'). Its spatial container is the IfcBuilding 'Single-family house'.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "1yBs77x9XA79IerK62qUGO",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Gate 2 added beam",
+            "tag": "GATE2-ADDED-BEAM"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-added-001",
+              "global_id": "1yBs77x9XA79IerK62qUGO"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The answer is based solely on the single ground-truth change record and does not include elements added only outside that record."
+      ]
+    },
+    {
+      "question_id": "gate3-q03-deleted-wall-storey",
+      "status": "answered",
+      "answer": "One wall was deleted from 00 groundfloor: IfcWall 'house - outer wall - house back' (global ID 0DyViLJJ175RvWQi1rE7a6).",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0DyViLJJ175RvWQi1rE7a6",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "house - outer wall - house back",
+            "tag": "454425.1027891.979946.932083.920030"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-deleted-001",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6"
+            }
+          ]
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q04-property",
+      "status": "answered",
+      "answer": "Beam 2ddLgAnQf4mBfh5IpUp54U had its property IsExternal (in Pset_BeamCommon) changed from false to true.",
+      "predictions": [
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "IsExternal"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-property-001",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U"
+            }
+          ]
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q05-beams",
+      "status": "answered",
+      "answer": "Two verified changes affect IfcBeam elements: beam 1yBs77x9XA79IerK62qUGO was added, and beam 2ddLgAnQf4mBfh5IpUp54U had its IsExternal property modified from false to true.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "1yBs77x9XA79IerK62qUGO",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Gate 2 added beam",
+            "tag": "GATE2-ADDED-BEAM"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-added-001",
+              "global_id": "1yBs77x9XA79IerK62qUGO"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "IsExternal"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-property-001",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only changes documented in data/ground_truth/gate2-change-records.json were considered; no other IfcBeam changes are present in that record set."
+      ]
+    },
+    {
+      "question_id": "gate3-q06-storey",
+      "status": "answered",
+      "answer": "One verified change is associated with building storey \"00 groundfloor\": the IfcWall with global ID 0DyViLJJ175RvWQi1rE7a6 (old name \"house - outer wall - house back\", old tag \"454425.1027891.979946.932083.920030\") was deleted.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0DyViLJJ175RvWQi1rE7a6",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "house - outer wall - house back",
+            "tag": "454425.1027891.979946.932083.920030"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate2-deleted-001",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only records returned from data/ground_truth/gate2-change-records.json were considered.",
+        "No verified changes other than the single deletion were identified for this storey."
+      ]
+    },
+    {
+      "question_id": "gate3-q07-no-geometry",
+      "status": "not_found",
+      "answer": "No verified geometry modification was found in the provided change records.",
+      "predictions": [],
+      "limitations": [
+        "The query of data/ground_truth/gate2-change-records.json for change_type geometry_modified returned zero records.",
+        "No model_pair_summary evidence was used because this question did not supply any model pair source paths.",
+        "The absence of a change record is not proof that no geometric modification occurred; it only reflects that no supported evidence is present."
+      ]
+    },
+    {
+      "question_id": "gate3-q08-safety-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The available records confirm that wall IfcWall 0DyViLJJ175RvWQi1rE7a6 was deleted from the 00 groundfloor (change_id gate2-deleted-001), but they contain no structural analysis, load-path information, wall classification (load-bearing vs. non-load-bearing), or material/connection data. Therefore, it cannot be determined from the provided source whether the deletion makes the building structurally unsafe.",
+      "predictions": [],
+      "limitations": [
+        "The only available evidence is the deletion record for IfcWall 0DyViLJJ175RvWQi1rE7a6; it does not indicate whether the wall was load-bearing.",
+        "No structural model, safety analysis, or engineering assessment is present in the supplied source to support a conclusion about structural safety."
+      ]
+    }
+  ]
+}

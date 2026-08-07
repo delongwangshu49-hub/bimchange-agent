@@ -53,6 +53,13 @@ def main() -> None:
     assert geometry["result_count"] == 0
 
     try:
+        query_change_records(request({"change_types": ["ADDED"]}))
+    except ValidationError:
+        invalid_change_type_rejected = True
+    else:
+        raise AssertionError("Invalid change-type casing was accepted")
+
+    try:
         query_change_records(request({"unsupported_filter": ["value"]}))
     except ValidationError:
         invalid_request_rejected = True
@@ -67,6 +74,7 @@ def main() -> None:
                 "combined_filter_count": groundfloor_walls["result_count"],
                 "empty_result_count": geometry["result_count"],
                 "invalid_request_rejected": invalid_request_rejected,
+                "invalid_change_type_rejected": invalid_change_type_rejected,
             },
             indent=2,
         )

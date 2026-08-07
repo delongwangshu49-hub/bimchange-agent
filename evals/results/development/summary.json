@@ -1,0 +1,281 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate2-controlled-v0.1.0",
+  "question_split": "development",
+  "question_count": 8,
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "results": {
+    "direct_llm": {
+      "metrics": {
+        "schema_compliance": true,
+        "workflow": "direct_llm",
+        "question_count": 8,
+        "completion_rate": 1.0,
+        "status_accuracy": 0.875,
+        "semantic_exact_match_accuracy": 0.375,
+        "change_precision": 0.6,
+        "change_recall": 0.6,
+        "change_f1": 0.6,
+        "evidence_support_rate": 0.7,
+        "status_consistent": true,
+        "free_text_scored": false,
+        "per_question": [
+          {
+            "question_id": "gate3-q01-summary",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": false,
+            "exact_match": false
+          },
+          {
+            "question_id": "gate3-q02-added",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q03-deleted-wall-storey",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q04-property",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": false,
+            "exact_match": false
+          },
+          {
+            "question_id": "gate3-q05-beams",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": false,
+            "exact_match": false
+          },
+          {
+            "question_id": "gate3-q06-storey",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q07-no-geometry",
+            "answer_present": true,
+            "status_match": false,
+            "prediction_fact_match": true,
+            "exact_match": false
+          },
+          {
+            "question_id": "gate3-q08-safety-boundary",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": false,
+            "exact_match": false
+          }
+        ]
+      },
+      "usage": {
+        "request_attempts": 8,
+        "successful_responses": 8,
+        "input_tokens": 59224,
+        "cached_input_tokens": 58368,
+        "output_tokens": 17860,
+        "estimated_cost_usd": 0.005284,
+        "budget_usd": 0.1
+      },
+      "repair_count": 0
+    },
+    "tool_using_agent": {
+      "metrics": {
+        "schema_compliance": true,
+        "workflow": "tool_using_agent",
+        "question_count": 8,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 0.875,
+        "change_precision": 1.0,
+        "change_recall": 0.9,
+        "change_f1": 0.9473684210526316,
+        "evidence_support_rate": 1.0,
+        "status_consistent": true,
+        "free_text_scored": false,
+        "per_question": [
+          {
+            "question_id": "gate3-q01-summary",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q02-added",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q03-deleted-wall-storey",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q04-property",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q05-beams",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q06-storey",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q07-no-geometry",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q08-safety-boundary",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": false,
+            "exact_match": false
+          }
+        ]
+      },
+      "usage": {
+        "request_attempts": 19,
+        "successful_responses": 19,
+        "input_tokens": 27292,
+        "cached_input_tokens": 24064,
+        "output_tokens": 12586,
+        "estimated_cost_usd": 0.004043,
+        "budget_usd": 0.15
+      },
+      "repair_count": 0
+    },
+    "proposed": {
+      "metrics": {
+        "schema_compliance": true,
+        "workflow": "proposed",
+        "question_count": 8,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 1.0,
+        "change_precision": 1.0,
+        "change_recall": 1.0,
+        "change_f1": 1.0,
+        "evidence_support_rate": 1.0,
+        "status_consistent": true,
+        "free_text_scored": false,
+        "per_question": [
+          {
+            "question_id": "gate3-q01-summary",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q02-added",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q03-deleted-wall-storey",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q04-property",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q05-beams",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q06-storey",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q07-no-geometry",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          },
+          {
+            "question_id": "gate3-q08-safety-boundary",
+            "answer_present": true,
+            "status_match": true,
+            "prediction_fact_match": true,
+            "exact_match": true
+          }
+        ]
+      },
+      "usage": {
+        "request_attempts": 28,
+        "successful_responses": 28,
+        "input_tokens": 38815,
+        "cached_input_tokens": 24448,
+        "output_tokens": 57190,
+        "estimated_cost_usd": 0.018093,
+        "budget_usd": 0.25
+      },
+      "repair_count": 2,
+      "final_claim_pass_count": 8,
+      "final_tool_coverage_complete_count": 8
+    }
+  },
+  "recorded_final_run_estimated_cost_usd": 0.02742,
+  "caveats": [
+    "These are development-set results produced after iterative prompt and contract debugging.",
+    "They are not held-out results and must not be presented as a general benchmark.",
+    "Each final question-condition pair has one retained answer; no variance estimate is available.",
+    "The Proposed claim validator uses the same model provider and is not human ground truth.",
+    "Discarded diagnostic attempts are excluded from the recorded final-run cost."
+  ]
+}

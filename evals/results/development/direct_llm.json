@@ -1,0 +1,500 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate2-controlled-v0.1.0",
+  "question_split": "development",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q01-summary",
+      "status": "answered",
+      "answer": "Between the source and revised IFC versions, one element was added and one scalar property was modified. A new IfcBeam with GlobalId 1yBs77x9XA79IerK62qUGO, named 'Gate 2 added beam', appears only in the revised version. Also, the IfcBeam with GlobalId 2ddLgAnQf4mBfh5IpUp54U changed its Pset_BeamCommon/IsExternal property from false to true. No other changes within the verified scope were identified.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "1yBs77x9XA79IerK62qUGO",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Gate 2 added beam",
+            "tag": "GATE2-ADDED-BEAM"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1yBs77x9XA79IerK62qUGO",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1yBs77x9XA79IerK62qUGO",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "modified",
+          "entity_type": "IfcBeam",
+          "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "IsExternal"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "IsExternal"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "IsExternal"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only IfcElement entity type, GlobalId, Name, Tag, direct spatial container/explicit building storey, and scalar property-set values were verified.",
+        "Geometry, placement coordinates, materials, classifications, quantities, nested property values, and engineering/safety/compliance judgments were excluded."
+      ]
+    },
+    {
+      "question_id": "gate3-q02-added",
+      "status": "answered",
+      "answer": "The revised model adds one IFC element: IfcBeam with GlobalId 1yBs77x9XA79IerK62qUGO, named 'Gate 2 added beam', tag 'GATE2-ADDED-BEAM', located in the single-family house building (IfcBuilding 0c$N1CTon2BB2Sp89385G8) with no assigned building storey.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "1yBs77x9XA79IerK62qUGO",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Gate 2 added beam",
+            "tag": "GATE2-ADDED-BEAM"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1yBs77x9XA79IerK62qUGO",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1yBs77x9XA79IerK62qUGO",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q03-deleted-wall-storey",
+      "status": "answered",
+      "answer": "The wall deleted from 00 groundfloor is IfcWall 0DyViLJJ175RvWQi1rE7a6 (\"house - outer wall - house back\").",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0DyViLJJ175RvWQi1rE7a6",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "house - outer wall - house back",
+            "tag": "454425.1027891.979946.932083.920030"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Comparison is based only on the model pair summary's element presence and property data; geometry, placement, and non-scalar properties are not considered."
+      ]
+    },
+    {
+      "question_id": "gate3-q04-property",
+      "status": "answered",
+      "answer": "For beam 2ddLgAnQf4mBfh5IpUp54U, the property Pset_BeamCommon.IsExternal changed from false to true. LoadBearing remained true.",
+      "predictions": [
+        {
+          "change_type": "property",
+          "entity_type": "IfcBeam",
+          "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "IsExternal"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "IsExternal"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "IsExternal"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only scalar property-set values from the supplied source and revised model summaries were compared; geometry, placement, materials, classifications, quantities, and nested property values are outside the stated scope."
+      ]
+    },
+    {
+      "question_id": "gate3-q05-beams",
+      "status": "answered",
+      "answer": "Verified IfcBeam changes: (1) added IfcBeam 1yBs77x9XA79IerK62qUGO named 'Gate 2 added beam' with tag 'GATE2-ADDED-BEAM'; (2) modified IfcBeam 2ddLgAnQf4mBfh5IpUp54U property Pset_BeamCommon.IsExternal from false to true.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "1yBs77x9XA79IerK62qUGO",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Gate 2 added beam",
+            "tag": "GATE2-ADDED-BEAM"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1yBs77x9XA79IerK62qUGO",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1yBs77x9XA79IerK62qUGO",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "modified",
+          "entity_type": "IfcBeam",
+          "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "IsExternal"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "IsExternal"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "IsExternal"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The model pair summary excludes geometry, placement coordinates, materials, classifications, quantities, nested property values, and engineering, safety, or compliance judgments."
+      ]
+    },
+    {
+      "question_id": "gate3-q06-storey",
+      "status": "answered",
+      "answer": "The verified change associated with 00 groundfloor is the removal of IfcWall 'house - outer wall - house back' (0DyViLJJ175RvWQi1rE7a6). No additions or property modifications were identified for other elements contained by this storey.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0DyViLJJ175RvWQi1rE7a6",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "house - outer wall - house back",
+            "tag": "454425.1027891.979946.932083.920030"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only direct storey containment and the model-pair-summary scope are considered; changes to building-level or site-level elements are not reported as associated with 00 groundfloor.",
+        "Geometry, materials, quantities, and engineering or compliance conclusions are not evaluated."
+      ]
+    },
+    {
+      "question_id": "gate3-q07-no-geometry",
+      "status": "insufficient_evidence",
+      "answer": "No geometry modification can be verified from the provided model pair summary, because the source explicitly excludes geometry and placement coordinates. Therefore the available evidence cannot justify a conclusion about verified geometry modifications.",
+      "predictions": [],
+      "limitations": [
+        "The model pair summary scope explicitly excludes geometry and placement coordinates.",
+        "The summary only covers element identity, spatial containers, building storeys, and scalar property-set values, none of which can verify a geometry modification.",
+        "No geometry-related field or coordinate data is present in the provided source to support an engineering conclusion."
+      ]
+    },
+    {
+      "question_id": "gate3-q08-safety-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The model-pair summary shows that IfcWall 0DyViLJJ175RvWQi1rE7a6 is present in the source model and absent from the revised model, and that a new IfcBeam (1yBs77x9XA79IerK62qUGO) was added in the revised model. However, the summary explicitly excludes engineering, safety, and compliance judgments, and does not provide structural connectivity, load path, or analysis data. Therefore, from the available source it cannot be determined whether the deleted wall makes the building structurally unsafe.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0DyViLJJ175RvWQi1rE7a6",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "house - outer wall - house back",
+            "tag": "454425.1027891.979946.932083.920030"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0DyViLJJ175RvWQi1rE7a6",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "1yBs77x9XA79IerK62qUGO",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Gate 2 added beam",
+            "tag": "GATE2-ADDED-BEAM"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1yBs77x9XA79IerK62qUGO",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1yBs77x9XA79IerK62qUGO",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The model_pair_summary scope excludes engineering, safety, and compliance judgments, so no structural safety conclusion can be derived from it.",
+        "The summary does not include geometry, structural connectivity, load paths, or analysis results needed to assess the effect of deleting the wall.",
+        "The added beam is observable in the summary, but its structural adequacy and relationship to the remaining elements are not covered by the available source."
+      ]
+    }
+  ]
+}

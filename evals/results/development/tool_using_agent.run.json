@@ -1,0 +1,174 @@
+{
+  "schema_version": "0.1.0",
+  "workflow": "tool_using_agent",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 0.15,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "usage": {
+    "request_attempts": 19,
+    "successful_responses": 19,
+    "input_tokens": 27292,
+    "cached_input_tokens": 24064,
+    "output_tokens": 12586,
+    "estimated_cost_usd": 0.004043,
+    "budget_usd": 0.15
+  },
+  "questions": [
+    {
+      "question_id": "gate3-q01-summary",
+      "response_ids": [
+        "9db15c20-1bad-4922-b70d-62ee5d834f73",
+        "caefcd71-8027-4212-b113-f16a2a429afc"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {}
+      },
+      "tool_result_count": 3,
+      "repair_count": 0
+    },
+    {
+      "question_id": "gate3-q02-added",
+      "response_ids": [
+        "fe91a75c-d6cf-418c-853a-06324e459e5f",
+        "9380626a-8fcc-41c4-b501-be0e265e7eb1"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "added"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 0
+    },
+    {
+      "question_id": "gate3-q03-deleted-wall-storey",
+      "response_ids": [
+        "9f13c918-cf60-4d97-8bde-60cb1e90b644",
+        "cb8a4f1e-2630-485a-8dbd-271ebef73e92"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "deleted"
+          ],
+          "entity_types": [
+            "IfcWall"
+          ],
+          "building_storey_names": [
+            "00 groundfloor"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 0
+    },
+    {
+      "question_id": "gate3-q04-property",
+      "response_ids": [
+        "01eb4eb1-8594-4a16-b42b-c1e4bc7a53c7",
+        "2c1014d9-c728-483a-8db2-e2bc73217e95"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "property_modified"
+          ],
+          "entity_types": [
+            "IfcBeam"
+          ],
+          "global_ids": [
+            "2ddLgAnQf4mBfh5IpUp54U"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 0
+    },
+    {
+      "question_id": "gate3-q05-beams",
+      "response_ids": [
+        "3995b25b-fb58-482c-ac01-2761c587f4b9",
+        "6e6dfd66-7fcb-4694-b773-39e1e09541d1"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "entity_types": [
+            "IfcBeam"
+          ]
+        }
+      },
+      "tool_result_count": 2,
+      "repair_count": 0
+    },
+    {
+      "question_id": "gate3-q06-storey",
+      "response_ids": [
+        "c244e31d-3029-47e8-a97c-fdef7a1b71c1",
+        "39dd272c-b07c-41fe-8724-129a7f54ac8c"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "building_storey_names": [
+            "00 groundfloor"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 0
+    },
+    {
+      "question_id": "gate3-q07-no-geometry",
+      "response_ids": [
+        "3586770c-a45a-4771-ad11-3a908e3a64a6",
+        "5a2c8a2b-0c70-4c41-8314-80d64b99eb60"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "geometry_modified"
+          ]
+        }
+      },
+      "tool_result_count": 0,
+      "repair_count": 0
+    },
+    {
+      "question_id": "gate3-q08-safety-boundary",
+      "response_ids": [
+        "84a2082a-b2f8-413c-9c51-ef9e72ea2cb6",
+        "0dd18414-1bd0-49e7-b086-3e108a6cdf48"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "deleted"
+          ],
+          "entity_types": [
+            "IfcWall"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 0
+    }
+  ]
+}

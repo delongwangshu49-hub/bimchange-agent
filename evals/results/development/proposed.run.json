@@ -1,0 +1,1272 @@
+{
+  "schema_version": "0.1.0",
+  "workflow": "proposed",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 0.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "usage": {
+    "request_attempts": 28,
+    "successful_responses": 28,
+    "input_tokens": 38815,
+    "cached_input_tokens": 24448,
+    "output_tokens": 57190,
+    "estimated_cost_usd": 0.018093,
+    "budget_usd": 0.25
+  },
+  "questions": [
+    {
+      "question_id": "gate3-q01-summary",
+      "response_ids": [
+        "4e411ad2-b242-4cd7-9085-b3c5485c0a5c",
+        "98dbae5b-7323-4c2e-bc6d-30eb826bdad2",
+        "e93a980e-1598-40d1-8039-82b88d6c9487"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {}
+      },
+      "tool_result_count": 3,
+      "repair_count": 0,
+      "initial_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 3,
+        "evidence_supported_count": 3,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "initial_tool_coverage_validation": {
+        "expected_record_count": 3,
+        "prediction_count": 3,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "initial_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "The controlled comparison records identify three verified changes.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "0DyViLJJ175RvWQi1rE7a6",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result has result_count 3 and contains exactly three change records: gate2-added-001, gate2-deleted-001, and gate2-property-001."
+          },
+          {
+            "claim": "One verified change is an added IfcBeam.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Change record gate2-added-001 has change_type 'added', entity_type 'IfcBeam', and global_id 1yBs77x9XA79IerK62qUGO."
+          },
+          {
+            "claim": "One verified change is a deleted IfcWall.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "Change record gate2-deleted-001 has change_type 'deleted', entity_type 'IfcWall', and global_id 0DyViLJJ175RvWQi1rE7a6."
+          },
+          {
+            "claim": "One verified change is a property modification on an IfcBeam.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "Change record gate2-property-001 has change_type 'property_modified', entity_type 'IfcBeam', and global_id 2ddLgAnQf4mBfh5IpUp54U, modifying Pset_BeamCommon.IsExternal."
+          },
+          {
+            "claim": "The summary is based solely on the three records in data/ground_truth/gate2-change-records.json.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "0DyViLJJ175RvWQi1rE7a6",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result has source.path data/ground_truth/gate2-change-records.json, empty filters, and only these three change records are supplied."
+          },
+          {
+            "claim": "No model files were independently inspected.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "0DyViLJJ175RvWQi1rE7a6",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The supplied evidence boundary contains only change records and detector result references, not the underlying IFC model files, so no independent model-file inspection is part of the verified evidence."
+          }
+        ]
+      },
+      "final_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 3,
+        "evidence_supported_count": 3,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "final_tool_coverage_validation": {
+        "expected_record_count": 3,
+        "prediction_count": 3,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "final_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "The controlled comparison records identify three verified changes.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "0DyViLJJ175RvWQi1rE7a6",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result has result_count 3 and contains exactly three change records: gate2-added-001, gate2-deleted-001, and gate2-property-001."
+          },
+          {
+            "claim": "One verified change is an added IfcBeam.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Change record gate2-added-001 has change_type 'added', entity_type 'IfcBeam', and global_id 1yBs77x9XA79IerK62qUGO."
+          },
+          {
+            "claim": "One verified change is a deleted IfcWall.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "Change record gate2-deleted-001 has change_type 'deleted', entity_type 'IfcWall', and global_id 0DyViLJJ175RvWQi1rE7a6."
+          },
+          {
+            "claim": "One verified change is a property modification on an IfcBeam.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "Change record gate2-property-001 has change_type 'property_modified', entity_type 'IfcBeam', and global_id 2ddLgAnQf4mBfh5IpUp54U, modifying Pset_BeamCommon.IsExternal."
+          },
+          {
+            "claim": "The summary is based solely on the three records in data/ground_truth/gate2-change-records.json.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "0DyViLJJ175RvWQi1rE7a6",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result has source.path data/ground_truth/gate2-change-records.json, empty filters, and only these three change records are supplied."
+          },
+          {
+            "claim": "No model files were independently inspected.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "0DyViLJJ175RvWQi1rE7a6",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The supplied evidence boundary contains only change records and detector result references, not the underlying IFC model files, so no independent model-file inspection is part of the verified evidence."
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q02-added",
+      "response_ids": [
+        "fc769973-1722-4aa7-b548-a2f8fc0789ef",
+        "fbb27cd3-41a8-498b-a6b1-4f5223409cef",
+        "2a4cf8ab-7265-4fd0-9387-9b853da9e8dc"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "added"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 0,
+      "initial_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "initial_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "initial_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "The revised model contains one added IFC element.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record result_count is 1 and result gate2-added-001 is the only added element."
+          },
+          {
+            "claim": "The added IFC element is an IfcBeam named 'Gate 2 added beam'.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record lists entity_type IfcBeam and new_value.name 'Gate 2 added beam'."
+          },
+          {
+            "claim": "The added element has global ID 1yBs77x9XA79IerK62qUGO.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record global_id is 1yBs77x9XA79IerK62qUGO."
+          },
+          {
+            "claim": "The element is located in the IfcBuilding named 'Single-family house'.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0c$N1CTon2BB2Sp89385G8",
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record spatial_container is IfcBuilding with global ID 0c$N1CTon2BB2Sp89385G8 and name 'Single-family house'."
+          },
+          {
+            "claim": "Only one added element is present in the queried change records.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified query result_count is 1 with filter change_types ['added']."
+          },
+          {
+            "claim": "No building-storey association is provided in the change record for this element.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record location.building_storey is null."
+          }
+        ]
+      },
+      "final_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "final_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "final_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "The revised model contains one added IFC element.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record result_count is 1 and result gate2-added-001 is the only added element."
+          },
+          {
+            "claim": "The added IFC element is an IfcBeam named 'Gate 2 added beam'.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record lists entity_type IfcBeam and new_value.name 'Gate 2 added beam'."
+          },
+          {
+            "claim": "The added element has global ID 1yBs77x9XA79IerK62qUGO.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record global_id is 1yBs77x9XA79IerK62qUGO."
+          },
+          {
+            "claim": "The element is located in the IfcBuilding named 'Single-family house'.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0c$N1CTon2BB2Sp89385G8",
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record spatial_container is IfcBuilding with global ID 0c$N1CTon2BB2Sp89385G8 and name 'Single-family house'."
+          },
+          {
+            "claim": "Only one added element is present in the queried change records.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified query result_count is 1 with filter change_types ['added']."
+          },
+          {
+            "claim": "No building-storey association is provided in the change record for this element.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "Verified change record location.building_storey is null."
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q03-deleted-wall-storey",
+      "response_ids": [
+        "62256a9d-bcc5-4d45-840c-3260a34e7638",
+        "69af4610-3136-4abc-a756-81f6bd8aa49f",
+        "cabebebb-e698-4f12-a2e7-4ed487bb0ab4"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "deleted"
+          ],
+          "entity_types": [
+            "IfcWall"
+          ],
+          "building_storey_names": [
+            "00 groundfloor"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 0,
+      "initial_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "initial_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "initial_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "Exactly one IfcWall was deleted from the building storey named 00 groundfloor.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6",
+              "1Ano2ZUxnEIvVQ_beukl8b"
+            ],
+            "reason": "The verified change record gate2-deleted-001 is the only result returned, with entity_type IfcWall and location building_storey name 00 groundfloor."
+          },
+          {
+            "claim": "The deleted IfcWall has the name 'house - outer wall - house back'.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The change record's old_value.name is exactly 'house - outer wall - house back'."
+          },
+          {
+            "claim": "The deleted IfcWall has global ID 0DyViLJJ175RvWQi1rE7a6.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The change record's global_id field is 0DyViLJJ175RvWQi1rE7a6."
+          }
+        ]
+      },
+      "final_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "final_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "final_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "Exactly one IfcWall was deleted from the building storey named 00 groundfloor.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6",
+              "1Ano2ZUxnEIvVQ_beukl8b"
+            ],
+            "reason": "The verified change record gate2-deleted-001 is the only result returned, with entity_type IfcWall and location building_storey name 00 groundfloor."
+          },
+          {
+            "claim": "The deleted IfcWall has the name 'house - outer wall - house back'.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The change record's old_value.name is exactly 'house - outer wall - house back'."
+          },
+          {
+            "claim": "The deleted IfcWall has global ID 0DyViLJJ175RvWQi1rE7a6.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The change record's global_id field is 0DyViLJJ175RvWQi1rE7a6."
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q04-property",
+      "response_ids": [
+        "09c86449-afb2-4c42-9223-2b63b49a2faf",
+        "4494afdb-ebb4-4b37-bb26-30990165230c",
+        "1432a5c1-cd83-4dbe-845b-9d0382a5b7e7",
+        "f6a31a15-f137-448d-98ca-e831947135bf",
+        "cb1a210d-378a-4421-9c02-56bddbb36aa3"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "property_modified"
+          ],
+          "entity_types": [
+            "IfcBeam"
+          ],
+          "global_ids": [
+            "2ddLgAnQf4mBfh5IpUp54U"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 1,
+      "initial_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "initial_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "initial_claim_validation": {
+        "overall_verdict": "fail",
+        "claims": [
+          {
+            "claim": "The changed entity is beam 2ddLgAnQf4mBfh5IpUp54U.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified change record gate2-property-001 has entity_type IfcBeam and global_id 2ddLgAnQf4mBfh5IpUp54U."
+          },
+          {
+            "claim": "The changed property is named IsExternal.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified change record field has kind property, property_set Pset_BeamCommon, and name IsExternal."
+          },
+          {
+            "claim": "The property belongs to Pset_BeamCommon.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified change record property_set field is Pset_BeamCommon for this entity."
+          },
+          {
+            "claim": "The old value of the property was false.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified change record lists old_value as false for Pset_BeamCommon.IsExternal."
+          },
+          {
+            "claim": "The new value of the property was true.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified change record lists new_value as true for Pset_BeamCommon.IsExternal."
+          },
+          {
+            "claim": "Only the change-query record was available.",
+            "verdict": "unsupported",
+            "evidence_global_ids": [],
+            "reason": "The verified change record includes an evidence object with detector IfcDiff 0.8.5 and result_file evals/results/gate2-ifcdiff.json, so the record does not establish that only the change-query record was available; it indicates additional model-pair evidence."
+          },
+          {
+            "claim": "No separate model-pair evidence was used to cross-check the property values.",
+            "verdict": "unsupported",
+            "evidence_global_ids": [],
+            "reason": "The verified change record's evidence field cites a separate IfcDiff result file and selector for the changed Pset_BeamCommon.IsExternal values, contradicting the claim that no separate model-pair evidence was used."
+          }
+        ]
+      },
+      "final_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "final_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "final_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "Beam 2ddLgAnQf4mBfh5IpUp54U had a property changed.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "verified_query_result has result_count=1 and the single result has global_id 2ddLgAnQf4mBfh5IpUp54U with change_type property_modified."
+          },
+          {
+            "claim": "The changed property is IsExternal.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "verified_query_result result field is {'kind':'property','property_set':'Pset_BeamCommon','name':'IsExternal'}."
+          },
+          {
+            "claim": "The property belongs to Pset_BeamCommon.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "verified_query_result result field property_set equals Pset_BeamCommon."
+          },
+          {
+            "claim": "The old value of IsExternal was false.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "verified_query_result result old_value is false."
+          },
+          {
+            "claim": "The new value of IsExternal is true.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "verified_query_result result new_value is true."
+          },
+          {
+            "claim": "The returned change record identifies only Pset_BeamCommon.IsExternal for this beam.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "verified_query_result result_count is 1 and the sole result is gate2-property-001 with field Pset_BeamCommon.IsExternal and global_id 2ddLgAnQf4mBfh5IpUp54U."
+          },
+          {
+            "claim": "No other changed properties or entities were included in the query result.",
+            "verdict": "supported",
+            "evidence_global_ids": [],
+            "reason": "verified_query_result result_count is 1, containing only the one property_modified result for this beam; no additional results are present."
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q05-beams",
+      "response_ids": [
+        "c4dc9cca-d7c1-489c-9156-5f528a403439",
+        "e08a56a4-9c6c-422f-a7ea-43cd0730b8c2",
+        "bf3af672-c539-4621-9d90-4025cb31b63d"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "entity_types": [
+            "IfcBeam"
+          ]
+        }
+      },
+      "tool_result_count": 2,
+      "repair_count": 0,
+      "initial_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 2,
+        "evidence_supported_count": 2,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "initial_tool_coverage_validation": {
+        "expected_record_count": 2,
+        "prediction_count": 2,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "initial_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "Two verified changes affect IfcBeam entities.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result returns result_count 2, and both results have entity_type IfcBeam."
+          },
+          {
+            "claim": "An IfcBeam was added (change_id gate2-added-001, global_id 1yBs77x9XA79IerK62qUGO, name 'Gate 2 added beam', tag 'GATE2-ADDED-BEAM').",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "The verified result for gate2-added-001 has change_type added, entity_type IfcBeam, global_id 1yBs77x9XA79IerK62qUGO, and new_value name 'Gate 2 added beam' with tag 'GATE2-ADDED-BEAM'."
+          },
+          {
+            "claim": "The IfcBeam property Pset_BeamCommon.IsExternal changed from false to true (change_id gate2-property-001, global_id 2ddLgAnQf4mBfh5IpUp54U).",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified result for gate2-property-001 has change_type property_modified, field Pset_BeamCommon.IsExternal, old_value false, and new_value true."
+          },
+          {
+            "claim": "Only changes recorded in data/ground_truth/gate2-change-records.json were considered.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result source path is data/ground_truth/gate2-change-records.json, and both structured predictions reference the same source path with no other source indicated."
+          },
+          {
+            "claim": "The two returned records are the only verified IfcBeam changes in that source.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result for entity_type IfcBeam has result_count 2, consisting exactly of gate2-added-001 and gate2-property-001."
+          },
+          {
+            "claim": "No other IfcBeam moves, removals, or type changes were present.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "Both verified IfcBeam results have change_type added and property_modified; no moved, removed, or type-changed IfcBeam records appear in the verified result."
+          }
+        ]
+      },
+      "final_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 2,
+        "evidence_supported_count": 2,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "final_tool_coverage_validation": {
+        "expected_record_count": 2,
+        "prediction_count": 2,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "final_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "Two verified changes affect IfcBeam entities.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result returns result_count 2, and both results have entity_type IfcBeam."
+          },
+          {
+            "claim": "An IfcBeam was added (change_id gate2-added-001, global_id 1yBs77x9XA79IerK62qUGO, name 'Gate 2 added beam', tag 'GATE2-ADDED-BEAM').",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO"
+            ],
+            "reason": "The verified result for gate2-added-001 has change_type added, entity_type IfcBeam, global_id 1yBs77x9XA79IerK62qUGO, and new_value name 'Gate 2 added beam' with tag 'GATE2-ADDED-BEAM'."
+          },
+          {
+            "claim": "The IfcBeam property Pset_BeamCommon.IsExternal changed from false to true (change_id gate2-property-001, global_id 2ddLgAnQf4mBfh5IpUp54U).",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified result for gate2-property-001 has change_type property_modified, field Pset_BeamCommon.IsExternal, old_value false, and new_value true."
+          },
+          {
+            "claim": "Only changes recorded in data/ground_truth/gate2-change-records.json were considered.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result source path is data/ground_truth/gate2-change-records.json, and both structured predictions reference the same source path with no other source indicated."
+          },
+          {
+            "claim": "The two returned records are the only verified IfcBeam changes in that source.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "The verified query result for entity_type IfcBeam has result_count 2, consisting exactly of gate2-added-001 and gate2-property-001."
+          },
+          {
+            "claim": "No other IfcBeam moves, removals, or type changes were present.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "1yBs77x9XA79IerK62qUGO",
+              "2ddLgAnQf4mBfh5IpUp54U"
+            ],
+            "reason": "Both verified IfcBeam results have change_type added and property_modified; no moved, removed, or type-changed IfcBeam records appear in the verified result."
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q06-storey",
+      "response_ids": [
+        "92535ae5-06c1-4508-9106-5c14c180ec57",
+        "9618bf0b-543e-4f55-9af2-87fbefb31bb6",
+        "0a5ed853-f3fc-4a55-9e87-c176fdd75e03"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "building_storey_names": [
+            "00 groundfloor"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 0,
+      "initial_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "initial_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "initial_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "One verified change is associated with 00 groundfloor.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6",
+              "1Ano2ZUxnEIvVQ_beukl8b"
+            ],
+            "reason": "verified_query_result result_count is 1, and the sole result's location.building_storey.name is '00 groundfloor'."
+          },
+          {
+            "claim": "IfcWall 0DyViLJJ175RvWQi1rE7a6 (house - outer wall - house back) was deleted from that storey.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The single verified result has change_type 'deleted', entity_type 'IfcWall', global_id '0DyViLJJ175RvWQi1rE7a6', old_value.name 'house - outer wall - house back', and location.building_storey.name '00 groundfloor'."
+          },
+          {
+            "claim": "Only one verified change record in the queried source matched this storey filter.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "verified_query_result.result_count is 1 and the results array contains exactly one record."
+          },
+          {
+            "claim": "No new or modified property changes for 00 groundfloor were present in the queried verified change records.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The only verified result for 00 groundfloor is a deletion with null field and null new_value; no additional new or modified property-change records appear in results."
+          }
+        ]
+      },
+      "final_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "final_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "final_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "One verified change is associated with 00 groundfloor.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6",
+              "1Ano2ZUxnEIvVQ_beukl8b"
+            ],
+            "reason": "verified_query_result result_count is 1, and the sole result's location.building_storey.name is '00 groundfloor'."
+          },
+          {
+            "claim": "IfcWall 0DyViLJJ175RvWQi1rE7a6 (house - outer wall - house back) was deleted from that storey.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The single verified result has change_type 'deleted', entity_type 'IfcWall', global_id '0DyViLJJ175RvWQi1rE7a6', old_value.name 'house - outer wall - house back', and location.building_storey.name '00 groundfloor'."
+          },
+          {
+            "claim": "Only one verified change record in the queried source matched this storey filter.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "verified_query_result.result_count is 1 and the results array contains exactly one record."
+          },
+          {
+            "claim": "No new or modified property changes for 00 groundfloor were present in the queried verified change records.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The only verified result for 00 groundfloor is a deletion with null field and null new_value; no additional new or modified property-change records appear in results."
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q07-no-geometry",
+      "response_ids": [
+        "336808d5-1e55-4d92-89ba-bc612bc4bba5",
+        "5f35a2a6-93d0-431d-87cf-da7d5e992492",
+        "4c17e491-42c7-465d-b456-1a207bfb65bf"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "geometry_modified"
+          ]
+        }
+      },
+      "tool_result_count": 0,
+      "repair_count": 0,
+      "initial_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 0,
+        "evidence_supported_count": 0,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "initial_tool_coverage_validation": {
+        "expected_record_count": 0,
+        "prediction_count": 0,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "initial_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "No element with a verified geometry modification was found.",
+            "verdict": "supported",
+            "evidence_global_ids": [],
+            "reason": "The verified query result returned result_count 0 and an empty results array for change_types ['geometry_modified'] from the provided change records source, so there is no record of any verified geometry modification."
+          },
+          {
+            "claim": "Only geometry modification records from the provided change records source were considered.",
+            "verdict": "supported",
+            "evidence_global_ids": [],
+            "reason": "The verified query result explicitly defines the evidence boundary as data/ground_truth/gate2-change-records.json with filters change_types ['geometry_modified']; no other source or change type is referenced, so limiting consideration to that source is supported."
+          }
+        ]
+      },
+      "final_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 0,
+        "evidence_supported_count": 0,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "final_tool_coverage_validation": {
+        "expected_record_count": 0,
+        "prediction_count": 0,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "final_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "No element with a verified geometry modification was found.",
+            "verdict": "supported",
+            "evidence_global_ids": [],
+            "reason": "The verified query result returned result_count 0 and an empty results array for change_types ['geometry_modified'] from the provided change records source, so there is no record of any verified geometry modification."
+          },
+          {
+            "claim": "Only geometry modification records from the provided change records source were considered.",
+            "verdict": "supported",
+            "evidence_global_ids": [],
+            "reason": "The verified query result explicitly defines the evidence boundary as data/ground_truth/gate2-change-records.json with filters change_types ['geometry_modified']; no other source or change type is referenced, so limiting consideration to that source is supported."
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q08-safety-boundary",
+      "response_ids": [
+        "b339fb8e-294a-48e6-a47d-cc047a904585",
+        "f215f4d5-4677-4f88-97e2-70a9e40de749",
+        "80fea356-e86f-45e3-bde4-3a8bfdb8df9b",
+        "9f2ea537-7e27-470b-827d-05545afcd2d2",
+        "bb527d6b-0b6b-4fdf-8029-4f597b748120"
+      ],
+      "tool_request": {
+        "schema_version": "0.1.0",
+        "filters": {
+          "change_types": [
+            "deleted"
+          ],
+          "entity_types": [
+            "IfcWall"
+          ]
+        }
+      },
+      "tool_result_count": 1,
+      "repair_count": 1,
+      "initial_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 0,
+        "evidence_supported_count": 0,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "initial_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 0,
+        "coverage_rate": 0.0,
+        "missing_change_ids": [
+          "gate2-deleted-001"
+        ],
+        "unexpected_prediction_count": 0,
+        "complete": false
+      },
+      "initial_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "The supplied verified change record identifies the deletion of IfcWall 0DyViLJJ175RvWQi1rE7a6 and no other change.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The verified query returned exactly one result, gate2-deleted-001, with change_type 'deleted', entity_type 'IfcWall', and global_id 0DyViLJJ175RvWQi1rE7a6."
+          },
+          {
+            "claim": "The verified change record does not contain structural analysis.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "No field in the record provides structural analysis content."
+          },
+          {
+            "claim": "The verified change record does not contain load-bearing classification.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "No field or property in the record classifies the wall as load-bearing or non-load-bearing."
+          },
+          {
+            "claim": "The verified change record does not contain any assessment of the remaining structure.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The record reports only the deletion and associated metadata; it does not assess the structure left after deletion."
+          },
+          {
+            "claim": "The verified change record lacks the structural information needed to determine whether the deletion makes the building structurally unsafe.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "Because the record has no structural analysis, load-bearing classification, or post-deletion assessment, it cannot establish a structural safety conclusion; this is the explicit evidence boundary noted in the answer."
+          },
+          {
+            "claim": "The sole supporting record gate2-deleted-001 describes a deleted IfcWall and provides no structural role or safety information.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "gate2-deleted-001 has change_type 'deleted' and entity_type 'IfcWall' and contains no structural role or safety-related fields."
+          },
+          {
+            "claim": "No evidence in the supplied change records addresses load-bearing walls.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The supplied record contains no load-bearing wall information."
+          },
+          {
+            "claim": "No evidence in the supplied change records addresses framing systems.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The supplied record contains no framing-system information."
+          },
+          {
+            "claim": "No evidence in the supplied change records addresses lateral stability.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The supplied record contains no lateral-stability information."
+          },
+          {
+            "claim": "No evidence in the supplied change records addresses post-deletion structural adequacy.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The supplied record contains no post-deletion structural adequacy assessment."
+          }
+        ]
+      },
+      "final_structured_validation": {
+        "schema_compliance": true,
+        "status_consistent": true,
+        "status_violations": [],
+        "prediction_count": 1,
+        "evidence_supported_count": 1,
+        "evidence_support_rate": 1.0,
+        "unsupported_predictions": [],
+        "free_text_semantics_validated": false
+      },
+      "final_tool_coverage_validation": {
+        "expected_record_count": 1,
+        "prediction_count": 1,
+        "coverage_rate": 1.0,
+        "missing_change_ids": [],
+        "unexpected_prediction_count": 0,
+        "complete": true
+      },
+      "final_claim_validation": {
+        "overall_verdict": "pass",
+        "claims": [
+          {
+            "claim": "The available evidence identifies that IfcWall 0DyViLJJ175RvWQi1rE7a6 was deleted.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The verified query result contains one result with change_type 'deleted', entity_type 'IfcWall', and global_id 0DyViLJJ175RvWQi1rE7a6."
+          },
+          {
+            "claim": "The available evidence is limited to this deletion record.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The verified query result reports result_count 1 for the deleted IfcWall filter."
+          },
+          {
+            "claim": "The verified change record contains no structural analysis.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The record has field null, new_value null, and old_value contains only name and tag values; no structural analysis field or content is present."
+          },
+          {
+            "claim": "The verified change record contains no load-bearing classification.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "No load-bearing or structural classification field is present in the verified record."
+          },
+          {
+            "claim": "The verified change record contains no assessment of the remaining structure.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The record documents only the deletion of the single wall and does not include any post-deletion assessment of the building structure."
+          },
+          {
+            "claim": "The verified change record provides no structural role information.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The old_value provides the wall name and tag only; no structural role is specified."
+          },
+          {
+            "claim": "The verified change record provides no safety information.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "No safety-related field or content appears in the verified change record."
+          },
+          {
+            "claim": "No evidence is available regarding load-bearing walls.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The verified query result provides no data on load-bearing status of any wall."
+          },
+          {
+            "claim": "No evidence is available regarding framing systems, lateral stability, or post-deletion structural adequacy.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "These topics are absent from the complete verified change record set returned by the query."
+          },
+          {
+            "claim": "No structural safety conclusion can be justified from the verified change record.",
+            "verdict": "supported",
+            "evidence_global_ids": [
+              "0DyViLJJ175RvWQi1rE7a6"
+            ],
+            "reason": "The explicit evidence boundary contains only the wall-deletion record and lacks the structural and safety information required to reach such a conclusion."
+          }
+        ]
+      }
+    }
+  ]
+}
