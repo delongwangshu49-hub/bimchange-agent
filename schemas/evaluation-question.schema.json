@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bimchange-agent.local/evaluation-question.schema.json",
+  "title": "BIMChange-Agent fixed evaluation questions",
+  "type": "object",
+  "required": ["schema_version", "dataset_id", "source_change_records", "questions"],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "dataset_id": { "type": "string" },
+    "source_change_records": { "type": "string" },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/question" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "selection": {
+      "type": "object",
+      "properties": {
+        "change_types": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "entity_types": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^Ifc" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "global_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 22, "maxLength": 22 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "building_storey_names": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "property_set": { "type": "string" },
+        "property_name": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "reference_answer": {
+      "type": "object",
+      "required": ["status", "answer", "limitations"],
+      "properties": {
+        "status": {
+          "enum": ["answered", "not_found", "insufficient_evidence"]
+        },
+        "answer": { "type": "string", "minLength": 1 },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "additionalProperties": false
+    },
+    "question": {
+      "type": "object",
+      "required": [
+        "question_id",
+        "category",
+        "question",
+        "selection",
+        "reference_answer"
+      ],
+      "properties": {
+        "question_id": { "type": "string", "pattern": "^gate3-q[0-9]{2}-" },
+        "category": {
+          "enum": [
+            "summary",
+            "fact_lookup",
+            "filtered_lookup",
+            "property_change",
+            "negative_control",
+            "evidence_boundary"
+          ]
+        },
+        "question": { "type": "string", "minLength": 1 },
+        "selection": { "$ref": "#/$defs/selection" },
+        "reference_answer": { "$ref": "#/$defs/reference_answer" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -135,4 +135,6 @@ Gate 1 technical feasibility is complete on Windows with Python 3.13.15, IfcOpen
 
 Gate 2 data and reference-answer validation is also complete for the current sample. One added beam, one deleted wall, and one property modification are generated together, normalized into versioned Change Records, and checked exactly against both IFC files and IfcDiff output.
 
-These results establish a reproducible small-data pipeline, not performance on arbitrary models. Geometry changes, relationship changes, larger or multi-storey models, natural-language queries, agent behavior, and baseline evaluation remain unvalidated. Gate 3 will build and test the smallest evidence-grounded agent workflow against defined baselines.
+The initial Gate 3 evaluation contract now fixes eight development questions, deterministic reference answers, structured answer schemas, and exact evidence-scoring rules before model implementation. Its perfect reference self-score is a wiring check only and is not reported as agent performance.
+
+These results establish a reproducible small-data and evaluation-contract pipeline, not performance on arbitrary models. Geometry changes, relationship changes, larger or multi-storey models, runtime natural-language interpretation, agent behavior, free-text claim validation, and baseline evaluation remain unvalidated. The next Gate 3 step will review and then build the smallest evidence-grounded agent workflow against defined baselines.

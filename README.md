@@ -2,7 +2,7 @@
 
 Research prototype for evidence-grounded IFC/BIM revision analysis using deterministic tools and AI agents.
 
-> **Status:** Gate 2 data and reference-answer validation is complete. The repository does not yet contain an IFC revision-analysis agent or validated performance results.
+> **Status:** Gate 2 is complete, and the initial Gate 3 evaluation contract is reproducible. The repository does not yet contain an IFC revision-analysis agent or validated model-performance results.
 
 ## Research Goal
 
@@ -24,13 +24,16 @@ The following limited feasibility result has been reproduced on Windows:
 - generation of one added beam, one deleted wall, and one property modification in a single controlled revision;
 - normalization of all three changes into versioned Change Records;
 - exact automated comparison of the records with file hashes, both IFC models, and IfcDiff output.
+- an eight-question Gate 3 development set with deterministic reference answers;
+- JSON Schemas and a scorer for answer status and exact structured IFC evidence;
+- positive, wrong-answer, and schema-invalid scoring checks.
 
 The current sample contains 407 IFC entities, including six beams, four walls, and one footing. It has only one building storey and contains no columns or slabs, so it is an initial loading sample rather than the final benchmark model.
 
 ## Not Yet Implemented
 
 - geometry and relationship-change test cases;
-- natural-language revision queries;
+- runtime natural-language query interpretation;
 - an LLM or agent workflow;
 - an independent validator for agent-generated claims;
 - baseline experiments or performance evaluation.
@@ -47,6 +50,9 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe scripts\check_ifc.py
 .\.venv\Scripts\python.exe scripts\run_gate1_diff.py
 .\.venv\Scripts\python.exe scripts\run_gate2_diff.py
+.\.venv\Scripts\python.exe scripts\generate_gate3_reference_answers.py
+.\.venv\Scripts\python.exe scripts\score_gate3_answers.py
+.\.venv\Scripts\python.exe scripts\test_gate3_scoring.py
 ```
 
 The smoke test prints a JSON summary. The absolute file path will depend on the local checkout, while the checked-in sample's SHA-256 should be:
@@ -65,6 +71,7 @@ The Gate 1 command reproduces the single-property feasibility case. The Gate 2 c
 
 See [docs/gate1-feasibility.md](docs/gate1-feasibility.md) for the evidence, limitations, and the initial negative result.
 See [docs/gate2-data-validation.md](docs/gate2-data-validation.md) for the controlled revision set, Change Record contract, evidence, and limitations.
+See [docs/gate3-evaluation-contract.md](docs/gate3-evaluation-contract.md) for the fixed pilot questions, scoring rules, and decisions that remain before any model experiment.
 
 ## Data and Licensing
 

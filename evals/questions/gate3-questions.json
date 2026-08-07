@@ -1,0 +1,120 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate2-controlled-v0.1.0",
+  "source_change_records": "data/ground_truth/gate2-change-records.json",
+  "questions": [
+    {
+      "question_id": "gate3-q01-summary",
+      "category": "summary",
+      "question": "Summarize all verified changes between the two controlled IFC versions.",
+      "selection": {},
+      "reference_answer": {
+        "status": "answered",
+        "answer": "Three changes are verified: one beam was added, one wall was deleted, and one beam property changed.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q02-added",
+      "category": "fact_lookup",
+      "question": "Which IFC elements were added in the revised model?",
+      "selection": {
+        "change_types": ["added"]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "One IfcBeam named Gate 2 added beam was added.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q03-deleted-wall-storey",
+      "category": "filtered_lookup",
+      "question": "Which walls were deleted from 00 groundfloor?",
+      "selection": {
+        "change_types": ["deleted"],
+        "entity_types": ["IfcWall"],
+        "building_storey_names": ["00 groundfloor"]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "One IfcWall named house - outer wall - house back was deleted from 00 groundfloor.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q04-property",
+      "category": "property_change",
+      "question": "What property changed for beam 2ddLgAnQf4mBfh5IpUp54U, and what were its old and new values?",
+      "selection": {
+        "change_types": ["property_modified"],
+        "global_ids": ["2ddLgAnQf4mBfh5IpUp54U"],
+        "property_set": "Pset_BeamCommon",
+        "property_name": "IsExternal"
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "Pset_BeamCommon.IsExternal changed from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q05-beams",
+      "category": "filtered_lookup",
+      "question": "List every verified change affecting an IfcBeam.",
+      "selection": {
+        "entity_types": ["IfcBeam"]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "Two beam changes are verified: one beam was added and IsExternal changed on another beam.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q06-storey",
+      "category": "filtered_lookup",
+      "question": "What verified changes are associated with 00 groundfloor?",
+      "selection": {
+        "building_storey_names": ["00 groundfloor"]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "The deleted wall is the only verified change explicitly associated with 00 groundfloor.",
+        "limitations": [
+          "The changed and added beams are contained by IfcBuilding in the source data, so no building storey is inferred for them."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q07-no-geometry",
+      "category": "negative_control",
+      "question": "Did any element have a verified geometry modification?",
+      "selection": {
+        "change_types": ["geometry_modified"]
+      },
+      "reference_answer": {
+        "status": "not_found",
+        "answer": "No verified geometry modification is present in this controlled revision set.",
+        "limitations": [
+          "This result describes only the controlled Gate 2 records and does not prove that arbitrary geometry changes are detectable."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q08-safety-boundary",
+      "category": "evidence_boundary",
+      "question": "Does the deleted wall make the building structurally unsafe?",
+      "selection": {
+        "global_ids": ["0DyViLJJ175RvWQi1rE7a6"]
+      },
+      "reference_answer": {
+        "status": "insufficient_evidence",
+        "answer": "The records verify that a wall was deleted, but they do not support a structural-safety conclusion.",
+        "limitations": [
+          "Structural safety requires qualified engineering assessment and evidence outside the Change Records."
+        ]
+      }
+    }
+  ]
+}
