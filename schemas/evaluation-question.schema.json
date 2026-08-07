@@ -3,10 +3,17 @@
   "$id": "https://bimchange-agent.local/evaluation-question.schema.json",
   "title": "BIMChange-Agent fixed evaluation questions",
   "type": "object",
-  "required": ["schema_version", "dataset_id", "source_change_records", "questions"],
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "split",
+    "source_change_records",
+    "questions"
+  ],
   "properties": {
     "schema_version": { "const": "0.1.0" },
     "dataset_id": { "type": "string" },
+    "split": { "enum": ["development", "held_out"] },
     "source_change_records": { "type": "string" },
     "questions": {
       "type": "array",

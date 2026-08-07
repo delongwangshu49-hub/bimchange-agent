@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -11,6 +12,13 @@ from jsonschema import Draft202012Validator
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+SOURCE_ROOT = REPOSITORY_ROOT / "src"
+if str(SOURCE_ROOT) not in sys.path:
+    sys.path.insert(0, str(SOURCE_ROOT))
+
+from bimchange_agent.change_query import record_matches  # noqa: E402
+
+
 QUESTION_PATH = REPOSITORY_ROOT / "evals" / "questions" / "gate3-questions.json"
 QUESTION_SCHEMA_PATH = (
     REPOSITORY_ROOT / "schemas" / "evaluation-question.schema.json"
@@ -38,36 +46,6 @@ def validate(instance: Any, schema_path: Path) -> None:
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
     Draft202012Validator.check_schema(schema)
     Draft202012Validator(schema).validate(instance)
-
-
-def record_matches(record: dict[str, Any], selection: dict[str, Any]) -> bool:
-    """Return whether a Change Record satisfies every supplied filter."""
-    if "change_types" in selection and record["change_type"] not in selection[
-        "change_types"
-    ]:
-        return False
-    if "entity_types" in selection and record["entity_type"] not in selection[
-        "entity_types"
-    ]:
-        return False
-    if "global_ids" in selection and record["global_id"] not in selection[
-        "global_ids"
-    ]:
-        return False
-
-    storey = record["location"]["building_storey"]
-    if "building_storey_names" in selection:
-        if storey is None or storey["name"] not in selection["building_storey_names"]:
-            return False
-
-    field = record["field"]
-    if "property_set" in selection:
-        if field is None or field["property_set"] != selection["property_set"]:
-            return False
-    if "property_name" in selection:
-        if field is None or field["name"] != selection["property_name"]:
-            return False
-    return True
 
 
 def build_reference_answers() -> dict[str, Any]:
@@ -113,6 +91,7 @@ def build_reference_answers() -> dict[str, Any]:
     artifact = {
         "schema_version": "0.1.0",
         "dataset_id": question_set["dataset_id"],
+        "question_split": question_set["split"],
         "question_set_sha256": sha256(QUESTION_PATH),
         "change_records_sha256": sha256(change_record_path),
         "answers": answers,

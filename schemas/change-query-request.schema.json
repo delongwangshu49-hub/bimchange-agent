@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bimchange-agent.local/change-query-request.schema.json",
+  "title": "BIMChange-Agent Change Record query request",
+  "type": "object",
+  "required": ["schema_version", "filters"],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "filters": { "$ref": "#/$defs/filters" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "filters": {
+      "type": "object",
+      "properties": {
+        "change_types": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "entity_types": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^Ifc" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "global_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 22, "maxLength": 22 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "building_storey_names": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "property_set": { "type": "string", "minLength": 1 },
+        "property_name": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  }
+}

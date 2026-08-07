@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bimchange-agent.local/change-query-response.schema.json",
+  "title": "BIMChange-Agent Change Record query response",
+  "type": "object",
+  "required": ["schema_version", "source", "filters", "result_count", "results"],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "source": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "filters": {
+      "$ref": "https://bimchange-agent.local/change-query-request.schema.json#/$defs/filters"
+    },
+    "result_count": { "type": "integer", "minimum": 0 },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "https://bimchange-agent.local/change-record.schema.json#/$defs/change_record"
+      }
+    }
+  },
+  "additionalProperties": false
+}

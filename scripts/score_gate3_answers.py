@@ -58,6 +58,7 @@ def score_artifacts(
     for field in (
         "schema_version",
         "dataset_id",
+        "question_split",
         "question_set_sha256",
         "change_records_sha256",
     ):

@@ -1,0 +1,6 @@
+{
+  "schema_version": "0.1.0",
+  "filters": {
+    "change_types": ["added"]
+  }
+}

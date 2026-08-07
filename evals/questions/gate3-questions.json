@@ -1,6 +1,7 @@
 {
   "schema_version": "0.1.0",
   "dataset_id": "gate2-controlled-v0.1.0",
+  "split": "development",
   "source_change_records": "data/ground_truth/gate2-change-records.json",
   "questions": [
     {

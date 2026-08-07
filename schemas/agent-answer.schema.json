@@ -6,6 +6,7 @@
   "required": [
     "schema_version",
     "dataset_id",
+    "question_split",
     "question_set_sha256",
     "change_records_sha256",
     "answers"
@@ -13,6 +14,7 @@
   "properties": {
     "schema_version": { "const": "0.1.0" },
     "dataset_id": { "type": "string" },
+    "question_split": { "enum": ["development", "held_out"] },
     "question_set_sha256": { "$ref": "#/$defs/sha256" },
     "change_records_sha256": { "$ref": "#/$defs/sha256" },
     "answers": {

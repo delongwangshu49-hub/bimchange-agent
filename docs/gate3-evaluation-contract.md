@@ -8,7 +8,7 @@ The contract is a Gate 3 preparation artifact, not an agent result. No LLM, paid
 
 ## Fixed Pilot Questions
 
-`evals/questions/gate3-questions.json` contains eight English questions derived from the three verified Gate 2 Change Records:
+`evals/questions/gate3-questions.json` contains eight English questions derived from the three verified Gate 2 Change Records. The file is explicitly marked as the `development` split; a future held-out set must be stored separately and must not be used for prompt or tool tuning.
 
 | Question | Category | Expected evidence |
 |---|---|---|
@@ -72,3 +72,5 @@ Before running an agent experiment, the following must be reviewed and fixed:
 - whether the eight-question pilot is sufficient for development before expanding the final benchmark.
 
 No API key should be added to the repository or requested until that review is complete.
+
+The first reviewed item is now implemented: [gate3-tool-interface.md](gate3-tool-interface.md) defines the deterministic Change Record query request and response. The common cross-workflow prediction format and free-text validation contract remain open because they must be fair to all three experimental conditions.

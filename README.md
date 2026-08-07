@@ -27,6 +27,8 @@ The following limited feasibility result has been reproduced on Windows:
 - an eight-question Gate 3 development set with deterministic reference answers;
 - JSON Schemas and a scorer for answer status and exact structured IFC evidence;
 - positive, wrong-answer, and schema-invalid scoring checks.
+- a model-independent Change Record query tool with versioned request and response schemas;
+- tested filtering by change type, entity type, GUID, storey, and property fields.
 
 The current sample contains 407 IFC entities, including six beams, four walls, and one footing. It has only one building storey and contains no columns or slabs, so it is an initial loading sample rather than the final benchmark model.
 
@@ -53,6 +55,8 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe scripts\generate_gate3_reference_answers.py
 .\.venv\Scripts\python.exe scripts\score_gate3_answers.py
 .\.venv\Scripts\python.exe scripts\test_gate3_scoring.py
+.\.venv\Scripts\python.exe scripts\run_change_query.py evals\fixtures\gate3-added-query.json
+.\.venv\Scripts\python.exe scripts\test_change_query.py
 ```
 
 The smoke test prints a JSON summary. The absolute file path will depend on the local checkout, while the checked-in sample's SHA-256 should be:
@@ -72,6 +76,7 @@ The Gate 1 command reproduces the single-property feasibility case. The Gate 2 c
 See [docs/gate1-feasibility.md](docs/gate1-feasibility.md) for the evidence, limitations, and the initial negative result.
 See [docs/gate2-data-validation.md](docs/gate2-data-validation.md) for the controlled revision set, Change Record contract, evidence, and limitations.
 See [docs/gate3-evaluation-contract.md](docs/gate3-evaluation-contract.md) for the fixed pilot questions, scoring rules, and decisions that remain before any model experiment.
+See [docs/gate3-tool-interface.md](docs/gate3-tool-interface.md) for the deterministic agent-tool boundary and its current tests.
 
 ## Data and Licensing
 
