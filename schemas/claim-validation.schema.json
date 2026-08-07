@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bimchange-agent.local/claim-validation.schema.json",
+  "title": "Gate 3 independent free-text claim validation",
+  "type": "object",
+  "required": ["overall_verdict", "claims"],
+  "properties": {
+    "overall_verdict": { "enum": ["pass", "fail"] },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["claim", "verdict", "evidence_global_ids", "reason"],
+        "properties": {
+          "claim": { "type": "string", "minLength": 1 },
+          "verdict": {
+            "enum": ["supported", "unsupported", "indeterminate"]
+          },
+          "evidence_global_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 22, "maxLength": 22 },
+            "uniqueItems": true
+          },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -38,7 +38,11 @@ def canonical_fact(prediction: dict[str, Any]) -> str:
 
 
 def score_candidate(
-    reference: dict[str, Any], candidate: dict[str, Any]
+    reference: dict[str, Any],
+    candidate: dict[str, Any],
+    *,
+    allow_subset: bool = False,
+    count_missing_as_failure: bool = False,
 ) -> dict[str, Any]:
     """Score semantic changes independently from evidence citations."""
     validate_candidate_schema(reference)
@@ -47,14 +51,32 @@ def score_candidate(
         if candidate[field] != reference[field]:
             raise ValueError(f"Candidate {field} does not match the reference")
 
-    expected_answers = {
+    all_expected_answers = {
         answer["question_id"]: answer for answer in reference["answers"]
     }
     actual_answers = {
         answer["question_id"]: answer for answer in candidate["answers"]
     }
-    if set(expected_answers) != set(actual_answers):
-        raise ValueError("Candidate question IDs do not match the reference")
+    actual_ids = set(actual_answers)
+    expected_ids = set(all_expected_answers)
+    if allow_subset and count_missing_as_failure:
+        raise ValueError("Choose either subset scoring or missing-as-failure scoring")
+    if allow_subset:
+        if not actual_ids or not actual_ids <= expected_ids:
+            raise ValueError("Candidate question IDs are not a valid reference subset")
+        expected_answers = {
+            question_id: answer
+            for question_id, answer in all_expected_answers.items()
+            if question_id in actual_ids
+        }
+    elif count_missing_as_failure:
+        if not actual_ids <= expected_ids:
+            raise ValueError("Candidate contains unknown question IDs")
+        expected_answers = all_expected_answers
+    else:
+        if expected_ids != actual_ids:
+            raise ValueError("Candidate question IDs do not match the reference")
+        expected_answers = all_expected_answers
 
     status_matches = 0
     exact_matches = 0
@@ -63,10 +85,14 @@ def score_candidate(
     actual_total = 0
     per_question = []
     for question_id, expected in expected_answers.items():
-        actual = actual_answers[question_id]
-        status_match = expected["status"] == actual["status"]
+        actual = actual_answers.get(question_id)
+        status_match = actual is not None and expected["status"] == actual["status"]
         expected_facts = {canonical_fact(item) for item in expected["predictions"]}
-        actual_facts = {canonical_fact(item) for item in actual["predictions"]}
+        actual_facts = (
+            {canonical_fact(item) for item in actual["predictions"]}
+            if actual is not None
+            else set()
+        )
         fact_match = expected_facts == actual_facts
         status_matches += int(status_match)
         exact_matches += int(status_match and fact_match)
@@ -76,6 +102,7 @@ def score_candidate(
         per_question.append(
             {
                 "question_id": question_id,
+                "answer_present": actual is not None,
                 "status_match": status_match,
                 "prediction_fact_match": fact_match,
                 "exact_match": status_match and fact_match,
@@ -91,6 +118,7 @@ def score_candidate(
         "schema_compliance": True,
         "workflow": candidate["workflow"],
         "question_count": count,
+        "completion_rate": len(actual_answers) / count,
         "status_accuracy": status_matches / count,
         "semantic_exact_match_accuracy": exact_matches / count,
         "change_precision": precision,
@@ -106,10 +134,30 @@ def score_candidate(
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("candidate", type=Path, help="Candidate answer JSON")
+    parser.add_argument(
+        "--allow-subset",
+        action="store_true",
+        help="Score a non-empty subset of the reference question IDs",
+    )
+    parser.add_argument(
+        "--count-missing-as-failure",
+        action="store_true",
+        help="Score absent reference questions as failed answers",
+    )
     args = parser.parse_args()
     reference = load_json(REFERENCE_PATH)
     candidate = load_json(args.candidate)
-    print(json.dumps(score_candidate(reference, candidate), indent=2))
+    print(
+        json.dumps(
+            score_candidate(
+                reference,
+                candidate,
+                allow_subset=args.allow_subset,
+                count_missing_as_failure=args.count_missing_as_failure,
+            ),
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":

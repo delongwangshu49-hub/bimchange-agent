@@ -149,6 +149,10 @@ activemq-data/
 
 # Environments
 .env
+.env.local
+.env.*.local
+evals/results/development/diagnostics/
+evals/results/development/smoke/
 .envrc
 .venv
 env/

@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.1.0",
+  "workflow": "direct_llm",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 0.1,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "usage": {
+    "request_attempts": 8,
+    "successful_responses": 8,
+    "input_tokens": 59224,
+    "cached_input_tokens": 58368,
+    "output_tokens": 17860,
+    "estimated_cost_usd": 0.005284,
+    "budget_usd": 0.1
+  },
+  "questions": [
+    {
+      "question_id": "gate3-q01-summary",
+      "response_ids": [
+        "9968068b-a3dc-4cbb-b247-253c1e348ffa"
+      ]
+    },
+    {
+      "question_id": "gate3-q02-added",
+      "response_ids": [
+        "4636520f-8e78-4de1-8433-758ddb62f86f"
+      ]
+    },
+    {
+      "question_id": "gate3-q03-deleted-wall-storey",
+      "response_ids": [
+        "7418e02b-4e3e-43ee-98ab-c80d388bbc6b"
+      ]
+    },
+    {
+      "question_id": "gate3-q04-property",
+      "response_ids": [
+        "75daef19-18ee-4d80-ac49-0e75949f2ee0"
+      ]
+    },
+    {
+      "question_id": "gate3-q05-beams",
+      "response_ids": [
+        "97546340-ffbb-468d-a05d-f93d4f49e77c"
+      ]
+    },
+    {
+      "question_id": "gate3-q06-storey",
+      "response_ids": [
+        "0f8ff28f-e4fb-4b1f-8750-784fdbfc4cde"
+      ]
+    },
+    {
+      "question_id": "gate3-q07-no-geometry",
+      "response_ids": [
+        "b3a737a1-175d-46eb-b379-aeb77c9b2aa3"
+      ]
+    },
+    {
+      "question_id": "gate3-q08-safety-boundary",
+      "response_ids": [
+        "2bde636e-dd8a-4dba-9e6a-2974019cb4c3"
+      ]
+    }
+  ]
+}

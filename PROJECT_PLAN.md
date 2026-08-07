@@ -1,144 +1,96 @@
-# BIMChange-Agent: Public Project Plan
+# BIMChange-Agent: Public Project Plan / 公开项目计划
 
-> Status: Feasibility study. No experimental results or performance claims have been validated yet.  
-> Last updated: 2026-08-07
+> **Status:** Gate 3 development prototype complete; Gate 4 independent evaluation is next.<br>
+> **Last updated:** 2026-08-07
+>
+> **状态：** Gate 3 开发原型已完成；下一阶段为 Gate 4 独立评测。<br>
+> **最后更新：** 2026-08-07
 
-## Overview
+## Research Goal / 研究目标
 
-Building projects often contain multiple revisions of the same BIM model. Although deterministic IFC tools can identify low-level differences between model versions, their outputs may be difficult for project participants to interpret. Asking a language model to explain a model directly introduces a different risk: statements may be fluent but unsupported by the underlying IFC data.
+Building projects often contain several revisions of the same BIM model. Deterministic IFC tools can identify low-level differences, but their output may be difficult to interpret; direct language-model explanations can instead be fluent but unsupported.
 
-BIMChange-Agent is a research prototype exploring whether an AI agent can use deterministic IFC comparison and query tools to produce revision explanations that are accurate, traceable, and useful to AEC practitioners.
+建筑项目通常包含同一 BIM 模型的多个版本。确定性 IFC 工具能够识别底层差异，但其输出可能难以理解；直接使用语言模型生成说明，则可能出现表达流畅但缺乏证据的问题。
 
-The central research question is:
+BIMChange-Agent studies whether an AI agent can transform deterministic IFC revision data into natural-language explanations while preserving traceable evidence for every material claim.
 
-> Can an AI agent transform deterministic IFC revision data into natural-language change explanations while preserving traceable evidence for every material claim?
+BIMChange-Agent 研究 AI 智能体能否把确定性的 IFC 版本数据转化为自然语言说明，同时为每项关键结论保留可追溯证据。
 
-## Intended Users
+## Research Questions / 研究问题
 
-- BIM coordinators;
-- architects and engineers reviewing model updates;
-- project managers;
-- design reviewers;
-- other AEC practitioners who need to understand model revisions without inspecting raw IFC structures.
+1. Does deterministic IFC grounding improve change identification over a direct language-model baseline?<br>
+   以确定性 IFC 数据为依据，能否比直接语言模型基线更准确地识别变更？
+2. Does claim and evidence validation improve support accuracy and multi-step task success?<br>
+   声明与证据验证能否提高证据支持准确率及多步骤任务成功率？
+3. Are the reliability gains worth the additional latency and model-call cost?<br>
+   可靠性提升是否值得额外的延迟与模型调用成本？
+4. Do the results persist on an independently created held-out set?<br>
+   这些结果能否在独立建立的留出集上保持？
 
-## Research Questions
+These are research questions rather than assumed conclusions.
 
-1. Does grounding the workflow in deterministic IFC tools improve change-identification accuracy compared with a direct language-model baseline?
-2. Does a separate validation step improve evidence-citation accuracy and multi-step task success?
-3. Does packaging the workflow as a repeatable agent skill improve tool selection and output consistency?
-4. Do the reliability gains justify the additional latency and model-call cost?
+以上内容是待验证的研究问题，并非预设结论。
 
-These are research questions, not assumed conclusions. They will be answered through controlled experiments.
+## Workflow / 工作流
 
-## Proposed Workflow
+1. **Query planning** — identify requested change types, IFC entities, locations, and evidence needs.<br>
+   **查询规划** — 明确所需变更类型、IFC 实体、位置与证据要求。
+2. **Deterministic IFC analysis** — compare model versions with established IFC tooling.<br>
+   **确定性 IFC 分析** — 使用成熟 IFC 工具比较模型版本。
+3. **Structured Change Records** — normalize additions, deletions, and modifications into auditable records.<br>
+   **结构化 Change Record** — 将新增、删除与修改规范化为可审计记录。
+4. **Evidence-grounded explanation** — produce user-facing language from verified records.<br>
+   **基于证据的说明** — 根据已验证记录生成人类可读说明。
+5. **Validation and bounded repair** — check schema, evidence coverage, and atomic claims, with at most one controlled repair in the Proposed workflow.<br>
+   **验证与有限修复** — 检查 Schema、证据覆盖及原子声明；Proposed 流程最多允许一次受控修复。
 
-The initial design consists of five stages:
+## Evaluation Design / 评测设计
 
-1. **Query planning** — identify the requested change types, IFC entities, storeys, and required tools.
-2. **Deterministic IFC analysis** — use established IFC libraries or comparison utilities to inspect the two model versions.
-3. **Structured change records** — normalize detected changes into records containing entity type, GlobalId, location, change category, and before/after values where available.
-4. **Evidence-grounded explanation** — translate the structured records into language suitable for AEC users.
-5. **Validation** — check generated statements against the underlying change records and report unsupported or indeterminate claims.
+Three workflows share a common output contract and development question set: Direct LLM receives a non-diff model summary; Tool-Using Agent can query deterministic Change Records; Proposed adds validation and one bounded repair opportunity.
 
-The architecture remains provisional until the feasibility study is complete.
+三种流程使用统一输出契约与开发问题集：Direct LLM 接收不含差异结论的模型摘要；Tool-Using Agent 可查询确定性的 Change Record；Proposed 在此基础上增加验证与一次有限修复机会。
 
-## Evidence Requirements
+Primary measures include completion, answer-status accuracy, exact structured match, change precision/recall/F1, evidence-support rate, response usage, estimated cost, and failure categories.
 
-Where available, each reported change should include:
+主要指标包括完成率、答案状态准确率、结构化精确匹配、变更精确率/召回率/F1、证据支持率、响应使用量、估算成本与失败类型。
 
-- IFC entity type;
-- GlobalId/GUID;
-- associated building storey;
-- change category, such as added, removed, property-modified, geometry-modified, or relationship-modified;
-- previous and updated values;
-- the deterministic tool output supporting the statement;
-- an explanation for the user;
-- an explicit indication when the evidence is insufficient.
+## Decision Gates / 决策门
 
-The prototype will not present language-model output as a structural-safety conclusion or a formal code-compliance determination.
+- **Gate 1 — Technical feasibility: complete.** Public IFC4 loading and deterministic property-change verification work on Windows.<br>
+  **Gate 1 — 技术可行性：已完成。** 已在 Windows 上完成公开 IFC4 读取与确定性属性变更验证。
+- **Gate 2 — Data and reference answers: complete.** A controlled three-change revision is normalized and checked against IFC files and IfcDiff output.<br>
+  **Gate 2 — 数据与参考答案：已完成。** 受控三变更版本已完成规范化，并与 IFC 文件及 IfcDiff 输出核验。
+- **Gate 3 — Agent prototype: complete for development scope.** Three workflows run on eight development questions with common schemas and scoring.<br>
+  **Gate 3 — 智能体原型：开发范围内已完成。** 三种流程已在八道开发问题上运行，并使用统一 Schema 与评分机制。
+- **Gate 4 — Evaluation and release: next.** Freeze contracts, build an independent held-out set, run repetitions, analyze failures, and prepare release documentation.<br>
+  **Gate 4 — 评测与发布：下一阶段。** 冻结契约，建立独立留出集，进行重复实验、失败分析并准备发布文档。
 
-## Minimum Viable Prototype
+## Current Evidence and Limits / 当前证据与局限
 
-The first validated prototype is expected to:
+The Gate 3 development run indicates that deterministic tool access and validation can improve structured correctness and evidence support on the current controlled set. Detailed figures are recorded in [docs/gate3-development-results.md](docs/gate3-development-results.md).
 
-- read two openly licensed or reproducibly generated IFC model versions on Windows;
-- detect additions, removals, and at least one modification category;
-- normalize tool output into structured change records;
-- support several categories of natural-language revision queries;
-- cite IFC evidence in its answers;
-- include at least one independent validation step;
-- use a fixed question set with reproducible reference answers;
-- compare two baselines with the proposed workflow;
-- report accuracy, unsupported-claim rate, latency, and failure categories.
+Gate 3 开发运行表明，在当前受控数据集上，确定性工具访问与验证有望提升结构化正确性和证据支持率。详细数据见 [docs/gate3-development-results.md](docs/gate3-development-results.md)。
 
-## Evaluation Plan
+The development questions and workflow contracts were iteratively refined together. The results are therefore not held-out evidence, include one retained answer per question and condition, and do not establish general performance.
 
-Three workflows are planned for comparison:
+开发问题与工作流契约经历了同步迭代，因此现有结果不是独立留出证据；每个问题与条件仅保留一次最终答案，也不能证明通用性能。
 
-- **Direct LLM baseline:** a language model receives a limited model summary without access to specialist comparison tools.
-- **Tool-using baseline:** an agent can call IFC comparison and query tools but has no independent validation stage.
-- **Proposed workflow:** query planning, deterministic tools, structured evidence, explanation, and validation.
+The current data contain three Change Records from one small, single-storey IFC sample. Geometry changes, relationship changes, larger or multi-storey projects, additional IFC schemas, independent claim validation, and cross-model replication remain future work.
 
-Planned evaluation measures include:
+当前数据来自一个小型单层 IFC 样本，仅包含三条 Change Record。几何变更、关系变更、更大或多层项目、其他 IFC Schema、独立声明验证及跨模型复验仍属于后续工作。
 
-- task success rate;
-- precision, recall, and F1 for change identification;
-- evidence-citation accuracy;
-- unsupported-claim rate;
-- multi-step query success rate;
-- output-schema compliance;
-- response latency;
-- estimated model-call cost;
-- manual correction count;
-- failure-type distribution.
+## Data and Scope Boundaries / 数据与范围边界
 
-## Data and Reproducibility
+Only public, clearly licensed, or programmatically generated IFC data are used. No confidential or proprietary project data are included.
 
-The project will use public, clearly licensed, or programmatically generated IFC data. When redistribution is not permitted, the repository will contain source links and reproducible preparation scripts instead of the original files.
+项目仅使用公开、许可清晰或程序生成的 IFC 数据，不包含任何机密或专有项目数据。
 
-Controlled revisions will be generated where practical so that the reference changes are known and auditable. Experimental results will record the relevant configuration, model identifier, date, and code revision.
+The prototype does not train a foundation model, replace BIM authoring software, replace professional engineering review, or perform structural-safety or regulatory-compliance certification.
 
-No confidential employer, internship, client, or project data will be used.
+本原型不训练基础模型，不替代 BIM 创作软件或专业工程审查，也不执行结构安全或法规合规认证。
 
-## Scope Boundaries
+## Next Milestone / 下一里程碑
 
-This project does not aim to:
+Freeze the Gate 3 prompts, schemas, and workflow logic before inspecting held-out outcomes. Then create a separate controlled revision and question set, run repeated comparisons without tuning on held-out results, and publish uncertainty and failure analysis alongside aggregate metrics.
 
-- train a foundation model;
-- reproduce a complete BIM authoring or coordination platform;
-- replace professional engineering review;
-- perform formal structural-safety or regulatory-compliance certification;
-- treat a complex user interface as the primary research contribution;
-- claim effectiveness before baseline testing is complete.
-
-## Decision Gates
-
-### Gate 1 — Technical Feasibility
-
-Confirm that the selected IFC tooling can be installed and run on Windows, open a public IFC model, and detect deterministic differences between two versions.
-
-### Gate 2 — Data and Reference Answers
-
-Confirm that controlled model revisions and auditable reference answers can be generated without relying on subjective engineering judgments.
-
-### Gate 3 — Agent Prototype
-
-Confirm that the workflow selects appropriate tools, cites real IFC evidence, and supports a minimum baseline comparison.
-
-### Gate 4 — Evaluation and Release
-
-Complete the fixed evaluation set, reproducible experiments, failure analysis, documentation, and demonstration materials.
-
-## Current Status
-
-Gate 1 technical feasibility is complete on Windows with Python 3.13.15, IfcOpenShell 0.8.5, and IfcDiff 0.8.5. A public IFC4 sample can be loaded, a controlled property revision can be generated, and the resulting change can be detected and verified against generated ground truth.
-
-Gate 2 data and reference-answer validation is also complete for the current sample. One added beam, one deleted wall, and one property modification are generated together, normalized into versioned Change Records, and checked exactly against both IFC files and IfcDiff output.
-
-The initial Gate 3 evaluation contract now fixes eight development questions, deterministic reference answers, structured answer schemas, and exact evidence-scoring rules before model implementation. Its perfect reference self-score is a wiring check only and is not reported as agent performance.
-
-A versioned deterministic Change Record query interface is now implemented and tested independently of question IDs or wording. The current eight questions are explicitly designated as development data; the held-out evaluation set will be created separately before performance experiments.
-
-The three planned workflows now have a fixed comparison protocol. Direct LLM receives a non-diff pair of IFC element summaries, while both agent conditions receive the same deterministic query interface. A common prediction schema supports separate scoring for change identification and evidence support. The deterministic validator does not yet claim to validate arbitrary free-text semantics.
-
-These results establish a reproducible small-data, evaluation-contract, and deterministic-tool pipeline, not performance on arbitrary models. Geometry changes, relationship changes, larger or multi-storey models, runtime natural-language interpretation, agent behavior, arbitrary free-text claim validation, and baseline evaluation remain unvalidated. The next Gate 3 decision is the free-text validation strategy and the controlled model/API configuration.
+在查看留出集结果前，先冻结 Gate 3 的提示词、Schema 与工作流逻辑；随后建立独立的受控版本与问题集，在不根据留出结果调参的前提下进行重复对比，并与汇总指标一同发布不确定性和失败分析。
