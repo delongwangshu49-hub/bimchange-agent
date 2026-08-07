@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bimchange-agent.local/change-record.schema.json",
+  "title": "BIMChange-Agent controlled revision artifact",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "schema",
+    "source_ifc",
+    "source_sha256",
+    "revised_ifc",
+    "revised_sha256",
+    "changes"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "schema": { "type": "string" },
+    "source_ifc": { "type": "string" },
+    "source_sha256": { "$ref": "#/$defs/sha256" },
+    "revised_ifc": { "type": "string" },
+    "revised_sha256": { "$ref": "#/$defs/sha256" },
+    "changes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/change_record" },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "entity_reference": {
+      "type": "object",
+      "required": ["entity_type", "global_id", "name"],
+      "properties": {
+        "entity_type": { "type": "string", "pattern": "^Ifc" },
+        "global_id": { "type": "string", "minLength": 22, "maxLength": 22 },
+        "name": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object",
+      "required": ["spatial_container", "building_storey"],
+      "properties": {
+        "spatial_container": {
+          "oneOf": [
+            { "$ref": "#/$defs/entity_reference" },
+            { "type": "null" }
+          ]
+        },
+        "building_storey": {
+          "oneOf": [
+            { "$ref": "#/$defs/entity_reference" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "field": {
+      "type": "object",
+      "required": ["kind", "property_set", "name"],
+      "properties": {
+        "kind": { "const": "property" },
+        "property_set": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["reference_source", "detector", "result_file", "selector"],
+      "properties": {
+        "reference_source": { "const": "controlled_revision_generator" },
+        "detector": { "type": "string" },
+        "result_file": { "type": "string" },
+        "selector": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "change_record": {
+      "type": "object",
+      "required": [
+        "change_id",
+        "change_type",
+        "entity_type",
+        "global_id",
+        "location",
+        "field",
+        "old_value",
+        "new_value",
+        "evidence"
+      ],
+      "properties": {
+        "change_id": { "type": "string" },
+        "change_type": {
+          "enum": ["added", "deleted", "property_modified"]
+        },
+        "entity_type": { "type": "string", "pattern": "^Ifc" },
+        "global_id": { "type": "string", "minLength": 22, "maxLength": 22 },
+        "location": { "$ref": "#/$defs/location" },
+        "field": {
+          "oneOf": [
+            { "$ref": "#/$defs/field" },
+            { "type": "null" }
+          ]
+        },
+        "old_value": {},
+        "new_value": {},
+        "evidence": { "$ref": "#/$defs/evidence" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

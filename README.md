@@ -2,7 +2,7 @@
 
 Research prototype for evidence-grounded IFC/BIM revision analysis using deterministic tools and AI agents.
 
-> **Status:** Gate 1 technical feasibility is complete. The repository does not yet contain an IFC revision-analysis agent or validated performance results.
+> **Status:** Gate 2 data and reference-answer validation is complete. The repository does not yet contain an IFC revision-analysis agent or validated performance results.
 
 ## Research Goal
 
@@ -21,17 +21,18 @@ The following limited feasibility result has been reproduced on Windows:
 - deterministic reporting of the file hash, schema, total entity count, and selected entity-type counts;
 - generation of a controlled property change while preserving the target GlobalId;
 - detection and automated verification of that property change with IfcDiff.
+- generation of one added beam, one deleted wall, and one property modification in a single controlled revision;
+- normalization of all three changes into versioned Change Records;
+- exact automated comparison of the records with file hashes, both IFC models, and IfcDiff output.
 
 The current sample contains 407 IFC entities, including six beams, four walls, and one footing. It has only one building storey and contains no columns or slabs, so it is an initial loading sample rather than the final benchmark model.
 
 ## Not Yet Implemented
 
-- addition, deletion, geometry, and relationship-change test cases;
-- a multi-change controlled revision set;
-- a normalized change-record schema;
+- geometry and relationship-change test cases;
 - natural-language revision queries;
 - an LLM or agent workflow;
-- an independent validator;
+- an independent validator for agent-generated claims;
 - baseline experiments or performance evaluation.
 
 ## Quick Start on Windows
@@ -45,6 +46,7 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe scripts\check_ifc.py
 .\.venv\Scripts\python.exe scripts\run_gate1_diff.py
+.\.venv\Scripts\python.exe scripts\run_gate2_diff.py
 ```
 
 The smoke test prints a JSON summary. The absolute file path will depend on the local checkout, while the checked-in sample's SHA-256 should be:
@@ -59,9 +61,10 @@ You can inspect another IFC file by passing its path:
 .\.venv\Scripts\python.exe scripts\check_ifc.py C:\path\to\model.ifc
 ```
 
-The Gate 1 diff command regenerates the revised IFC file, runs IfcDiff with property comparison enabled, and verifies the result against the checked-in ground truth. A passing run ends with `"status": "PASS"`.
+The Gate 1 command reproduces the single-property feasibility case. The Gate 2 command regenerates the multi-change revision and its Change Records, runs IfcDiff, and verifies all three records. A passing Gate 2 run ends with `"status": "PASS"` and `"records_validated": 3`.
 
 See [docs/gate1-feasibility.md](docs/gate1-feasibility.md) for the evidence, limitations, and the initial negative result.
+See [docs/gate2-data-validation.md](docs/gate2-data-validation.md) for the controlled revision set, Change Record contract, evidence, and limitations.
 
 ## Data and Licensing
 

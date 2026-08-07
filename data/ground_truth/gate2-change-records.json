@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1.0",
+  "schema": "schemas/change-record.schema.json",
+  "source_ifc": "data/raw/Building-Structural.ifc",
+  "source_sha256": "68be722391e7aaa53bb9278645a02aa4b6382f13cc07548a1612e9b1dc3def67",
+  "revised_ifc": "data/generated/Building-Structural-gate2-v2.ifc",
+  "revised_sha256": "89e74560a5705a00a92cad9afa79dbf0a6ecfc741511583c1375b55f763f648f",
+  "changes": [
+    {
+      "change_id": "gate2-property-001",
+      "change_type": "property_modified",
+      "entity_type": "IfcBeam",
+      "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+      "location": {
+        "spatial_container": {
+          "entity_type": "IfcBuilding",
+          "global_id": "0c$N1CTon2BB2Sp89385G8",
+          "name": "Single-family house"
+        },
+        "building_storey": null
+      },
+      "field": {
+        "kind": "property",
+        "property_set": "Pset_BeamCommon",
+        "name": "IsExternal"
+      },
+      "old_value": false,
+      "new_value": true,
+      "evidence": {
+        "reference_source": "controlled_revision_generator",
+        "detector": "IfcDiff 0.8.5",
+        "result_file": "evals/results/gate2-ifcdiff.json",
+        "selector": "changed.2ddLgAnQf4mBfh5IpUp54U.properties_changed.values_changed.root['Pset_BeamCommon']['IsExternal']"
+      }
+    },
+    {
+      "change_id": "gate2-added-001",
+      "change_type": "added",
+      "entity_type": "IfcBeam",
+      "global_id": "1yBs77x9XA79IerK62qUGO",
+      "location": {
+        "spatial_container": {
+          "entity_type": "IfcBuilding",
+          "global_id": "0c$N1CTon2BB2Sp89385G8",
+          "name": "Single-family house"
+        },
+        "building_storey": null
+      },
+      "field": null,
+      "old_value": null,
+      "new_value": {
+        "name": "Gate 2 added beam",
+        "tag": "GATE2-ADDED-BEAM"
+      },
+      "evidence": {
+        "reference_source": "controlled_revision_generator",
+        "detector": "IfcDiff 0.8.5",
+        "result_file": "evals/results/gate2-ifcdiff.json",
+        "selector": "added"
+      }
+    },
+    {
+      "change_id": "gate2-deleted-001",
+      "change_type": "deleted",
+      "entity_type": "IfcWall",
+      "global_id": "0DyViLJJ175RvWQi1rE7a6",
+      "location": {
+        "spatial_container": {
+          "entity_type": "IfcBuildingStorey",
+          "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+          "name": "00 groundfloor"
+        },
+        "building_storey": {
+          "entity_type": "IfcBuildingStorey",
+          "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+          "name": "00 groundfloor"
+        }
+      },
+      "field": null,
+      "old_value": {
+        "name": "house - outer wall - house back",
+        "tag": "454425.1027891.979946.932083.920030"
+      },
+      "new_value": null,
+      "evidence": {
+        "reference_source": "controlled_revision_generator",
+        "detector": "IfcDiff 0.8.5",
+        "result_file": "evals/results/gate2-ifcdiff.json",
+        "selector": "deleted"
+      }
+    }
+  ]
+}

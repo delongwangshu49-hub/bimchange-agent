@@ -1,2 +1,3 @@
 ifcopenshell==0.8.5
 ifcdiff==0.8.5
+jsonschema==4.25.1
