@@ -76,14 +76,18 @@ The test checks:
 - Tool-Using Agent may call this tool but will not receive an independent answer-validation or repair step.
 - Proposed workflow may call this tool and will add an independent validation step with at most one controlled repair attempt.
 
-## Still Requiring a Locked Contract
+## Subsequent Contract Work
+
+The following items are now fixed in [gate3-agent-protocol.md](gate3-agent-protocol.md):
+
+- a fixed non-diff input summary for Direct LLM;
+- a common prediction schema achievable by all three workflows;
+- separate change-identification and evidence-support scoring;
+- deterministic structured-evidence validation and its explicit free-text limitation.
 
 Before model calls begin, the project still needs:
 
-- a fixed non-diff input summary for Direct LLM;
-- a common prediction schema that is achievable by all three workflows;
-- exact evidence-scoring rules that do not give one workflow inaccessible fields;
-- the free-text validator's inputs, outputs, and limitations;
+- the final free-text validation strategy;
 - model, temperature, repetition count, budget, retry, and stopping decisions.
 
 No API key or paid model call is required for the implemented tool layer.

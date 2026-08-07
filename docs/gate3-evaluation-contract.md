@@ -60,17 +60,15 @@ The self-score must produce `1.0` for status, exact match, and evidence precisio
 
 The test script also removes one expected record from a copied answer and confirms that exact-match accuracy falls below `1.0`. It then supplies an invalid status and confirms that the JSON Schema rejects the artifact.
 
-## Decisions Deferred for Review
+## Remaining Decisions
 
 Before running an agent experiment, the following must be reviewed and fixed:
 
-- the minimal deterministic tool interface exposed to the agent;
-- the exact separation between Direct LLM, Tool-Using Agent, and Proposed workflow;
-- the independent free-text claim validator;
+- the final free-text claim-validation strategy;
 - model provider and model version;
 - API-key handling, run count, estimated cost, and stopping rules;
-- whether the eight-question pilot is sufficient for development before expanding the final benchmark.
+- the size and construction procedure for the held-out benchmark after development logic is frozen.
 
 No API key should be added to the repository or requested until that review is complete.
 
-The first reviewed item is now implemented: [gate3-tool-interface.md](gate3-tool-interface.md) defines the deterministic Change Record query request and response. The common cross-workflow prediction format and free-text validation contract remain open because they must be fair to all three experimental conditions.
+The deterministic query boundary is defined in [gate3-tool-interface.md](gate3-tool-interface.md). [gate3-agent-protocol.md](gate3-agent-protocol.md) now fixes a non-diff Direct LLM input, a workflow-neutral prediction format, and separate semantic-change and evidence-support scoring. Arbitrary free-text semantics remain explicitly unvalidated pending the final validation-strategy decision.

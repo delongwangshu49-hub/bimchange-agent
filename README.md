@@ -29,6 +29,9 @@ The following limited feasibility result has been reproduced on Windows:
 - positive, wrong-answer, and schema-invalid scoring checks.
 - a model-independent Change Record query tool with versioned request and response schemas;
 - tested filtering by change type, entity type, GUID, storey, and property fields.
+- a fixed non-diff model-pair summary for the Direct LLM condition;
+- one common prediction schema across Direct LLM, Tool-Using Agent, and Proposed;
+- separate semantic-change scoring and deterministic evidence-support validation.
 
 The current sample contains 407 IFC entities, including six beams, four walls, and one footing. It has only one building storey and contains no columns or slabs, so it is an initial loading sample rather than the final benchmark model.
 
@@ -37,7 +40,7 @@ The current sample contains 407 IFC entities, including six beams, four walls, a
 - geometry and relationship-change test cases;
 - runtime natural-language query interpretation;
 - an LLM or agent workflow;
-- an independent validator for agent-generated claims;
+- an independent semantic validator for arbitrary free-text claims;
 - baseline experiments or performance evaluation.
 
 ## Quick Start on Windows
@@ -57,6 +60,8 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe scripts\test_gate3_scoring.py
 .\.venv\Scripts\python.exe scripts\run_change_query.py evals\fixtures\gate3-added-query.json
 .\.venv\Scripts\python.exe scripts\test_change_query.py
+.\.venv\Scripts\python.exe scripts\generate_gate3_direct_input.py
+.\.venv\Scripts\python.exe scripts\test_gate3_candidate_contract.py
 ```
 
 The smoke test prints a JSON summary. The absolute file path will depend on the local checkout, while the checked-in sample's SHA-256 should be:
@@ -77,6 +82,7 @@ See [docs/gate1-feasibility.md](docs/gate1-feasibility.md) for the evidence, lim
 See [docs/gate2-data-validation.md](docs/gate2-data-validation.md) for the controlled revision set, Change Record contract, evidence, and limitations.
 See [docs/gate3-evaluation-contract.md](docs/gate3-evaluation-contract.md) for the fixed pilot questions, scoring rules, and decisions that remain before any model experiment.
 See [docs/gate3-tool-interface.md](docs/gate3-tool-interface.md) for the deterministic agent-tool boundary and its current tests.
+See [docs/gate3-agent-protocol.md](docs/gate3-agent-protocol.md) for the fixed cross-workflow inputs, common prediction format, and validation boundary.
 
 ## Data and Licensing
 

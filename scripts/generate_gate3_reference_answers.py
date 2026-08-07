@@ -24,11 +24,18 @@ QUESTION_SCHEMA_PATH = (
     REPOSITORY_ROOT / "schemas" / "evaluation-question.schema.json"
 )
 ANSWER_SCHEMA_PATH = REPOSITORY_ROOT / "schemas" / "agent-answer.schema.json"
+CANDIDATE_SCHEMA_PATH = REPOSITORY_ROOT / "schemas" / "candidate-answer.schema.json"
 OUTPUT_PATH = (
     REPOSITORY_ROOT
     / "evals"
     / "reference_answers"
     / "gate3-reference-answers.json"
+)
+CANONICAL_PREDICTIONS_PATH = (
+    REPOSITORY_ROOT
+    / "evals"
+    / "reference_answers"
+    / "gate3-canonical-predictions.json"
 )
 
 
@@ -100,11 +107,55 @@ def build_reference_answers() -> dict[str, Any]:
     return artifact
 
 
+def prediction_from_record(record: dict[str, Any]) -> dict[str, Any]:
+    """Project a Change Record into the workflow-neutral prediction fields."""
+    return {
+        "change_type": record["change_type"],
+        "entity_type": record["entity_type"],
+        "global_id": record["global_id"],
+        "location": record["location"],
+        "field": record["field"],
+        "old_value": record["old_value"],
+        "new_value": record["new_value"],
+        "evidence_refs": [],
+    }
+
+
+def build_canonical_predictions(
+    reference_answers: dict[str, Any],
+) -> dict[str, Any]:
+    """Build workflow-neutral expected facts for fair cross-workflow scoring."""
+    artifact = {
+        "schema_version": "0.1.0",
+        "dataset_id": reference_answers["dataset_id"],
+        "question_split": reference_answers["question_split"],
+        "workflow": "reference",
+        "answers": [
+            {
+                "question_id": answer["question_id"],
+                "status": answer["status"],
+                "answer": answer["answer"],
+                "predictions": [
+                    prediction_from_record(record) for record in answer["results"]
+                ],
+                "limitations": answer["limitations"],
+            }
+            for answer in reference_answers["answers"]
+        ],
+    }
+    validate(artifact, CANDIDATE_SCHEMA_PATH)
+    return artifact
+
+
 def main() -> None:
     artifact = build_reference_answers()
+    canonical = build_canonical_predictions(artifact)
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(
         json.dumps(artifact, indent=2) + "\n", encoding="utf-8"
+    )
+    CANONICAL_PREDICTIONS_PATH.write_text(
+        json.dumps(canonical, indent=2) + "\n", encoding="utf-8"
     )
     print(json.dumps(artifact, indent=2))
 

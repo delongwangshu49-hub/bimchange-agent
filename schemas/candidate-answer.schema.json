@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bimchange-agent.local/candidate-answer.schema.json",
+  "title": "BIMChange-Agent common workflow prediction artifact",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "question_split",
+    "workflow",
+    "answers"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "dataset_id": { "type": "string" },
+    "question_split": { "enum": ["development", "held_out"] },
+    "workflow": {
+      "enum": ["reference", "direct_llm", "tool_using_agent", "proposed"]
+    },
+    "answers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/answer" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "entity_reference": {
+      "type": "object",
+      "required": ["entity_type", "global_id", "name"],
+      "properties": {
+        "entity_type": { "type": "string", "pattern": "^Ifc" },
+        "global_id": { "type": "string", "minLength": 22, "maxLength": 22 },
+        "name": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object",
+      "required": ["spatial_container", "building_storey"],
+      "properties": {
+        "spatial_container": {
+          "oneOf": [
+            { "$ref": "#/$defs/entity_reference" },
+            { "type": "null" }
+          ]
+        },
+        "building_storey": {
+          "oneOf": [
+            { "$ref": "#/$defs/entity_reference" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "field": {
+      "type": "object",
+      "required": ["kind", "property_set", "name"],
+      "properties": {
+        "kind": { "const": "property" },
+        "property_set": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "model_summary_evidence": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "source_path",
+        "version_role",
+        "global_id",
+        "expected_present",
+        "field"
+      ],
+      "properties": {
+        "source_type": { "const": "model_pair_summary" },
+        "source_path": { "type": "string" },
+        "version_role": { "enum": ["source", "revised"] },
+        "global_id": { "type": "string", "minLength": 22, "maxLength": 22 },
+        "expected_present": { "type": "boolean" },
+        "field": {
+          "oneOf": [
+            { "$ref": "#/$defs/field" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "change_query_evidence": {
+      "type": "object",
+      "required": ["source_type", "source_path", "change_id", "global_id"],
+      "properties": {
+        "source_type": { "const": "change_query" },
+        "source_path": { "type": "string" },
+        "change_id": { "type": "string" },
+        "global_id": { "type": "string", "minLength": 22, "maxLength": 22 }
+      },
+      "additionalProperties": false
+    },
+    "prediction": {
+      "type": "object",
+      "required": [
+        "change_type",
+        "entity_type",
+        "global_id",
+        "location",
+        "field",
+        "old_value",
+        "new_value",
+        "evidence_refs"
+      ],
+      "properties": {
+        "change_type": { "type": "string" },
+        "entity_type": { "type": "string", "pattern": "^Ifc" },
+        "global_id": { "type": "string", "minLength": 22, "maxLength": 22 },
+        "location": { "$ref": "#/$defs/location" },
+        "field": {
+          "oneOf": [
+            { "$ref": "#/$defs/field" },
+            { "type": "null" }
+          ]
+        },
+        "old_value": {},
+        "new_value": {},
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "$ref": "#/$defs/model_summary_evidence" },
+              { "$ref": "#/$defs/change_query_evidence" }
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "answer": {
+      "type": "object",
+      "required": ["question_id", "status", "answer", "predictions", "limitations"],
+      "properties": {
+        "question_id": { "type": "string" },
+        "status": {
+          "enum": ["answered", "not_found", "insufficient_evidence"]
+        },
+        "answer": { "type": "string", "minLength": 1 },
+        "predictions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prediction" }
+        },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

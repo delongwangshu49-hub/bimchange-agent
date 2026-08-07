@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bimchange-agent.local/model-pair-summary.schema.json",
+  "title": "BIMChange-Agent non-diff model-pair summary",
+  "type": "object",
+  "required": ["schema_version", "dataset_id", "split", "scope", "versions"],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "dataset_id": { "type": "string" },
+    "split": { "enum": ["development", "held_out"] },
+    "scope": {
+      "type": "object",
+      "required": ["included", "excluded"],
+      "properties": {
+        "included": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "excluded": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "versions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "$ref": "#/$defs/version" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "entity_reference": {
+      "type": "object",
+      "required": ["entity_type", "global_id", "name"],
+      "properties": {
+        "entity_type": { "type": "string", "pattern": "^Ifc" },
+        "global_id": { "type": "string", "minLength": 22, "maxLength": 22 },
+        "name": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object",
+      "required": ["spatial_container", "building_storey"],
+      "properties": {
+        "spatial_container": {
+          "oneOf": [
+            { "$ref": "#/$defs/entity_reference" },
+            { "type": "null" }
+          ]
+        },
+        "building_storey": {
+          "oneOf": [
+            { "$ref": "#/$defs/entity_reference" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "property": {
+      "type": "object",
+      "required": ["property_set", "name", "value"],
+      "properties": {
+        "property_set": { "type": "string" },
+        "name": { "type": "string" },
+        "value": { "type": ["string", "number", "integer", "boolean", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "element": {
+      "type": "object",
+      "required": [
+        "entity_type",
+        "global_id",
+        "name",
+        "tag",
+        "location",
+        "properties"
+      ],
+      "properties": {
+        "entity_type": { "type": "string", "pattern": "^Ifc" },
+        "global_id": { "type": "string", "minLength": 22, "maxLength": 22 },
+        "name": { "type": ["string", "null"] },
+        "tag": { "type": ["string", "null"] },
+        "location": { "$ref": "#/$defs/location" },
+        "properties": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/property" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "object",
+      "required": ["role", "path", "sha256", "ifc_schema", "element_count", "elements"],
+      "properties": {
+        "role": { "enum": ["source", "revised"] },
+        "path": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "ifc_schema": { "type": "string" },
+        "element_count": { "type": "integer", "minimum": 0 },
+        "elements": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/element" }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

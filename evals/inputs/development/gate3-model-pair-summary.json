@@ -1,0 +1,841 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate2-controlled-v0.1.0",
+  "split": "development",
+  "scope": {
+    "included": [
+      "IfcElement entity type, GlobalId, Name, and Tag",
+      "direct spatial container and explicit building storey",
+      "scalar property-set values"
+    ],
+    "excluded": [
+      "precomputed differences or Change Records",
+      "geometry and placement coordinates",
+      "materials, classifications, quantities, and nested property values",
+      "engineering, safety, and compliance judgments"
+    ]
+  },
+  "versions": [
+    {
+      "role": "source",
+      "path": "data/raw/Building-Structural.ifc",
+      "sha256": "68be722391e7aaa53bb9278645a02aa4b6382f13cc07548a1612e9b1dc3def67",
+      "ifc_schema": "IFC4",
+      "element_count": 18,
+      "elements": [
+        {
+          "entity_type": "IfcWall",
+          "global_id": "0DyViLJJ175RvWQi1rE7a6",
+          "name": "house - outer wall - house back",
+          "tag": "454425.1027891.979946.932083.920030",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "IsExternal",
+              "value": true
+            },
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "0Lvk$Qa81D5et3l3a4S9Vk",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902516",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "0fqX614OH1YO1Njdxms2$Q",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902513",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcFooting",
+          "global_id": "0pFmhV8oD1dB40_b4pscr8",
+          "name": "house - foundation",
+          "tag": "454425.1027891.979946.932083.920028",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "0rh7bRO0L9fg1NzgGKU$Ut",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902515",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBuildingElementProxy",
+          "global_id": "1CjP_CWub368bZVuVHeHs3",
+          "name": "Group#21",
+          "tag": "454425.1027891.979946.932083.2037932",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBuildingElementProxy",
+          "global_id": "2F44QMqSH3TOkM$SZoqCBe",
+          "name": "origin",
+          "tag": "454425.1027891.1032757",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcSite",
+              "global_id": "1Pbuu0tu59NfhrTsztVBK1",
+              "name": "house - site"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcDiscreteAccessory",
+          "global_id": "2cc4uJUVv5BevbidUpn1H3",
+          "name": "beam shoe",
+          "tag": "454425.1027891.979946.932084.2037920.2037924",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902517",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "2fjJuPht9EIQaZQYZfC1Op",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902512",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "2gTJhghMT81QThk15l2VwR",
+          "name": "house - inner wall",
+          "tag": "454425.1027891.979946.932083.2037932.920033",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcRoof",
+          "global_id": "2iPwJwpPDCSgMheXwk9cBT",
+          "name": "house - roof",
+          "tag": "454425.1027891.979946.932084",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_RoofCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcDiscreteAccessory",
+          "global_id": "2r_8UEywH9_RLHe8z$Xa8J",
+          "name": "beam shoe",
+          "tag": "454425.1027891.979946.932084.2037920.2037925",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBuildingElementProxy",
+          "global_id": "3Fit2Fad92zf2f6aWdJtF5",
+          "name": "geo-reference",
+          "tag": "454425.1032696",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcSite",
+              "global_id": "23sFQGRy90RxVbRHD9iSE2",
+              "name": "environment - site"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3SGBcf7Lv0r80vKtUCgOpf",
+          "name": "house - outer wall - house front",
+          "tag": "454425.1027891.979946.932083.920035",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "IsExternal",
+              "value": true
+            },
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcChimney",
+          "global_id": "3dkFAzOGrAIuOzY_RdrdVv",
+          "name": "house - chimney",
+          "tag": "454425.1027891.979946.932083.2023772",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3oNJ9yHi5FJuFnK8yg68Yt",
+          "name": "house - outer wall - house front right",
+          "tag": "454425.1027891.979946.932083.920036",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3roxUKbVv98xiUcl22_T07",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902519",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "revised",
+      "path": "data/generated/Building-Structural-gate2-v2.ifc",
+      "sha256": "89e74560a5705a00a92cad9afa79dbf0a6ecfc741511583c1375b55f763f648f",
+      "ifc_schema": "IFC4",
+      "element_count": 18,
+      "elements": [
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "0Lvk$Qa81D5et3l3a4S9Vk",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902516",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "0fqX614OH1YO1Njdxms2$Q",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902513",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcFooting",
+          "global_id": "0pFmhV8oD1dB40_b4pscr8",
+          "name": "house - foundation",
+          "tag": "454425.1027891.979946.932083.920028",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "0rh7bRO0L9fg1NzgGKU$Ut",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902515",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBuildingElementProxy",
+          "global_id": "1CjP_CWub368bZVuVHeHs3",
+          "name": "Group#21",
+          "tag": "454425.1027891.979946.932083.2037932",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1yBs77x9XA79IerK62qUGO",
+          "name": "Gate 2 added beam",
+          "tag": "GATE2-ADDED-BEAM",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBuildingElementProxy",
+          "global_id": "2F44QMqSH3TOkM$SZoqCBe",
+          "name": "origin",
+          "tag": "454425.1027891.1032757",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcSite",
+              "global_id": "1Pbuu0tu59NfhrTsztVBK1",
+              "name": "house - site"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcDiscreteAccessory",
+          "global_id": "2cc4uJUVv5BevbidUpn1H3",
+          "name": "beam shoe",
+          "tag": "454425.1027891.979946.932084.2037920.2037924",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "2ddLgAnQf4mBfh5IpUp54U",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902517",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": true
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "2fjJuPht9EIQaZQYZfC1Op",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902512",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "2gTJhghMT81QThk15l2VwR",
+          "name": "house - inner wall",
+          "tag": "454425.1027891.979946.932083.2037932.920033",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcRoof",
+          "global_id": "2iPwJwpPDCSgMheXwk9cBT",
+          "name": "house - roof",
+          "tag": "454425.1027891.979946.932084",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_RoofCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcDiscreteAccessory",
+          "global_id": "2r_8UEywH9_RLHe8z$Xa8J",
+          "name": "beam shoe",
+          "tag": "454425.1027891.979946.932084.2037920.2037925",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcBuildingElementProxy",
+          "global_id": "3Fit2Fad92zf2f6aWdJtF5",
+          "name": "geo-reference",
+          "tag": "454425.1032696",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcSite",
+              "global_id": "23sFQGRy90RxVbRHD9iSE2",
+              "name": "environment - site"
+            },
+            "building_storey": null
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3SGBcf7Lv0r80vKtUCgOpf",
+          "name": "house - outer wall - house front",
+          "tag": "454425.1027891.979946.932083.920035",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "IsExternal",
+              "value": true
+            },
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcChimney",
+          "global_id": "3dkFAzOGrAIuOzY_RdrdVv",
+          "name": "house - chimney",
+          "tag": "454425.1027891.979946.932083.2023772",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": []
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3oNJ9yHi5FJuFnK8yg68Yt",
+          "name": "house - outer wall - house front right",
+          "tag": "454425.1027891.979946.932083.920036",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1Ano2ZUxnEIvVQ_beukl8b",
+              "name": "00 groundfloor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3roxUKbVv98xiUcl22_T07",
+          "name": "girder",
+          "tag": "454425.1027891.979946.932084.902519",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuilding",
+              "global_id": "0c$N1CTon2BB2Sp89385G8",
+              "name": "Single-family house"
+            },
+            "building_storey": null
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "IsExternal",
+              "value": false
+            },
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
