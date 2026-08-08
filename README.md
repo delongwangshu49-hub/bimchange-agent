@@ -6,7 +6,7 @@ Evidence-grounded IFC/BIM revision analysis with deterministic tools and AI agen
 
 > **Status:** Gates 1–3 are complete for the controlled development scope. Gate 4—independent evaluation and release preparation—is next.
 >
-> **当前状态：** 受控开发范围内的 Gate 1–3 已完成；下一阶段为 Gate 4，即独立评测与发布准备。
+> 受控开发范围内的 Gate 1–3 已完成；下一阶段为 Gate 4，即独立评测与发布准备。
 
 ## Overview / 项目概述
 
@@ -21,13 +21,13 @@ The repository currently contains a reproducible Windows pipeline for loading IF
 ## Current Progress / 当前进度
 
 - **Gate 1 — Technical feasibility:** IfcOpenShell and IfcDiff load a public IFC4 model and verify a controlled property change.
-- **Gate 1 — 技术可行性：** IfcOpenShell 与 IfcDiff 已能读取公开 IFC4 模型，并验证受控属性变更。
+  IfcOpenShell 与 IfcDiff 已能读取公开 IFC4 模型，并验证受控属性变更。
 - **Gate 2 — Data and reference answers:** one added beam, one deleted wall, and one property modification are normalized into three auditable Change Records.
-- **Gate 2 — 数据与参考答案：** 一个新增梁、一个删除墙和一个属性修改已规范化为三条可审计的 Change Record。
+  一个新增梁、一个删除墙和一个属性修改已规范化为三条可审计的 Change Record。
 - **Gate 3 — Agent prototype:** Direct LLM, Tool-Using Agent, and Proposed workflows run against the same eight-question development set with common schemas and scoring.
-- **Gate 3 — 智能体原型：** Direct LLM、Tool-Using Agent 与 Proposed 三种流程已在同一组八题开发集上运行，并采用统一 Schema 与评分方式。
+  Direct LLM、Tool-Using Agent 与 Proposed 三种流程已在同一组八题开发集上运行，并采用统一 Schema 与评分方式。
 - **Gate 4 — Next:** freeze the current contracts, create an independent held-out revision set, repeat the comparison, analyze failures, and prepare release materials.
-- **Gate 4 — 下一步：** 冻结当前契约，建立独立留出版本与问题集，重复对比实验，分析失败案例并准备发布材料。
+  冻结当前契约，建立独立留出版本与问题集，重复对比实验，分析失败案例并准备发布材料。
 
 ## Gate 3 Development Snapshot / Gate 3 开发集概览
 
@@ -58,7 +58,7 @@ Prerequisite: 64-bit Python 3.13 on Windows. The current environment was validat
 ```powershell
 git clone https://github.com/delongwangshu49-hub/bimchange-agent.git
 cd bimchange-agent
-py -3.13 -m venv .venv
+python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe scripts\run_gate1_diff.py
 .\.venv\Scripts\python.exe scripts\run_gate2_diff.py
@@ -86,15 +86,15 @@ Never commit API keys, `.env.local`, diagnostic runs, or smoke-test outputs.
 ## Repository Guide / 仓库导览
 
 - `src/bimchange_agent/` — deterministic query, evidence validation, and Gate 3 runner logic.
-- `src/bimchange_agent/` — 确定性查询、证据验证与 Gate 3 运行逻辑。
+  确定性查询、证据验证与 Gate 3 运行逻辑。
 - `schemas/` — versioned JSON Schemas for Change Records, requests, answers, and claim validation.
-- `schemas/` — Change Record、请求、答案及声明验证所用的版本化 JSON Schema。
+  Change Record、请求、答案及声明验证所用的版本化 JSON Schema。
 - `scripts/` — reproducible generation, comparison, scoring, testing, and workflow commands.
-- `scripts/` — 可复现的生成、比较、评分、测试与工作流命令。
+  可复现的生成、比较、评分、测试与工作流命令。
 - `evals/` — fixed development questions, references, inputs, and retained result artifacts.
-- `evals/` — 固定的开发问题、参考答案、输入与保留结果。
+  固定的开发问题、参考答案、输入与保留结果。
 - `docs/` — experiment contracts, evidence, findings, and limitations.
-- `docs/` — 实验契约、证据、发现与局限说明。
+  实验契约、证据、发现与局限说明。
 
 The public roadmap and decision gates are described in [PROJECT_PLAN.md](PROJECT_PLAN.md).
 
