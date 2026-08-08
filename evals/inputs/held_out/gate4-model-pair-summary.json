@@ -1,0 +1,2438 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "split": "held_out",
+  "scope": {
+    "included": [
+      "IfcElement entity type, GlobalId, Name, and Tag",
+      "direct spatial container and explicit building storey",
+      "scalar property-set values"
+    ],
+    "excluded": [
+      "precomputed differences or Change Records",
+      "geometry and placement coordinates",
+      "materials, classifications, quantities, and nested property values",
+      "engineering, safety, compliance, responsibility, and priority judgments"
+    ]
+  },
+  "versions": [
+    {
+      "role": "source",
+      "path": "data/generated/held_out/gate4-controlled-heldout-v0.1.0/source.ifc",
+      "sha256": "71cf3353c6f2fd8f3182dbb2e38136dfa6f28f383e74cee629d235b2fb61ddb6",
+      "ifc_schema": "IFC4",
+      "element_count": 48,
+      "elements": [
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "0$0Iwes8nTQPfOHa_RMChF",
+          "name": "Slab RF 02",
+          "tag": "SL-RF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "00BGDwXnLQaP9YpA1Wv7eS",
+          "name": "Wall RF 02",
+          "tag": "WL-RF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "061Ns_4svGu9denyCZSm7R",
+          "name": "Slab GF 03",
+          "tag": "SL-GF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "0AEHZn8erSSv2wmeB7MyNE",
+          "name": "Slab RF 04",
+          "tag": "SL-RF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "name": "Column GF 01",
+          "tag": "CL-GF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "0PGIxhirDU3PzsnboDbAlG",
+          "name": "Wall RF 03",
+          "tag": "WL-RF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "0R993pFaPSRuB1rZnfJRvj",
+          "name": "Slab GF 01",
+          "tag": "SL-GF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "0TkQo09GrJ28botpen1o4_",
+          "name": "Slab GF 04",
+          "tag": "SL-GF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "0U1RlwpzPOy8vqMTtEeeLr",
+          "name": "Wall GF 02",
+          "tag": "WL-GF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "0dUSBah_9JJ8b91nMYHnrm",
+          "name": "Wall GF 04",
+          "tag": "WL-GF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "0gibcW6aLJEfKDcoVxdQjB",
+          "name": "Column RF 03",
+          "tag": "CL-RF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "name": "Wall GF 01",
+          "tag": "WL-GF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "1014w__bvONwkZjuUiWHYm",
+          "name": "Column GF 03",
+          "tag": "CL-GF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "11PGWFmBzQvPrPl2m5F8hZ",
+          "name": "Column GF 02",
+          "tag": "CL-GF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "name": "Column RF 01",
+          "tag": "CL-RF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "1EBYgBlpLJkgEPcEfUpBUs",
+          "name": "Column L1 03",
+          "tag": "CL-L1-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1ESfbKtJnNFAhVGnXbvBRQ",
+          "name": "Beam L1 04",
+          "tag": "BM-L1-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "1ThsvddBPMTvq4NRxO4Bys",
+          "name": "Wall L1 02",
+          "tag": "WL-L1-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1WWnxfOx1PDB$ufVhmLH1x",
+          "name": "Beam GF 02",
+          "tag": "BM-GF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1Xelnz6pPKxOZiWbcCFucE",
+          "name": "Beam L1 03",
+          "tag": "BM-L1-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "name": "Wall L1 01",
+          "tag": "WL-L1-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "1fp86_KU9I99XMKQgcfC5i",
+          "name": "Column L1 02",
+          "tag": "CL-L1-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1mFALS_U5Ru8YwhMV1pzmo",
+          "name": "Beam GF 03",
+          "tag": "BM-GF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "1nae$9s6fMdQtKlgM67y0w",
+          "name": "Slab L1 03",
+          "tag": "SL-L1-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "1soIBhI7zGXhCwZ0oCOzJO",
+          "name": "Column L1 04",
+          "tag": "CL-L1-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "25xViKL8PPfBjV1amw85BD",
+          "name": "Wall L1 04",
+          "tag": "WL-L1-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "2AML6DMJDQCAiXJ0l10wTj",
+          "name": "Column L1 01",
+          "tag": "CL-L1-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "2RjSqkz75RveBBgwxcNqZB",
+          "name": "Beam L1 02",
+          "tag": "BM-L1-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "2SjkOd$QrMOhyBs6tSlEFc",
+          "name": "Column RF 04",
+          "tag": "CL-RF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "2T7uILoQbGsAWIym5kcuCr",
+          "name": "Slab GF 02",
+          "tag": "SL-GF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "name": "Slab RF 01",
+          "tag": "SL-RF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "2gaYYCR$TLxhtNaHOGD32z",
+          "name": "Column RF 02",
+          "tag": "CL-RF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "2rwOjMm0PP0hcwR2oB8iMv",
+          "name": "Beam RF 03",
+          "tag": "BM-RF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "2t2djoBuTP5huh5fLa$INy",
+          "name": "Slab RF 03",
+          "tag": "SL-RF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3AJQq7_DHRCeBvKRaS_ITj",
+          "name": "Wall RF 04",
+          "tag": "WL-RF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3AelRWwlrGmwpA0tmbIoZv",
+          "name": "Beam RF 02",
+          "tag": "BM-RF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3BvL7mUn9KQBmsGWTya6P1",
+          "name": "Wall GF 03",
+          "tag": "WL-GF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "3Fa3D9$c9Suuajwbn7sv80",
+          "name": "Column GF 04",
+          "tag": "CL-GF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3JrMVbUN1GyOlsHqGa6kds",
+          "name": "Beam GF 01",
+          "tag": "BM-GF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "name": "Beam RF 01",
+          "tag": "BM-RF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3NwgpBTvTT2g7DNILryq78",
+          "name": "Wall RF 01",
+          "tag": "WL-RF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "name": "Slab L1 01",
+          "tag": "SL-L1-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "3SNZMwJhrIRPLEVOE_M$7L",
+          "name": "Slab L1 02",
+          "tag": "SL-L1-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "name": "Beam L1 01",
+          "tag": "BM-L1-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3nk5rpvE9JxPcP80BTwFa5",
+          "name": "Beam GF 04",
+          "tag": "BM-GF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3tNom9q0nPveC$nySZvWGo",
+          "name": "Wall L1 03",
+          "tag": "WL-L1-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "3urcw92b9K5BuX6MSZxxhg",
+          "name": "Slab L1 04",
+          "tag": "SL-L1-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3wVrclcK9N5hTCT9hKdyqL",
+          "name": "Beam RF 04",
+          "tag": "BM-RF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "revised",
+      "path": "data/generated/held_out/gate4-controlled-heldout-v0.1.0/revised.ifc",
+      "sha256": "a4c391bb86802089f8851d04c773580583b90bdb81578efad2425c6da6542d9e",
+      "ifc_schema": "IFC4",
+      "element_count": 48,
+      "elements": [
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "0$0Iwes8nTQPfOHa_RMChF",
+          "name": "Slab RF 02",
+          "tag": "SL-RF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "00BGDwXnLQaP9YpA1Wv7eS",
+          "name": "Wall RF 02",
+          "tag": "WL-RF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "061Ns_4svGu9denyCZSm7R",
+          "name": "Slab GF 03",
+          "tag": "SL-GF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "0AEHZn8erSSv2wmeB7MyNE",
+          "name": "Slab RF 04",
+          "tag": "SL-RF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "name": "Column GF 01",
+          "tag": "CL-GF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "0PGIxhirDU3PzsnboDbAlG",
+          "name": "Wall RF 03",
+          "tag": "WL-RF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "0R993pFaPSRuB1rZnfJRvj",
+          "name": "Slab GF 01",
+          "tag": "SL-GF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "0TkQo09GrJ28botpen1o4_",
+          "name": "Slab GF 04",
+          "tag": "SL-GF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "0U1RlwpzPOy8vqMTtEeeLr",
+          "name": "Wall GF 02",
+          "tag": "WL-GF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "0dUSBah_9JJ8b91nMYHnrm",
+          "name": "Wall GF 04",
+          "tag": "WL-GF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "0gibcW6aLJEfKDcoVxdQjB",
+          "name": "Column RF 03",
+          "tag": "CL-RF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "1014w__bvONwkZjuUiWHYm",
+          "name": "Column GF 03",
+          "tag": "CL-GF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "11PGWFmBzQvPrPl2m5F8hZ",
+          "name": "Column GF 02",
+          "tag": "CL-GF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "1EBYgBlpLJkgEPcEfUpBUs",
+          "name": "Column L1 03",
+          "tag": "CL-L1-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1ESfbKtJnNFAhVGnXbvBRQ",
+          "name": "Beam L1 04",
+          "tag": "BM-L1-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "1ThsvddBPMTvq4NRxO4Bys",
+          "name": "Wall L1 02",
+          "tag": "WL-L1-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1WWnxfOx1PDB$ufVhmLH1x",
+          "name": "Beam GF 02",
+          "tag": "BM-GF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1Xelnz6pPKxOZiWbcCFucE",
+          "name": "Beam L1 03",
+          "tag": "BM-L1-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "name": "Wall L1 01",
+          "tag": "WL-L1-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "90"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "1fp86_KU9I99XMKQgcfC5i",
+          "name": "Column L1 02",
+          "tag": "CL-L1-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "name": "Slab GF 05",
+          "tag": "SL-GF-05",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "1mFALS_U5Ru8YwhMV1pzmo",
+          "name": "Beam GF 03",
+          "tag": "BM-GF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "1nae$9s6fMdQtKlgM67y0w",
+          "name": "Slab L1 03",
+          "tag": "SL-L1-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "1soIBhI7zGXhCwZ0oCOzJO",
+          "name": "Column L1 04",
+          "tag": "CL-L1-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "name": "Column L1 05",
+          "tag": "CL-L1-05",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "25xViKL8PPfBjV1amw85BD",
+          "name": "Wall L1 04",
+          "tag": "WL-L1-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "2AML6DMJDQCAiXJ0l10wTj",
+          "name": "Column L1 01",
+          "tag": "CL-L1-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "2RjSqkz75RveBBgwxcNqZB",
+          "name": "Beam L1 02",
+          "tag": "BM-L1-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "2SjkOd$QrMOhyBs6tSlEFc",
+          "name": "Column RF 04",
+          "tag": "CL-RF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "2T7uILoQbGsAWIym5kcuCr",
+          "name": "Slab GF 02",
+          "tag": "SL-GF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "name": "Slab RF 01",
+          "tag": "SL-RF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "2gaYYCR$TLxhtNaHOGD32z",
+          "name": "Column RF 02",
+          "tag": "CL-RF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "name": "Wall RF 05",
+          "tag": "WL-RF-05",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "2rwOjMm0PP0hcwR2oB8iMv",
+          "name": "Beam RF 03",
+          "tag": "BM-RF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "2t2djoBuTP5huh5fLa$INy",
+          "name": "Slab RF 03",
+          "tag": "SL-RF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3AJQq7_DHRCeBvKRaS_ITj",
+          "name": "Wall RF 04",
+          "tag": "WL-RF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3AelRWwlrGmwpA0tmbIoZv",
+          "name": "Beam RF 02",
+          "tag": "BM-RF-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3BvL7mUn9KQBmsGWTya6P1",
+          "name": "Wall GF 03",
+          "tag": "WL-GF-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcColumn",
+          "global_id": "3Fa3D9$c9Suuajwbn7sv80",
+          "name": "Column GF 04",
+          "tag": "CL-GF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_ColumnCommon",
+              "name": "IsExternal",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3JrMVbUN1GyOlsHqGa6kds",
+          "name": "Beam GF 01",
+          "tag": "BM-GF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "name": "Beam RF 01",
+          "tag": "BM-RF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3NwgpBTvTT2g7DNILryq78",
+          "name": "Wall RF 01",
+          "tag": "WL-RF-01",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "3SNZMwJhrIRPLEVOE_M$7L",
+          "name": "Slab L1 02",
+          "tag": "SL-L1-02",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "name": "Beam GF 05",
+          "tag": "BM-GF-05",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3nk5rpvE9JxPcP80BTwFa5",
+          "name": "Beam GF 04",
+          "tag": "BM-GF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcWall",
+          "global_id": "3tNom9q0nPveC$nySZvWGo",
+          "name": "Wall L1 03",
+          "tag": "WL-L1-03",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_WallCommon",
+              "name": "FireRating",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcSlab",
+          "global_id": "3urcw92b9K5BuX6MSZxxhg",
+          "name": "Slab L1 04",
+          "tag": "SL-L1-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_SlabCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        },
+        {
+          "entity_type": "IfcBeam",
+          "global_id": "3wVrclcK9N5hTCT9hKdyqL",
+          "name": "Beam RF 04",
+          "tag": "BM-RF-04",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "properties": [
+            {
+              "property_set": "Pset_BeamCommon",
+              "name": "LoadBearing",
+              "value": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

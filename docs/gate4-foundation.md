@@ -8,13 +8,17 @@ Gate 4 now has a machine-readable foundation that pins the protected Gate 3 repo
 
 Gate 4 现已具备机器可读的基础配置：受保护的 Gate 3 仓库字节固定到提交 `abcb095`，并在生成或读取任何留出产物前预留独立的 `held_out` 路径。
 
-The foundation layer itself does not implement evaluation artifacts. The deterministic IFC fixture and Change Records have since been added as a separate guarded layer; questions, reference answers, schedules, audits, the freeze manifest, and model runs remain unimplemented.
+The foundation layer itself does not implement evaluation artifacts. The deterministic IFC fixture, Change Records, questions, reference answers, and non-diff Direct input have since been added as separate guarded layers; schedules, audits, the freeze manifest, and model runs remain unimplemented.
 
-基础层本身不实现评测产物；确定性 IFC 样例与 Change Record 现已作为独立受守卫层加入，问题、参考答案、执行计划、审核产物、冻结清单与模型运行仍未实现。
+基础层本身不实现评测产物；确定性 IFC 样例、Change Record、问题、参考答案与无差异 Direct 输入现已作为独立受守卫层加入，执行计划、审核产物、冻结清单与模型运行仍未实现。
 
 See [Gate 4 deterministic held-out fixture](gate4-held-out-fixture.md) for the implemented layer and its offline evidence.
 
 已实现层及其离线证据详见 [Gate 4 确定性留出样例](gate4-held-out-fixture.md)。
+
+See [Gate 4 held-out question artifacts](gate4-held-out-question-artifacts.md) for the question, reference, Direct-input, coverage, and anti-leakage evidence.
+
+问题、参考答案、Direct 输入、覆盖率与防泄漏证据详见 [Gate 4 留出问题产物](gate4-held-out-question-artifacts.md)。
 
 ## Protected boundary / 受保护边界
 
