@@ -4,9 +4,9 @@ Evidence-grounded IFC/BIM revision analysis with deterministic tools and AI agen
 
 基于确定性工具与 AI 智能体、可追溯到 IFC 证据的 BIM 版本变更分析。
 
-> **Status:** Gates 1–3 are complete for the controlled development scope. The Gate 4 design is frozen, and offline held-out implementation is in progress.
+> **Status:** Gates 1–3 are complete for the controlled development scope. The Gate 4 design and deterministic held-out IFC fixture are frozen; held-out question construction is next.
 >
-> 受控开发范围内的 Gate 1–3 已完成；Gate 4 设计已冻结，独立留出评测正在离线实现。
+> 受控开发范围内的 Gate 1–3 已完成；Gate 4 设计与确定性留出 IFC 样例已冻结，下一步为留出问题构建。
 
 ## Overview / 项目概述
 
@@ -26,8 +26,8 @@ The repository currently contains a reproducible Windows pipeline for loading IF
   一个新增梁、一个删除墙和一个属性修改已规范化为三条可审计的 Change Record。
 - **Gate 3 — Agent prototype:** Direct LLM, Tool-Using Agent, and Proposed workflows run against the same eight-question development set with common schemas and scoring.
   Direct LLM、Tool-Using Agent 与 Proposed 三种流程已在同一组八题开发集上运行，并采用统一 Schema 与评分方式。
-- **Gate 4 — In progress:** the held-out design is frozen; a byte-level Gate 3 guard and independent held-out paths now precede data generation and repeated evaluation.
-  留出设计已冻结；在数据生成与重复评测前，先执行 Gate 3 字节级守卫并使用独立留出路径。
+- **Gate 4 — In progress:** the frozen guard now protects a deterministic three-storey IFC4 fixture with 40 unchanged elements and exactly 12 independently verified changes; questions and the pre-call freeze manifest remain pending.
+  冻结守卫现已保护一个确定性的三楼层 IFC4 样例，其中 40 个构件保持不变、恰好 12 条变更通过独立验证；问题与调用前冻结清单仍待完成。
 
 ## Gate 3 Development Snapshot / Gate 3 开发集概览
 
@@ -69,7 +69,13 @@ python -m venv .venv
 .\.venv\Scripts\python.exe scripts\test_gate3_workflows.py
 .\.venv\Scripts\python.exe scripts\verify_gate4_foundation.py
 .\.venv\Scripts\python.exe scripts\test_gate4_foundation.py
+.\.venv\Scripts\python.exe scripts\run_gate4_fixture.py
+.\.venv\Scripts\python.exe scripts\test_gate4_fixture.py
 ```
+
+The Gate 4 fixture commands are fully offline. They regenerate two IFC4 files, the operation ledger, Change Records, and IfcDiff evidence, then verify exact changes and byte-identical clean reproduction. See [Gate 4 held-out fixture](docs/gate4-held-out-fixture.md).
+
+Gate 4 样例命令完全离线运行：重新生成两个 IFC4 文件、操作账本、Change Record 与 IfcDiff 证据，并验证精确变更及干净重建的字节一致性。详见 [Gate 4 留出样例](docs/gate4-held-out-fixture.md)。
 
 The Gate 3 runner defaults to a dry run and sends no API request. Live runs require a locally stored `DEEPSEEK_API_KEY`; copy `.env.example` to the ignored `.env.local`, or use the hidden-input helper.
 
@@ -95,8 +101,8 @@ Never commit API keys, `.env.local`, diagnostic runs, or smoke-test outputs.
   Gate 4 已审核冻结文件哈希与独立留出路径注册表。
 - `scripts/` — reproducible generation, comparison, scoring, testing, and workflow commands.
   可复现的生成、比较、评分、测试与工作流命令。
-- `evals/` — fixed development questions, references, inputs, and retained result artifacts.
-  固定的开发问题、参考答案、输入与保留结果。
+- `evals/` — fixed development materials plus independently retained held-out IfcDiff evidence.
+  固定的开发材料，以及独立保留的留出 IfcDiff 证据。
 - `docs/` — experiment contracts, evidence, findings, and limitations.
   实验契约、证据、发现与局限说明。
 
