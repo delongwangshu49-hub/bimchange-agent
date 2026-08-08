@@ -44,3 +44,17 @@ This Gate 2 derivative remains subject to the source sample's CC BY 4.0 license.
 - one deleted `IfcWall` with GlobalId `0DyViLJJ175RvWQi1rE7a6`.
 
 The added beam copies geometry and placement from an existing beam for reproducibility and therefore overlaps it. These changes are test fixtures only and do not represent a design, constructability, or safety recommendation. The generated file hash is stored in `ground_truth/gate2-change-records.json` and is checked on every complete Gate 2 run.
+
+## Gate 4 deterministic held-out dataset / Gate 4 确定性留出数据集
+
+`generated/held_out/gate4-controlled-heldout-v0.1.0/` contains a new IFC4 source/revised pair generated from scratch. It does not copy geometry, identifiers, names, or property values from the buildingSMART sample. The source and revised hashes, authoritative 12-operation ledger, and Schema `0.1.0` Change Records are stored under the corresponding independent `ground_truth/held_out/` path.
+
+`generated/held_out/gate4-controlled-heldout-v0.1.0/` 包含一组从零生成的新 IFC4 源/修订模型，不复制 buildingSMART 样例的几何、标识符、名称或属性值。源/修订哈希、权威的 12 条操作账本及符合 Schema `0.1.0` 的 Change Record 均保存在对应的独立 `ground_truth/held_out/` 路径下。
+
+These generated dataset artifacts are released under Creative Commons Attribution 4.0 International (CC BY 4.0), attributed to “BIMChange-Agent Gate 4 Held-Out Dataset.” The repository MIT license continues to apply to generator and verifier code.
+
+这些生成的数据集产物采用 Creative Commons Attribution 4.0 International（CC BY 4.0）许可，署名为“BIMChange-Agent Gate 4 Held-Out Dataset”；生成器与验证器代码继续适用仓库 MIT 许可。
+
+The changes are synthetic fixtures only and do not represent design, constructability, compliance, coordination-priority, or safety recommendations. Reproduction and verification details are recorded in `docs/gate4-held-out-fixture.md`.
+
+这些变更仅为合成测试样例，不代表设计、可施工性、合规、协调优先级或安全建议。复现与验证细节记录于 `docs/gate4-held-out-fixture.md`。

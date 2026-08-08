@@ -1,0 +1,56 @@
+{
+    "added": [
+        "2rg8G55UvONxUu2GmkwF$d",
+        "1hD8Z2VI5Q48QgyBkf6YcB",
+        "3Z1rgbb$PMDfsfeWvsKUUB",
+        "2$orIofUHKcQaHhLlr75_n"
+    ],
+    "deleted": [
+        "3QgprvELLQBgvTF$EPliSW",
+        "3TNmmeV$vP1wtU7$eM6gTb",
+        "12Po3y91HK4PYkc6lR0Ean",
+        "0z7L81IEbQPggjg__OrrlU"
+    ],
+    "changed": {
+        "3JuqHVfXrLlA8tnQP5xv53": {
+            "properties_changed": {
+                "values_changed": {
+                    "root['Pset_BeamCommon']['LoadBearing']": {
+                        "new_value": true,
+                        "old_value": false
+                    }
+                }
+            }
+        },
+        "0Iqxc9CtTOgPV$1Tej3xGK": {
+            "properties_changed": {
+                "values_changed": {
+                    "root['Pset_ColumnCommon']['IsExternal']": {
+                        "new_value": false,
+                        "old_value": true
+                    }
+                }
+            }
+        },
+        "2WfINAQAHRERPwEp7Nos0$": {
+            "properties_changed": {
+                "values_changed": {
+                    "root['Pset_SlabCommon']['LoadBearing']": {
+                        "new_value": true,
+                        "old_value": false
+                    }
+                }
+            }
+        },
+        "1aO4mYJaTLLf6oT4DTcfok": {
+            "properties_changed": {
+                "values_changed": {
+                    "root['Pset_WallCommon']['FireRating']": {
+                        "new_value": "90",
+                        "old_value": "60"
+                    }
+                }
+            }
+        }
+    }
+}
