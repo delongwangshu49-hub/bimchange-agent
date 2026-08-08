@@ -1,0 +1,691 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "split": "held_out",
+  "source_change_records": "data/ground_truth/held_out/gate4-controlled-heldout-v0.1.0/change-records.json",
+  "questions": [
+    {
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary",
+      "question": "Summarize every verified revision event across the three building storeys.",
+      "selection": {},
+      "reference_answer": {
+        "status": "answered",
+        "answer": "12 verified revision events match. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof. IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary",
+      "question": "Summarize the elements that appear only in the revised IFC model.",
+      "selection": {
+        "change_types": [
+          "added"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "4 verified revision events match. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary",
+      "question": "Summarize the elements that are present only in the source IFC model.",
+      "selection": {
+        "change_types": [
+          "deleted"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "4 verified revision events match. IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary",
+      "question": "Summarize all verified scalar property-value revisions.",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "4 verified revision events match. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup",
+      "question": "What verified revision event involves element 3Z1rgbb$PMDfsfeWvsKUUB?",
+      "selection": {
+        "global_ids": [
+          "3Z1rgbb$PMDfsfeWvsKUUB"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup",
+      "question": "What verified revision event involves element 0z7L81IEbQPggjg__OrrlU?",
+      "selection": {
+        "global_ids": [
+          "0z7L81IEbQPggjg__OrrlU"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup",
+      "question": "What verified revision event involves element 2$orIofUHKcQaHhLlr75_n?",
+      "selection": {
+        "global_ids": [
+          "2$orIofUHKcQaHhLlr75_n"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup",
+      "question": "What verified revision event involves element 3QgprvELLQBgvTF$EPliSW?",
+      "selection": {
+        "global_ids": [
+          "3QgprvELLQBgvTF$EPliSW"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup",
+      "question": "What verified revision event involves element 3JuqHVfXrLlA8tnQP5xv53?",
+      "selection": {
+        "global_ids": [
+          "3JuqHVfXrLlA8tnQP5xv53"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup",
+      "question": "What verified revision event involves element 2rg8G55UvONxUu2GmkwF$d?",
+      "selection": {
+        "global_ids": [
+          "2rg8G55UvONxUu2GmkwF$d"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup",
+      "question": "List the verified revision events involving IfcBeam elements.",
+      "selection": {
+        "entity_types": [
+          "IfcBeam"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "3 verified revision events match. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor. IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup",
+      "question": "List the verified revision events involving IfcColumn elements.",
+      "selection": {
+        "entity_types": [
+          "IfcColumn"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "3 verified revision events match. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup",
+      "question": "List the verified revision events involving IfcWall elements.",
+      "selection": {
+        "entity_types": [
+          "IfcWall"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "3 verified revision events match. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup",
+      "question": "List the verified revision events involving IfcSlab elements.",
+      "selection": {
+        "entity_types": [
+          "IfcSlab"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "3 verified revision events match. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup",
+      "question": "Which verified revision events are explicitly associated with Ground Floor?",
+      "selection": {
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "4 verified revision events match. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup",
+      "question": "Which verified revision events are explicitly associated with Level 01?",
+      "selection": {
+        "building_storey_names": [
+          "Level 01"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "4 verified revision events match. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01. IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup",
+      "question": "Which verified revision events are explicitly associated with Roof?",
+      "selection": {
+        "building_storey_names": [
+          "Roof"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "4 verified revision events match. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup",
+      "question": "Which IfcBeam elements were added?",
+      "selection": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcBeam"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup",
+      "question": "Which IfcColumn elements were deleted?",
+      "selection": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcColumn"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup",
+      "question": "Which IfcWall elements have a verified property modification?",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup",
+      "question": "Which verified revision events involve an IfcBeam on Roof?",
+      "selection": {
+        "entity_types": [
+          "IfcBeam"
+        ],
+        "building_storey_names": [
+          "Roof"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup",
+      "question": "Which verified revision events involve an IfcSlab on Ground Floor?",
+      "selection": {
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup",
+      "question": "Which IfcColumn was added on Level 01?",
+      "selection": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcColumn"
+        ],
+        "building_storey_names": [
+          "Level 01"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup",
+      "question": "Which IfcWall was deleted from Ground Floor?",
+      "selection": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change",
+      "question": "What scalar property changed for 0Iqxc9CtTOgPV$1Tej3xGK, and what are the old and new values?",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "0Iqxc9CtTOgPV$1Tej3xGK"
+        ],
+        "property_set": "Pset_ColumnCommon",
+        "property_name": "IsExternal"
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change",
+      "question": "What scalar property changed for 1aO4mYJaTLLf6oT4DTcfok, and what are the old and new values?",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "1aO4mYJaTLLf6oT4DTcfok"
+        ],
+        "property_set": "Pset_WallCommon",
+        "property_name": "FireRating"
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change",
+      "question": "What scalar property changed for 3JuqHVfXrLlA8tnQP5xv53, and what are the old and new values?",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "3JuqHVfXrLlA8tnQP5xv53"
+        ],
+        "property_set": "Pset_BeamCommon",
+        "property_name": "LoadBearing"
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change",
+      "question": "What scalar property changed for 2WfINAQAHRERPwEp7Nos0$, and what are the old and new values?",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "2WfINAQAHRERPwEp7Nos0$"
+        ],
+        "property_set": "Pset_SlabCommon",
+        "property_name": "LoadBearing"
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change",
+      "question": "Which verified property modifications affect a LoadBearing field?",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ],
+        "property_name": "LoadBearing"
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "2 verified revision events match. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true.",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change",
+      "question": "Which verified property modification affects Pset_WallCommon?",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ],
+        "property_set": "Pset_WallCommon"
+      },
+      "reference_answer": {
+        "status": "answered",
+        "answer": "1 verified revision event matches. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+        "limitations": []
+      }
+    },
+    {
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control",
+      "question": "Is any geometry modification verified in this revision set?",
+      "selection": {
+        "change_types": [
+          "geometry_modified"
+        ]
+      },
+      "reference_answer": {
+        "status": "not_found",
+        "answer": "No verified revision event matches the requested filters.",
+        "limitations": [
+          "The frozen comparison excludes geometry from its represented change types."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control",
+      "question": "Was an IfcBeam added on Roof?",
+      "selection": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcBeam"
+        ],
+        "building_storey_names": [
+          "Roof"
+        ]
+      },
+      "reference_answer": {
+        "status": "not_found",
+        "answer": "No verified revision event matches the requested filters.",
+        "limitations": [
+          "This absence applies only to the controlled held-out revision set."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control",
+      "question": "What verified revision event involves element 0AAAAAAAAAAAAAAAAAAAAA?",
+      "selection": {
+        "global_ids": [
+          "0AAAAAAAAAAAAAAAAAAAAA"
+        ]
+      },
+      "reference_answer": {
+        "status": "not_found",
+        "answer": "No verified revision event matches the requested filters.",
+        "limitations": [
+          "This absence applies only to the controlled held-out revision set."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control",
+      "question": "Was an IfcColumn deleted from Ground Floor?",
+      "selection": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcColumn"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      },
+      "reference_answer": {
+        "status": "not_found",
+        "answer": "No verified revision event matches the requested filters.",
+        "limitations": [
+          "This absence applies only to the controlled held-out revision set."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control",
+      "question": "Did an IfcSlab on Level 01 have a verified property modification?",
+      "selection": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "building_storey_names": [
+          "Level 01"
+        ]
+      },
+      "reference_answer": {
+        "status": "not_found",
+        "answer": "No verified revision event matches the requested filters.",
+        "limitations": [
+          "This absence applies only to the controlled held-out revision set."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary",
+      "question": "Does deleting wall 0z7L81IEbQPggjg__OrrlU make the building structurally unsafe?",
+      "selection": {
+        "global_ids": [
+          "0z7L81IEbQPggjg__OrrlU"
+        ]
+      },
+      "reference_answer": {
+        "status": "insufficient_evidence",
+        "answer": "The records verify the following revision fact: IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor. They do not establish structural safety.",
+        "limitations": [
+          "A structural safety conclusion requires evidence and qualified assessment outside the Change Records."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary",
+      "question": "Does the FireRating revision for wall 1aO4mYJaTLLf6oT4DTcfok prove regulatory compliance?",
+      "selection": {
+        "global_ids": [
+          "1aO4mYJaTLLf6oT4DTcfok"
+        ]
+      },
+      "reference_answer": {
+        "status": "insufficient_evidence",
+        "answer": "The records verify the following revision fact: IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\". They do not establish regulatory compliance.",
+        "limitations": [
+          "A regulatory compliance conclusion requires evidence and qualified assessment outside the Change Records."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary",
+      "question": "Who is responsible for deleting beam 3TNmmeV$vP1wtU7$eM6gTb?",
+      "selection": {
+        "global_ids": [
+          "3TNmmeV$vP1wtU7$eM6gTb"
+        ]
+      },
+      "reference_answer": {
+        "status": "insufficient_evidence",
+        "answer": "The records verify the following revision fact: IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. They do not establish causal or contractual responsibility.",
+        "limitations": [
+          "A causal or contractual responsibility conclusion requires evidence and qualified assessment outside the Change Records."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary",
+      "question": "Should added slab 1hD8Z2VI5Q48QgyBkf6YcB receive the highest coordination priority?",
+      "selection": {
+        "global_ids": [
+          "1hD8Z2VI5Q48QgyBkf6YcB"
+        ]
+      },
+      "reference_answer": {
+        "status": "insufficient_evidence",
+        "answer": "The records verify the following revision fact: IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. They do not establish coordination priority.",
+        "limitations": [
+          "A coordination priority conclusion requires evidence and qualified assessment outside the Change Records."
+        ]
+      }
+    },
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary",
+      "question": "Is added wall 2rg8G55UvONxUu2GmkwF$d constructible as shown?",
+      "selection": {
+        "global_ids": [
+          "2rg8G55UvONxUu2GmkwF$d"
+        ]
+      },
+      "reference_answer": {
+        "status": "insufficient_evidence",
+        "answer": "The records verify the following revision fact: IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof. They do not establish constructability.",
+        "limitations": [
+          "A constructability conclusion requires evidence and qualified assessment outside the Change Records."
+        ]
+      }
+    }
+  ]
+}

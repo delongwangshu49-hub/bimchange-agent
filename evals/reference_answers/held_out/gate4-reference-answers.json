@@ -1,0 +1,2561 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "question_set_sha256": "bdf05960d28af2f46bea1706a66e46f7464f201fb947e008a42719f5b8ab5a72",
+  "change_records_sha256": "bd602f6a704b84a2f70e6b7376b5630792dca438ecaae392768c4e16972eb8d4",
+  "answers": [
+    {
+      "question_id": "gate3-q09-all-changes",
+      "status": "answered",
+      "answer": "12 verified revision events match. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof. IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+      "results": [
+        {
+          "change_id": "gate4-added-beam-ground",
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-added-column-level01",
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-added-slab-ground",
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-added-wall-roof",
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-beam-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Beam L1 01",
+            "tag": "BM-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-column-roof",
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-slab-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-wall-ground",
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-property-beam-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.3JuqHVfXrLlA8tnQP5xv53.properties_changed.values_changed.root['Pset_BeamCommon']['LoadBearing']"
+          }
+        },
+        {
+          "change_id": "gate4-property-column-ground",
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.0Iqxc9CtTOgPV$1Tej3xGK.properties_changed.values_changed.root['Pset_ColumnCommon']['IsExternal']"
+          }
+        },
+        {
+          "change_id": "gate4-property-slab-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.2WfINAQAHRERPwEp7Nos0$.properties_changed.values_changed.root['Pset_SlabCommon']['LoadBearing']"
+          }
+        },
+        {
+          "change_id": "gate4-property-wall-level01",
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.1aO4mYJaTLLf6oT4DTcfok.properties_changed.values_changed.root['Pset_WallCommon']['FireRating']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q10-added-summary",
+      "status": "answered",
+      "answer": "4 verified revision events match. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof.",
+      "results": [
+        {
+          "change_id": "gate4-added-beam-ground",
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-added-column-level01",
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-added-slab-ground",
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-added-wall-roof",
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q11-deleted-summary",
+      "status": "answered",
+      "answer": "4 verified revision events match. IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor.",
+      "results": [
+        {
+          "change_id": "gate4-deleted-beam-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Beam L1 01",
+            "tag": "BM-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-column-roof",
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-slab-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-wall-ground",
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q12-property-summary",
+      "status": "answered",
+      "answer": "4 verified revision events match. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+      "results": [
+        {
+          "change_id": "gate4-property-beam-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.3JuqHVfXrLlA8tnQP5xv53.properties_changed.values_changed.root['Pset_BeamCommon']['LoadBearing']"
+          }
+        },
+        {
+          "change_id": "gate4-property-column-ground",
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.0Iqxc9CtTOgPV$1Tej3xGK.properties_changed.values_changed.root['Pset_ColumnCommon']['IsExternal']"
+          }
+        },
+        {
+          "change_id": "gate4-property-slab-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.2WfINAQAHRERPwEp7Nos0$.properties_changed.values_changed.root['Pset_SlabCommon']['LoadBearing']"
+          }
+        },
+        {
+          "change_id": "gate4-property-wall-level01",
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.1aO4mYJaTLLf6oT4DTcfok.properties_changed.values_changed.root['Pset_WallCommon']['FireRating']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q13-beam-ground-guid",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor.",
+      "results": [
+        {
+          "change_id": "gate4-added-beam-ground",
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q14-wall-ground-guid",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor.",
+      "results": [
+        {
+          "change_id": "gate4-deleted-wall-ground",
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q15-column-level01-guid",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01.",
+      "results": [
+        {
+          "change_id": "gate4-added-column-level01",
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q16-slab-level01-guid",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01.",
+      "results": [
+        {
+          "change_id": "gate4-deleted-slab-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q17-beam-roof-guid",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true.",
+      "results": [
+        {
+          "change_id": "gate4-property-beam-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.3JuqHVfXrLlA8tnQP5xv53.properties_changed.values_changed.root['Pset_BeamCommon']['LoadBearing']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q18-wall-roof-guid",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof.",
+      "results": [
+        {
+          "change_id": "gate4-added-wall-roof",
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q19-beam-filter",
+      "status": "answered",
+      "answer": "3 verified revision events match. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor. IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true.",
+      "results": [
+        {
+          "change_id": "gate4-added-beam-ground",
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-beam-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Beam L1 01",
+            "tag": "BM-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-property-beam-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.3JuqHVfXrLlA8tnQP5xv53.properties_changed.values_changed.root['Pset_BeamCommon']['LoadBearing']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q20-column-filter",
+      "status": "answered",
+      "answer": "3 verified revision events match. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false.",
+      "results": [
+        {
+          "change_id": "gate4-added-column-level01",
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-column-roof",
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-property-column-ground",
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.0Iqxc9CtTOgPV$1Tej3xGK.properties_changed.values_changed.root['Pset_ColumnCommon']['IsExternal']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q21-wall-filter",
+      "status": "answered",
+      "answer": "3 verified revision events match. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+      "results": [
+        {
+          "change_id": "gate4-added-wall-roof",
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-wall-ground",
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-property-wall-level01",
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.1aO4mYJaTLLf6oT4DTcfok.properties_changed.values_changed.root['Pset_WallCommon']['FireRating']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q22-slab-filter",
+      "status": "answered",
+      "answer": "3 verified revision events match. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true.",
+      "results": [
+        {
+          "change_id": "gate4-added-slab-ground",
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-slab-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-property-slab-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.2WfINAQAHRERPwEp7Nos0$.properties_changed.values_changed.root['Pset_SlabCommon']['LoadBearing']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q23-ground-filter",
+      "status": "answered",
+      "answer": "4 verified revision events match. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false.",
+      "results": [
+        {
+          "change_id": "gate4-added-beam-ground",
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-added-slab-ground",
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-wall-ground",
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-property-column-ground",
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.0Iqxc9CtTOgPV$1Tej3xGK.properties_changed.values_changed.root['Pset_ColumnCommon']['IsExternal']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q24-level01-filter",
+      "status": "answered",
+      "answer": "4 verified revision events match. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01. IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted from Level 01. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+      "results": [
+        {
+          "change_id": "gate4-added-column-level01",
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-beam-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Beam L1 01",
+            "tag": "BM-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-slab-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-property-wall-level01",
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.1aO4mYJaTLLf6oT4DTcfok.properties_changed.values_changed.root['Pset_WallCommon']['FireRating']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q25-roof-filter",
+      "status": "answered",
+      "answer": "4 verified revision events match. IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true.",
+      "results": [
+        {
+          "change_id": "gate4-added-wall-roof",
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        },
+        {
+          "change_id": "gate4-deleted-column-roof",
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        },
+        {
+          "change_id": "gate4-property-beam-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.3JuqHVfXrLlA8tnQP5xv53.properties_changed.values_changed.root['Pset_BeamCommon']['LoadBearing']"
+          }
+        },
+        {
+          "change_id": "gate4-property-slab-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.2WfINAQAHRERPwEp7Nos0$.properties_changed.values_changed.root['Pset_SlabCommon']['LoadBearing']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q26-added-beam-filter",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB was added on Ground Floor.",
+      "results": [
+        {
+          "change_id": "gate4-added-beam-ground",
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q27-deleted-column-filter",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcColumn 12Po3y91HK4PYkc6lR0Ean was deleted from Roof.",
+      "results": [
+        {
+          "change_id": "gate4-deleted-column-roof",
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q28-property-wall-filter",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+      "results": [
+        {
+          "change_id": "gate4-property-wall-level01",
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.1aO4mYJaTLLf6oT4DTcfok.properties_changed.values_changed.root['Pset_WallCommon']['FireRating']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q29-beam-roof-filter",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true.",
+      "results": [
+        {
+          "change_id": "gate4-property-beam-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.3JuqHVfXrLlA8tnQP5xv53.properties_changed.values_changed.root['Pset_BeamCommon']['LoadBearing']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q30-slab-ground-filter",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor.",
+      "results": [
+        {
+          "change_id": "gate4-added-slab-ground",
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q31-added-column-level01",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcColumn 2$orIofUHKcQaHhLlr75_n was added on Level 01.",
+      "results": [
+        {
+          "change_id": "gate4-added-column-level01",
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor.",
+      "results": [
+        {
+          "change_id": "gate4-deleted-wall-ground",
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q33-column-property",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK on Ground Floor changed Pset_ColumnCommon.IsExternal from true to false.",
+      "results": [
+        {
+          "change_id": "gate4-property-column-ground",
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.0Iqxc9CtTOgPV$1Tej3xGK.properties_changed.values_changed.root['Pset_ColumnCommon']['IsExternal']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q34-wall-property",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+      "results": [
+        {
+          "change_id": "gate4-property-wall-level01",
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.1aO4mYJaTLLf6oT4DTcfok.properties_changed.values_changed.root['Pset_WallCommon']['FireRating']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q35-beam-property",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true.",
+      "results": [
+        {
+          "change_id": "gate4-property-beam-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.3JuqHVfXrLlA8tnQP5xv53.properties_changed.values_changed.root['Pset_BeamCommon']['LoadBearing']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q36-slab-property",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true.",
+      "results": [
+        {
+          "change_id": "gate4-property-slab-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.2WfINAQAHRERPwEp7Nos0$.properties_changed.values_changed.root['Pset_SlabCommon']['LoadBearing']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q37-loadbearing-properties",
+      "status": "answered",
+      "answer": "2 verified revision events match. IfcBeam 3JuqHVfXrLlA8tnQP5xv53 on Roof changed Pset_BeamCommon.LoadBearing from false to true. IfcSlab 2WfINAQAHRERPwEp7Nos0$ on Roof changed Pset_SlabCommon.LoadBearing from false to true.",
+      "results": [
+        {
+          "change_id": "gate4-property-beam-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.3JuqHVfXrLlA8tnQP5xv53.properties_changed.values_changed.root['Pset_BeamCommon']['LoadBearing']"
+          }
+        },
+        {
+          "change_id": "gate4-property-slab-roof",
+          "change_type": "property_modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.2WfINAQAHRERPwEp7Nos0$.properties_changed.values_changed.root['Pset_SlabCommon']['LoadBearing']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q38-wall-pset-property",
+      "status": "answered",
+      "answer": "1 verified revision event matches. IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\".",
+      "results": [
+        {
+          "change_id": "gate4-property-wall-level01",
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.1aO4mYJaTLLf6oT4DTcfok.properties_changed.values_changed.root['Pset_WallCommon']['FireRating']"
+          }
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "question_id": "gate3-q39-no-geometry",
+      "status": "not_found",
+      "answer": "No verified revision event matches the requested filters.",
+      "results": [],
+      "limitations": [
+        "The frozen comparison excludes geometry from its represented change types."
+      ]
+    },
+    {
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "status": "not_found",
+      "answer": "No verified revision event matches the requested filters.",
+      "results": [],
+      "limitations": [
+        "This absence applies only to the controlled held-out revision set."
+      ]
+    },
+    {
+      "question_id": "gate3-q41-absent-guid",
+      "status": "not_found",
+      "answer": "No verified revision event matches the requested filters.",
+      "results": [],
+      "limitations": [
+        "This absence applies only to the controlled held-out revision set."
+      ]
+    },
+    {
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "status": "not_found",
+      "answer": "No verified revision event matches the requested filters.",
+      "results": [],
+      "limitations": [
+        "This absence applies only to the controlled held-out revision set."
+      ]
+    },
+    {
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "status": "not_found",
+      "answer": "No verified revision event matches the requested filters.",
+      "results": [],
+      "limitations": [
+        "This absence applies only to the controlled held-out revision set."
+      ]
+    },
+    {
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The records verify the following revision fact: IfcWall 0z7L81IEbQPggjg__OrrlU was deleted from Ground Floor. They do not establish structural safety.",
+      "results": [
+        {
+          "change_id": "gate4-deleted-wall-ground",
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        }
+      ],
+      "limitations": [
+        "A structural safety conclusion requires evidence and qualified assessment outside the Change Records."
+      ]
+    },
+    {
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The records verify the following revision fact: IfcWall 1aO4mYJaTLLf6oT4DTcfok on Level 01 changed Pset_WallCommon.FireRating from \"60\" to \"90\". They do not establish regulatory compliance.",
+      "results": [
+        {
+          "change_id": "gate4-property-wall-level01",
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "changed.1aO4mYJaTLLf6oT4DTcfok.properties_changed.values_changed.root['Pset_WallCommon']['FireRating']"
+          }
+        }
+      ],
+      "limitations": [
+        "A regulatory compliance conclusion requires evidence and qualified assessment outside the Change Records."
+      ]
+    },
+    {
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The records verify the following revision fact: IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted from Level 01. They do not establish causal or contractual responsibility.",
+      "results": [
+        {
+          "change_id": "gate4-deleted-beam-level01",
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Beam L1 01",
+            "tag": "BM-L1-01"
+          },
+          "new_value": null,
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "deleted"
+          }
+        }
+      ],
+      "limitations": [
+        "A causal or contractual responsibility conclusion requires evidence and qualified assessment outside the Change Records."
+      ]
+    },
+    {
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The records verify the following revision fact: IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added on Ground Floor. They do not establish coordination priority.",
+      "results": [
+        {
+          "change_id": "gate4-added-slab-ground",
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": [
+        "A coordination priority conclusion requires evidence and qualified assessment outside the Change Records."
+      ]
+    },
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The records verify the following revision fact: IfcWall 2rg8G55UvONxUu2GmkwF$d was added on Roof. They do not establish constructability.",
+      "results": [
+        {
+          "change_id": "gate4-added-wall-roof",
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence": {
+            "reference_source": "controlled_revision_generator",
+            "detector": "IfcDiff 0.8.5",
+            "result_file": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/ifcdiff.json",
+            "selector": "added"
+          }
+        }
+      ],
+      "limitations": [
+        "A constructability conclusion requires evidence and qualified assessment outside the Change Records."
+      ]
+    }
+  ]
+}

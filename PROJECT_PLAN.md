@@ -1,9 +1,9 @@
 # BIMChange-Agent: Public Project Plan / 公开项目计划
 
-> **Status:** Gate 3 development prototype complete; Gate 4 deterministic held-out IFC fixture verified offline.
+> **Status:** Gate 3 development prototype complete; Gate 4 held-out fixture and question-side artifacts verified offline.
 > **Last updated:** 2026-08-08
 >
-> Gate 3 开发原型已完成；Gate 4 确定性留出 IFC 样例已通过离线验证。
+> Gate 3 开发原型已完成；Gate 4 留出样例与问题侧产物已通过离线验证。
 > 2026-08-08
 
 ## Research Goal / 研究目标
@@ -62,8 +62,8 @@ Primary measures include completion, answer-status accuracy, exact structured ma
   受控三变更版本已完成规范化，并与 IFC 文件及 IfcDiff 输出核验。
 - **Gate 3 — Agent prototype: complete for development scope.** Three workflows run on eight development questions with common schemas and scoring.
   三种流程已在八道开发问题上运行，并使用统一 Schema 与评分机制。
-- **Gate 4 — Evaluation and release: in progress.** Contracts are guarded and the independent three-storey IFC fixture is verified; held-out questions, pre-call freeze artifacts, repeated runs, and failure analysis remain.
-  契约已受守卫保护，独立三楼层 IFC 样例已通过验证；留出问题、调用前冻结产物、重复运行与失败分析仍待完成。
+- **Gate 4 — Evaluation and release: in progress.** Contracts are guarded; the independent three-storey IFC fixture, 40 held-out questions, deterministic references, and non-diff Direct input are verified. The remaining pre-call artifacts, repeated runs, and failure analysis remain.
+  契约已受守卫保护；独立三楼层 IFC 样例、40 道留出问题、确定性参考答案与无差异 Direct 输入均已通过验证。其余调用前产物、重复运行与失败分析仍待完成。
 
 ## Current Evidence and Limits / 当前证据与局限
 
@@ -75,9 +75,9 @@ The development questions and workflow contracts were iteratively refined togeth
 
 开发问题与工作流契约经历了同步迭代，因此现有结果不是独立留出证据；每个问题与条件仅保留一次最终答案，也不能证明通用性能。
 
-The Gate 3 development data contain three Change Records from one small, single-storey IFC sample. Gate 4 now adds a separately generated three-storey IFC4 fixture with 40 unchanged elements and 12 controlled changes, but no held-out model outcome has been viewed. Geometry changes, relationship changes, additional IFC schemas, independent claim validation, and cross-model replication remain future work.
+The Gate 3 development data contain three Change Records from one small, single-storey IFC sample. Gate 4 now adds a separately generated three-storey IFC4 fixture with 40 unchanged elements and 12 controlled changes, plus a verified 40-question held-out set. No held-out model outcome has been viewed. Geometry changes, relationship changes, additional IFC schemas, independent claim validation, and cross-model replication remain future work.
 
-Gate 3 开发数据来自一个小型单层 IFC 样本，仅包含三条 Change Record；Gate 4 现已增加一个独立生成的三楼层 IFC4 样例，其中 40 个构件保持不变并包含 12 条受控变更，但尚未查看任何留出模型输出。几何变更、关系变更、其他 IFC Schema、独立声明验证及跨模型复验仍属于后续工作。
+Gate 3 开发数据来自一个小型单层 IFC 样本，仅包含三条 Change Record；Gate 4 现已增加一个独立生成的三楼层 IFC4 样例，其中 40 个构件保持不变并包含 12 条受控变更，同时增加一组通过验证的 40 道留出问题。当前尚未查看任何留出模型输出。几何变更、关系变更、其他 IFC Schema、独立声明验证及跨模型复验仍属于后续工作。
 
 ## Data and Scope Boundaries / 数据与范围边界
 
@@ -91,6 +91,6 @@ The prototype does not train a foundation model, replace BIM authoring software,
 
 ## Next Milestone / 下一里程碑
 
-Construct and verify the 40-question held-out set against the now-frozen IFC fixture, then complete the pre-call manifest and audits before any model request. Repeated comparisons must run without tuning on held-out outcomes, and uncertainty and failure analysis must be published alongside aggregate metrics.
+Freeze the deterministic run schedule, blinded audit sample, budget amendment, orchestration wrapper, and complete pre-call manifest before any model request. Repeated comparisons must run without tuning on held-out outcomes, and uncertainty and failure analysis must be published alongside aggregate metrics.
 
-下一步基于现已冻结的 IFC 样例构建并验证 40 道留出问题；在任何模型请求前，必须完成调用前清单与审核。重复对比不得根据留出结果调参，并须将不确定性与失败分析和汇总指标一同发布。
+下一步冻结确定性执行计划、盲化审核样本、预算变更、编排外壳与完整调用前清单；在此之前不得发起模型请求。重复对比不得根据留出结果调参，并须将不确定性与失败分析和汇总指标一同发布。
