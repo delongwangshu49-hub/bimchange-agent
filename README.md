@@ -4,9 +4,9 @@ Evidence-grounded IFC/BIM revision analysis with deterministic tools and AI agen
 
 基于确定性工具与 AI 智能体、可追溯到 IFC 证据的 BIM 版本变更分析。
 
-> **Status:** Gates 1–3 are complete for the controlled development scope. Gate 4—independent evaluation and release preparation—is next.
+> **Status:** Gates 1–3 are complete for the controlled development scope. The Gate 4 design is frozen, and offline held-out implementation is in progress.
 >
-> 受控开发范围内的 Gate 1–3 已完成；下一阶段为 Gate 4，即独立评测与发布准备。
+> 受控开发范围内的 Gate 1–3 已完成；Gate 4 设计已冻结，独立留出评测正在离线实现。
 
 ## Overview / 项目概述
 
@@ -26,8 +26,8 @@ The repository currently contains a reproducible Windows pipeline for loading IF
   一个新增梁、一个删除墙和一个属性修改已规范化为三条可审计的 Change Record。
 - **Gate 3 — Agent prototype:** Direct LLM, Tool-Using Agent, and Proposed workflows run against the same eight-question development set with common schemas and scoring.
   Direct LLM、Tool-Using Agent 与 Proposed 三种流程已在同一组八题开发集上运行，并采用统一 Schema 与评分方式。
-- **Gate 4 — Next:** freeze the current contracts, create an independent held-out revision set, repeat the comparison, analyze failures, and prepare release materials.
-  冻结当前契约，建立独立留出版本与问题集，重复对比实验，分析失败案例并准备发布材料。
+- **Gate 4 — In progress:** the held-out design is frozen; a byte-level Gate 3 guard and independent held-out paths now precede data generation and repeated evaluation.
+  留出设计已冻结；在数据生成与重复评测前，先执行 Gate 3 字节级守卫并使用独立留出路径。
 
 ## Gate 3 Development Snapshot / Gate 3 开发集概览
 
@@ -67,6 +67,8 @@ python -m venv .venv
 .\.venv\Scripts\python.exe scripts\test_change_query.py
 .\.venv\Scripts\python.exe scripts\test_gate3_candidate_contract.py
 .\.venv\Scripts\python.exe scripts\test_gate3_workflows.py
+.\.venv\Scripts\python.exe scripts\verify_gate4_foundation.py
+.\.venv\Scripts\python.exe scripts\test_gate4_foundation.py
 ```
 
 The Gate 3 runner defaults to a dry run and sends no API request. Live runs require a locally stored `DEEPSEEK_API_KEY`; copy `.env.example` to the ignored `.env.local`, or use the hidden-input helper.
@@ -89,6 +91,8 @@ Never commit API keys, `.env.local`, diagnostic runs, or smoke-test outputs.
   确定性查询、证据验证与 Gate 3 运行逻辑。
 - `schemas/` — versioned JSON Schemas for Change Records, requests, answers, and claim validation.
   Change Record、请求、答案及声明验证所用的版本化 JSON Schema。
+- `configs/` — reviewed Gate 4 frozen-file hashes and independent held-out path registry.
+  Gate 4 已审核冻结文件哈希与独立留出路径注册表。
 - `scripts/` — reproducible generation, comparison, scoring, testing, and workflow commands.
   可复现的生成、比较、评分、测试与工作流命令。
 - `evals/` — fixed development questions, references, inputs, and retained result artifacts.

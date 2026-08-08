@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.1.0",
+  "gate3_baseline_commit": "abcb095858ea45a1727d68d91063376ef77381ad",
+  "gate4_public_start_commit": "2e7d38c53f9c3498875f34f6742164448983660d",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "split": "held_out",
+  "protected_gate3_files": [
+    {
+      "path": "data/generated/Building-Structural-gate2-v2.ifc",
+      "git_blob_oid": "10202cee7ec8a5f41e86da2229c3e6c4265692bd",
+      "sha256": "89e74560a5705a00a92cad9afa79dbf0a6ecfc741511583c1375b55f763f648f"
+    },
+    {
+      "path": "data/ground_truth/gate2-change-records.json",
+      "git_blob_oid": "6ed8a7594d2458bc0d9dd651a5799f017052c08d",
+      "sha256": "dbea0a087ab56f9d9d8a1c71f24c6ab5779a4658276ae6d5be173ec71b1f452d"
+    },
+    {
+      "path": "data/raw/Building-Structural.ifc",
+      "git_blob_oid": "00091dda3604c672bb0182de29886fa1dbd17ea5",
+      "sha256": "68be722391e7aaa53bb9278645a02aa4b6382f13cc07548a1612e9b1dc3def67"
+    },
+    {
+      "path": "docs/gate3-agent-protocol.md",
+      "git_blob_oid": "dddf761e1f940661b197d9b0f4443bbcd6986074",
+      "sha256": "6fec1908f111788e68be5e4d1cc6c09522ada88876e4e713ed8dc1259ad02334"
+    },
+    {
+      "path": "docs/gate3-development-results.md",
+      "git_blob_oid": "9fdc27fae6a74e71d789604da781dd4354048a01",
+      "sha256": "0ed60b09c16f608c696beb009ffe61bab4faeec3fe9fe46cc5b715c104e98206"
+    },
+    {
+      "path": "docs/gate3-evaluation-contract.md",
+      "git_blob_oid": "4f021f5361f85234d9e999d3cf09ce8118199ce2",
+      "sha256": "306d556575890b3318d5818ea31af3202b2133c3f82ffa386e866b80387209b2"
+    },
+    {
+      "path": "docs/gate3-tool-interface.md",
+      "git_blob_oid": "2c2e4d13fef3f5d3b05f141a52c9c15a922374fa",
+      "sha256": "f28da8b401663e029eb08d855ff26df074ed62398e6c998fa9542b02d3ed33db"
+    },
+    {
+      "path": "evals/inputs/development/gate3-model-pair-summary.json",
+      "git_blob_oid": "fb17df09a440d31b0755ada8fb6e8a10120c7a8e",
+      "sha256": "15485300f2fe99f169ea8a2bce0b70273553eb4589992168c562dcd39a59a48c"
+    },
+    {
+      "path": "evals/questions/gate3-questions.json",
+      "git_blob_oid": "2c9a159f5b1613e74de82a6fd94249aa1fc2ac5f",
+      "sha256": "5071d2dcbbe7538ad732024710e1c5c46e64d3accb6448de27eaf0718800fce8"
+    },
+    {
+      "path": "evals/reference_answers/gate3-canonical-predictions.json",
+      "git_blob_oid": "18e1595f96975f7c5177274ee3b01603339b3549",
+      "sha256": "2696435b23cec53eefee4a7774333c84f5baf07f645308175ee32aae6c83a757"
+    },
+    {
+      "path": "evals/reference_answers/gate3-reference-answers.json",
+      "git_blob_oid": "229780af3fe4af3c3642d22460a0a58d63909c9f",
+      "sha256": "fcf22113992b2e364c489e55b766f09a2fb9317d51fff90ec3eced0b9dcf9fa3"
+    },
+    {
+      "path": "evals/results/development/direct_llm.json",
+      "git_blob_oid": "d3c1cf374ef3f230cb82efb28321f6590e480807",
+      "sha256": "1900a59148e3be20c360aca41a7c3d1998c0fa54570e90321f73bda5ee3cd5fb"
+    },
+    {
+      "path": "evals/results/development/direct_llm.run.json",
+      "git_blob_oid": "35d9795ff504b01a018e0811219118ea48fd3795",
+      "sha256": "76d3c600ac05dd190abe95da123ba1f3c1e303839511d343dd989fc3388886bb"
+    },
+    {
+      "path": "evals/results/development/proposed.json",
+      "git_blob_oid": "aad0a481f2e5f82f1e405703fac7955b2856c0e3",
+      "sha256": "879126d99f6d62518d577abe506a7a28ba7abeb43b8bb93d8576213a26245a97"
+    },
+    {
+      "path": "evals/results/development/proposed.run.json",
+      "git_blob_oid": "f25676ce66e943cc96935acafd0a149b43126e5d",
+      "sha256": "6fc496313d8cebe67ff872d333690dde2deb0e2e51a6ec222c8d65e8ecb59f07"
+    },
+    {
+      "path": "evals/results/development/summary.json",
+      "git_blob_oid": "eed6f93429524daab63762f9f2d22cdc8ea8b8be",
+      "sha256": "6add662a34bf92d3312e05314260c306239418a473b68cd2edd55c345b578473"
+    },
+    {
+      "path": "evals/results/development/tool_using_agent.json",
+      "git_blob_oid": "526bb7c12831fb4603cecfd92be1b85bcd276d95",
+      "sha256": "a0f4a95cb4184fdde065455c24ee551992844a9d882106dc1a4cbcd3c00944a4"
+    },
+    {
+      "path": "evals/results/development/tool_using_agent.run.json",
+      "git_blob_oid": "2ee84edded9c9a1182a6086b895414310e89cc81",
+      "sha256": "e34e2f2e0daf1019f8d94573d6656d4d57bec3533bbba4bec0d4c12caf69fc62"
+    },
+    {
+      "path": "schemas/agent-answer.schema.json",
+      "git_blob_oid": "1382811059b051b8029f6a33481f2bab654bb2e5",
+      "sha256": "2d2a62965249199042c69ef48688e3b3317b904129454bcbf6a220258440a400"
+    },
+    {
+      "path": "schemas/candidate-answer.schema.json",
+      "git_blob_oid": "24a8dd822ef96b95b9265592686cff2efa84d958",
+      "sha256": "b2faa96139b36802614c239123bb8e0105d7f0f73bd8d6aaad2cd5f4aa107f59"
+    },
+    {
+      "path": "schemas/change-query-request.schema.json",
+      "git_blob_oid": "b7f9447bdb017a7add07ddf18f9f6a61b1bd0602",
+      "sha256": "d38ddacedaf662bc3a6e0971d40e1c37d8e5502bb0adecd3c8e905b8c513451d"
+    },
+    {
+      "path": "schemas/change-query-response.schema.json",
+      "git_blob_oid": "fa227eeeaabd4469516bb1249a9846440015e10a",
+      "sha256": "403058a57a4abd0da526dbfd8a4306ddcc1b3347c5c6255d5e9fe23f5a164147"
+    },
+    {
+      "path": "schemas/change-record.schema.json",
+      "git_blob_oid": "3ac4ba4ba7812fe3409858f1789817c9e4b46930",
+      "sha256": "ee1b2167f10547d139b59b975be91a5a71baaf0161b7532e3fa99cf0d344565c"
+    },
+    {
+      "path": "schemas/claim-validation.schema.json",
+      "git_blob_oid": "6846df4c660fb29156b939c31baab6d8fcd6d080",
+      "sha256": "e07eb113ef712c7be83630aed87aeb21a2a0801553a5ccd561d0bab11a479e72"
+    },
+    {
+      "path": "schemas/evaluation-question.schema.json",
+      "git_blob_oid": "addf7ebabfc1622c5940d15aacc28c9559db97f4",
+      "sha256": "2791b184746ec938c43cf9071815bf89cfe0d6457d2c0868ba7fdfde4fdeb94b"
+    },
+    {
+      "path": "schemas/model-pair-summary.schema.json",
+      "git_blob_oid": "50381c8b492a6a7489dd0845d275ebd5f5fc775a",
+      "sha256": "86906c5d6978df31d969c04c4628a671f15f73fc275c6601a2feae7507a6b3db"
+    },
+    {
+      "path": "scripts/generate_gate3_direct_input.py",
+      "git_blob_oid": "d917b3c815448aeaa4cfcf8d14197d2731d36ca0",
+      "sha256": "82b1f4d26d772dd4e65284d5fe3e5aa36cbf4f81fb5de7f2067c93f980decaf8"
+    },
+    {
+      "path": "scripts/generate_gate3_reference_answers.py",
+      "git_blob_oid": "05d09394f2cee5f63d4fddd1327d6b30f2882b14",
+      "sha256": "d7bca72c52b82fb7fc71df5588b44f735d7d51c54ae3b55d98f8e3964ca6d7b3"
+    },
+    {
+      "path": "scripts/run_change_query.py",
+      "git_blob_oid": "0ddc9562a45681914314d496da498ac56e412237",
+      "sha256": "4cc9a5b0c7de37d7b7950e8747df0e1de3ff2407ab3710afa93144e9b97de144"
+    },
+    {
+      "path": "scripts/run_gate3_workflows.py",
+      "git_blob_oid": "a35b2e6b8cb161589a598eb51b5df1dc7a2609d4",
+      "sha256": "73ec0cfbcb46fe4715c99a8ccce38cf2e4f648f05628812b6949db6f094a7170"
+    },
+    {
+      "path": "scripts/score_gate3_answers.py",
+      "git_blob_oid": "eb46891dff8e224a60063bf0f3ab6e5cd3145ade",
+      "sha256": "537f0d1bcfe985d334bdc30da832d4c4bdc0063862a28e6907cef63f46078667"
+    },
+    {
+      "path": "scripts/score_gate3_predictions.py",
+      "git_blob_oid": "888ad99a8979dff007180e3a9b705c506d789914",
+      "sha256": "00d8ade6bf3e6ab3d9ae4069d18ed86bda8c9e8e2926bd7d17c4b885162de627"
+    },
+    {
+      "path": "scripts/summarize_gate3_results.py",
+      "git_blob_oid": "19142d47a82d8c1a034242b6b612d4d6bd9b9555",
+      "sha256": "2c812bdffa7c27fa039d9c1b4fae75a4e2aa58e2e60d5c97e0292bb1dc0755bf"
+    },
+    {
+      "path": "scripts/validate_candidate_answers.py",
+      "git_blob_oid": "db086cfaf8b3ceac6c21e607feb6563eeeab57ac",
+      "sha256": "b719e1f1b785dbbcb92f43759951904ff729fcb8b911a1234c33a4a9adcc9169"
+    },
+    {
+      "path": "src/bimchange_agent/change_query.py",
+      "git_blob_oid": "2509cf8c0da3ada3c900f213adb20697aa16cb35",
+      "sha256": "a58df65ad20738e4d1505aa87b9bc6d6438ba989e938ca3f1632b7e3b63d88f1"
+    },
+    {
+      "path": "src/bimchange_agent/evidence_validation.py",
+      "git_blob_oid": "89cf435686197b3fd1b63cb4b0bb481eb2c9c308",
+      "sha256": "67cc6cfac69000b3ea0dda88dd43b0460830f0a450ffc4bd310ac9a6ad61e26a"
+    },
+    {
+      "path": "src/bimchange_agent/gate3_runner.py",
+      "git_blob_oid": "155fb9aaf2d9afa6f70f2a7a19e834077590f1ba",
+      "sha256": "7d83190485b3ee003cc32d04c0690bd31c6879628944eecda311ea3b3744db53"
+    }
+  ],
+  "gate4_paths": {
+    "source_ifc": "data/generated/held_out/gate4-controlled-heldout-v0.1.0/source.ifc",
+    "revised_ifc": "data/generated/held_out/gate4-controlled-heldout-v0.1.0/revised.ifc",
+    "operation_ledger": "data/ground_truth/held_out/gate4-controlled-heldout-v0.1.0/operation-ledger.json",
+    "change_records": "data/ground_truth/held_out/gate4-controlled-heldout-v0.1.0/change-records.json",
+    "questions": "evals/questions/held_out/gate4-questions.json",
+    "reference_answers": "evals/reference_answers/held_out/gate4-reference-answers.json",
+    "direct_input": "evals/inputs/held_out/gate4-model-pair-summary.json",
+    "run_schedule": "evals/schedules/held_out/gate4-run-schedule.json",
+    "pre_run_audit": "evals/audits/held_out/gate4-pre-run-audit.json",
+    "post_run_audit": "evals/audits/held_out/gate4-post-run-audit.json",
+    "freeze_manifest": "evals/manifests/held_out/gate4-freeze-manifest.json",
+    "results_directory": "evals/results/held_out/gate4-controlled-heldout-v0.1.0"
+  }
+}
