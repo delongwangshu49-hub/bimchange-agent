@@ -21,6 +21,7 @@ from typing import Any
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 FOUNDATION_PATH = REPOSITORY_ROOT / "configs" / "gate4-foundation.json"
+REVIEW_STATE_PATH = REPOSITORY_ROOT / "configs" / "gate4-precall-review-state.json"
 DESIGN_SPEC_PATH = REPOSITORY_ROOT / "docs" / "gate4-held-out-design-spec.md"
 SCHEDULE_PATH = (
     REPOSITORY_ROOT / "evals" / "schedules" / "held_out" / "gate4-run-schedule.json"
@@ -50,6 +51,25 @@ NON_BOUNDARY_CATEGORIES = (
     "filtered_lookup",
     "property_change",
     "negative_control",
+)
+PRE_CALL_IMPLEMENTATION_COMMIT = "a4e80225f4ea9a9fca6103ef55d244c2db0676d5"
+PRE_CALL_MANIFEST_COMMIT = "21d0886fe2cafa80ce76d5f2d66cebc3109eba04"
+PRE_CALL_BASE_COMMIT = "9022ce7c912273bf2442ac42df490f49477ba751"
+PRE_CALL_MERGE_COMMIT = "4b38318bb58db39915717294bc3cc9feb5eeedd4"
+PRE_CALL_PR_URL = "https://github.com/delongwangshu49-hub/bimchange-agent/pull/8"
+PRE_CALL_FREEZE_COMMENT_URL = (
+    "https://github.com/delongwangshu49-hub/bimchange-agent/issues/3"
+    "#issuecomment-5230113070"
+)
+PRE_CALL_MERGE_COMMENT_URL = (
+    "https://github.com/delongwangshu49-hub/bimchange-agent/issues/3"
+    "#issuecomment-5230160445"
+)
+PRE_TRANSITION_AUDIT_SHA256 = (
+    "636228a5950a1edfd4f6924dc0e869456bb30d1db6eba417e1a408a721cb98e2"
+)
+PRE_TRANSITION_MANIFEST_SHA256 = (
+    "643dabb2f674ac7a92bfc658be0acdf2b15c357940831c930c996b539be55cb9"
 )
 
 
@@ -111,6 +131,100 @@ def foundation_paths() -> dict[str, Path]:
         for name, relative in config["gate4_paths"].items()
         if name != "results_directory"
     }
+
+
+def load_review_state(path: Path = REVIEW_STATE_PATH) -> dict[str, Any]:
+    """Load and validate the deterministic post-review pre-call transition."""
+    state = load_json(path)
+    expected_top_level = {
+        "schema_version",
+        "dataset_id",
+        "transition_status",
+        "completed_on",
+        "human_review",
+        "public_record",
+        "pre_transition_artifacts",
+        "approval_gates",
+        "live_calls_authorized",
+        "model_calls_made",
+    }
+    if set(state) != expected_top_level:
+        raise ValueError("Unexpected Gate 4 review-state fields")
+    expected_scalars = {
+        "schema_version": "0.1.0",
+        "dataset_id": DATASET_ID,
+        "transition_status": "HUMAN_REVIEW_AND_PUBLIC_RECORD_COMPLETE",
+        "completed_on": "2026-08-09",
+        "live_calls_authorized": False,
+        "model_calls_made": 0,
+    }
+    for name, expected in expected_scalars.items():
+        if state.get(name) != expected:
+            raise ValueError(f"Unexpected Gate 4 review-state value: {name}")
+
+    if state["human_review"] != {
+        "reviewer_count": 1,
+        "status": "COMPLETE",
+        "decision": "ALL_PRE_RUN_CHECKS_PASSED",
+        "inter_rater_agreement_claimed": False,
+    }:
+        raise ValueError("Human review record differs from the approved decision")
+    expected_public_record = {
+        "pull_request": {
+            "number": 8,
+            "url": PRE_CALL_PR_URL,
+            "base_commit": PRE_CALL_BASE_COMMIT,
+            "implementation_commit": PRE_CALL_IMPLEMENTATION_COMMIT,
+            "head_commit": PRE_CALL_MANIFEST_COMMIT,
+            "merge_commit": PRE_CALL_MERGE_COMMIT,
+        },
+        "issue": {
+            "number": 3,
+            "freeze_comment_url": PRE_CALL_FREEZE_COMMENT_URL,
+            "merge_validation_comment_url": PRE_CALL_MERGE_COMMENT_URL,
+        },
+    }
+    if state["public_record"] != expected_public_record:
+        raise ValueError("Public review record differs from the frozen GitHub record")
+    if state["pre_transition_artifacts"] != {
+        "pre_run_audit_sha256": PRE_TRANSITION_AUDIT_SHA256,
+        "freeze_manifest_sha256": PRE_TRANSITION_MANIFEST_SHA256,
+    }:
+        raise ValueError("Pre-transition artifact lineage changed")
+    if state["approval_gates"] != {
+        "single_human_pre_run_review": "COMPLETE",
+        "github_issue_3_freeze_record": "COMPLETE",
+        "pull_request_review_and_merge": "COMPLETE",
+        "separate_live_call_authorization": "PENDING",
+    }:
+        raise ValueError("Gate 4 approval state is not at the API boundary")
+
+    resolved_merge = subprocess.run(
+        ["git", "rev-parse", f"{PRE_CALL_MERGE_COMMIT}^{{commit}}"],
+        cwd=REPOSITORY_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    parents = subprocess.run(
+        ["git", "show", "-s", "--format=%P", PRE_CALL_MERGE_COMMIT],
+        cwd=REPOSITORY_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip().split()
+    if resolved_merge != PRE_CALL_MERGE_COMMIT or parents != [
+        PRE_CALL_BASE_COMMIT,
+        PRE_CALL_MANIFEST_COMMIT,
+    ]:
+        raise ValueError("PR #8 merge ancestry does not match the public record")
+    subprocess.run(
+        ["git", "merge-base", "--is-ancestor", PRE_CALL_MERGE_COMMIT, "HEAD"],
+        cwd=REPOSITORY_ROOT,
+        check=True,
+        capture_output=True,
+    )
+    return state
 
 
 def budget_policy() -> dict[str, Any]:
@@ -452,8 +566,11 @@ def build_pre_run_audit(
     change_artifact: dict[str, Any],
     schedule: dict[str, Any],
     automated_reports: dict[str, Any],
+    review_state: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build the machine-complete audit plus a truthful human-review gate."""
+    review_complete = review_state is not None
+    human_check = "COMPLETE" if review_complete else "PENDING_USER_REVIEW"
     reference_status = {
         answer["question_id"]: answer["status"]
         for answer in load_json(foundation_paths()["reference_answers"])["answers"]
@@ -466,7 +583,7 @@ def build_pre_run_audit(
             "entity_type": record["entity_type"],
             "building_storey": record["location"]["building_storey"]["name"],
             "automated_evidence_check": "PASS",
-            "human_check": "PENDING_USER_REVIEW",
+            "human_check": human_check,
         }
         for record in change_artifact["changes"]
     ]
@@ -476,7 +593,7 @@ def build_pre_run_audit(
             "category": question["category"],
             "expected_status": reference_status[question["question_id"]],
             "automated_alignment_check": "PASS",
-            "human_check": "PENDING_USER_REVIEW",
+            "human_check": human_check,
         }
         for question in question_artifact["questions"]
     ]
@@ -484,7 +601,11 @@ def build_pre_run_audit(
         "schema_version": "0.1.0",
         "dataset_id": DATASET_ID,
         "audit_stage": "pre_run",
-        "status": "READY_FOR_SINGLE_HUMAN_REVIEW",
+        "status": (
+            "HUMAN_REVIEW_COMPLETE"
+            if review_complete
+            else "READY_FOR_SINGLE_HUMAN_REVIEW"
+        ),
         "automated_review": {
             "status": "PASS",
             "reports": automated_reports,
@@ -494,22 +615,37 @@ def build_pre_run_audit(
         },
         "human_review": {
             "reviewer_count": 1,
-            "status": "PENDING_USER_REVIEW",
+            "status": "COMPLETE" if review_complete else "PENDING_USER_REVIEW",
             "inter_rater_agreement_claimed": False,
             "checklist": {
-                "ifc_evidence": "PENDING",
-                "location_support": "PENDING",
-                "old_new_values": "PENDING",
-                "question_selection_alignment": "PENDING",
-                "answerability": "PENDING",
-                "wording_independence": "PENDING",
-                "safety_boundaries": "PENDING",
-                "licensing": "PENDING",
-                "personal_or_sensitive_information_absent": "PENDING",
+                "ifc_evidence": "COMPLETE" if review_complete else "PENDING",
+                "location_support": "COMPLETE" if review_complete else "PENDING",
+                "old_new_values": "COMPLETE" if review_complete else "PENDING",
+                "question_selection_alignment": "COMPLETE" if review_complete else "PENDING",
+                "answerability": "COMPLETE" if review_complete else "PENDING",
+                "wording_independence": "COMPLETE" if review_complete else "PENDING",
+                "safety_boundaries": "COMPLETE" if review_complete else "PENDING",
+                "licensing": "COMPLETE" if review_complete else "PENDING",
+                "personal_or_sensitive_information_absent": (
+                    "COMPLETE" if review_complete else "PENDING"
+                ),
             },
             "records": record_rows,
             "questions": question_rows,
         },
+        "review_transition": (
+            {
+                "source": REVIEW_STATE_PATH.relative_to(REPOSITORY_ROOT).as_posix(),
+                "status": review_state["transition_status"],
+                "completed_on": review_state["completed_on"],
+                "decision": review_state["human_review"]["decision"],
+                "public_record": review_state["public_record"],
+                "separate_live_call_authorization": "PENDING",
+                "live_calls_authorized": False,
+            }
+            if review_complete
+            else None
+        ),
         "post_run_manual_audit": schedule["audit_selection"],
         "failure_categories": [
             "question_understanding",
@@ -534,6 +670,7 @@ def build_pre_run_audit(
 def build_freeze_manifest(
     implementation_commit: str,
     verification: dict[str, Any],
+    review_state: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build a complete pre-call manifest tied to the implementation commit."""
     foundation = load_json(FOUNDATION_PATH)
@@ -550,16 +687,40 @@ def build_freeze_manifest(
         "run_schedule": SCHEDULE_PATH,
         "pre_run_audit": PRE_RUN_AUDIT_PATH,
     }
+    if review_state is not None:
+        artifacts["review_state"] = REVIEW_STATE_PATH
+    review_complete = review_state is not None
     return {
         "schema_version": "0.1.0",
         "dataset_id": DATASET_ID,
         "freeze_stage": "pre_call",
-        "freeze_status": "AWAITING_USER_REVIEW_AND_PUBLIC_RECORD",
+        "freeze_status": (
+            "FROZEN_AFTER_USER_REVIEW_AND_PUBLIC_RECORD"
+            if review_complete
+            else "AWAITING_USER_REVIEW_AND_PUBLIC_RECORD"
+        ),
         "gate3_baseline_commit": foundation["gate3_baseline_commit"],
         "gate4_public_input_baseline_commit": (
             "9022ce7c912273bf2442ac42df490f49477ba751"
         ),
-        "gate4_implementation_commit": implementation_commit,
+        "gate4_implementation_commit": (
+            review_state["public_record"]["pull_request"]["implementation_commit"]
+            if review_complete
+            else implementation_commit
+        ),
+        "gate4_pre_call_manifest_commit": (
+            review_state["public_record"]["pull_request"]["head_commit"]
+            if review_complete
+            else None
+        ),
+        "gate4_public_freeze_merge_commit": (
+            review_state["public_record"]["pull_request"]["merge_commit"]
+            if review_complete
+            else None
+        ),
+        "gate4_review_transition_commit": (
+            implementation_commit if review_complete else None
+        ),
         "design_spec_review_status": "frozen_2026-08-08",
         "artifacts": {
             name: {
@@ -591,12 +752,30 @@ def build_freeze_manifest(
             "budget": budget_policy(),
         },
         "offline_verification": verification,
-        "approval_gates": {
-            "single_human_pre_run_review": "PENDING",
-            "github_issue_3_freeze_record": "PENDING",
-            "pull_request_review_and_merge": "PENDING",
-            "separate_live_call_authorization": "PENDING",
-        },
+        "review_transition": (
+            {
+                "source": REVIEW_STATE_PATH.relative_to(REPOSITORY_ROOT).as_posix(),
+                "sha256": artifact_sha256(REVIEW_STATE_PATH),
+                "status": review_state["transition_status"],
+                "completed_on": review_state["completed_on"],
+                "public_record": review_state["public_record"],
+                "pre_transition_artifacts": review_state[
+                    "pre_transition_artifacts"
+                ],
+            }
+            if review_complete
+            else None
+        ),
+        "approval_gates": (
+            review_state["approval_gates"]
+            if review_complete
+            else {
+                "single_human_pre_run_review": "PENDING",
+                "github_issue_3_freeze_record": "PENDING",
+                "pull_request_review_and_merge": "PENDING",
+                "separate_live_call_authorization": "PENDING",
+            }
+        ),
         "api_keys_present": False,
         "model_outputs_present": False,
         "post_run_audit_present": False,

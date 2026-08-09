@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "transition_status": "HUMAN_REVIEW_AND_PUBLIC_RECORD_COMPLETE",
+  "completed_on": "2026-08-09",
+  "human_review": {
+    "reviewer_count": 1,
+    "status": "COMPLETE",
+    "decision": "ALL_PRE_RUN_CHECKS_PASSED",
+    "inter_rater_agreement_claimed": false
+  },
+  "public_record": {
+    "pull_request": {
+      "number": 8,
+      "url": "https://github.com/delongwangshu49-hub/bimchange-agent/pull/8",
+      "base_commit": "9022ce7c912273bf2442ac42df490f49477ba751",
+      "implementation_commit": "a4e80225f4ea9a9fca6103ef55d244c2db0676d5",
+      "head_commit": "21d0886fe2cafa80ce76d5f2d66cebc3109eba04",
+      "merge_commit": "4b38318bb58db39915717294bc3cc9feb5eeedd4"
+    },
+    "issue": {
+      "number": 3,
+      "freeze_comment_url": "https://github.com/delongwangshu49-hub/bimchange-agent/issues/3#issuecomment-5230113070",
+      "merge_validation_comment_url": "https://github.com/delongwangshu49-hub/bimchange-agent/issues/3#issuecomment-5230160445"
+    }
+  },
+  "pre_transition_artifacts": {
+    "pre_run_audit_sha256": "636228a5950a1edfd4f6924dc0e869456bb30d1db6eba417e1a408a721cb98e2",
+    "freeze_manifest_sha256": "643dabb2f674ac7a92bfc658be0acdf2b15c357940831c930c996b539be55cb9"
+  },
+  "approval_gates": {
+    "single_human_pre_run_review": "COMPLETE",
+    "github_issue_3_freeze_record": "COMPLETE",
+    "pull_request_review_and_merge": "COMPLETE",
+    "separate_live_call_authorization": "PENDING"
+  },
+  "live_calls_authorized": false,
+  "model_calls_made": 0
+}
