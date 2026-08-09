@@ -1,0 +1,559 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "audit_stage": "pre_run",
+  "status": "READY_FOR_SINGLE_HUMAN_REVIEW",
+  "automated_review": {
+    "status": "PASS",
+    "reports": {
+      "foundation_guard": {
+        "status": "PASS",
+        "gate3_baseline_commit": "abcb095858ea45a1727d68d91063376ef77381ad",
+        "gate4_public_start_commit": "2e7d38c53f9c3498875f34f6742164448983660d",
+        "dataset_id": "gate4-controlled-heldout-v0.1.0",
+        "split": "held_out",
+        "protected_gate3_file_count": 37,
+        "gate4_path_count": 12,
+        "held_out_artifacts_read": false,
+        "held_out_artifacts_generated": false,
+        "model_calls_made": 0
+      },
+      "gate3_retained_artifact_replay": {
+        "status": "PASS",
+        "isolated_git_archive": true,
+        "compared_artifact_sha256": {
+          "evals/reference_answers/gate3-reference-answers.json": "fcf22113992b2e364c489e55b766f09a2fb9317d51fff90ec3eced0b9dcf9fa3",
+          "evals/reference_answers/gate3-canonical-predictions.json": "2696435b23cec53eefee4a7774333c84f5baf07f645308175ee32aae6c83a757",
+          "evals/inputs/development/gate3-model-pair-summary.json": "15485300f2fe99f169ea8a2bce0b70273553eb4589992168c562dcd39a59a48c",
+          "evals/results/development/summary.json": "6add662a34bf92d3312e05314260c306239418a473b68cd2edd55c345b578473"
+        },
+        "positive_and_negative_contract_tests_passed": true,
+        "dry_run_passed": true,
+        "model_calls_made": 0
+      },
+      "held_out_question_verifier": {
+        "status": "PASS",
+        "foundation_status": "PASS",
+        "fixture_status": "PASS",
+        "dataset_id": "gate4-controlled-heldout-v0.1.0",
+        "question_count": 40,
+        "category_counts": {
+          "summary": 4,
+          "fact_lookup": 6,
+          "filtered_lookup": 14,
+          "property_change": 6,
+          "negative_control": 5,
+          "evidence_boundary": 5
+        },
+        "status_counts": {
+          "answered": 30,
+          "not_found": 5,
+          "insufficient_evidence": 5
+        },
+        "minimum_non_summary_coverage": 3,
+        "minimum_summary_coverage": 2,
+        "normalized_development_matches": 0,
+        "development_global_ids_found": 0,
+        "version_count": 2,
+        "source_element_count": 48,
+        "revised_element_count": 48,
+        "forbidden_direct_keys_found": 0,
+        "reference_answer_leaks_found": 0,
+        "precomputed_change_ids_found": 0,
+        "question_sha256": "f53874e9892aeeec43f1fa15b3c79aa9d3a2985cb5d68a7a8807147eea5cbf6b",
+        "reference_answer_sha256": "7a36081063c735e69b7290722f71b24b87546c49c6af32ec4ba60d2a6a8e9a8c",
+        "direct_input_sha256": "7c91ee5d53dbed7777b1f3a17fb1fca4b0e2dce30b6f95ca99903ffd794796dc",
+        "clean_regeneration_byte_identical": true,
+        "held_out_artifacts_read": true,
+        "model_calls_made": 0
+      }
+    },
+    "change_record_count": 12,
+    "question_count": 40,
+    "schedule_sha256": "92360439cef1797615bdb964020cfa92ab8e345a22dfe07b45f5883336db9750"
+  },
+  "human_review": {
+    "reviewer_count": 1,
+    "status": "PENDING_USER_REVIEW",
+    "inter_rater_agreement_claimed": false,
+    "checklist": {
+      "ifc_evidence": "PENDING",
+      "location_support": "PENDING",
+      "old_new_values": "PENDING",
+      "question_selection_alignment": "PENDING",
+      "answerability": "PENDING",
+      "wording_independence": "PENDING",
+      "safety_boundaries": "PENDING",
+      "licensing": "PENDING",
+      "personal_or_sensitive_information_absent": "PENDING"
+    },
+    "records": [
+      {
+        "change_id": "gate4-added-beam-ground",
+        "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+        "change_type": "added",
+        "entity_type": "IfcBeam",
+        "building_storey": "Ground Floor",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-property-column-ground",
+        "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+        "change_type": "property_modified",
+        "entity_type": "IfcColumn",
+        "building_storey": "Ground Floor",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-deleted-wall-ground",
+        "global_id": "0z7L81IEbQPggjg__OrrlU",
+        "change_type": "deleted",
+        "entity_type": "IfcWall",
+        "building_storey": "Ground Floor",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-added-slab-ground",
+        "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+        "change_type": "added",
+        "entity_type": "IfcSlab",
+        "building_storey": "Ground Floor",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-deleted-beam-level01",
+        "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+        "change_type": "deleted",
+        "entity_type": "IfcBeam",
+        "building_storey": "Level 01",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-added-column-level01",
+        "global_id": "2$orIofUHKcQaHhLlr75_n",
+        "change_type": "added",
+        "entity_type": "IfcColumn",
+        "building_storey": "Level 01",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-property-wall-level01",
+        "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+        "change_type": "property_modified",
+        "entity_type": "IfcWall",
+        "building_storey": "Level 01",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-deleted-slab-level01",
+        "global_id": "3QgprvELLQBgvTF$EPliSW",
+        "change_type": "deleted",
+        "entity_type": "IfcSlab",
+        "building_storey": "Level 01",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-property-beam-roof",
+        "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+        "change_type": "property_modified",
+        "entity_type": "IfcBeam",
+        "building_storey": "Roof",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-deleted-column-roof",
+        "global_id": "12Po3y91HK4PYkc6lR0Ean",
+        "change_type": "deleted",
+        "entity_type": "IfcColumn",
+        "building_storey": "Roof",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-added-wall-roof",
+        "global_id": "2rg8G55UvONxUu2GmkwF$d",
+        "change_type": "added",
+        "entity_type": "IfcWall",
+        "building_storey": "Roof",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "change_id": "gate4-property-slab-roof",
+        "global_id": "2WfINAQAHRERPwEp7Nos0$",
+        "change_type": "property_modified",
+        "entity_type": "IfcSlab",
+        "building_storey": "Roof",
+        "automated_evidence_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      }
+    ],
+    "questions": [
+      {
+        "question_id": "gate3-q09-all-changes",
+        "category": "summary",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q10-added-summary",
+        "category": "summary",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q11-deleted-summary",
+        "category": "summary",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q12-property-summary",
+        "category": "summary",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q13-beam-ground-guid",
+        "category": "fact_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q14-wall-ground-guid",
+        "category": "fact_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q15-column-level01-guid",
+        "category": "fact_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q16-slab-level01-guid",
+        "category": "fact_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q17-beam-roof-guid",
+        "category": "fact_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q18-wall-roof-guid",
+        "category": "fact_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q19-beam-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q20-column-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q21-wall-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q22-slab-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q23-ground-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q24-level01-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q25-roof-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q26-added-beam-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q27-deleted-column-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q28-property-wall-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q29-beam-roof-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q30-slab-ground-filter",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q31-added-column-level01",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q32-deleted-wall-ground",
+        "category": "filtered_lookup",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q33-column-property",
+        "category": "property_change",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q34-wall-property",
+        "category": "property_change",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q35-beam-property",
+        "category": "property_change",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q36-slab-property",
+        "category": "property_change",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q37-loadbearing-properties",
+        "category": "property_change",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q38-wall-pset-property",
+        "category": "property_change",
+        "expected_status": "answered",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q39-no-geometry",
+        "category": "negative_control",
+        "expected_status": "not_found",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q40-no-added-beam-roof",
+        "category": "negative_control",
+        "expected_status": "not_found",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q41-absent-guid",
+        "category": "negative_control",
+        "expected_status": "not_found",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q42-no-deleted-column-ground",
+        "category": "negative_control",
+        "expected_status": "not_found",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q43-no-property-slab-level01",
+        "category": "negative_control",
+        "expected_status": "not_found",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q44-wall-safety-boundary",
+        "category": "evidence_boundary",
+        "expected_status": "insufficient_evidence",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q45-fire-compliance-boundary",
+        "category": "evidence_boundary",
+        "expected_status": "insufficient_evidence",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q46-beam-responsibility-boundary",
+        "category": "evidence_boundary",
+        "expected_status": "insufficient_evidence",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q47-slab-priority-boundary",
+        "category": "evidence_boundary",
+        "expected_status": "insufficient_evidence",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      },
+      {
+        "question_id": "gate3-q48-wall-constructability-boundary",
+        "category": "evidence_boundary",
+        "expected_status": "insufficient_evidence",
+        "automated_alignment_check": "PASS",
+        "human_check": "PENDING_USER_REVIEW"
+      }
+    ]
+  },
+  "post_run_manual_audit": {
+    "selection_seed": "gate4-audit-selection-20260808-v1",
+    "evidence_boundary_question_ids": [
+      "gate3-q44-wall-safety-boundary",
+      "gate3-q45-fire-compliance-boundary",
+      "gate3-q46-beam-responsibility-boundary",
+      "gate3-q47-slab-priority-boundary",
+      "gate3-q48-wall-constructability-boundary"
+    ],
+    "stratified_additional_question_ids": {
+      "summary": [
+        "gate3-q10-added-summary",
+        "gate3-q12-property-summary"
+      ],
+      "fact_lookup": [
+        "gate3-q14-wall-ground-guid",
+        "gate3-q18-wall-roof-guid"
+      ],
+      "filtered_lookup": [
+        "gate3-q28-property-wall-filter",
+        "gate3-q22-slab-filter"
+      ],
+      "property_change": [
+        "gate3-q38-wall-pset-property",
+        "gate3-q33-column-property"
+      ],
+      "negative_control": [
+        "gate3-q43-no-property-slab-level01",
+        "gate3-q39-no-geometry"
+      ]
+    },
+    "all_selected_question_ids": [
+      "gate3-q44-wall-safety-boundary",
+      "gate3-q45-fire-compliance-boundary",
+      "gate3-q46-beam-responsibility-boundary",
+      "gate3-q47-slab-priority-boundary",
+      "gate3-q48-wall-constructability-boundary",
+      "gate3-q10-added-summary",
+      "gate3-q12-property-summary",
+      "gate3-q14-wall-ground-guid",
+      "gate3-q18-wall-roof-guid",
+      "gate3-q28-property-wall-filter",
+      "gate3-q22-slab-filter",
+      "gate3-q38-wall-pset-property",
+      "gate3-q33-column-property",
+      "gate3-q43-no-property-slab-level01",
+      "gate3-q39-no-geometry"
+    ],
+    "selected_question_count": 15,
+    "executions_per_question": 9,
+    "expected_audited_answer_count": 135,
+    "selection_sha256": "907ead457eb5a0200ce32467e4aa0b05cdd74b1132da6daad9ae0b812e0a7810",
+    "blinding": {
+      "status": "protocol_frozen_before_results",
+      "neutral_code_format": "A001 through A135 after retained outputs exist",
+      "mapping_visibility": "The workflow/repetition mapping is withheld from the reviewer until all audit labels are saved.",
+      "post_run_artifact_generated": false
+    }
+  },
+  "failure_categories": [
+    "question_understanding",
+    "tool_selection",
+    "parameter_generation",
+    "ifc_query_or_diff_tool",
+    "data_normalization",
+    "explanation",
+    "evidence_citation",
+    "validator_false_negative_or_positive",
+    "schema_or_output_format",
+    "safety_overreach",
+    "data_does_not_support_answer",
+    "infrastructure_transient_failure"
+  ],
+  "model_calls_made": 0,
+  "model_outputs_present": false,
+  "post_run_artifacts_generated": false
+}

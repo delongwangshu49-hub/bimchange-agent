@@ -1,0 +1,3516 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "split": "held_out",
+  "schedule_seed": "gate4-question-order-20260808-v1",
+  "repetition_count": 3,
+  "question_count": 40,
+  "workflow_count": 3,
+  "primary_execution_count": 360,
+  "auxiliary_calls_are_primary_executions": false,
+  "blocks": [
+    {
+      "repetition": 1,
+      "workflow_order": [
+        "direct_llm",
+        "tool_using_agent",
+        "proposed"
+      ],
+      "question_order": [
+        "gate3-q35-beam-property",
+        "gate3-q25-roof-filter",
+        "gate3-q15-column-level01-guid",
+        "gate3-q29-beam-roof-filter",
+        "gate3-q14-wall-ground-guid",
+        "gate3-q10-added-summary",
+        "gate3-q42-no-deleted-column-ground",
+        "gate3-q23-ground-filter",
+        "gate3-q16-slab-level01-guid",
+        "gate3-q13-beam-ground-guid",
+        "gate3-q38-wall-pset-property",
+        "gate3-q21-wall-filter",
+        "gate3-q39-no-geometry",
+        "gate3-q20-column-filter",
+        "gate3-q26-added-beam-filter",
+        "gate3-q09-all-changes",
+        "gate3-q45-fire-compliance-boundary",
+        "gate3-q46-beam-responsibility-boundary",
+        "gate3-q17-beam-roof-guid",
+        "gate3-q30-slab-ground-filter",
+        "gate3-q33-column-property",
+        "gate3-q18-wall-roof-guid",
+        "gate3-q31-added-column-level01",
+        "gate3-q22-slab-filter",
+        "gate3-q24-level01-filter",
+        "gate3-q44-wall-safety-boundary",
+        "gate3-q19-beam-filter",
+        "gate3-q28-property-wall-filter",
+        "gate3-q12-property-summary",
+        "gate3-q36-slab-property",
+        "gate3-q32-deleted-wall-ground",
+        "gate3-q40-no-added-beam-roof",
+        "gate3-q11-deleted-summary",
+        "gate3-q41-absent-guid",
+        "gate3-q47-slab-priority-boundary",
+        "gate3-q34-wall-property",
+        "gate3-q27-deleted-column-filter",
+        "gate3-q43-no-property-slab-level01",
+        "gate3-q37-loadbearing-properties",
+        "gate3-q48-wall-constructability-boundary"
+      ],
+      "question_order_sha256": "bb8ead366060422a57ffe4b95abe53328833f674ad2ecde9b334a564c43d1831",
+      "primary_execution_ordinals": [
+        1,
+        120
+      ],
+      "primary_execution_count": 120
+    },
+    {
+      "repetition": 2,
+      "workflow_order": [
+        "tool_using_agent",
+        "proposed",
+        "direct_llm"
+      ],
+      "question_order": [
+        "gate3-q27-deleted-column-filter",
+        "gate3-q25-roof-filter",
+        "gate3-q26-added-beam-filter",
+        "gate3-q24-level01-filter",
+        "gate3-q18-wall-roof-guid",
+        "gate3-q28-property-wall-filter",
+        "gate3-q29-beam-roof-filter",
+        "gate3-q19-beam-filter",
+        "gate3-q44-wall-safety-boundary",
+        "gate3-q43-no-property-slab-level01",
+        "gate3-q40-no-added-beam-roof",
+        "gate3-q09-all-changes",
+        "gate3-q42-no-deleted-column-ground",
+        "gate3-q35-beam-property",
+        "gate3-q32-deleted-wall-ground",
+        "gate3-q13-beam-ground-guid",
+        "gate3-q47-slab-priority-boundary",
+        "gate3-q21-wall-filter",
+        "gate3-q37-loadbearing-properties",
+        "gate3-q16-slab-level01-guid",
+        "gate3-q41-absent-guid",
+        "gate3-q11-deleted-summary",
+        "gate3-q46-beam-responsibility-boundary",
+        "gate3-q10-added-summary",
+        "gate3-q31-added-column-level01",
+        "gate3-q34-wall-property",
+        "gate3-q33-column-property",
+        "gate3-q45-fire-compliance-boundary",
+        "gate3-q30-slab-ground-filter",
+        "gate3-q36-slab-property",
+        "gate3-q23-ground-filter",
+        "gate3-q38-wall-pset-property",
+        "gate3-q39-no-geometry",
+        "gate3-q20-column-filter",
+        "gate3-q22-slab-filter",
+        "gate3-q48-wall-constructability-boundary",
+        "gate3-q15-column-level01-guid",
+        "gate3-q17-beam-roof-guid",
+        "gate3-q14-wall-ground-guid",
+        "gate3-q12-property-summary"
+      ],
+      "question_order_sha256": "8fc9e4d14df5ba35608494c0ef2928b79d76cbe95bd167ff51282ed82a871b19",
+      "primary_execution_ordinals": [
+        121,
+        240
+      ],
+      "primary_execution_count": 120
+    },
+    {
+      "repetition": 3,
+      "workflow_order": [
+        "proposed",
+        "direct_llm",
+        "tool_using_agent"
+      ],
+      "question_order": [
+        "gate3-q33-column-property",
+        "gate3-q14-wall-ground-guid",
+        "gate3-q23-ground-filter",
+        "gate3-q32-deleted-wall-ground",
+        "gate3-q15-column-level01-guid",
+        "gate3-q25-roof-filter",
+        "gate3-q40-no-added-beam-roof",
+        "gate3-q13-beam-ground-guid",
+        "gate3-q30-slab-ground-filter",
+        "gate3-q12-property-summary",
+        "gate3-q18-wall-roof-guid",
+        "gate3-q10-added-summary",
+        "gate3-q26-added-beam-filter",
+        "gate3-q19-beam-filter",
+        "gate3-q41-absent-guid",
+        "gate3-q37-loadbearing-properties",
+        "gate3-q31-added-column-level01",
+        "gate3-q42-no-deleted-column-ground",
+        "gate3-q39-no-geometry",
+        "gate3-q38-wall-pset-property",
+        "gate3-q47-slab-priority-boundary",
+        "gate3-q11-deleted-summary",
+        "gate3-q29-beam-roof-filter",
+        "gate3-q43-no-property-slab-level01",
+        "gate3-q09-all-changes",
+        "gate3-q48-wall-constructability-boundary",
+        "gate3-q27-deleted-column-filter",
+        "gate3-q46-beam-responsibility-boundary",
+        "gate3-q21-wall-filter",
+        "gate3-q44-wall-safety-boundary",
+        "gate3-q35-beam-property",
+        "gate3-q24-level01-filter",
+        "gate3-q36-slab-property",
+        "gate3-q17-beam-roof-guid",
+        "gate3-q20-column-filter",
+        "gate3-q45-fire-compliance-boundary",
+        "gate3-q34-wall-property",
+        "gate3-q22-slab-filter",
+        "gate3-q16-slab-level01-guid",
+        "gate3-q28-property-wall-filter"
+      ],
+      "question_order_sha256": "f10f4aac179bbb3e09f47d41eaafee9e06987ebc488630b9c8890c80972699da",
+      "primary_execution_ordinals": [
+        241,
+        360
+      ],
+      "primary_execution_count": 120
+    }
+  ],
+  "executions": [
+    {
+      "ordinal": 1,
+      "execution_id": "gate4-primary-001",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 1,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 2,
+      "execution_id": "gate4-primary-002",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 2,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 3,
+      "execution_id": "gate4-primary-003",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 3,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 4,
+      "execution_id": "gate4-primary-004",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 4,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 5,
+      "execution_id": "gate4-primary-005",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 5,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 6,
+      "execution_id": "gate4-primary-006",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 6,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 7,
+      "execution_id": "gate4-primary-007",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 7,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 8,
+      "execution_id": "gate4-primary-008",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 8,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 9,
+      "execution_id": "gate4-primary-009",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 9,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 10,
+      "execution_id": "gate4-primary-010",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 10,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 11,
+      "execution_id": "gate4-primary-011",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 11,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 12,
+      "execution_id": "gate4-primary-012",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 12,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 13,
+      "execution_id": "gate4-primary-013",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 13,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 14,
+      "execution_id": "gate4-primary-014",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 14,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 15,
+      "execution_id": "gate4-primary-015",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 15,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 16,
+      "execution_id": "gate4-primary-016",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 16,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 17,
+      "execution_id": "gate4-primary-017",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 17,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 18,
+      "execution_id": "gate4-primary-018",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 18,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 19,
+      "execution_id": "gate4-primary-019",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 19,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 20,
+      "execution_id": "gate4-primary-020",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 20,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 21,
+      "execution_id": "gate4-primary-021",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 21,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 22,
+      "execution_id": "gate4-primary-022",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 22,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 23,
+      "execution_id": "gate4-primary-023",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 23,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 24,
+      "execution_id": "gate4-primary-024",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 24,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 25,
+      "execution_id": "gate4-primary-025",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 25,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 26,
+      "execution_id": "gate4-primary-026",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 26,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 27,
+      "execution_id": "gate4-primary-027",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 27,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 28,
+      "execution_id": "gate4-primary-028",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 28,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 29,
+      "execution_id": "gate4-primary-029",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 29,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 30,
+      "execution_id": "gate4-primary-030",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 30,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 31,
+      "execution_id": "gate4-primary-031",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 31,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 32,
+      "execution_id": "gate4-primary-032",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 32,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 33,
+      "execution_id": "gate4-primary-033",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 33,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 34,
+      "execution_id": "gate4-primary-034",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 34,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 35,
+      "execution_id": "gate4-primary-035",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 35,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 36,
+      "execution_id": "gate4-primary-036",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 36,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 37,
+      "execution_id": "gate4-primary-037",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 37,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 38,
+      "execution_id": "gate4-primary-038",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 38,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 39,
+      "execution_id": "gate4-primary-039",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 39,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 40,
+      "execution_id": "gate4-primary-040",
+      "repetition": 1,
+      "workflow": "direct_llm",
+      "question_position": 40,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 41,
+      "execution_id": "gate4-primary-041",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 1,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 42,
+      "execution_id": "gate4-primary-042",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 2,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 43,
+      "execution_id": "gate4-primary-043",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 3,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 44,
+      "execution_id": "gate4-primary-044",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 4,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 45,
+      "execution_id": "gate4-primary-045",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 5,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 46,
+      "execution_id": "gate4-primary-046",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 6,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 47,
+      "execution_id": "gate4-primary-047",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 7,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 48,
+      "execution_id": "gate4-primary-048",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 8,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 49,
+      "execution_id": "gate4-primary-049",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 9,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 50,
+      "execution_id": "gate4-primary-050",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 10,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 51,
+      "execution_id": "gate4-primary-051",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 11,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 52,
+      "execution_id": "gate4-primary-052",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 12,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 53,
+      "execution_id": "gate4-primary-053",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 13,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 54,
+      "execution_id": "gate4-primary-054",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 14,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 55,
+      "execution_id": "gate4-primary-055",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 15,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 56,
+      "execution_id": "gate4-primary-056",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 16,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 57,
+      "execution_id": "gate4-primary-057",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 17,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 58,
+      "execution_id": "gate4-primary-058",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 18,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 59,
+      "execution_id": "gate4-primary-059",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 19,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 60,
+      "execution_id": "gate4-primary-060",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 20,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 61,
+      "execution_id": "gate4-primary-061",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 21,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 62,
+      "execution_id": "gate4-primary-062",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 22,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 63,
+      "execution_id": "gate4-primary-063",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 23,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 64,
+      "execution_id": "gate4-primary-064",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 24,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 65,
+      "execution_id": "gate4-primary-065",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 25,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 66,
+      "execution_id": "gate4-primary-066",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 26,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 67,
+      "execution_id": "gate4-primary-067",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 27,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 68,
+      "execution_id": "gate4-primary-068",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 28,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 69,
+      "execution_id": "gate4-primary-069",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 29,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 70,
+      "execution_id": "gate4-primary-070",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 30,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 71,
+      "execution_id": "gate4-primary-071",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 31,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 72,
+      "execution_id": "gate4-primary-072",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 32,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 73,
+      "execution_id": "gate4-primary-073",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 33,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 74,
+      "execution_id": "gate4-primary-074",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 34,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 75,
+      "execution_id": "gate4-primary-075",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 35,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 76,
+      "execution_id": "gate4-primary-076",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 36,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 77,
+      "execution_id": "gate4-primary-077",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 37,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 78,
+      "execution_id": "gate4-primary-078",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 38,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 79,
+      "execution_id": "gate4-primary-079",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 39,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 80,
+      "execution_id": "gate4-primary-080",
+      "repetition": 1,
+      "workflow": "tool_using_agent",
+      "question_position": 40,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 81,
+      "execution_id": "gate4-primary-081",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 1,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 82,
+      "execution_id": "gate4-primary-082",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 2,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 83,
+      "execution_id": "gate4-primary-083",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 3,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 84,
+      "execution_id": "gate4-primary-084",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 4,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 85,
+      "execution_id": "gate4-primary-085",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 5,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 86,
+      "execution_id": "gate4-primary-086",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 6,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 87,
+      "execution_id": "gate4-primary-087",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 7,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 88,
+      "execution_id": "gate4-primary-088",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 8,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 89,
+      "execution_id": "gate4-primary-089",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 9,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 90,
+      "execution_id": "gate4-primary-090",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 10,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 91,
+      "execution_id": "gate4-primary-091",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 11,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 92,
+      "execution_id": "gate4-primary-092",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 12,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 93,
+      "execution_id": "gate4-primary-093",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 13,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 94,
+      "execution_id": "gate4-primary-094",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 14,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 95,
+      "execution_id": "gate4-primary-095",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 15,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 96,
+      "execution_id": "gate4-primary-096",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 16,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 97,
+      "execution_id": "gate4-primary-097",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 17,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 98,
+      "execution_id": "gate4-primary-098",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 18,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 99,
+      "execution_id": "gate4-primary-099",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 19,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 100,
+      "execution_id": "gate4-primary-100",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 20,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 101,
+      "execution_id": "gate4-primary-101",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 21,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 102,
+      "execution_id": "gate4-primary-102",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 22,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 103,
+      "execution_id": "gate4-primary-103",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 23,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 104,
+      "execution_id": "gate4-primary-104",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 24,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 105,
+      "execution_id": "gate4-primary-105",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 25,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 106,
+      "execution_id": "gate4-primary-106",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 26,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 107,
+      "execution_id": "gate4-primary-107",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 27,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 108,
+      "execution_id": "gate4-primary-108",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 28,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 109,
+      "execution_id": "gate4-primary-109",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 29,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 110,
+      "execution_id": "gate4-primary-110",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 30,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 111,
+      "execution_id": "gate4-primary-111",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 31,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 112,
+      "execution_id": "gate4-primary-112",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 32,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 113,
+      "execution_id": "gate4-primary-113",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 33,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 114,
+      "execution_id": "gate4-primary-114",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 34,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 115,
+      "execution_id": "gate4-primary-115",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 35,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 116,
+      "execution_id": "gate4-primary-116",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 36,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 117,
+      "execution_id": "gate4-primary-117",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 37,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 118,
+      "execution_id": "gate4-primary-118",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 38,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 119,
+      "execution_id": "gate4-primary-119",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 39,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 120,
+      "execution_id": "gate4-primary-120",
+      "repetition": 1,
+      "workflow": "proposed",
+      "question_position": 40,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 121,
+      "execution_id": "gate4-primary-121",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 1,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 122,
+      "execution_id": "gate4-primary-122",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 2,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 123,
+      "execution_id": "gate4-primary-123",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 3,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 124,
+      "execution_id": "gate4-primary-124",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 4,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 125,
+      "execution_id": "gate4-primary-125",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 5,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 126,
+      "execution_id": "gate4-primary-126",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 6,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 127,
+      "execution_id": "gate4-primary-127",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 7,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 128,
+      "execution_id": "gate4-primary-128",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 8,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 129,
+      "execution_id": "gate4-primary-129",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 9,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 130,
+      "execution_id": "gate4-primary-130",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 10,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 131,
+      "execution_id": "gate4-primary-131",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 11,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 132,
+      "execution_id": "gate4-primary-132",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 12,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 133,
+      "execution_id": "gate4-primary-133",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 13,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 134,
+      "execution_id": "gate4-primary-134",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 14,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 135,
+      "execution_id": "gate4-primary-135",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 15,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 136,
+      "execution_id": "gate4-primary-136",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 16,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 137,
+      "execution_id": "gate4-primary-137",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 17,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 138,
+      "execution_id": "gate4-primary-138",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 18,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 139,
+      "execution_id": "gate4-primary-139",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 19,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 140,
+      "execution_id": "gate4-primary-140",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 20,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 141,
+      "execution_id": "gate4-primary-141",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 21,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 142,
+      "execution_id": "gate4-primary-142",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 22,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 143,
+      "execution_id": "gate4-primary-143",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 23,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 144,
+      "execution_id": "gate4-primary-144",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 24,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 145,
+      "execution_id": "gate4-primary-145",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 25,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 146,
+      "execution_id": "gate4-primary-146",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 26,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 147,
+      "execution_id": "gate4-primary-147",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 27,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 148,
+      "execution_id": "gate4-primary-148",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 28,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 149,
+      "execution_id": "gate4-primary-149",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 29,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 150,
+      "execution_id": "gate4-primary-150",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 30,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 151,
+      "execution_id": "gate4-primary-151",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 31,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 152,
+      "execution_id": "gate4-primary-152",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 32,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 153,
+      "execution_id": "gate4-primary-153",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 33,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 154,
+      "execution_id": "gate4-primary-154",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 34,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 155,
+      "execution_id": "gate4-primary-155",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 35,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 156,
+      "execution_id": "gate4-primary-156",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 36,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 157,
+      "execution_id": "gate4-primary-157",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 37,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 158,
+      "execution_id": "gate4-primary-158",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 38,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 159,
+      "execution_id": "gate4-primary-159",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 39,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 160,
+      "execution_id": "gate4-primary-160",
+      "repetition": 2,
+      "workflow": "tool_using_agent",
+      "question_position": 40,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 161,
+      "execution_id": "gate4-primary-161",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 1,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 162,
+      "execution_id": "gate4-primary-162",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 2,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 163,
+      "execution_id": "gate4-primary-163",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 3,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 164,
+      "execution_id": "gate4-primary-164",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 4,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 165,
+      "execution_id": "gate4-primary-165",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 5,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 166,
+      "execution_id": "gate4-primary-166",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 6,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 167,
+      "execution_id": "gate4-primary-167",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 7,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 168,
+      "execution_id": "gate4-primary-168",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 8,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 169,
+      "execution_id": "gate4-primary-169",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 9,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 170,
+      "execution_id": "gate4-primary-170",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 10,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 171,
+      "execution_id": "gate4-primary-171",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 11,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 172,
+      "execution_id": "gate4-primary-172",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 12,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 173,
+      "execution_id": "gate4-primary-173",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 13,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 174,
+      "execution_id": "gate4-primary-174",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 14,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 175,
+      "execution_id": "gate4-primary-175",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 15,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 176,
+      "execution_id": "gate4-primary-176",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 16,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 177,
+      "execution_id": "gate4-primary-177",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 17,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 178,
+      "execution_id": "gate4-primary-178",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 18,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 179,
+      "execution_id": "gate4-primary-179",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 19,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 180,
+      "execution_id": "gate4-primary-180",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 20,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 181,
+      "execution_id": "gate4-primary-181",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 21,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 182,
+      "execution_id": "gate4-primary-182",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 22,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 183,
+      "execution_id": "gate4-primary-183",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 23,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 184,
+      "execution_id": "gate4-primary-184",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 24,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 185,
+      "execution_id": "gate4-primary-185",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 25,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 186,
+      "execution_id": "gate4-primary-186",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 26,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 187,
+      "execution_id": "gate4-primary-187",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 27,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 188,
+      "execution_id": "gate4-primary-188",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 28,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 189,
+      "execution_id": "gate4-primary-189",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 29,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 190,
+      "execution_id": "gate4-primary-190",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 30,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 191,
+      "execution_id": "gate4-primary-191",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 31,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 192,
+      "execution_id": "gate4-primary-192",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 32,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 193,
+      "execution_id": "gate4-primary-193",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 33,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 194,
+      "execution_id": "gate4-primary-194",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 34,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 195,
+      "execution_id": "gate4-primary-195",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 35,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 196,
+      "execution_id": "gate4-primary-196",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 36,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 197,
+      "execution_id": "gate4-primary-197",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 37,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 198,
+      "execution_id": "gate4-primary-198",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 38,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 199,
+      "execution_id": "gate4-primary-199",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 39,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 200,
+      "execution_id": "gate4-primary-200",
+      "repetition": 2,
+      "workflow": "proposed",
+      "question_position": 40,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 201,
+      "execution_id": "gate4-primary-201",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 1,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 202,
+      "execution_id": "gate4-primary-202",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 2,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 203,
+      "execution_id": "gate4-primary-203",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 3,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 204,
+      "execution_id": "gate4-primary-204",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 4,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 205,
+      "execution_id": "gate4-primary-205",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 5,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 206,
+      "execution_id": "gate4-primary-206",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 6,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 207,
+      "execution_id": "gate4-primary-207",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 7,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 208,
+      "execution_id": "gate4-primary-208",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 8,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 209,
+      "execution_id": "gate4-primary-209",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 9,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 210,
+      "execution_id": "gate4-primary-210",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 10,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 211,
+      "execution_id": "gate4-primary-211",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 11,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 212,
+      "execution_id": "gate4-primary-212",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 12,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 213,
+      "execution_id": "gate4-primary-213",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 13,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 214,
+      "execution_id": "gate4-primary-214",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 14,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 215,
+      "execution_id": "gate4-primary-215",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 15,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 216,
+      "execution_id": "gate4-primary-216",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 16,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 217,
+      "execution_id": "gate4-primary-217",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 17,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 218,
+      "execution_id": "gate4-primary-218",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 18,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 219,
+      "execution_id": "gate4-primary-219",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 19,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 220,
+      "execution_id": "gate4-primary-220",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 20,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 221,
+      "execution_id": "gate4-primary-221",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 21,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 222,
+      "execution_id": "gate4-primary-222",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 22,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 223,
+      "execution_id": "gate4-primary-223",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 23,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 224,
+      "execution_id": "gate4-primary-224",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 24,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 225,
+      "execution_id": "gate4-primary-225",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 25,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 226,
+      "execution_id": "gate4-primary-226",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 26,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 227,
+      "execution_id": "gate4-primary-227",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 27,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 228,
+      "execution_id": "gate4-primary-228",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 28,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 229,
+      "execution_id": "gate4-primary-229",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 29,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 230,
+      "execution_id": "gate4-primary-230",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 30,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 231,
+      "execution_id": "gate4-primary-231",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 31,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 232,
+      "execution_id": "gate4-primary-232",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 32,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 233,
+      "execution_id": "gate4-primary-233",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 33,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 234,
+      "execution_id": "gate4-primary-234",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 34,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 235,
+      "execution_id": "gate4-primary-235",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 35,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 236,
+      "execution_id": "gate4-primary-236",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 36,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 237,
+      "execution_id": "gate4-primary-237",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 37,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 238,
+      "execution_id": "gate4-primary-238",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 38,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 239,
+      "execution_id": "gate4-primary-239",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 39,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 240,
+      "execution_id": "gate4-primary-240",
+      "repetition": 2,
+      "workflow": "direct_llm",
+      "question_position": 40,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 241,
+      "execution_id": "gate4-primary-241",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 1,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 242,
+      "execution_id": "gate4-primary-242",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 2,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 243,
+      "execution_id": "gate4-primary-243",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 3,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 244,
+      "execution_id": "gate4-primary-244",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 4,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 245,
+      "execution_id": "gate4-primary-245",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 5,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 246,
+      "execution_id": "gate4-primary-246",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 6,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 247,
+      "execution_id": "gate4-primary-247",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 7,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 248,
+      "execution_id": "gate4-primary-248",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 8,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 249,
+      "execution_id": "gate4-primary-249",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 9,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 250,
+      "execution_id": "gate4-primary-250",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 10,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 251,
+      "execution_id": "gate4-primary-251",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 11,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 252,
+      "execution_id": "gate4-primary-252",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 12,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 253,
+      "execution_id": "gate4-primary-253",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 13,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 254,
+      "execution_id": "gate4-primary-254",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 14,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 255,
+      "execution_id": "gate4-primary-255",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 15,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 256,
+      "execution_id": "gate4-primary-256",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 16,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 257,
+      "execution_id": "gate4-primary-257",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 17,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 258,
+      "execution_id": "gate4-primary-258",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 18,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 259,
+      "execution_id": "gate4-primary-259",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 19,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 260,
+      "execution_id": "gate4-primary-260",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 20,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 261,
+      "execution_id": "gate4-primary-261",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 21,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 262,
+      "execution_id": "gate4-primary-262",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 22,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 263,
+      "execution_id": "gate4-primary-263",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 23,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 264,
+      "execution_id": "gate4-primary-264",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 24,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 265,
+      "execution_id": "gate4-primary-265",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 25,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 266,
+      "execution_id": "gate4-primary-266",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 26,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 267,
+      "execution_id": "gate4-primary-267",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 27,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 268,
+      "execution_id": "gate4-primary-268",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 28,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 269,
+      "execution_id": "gate4-primary-269",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 29,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 270,
+      "execution_id": "gate4-primary-270",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 30,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 271,
+      "execution_id": "gate4-primary-271",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 31,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 272,
+      "execution_id": "gate4-primary-272",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 32,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 273,
+      "execution_id": "gate4-primary-273",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 33,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 274,
+      "execution_id": "gate4-primary-274",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 34,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 275,
+      "execution_id": "gate4-primary-275",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 35,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 276,
+      "execution_id": "gate4-primary-276",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 36,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 277,
+      "execution_id": "gate4-primary-277",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 37,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 278,
+      "execution_id": "gate4-primary-278",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 38,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 279,
+      "execution_id": "gate4-primary-279",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 39,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 280,
+      "execution_id": "gate4-primary-280",
+      "repetition": 3,
+      "workflow": "proposed",
+      "question_position": 40,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 281,
+      "execution_id": "gate4-primary-281",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 1,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 282,
+      "execution_id": "gate4-primary-282",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 2,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 283,
+      "execution_id": "gate4-primary-283",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 3,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 284,
+      "execution_id": "gate4-primary-284",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 4,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 285,
+      "execution_id": "gate4-primary-285",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 5,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 286,
+      "execution_id": "gate4-primary-286",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 6,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 287,
+      "execution_id": "gate4-primary-287",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 7,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 288,
+      "execution_id": "gate4-primary-288",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 8,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 289,
+      "execution_id": "gate4-primary-289",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 9,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 290,
+      "execution_id": "gate4-primary-290",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 10,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 291,
+      "execution_id": "gate4-primary-291",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 11,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 292,
+      "execution_id": "gate4-primary-292",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 12,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 293,
+      "execution_id": "gate4-primary-293",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 13,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 294,
+      "execution_id": "gate4-primary-294",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 14,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 295,
+      "execution_id": "gate4-primary-295",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 15,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 296,
+      "execution_id": "gate4-primary-296",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 16,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 297,
+      "execution_id": "gate4-primary-297",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 17,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 298,
+      "execution_id": "gate4-primary-298",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 18,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 299,
+      "execution_id": "gate4-primary-299",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 19,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 300,
+      "execution_id": "gate4-primary-300",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 20,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 301,
+      "execution_id": "gate4-primary-301",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 21,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 302,
+      "execution_id": "gate4-primary-302",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 22,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 303,
+      "execution_id": "gate4-primary-303",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 23,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 304,
+      "execution_id": "gate4-primary-304",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 24,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 305,
+      "execution_id": "gate4-primary-305",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 25,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 306,
+      "execution_id": "gate4-primary-306",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 26,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 307,
+      "execution_id": "gate4-primary-307",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 27,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 308,
+      "execution_id": "gate4-primary-308",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 28,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 309,
+      "execution_id": "gate4-primary-309",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 29,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 310,
+      "execution_id": "gate4-primary-310",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 30,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 311,
+      "execution_id": "gate4-primary-311",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 31,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 312,
+      "execution_id": "gate4-primary-312",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 32,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 313,
+      "execution_id": "gate4-primary-313",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 33,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 314,
+      "execution_id": "gate4-primary-314",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 34,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 315,
+      "execution_id": "gate4-primary-315",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 35,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 316,
+      "execution_id": "gate4-primary-316",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 36,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 317,
+      "execution_id": "gate4-primary-317",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 37,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 318,
+      "execution_id": "gate4-primary-318",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 38,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 319,
+      "execution_id": "gate4-primary-319",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 39,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 320,
+      "execution_id": "gate4-primary-320",
+      "repetition": 3,
+      "workflow": "direct_llm",
+      "question_position": 40,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 321,
+      "execution_id": "gate4-primary-321",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 1,
+      "question_id": "gate3-q33-column-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 322,
+      "execution_id": "gate4-primary-322",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 2,
+      "question_id": "gate3-q14-wall-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 323,
+      "execution_id": "gate4-primary-323",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 3,
+      "question_id": "gate3-q23-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 324,
+      "execution_id": "gate4-primary-324",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 4,
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 325,
+      "execution_id": "gate4-primary-325",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 5,
+      "question_id": "gate3-q15-column-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 326,
+      "execution_id": "gate4-primary-326",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 6,
+      "question_id": "gate3-q25-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 327,
+      "execution_id": "gate4-primary-327",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 7,
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 328,
+      "execution_id": "gate4-primary-328",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 8,
+      "question_id": "gate3-q13-beam-ground-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 329,
+      "execution_id": "gate4-primary-329",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 9,
+      "question_id": "gate3-q30-slab-ground-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 330,
+      "execution_id": "gate4-primary-330",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 10,
+      "question_id": "gate3-q12-property-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 331,
+      "execution_id": "gate4-primary-331",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 11,
+      "question_id": "gate3-q18-wall-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 332,
+      "execution_id": "gate4-primary-332",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 12,
+      "question_id": "gate3-q10-added-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 333,
+      "execution_id": "gate4-primary-333",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 13,
+      "question_id": "gate3-q26-added-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 334,
+      "execution_id": "gate4-primary-334",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 14,
+      "question_id": "gate3-q19-beam-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 335,
+      "execution_id": "gate4-primary-335",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 15,
+      "question_id": "gate3-q41-absent-guid",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 336,
+      "execution_id": "gate4-primary-336",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 16,
+      "question_id": "gate3-q37-loadbearing-properties",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 337,
+      "execution_id": "gate4-primary-337",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 17,
+      "question_id": "gate3-q31-added-column-level01",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 338,
+      "execution_id": "gate4-primary-338",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 18,
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 339,
+      "execution_id": "gate4-primary-339",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 19,
+      "question_id": "gate3-q39-no-geometry",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 340,
+      "execution_id": "gate4-primary-340",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 20,
+      "question_id": "gate3-q38-wall-pset-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 341,
+      "execution_id": "gate4-primary-341",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 21,
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 342,
+      "execution_id": "gate4-primary-342",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 22,
+      "question_id": "gate3-q11-deleted-summary",
+      "category": "summary"
+    },
+    {
+      "ordinal": 343,
+      "execution_id": "gate4-primary-343",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 23,
+      "question_id": "gate3-q29-beam-roof-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 344,
+      "execution_id": "gate4-primary-344",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 24,
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "category": "negative_control"
+    },
+    {
+      "ordinal": 345,
+      "execution_id": "gate4-primary-345",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 25,
+      "question_id": "gate3-q09-all-changes",
+      "category": "summary"
+    },
+    {
+      "ordinal": 346,
+      "execution_id": "gate4-primary-346",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 26,
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 347,
+      "execution_id": "gate4-primary-347",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 27,
+      "question_id": "gate3-q27-deleted-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 348,
+      "execution_id": "gate4-primary-348",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 28,
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 349,
+      "execution_id": "gate4-primary-349",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 29,
+      "question_id": "gate3-q21-wall-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 350,
+      "execution_id": "gate4-primary-350",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 30,
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 351,
+      "execution_id": "gate4-primary-351",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 31,
+      "question_id": "gate3-q35-beam-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 352,
+      "execution_id": "gate4-primary-352",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 32,
+      "question_id": "gate3-q24-level01-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 353,
+      "execution_id": "gate4-primary-353",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 33,
+      "question_id": "gate3-q36-slab-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 354,
+      "execution_id": "gate4-primary-354",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 34,
+      "question_id": "gate3-q17-beam-roof-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 355,
+      "execution_id": "gate4-primary-355",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 35,
+      "question_id": "gate3-q20-column-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 356,
+      "execution_id": "gate4-primary-356",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 36,
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "category": "evidence_boundary"
+    },
+    {
+      "ordinal": 357,
+      "execution_id": "gate4-primary-357",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 37,
+      "question_id": "gate3-q34-wall-property",
+      "category": "property_change"
+    },
+    {
+      "ordinal": 358,
+      "execution_id": "gate4-primary-358",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 38,
+      "question_id": "gate3-q22-slab-filter",
+      "category": "filtered_lookup"
+    },
+    {
+      "ordinal": 359,
+      "execution_id": "gate4-primary-359",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 39,
+      "question_id": "gate3-q16-slab-level01-guid",
+      "category": "fact_lookup"
+    },
+    {
+      "ordinal": 360,
+      "execution_id": "gate4-primary-360",
+      "repetition": 3,
+      "workflow": "tool_using_agent",
+      "question_position": 40,
+      "question_id": "gate3-q28-property-wall-filter",
+      "category": "filtered_lookup"
+    }
+  ],
+  "audit_selection": {
+    "selection_seed": "gate4-audit-selection-20260808-v1",
+    "evidence_boundary_question_ids": [
+      "gate3-q44-wall-safety-boundary",
+      "gate3-q45-fire-compliance-boundary",
+      "gate3-q46-beam-responsibility-boundary",
+      "gate3-q47-slab-priority-boundary",
+      "gate3-q48-wall-constructability-boundary"
+    ],
+    "stratified_additional_question_ids": {
+      "summary": [
+        "gate3-q10-added-summary",
+        "gate3-q12-property-summary"
+      ],
+      "fact_lookup": [
+        "gate3-q14-wall-ground-guid",
+        "gate3-q18-wall-roof-guid"
+      ],
+      "filtered_lookup": [
+        "gate3-q28-property-wall-filter",
+        "gate3-q22-slab-filter"
+      ],
+      "property_change": [
+        "gate3-q38-wall-pset-property",
+        "gate3-q33-column-property"
+      ],
+      "negative_control": [
+        "gate3-q43-no-property-slab-level01",
+        "gate3-q39-no-geometry"
+      ]
+    },
+    "all_selected_question_ids": [
+      "gate3-q44-wall-safety-boundary",
+      "gate3-q45-fire-compliance-boundary",
+      "gate3-q46-beam-responsibility-boundary",
+      "gate3-q47-slab-priority-boundary",
+      "gate3-q48-wall-constructability-boundary",
+      "gate3-q10-added-summary",
+      "gate3-q12-property-summary",
+      "gate3-q14-wall-ground-guid",
+      "gate3-q18-wall-roof-guid",
+      "gate3-q28-property-wall-filter",
+      "gate3-q22-slab-filter",
+      "gate3-q38-wall-pset-property",
+      "gate3-q33-column-property",
+      "gate3-q43-no-property-slab-level01",
+      "gate3-q39-no-geometry"
+    ],
+    "selected_question_count": 15,
+    "executions_per_question": 9,
+    "expected_audited_answer_count": 135,
+    "selection_sha256": "907ead457eb5a0200ce32467e4aa0b05cdd74b1132da6daad9ae0b812e0a7810",
+    "blinding": {
+      "status": "protocol_frozen_before_results",
+      "neutral_code_format": "A001 through A135 after retained outputs exist",
+      "mapping_visibility": "The workflow/repetition mapping is withheld from the reviewer until all audit labels are saved.",
+      "post_run_artifact_generated": false
+    }
+  },
+  "budget": {
+    "supersedes_provisional_budget": {
+      "currency": "USD",
+      "amount": 0.75,
+      "status": "superseded_before_any_gate4_model_call"
+    },
+    "hard_ceiling": {
+      "currency": "CNY",
+      "amount": 25.0
+    },
+    "billing_unit": "CNY for the evaluation-wide hard ceiling",
+    "automated_estimate": {
+      "source_currency": "USD",
+      "conservative_cny_per_usd": 10.0,
+      "token_estimate_sublimit_cny": 22.5,
+      "runner_budget_usd": 2.25,
+      "contingency_reserve_cny": 2.5,
+      "pricing_units": "USD per 1,000,000 text tokens",
+      "input_usd_per_million": 0.14,
+      "cached_input_usd_per_million": 0.0028,
+      "output_usd_per_million": 0.28
+    },
+    "included_charges": [
+      "all retained primary workflow calls",
+      "Proposed validator calls",
+      "Proposed controlled repair calls",
+      "transient retries, including any provider-charged failed attempt"
+    ],
+    "authoritative_spend_rule": "Use the greater of provider-attributed CNY debit and the conservative token estimate. The CNY 2.50 reserve covers reporting lag or charged attempts without usable token metadata.",
+    "pre_request_stop_rule": "Stop before a request if current attributable spend plus the conservative projection could reach or exceed CNY 25.00, or if the automated estimate could exceed CNY 22.50.",
+    "post_response_stop_rule": "Stop immediately if reported or estimated cumulative spend reaches either threshold; retain the incomplete block and do not change prompts, questions, workflow logic, or exclusions.",
+    "resume_rule": "Resume only after explicit review, under the identical frozen configuration and from the last compatible checkpoint."
+  },
+  "model_calls_made": 0
+}
