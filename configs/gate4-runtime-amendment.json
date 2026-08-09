@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1.0",
+  "amendment_id": "gate4-runtime-failure-persistence-v1",
+  "status": "LOCAL_IMPLEMENTATION_AWAITING_PUBLIC_REVIEW",
+  "public_baseline_commit": "78615518906429d469df5fb9c9914991b02929f9",
+  "local_implementation_commit": "6ed957bfce5eae1fd59addfa7735cd3c101739b9",
+  "protected_gate3_baseline_commit": "abcb095858ea45a1727d68d91063376ef77381ad",
+  "trigger": {
+    "paid_execution_paused_after_ordinal": 78,
+    "retained_candidate_count": 74,
+    "experimental_failure_count": 4,
+    "experimental_failure_execution_ids": [
+      "gate4-primary-050",
+      "gate4-primary-072",
+      "gate4-primary-073",
+      "gate4-primary-078"
+    ],
+    "failure_category": "schema_or_output_format",
+    "reference_answers_read": false,
+    "held_out_answers_scored": false,
+    "post_run_audit_generated": false
+  },
+  "runtime_accounting": {
+    "checkpointed_request_attempts": 119,
+    "checkpointed_successful_responses": 115,
+    "sandbox_interrupted_successful_response_count": 1,
+    "total_request_attempts_observed_or_reconstructed": 120,
+    "total_successful_responses_observed_or_reconstructed": 116,
+    "checkpointed_conservative_estimated_cny": 1.46357,
+    "contingency_reserve_cny": 2.5,
+    "minimum_resume_provider_attributed_spend_cny": 3.96357,
+    "hard_ceiling_cny": 25.0,
+    "automated_estimate_stop_threshold_cny": 22.5
+  },
+  "amendment_scope": {
+    "raw_successful_responses_journaled_per_execution": true,
+    "exact_cumulative_usage_persisted_on_experimental_failure": true,
+    "model_output_failures_advance_without_retry": true,
+    "infrastructure_failures_remain_fatal": true,
+    "resume_from_execution_ordinal": 79,
+    "protected_gate3_files_changed": false,
+    "prompts_changed": false,
+    "schemas_changed": false,
+    "workflow_logic_changed": false,
+    "scoring_rules_changed": false,
+    "questions_or_schedule_changed": false,
+    "budget_policy_changed": false
+  },
+  "implementation_artifacts": {
+    "wrapper": {
+      "path": "scripts/run_gate4_workflows.py",
+      "sha256": "57eec5d2322c4f0562a4cb27250219880b3946ed9bf9c60b5bd33d9bf2a22ee3"
+    },
+    "offline_test": {
+      "path": "scripts/test_gate4_failure_persistence.py",
+      "sha256": "d0bf59a3c85ee8ff7d3d0d06d73f2cc5b8e2c5f5f9c6a6fc63de0b1468027570"
+    },
+    "amendment_verifier": {
+      "path": "scripts/verify_gate4_runtime_amendment.py",
+      "sha256": "80b7ce3ad98f728e75c8e708f1052b60c6d96f039df2b166191178a7161fd86b"
+    },
+    "amendment_document": {
+      "path": "docs/gate4-runtime-failure-persistence.md",
+      "sha256": "812ce9e3bc1c0cf11022f58e06d1bf19fb0fb2cf62d4b41abcc37c4b2abe584e"
+    }
+  },
+  "local_recovery_state": {
+    "publication_scope": "hashes_and_counts_only_until_blinded_audit_is_complete",
+    "checkpoint": {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/checkpoint.json",
+      "sha256": "f54d80b3c68c63d2458092ad215274a315a8765e1c2f9c0bcebaab7d25f9bc2c",
+      "committed_for_publication": false
+    },
+    "manual_failure_record_sha256": {
+      "gate4-primary-050": "6d46a5cc83a983f669ac55ed4f894c337d375ff6b4994857825c6137836f5c5c",
+      "gate4-primary-072": "d4489ac3a9b84b8bc40d868d275268bde93010f7b30bd665791d970e7bb454be",
+      "gate4-primary-073": "8426e9fe469d8227ae636aa6761515038834729344c52e4c31a436c34f220544",
+      "gate4-primary-078": "115499383d0af3fae9c46ea2adc00f700a144259c87bf4b31941ba33cc45c7c9"
+    }
+  },
+  "frozen_hashes_unchanged": {
+    "schedule": "92360439cef1797615bdb964020cfa92ab8e345a22dfe07b45f5883336db9750",
+    "audit_selection": "907ead457eb5a0200ce32467e4aa0b05cdd74b1132da6daad9ae0b812e0a7810",
+    "completed_pre_run_audit": "6529b06c4f873932df8f6280eca751dc472afbf64545f470fa9a7b3e30120ecb",
+    "review_state": "6a00462ab9c0deddcc8c3403c3b0c9b03a69b0d66541c4a3dbe9e6553a494f7c",
+    "final_freeze_manifest": "2943bc0701053d0eda3a2ef2ba0752e6d109ae020704697854c7e3d1a94afb19"
+  },
+  "approval_gates": {
+    "user_approval_for_local_amendment": "COMPLETE",
+    "offline_verification": "COMPLETE",
+    "public_issue_record": "PENDING",
+    "pull_request_review_and_merge": "PENDING",
+    "renewed_exact_live_call_authorization": "PENDING"
+  },
+  "live_calls_authorized": false,
+  "paid_calls_paused": true
+}
