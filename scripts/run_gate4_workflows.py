@@ -17,6 +17,8 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
+from jsonschema import ValidationError
+
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = REPOSITORY_ROOT / "src"
@@ -157,6 +159,15 @@ class CnyHardCapClient:
         self.ledger = inner.ledger
         self.provider_spend_cny = provider_spend_cny
         self.start_estimated_usd = float(self.ledger.estimated_cost_usd)
+        self.execution_id: str | None = None
+        self.response_journal: list[dict[str, Any]] = []
+        self.provider_call_failed = False
+
+    def begin_execution(self, execution_id: str) -> None:
+        """Reset the in-memory response journal for one primary execution."""
+        self.execution_id = execution_id
+        self.response_journal = []
+        self.provider_call_failed = False
 
     def create(self, payload: dict[str, Any]) -> dict[str, Any]:
         incremental_usd = max(
@@ -170,7 +181,62 @@ class CnyHardCapClient:
             raise RuntimeError(
                 "Projected provider-attributed spend reaches the CNY 25 hard ceiling"
             )
-        return self.inner.create(payload)
+        self.provider_call_failed = True
+        response = self.inner.create(payload)
+        self.provider_call_failed = False
+        self.response_journal.append(
+            {
+                "sequence": len(self.response_journal) + 1,
+                "request_kind": request_kind(payload),
+                "response": response,
+            }
+        )
+        return response
+
+
+def request_kind(payload: dict[str, Any]) -> str:
+    """Return a non-secret label for one frozen Responses API request."""
+    if "tools" in payload:
+        return "tool_planning"
+    text = payload.get("text")
+    if isinstance(text, dict):
+        response_format = text.get("format")
+        if isinstance(response_format, dict) and isinstance(
+            response_format.get("name"), str
+        ):
+            return response_format["name"]
+    return "response"
+
+
+def experimental_failure_category(
+    error: Exception, client: CnyHardCapClient
+) -> str | None:
+    """Classify model-output failures while leaving infrastructure errors fatal."""
+    if client.provider_call_failed or not client.response_journal:
+        return None
+    last_kind = client.response_journal[-1]["request_kind"]
+    message = str(error)
+    if message == "Expected exactly one query_change_records function call":
+        return "tool_selection"
+    if last_kind == "tool_planning" and isinstance(
+        error, (json.JSONDecodeError, KeyError, TypeError)
+    ):
+        return "parameter_generation"
+    if isinstance(error, (json.JSONDecodeError, ValidationError, KeyError, TypeError)):
+        return "schema_or_output_format"
+    if isinstance(error, ValueError) and message in {
+        "Model returned a different question_id",
+        "Repair returned a different question_id",
+    }:
+        return "schema_or_output_format"
+    if isinstance(error, RuntimeError) and message.startswith(
+        (
+            "Response did not contain output_text;",
+            "Claim validator returned schema-invalid JSON at ",
+        )
+    ):
+        return "schema_or_output_format"
+    return None
 
 
 def restore_usage(client: Any, usage: dict[str, Any]) -> None:
@@ -192,6 +258,92 @@ def atomic_write_json(path: Path, value: dict[str, Any]) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
     write_json(temporary, value)
     temporary.replace(path)
+
+
+def checkpoint_document(
+    completed: list[str],
+    schedule_sha256: str,
+    config: Any,
+    usage: dict[str, Any],
+    estimated_cny: float,
+    provider_attributed_spend_cny: float,
+) -> dict[str, Any]:
+    """Build the checkpoint shared by successful and failed primary executions."""
+    return {
+        "schema_version": "0.1.0",
+        "schedule_sha256": schedule_sha256,
+        "model_config": asdict(config),
+        "completed_execution_ids": completed,
+        "usage": usage,
+        "conservative_estimated_cny": estimated_cny,
+        "provider_attributed_spend_cny_at_process_start": (
+            provider_attributed_spend_cny
+        ),
+        "hard_ceiling_cny": 25.0,
+    }
+
+
+def record_experimental_failure(
+    *,
+    execution: dict[str, Any],
+    error: Exception,
+    failure_category: str,
+    client: CnyHardCapClient,
+    completed: list[str],
+    schedule_sha256: str,
+    config: Any,
+    provider_attributed_spend_cny: float,
+    results_dir: Path = RESULTS_DIR,
+    checkpoint_path: Path = CHECKPOINT_PATH,
+) -> None:
+    """Persist a model-output failure and advance without retrying that execution."""
+    usage = client.ledger.public_summary()
+    estimated_cny = round(float(usage["estimated_cost_usd"]) * 10.0, 6)
+    execution_id = execution["execution_id"]
+    primary_dir = results_dir / "primary" / execution_id
+    atomic_write_json(
+        primary_dir / "run.json",
+        {
+            "schema_version": "0.1.0",
+            **execution,
+            "status": "EXPERIMENTAL_FAILURE",
+            "candidate_persisted": False,
+            "model_config": asdict(config),
+            "failure": {
+                "category": failure_category,
+                "exception_type": type(error).__name__,
+                "message": str(error),
+                "last_request_kind": client.response_journal[-1]["request_kind"],
+                "raw_response_count": len(client.response_journal),
+                "retry_allowed": False,
+                "retry_performed": False,
+            },
+            "raw_provider_responses": client.response_journal,
+            "cumulative_usage": usage,
+            "conservative_estimated_cny": estimated_cny,
+            "provider_attributed_spend_cny_at_process_start": (
+                provider_attributed_spend_cny
+            ),
+            "post_run_audit_generated": False,
+        },
+    )
+    completed.append(execution_id)
+    atomic_write_json(
+        checkpoint_path,
+        checkpoint_document(
+            completed,
+            schedule_sha256,
+            config,
+            usage,
+            estimated_cny,
+            provider_attributed_spend_cny,
+        ),
+    )
+    print(
+        f"checkpoint {len(completed)}/360 {execution_id} "
+        f"experimental_failure={failure_category}",
+        flush=True,
+    )
 
 
 def load_frozen_runner(stage: Path):
@@ -248,25 +400,42 @@ def run_worker(stage: Path, args: argparse.Namespace) -> None:
             continue
         question = questions[execution["question_id"]]
         workflow = execution["workflow"]
-        if workflow == "direct_llm":
-            answer, metadata = runner.run_direct_question(
-                client, question, questions_artifact["dataset_id"], summary
+        client.begin_execution(execution_id)
+        try:
+            if workflow == "direct_llm":
+                answer, metadata = runner.run_direct_question(
+                    client, question, questions_artifact["dataset_id"], summary
+                )
+            else:
+                answer, metadata = runner.run_tool_question(
+                    client,
+                    workflow,
+                    question,
+                    questions_artifact["dataset_id"],
+                )
+            candidate = {
+                "schema_version": "0.1.0",
+                "dataset_id": questions_artifact["dataset_id"],
+                "question_split": "held_out",
+                "workflow": workflow,
+                "answers": [answer],
+            }
+            runner.validate_candidate_schema(candidate)
+        except Exception as error:
+            failure_category = experimental_failure_category(error, client)
+            if failure_category is None:
+                raise
+            record_experimental_failure(
+                execution=execution,
+                error=error,
+                failure_category=failure_category,
+                client=client,
+                completed=completed,
+                schedule_sha256=schedule_sha256,
+                config=config,
+                provider_attributed_spend_cny=args.provider_attributed_spend_cny,
             )
-        else:
-            answer, metadata = runner.run_tool_question(
-                client,
-                workflow,
-                question,
-                questions_artifact["dataset_id"],
-            )
-        candidate = {
-            "schema_version": "0.1.0",
-            "dataset_id": questions_artifact["dataset_id"],
-            "question_split": "held_out",
-            "workflow": workflow,
-            "answers": [answer],
-        }
-        runner.validate_candidate_schema(candidate)
+            continue
         primary_dir = RESULTS_DIR / "primary" / execution_id
         atomic_write_json(primary_dir / "candidate.json", candidate)
         usage = client.ledger.public_summary()
@@ -293,18 +462,14 @@ def run_worker(stage: Path, args: argparse.Namespace) -> None:
         completed.append(execution_id)
         atomic_write_json(
             CHECKPOINT_PATH,
-            {
-                "schema_version": "0.1.0",
-                "schedule_sha256": schedule_sha256,
-                "model_config": asdict(config),
-                "completed_execution_ids": completed,
-                "usage": usage,
-                "conservative_estimated_cny": estimated_cny,
-                "provider_attributed_spend_cny_at_process_start": (
-                    args.provider_attributed_spend_cny
-                ),
-                "hard_ceiling_cny": 25.0,
-            },
+            checkpoint_document(
+                completed,
+                schedule_sha256,
+                config,
+                usage,
+                estimated_cny,
+                args.provider_attributed_spend_cny,
+            ),
         )
         print(
             f"checkpoint {len(completed)}/360 {execution_id}",
