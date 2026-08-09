@@ -26,11 +26,13 @@ if str(SOURCE_ROOT) not in sys.path:
 from bimchange_agent.gate4_foundation import verify_gate4_foundation  # noqa: E402
 from bimchange_agent.gate4_orchestration import (  # noqa: E402
     FREEZE_MANIFEST_PATH,
+    REVIEW_STATE_PATH,
     SCHEDULE_PATH,
     artifact_sha256,
     budget_policy,
     foundation_paths,
     load_json,
+    load_review_state,
     reproduce_gate3_retained_artifacts,
     stage_frozen_gate3_runtime,
     write_json,
@@ -87,10 +89,9 @@ def verify_preflight() -> dict[str, Any]:
     }
 
 
-def require_live_approvals(args: argparse.Namespace) -> dict[str, Any]:
-    """Refuse live execution until every non-call approval gate is complete."""
-    if args.authorization_phrase != AUTHORIZATION_PHRASE:
-        raise RuntimeError("Exact separate live-call authorization phrase is required")
+def load_completed_public_freeze() -> dict[str, Any]:
+    """Validate the public pre-call state while keeping live authorization absent."""
+    review_state = load_review_state()
     if not FREEZE_MANIFEST_PATH.exists():
         raise RuntimeError("Freeze manifest is missing")
     manifest = load_json(FREEZE_MANIFEST_PATH)
@@ -103,8 +104,26 @@ def require_live_approvals(args: argparse.Namespace) -> dict[str, Any]:
     )
     if any(manifest["approval_gates"].get(item) != "COMPLETE" for item in required):
         raise RuntimeError("A required pre-call approval gate is incomplete")
+    if manifest["approval_gates"] != review_state["approval_gates"]:
+        raise RuntimeError("Freeze manifest and review-state approvals differ")
+    if manifest["approval_gates"].get("separate_live_call_authorization") != "PENDING":
+        raise RuntimeError("Pre-call manifest must await separate live authorization")
+    if manifest.get("live_calls_authorized") is not False:
+        raise RuntimeError("Pre-call manifest must keep live calls unauthorized")
+    if manifest["review_transition"].get("sha256") != artifact_sha256(
+        REVIEW_STATE_PATH
+    ):
+        raise RuntimeError("Freeze manifest review-state hash mismatch")
     if manifest.get("api_keys_present") or manifest.get("model_outputs_present"):
         raise RuntimeError("Freeze manifest reports forbidden pre-call content")
+    return manifest
+
+
+def require_live_approvals(args: argparse.Namespace) -> dict[str, Any]:
+    """Refuse live execution until the exact separate authorization is supplied."""
+    if args.authorization_phrase != AUTHORIZATION_PHRASE:
+        raise RuntimeError("Exact separate live-call authorization phrase is required")
+    manifest = load_completed_public_freeze()
     if args.provider_attributed_spend_cny < 0:
         raise ValueError("Provider-attributed spend cannot be negative")
     if args.provider_attributed_spend_cny >= 25.0:
@@ -316,6 +335,7 @@ def main() -> None:
     preflight = verify_preflight()
     schedule = load_json(SCHEDULE_PATH)
     if not args.live:
+        manifest = load_completed_public_freeze()
         with tempfile.TemporaryDirectory(prefix="bimchange-gate4-dry-stage-") as directory:
             staging = stage_frozen_gate3_runtime(Path(directory))
         print(
@@ -333,6 +353,9 @@ def main() -> None:
                     "audit_selection": schedule["audit_selection"],
                     "budget": schedule["budget"],
                     "staged_runtime": staging,
+                    "freeze_status": manifest["freeze_status"],
+                    "approval_gates": manifest["approval_gates"],
+                    "api_call_boundary": "AWAITING_EXACT_SEPARATE_AUTHORIZATION",
                     "live_calls_authorized": False,
                     "model_calls_made": 0,
                 },

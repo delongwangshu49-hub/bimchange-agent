@@ -21,6 +21,7 @@ from bimchange_agent.gate4_orchestration import (  # noqa: E402
     build_schedule,
     foundation_paths,
     load_json,
+    load_review_state,
     reproduce_gate3_retained_artifacts,
     write_json,
 )
@@ -30,6 +31,7 @@ from bimchange_agent.gate4_question_verification import (  # noqa: E402
 
 
 def main() -> None:
+    review_state = load_review_state()
     foundation_report = verify_gate4_foundation()
     gate3_replay = reproduce_gate3_retained_artifacts()
     question_report = verify_production_question_artifacts()
@@ -47,6 +49,7 @@ def main() -> None:
             "gate3_retained_artifact_replay": gate3_replay,
             "held_out_question_verifier": question_report,
         },
+        review_state,
     )
     write_json(PRE_RUN_AUDIT_PATH, pre_run_audit)
     print(
@@ -60,7 +63,9 @@ def main() -> None:
                 "schedule_sha256": artifact_sha256(SCHEDULE_PATH),
                 "pre_run_audit_sha256": artifact_sha256(PRE_RUN_AUDIT_PATH),
                 "primary_execution_count": 360,
-                "human_review_status": "PENDING_USER_REVIEW",
+                "human_review_status": review_state["human_review"]["status"],
+                "separate_live_call_authorization": "PENDING",
+                "live_calls_authorized": False,
                 "model_calls_made": 0,
             },
             indent=2,

@@ -4,13 +4,23 @@
 
 ## Status
 
-The offline implementation is prepared for one human pre-run review. It does not authorize model or paid API calls. No Gate 4 model output, post-run audit, or post-run result has been generated.
+The single-human pre-run review, Issue `#3` freeze record, and PR `#8` review and merge are complete. Their deterministic state transition is recorded in `configs/gate4-precall-review-state.json`. This does not authorize model or paid API calls. No Gate 4 model output, post-run audit, or post-run result has been generated.
 
-  离线实现已准备好接受一名人工审核者的运行前审核。本文不授权模型或付费 API 调用，尚未生成任何 Gate 4 模型输出、运行后审核或运行后结果。
+  单人运行前审核、Issue `#3` 冻结记录以及 PR `#8` 审核与合并均已完成，其确定性状态转换记录在 `configs/gate4-precall-review-state.json` 中。本文不授权模型或付费 API 调用，尚未生成任何 Gate 4 模型输出、运行后审核或运行后结果。
 
 The protected Gate 3 prompt, Schema, question-level workflow logic, evidence validation, and scoring remain byte-identical to commit `abcb095858ea45a1727d68d91063376ef77381ad`.
 
   受保护的 Gate 3 提示词、Schema、逐问题工作流逻辑、证据验证与评分代码继续与提交 `abcb095858ea45a1727d68d91063376ef77381ad` 保持字节一致。
+
+## Review-state transition
+
+The transition record binds the approved review decision to PR `#8`, merge commit `4b38318bb58db39915717294bc3cc9feb5eeedd4`, and the two public Issue `#3` records. It also preserves the SHA-256 lineage of the earlier pending-review audit and manifest.
+
+  状态转换记录把已批准的审核结论绑定到 PR `#8`、合并提交 `4b38318bb58db39915717294bc3cc9feb5eeedd4` 及两条公开 Issue `#3` 记录，并保留此前待审核 audit 与 manifest 的 SHA-256 沿革。
+
+The generator deterministically marks the nine checklist items, 12 Change Record rows, and 40 question rows complete. The resulting manifest marks only the three completed non-call gates as `COMPLETE`; `separate_live_call_authorization` remains `PENDING`, and `live_calls_authorized` remains `false`.
+
+  生成器会确定性地把 9 个清单项、12 条 Change Record 记录与 40 道问题记录转换为完成状态。生成后的 manifest 仅把三个已完成的非调用门标记为 `COMPLETE`；`separate_live_call_authorization` 继续为 `PENDING`，`live_calls_authorized` 继续为 `false`。
 
 ## Deterministic primary schedule
 
@@ -65,9 +75,9 @@ After that replay passes, the wrapper creates a temporary staging directory. Byt
 
 ## Authorization boundary
 
-The wrapper defaults to an offline dry run. Live execution additionally requires a clean reviewed worktree, a freeze manifest whose human review, Issue `#3` record, and merge gates are complete, the `--live` switch, and the exact separate authorization phrase. The current local manifest intentionally records every approval gate as pending and `live_calls_authorized: false`.
+The wrapper defaults to an offline dry run. It validates the completed public freeze while requiring `separate_live_call_authorization: PENDING` and `live_calls_authorized: false`. Live execution additionally requires a clean reviewed worktree, the `--live` switch, and the exact separate authorization phrase supplied at run time. Approval checks execute before any local key is read.
 
-  外壳默认只运行离线 dry-run。正式执行还必须满足：工作树干净且已审核、冻结清单中的人工审核、Issue `#3` 记录与合并门均已完成、显式提供 `--live` 开关，以及提供精确的单独授权短语。当前本地冻结清单会刻意把所有批准门记录为待完成，并设置 `live_calls_authorized: false`。
+  外壳默认只运行离线 dry-run，并在要求 `separate_live_call_authorization: PENDING` 与 `live_calls_authorized: false` 的同时验证已完成的公开冻结。正式执行还必须满足工作树干净且已审核、显式提供 `--live` 开关，以及在运行时提供精确的单独授权短语。批准检查始终先于任何本地密钥读取。
 
 ## Offline commands
 

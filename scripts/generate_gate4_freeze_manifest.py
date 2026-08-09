@@ -21,6 +21,7 @@ from bimchange_agent.gate4_orchestration import (  # noqa: E402
     build_freeze_manifest,
     foundation_paths,
     load_json,
+    load_review_state,
     reproduce_gate3_retained_artifacts,
     stage_frozen_gate3_runtime,
     verify_schedule,
@@ -43,6 +44,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    review_state = load_review_state()
     implementation_commit = args.implementation_commit or subprocess.run(
         ["git", "rev-parse", "HEAD"],
         cwd=REPOSITORY_ROOT,
@@ -76,7 +78,7 @@ def main() -> None:
     }
     write_json(
         FREEZE_MANIFEST_PATH,
-        build_freeze_manifest(implementation_commit, verification),
+        build_freeze_manifest(implementation_commit, verification, review_state),
     )
     print(
         json.dumps(
@@ -85,6 +87,8 @@ def main() -> None:
                 "path": FREEZE_MANIFEST_PATH.relative_to(REPOSITORY_ROOT).as_posix(),
                 "freeze_manifest_sha256": artifact_sha256(FREEZE_MANIFEST_PATH),
                 "implementation_commit": implementation_commit,
+                "freeze_status": "FROZEN_AFTER_USER_REVIEW_AND_PUBLIC_RECORD",
+                "separate_live_call_authorization": "PENDING",
                 "live_calls_authorized": False,
                 "model_calls_made": 0,
             },

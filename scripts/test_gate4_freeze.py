@@ -15,10 +15,14 @@ if str(SOURCE_ROOT) not in sys.path:
     sys.path.insert(0, str(SOURCE_ROOT))
 
 from bimchange_agent.gate4_orchestration import (  # noqa: E402
+    FREEZE_MANIFEST_PATH,
+    PRE_RUN_AUDIT_PATH,
+    REVIEW_STATE_PATH,
     SCHEDULE_PATH,
     budget_policy,
     foundation_paths,
     load_json,
+    load_review_state,
     stage_frozen_gate3_runtime,
     verify_schedule,
 )
@@ -33,6 +37,7 @@ def expect_rejection(callback) -> None:
 
 
 def main() -> None:
+    review_state = load_review_state()
     paths = foundation_paths()
     questions = load_json(paths["questions"])
     schedule = load_json(SCHEDULE_PATH)
@@ -67,6 +72,32 @@ def main() -> None:
     assert policy["automated_estimate"]["contingency_reserve_cny"] == 2.5
     assert schedule["audit_selection"]["expected_audited_answer_count"] == 135
 
+    audit = load_json(PRE_RUN_AUDIT_PATH)
+    manifest = load_json(FREEZE_MANIFEST_PATH)
+    assert audit["status"] == "HUMAN_REVIEW_COMPLETE"
+    assert audit["human_review"]["status"] == "COMPLETE"
+    assert set(audit["human_review"]["checklist"].values()) == {"COMPLETE"}
+    assert all(
+        row["human_check"] == "COMPLETE"
+        for row in audit["human_review"]["records"]
+    )
+    assert all(
+        row["human_check"] == "COMPLETE"
+        for row in audit["human_review"]["questions"]
+    )
+    assert manifest["approval_gates"] == review_state["approval_gates"]
+    assert manifest["approval_gates"]["separate_live_call_authorization"] == "PENDING"
+    assert manifest["live_calls_authorized"] is False
+
+    tampered_state = copy.deepcopy(review_state)
+    tampered_state["public_record"]["pull_request"]["merge_commit"] = "0" * 40
+    with tempfile.TemporaryDirectory(prefix="bimchange-gate4-review-state-") as directory:
+        tampered_path = Path(directory) / REVIEW_STATE_PATH.name
+        tampered_path.write_text(
+            json.dumps(tampered_state, indent=2) + "\n", encoding="utf-8"
+        )
+        expect_rejection(lambda: load_review_state(tampered_path))
+
     print(
         json.dumps(
             {
@@ -77,6 +108,11 @@ def main() -> None:
                 "workflow_rotation_change_rejected": True,
                 "question_order_hash_change_rejected": True,
                 "reference_answers_excluded_from_stage": True,
+                "human_review_complete": True,
+                "public_merge_record_bound": True,
+                "tampered_review_state_rejected": True,
+                "separate_live_call_authorization": "PENDING",
+                "live_calls_authorized": False,
                 "budget_currency": "CNY",
                 "budget_hard_ceiling": 25.0,
                 "model_calls_made": 0,
