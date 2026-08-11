@@ -257,12 +257,13 @@ The v0.2.0 Preview 1 checkpoint adds a bounded IFC4 diff/normalization service, 
 
 v0.2.0 Preview 1 定档包含受限 IFC4 差分/规范化、可安装 `inspect/diff/query`、PySide6 桌面流程、JSON/HTML 报告和可选 DeepSeek 解读边界。它是工程检查点，不替代冻结的 v0.1.0 科研发布与证据包。详见[预览契约](docs/product-preview-v0.2.md)、[隐私与安全边界](docs/privacy-and-security.md)、[版本说明](docs/releases/v0.2.0-preview.1.md)和[路线图](docs/roadmap.md)。
 
-1. **Stabilize the preview** — collect real IFC4 compatibility evidence, improve error taxonomy, and fix critical failures.
-2. **Define the compatibility envelope** — exporter/schema matrix, performance budgets, signed builds, and repeatable release checks.
-3. **Add integrated 3D economically** — reuse one local Three.js viewer from external proof to embedded Qt WebEngine, keyed by `GlobalId`.
-4. **Expand deliberately** — multi-provider AI, updater checks, broader IFC schemas, Revit integration, and professional review workflows only after measured demand.
+1. **Keep the bounded core trustworthy** — use a small number of authorized representative IFC4 files as smoke checks, classify clear failures, and keep the support claim narrow.
+2. **Improve the review experience** — turn the existing upload-to-report path into a more legible, guided, and visually coherent desktop experience before broadening technical scope.
+3. **Expand AI deliberately** — retain the deterministic Change Record as the source of fact, while adding provider adapters and user-selected configuration only after each provider has a documented privacy boundary and offline request/error tests.
+4. **Build research-backed capability** — study evidence traceability, AI-explanation reliability, and review efficiency so feature decisions have measurable support.
+5. **Explore spatial change context as a side track** — a later local viewer should show changed elements and a small spatial context, colour-code change types, and connect report rows to `GlobalId`; it is not a commitment to build a general-purpose BIM viewer.
 
-后续顺序是：先通过真实样本稳定预览版，再建立明确兼容矩阵与发布闸门；三维采用“同一套本地 Three.js 查看器先外部验证、再嵌入 Qt WebEngine”的复用路线；多服务商、自动更新、Revit 与专业审核后置。三维工程评估见[后续三维预览选项](docs/three-dimensional-preview-options.md)。
+后续主线是：用少量获授权 IFC4 小样本完成烟雾验证，保持支持边界收窄；随后优先提升上传、分析、报告、错误提示和导出的整体审阅体验；在确定性 Change Records 仍为事实源的前提下，逐家补齐可选 AI 服务商的适配、隐私边界和离线请求/错误测试。科研副线将围绕证据可追溯性、AI 解读可靠性和审阅效率展开。三维作为穿插探索，目标是把变化构件及其局部空间上下文以颜色和 `GlobalId` 高亮呈现，而不是承诺完整 BIM 浏览器。详见[路线图](docs/roadmap.md)、[科研与能力探索方向](docs/research-directions.md)和[后续三维预览选项](docs/three-dimensional-preview-options.md)。
 
 ## License, attribution, and safety
 
