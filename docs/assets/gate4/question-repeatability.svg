@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="670" viewBox="0 0 1500 670" role="img">
+<rect width="1500" height="670" fill="#FDFDFC"/>
+<text x="70" y="42" fill="#2D302F" font-size="36" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Question-level exact-match repeatability / 问题级精确匹配可重复性</text>
+<text x="70" y="92" fill="#717572" font-size="20" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">40 held-out questions grouped by exact successes across three repetitions / 40 道留出问题按三次重复中的成功次数分组</text>
+<circle cx="1422" cy="50" r="5" fill="#6F7872" stroke="none" stroke-width="0"/>
+<circle cx="1432" cy="58" r="5" fill="#918674" stroke="none" stroke-width="0"/>
+<circle cx="1428" cy="70" r="5" fill="#88746A" stroke="none" stroke-width="0"/>
+<circle cx="1416" cy="70" r="5" fill="#777D73" stroke="none" stroke-width="0"/>
+<circle cx="1412" cy="58" r="5" fill="#858079" stroke="none" stroke-width="0"/>
+<circle cx="1422" cy="61" r="4" fill="#2D302F" stroke="none" stroke-width="0"/>
+<line x1="70" y1="136" x2="1430" y2="136" stroke="#DDDFDC" stroke-width="2"/>
+<text x="70" y="251" fill="#2D302F" font-size="18" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Direct LLM / 直接模型</text>
+<rect x="440" y="230" width="332.5" height="62" rx="0" fill="#858985" stroke="none" stroke-width="0"/>
+<text x="606.25" y="249" fill="#FDFDFC" font-size="20" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">14</text>
+<rect x="772.5" y="230" width="118.75" height="62" rx="0" fill="#918674" stroke="none" stroke-width="0"/>
+<text x="831.875" y="249" fill="#2D302F" font-size="20" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">5</text>
+<rect x="891.25" y="230" width="71.25" height="62" rx="0" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="926.875" y="249" fill="#FDFDFC" font-size="20" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">3</text>
+<rect x="962.5" y="230" width="427.5" height="62" rx="0" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="1176.25" y="249" fill="#FDFDFC" font-size="20" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">18</text>
+<text x="70" y="356" fill="#2D302F" font-size="18" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Tool-Using Agent / 工具型智能体</text>
+<rect x="440" y="335" width="47.5" height="62" rx="0" fill="#858985" stroke="none" stroke-width="0"/>
+<text x="463.75" y="356" fill="#FDFDFC" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">2</text>
+<rect x="487.5" y="335" width="71.25" height="62" rx="0" fill="#918674" stroke="none" stroke-width="0"/>
+<text x="523.125" y="354" fill="#2D302F" font-size="20" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">3</text>
+<rect x="558.75" y="335" width="166.25" height="62" rx="0" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="641.875" y="354" fill="#FDFDFC" font-size="20" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">7</text>
+<rect x="725.0" y="335" width="665.0" height="62" rx="0" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="1057.5" y="354" fill="#FDFDFC" font-size="20" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">28</text>
+<text x="70" y="461" fill="#2D302F" font-size="18" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed / 本方法</text>
+<rect x="440" y="440" width="0.0" height="62" rx="0" fill="#858985" stroke="none" stroke-width="0"/>
+<rect x="440.0" y="440" width="23.75" height="62" rx="0" fill="#918674" stroke="none" stroke-width="0"/>
+<text x="451.875" y="461" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">1</text>
+<rect x="463.75" y="440" width="47.5" height="62" rx="0" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="487.5" y="461" fill="#FDFDFC" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">2</text>
+<rect x="511.25" y="440" width="878.75" height="62" rx="0" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="950.625" y="459" fill="#FDFDFC" font-size="20" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="hanging">37</text>
+<rect x="330" y="560" width="22" height="22" rx="3" fill="#858985" stroke="none" stroke-width="0"/>
+<text x="362" y="559" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">0 of 3 / 3次中0次</text>
+<rect x="555" y="560" width="22" height="22" rx="3" fill="#918674" stroke="none" stroke-width="0"/>
+<text x="587" y="559" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">1 of 3 / 3次中1次</text>
+<rect x="780" y="560" width="22" height="22" rx="3" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="812" y="559" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">2 of 3 / 3次中2次</text>
+<rect x="1005" y="560" width="22" height="22" rx="3" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="1037" y="559" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">3 of 3 / 3次中3次</text>
+<line x1="70" y1="606" x2="1430" y2="606" stroke="#DDDFDC" stroke-width="2"/>
+<text x="70" y="622" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">BIMChange-Agent v0.1.0 · frozen Gate 4 data / Gate 4 冻结数据</text>
+<text x="1430" y="622" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">gate4-offline-summary.json / question_success_frequency</text>
+</svg>

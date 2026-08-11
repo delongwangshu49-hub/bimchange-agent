@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="900" viewBox="0 0 1700 900" role="img">
+<rect width="1700" height="900" fill="#FDFDFC"/>
+<text x="70" y="42" fill="#2D302F" font-size="36" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Run-to-run variation across three repetitions / 三次重复的运行间变异</text>
+<text x="70" y="92" fill="#717572" font-size="20" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">Dots: repetitions · diamonds: means · lines: observed ranges / 圆点：重复 · 菱形：均值 · 横线：观测范围</text>
+<circle cx="1622" cy="50" r="5" fill="#6F7872" stroke="none" stroke-width="0"/>
+<circle cx="1632" cy="58" r="5" fill="#918674" stroke="none" stroke-width="0"/>
+<circle cx="1628" cy="70" r="5" fill="#88746A" stroke="none" stroke-width="0"/>
+<circle cx="1616" cy="70" r="5" fill="#777D73" stroke="none" stroke-width="0"/>
+<circle cx="1612" cy="58" r="5" fill="#858079" stroke="none" stroke-width="0"/>
+<circle cx="1622" cy="61" r="4" fill="#2D302F" stroke="none" stroke-width="0"/>
+<line x1="70" y1="136" x2="1630" y2="136" stroke="#DDDFDC" stroke-width="2"/>
+<text x="570.0" y="170" fill="#2D302F" font-size="22" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="hanging">Semantic exact match / 语义精确匹配</text>
+<line x1="398.1818181818182" y1="220" x2="398.1818181818182" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="398.1818181818182" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">50%</text>
+<line x1="474.54545454545456" y1="220" x2="474.54545454545456" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="474.54545454545456" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">60%</text>
+<line x1="550.9090909090909" y1="220" x2="550.9090909090909" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="550.9090909090909" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">70%</text>
+<line x1="627.2727272727273" y1="220" x2="627.2727272727273" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="627.2727272727273" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">80%</text>
+<line x1="703.6363636363636" y1="220" x2="703.6363636363636" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="703.6363636363636" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">90%</text>
+<line x1="780.0" y1="220" x2="780.0" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="780.0" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">100%</text>
+<text x="900" y="200" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end" dominant-baseline="hanging">Mean / 均值</text>
+<text x="70" y="289" fill="#2D302F" font-size="17" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Direct LLM / 直接模型</text>
+<line x1="398.1818181818182" y1="300" x2="474.54545454545456" y2="300" stroke="#858985" stroke-width="5"/>
+<polygon points="430.0,285 442.0,300 430.0,315 418.0,300" fill="#858985" stroke="none" stroke-width="0"/>
+<circle cx="398.1818181818182" cy="336" r="9" fill="#FDFDFC" stroke="#858985" stroke-width="3"/>
+<text x="398.1818181818182" y="336" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="417.27272727272725" cy="354" r="9" fill="#FDFDFC" stroke="#858985" stroke-width="3"/>
+<text x="417.27272727272725" y="354" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="474.54545454545456" cy="372" r="9" fill="#FDFDFC" stroke="#858985" stroke-width="3"/>
+<text x="474.54545454545456" y="372" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<text x="900" y="289" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">54.17%</text>
+<text x="70" y="434" fill="#2D302F" font-size="17" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Tool-Using Agent / 工具型智能体</text>
+<line x1="627.2727272727273" y1="445" x2="684.5454545454545" y2="445" stroke="#6F7872" stroke-width="5"/>
+<polygon points="659.0909090909092,430 671.0909090909092,445 659.0909090909092,460 647.0909090909092,445" fill="#6F7872" stroke="none" stroke-width="0"/>
+<circle cx="627.2727272727273" cy="481" r="9" fill="#FDFDFC" stroke="#6F7872" stroke-width="3"/>
+<text x="627.2727272727273" y="481" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="684.5454545454545" cy="499" r="9" fill="#FDFDFC" stroke="#6F7872" stroke-width="3"/>
+<text x="684.5454545454545" y="499" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="665.4545454545455" cy="517" r="9" fill="#FDFDFC" stroke="#6F7872" stroke-width="3"/>
+<text x="665.4545454545455" y="517" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<text x="900" y="434" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">84.17%</text>
+<text x="70" y="579" fill="#2D302F" font-size="17" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed / 本方法</text>
+<line x1="741.8181818181818" y1="590" x2="760.909090909091" y2="590" stroke="#88746A" stroke-width="5"/>
+<polygon points="754.5454545454546,575 766.5454545454546,590 754.5454545454546,605 742.5454545454546,590" fill="#88746A" stroke="none" stroke-width="0"/>
+<circle cx="760.909090909091" cy="626" r="9" fill="#FDFDFC" stroke="#88746A" stroke-width="3"/>
+<text x="760.909090909091" y="626" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="741.8181818181818" cy="644" r="9" fill="#FDFDFC" stroke="#88746A" stroke-width="3"/>
+<text x="741.8181818181818" y="644" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="760.909090909091" cy="662" r="9" fill="#FDFDFC" stroke="#88746A" stroke-width="3"/>
+<text x="760.909090909091" y="662" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<text x="900" y="579" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">96.67%</text>
+<text x="1300.0" y="170" fill="#2D302F" font-size="22" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="hanging">Change F1 / 变更 F1</text>
+<line x1="1090.0" y1="220" x2="1090.0" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1090.0" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">50%</text>
+<line x1="1174.0" y1="220" x2="1174.0" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1174.0" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">60%</text>
+<line x1="1258.0" y1="220" x2="1258.0" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1258.0" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">70%</text>
+<line x1="1342.0" y1="220" x2="1342.0" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1342.0" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">80%</text>
+<line x1="1426.0" y1="220" x2="1426.0" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1426.0" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">90%</text>
+<line x1="1510.0" y1="220" x2="1510.0" y2="720" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1510.0" y="736" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">100%</text>
+<text x="1630" y="200" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end" dominant-baseline="hanging">Mean / 均值</text>
+<line x1="1148.1538461538462" y1="300" x2="1261.5492957746478" y2="300" stroke="#858985" stroke-width="5"/>
+<polygon points="1199.1704537021922,285 1211.1704537021922,300 1199.1704537021922,315 1187.1704537021922,300" fill="#858985" stroke="none" stroke-width="0"/>
+<circle cx="1187.8082191780823" cy="336" r="9" fill="#FDFDFC" stroke="#858985" stroke-width="3"/>
+<text x="1187.8082191780823" y="336" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="1148.1538461538462" cy="354" r="9" fill="#FDFDFC" stroke="#858985" stroke-width="3"/>
+<text x="1148.1538461538462" y="354" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="1261.5492957746478" cy="372" r="9" fill="#FDFDFC" stroke="#858985" stroke-width="3"/>
+<text x="1261.5492957746478" y="372" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<text x="1630" y="289" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">63.00%</text>
+<line x1="1420.909090909091" y1="445" x2="1467.6978417266187" y2="445" stroke="#6F7872" stroke-width="5"/>
+<polygon points="1441.127684012898,430 1453.127684012898,445 1441.127684012898,460 1429.127684012898,445" fill="#6F7872" stroke="none" stroke-width="0"/>
+<circle cx="1434.776119402985" cy="481" r="9" fill="#FDFDFC" stroke="#6F7872" stroke-width="3"/>
+<text x="1434.776119402985" y="481" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="1467.6978417266187" cy="499" r="9" fill="#FDFDFC" stroke="#6F7872" stroke-width="3"/>
+<text x="1467.6978417266187" y="499" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="1420.909090909091" cy="517" r="9" fill="#FDFDFC" stroke="#6F7872" stroke-width="3"/>
+<text x="1420.909090909091" y="517" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<text x="1630" y="434" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">91.80%</text>
+<line x1="1480.2127659574467" y1="590" x2="1510.0" y2="590" stroke="#88746A" stroke-width="5"/>
+<polygon points="1492.1835980421538,575 1504.1835980421538,590 1492.1835980421538,605 1480.1835980421538,590" fill="#88746A" stroke="none" stroke-width="0"/>
+<circle cx="1486.338028169014" cy="626" r="9" fill="#FDFDFC" stroke="#88746A" stroke-width="3"/>
+<text x="1486.338028169014" y="626" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="1480.2127659574467" cy="644" r="9" fill="#FDFDFC" stroke="#88746A" stroke-width="3"/>
+<text x="1480.2127659574467" y="644" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="1510.0" cy="662" r="9" fill="#FDFDFC" stroke="#88746A" stroke-width="3"/>
+<text x="1510.0" y="662" fill="#2D302F" font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<text x="1630" y="579" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">97.88%</text>
+<line x1="70" y1="836" x2="1630" y2="836" stroke="#DDDFDC" stroke-width="2"/>
+<text x="70" y="852" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">BIMChange-Agent v0.1.0 · frozen Gate 4 data / Gate 4 冻结数据</text>
+<text x="1630" y="852" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">gate4-offline-summary.json / repetition</text>
+</svg>
