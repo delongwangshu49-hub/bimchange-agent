@@ -1,0 +1,42 @@
+BIMChange-Agent 0.2.0 Preview 1 — Third-party notices
+========================================================
+
+The original BIMChange-Agent code is distributed under the MIT License found
+in the package root. The Windows portable package also bundles dynamically
+loaded Python and native libraries. Their upstream licenses remain in force.
+
+Key bundled components
+----------------------
+- Python 3.13 runtime — Python Software Foundation License 2.0
+  https://www.python.org/downloads/
+- PySide6 Essentials / Shiboken6 6.11.1 and Qt 6 runtime libraries — used
+  under LGPL-3.0-only for this community preview
+  https://doc.qt.io/qtforpython-6/
+- IfcOpenShell / IfcDiff 0.8.5 — LGPL-3.0-or-later
+  https://github.com/IfcOpenShell/IfcOpenShell
+- NumPy — BSD-3-Clause and additional bundled notices
+  https://numpy.org/
+- Shapely — BSD-3-Clause
+  https://shapely.readthedocs.io/
+- jsonschema, attrs, referencing, rpds-py, lark, deepdiff and supporting
+  Python packages — permissive MIT/BSD/Apache/PSF-family licenses as stated in
+  their package metadata and upstream repositories.
+
+LGPL distribution note
+----------------------
+Qt, PySide6, Shiboken6, IfcOpenShell and IfcDiff are not relicensed under MIT.
+The portable package keeps their native libraries as separate dynamically
+loaded files in the application directory. Recipients may inspect and replace
+compatible library files for debugging or modification. BIMChange-Agent does
+not apply technical restrictions that prohibit such replacement.
+
+Copies of GPL-3.0 and LGPL-3.0 accompany the binary under licenses/. The
+Python runtime license accompanies the package as licenses/PYTHON-LICENSE.txt.
+Corresponding source is available from the upstream URLs above; the exact
+BIMChange-Agent source for this preview is available from its matching public
+Git tag:
+https://github.com/delongwangshu49-hub/bimchange-agent
+
+This notice is informational and does not replace the license texts or legal
+advice. If a bundled component's notice conflicts with this summary, the
+component's own license and upstream notice control.

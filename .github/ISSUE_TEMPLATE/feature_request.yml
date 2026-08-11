@@ -1,0 +1,38 @@
+name: Feature request / 功能建议
+description: Suggest an outcome for a future preview without sharing sensitive data.
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem / 用户问题
+      description: Describe the workflow problem, not only the proposed implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome / 期望结果
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area / 方向
+      options:
+        - IFC compatibility
+        - Report and export
+        - 3D review
+        - AI explanation
+        - Windows packaging/update
+        - Revit integration
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation / 隐私确认
+      options:
+        - label: This request contains no credentials, personal information, or confidential project data.
+          required: true

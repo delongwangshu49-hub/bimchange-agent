@@ -1,0 +1,1 @@
+"""Packaged, versioned product resources."""

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report / 私密安全报告
+    url: https://github.com/delongwangshu49-hub/bimchange-agent/security/advisories/new
+    about: Report vulnerabilities or sensitive-data incidents privately.

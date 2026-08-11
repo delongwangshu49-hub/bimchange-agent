@@ -1,0 +1,57 @@
+name: Preview bug report / 预览版问题
+description: Report a reproducible, non-sensitive defect in the Windows preview.
+title: "[Preview bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing BIMChange-Agent. Do not upload confidential IFC files, API Keys, personal information, or unredacted reports. Security/privacy incidents belong in a private GitHub Security Advisory.
+  - type: input
+    id: version
+    attributes:
+      label: Preview version / 预览版本
+      placeholder: v0.2.0-preview.1
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version / Windows 版本
+      placeholder: Windows 11 x64
+    validations:
+      required: true
+  - type: input
+    id: ifc_context
+    attributes:
+      label: Non-sensitive IFC context / 非敏感 IFC 信息
+      description: Schema, exporter, and approximate old/new file sizes only.
+      placeholder: IFC4, Revit exporter, 8 MiB / 9 MiB
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps / 复现步骤
+      placeholder: "1. Open the app\n2. Select...\n3. Click..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / 预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and exact dialog text / 实际行为与提示框文字
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation / 隐私确认
+      options:
+        - label: I removed API Keys, personal information, confidential IFCs, and unredacted reports.
+          required: true
