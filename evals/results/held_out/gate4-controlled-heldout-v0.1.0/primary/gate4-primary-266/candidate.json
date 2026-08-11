@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The only available evidence confirms that wall 2rg8G55UvONxUu2GmkwF$d was added as 'Wall RF 05' (tag 'WL-RF-05') on the Roof storey. It does not contain any dimensional, spatial, connectivity, access, or construction-phasing information needed to determine whether the wall is constructible as shown. Therefore the available source cannot justify a constructibility conclusion.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-wall-roof",
+              "global_id": "2rg8G55UvONxUu2GmkwF$d"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "No geometric or dimensional properties of the added wall are present in the change record.",
+        "No clearance, connection, or access analysis is included in the available data.",
+        "No construction sequencing or method information is available.",
+        "The change record only documents that the wall was added; it contains no verification of buildability as shown."
+      ]
+    }
+  ]
+}

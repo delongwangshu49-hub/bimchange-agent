@@ -1,0 +1,151 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q20-column-filter",
+      "status": "answered",
+      "answer": "Verified IfcColumn revision events in the model-pair summary: Column GF 01 (0Iqxc9CtTOgPV$1Tej3xGK) had Pset_ColumnCommon.IsExternal changed from true to false; Column RF 01 (12Po3y91HK4PYkc6lR0Ean) was deleted; and Column L1 05 (2$orIofUHKcQaHhLlr75_n) was added. No other IfcColumn additions, deletions, or property changes are represented.",
+      "predictions": [
+        {
+          "change_type": "property_modification",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_ColumnCommon",
+                "name": "IsExternal"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_ColumnCommon",
+                "name": "IsExternal"
+              }
+            }
+          ]
+        },
+        {
+          "change_type": "deletion",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "12Po3y91HK4PYkc6lR0Ean",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "12Po3y91HK4PYkc6lR0Ean",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "addition",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2$orIofUHKcQaHhLlr75_n",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2$orIofUHKcQaHhLlr75_n",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only entity type, GlobalId, Name, Tag, direct spatial container/storey, and scalar property-set values were used; geometry, placement, materials, classifications, quantities, nested property values, and precomputed change records are outside scope.",
+        "No engineering, safety, compliance, responsibility, or priority conclusions are implied."
+      ]
+    }
+  ]
+}

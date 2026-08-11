@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 72,
+  "execution_id": "gate4-primary-072",
+  "repetition": 1,
+  "workflow": "tool_using_agent",
+  "question_position": 32,
+  "question_id": "gate3-q40-no-added-beam-roof",
+  "category": "negative_control",
+  "status": "EXPERIMENTAL_FAILURE",
+  "candidate_persisted": false,
+  "failure": {
+    "category": "schema_or_output_format",
+    "exception_type": "JSONDecodeError",
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "stage": "answer_after_tool.response_json",
+    "non_empty_provider_response_returned": true,
+    "raw_response_persisted": false,
+    "retry_allowed": false,
+    "retry_performed": false
+  },
+  "usage_recovery": {
+    "request_attempt_increment_recorded": 1,
+    "successful_response_increment_recorded": 1,
+    "token_metadata_persisted": false,
+    "estimated_cost_increment_persisted": false,
+    "contingency_reserve_cny": 2.5,
+    "pre_resume_checkpoint_estimated_cny": 1.44391,
+    "next_resume_provider_attributed_spend_cny": 3.94391,
+    "accounting_note": "The frozen CNY 2.50 contingency covers all responses without checkpointed token metadata, including this Schema-invalid response."
+  },
+  "recovery_review": {
+    "status": "APPROVED_RECOVERY_PROTOCOL_APPLIED",
+    "approval_date": "2026-08-09",
+    "action": "Record the Schema-invalid response as an experimental failure without retry, then resume from the next scheduled execution."
+  },
+  "frozen_contract": {
+    "schedule_sha256": "92360439cef1797615bdb964020cfa92ab8e345a22dfe07b45f5883336db9750",
+    "audit_selection_sha256": "907ead457eb5a0200ce32467e4aa0b05cdd74b1132da6daad9ae0b812e0a7810",
+    "gate3_baseline_commit": "abcb095858ea45a1727d68d91063376ef77381ad",
+    "prompts_changed": false,
+    "schemas_changed": false,
+    "workflow_logic_changed": false,
+    "scoring_rules_changed": false
+  }
+}

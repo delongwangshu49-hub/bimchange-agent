@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q27-deleted-column-filter",
+      "status": "answered",
+      "answer": "The deleted IfcColumn is Column RF 01 (GlobalId 12Po3y91HK4PYkc6lR0Ean) on the Roof storey.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "12Po3y91HK4PYkc6lR0Ean",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "12Po3y91HK4PYkc6lR0Ean",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "status": "not_found",
+      "answer": "No. No IfcSlab on Level 01 had a verified property modification; no Level 01 slab property value differs between the source and revised summaries.",
+      "predictions": [],
+      "limitations": [
+        "The model pair summary covers only scalar property-set values and direct spatial containers; it does not include precomputed change records, geometry, materials, quantities, or nested property values."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 94,
+  "execution_id": "gate4-primary-094",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 14,
+  "question_id": "gate3-q20-column-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "5e327eae-45e5-4687-9d62-6c38fb1b5dce",
+      "0500e786-7848-4ec2-9d79-14961b5f444d",
+      "edaa4db4-a1ad-4664-991e-98af6272d726"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcColumn"
+        ]
+      }
+    },
+    "tool_result_count": 3,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There was one IfcColumn added at Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record gate4-added-column-level01 identifies an IfcColumn added with location Level 01."
+        },
+        {
+          "claim": "The added column was named \"Column L1 05\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record new_value.name is \"Column L1 05\"."
+        },
+        {
+          "claim": "The added column had tag \"CL-L1-05\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record new_value.tag is \"CL-L1-05\"."
+        },
+        {
+          "claim": "There was one IfcColumn deleted at Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified change record gate4-deleted-column-roof identifies an IfcColumn deleted with location Roof."
+        },
+        {
+          "claim": "The deleted column was previously named \"Column RF 01\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified change record old_value.name is \"Column RF 01\"."
+        },
+        {
+          "claim": "The deleted column had tag \"CL-RF-01\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified change record old_value.tag is \"CL-RF-01\"."
+        },
+        {
+          "claim": "There was one IfcColumn property modification at Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record gate4-property-column-ground identifies an IfcColumn property modification with location Ground Floor."
+        },
+        {
+          "claim": "The modified property was Pset_ColumnCommon.IsExternal.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record field is property set Pset_ColumnCommon with name IsExternal."
+        },
+        {
+          "claim": "The IsExternal property changed from true to false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record old_value is true and new_value is false."
+        },
+        {
+          "claim": "The source ground truth file returned exactly these three IfcColumn revision events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified_query_result has result_count 3 and lists exactly these three IfcColumn events."
+        },
+        {
+          "claim": "No other IfcColumn events were available for verification from the source ground truth file.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified_query_result reports result_count 3 with only these IfcColumn results, so no additional IfcColumn events are present in the returned source result."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There was one IfcColumn added at Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record gate4-added-column-level01 identifies an IfcColumn added with location Level 01."
+        },
+        {
+          "claim": "The added column was named \"Column L1 05\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record new_value.name is \"Column L1 05\"."
+        },
+        {
+          "claim": "The added column had tag \"CL-L1-05\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record new_value.tag is \"CL-L1-05\"."
+        },
+        {
+          "claim": "There was one IfcColumn deleted at Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified change record gate4-deleted-column-roof identifies an IfcColumn deleted with location Roof."
+        },
+        {
+          "claim": "The deleted column was previously named \"Column RF 01\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified change record old_value.name is \"Column RF 01\"."
+        },
+        {
+          "claim": "The deleted column had tag \"CL-RF-01\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified change record old_value.tag is \"CL-RF-01\"."
+        },
+        {
+          "claim": "There was one IfcColumn property modification at Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record gate4-property-column-ground identifies an IfcColumn property modification with location Ground Floor."
+        },
+        {
+          "claim": "The modified property was Pset_ColumnCommon.IsExternal.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record field is property set Pset_ColumnCommon with name IsExternal."
+        },
+        {
+          "claim": "The IsExternal property changed from true to false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record old_value is true and new_value is false."
+        },
+        {
+          "claim": "The source ground truth file returned exactly these three IfcColumn revision events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified_query_result has result_count 3 and lists exactly these three IfcColumn events."
+        },
+        {
+          "claim": "No other IfcColumn events were available for verification from the source ground truth file.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified_query_result reports result_count 3 with only these IfcColumn results, so no additional IfcColumn events are present in the returned source result."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 167,
+    "successful_responses": 162,
+    "input_tokens": 912980,
+    "cached_input_tokens": 242304,
+    "output_tokens": 256467,
+    "estimated_cost_usd": 0.166384,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.66384
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q29-beam-roof-filter",
+      "status": "answered",
+      "answer": "The verified revision event involving an IfcBeam on the Roof storey is Beam RF 01 (3JuqHVfXrLlA8tnQP5xv53): its Pset_BeamCommon LoadBearing property changed from false to true. Roof beams RF 02, RF 03, and RF 04 are present in both versions with no property change, and no IfcBeam on Roof was added or removed.",
+      "predictions": [
+        {
+          "change_type": "property_change",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only element, storey container, and scalar property-set data in the provided model pair summary were considered; no precomputed change records or geometry were used.",
+        "The summary does not provide an explicit list of verified revision events, so this response identifies changes by comparing the source and revised element/property entries."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "status": "not_found",
+      "answer": "No IfcSlab on Level 01 had a verified property modification in the provided model pair summary.",
+      "predictions": [],
+      "limitations": [
+        "Review is limited to scalar property-set values represented by the model pair summary; deleted/presence-only changes are not treated as property modifications."
+      ]
+    }
+  ]
+}

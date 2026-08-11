@@ -1,0 +1,143 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q24-level01-filter",
+      "status": "answered",
+      "answer": "Four verified revision events are explicitly associated with Level 01: (1) added IfcColumn 2$orIofUHKcQaHhLlr75_n (Column L1 05); (2) deleted IfcBeam 3TNmmeV$vP1wtU7$eM6gTb (Beam L1 01); (3) deleted IfcSlab 3QgprvELLQBgvTF$EPliSW (Slab L1 01); and (4) property modification of FireRating from 60 to 90 on IfcWall 1aO4mYJaTLLf6oT4DTcfok.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-column-level01",
+              "global_id": "2$orIofUHKcQaHhLlr75_n"
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Beam L1 01",
+            "tag": "BM-L1-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-deleted-beam-level01",
+              "global_id": "3TNmmeV$vP1wtU7$eM6gTb"
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-deleted-slab-level01",
+              "global_id": "3QgprvELLQBgvTF$EPliSW"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-wall-level01",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only revision events recorded in data/ground_truth/gate2-change-records.json with an explicit Level 01 building storey association were considered."
+      ]
+    }
+  ]
+}

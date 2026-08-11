@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 217,
+  "execution_id": "gate4-primary-217",
+  "repetition": 2,
+  "workflow": "direct_llm",
+  "question_position": 17,
+  "question_id": "gate3-q47-slab-priority-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "7b2b9790-a4f3-48e5-b572-d0b3e0549891"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 478,
+    "successful_responses": 471,
+    "input_tokens": 1664827,
+    "cached_input_tokens": 894848,
+    "output_tokens": 733181,
+    "estimated_cost_usd": 0.315594,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.15594
+}

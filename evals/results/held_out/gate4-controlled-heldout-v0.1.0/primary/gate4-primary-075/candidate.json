@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The change record confirms that slab 1hD8Z2VI5Q48QgyBkf6YcB was added on the Ground Floor with tag SL-GF-05, but it contains no coordination-priority value or ranking. Without any priority metadata in the available source, the evidence is insufficient to conclude that this slab should receive the highest coordination priority.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-slab-ground",
+              "global_id": "1hD8Z2VI5Q48QgyBkf6YcB"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The returned change record documents only the addition of the slab and its storey assignment; it does not contain any coordination-priority attribute, ranking, or rationale.",
+        "No other source information was available to justify assigning the highest coordination priority to this element."
+      ]
+    }
+  ]
+}

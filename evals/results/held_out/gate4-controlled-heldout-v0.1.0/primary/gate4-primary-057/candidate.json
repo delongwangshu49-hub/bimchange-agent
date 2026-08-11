@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The available change record shows that the FireRating for wall 1aO4mYJaTLLf6oT4DTcfok was revised from 60 to 90, but no regulatory threshold or compliance criterion is provided, so the revision alone cannot prove regulatory compliance.",
+      "predictions": [],
+      "limitations": [
+        "The change record only documents a FireRating value change; it does not include the applicable fire-resistance rating requirement or regulatory boundary condition.",
+        "No building-code or compliance-check evidence was available to evaluate whether the revised FireRating satisfies the required performance."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 195,
+  "execution_id": "gate4-primary-195",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 35,
+  "question_id": "gate3-q22-slab-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "ddc0b949-006e-4b67-9358-80a7c1c2a679",
+      "a80d8728-f8f6-4508-9071-c106d89df354",
+      "223acc84-6454-4142-9c61-3e0f7be88feb"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcSlab"
+        ]
+      }
+    },
+    "tool_result_count": 3,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Three verified revision events involving IfcSlab elements are recorded.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "3QgprvELLQBgvTF$EPliSW",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result reports result_count 3 and its results array contains exactly three IfcSlab revision events."
+        },
+        {
+          "claim": "One revision event is an added slab on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result lists change_type 'added', entity_type 'IfcSlab', global_id 1hD8Z2VI5Q48QgyBkf6YcB, and location Ground Floor."
+        },
+        {
+          "claim": "One revision event is a deleted slab on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result lists change_type 'deleted', entity_type 'IfcSlab', global_id 3QgprvELLQBgvTF$EPliSW, and location Level 01."
+        },
+        {
+          "claim": "One revision event is a property modification of LoadBearing on a slab in Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result lists change_type 'property_modified' for entity_type 'IfcSlab', global_id 2WfINAQAHRERPwEp7Nos0$, field property Pset_SlabCommon.LoadBearing, and location Roof."
+        },
+        {
+          "claim": "The answer is limited to the three IfcSlab events returned from the queried change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "3QgprvELLQBgvTF$EPliSW",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result, filtered to entity_types IfcSlab, returns exactly these three records and no additional results."
+        },
+        {
+          "claim": "No other IfcSlab revision events were found in that source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "3QgprvELLQBgvTF$EPliSW",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result reports result_count 3 and returns exactly these three IfcSlab records, supporting the statement that no other IfcSlab revision events were found in that source."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Three verified revision events involving IfcSlab elements are recorded.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "3QgprvELLQBgvTF$EPliSW",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result reports result_count 3 and its results array contains exactly three IfcSlab revision events."
+        },
+        {
+          "claim": "One revision event is an added slab on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result lists change_type 'added', entity_type 'IfcSlab', global_id 1hD8Z2VI5Q48QgyBkf6YcB, and location Ground Floor."
+        },
+        {
+          "claim": "One revision event is a deleted slab on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result lists change_type 'deleted', entity_type 'IfcSlab', global_id 3QgprvELLQBgvTF$EPliSW, and location Level 01."
+        },
+        {
+          "claim": "One revision event is a property modification of LoadBearing on a slab in Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result lists change_type 'property_modified' for entity_type 'IfcSlab', global_id 2WfINAQAHRERPwEp7Nos0$, field property Pset_SlabCommon.LoadBearing, and location Roof."
+        },
+        {
+          "claim": "The answer is limited to the three IfcSlab events returned from the queried change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "3QgprvELLQBgvTF$EPliSW",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result, filtered to entity_types IfcSlab, returns exactly these three records and no additional results."
+        },
+        {
+          "claim": "No other IfcSlab revision events were found in that source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "3QgprvELLQBgvTF$EPliSW",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result reports result_count 3 and returns exactly these three IfcSlab records, supporting the statement that no other IfcSlab revision events were found in that source."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 443,
+    "successful_responses": 437,
+    "input_tokens": 1322902,
+    "cached_input_tokens": 562048,
+    "output_tokens": 624555,
+    "estimated_cost_usd": 0.282969,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.82969
+}

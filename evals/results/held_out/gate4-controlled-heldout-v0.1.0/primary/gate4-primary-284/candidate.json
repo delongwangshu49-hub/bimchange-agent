@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q32-deleted-wall-ground",
+      "status": "answered",
+      "answer": "The IfcWall deleted from Ground Floor is Wall GF 01 (GlobalId 0z7L81IEbQPggjg__OrrlU), tag WL-GF-01.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0z7L81IEbQPggjg__OrrlU",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0z7L81IEbQPggjg__OrrlU",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": []
+    }
+  ]
+}

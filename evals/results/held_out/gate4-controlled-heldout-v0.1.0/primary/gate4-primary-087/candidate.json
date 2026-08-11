@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "status": "not_found",
+      "answer": "No IfcColumn deletion on Ground Floor was found in the change records.",
+      "predictions": [],
+      "limitations": [
+        "The conclusion is based only on the available gate2 change records; no deletion of an IfcColumn on Ground Floor is recorded."
+      ]
+    }
+  ]
+}

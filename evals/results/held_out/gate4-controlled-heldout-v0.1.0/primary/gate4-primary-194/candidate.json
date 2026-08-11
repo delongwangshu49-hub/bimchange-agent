@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q20-column-filter",
+      "status": "answered",
+      "answer": "The verified revision events involving IfcColumn elements are: (1) addition of column CL-L1-05 on Level 01, (2) deletion of column CL-RF-01 on Roof, and (3) modification of IsExternal property on a column on Ground Floor from true to false.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-column-level01",
+              "global_id": "2$orIofUHKcQaHhLlr75_n"
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-deleted-column-roof",
+              "global_id": "12Po3y91HK4PYkc6lR0Ean"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-column-ground",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The returned change records only cover the three listed IfcColumn revisions; no additional column events exist in the queried source.",
+        "Location and property values are reported exactly as provided in the change records; no IFC model geometry or additional attribute verification was performed."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q11-deleted-summary",
+      "status": "answered",
+      "answer": "The elements present only in the source IFC model are 4 elements: IfcWall Wall GF 01 (0z7L81IEbQPggjg__OrrlU), IfcColumn Column RF 01 (12Po3y91HK4PYkc6lR0Ean), IfcSlab Slab L1 01 (3QgprvELLQBgvTF$EPliSW), and IfcBeam Beam L1 01 (3TNmmeV$vP1wtU7$eM6gTb). These elements are absent from the revised model.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0z7L81IEbQPggjg__OrrlU",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0z7L81IEbQPggjg__OrrlU",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "12Po3y91HK4PYkc6lR0Ean",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "12Po3y91HK4PYkc6lR0Ean",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3QgprvELLQBgvTF$EPliSW",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3QgprvELLQBgvTF$EPliSW",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Beam L1 01",
+            "tag": "BM-L1-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Comparison is limited to element identity, name, tag, direct spatial container, building storey, and scalar property-set values included in the model pair summary. Geometry, materials, classifications, quantities, nested properties, and engineering judgments are excluded."
+      ]
+    }
+  ]
+}

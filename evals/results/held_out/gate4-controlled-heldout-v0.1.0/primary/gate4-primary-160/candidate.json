@@ -1,0 +1,147 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q12-property-summary",
+      "status": "answered",
+      "answer": "Four verified scalar property-value revisions are present in the ground truth change records: IfcBeam 3JuqHVfXrLlA8tnQP5xv53 (Roof storey) Pset_BeamCommon.LoadBearing changed from false to true; IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK (Ground Floor) Pset_ColumnCommon.IsExternal changed from true to false; IfcSlab 2WfINAQAHRERPwEp7Nos0$ (Roof storey) Pset_SlabCommon.LoadBearing changed from false to true; IfcWall 1aO4mYJaTLLf6oT4DTcfok (Level 01) Pset_WallCommon.FireRating changed from '60' to '90'.",
+      "predictions": [
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-beam-roof",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-column-ground",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-slab-roof",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-wall-level01",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The summary covers only the four property_modified records returned from data/ground_truth/gate2-change-records.json; no other property or non-property changes are included.",
+        "The FireRating old and new values are represented as string scalars ('60' and '90') in the source change records."
+      ]
+    }
+  ]
+}

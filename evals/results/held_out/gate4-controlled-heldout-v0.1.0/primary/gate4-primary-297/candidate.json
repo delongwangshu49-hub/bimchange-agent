@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q31-added-column-level01",
+      "status": "answered",
+      "answer": "The IfcColumn added on Level 01 is Column L1 05 (GlobalId 2$orIofUHKcQaHhLlr75_n, tag CL-L1-05).",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2$orIofUHKcQaHhLlr75_n",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2$orIofUHKcQaHhLlr75_n",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": []
+    }
+  ]
+}

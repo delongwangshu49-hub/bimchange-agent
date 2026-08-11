@@ -1,0 +1,325 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 278,
+  "execution_id": "gate4-primary-278",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 38,
+  "question_id": "gate3-q22-slab-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "5bca67f6-b58e-4bb4-ac21-310d892820c4",
+      "6311280c-f2e5-4f32-98bf-7c29e209f57f",
+      "21cdd225-7042-434f-bf47-ffe7310f775a"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcSlab"
+        ]
+      }
+    },
+    "tool_result_count": 3,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are exactly three verified revision events involving IfcSlab elements in the supplied change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "3QgprvELLQBgvTF$EPliSW",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result has result_count 3 and lists exactly these three IfcSlab revision events."
+        },
+        {
+          "claim": "IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result records change_id gate4-added-slab-ground with change_type 'added' and entity_type 'IfcSlab' for this global_id."
+        },
+        {
+          "claim": "The new object name for IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB is 'Slab GF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result for this addition lists new_value.name as 'Slab GF 05'."
+        },
+        {
+          "claim": "The new tag for IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB is 'SL-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result for this addition lists new_value.tag as 'SL-GF-05'."
+        },
+        {
+          "claim": "The added IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB is located in the Ground Floor building storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result shows the spatial_container and building_storey as IfcBuildingStorey 1fw5N5GZfPh95hsaUid9Fb with name 'Ground Floor'."
+        },
+        {
+          "claim": "IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result records change_id gate4-deleted-slab-level01 with change_type 'deleted' and entity_type 'IfcSlab' for this global_id."
+        },
+        {
+          "claim": "The old object name for IfcSlab 3QgprvELLQBgvTF$EPliSW is 'Slab L1 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result for this deletion lists old_value.name as 'Slab L1 01'."
+        },
+        {
+          "claim": "The old tag for IfcSlab 3QgprvELLQBgvTF$EPliSW is 'SL-L1-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result for this deletion lists old_value.tag as 'SL-L1-01'."
+        },
+        {
+          "claim": "The deleted IfcSlab 3QgprvELLQBgvTF$EPliSW was from the Level 01 building storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result shows the spatial_container and building_storey as IfcBuildingStorey 16B$afW8bSivOT_ExWbFiL with name 'Level 01'."
+        },
+        {
+          "claim": "IfcSlab 2WfINAQAHRERPwEp7Nos0$ had a property change in Pset_SlabCommon LoadBearing.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result records change_id gate4-property-slab-roof with change_type 'property_modified' and field property_set 'Pset_SlabCommon', name 'LoadBearing'."
+        },
+        {
+          "claim": "The old LoadBearing value for IfcSlab 2WfINAQAHRERPwEp7Nos0$ was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result lists old_value as false for this property change."
+        },
+        {
+          "claim": "The new LoadBearing value for IfcSlab 2WfINAQAHRERPwEp7Nos0$ was true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result lists new_value as true for this property change."
+        },
+        {
+          "claim": "The LoadBearing property change for IfcSlab 2WfINAQAHRERPwEp7Nos0$ occurred in the Roof building storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result shows the spatial_container and building_storey as IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j with name 'Roof'."
+        },
+        {
+          "claim": "Only IfcSlab events present in the supplied change records source were considered; no additional source of revision events was used.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result defines a single source at data/ground_truth/gate2-change-records.json with filters entity_types ['IfcSlab'] and contains no reference to any other source."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are exactly three verified revision events involving IfcSlab elements in the supplied change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "3QgprvELLQBgvTF$EPliSW",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result has result_count 3 and lists exactly these three IfcSlab revision events."
+        },
+        {
+          "claim": "IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result records change_id gate4-added-slab-ground with change_type 'added' and entity_type 'IfcSlab' for this global_id."
+        },
+        {
+          "claim": "The new object name for IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB is 'Slab GF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result for this addition lists new_value.name as 'Slab GF 05'."
+        },
+        {
+          "claim": "The new tag for IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB is 'SL-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result for this addition lists new_value.tag as 'SL-GF-05'."
+        },
+        {
+          "claim": "The added IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB is located in the Ground Floor building storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result shows the spatial_container and building_storey as IfcBuildingStorey 1fw5N5GZfPh95hsaUid9Fb with name 'Ground Floor'."
+        },
+        {
+          "claim": "IfcSlab 3QgprvELLQBgvTF$EPliSW was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result records change_id gate4-deleted-slab-level01 with change_type 'deleted' and entity_type 'IfcSlab' for this global_id."
+        },
+        {
+          "claim": "The old object name for IfcSlab 3QgprvELLQBgvTF$EPliSW is 'Slab L1 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result for this deletion lists old_value.name as 'Slab L1 01'."
+        },
+        {
+          "claim": "The old tag for IfcSlab 3QgprvELLQBgvTF$EPliSW is 'SL-L1-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result for this deletion lists old_value.tag as 'SL-L1-01'."
+        },
+        {
+          "claim": "The deleted IfcSlab 3QgprvELLQBgvTF$EPliSW was from the Level 01 building storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result shows the spatial_container and building_storey as IfcBuildingStorey 16B$afW8bSivOT_ExWbFiL with name 'Level 01'."
+        },
+        {
+          "claim": "IfcSlab 2WfINAQAHRERPwEp7Nos0$ had a property change in Pset_SlabCommon LoadBearing.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result records change_id gate4-property-slab-roof with change_type 'property_modified' and field property_set 'Pset_SlabCommon', name 'LoadBearing'."
+        },
+        {
+          "claim": "The old LoadBearing value for IfcSlab 2WfINAQAHRERPwEp7Nos0$ was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result lists old_value as false for this property change."
+        },
+        {
+          "claim": "The new LoadBearing value for IfcSlab 2WfINAQAHRERPwEp7Nos0$ was true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result lists new_value as true for this property change."
+        },
+        {
+          "claim": "The LoadBearing property change for IfcSlab 2WfINAQAHRERPwEp7Nos0$ occurred in the Roof building storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result shows the spatial_container and building_storey as IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j with name 'Roof'."
+        },
+        {
+          "claim": "Only IfcSlab events present in the supplied change records source were considered; no additional source of revision events was used.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result defines a single source at data/ground_truth/gate2-change-records.json with filters entity_types ['IfcSlab'] and contains no reference to any other source."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 626,
+    "successful_responses": 616,
+    "input_tokens": 2280947,
+    "cached_input_tokens": 1452416,
+    "output_tokens": 1014871,
+    "estimated_cost_usd": 0.404226,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 4.04226
+}

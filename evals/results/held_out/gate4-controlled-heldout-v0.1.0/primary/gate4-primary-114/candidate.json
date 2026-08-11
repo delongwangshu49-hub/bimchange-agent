@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q41-absent-guid",
+      "status": "not_found",
+      "answer": "No verified revision event was found for element 0AAAAAAAAAAAAAAAAAAAAA in the available change records.",
+      "predictions": [],
+      "limitations": [
+        "The supported gate2 change-record source contains no entry with global_id 0AAAAAAAAAAAAAAAAAAAAA."
+      ]
+    }
+  ]
+}

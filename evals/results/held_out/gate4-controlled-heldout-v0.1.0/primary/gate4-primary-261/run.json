@@ -1,0 +1,231 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 261,
+  "execution_id": "gate4-primary-261",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 21,
+  "question_id": "gate3-q47-slab-priority-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "ea0d61f6-60ba-486b-b3ef-522817034529",
+      "a5e91e38-7b28-4efa-b1f9-c076aaa343aa",
+      "85d1f56e-55dd-459a-a756-b30801a7cab2",
+      "d2480272-3350-41c6-bac0-3003624bf6dc",
+      "ebc7b6fb-68fe-436e-ba40-704c069ec674"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "global_ids": [
+          "1hD8Z2VI5Q48QgyBkf6YcB"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 1,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 0,
+      "coverage_rate": 0.0,
+      "missing_change_ids": [
+        "gate4-added-slab-ground"
+      ],
+      "unexpected_prediction_count": 0,
+      "complete": false
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The available change record confirms that slab 1hD8Z2VI5Q48QgyBkf6YcB was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified change record has change_type 'added', entity_type 'IfcSlab', and global_id '1hD8Z2VI5Q48QgyBkf6YcB'."
+        },
+        {
+          "claim": "The slab 1hD8Z2VI5Q48QgyBkf6YcB was added on the Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified record's location lists both spatial_container and building_storey as IfcBuildingStorey 'Ground Floor' with global_id '1fw5N5GZfPh95hsaUid9Fb'."
+        },
+        {
+          "claim": "The change record contains no coordination priority field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified record has field set to null, and new_value contains only name and tag, with no priority attribute."
+        },
+        {
+          "claim": "The change record contains no other evidence from which the highest coordination priority can be justified.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "Within the single verified change record there is no priority assignment, coordination ranking, or priority-related data; structured predictions are also empty."
+        },
+        {
+          "claim": "The available evidence is insufficient to determine whether slab 1hD8Z2VI5Q48QgyBkf6YcB should receive the highest coordination priority.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The only verified change record documents the added slab but does not include any coordination priority value or supporting assignment."
+        },
+        {
+          "claim": "The only retrieved record is an added-slab change.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result has result_count 1, with change_type 'added' and entity_type 'IfcSlab'."
+        },
+        {
+          "claim": "The retrieved record has no priority attribute or supporting coordination assignment.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The record contains only change metadata and a new_value with name and tag; no priority attribute or coordination assignment appears."
+        },
+        {
+          "claim": "No specification or rule set was provided that defines the priority boundary for newly added slabs.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The supplied verified change record and structured predictions contain no specification or rule set defining a priority boundary for newly added slabs."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The available change record confirms that slab 1hD8Z2VI5Q48QgyBkf6YcB was added on the Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified change record has change_type 'added', entity_type 'IfcSlab', global_id 1hD8Z2VI5Q48QgyBkf6YcB, and location data identifying the Ground Floor as both spatial_container and building_storey."
+        },
+        {
+          "claim": "The change record contains no coordination priority field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified change record includes change_id, change_type, entity_type, global_id, location, field, old_value, new_value, and evidence, but no priority or coordination priority attribute is present; the structured prediction also has field null."
+        },
+        {
+          "claim": "The change record contains no other evidence from which the highest coordination priority can be justified.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The new_value contains only name and tag values, Slab GF 05 and SL-GF-05, with no priority value, coordination assignment, or other supporting data that would justify highest coordination priority."
+        },
+        {
+          "claim": "The only retrieved record is an added-slab change.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result has result_count 1 and the single result is an added IfcSlab with the requested global_id."
+        },
+        {
+          "claim": "The record has no priority attribute.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified record contains no priority attribute; its new_value only includes name and tag, and the structured prediction field is null."
+        },
+        {
+          "claim": "The record has no supporting coordination assignment.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "No coordination assignment, priority list, or related assignment data appears in the verified change record or structured predictions."
+        },
+        {
+          "claim": "No specification or rule set was provided that defines the priority boundary for newly added slabs.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The supplied evidence consists only of the single verified change record and its structured prediction; no specification, rule set, or priority-boundary definition is present in the evidence boundary."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 570,
+    "successful_responses": 561,
+    "input_tokens": 2190596,
+    "cached_input_tokens": 1392640,
+    "output_tokens": 905139,
+    "estimated_cost_usd": 0.369053,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.69053
+}

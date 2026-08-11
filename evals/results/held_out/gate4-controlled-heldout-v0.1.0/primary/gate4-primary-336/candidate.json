@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q37-loadbearing-properties",
+      "status": "answered",
+      "answer": "Two verified property modifications affect LoadBearing fields: an IfcBeam (3JuqHVfXrLlA8tnQP5xv53) at Roof storey changed Pset_BeamCommon.LoadBearing from false to true, and an IfcSlab (2WfINAQAHRERPwEp7Nos0$) at Roof storey changed Pset_SlabCommon.LoadBearing from false to true.",
+      "predictions": [
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-beam-roof",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-slab-roof",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$"
+            }
+          ]
+        }
+      ],
+      "limitations": []
+    }
+  ]
+}

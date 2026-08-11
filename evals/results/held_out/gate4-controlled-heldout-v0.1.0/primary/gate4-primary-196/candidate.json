@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The verified change record confirms the addition of IfcWall 2rg8G55UvONxUu2GmkwF$d, name 'Wall RF 05', tag 'WL-RF-05', on the Roof storey. Constructibility cannot be concluded from the available source because the record contains no geometry, connection, support, boundary, or clearance data needed for that engineering determination.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-wall-roof",
+              "global_id": "2rg8G55UvONxUu2GmkwF$d"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The only source record for global_id 2rg8G55UvONxUu2GmkwF$d is an added-wall change record; it provides no geometry, boundary conditions, connections, or clearances.",
+        "Constructibility is an engineering conclusion that requires additional model data not present in the cited change record."
+      ]
+    }
+  ]
+}

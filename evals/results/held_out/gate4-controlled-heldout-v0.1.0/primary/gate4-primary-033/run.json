@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 33,
+  "execution_id": "gate4-primary-033",
+  "repetition": 1,
+  "workflow": "direct_llm",
+  "question_position": 33,
+  "question_id": "gate3-q11-deleted-summary",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "0163171f-36e9-47aa-a3e3-15169333d0da"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 37,
+    "successful_responses": 33,
+    "input_tokens": 613186,
+    "cached_input_tokens": 111360,
+    "output_tokens": 118702,
+    "estimated_cost_usd": 0.103804,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.03804
+}

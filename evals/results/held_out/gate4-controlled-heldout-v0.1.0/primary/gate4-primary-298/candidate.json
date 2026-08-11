@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "status": "not_found",
+      "answer": "No IfcColumn was deleted from Ground Floor. All four Ground Floor IfcColumns present in the source version (0Iqxc9CtTOgPV$1Tej3xGK, 1014w__bvONwkZjuUiWHYm, 11PGWFmBzQvPrPl2m5F8hZ, 3Fa3D9$c9Suuajwbn7sv80) are also present in the revised version with the same Ground Floor location.",
+      "predictions": [],
+      "limitations": [
+        "Comparison is limited to the entity summary scope; geometry, placement, and unlisted properties are not considered."
+      ]
+    }
+  ]
+}

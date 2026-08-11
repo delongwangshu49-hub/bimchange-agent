@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q36-slab-property",
+      "status": "answered",
+      "answer": "The scalar property that changed for 2WfINAQAHRERPwEp7Nos0$ is Pset_SlabCommon.LoadBearing, changing from false in the source version to true in the revised version.",
+      "predictions": [
+        {
+          "change_type": "property_value_change",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_SlabCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_SlabCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only the scalar property represented in the model pair summary is reported; no other property changes are inferred."
+      ]
+    }
+  ]
+}

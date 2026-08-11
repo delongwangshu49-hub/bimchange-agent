@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "status": "not_found",
+      "answer": "No IfcBeam was added on Roof. The model pair summary lists the same four IfcBeam elements on Roof in the source and revised versions (Beam RF 01, RF 02, RF 03, and RF 04), and no new IfcBeam appears on Roof in the revised version.",
+      "predictions": [],
+      "limitations": [
+        "The model pair summary excludes precomputed differences or Change Records, geometry and placement coordinates, materials, classifications, quantities, and nested property values.",
+        "Only entity presence and scalar property-set values from the model pair summary are used; no engineering or safety conclusions are made."
+      ]
+    }
+  ]
+}

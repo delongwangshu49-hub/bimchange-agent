@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q41-absent-guid",
+      "status": "not_found",
+      "answer": "No verified revision event involving element 0AAAAAAAAAAAAAAAAAAAAA was found in the supplied change records.",
+      "predictions": [],
+      "limitations": [
+        "The conclusion is based only on the returned records from data/ground_truth/gate2-change-records.json; no records matched global_id 0AAAAAAAAAAAAAAAAAAAAA."
+      ]
+    }
+  ]
+}

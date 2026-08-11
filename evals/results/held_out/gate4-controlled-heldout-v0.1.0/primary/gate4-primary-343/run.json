@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 343,
+  "execution_id": "gate4-primary-343",
+  "repetition": 3,
+  "workflow": "tool_using_agent",
+  "question_position": 23,
+  "question_id": "gate3-q29-beam-roof-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "7534d70a-97bf-4a2b-a3d2-634d21b92ee8",
+      "6ce6144e-7217-42c4-859c-f00ae281a111"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcBeam"
+        ],
+        "building_storey_names": [
+          "Roof"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0
+  },
+  "cumulative_usage": {
+    "request_attempts": 721,
+    "successful_responses": 711,
+    "input_tokens": 3102155,
+    "cached_input_tokens": 2267776,
+    "output_tokens": 1195461,
+    "estimated_cost_usd": 0.457893,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 4.57893
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q19-beam-filter",
+      "status": "answered",
+      "answer": "Verified IfcBeam revision events: Beam RF 01 (3JuqHVfXrLlA8tnQP5xv53) had Pset_BeamCommon.LoadBearing changed from false to true; Beam GF 05 (3Z1rgbb$PMDfsfeWvsKUUB) was added; Beam L1 01 (3TNmmeV$vP1wtU7$eM6gTb) was deleted.",
+      "predictions": [
+        {
+          "change_type": "modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        },
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The reported differences are limited to the included model-pair-summary scope; geometry, placement, materials, classifications, quantities, and nested property values are not assessed.",
+        "No precomputed change records or engineering judgments were used."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,677 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 255,
+  "execution_id": "gate4-primary-255",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 15,
+  "question_id": "gate3-q41-absent-guid",
+  "category": "negative_control",
+  "status": "EXPERIMENTAL_FAILURE",
+  "candidate_persisted": false,
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "failure": {
+    "category": "schema_or_output_format",
+    "exception_type": "JSONDecodeError",
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "last_request_kind": "gate3_proposed_answer",
+    "raw_response_count": 2,
+    "retry_allowed": false,
+    "retry_performed": false
+  },
+  "raw_provider_responses": [
+    {
+      "sequence": 1,
+      "request_kind": "tool_planning",
+      "response": {
+        "id": "fcafae7d-e67d-4438-b2f2-a36ce2083b9e",
+        "object": "response",
+        "created_at": 1786271913,
+        "status": "completed",
+        "background": false,
+        "completed_at": 1786271915,
+        "content_filters": null,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "incomplete_details": null,
+        "instructions": "Translate the supplied natural-language revision question into exactly one query_change_records call. Do not answer the question and do not call any other tool. The question does not include hidden reference filters.",
+        "max_output_tokens": 16000,
+        "max_tool_calls": null,
+        "model": "deepseek-v4-flash",
+        "moderation": null,
+        "output": [
+          {
+            "type": "reasoning",
+            "id": "bddbb588-80bc-49a9-b909-2c8d45cdb552",
+            "status": "completed",
+            "content": [
+              {
+                "type": "reasoning_text",
+                "text": "The question asks about verified revision event involving element with global id \"0AAAAAAAAAAAAAAAAAAAAA\". This is a query_change_records call with global_ids filter. The GUID has 22 chars? \"0AAAAAAAAAAAAAAAAAAAAA\" - let me count: 0 + 21 A's = 22 characters. Yes.\n\nI should call query_change_records with schema_version 0.1.0 and filters including global_ids. Other filters should be null."
+              }
+            ],
+            "summary": []
+          },
+          {
+            "type": "function_call",
+            "id": "e0167073-ef3a-4b5a-927f-30072ad4260a",
+            "status": "completed",
+            "arguments": "{\"schema_version\": \"0.1.0\", \"filters\": {\"change_types\": null, \"entity_types\": null, \"global_ids\": [\"0AAAAAAAAAAAAAAAAAAAAA\"], \"building_storey_names\": null, \"property_set\": null, \"property_name\": null}}",
+            "call_id": "call_00_Qa3xBmwQDoL7m5rbpUtX6706",
+            "name": "query_change_records"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": null,
+        "reasoning": {
+          "effort": "high",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": null
+        },
+        "tool_choice": "auto",
+        "tools": [
+          {
+            "type": "function",
+            "name": "query_change_records",
+            "description": "Return verified IFC Change Records matching all supplied filters. Use an empty filters object to retrieve every verified change.",
+            "parameters": {
+              "type": "object",
+              "required": [
+                "schema_version",
+                "filters"
+              ],
+              "properties": {
+                "schema_version": {
+                  "const": "0.1.0"
+                },
+                "filters": {
+                  "type": "object",
+                  "required": [
+                    "change_types",
+                    "entity_types",
+                    "global_ids",
+                    "building_storey_names",
+                    "property_set",
+                    "property_name"
+                  ],
+                  "properties": {
+                    "change_types": {
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "enum": [
+                              "added",
+                              "deleted",
+                              "property_modified",
+                              "geometry_modified"
+                            ],
+                            "type": "string"
+                          },
+                          "minItems": 1,
+                          "uniqueItems": true
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "entity_types": {
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "pattern": "^Ifc"
+                          },
+                          "minItems": 1,
+                          "uniqueItems": true
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "global_ids": {
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "minLength": 22,
+                            "maxLength": 22
+                          },
+                          "minItems": 1,
+                          "uniqueItems": true
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "building_storey_names": {
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "minItems": 1,
+                          "uniqueItems": true
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "property_set": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "property_name": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        ],
+        "top_logprobs": 0,
+        "top_p": 1.0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 783,
+          "input_tokens_details": {
+            "cached_tokens": 768
+          },
+          "output_tokens": 202,
+          "output_tokens_details": {
+            "reasoning_tokens": 93
+          },
+          "total_tokens": 985
+        },
+        "user": null,
+        "metadata": {}
+      }
+    },
+    {
+      "sequence": 2,
+      "request_kind": "gate3_proposed_answer",
+      "response": {
+        "id": "cccb3a8a-93f0-411e-af6e-ec6e3a1c0942",
+        "object": "response",
+        "created_at": 1786271916,
+        "status": "completed",
+        "background": false,
+        "completed_at": 1786271918,
+        "content_filters": null,
+        "error": null,
+        "frequency_penalty": 0.0,
+        "incomplete_details": null,
+        "instructions": "Answer only the supplied BIM revision question. Return one schema-valid answer. Do not invent GUIDs, storeys, fields, values, evidence, safety conclusions, or unobserved changes. Use status not_found for a supported empty result and insufficient_evidence when the available source cannot justify the requested engineering conclusion. Keep the prose answer limited to claims represented by predictions or explicit limitations. Every prediction object must contain exactly change_type, entity_type, global_id, location, field, old_value, new_value, and evidence_refs; never add name, tag, change_id, or any other top-level prediction field. Cite only returned records from data/ground_truth/gate2-change-records.json with source_type=change_query, change_id, and global_id. Return exactly one JSON object and no text or additional JSON before or after it.",
+        "max_output_tokens": 16000,
+        "max_tool_calls": null,
+        "model": "deepseek-v4-flash",
+        "moderation": null,
+        "output": [
+          {
+            "type": "reasoning",
+            "id": "2ce7af71-6fdd-4ace-8a03-80ce25301886",
+            "status": "completed",
+            "content": [
+              {
+                "type": "reasoning_text",
+                "text": "The change records query returned no results for that GUID. The answer should be not_found with no predictions and limitations stating no verified revision event found for the given GUID in the queried change records source."
+              }
+            ],
+            "summary": []
+          },
+          {
+            "type": "message",
+            "id": "3b4e696d-c979-46c6-914a-84723031bbd5",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "```json\n{\"answer\": {\"question_id\": \"gate3-q41-absent-guid\", \"status\": \"not_found\", \"answer\": \"No verified revision event was found for element 0AAAAAAAAAAAAAAAAAAAAA.\", \"predictions\": [], \"limitations\": [\"The change record source data/ground_truth/gate2-change-records.json contains no entry for global_id 0AAAAAAAAAAAAAAAAAAAAA with source_type=change_query.\"]}}\n```"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": null,
+        "reasoning": {
+          "effort": "high",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1.0,
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "gate3_proposed_answer",
+            "schema": {
+              "type": "object",
+              "required": [
+                "answer"
+              ],
+              "properties": {
+                "answer": {
+                  "$ref": "#/$defs/answer"
+                }
+              },
+              "additionalProperties": false,
+              "$defs": {
+                "entity_reference": {
+                  "type": "object",
+                  "required": [
+                    "entity_type",
+                    "global_id",
+                    "name"
+                  ],
+                  "properties": {
+                    "entity_type": {
+                      "type": "string",
+                      "pattern": "^Ifc"
+                    },
+                    "global_id": {
+                      "type": "string",
+                      "minLength": 22,
+                      "maxLength": 22
+                    },
+                    "name": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "location": {
+                  "type": "object",
+                  "required": [
+                    "spatial_container",
+                    "building_storey"
+                  ],
+                  "properties": {
+                    "spatial_container": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/$defs/entity_reference"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "building_storey": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/$defs/entity_reference"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "field": {
+                  "type": "object",
+                  "required": [
+                    "kind",
+                    "property_set",
+                    "name"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "const": "property",
+                      "type": "string"
+                    },
+                    "property_set": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "model_summary_evidence": {
+                  "type": "object",
+                  "required": [
+                    "source_type",
+                    "source_path",
+                    "version_role",
+                    "global_id",
+                    "expected_present",
+                    "field"
+                  ],
+                  "properties": {
+                    "source_type": {
+                      "const": "model_pair_summary",
+                      "type": "string"
+                    },
+                    "source_path": {
+                      "type": "string"
+                    },
+                    "version_role": {
+                      "enum": [
+                        "source",
+                        "revised"
+                      ],
+                      "type": "string"
+                    },
+                    "global_id": {
+                      "type": "string",
+                      "minLength": 22,
+                      "maxLength": 22
+                    },
+                    "expected_present": {
+                      "type": "boolean"
+                    },
+                    "field": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/$defs/field"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "change_query_evidence": {
+                  "type": "object",
+                  "required": [
+                    "source_type",
+                    "source_path",
+                    "change_id",
+                    "global_id"
+                  ],
+                  "properties": {
+                    "source_type": {
+                      "const": "change_query",
+                      "type": "string"
+                    },
+                    "source_path": {
+                      "type": "string"
+                    },
+                    "change_id": {
+                      "type": "string"
+                    },
+                    "global_id": {
+                      "type": "string",
+                      "minLength": 22,
+                      "maxLength": 22
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "prediction": {
+                  "type": "object",
+                  "required": [
+                    "change_type",
+                    "entity_type",
+                    "global_id",
+                    "location",
+                    "field",
+                    "old_value",
+                    "new_value",
+                    "evidence_refs"
+                  ],
+                  "properties": {
+                    "change_type": {
+                      "type": "string"
+                    },
+                    "entity_type": {
+                      "type": "string",
+                      "pattern": "^Ifc"
+                    },
+                    "global_id": {
+                      "type": "string",
+                      "minLength": 22,
+                      "maxLength": 22
+                    },
+                    "location": {
+                      "$ref": "#/$defs/location"
+                    },
+                    "field": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/$defs/field"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "old_value": {
+                      "anyOf": [
+                        {
+                          "type": "null"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "tag"
+                          ],
+                          "properties": {
+                            "name": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "tag": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "new_value": {
+                      "anyOf": [
+                        {
+                          "type": "null"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "tag"
+                          ],
+                          "properties": {
+                            "name": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "tag": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/$defs/model_summary_evidence"
+                          },
+                          {
+                            "$ref": "#/$defs/change_query_evidence"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "answer": {
+                  "type": "object",
+                  "required": [
+                    "question_id",
+                    "status",
+                    "answer",
+                    "predictions",
+                    "limitations"
+                  ],
+                  "properties": {
+                    "question_id": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "enum": [
+                        "answered",
+                        "not_found",
+                        "insufficient_evidence"
+                      ],
+                      "type": "string"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "predictions": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/$defs/prediction"
+                      }
+                    },
+                    "limitations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "low"
+        },
+        "tool_choice": "auto",
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 1.0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 1577,
+          "input_tokens_details": {
+            "cached_tokens": 1536
+          },
+          "output_tokens": 137,
+          "output_tokens_details": {
+            "reasoning_tokens": 41
+          },
+          "total_tokens": 1714
+        },
+        "user": null,
+        "metadata": {}
+      }
+    }
+  ],
+  "cumulative_usage": {
+    "request_attempts": 550,
+    "successful_responses": 541,
+    "input_tokens": 2164483,
+    "cached_input_tokens": 1373312,
+    "output_tokens": 877151,
+    "estimated_cost_usd": 0.360212,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.60212,
+  "provider_attributed_spend_cny_at_process_start": 3.96357,
+  "post_run_audit_generated": false
+}

@@ -1,0 +1,225 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 178,
+  "execution_id": "gate4-primary-178",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 18,
+  "question_id": "gate3-q21-wall-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "f2b218f5-838d-4594-b9ab-cf333da89ae1",
+      "3b774ac6-b1a1-436e-a4e0-688919fc2a15",
+      "34c5cf64-c0e4-4ea4-83a5-df20add12c80"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcWall"
+        ]
+      }
+    },
+    "tool_result_count": 3,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are three verified revision events involving IfcWall elements in the returned change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "0z7L81IEbQPggjg__OrrlU",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "verified_query_result has result_count 3 and lists exactly these three IfcWall records."
+        },
+        {
+          "claim": "One of the revision events is an added IfcWall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "verified_query_result record for 2rg8G55UvONxUu2GmkwF$d has change_type 'added' and entity_type 'IfcWall'."
+        },
+        {
+          "claim": "One of the revision events is a deleted IfcWall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "verified_query_result record for 0z7L81IEbQPggjg__OrrlU has change_type 'deleted' and entity_type 'IfcWall'."
+        },
+        {
+          "claim": "One of the revision events is an IfcWall property modification.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "verified_query_result record for 1aO4mYJaTLLf6oT4DTcfok has change_type 'property_modified' and entity_type 'IfcWall'."
+        },
+        {
+          "claim": "The IfcWall property modification changed FireRating from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified property_modified record specifies field Pset_WallCommon/FireRating with old_value '60' and new_value '90'."
+        },
+        {
+          "claim": "Only revision events from data/ground_truth/gate2-change-records.json with source_type=change_query were considered.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "0z7L81IEbQPggjg__OrrlU",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "verified_query_result source path is data/ground_truth/gate2-change-records.json and the structured predictions' evidence_refs all use source_type 'change_query' for these three records."
+        },
+        {
+          "claim": "No other revision event sources were included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "0z7L81IEbQPggjg__OrrlU",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The supplied verified query result and structured predictions contain only the source path data/ground_truth/gate2-change-records.json; no other source paths are listed."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are three verified revision events involving IfcWall elements in the returned change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "0z7L81IEbQPggjg__OrrlU",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "verified_query_result has result_count 3 and lists exactly these three IfcWall records."
+        },
+        {
+          "claim": "One of the revision events is an added IfcWall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "verified_query_result record for 2rg8G55UvONxUu2GmkwF$d has change_type 'added' and entity_type 'IfcWall'."
+        },
+        {
+          "claim": "One of the revision events is a deleted IfcWall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "verified_query_result record for 0z7L81IEbQPggjg__OrrlU has change_type 'deleted' and entity_type 'IfcWall'."
+        },
+        {
+          "claim": "One of the revision events is an IfcWall property modification.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "verified_query_result record for 1aO4mYJaTLLf6oT4DTcfok has change_type 'property_modified' and entity_type 'IfcWall'."
+        },
+        {
+          "claim": "The IfcWall property modification changed FireRating from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified property_modified record specifies field Pset_WallCommon/FireRating with old_value '60' and new_value '90'."
+        },
+        {
+          "claim": "Only revision events from data/ground_truth/gate2-change-records.json with source_type=change_query were considered.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "0z7L81IEbQPggjg__OrrlU",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "verified_query_result source path is data/ground_truth/gate2-change-records.json and the structured predictions' evidence_refs all use source_type 'change_query' for these three records."
+        },
+        {
+          "claim": "No other revision event sources were included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "0z7L81IEbQPggjg__OrrlU",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The supplied verified query result and structured predictions contain only the source path data/ground_truth/gate2-change-records.json; no other source paths are listed."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 392,
+    "successful_responses": 386,
+    "input_tokens": 1246908,
+    "cached_input_tokens": 506752,
+    "output_tokens": 545961,
+    "estimated_cost_usd": 0.25791,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.5791
+}

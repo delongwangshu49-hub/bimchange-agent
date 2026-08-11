@@ -1,0 +1,215 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 198,
+  "execution_id": "gate4-primary-198",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 38,
+  "question_id": "gate3-q17-beam-roof-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "da210185-d931-4be3-8b6c-9571ca6ffd61",
+      "96ae72b0-7e08-4209-b650-7cf12aa7c1fc",
+      "f0eddb51-c503-4103-bc20-413578cc3e63"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "3JuqHVfXrLlA8tnQP5xv53"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event for element 3JuqHVfXrLlA8tnQP5xv53 is a property modification.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record has change_type property_modified for this global_id."
+        },
+        {
+          "claim": "The modified entity type is IfcBeam.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record lists entity_type as IfcBeam."
+        },
+        {
+          "claim": "The modified property is LoadBearing in Pset_BeamCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record lists field name LoadBearing and property_set Pset_BeamCommon."
+        },
+        {
+          "claim": "The property value changed from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record lists old_value false and new_value true."
+        },
+        {
+          "claim": "The revision event is located on the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified change record places the event in an IfcBuildingStorey named Roof with global_id 3Oz3veLPTRYhlejGdV1B7j."
+        },
+        {
+          "claim": "Only the verified change record returned from the query source is used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified query result returned exactly one change record for this element and the candidate answer does not rely on any other source."
+        },
+        {
+          "claim": "No additional changes, properties, or modelling conclusions are inferred for this element.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The candidate answer explicitly limits itself to the verified change record and does not assert any further changes or modelling conclusions."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event for element 3JuqHVfXrLlA8tnQP5xv53 is a property modification.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record has change_type property_modified for this global_id."
+        },
+        {
+          "claim": "The modified entity type is IfcBeam.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record lists entity_type as IfcBeam."
+        },
+        {
+          "claim": "The modified property is LoadBearing in Pset_BeamCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record lists field name LoadBearing and property_set Pset_BeamCommon."
+        },
+        {
+          "claim": "The property value changed from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record lists old_value false and new_value true."
+        },
+        {
+          "claim": "The revision event is located on the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified change record places the event in an IfcBuildingStorey named Roof with global_id 3Oz3veLPTRYhlejGdV1B7j."
+        },
+        {
+          "claim": "Only the verified change record returned from the query source is used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified query result returned exactly one change record for this element and the candidate answer does not rely on any other source."
+        },
+        {
+          "claim": "No additional changes, properties, or modelling conclusions are inferred for this element.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The candidate answer explicitly limits itself to the verified change record and does not assert any further changes or modelling conclusions."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 454,
+    "successful_responses": 448,
+    "input_tokens": 1338690,
+    "cached_input_tokens": 572544,
+    "output_tokens": 643869,
+    "estimated_cost_usd": 0.289147,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.89147
+}

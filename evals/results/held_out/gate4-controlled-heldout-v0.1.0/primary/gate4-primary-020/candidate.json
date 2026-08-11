@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q30-slab-ground-filter",
+      "status": "answered",
+      "answer": "The verified revision event involving an IfcSlab on Ground Floor is the addition of Slab GF 05 (1hD8Z2VI5Q48QgyBkf6YcB) to the Ground Floor storey. In the compared model-pair fields, no existing Ground Floor slab is modified or deleted.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The comparison is limited to element identity, name/tag, direct spatial container, and scalar property-set values in the supplied model-pair summary; geometry, materials, classifications, quantities, and other model content are outside scope."
+      ]
+    }
+  ]
+}

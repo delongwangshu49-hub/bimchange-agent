@@ -1,0 +1,263 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 245,
+  "execution_id": "gate4-primary-245",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 5,
+  "question_id": "gate3-q15-column-level01-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "9d453aa0-733f-4ef7-8552-d64b3fbf9734",
+      "dd85c128-7742-415f-abc7-e2d991600507",
+      "2a47a143-4a06-4baa-a7fa-ed6dece96f47"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "2$orIofUHKcQaHhLlr75_n"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is an addition (change_type 'added').",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record gate4-added-column-level01 has change_type 'added'."
+        },
+        {
+          "claim": "The added entity type is IfcColumn.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record has entity_type 'IfcColumn'."
+        },
+        {
+          "claim": "The global identifier of the added entity is 2$orIofUHKcQaHhLlr75_n.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record's global_id matches this identifier."
+        },
+        {
+          "claim": "The added IfcColumn has name 'Column L1 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record's new_value.name is 'Column L1 05'."
+        },
+        {
+          "claim": "The added IfcColumn has tag 'CL-L1-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record's new_value.tag is 'CL-L1-05'."
+        },
+        {
+          "claim": "The addition is located within IfcBuildingStorey 16B$afW8bSivOT_ExWbFiL.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record location identifies spatial_container and building_storey as IfcBuildingStorey with global_id 16B$afW8bSivOT_ExWbFiL."
+        },
+        {
+          "claim": "The building storey is named Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record location has name 'Level 01'."
+        },
+        {
+          "claim": "The change record does not specify a modified attribute.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record has field null and old_value null, so no modified attribute is specified."
+        },
+        {
+          "claim": "The prediction only asserts the addition itself and its declared name/tag.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The supplied prediction is a single 'added' change with new_value containing only name and tag."
+        },
+        {
+          "claim": "Only one matching change record was found for the supplied global identifier.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified query result has result_count 1 and the results array contains exactly one change record for global_id 2$orIofUHKcQaHhLlr75_n."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is an addition (change_type 'added').",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record gate4-added-column-level01 has change_type 'added'."
+        },
+        {
+          "claim": "The added entity type is IfcColumn.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record has entity_type 'IfcColumn'."
+        },
+        {
+          "claim": "The global identifier of the added entity is 2$orIofUHKcQaHhLlr75_n.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record's global_id matches this identifier."
+        },
+        {
+          "claim": "The added IfcColumn has name 'Column L1 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record's new_value.name is 'Column L1 05'."
+        },
+        {
+          "claim": "The added IfcColumn has tag 'CL-L1-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record's new_value.tag is 'CL-L1-05'."
+        },
+        {
+          "claim": "The addition is located within IfcBuildingStorey 16B$afW8bSivOT_ExWbFiL.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record location identifies spatial_container and building_storey as IfcBuildingStorey with global_id 16B$afW8bSivOT_ExWbFiL."
+        },
+        {
+          "claim": "The building storey is named Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record location has name 'Level 01'."
+        },
+        {
+          "claim": "The change record does not specify a modified attribute.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record has field null and old_value null, so no modified attribute is specified."
+        },
+        {
+          "claim": "The prediction only asserts the addition itself and its declared name/tag.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The supplied prediction is a single 'added' change with new_value containing only name and tag."
+        },
+        {
+          "claim": "Only one matching change record was found for the supplied global identifier.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified query result has result_count 1 and the results array contains exactly one change record for global_id 2$orIofUHKcQaHhLlr75_n."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 520,
+    "successful_responses": 511,
+    "input_tokens": 2117373,
+    "cached_input_tokens": 1340800,
+    "output_tokens": 829639,
+    "estimated_cost_usd": 0.344774,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.44774
+}

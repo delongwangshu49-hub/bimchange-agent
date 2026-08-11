@@ -1,0 +1,199 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 98,
+  "execution_id": "gate4-primary-098",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 18,
+  "question_id": "gate3-q46-beam-responsibility-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "cb120d46-3a54-4258-a091-6ef3f3bb50bc",
+      "169ef54b-9cac-4a68-b3d6-096f0ca28ee1",
+      "7467f7ec-5467-41e6-80bb-0d5309da8650",
+      "20bf7508-49fa-4ff8-8932-9cdbfcf464da",
+      "45aad529-33fc-47ec-9bda-f30d0c1b5cd2"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcBeam"
+        ],
+        "global_ids": [
+          "3TNmmeV$vP1wtU7$eM6gTb"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 1,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 0,
+      "coverage_rate": 0.0,
+      "missing_change_ids": [
+        "gate4-deleted-beam-level01"
+      ],
+      "unexpected_prediction_count": 0,
+      "complete": false
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The answer status is insufficient_evidence.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The supplied record confirms the deletion but contains no responsible party, assignee, or authorization information, so the evidence cannot support a definitive attribution."
+        },
+        {
+          "claim": "The available change record confirms beam 3TNmmeV$vP1wtU7$eM6gTb was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified change record with change_id gate4-deleted-beam-level01 has change_type deleted, entity_type IfcBeam, and global_id 3TNmmeV$vP1wtU7$eM6gTb."
+        },
+        {
+          "claim": "The available change record does not identify the responsible party for that deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The record fields describe the deletion, old value, location, and evidence, but no field identifies or names a responsible party."
+        },
+        {
+          "claim": "The change record returned from data/ground_truth/gate2-change-records.json with change_id gate4-deleted-beam-level01 confirms the deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The supplied verified query result has source path data/ground_truth/gate2-change-records.json and includes a result with change_id gate4-deleted-beam-level01 and change_type deleted."
+        },
+        {
+          "claim": "The change record contains no responsible party, assignee, or authorization information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The result object contains only change_id, change_type, entity_type, global_id, location, field, old_value, new_value, and evidence; none of these fields provides assignee or authorization information."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The available change record confirms beam 3TNmmeV$vP1wtU7$eM6gTb was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified query result contains exactly one result for this global ID with change_type 'deleted'."
+        },
+        {
+          "claim": "The available change record does not identify the responsible party for that deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified change record contains no field or value naming a responsible party."
+        },
+        {
+          "claim": "The returned change record gate4-deleted-beam-level01 confirms the deletion of beam 3TNmmeV$vP1wtU7$eM6gTb.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified query result has change_id 'gate4-deleted-beam-level01' and change_type 'deleted' for this beam."
+        },
+        {
+          "claim": "The returned change record contains no responsible party information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The returned record does not include any responsible-party key or value."
+        },
+        {
+          "claim": "The returned change record contains no assignee information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The returned record does not include an assignee field or value."
+        },
+        {
+          "claim": "The returned change record contains no authorization information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The returned record does not include authorization details."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 182,
+    "successful_responses": 176,
+    "input_tokens": 940485,
+    "cached_input_tokens": 259456,
+    "output_tokens": 285243,
+    "estimated_cost_usd": 0.175939,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.75939
+}

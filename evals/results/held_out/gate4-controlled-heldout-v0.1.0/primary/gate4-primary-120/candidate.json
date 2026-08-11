@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The change record confirms that wall 2rg8G55UvONxUu2GmkwF$d was added on the Roof storey (name 'Wall RF 05', tag 'WL-RF-05'). However, the available source contains no geometric dimensions, spatial boundaries, connectivity, or context information needed to determine whether the wall is constructible as shown. Therefore, constructability cannot be confirmed or refuted based solely on this record.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-wall-roof",
+              "global_id": "2rg8G55UvONxUu2GmkwF$d"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The change record does not provide geometric data (length, height, thickness, profile) for the wall.",
+        "The change record does not provide information about adjacent elements, supports, or boundary conditions needed for constructability assessment.",
+        "Only the fact that the wall was added is supported by the cited source; no engineering constructability conclusion can be derived from it."
+      ]
+    }
+  ]
+}

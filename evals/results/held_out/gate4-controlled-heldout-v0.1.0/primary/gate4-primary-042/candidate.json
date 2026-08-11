@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q25-roof-filter",
+      "status": "not_found",
+      "answer": "No verified revision events explicitly associated with IfcRoof were found in the change records.",
+      "predictions": [],
+      "limitations": [
+        "The change query returned zero records for entity type IfcRoof; therefore no verified revision events could be identified."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "status": "not_found",
+      "answer": "No. No IfcBeam was added on the Roof storey in the revised model.",
+      "predictions": [],
+      "limitations": [
+        "This conclusion is based only on IfcBeam presence and storey location in the model pair summary; no change record or geometry was used."
+      ]
+    }
+  ]
+}

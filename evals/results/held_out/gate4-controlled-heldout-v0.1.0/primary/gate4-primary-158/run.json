@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 158,
+  "execution_id": "gate4-primary-158",
+  "repetition": 2,
+  "workflow": "tool_using_agent",
+  "question_position": 38,
+  "question_id": "gate3-q17-beam-roof-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "a60537ab-15e5-4e1d-90d7-80f5f967ecbf",
+      "217c53d4-0c16-4da7-9d7c-b6abf82302b5"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "3JuqHVfXrLlA8tnQP5xv53"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0
+  },
+  "cumulative_usage": {
+    "request_attempts": 331,
+    "successful_responses": 325,
+    "input_tokens": 1155191,
+    "cached_input_tokens": 440192,
+    "output_tokens": 452918,
+    "estimated_cost_usd": 0.22815,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.2815
+}

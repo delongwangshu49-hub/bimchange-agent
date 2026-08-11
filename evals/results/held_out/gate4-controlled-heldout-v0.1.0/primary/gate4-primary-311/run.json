@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 311,
+  "execution_id": "gate4-primary-311",
+  "repetition": 3,
+  "workflow": "direct_llm",
+  "question_position": 31,
+  "question_id": "gate3-q35-beam-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "cbadebf0-5ca5-4470-b60a-766da6af3a60"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 663,
+    "successful_responses": 653,
+    "input_tokens": 2864686,
+    "cached_input_tokens": 2033664,
+    "output_tokens": 1134100,
+    "estimated_cost_usd": 0.439587,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 4.39587
+}

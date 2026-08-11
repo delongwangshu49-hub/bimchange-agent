@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 316,
+  "execution_id": "gate4-primary-316",
+  "repetition": 3,
+  "workflow": "direct_llm",
+  "question_position": 36,
+  "question_id": "gate3-q45-fire-compliance-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "a14ed5d8-f0ea-44db-b4e7-3aba4e6358d7"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 668,
+    "successful_responses": 658,
+    "input_tokens": 2957611,
+    "cached_input_tokens": 2126464,
+    "output_tokens": 1150739,
+    "estimated_cost_usd": 0.444523,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 4.44523
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q33-column-property",
+      "status": "answered",
+      "answer": "The scalar property IsExternal in Pset_ColumnCommon changed from true to false for IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK.",
+      "predictions": [
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-column-ground",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The answer is based solely on the single matching change record in data/ground_truth/gate2-change-records.json; no model pair files were consulted."
+      ]
+    }
+  ]
+}

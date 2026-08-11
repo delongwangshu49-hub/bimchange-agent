@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q26-added-beam-filter",
+      "status": "answered",
+      "answer": "One IfcBeam was added: global ID 3Z1rgbb$PMDfsfeWvsKUUB, named 'Beam GF 05' with tag 'BM-GF-05', located in Ground Floor.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-beam-ground",
+              "global_id": "3Z1rgbb$PMDfsfeWvsKUUB"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only one added IfcBeam was found in the available change records."
+      ]
+    }
+  ]
+}

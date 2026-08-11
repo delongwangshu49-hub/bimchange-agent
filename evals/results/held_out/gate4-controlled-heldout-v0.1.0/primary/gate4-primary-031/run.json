@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 31,
+  "execution_id": "gate4-primary-031",
+  "repetition": 1,
+  "workflow": "direct_llm",
+  "question_position": 31,
+  "question_id": "gate3-q32-deleted-wall-ground",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "89d56b58-8533-42a7-875d-d3bd45ec16c8"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 35,
+    "successful_responses": 31,
+    "input_tokens": 576030,
+    "cached_input_tokens": 108800,
+    "output_tokens": 111850,
+    "estimated_cost_usd": 0.097035,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 0.97035
+}

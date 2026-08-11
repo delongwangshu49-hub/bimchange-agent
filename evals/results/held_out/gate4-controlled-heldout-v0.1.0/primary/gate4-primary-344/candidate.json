@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "status": "not_found",
+      "answer": "No verified property modification was found for any IfcSlab on Level 01 in the change records.",
+      "predictions": [],
+      "limitations": [
+        "The change-records query returned zero results for IfcSlab property modifications on Level 01; therefore, no prediction can be made regarding a specific slab property change."
+      ]
+    }
+  ]
+}

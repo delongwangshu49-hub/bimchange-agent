@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q16-slab-level01-guid",
+      "status": "answered",
+      "answer": "The verified revision event for element 3QgprvELLQBgvTF$EPliSW is its removal: the source model contains IfcSlab 'Slab L1 01' (tag SL-L1-01) in Level 01, while the revised model does not contain that GlobalId.",
+      "predictions": [
+        {
+          "change_type": "removed",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3QgprvELLQBgvTF$EPliSW",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3QgprvELLQBgvTF$EPliSW",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only the model pair summary was available; no explicit change record was provided. The deletion is inferred from the element's presence in the source model and absence from the revised model."
+      ]
+    }
+  ]
+}

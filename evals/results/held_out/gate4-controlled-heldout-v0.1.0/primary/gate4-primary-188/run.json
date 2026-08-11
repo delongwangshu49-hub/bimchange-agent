@@ -1,0 +1,188 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 188,
+  "execution_id": "gate4-primary-188",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 28,
+  "question_id": "gate3-q45-fire-compliance-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "c8d0b894-39e8-434f-8d9d-6bbdac347b87",
+      "4eb312af-f9cb-4f40-8278-45a7114c7e34",
+      "df7359f5-9f3b-4488-bb3e-ec935e476ec0"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "global_ids": [
+          "1aO4mYJaTLLf6oT4DTcfok"
+        ],
+        "property_name": "FireRating"
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The change record shows FireRating for wall 1aO4mYJaTLLf6oT4DTcfok was revised from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Verified change record gate4-property-wall-level01 has Pset_WallCommon FireRating old_value 60 and new_value 90 for this wall."
+        },
+        {
+          "claim": "No regulatory threshold or required rating is documented in the available source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified change record contains only the property modification and does not include any regulatory threshold or required fire-resistance rating."
+        },
+        {
+          "claim": "This revision alone does not prove regulatory compliance.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "No compliance threshold or assessment is present in the change record, so the rating change cannot establish regulatory compliance by itself."
+        },
+        {
+          "claim": "The available source documents only the FireRating property change from 60 to 90; it does not contain the applicable regulatory requirement, required fire-resistance rating, or any compliance assessment for this wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result set contains exactly one property_modified record and no fields for regulatory requirements, required ratings, or compliance assessment."
+        },
+        {
+          "claim": "No boundary-condition details or code references are present in the change record, so an engineering conclusion about regulatory compliance cannot be justified.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The change record has no boundary-condition details or code references, and the explicit evidence boundary prevents an engineering compliance conclusion."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The change record shows FireRating for wall 1aO4mYJaTLLf6oT4DTcfok was revised from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Verified change record gate4-property-wall-level01 has Pset_WallCommon FireRating old_value 60 and new_value 90 for this wall."
+        },
+        {
+          "claim": "No regulatory threshold or required rating is documented in the available source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified change record contains only the property modification and does not include any regulatory threshold or required fire-resistance rating."
+        },
+        {
+          "claim": "This revision alone does not prove regulatory compliance.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "No compliance threshold or assessment is present in the change record, so the rating change cannot establish regulatory compliance by itself."
+        },
+        {
+          "claim": "The available source documents only the FireRating property change from 60 to 90; it does not contain the applicable regulatory requirement, required fire-resistance rating, or any compliance assessment for this wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result set contains exactly one property_modified record and no fields for regulatory requirements, required ratings, or compliance assessment."
+        },
+        {
+          "claim": "No boundary-condition details or code references are present in the change record, so an engineering conclusion about regulatory compliance cannot be justified.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The change record has no boundary-condition details or code references, and the explicit evidence boundary prevents an engineering compliance conclusion."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 421,
+    "successful_responses": 415,
+    "input_tokens": 1288894,
+    "cached_input_tokens": 537344,
+    "output_tokens": 593835,
+    "estimated_cost_usd": 0.272996,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.72996
+}

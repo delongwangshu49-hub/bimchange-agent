@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "status": "not_found",
+      "answer": "No IfcBeam addition on Roof was found in the change records.",
+      "predictions": [],
+      "limitations": [
+        "No added IfcBeam records were returned for Roof from data/ground_truth/gate2-change-records.json."
+      ]
+    }
+  ]
+}

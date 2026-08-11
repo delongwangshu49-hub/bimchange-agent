@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "status": "not_found",
+      "answer": "No verified property modification was found for an IfcSlab on Level 01.",
+      "predictions": [],
+      "limitations": [
+        "The change record query for IfcSlab, property modification, and Level 01 returned zero records.",
+        "Absence from the queried change records does not rule out unverified or differently categorized changes outside this source."
+      ]
+    }
+  ]
+}

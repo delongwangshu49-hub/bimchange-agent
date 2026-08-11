@@ -1,0 +1,184 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 116,
+  "execution_id": "gate4-primary-116",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 36,
+  "question_id": "gate3-q34-wall-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "1d6aa984-d15b-4fba-bcee-d159710ae172",
+      "016d1137-f5b9-4619-8b8c-4084921d9235",
+      "11fd0b98-2614-452b-afc5-77d5fb49edec"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "1aO4mYJaTLLf6oT4DTcfok"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The scalar property FireRating (in Pset_WallCommon) for wall 1aO4mYJaTLLf6oT4DTcfok changed.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Verified change record gate4-property-wall-level01 has change_type property_modified, entity_type IfcWall, global_id 1aO4mYJaTLLf6oT4DTcfok, and field Pset_WallCommon/FireRating."
+        },
+        {
+          "claim": "The old value of FireRating was '60'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The change record lists old_value as '60'."
+        },
+        {
+          "claim": "The new value of FireRating is '90'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The change record lists new_value as '90'."
+        },
+        {
+          "claim": "No model summary evidence was provided.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The supplied evidence contains only the verified change record from data/ground_truth/gate2-change-records.json; no model summary source or summary evidence is present."
+        },
+        {
+          "claim": "The answer is based solely on the returned change record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The prediction's evidence reference is source_type change_query pointing to the single change record, and the verified query result contains exactly one result."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The scalar property FireRating (in Pset_WallCommon) for wall 1aO4mYJaTLLf6oT4DTcfok changed.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Verified change record gate4-property-wall-level01 has change_type property_modified, entity_type IfcWall, global_id 1aO4mYJaTLLf6oT4DTcfok, and field Pset_WallCommon/FireRating."
+        },
+        {
+          "claim": "The old value of FireRating was '60'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The change record lists old_value as '60'."
+        },
+        {
+          "claim": "The new value of FireRating is '90'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The change record lists new_value as '90'."
+        },
+        {
+          "claim": "No model summary evidence was provided.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The supplied evidence contains only the verified change record from data/ground_truth/gate2-change-records.json; no model summary source or summary evidence is present."
+        },
+        {
+          "claim": "The answer is based solely on the returned change record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The prediction's evidence reference is source_type change_query pointing to the single change record, and the verified query result contains exactly one result."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 241,
+    "successful_responses": 235,
+    "input_tokens": 1027847,
+    "cached_input_tokens": 320512,
+    "output_tokens": 377214,
+    "estimated_cost_usd": 0.205545,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.05545
+}

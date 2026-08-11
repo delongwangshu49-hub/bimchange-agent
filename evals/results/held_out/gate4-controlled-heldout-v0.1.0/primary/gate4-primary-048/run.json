@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 48,
+  "execution_id": "gate4-primary-048",
+  "repetition": 1,
+  "workflow": "tool_using_agent",
+  "question_position": 8,
+  "question_id": "gate3-q23-ground-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "f57bdd53-b1fb-4eb1-b9f9-ce845c4851ff",
+      "a000589a-dcf4-4a1b-97bd-c65a59fcf610"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0
+  },
+  "cumulative_usage": {
+    "request_attempts": 61,
+    "successful_responses": 57,
+    "input_tokens": 767959,
+    "cached_input_tokens": 138112,
+    "output_tokens": 150290,
+    "estimated_cost_usd": 0.130646,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.30646
+}

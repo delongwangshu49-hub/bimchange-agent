@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q39-no-geometry",
+      "status": "insufficient_evidence",
+      "answer": "No geometry modification is verified in this revision set. The model pair summary explicitly excludes geometry and placement coordinates, so it cannot justify a geometry-change conclusion.",
+      "predictions": [],
+      "limitations": [
+        "The model pair summary scope excludes geometry and placement coordinates.",
+        "The summary only includes IfcElement identity fields, spatial containers/storeys, and scalar property-set values."
+      ]
+    }
+  ]
+}

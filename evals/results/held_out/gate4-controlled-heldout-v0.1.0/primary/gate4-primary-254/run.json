@@ -1,0 +1,193 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 254,
+  "execution_id": "gate4-primary-254",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 14,
+  "question_id": "gate3-q19-beam-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "dfb56c89-37af-4cb3-a22e-0a704a78d0e9",
+      "734c83ec-ad37-492b-a898-5f9382c5c7ac",
+      "7531e764-be02-4f23-b6fb-462bdd5f1758"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcBeam"
+        ]
+      }
+    },
+    "tool_result_count": 3,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are 3 verified revision events involving IfcBeam elements.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified query result for entity_types ['IfcBeam'] has result_count=3 and lists three IfcBeam change records."
+        },
+        {
+          "claim": "An IfcBeam was added on the Ground Floor with global ID 3Z1rgbb$PMDfsfeWvsKUUB, name 'Beam GF 05', and tag 'BM-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified record gate4-added-beam-ground has change_type 'added', location Ground Floor, and new_value name 'Beam GF 05', tag 'BM-GF-05'."
+        },
+        {
+          "claim": "An IfcBeam was deleted from Level 01 with global ID 3TNmmeV$vP1wtU7$eM6gTb, name 'Beam L1 01', and tag 'BM-L1-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified record gate4-deleted-beam-level01 has change_type 'deleted', location Level 01, and old_value name 'Beam L1 01', tag 'BM-L1-01'."
+        },
+        {
+          "claim": "An IfcBeam property modification occurred on the Roof for global ID 3JuqHVfXrLlA8tnQP5xv53, changing Pset_BeamCommon LoadBearing from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified record gate4-property-beam-roof has change_type 'property_modified', location Roof, field Pset_BeamCommon LoadBearing, old_value false, and new_value true."
+        },
+        {
+          "claim": "The answer is limited to the change records returned from data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result source.path is data/ground_truth/gate2-change-records.json."
+        },
+        {
+          "claim": "No other IfcBeam revision events were reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result for IfcBeam filters contains exactly 3 results, so no additional IfcBeam revision events were reported by that result."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are 3 verified revision events involving IfcBeam elements.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified query result for entity_types ['IfcBeam'] has result_count=3 and lists three IfcBeam change records."
+        },
+        {
+          "claim": "An IfcBeam was added on the Ground Floor with global ID 3Z1rgbb$PMDfsfeWvsKUUB, name 'Beam GF 05', and tag 'BM-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified record gate4-added-beam-ground has change_type 'added', location Ground Floor, and new_value name 'Beam GF 05', tag 'BM-GF-05'."
+        },
+        {
+          "claim": "An IfcBeam was deleted from Level 01 with global ID 3TNmmeV$vP1wtU7$eM6gTb, name 'Beam L1 01', and tag 'BM-L1-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified record gate4-deleted-beam-level01 has change_type 'deleted', location Level 01, and old_value name 'Beam L1 01', tag 'BM-L1-01'."
+        },
+        {
+          "claim": "An IfcBeam property modification occurred on the Roof for global ID 3JuqHVfXrLlA8tnQP5xv53, changing Pset_BeamCommon LoadBearing from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified record gate4-property-beam-roof has change_type 'property_modified', location Roof, field Pset_BeamCommon LoadBearing, old_value false, and new_value true."
+        },
+        {
+          "claim": "The answer is limited to the change records returned from data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result source.path is data/ground_truth/gate2-change-records.json."
+        },
+        {
+          "claim": "No other IfcBeam revision events were reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result for IfcBeam filters contains exactly 3 results, so no additional IfcBeam revision events were reported by that result."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 548,
+    "successful_responses": 539,
+    "input_tokens": 2162123,
+    "cached_input_tokens": 1371008,
+    "output_tokens": 876812,
+    "estimated_cost_usd": 0.360103,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.60103
+}

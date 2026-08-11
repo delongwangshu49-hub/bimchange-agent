@@ -1,0 +1,171 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 270,
+  "execution_id": "gate4-primary-270",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 30,
+  "question_id": "gate3-q44-wall-safety-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "bcf42b81-8ff8-4804-b53c-0bf00f880147",
+      "8f4d5cfa-ce62-46a3-9f9c-e9836d4206ce",
+      "ac78b6e5-34f3-4a24-aa78-e7352839d852"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "global_ids": [
+          "0z7L81IEbQPggjg__OrrlU"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The only cited evidence confirms that wall 0z7L81IEbQPggjg__OrrlU was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record gate4-deleted-wall-ground lists change_type 'deleted', entity_type 'IfcWall', and global_id 0z7L81IEbQPggjg__OrrlU."
+        },
+        {
+          "claim": "The cited evidence contains no structural analysis, load-path information, or professional safety assessment.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The supplied verified change record contains only change metadata, location, old_value name/tag, and detector information; it does not include structural analysis, load-path, or safety-assessment content."
+        },
+        {
+          "claim": "The cited change record only confirms the deletion of the wall, so a structural safety conclusion cannot be justified.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record's only substantive assertion is the wall deletion; with no structural content, it cannot justify a safety conclusion."
+        },
+        {
+          "claim": "Whether the deletion makes the building structurally unsafe cannot be determined from the available source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The explicit evidence boundary is the verified change record, which establishes deletion but provides no basis for a structural safety determination; the candidate answer's insufficient-evidence status is consistent with the record."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The only cited evidence confirms that wall 0z7L81IEbQPggjg__OrrlU was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record gate4-deleted-wall-ground lists change_type 'deleted', entity_type 'IfcWall', and global_id 0z7L81IEbQPggjg__OrrlU."
+        },
+        {
+          "claim": "The cited evidence contains no structural analysis, load-path information, or professional safety assessment.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The supplied verified change record contains only change metadata, location, old_value name/tag, and detector information; it does not include structural analysis, load-path, or safety-assessment content."
+        },
+        {
+          "claim": "The cited change record only confirms the deletion of the wall, so a structural safety conclusion cannot be justified.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record's only substantive assertion is the wall deletion; with no structural content, it cannot justify a safety conclusion."
+        },
+        {
+          "claim": "Whether the deletion makes the building structurally unsafe cannot be determined from the available source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The explicit evidence boundary is the verified change record, which establishes deletion but provides no basis for a structural safety determination; the candidate answer's insufficient-evidence status is consistent with the record."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 599,
+    "successful_responses": 590,
+    "input_tokens": 2240221,
+    "cached_input_tokens": 1424640,
+    "output_tokens": 971890,
+    "estimated_cost_usd": 0.3903,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.903
+}

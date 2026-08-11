@@ -1,0 +1,231 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 242,
+  "execution_id": "gate4-primary-242",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 2,
+  "question_id": "gate3-q14-wall-ground-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "1137ab05-0697-4f44-bd31-6cfb5fd3bd23",
+      "9e445008-5d73-439d-8972-98f80ae070f1",
+      "a06c3264-59e9-4457-9e97-35fdbeb90d49"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "0z7L81IEbQPggjg__OrrlU"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is gate4-deleted-wall-ground.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record has change_id 'gate4-deleted-wall-ground'."
+        },
+        {
+          "claim": "The event involves IfcWall 0z7L81IEbQPggjg__OrrlU.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The returned record has entity_type 'IfcWall' and global_id '0z7L81IEbQPggjg__OrrlU'."
+        },
+        {
+          "claim": "The IfcWall is named 'Wall GF 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record's old_value contains 'name': 'Wall GF 01'."
+        },
+        {
+          "claim": "The IfcWall has tag 'WL-GF-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record's old_value contains 'tag': 'WL-GF-01'."
+        },
+        {
+          "claim": "The change type is deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record has change_type 'deleted' and new_value null."
+        },
+        {
+          "claim": "The IfcWall was deleted from the Ground Floor building storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The record's location and building_storey identify an IfcBuildingStorey named 'Ground Floor' with global_id '1fw5N5GZfPh95hsaUid9Fb'."
+        },
+        {
+          "claim": "Only one change record matches this global_id.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result has result_count 1 and returns only the single record for this global_id."
+        },
+        {
+          "claim": "No property-level revision events were reported for this element.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The only returned record has field null and describes a deletion, not a property-level change."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is gate4-deleted-wall-ground.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record has change_id 'gate4-deleted-wall-ground'."
+        },
+        {
+          "claim": "The event involves IfcWall 0z7L81IEbQPggjg__OrrlU.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The returned record has entity_type 'IfcWall' and global_id '0z7L81IEbQPggjg__OrrlU'."
+        },
+        {
+          "claim": "The IfcWall is named 'Wall GF 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record's old_value contains 'name': 'Wall GF 01'."
+        },
+        {
+          "claim": "The IfcWall has tag 'WL-GF-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record's old_value contains 'tag': 'WL-GF-01'."
+        },
+        {
+          "claim": "The change type is deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record has change_type 'deleted' and new_value null."
+        },
+        {
+          "claim": "The IfcWall was deleted from the Ground Floor building storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The record's location and building_storey identify an IfcBuildingStorey named 'Ground Floor' with global_id '1fw5N5GZfPh95hsaUid9Fb'."
+        },
+        {
+          "claim": "Only one change record matches this global_id.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result has result_count 1 and returns only the single record for this global_id."
+        },
+        {
+          "claim": "No property-level revision events were reported for this element.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The only returned record has field null and describes a deletion, not a property-level change."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 509,
+    "successful_responses": 500,
+    "input_tokens": 2099992,
+    "cached_input_tokens": 1327616,
+    "output_tokens": 813257,
+    "estimated_cost_usd": 0.339563,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.39563
+}

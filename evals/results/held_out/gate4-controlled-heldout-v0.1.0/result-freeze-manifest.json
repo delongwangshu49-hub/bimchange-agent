@@ -1,0 +1,3564 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "split": "held_out",
+  "status": "PRIMARY_RESULTS_FROZEN_BEFORE_SCORING_OR_AUDIT",
+  "schedule_sha256": "92360439cef1797615bdb964020cfa92ab8e345a22dfe07b45f5883336db9750",
+  "checkpoint_sha256": "d151753e8e2d9b95b42007fa17cee9f74153707877aca7465a2ab05caa55ebb1",
+  "primary_execution_count": 360,
+  "candidate_count": 348,
+  "experimental_failure_count": 12,
+  "file_count": 709,
+  "files": [
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/checkpoint.json",
+      "sha256": "d151753e8e2d9b95b42007fa17cee9f74153707877aca7465a2ab05caa55ebb1",
+      "byte_size": 9861
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-001/run.json",
+      "sha256": "1ce799bd8bcbcd2b52aaeee31da8226b8e7bd8833c65b24b6626290a0bee077b",
+      "byte_size": 1255
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-001/candidate.json",
+      "sha256": "596e10b08e6f251bf35909f0e96af6e025805748679259b9a2a8475b4a39cb7e",
+      "byte_size": 2349
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-002/run.json",
+      "sha256": "ba0768a92be91b9efffdb27424779385b288a1475ac415928a3c1b6609a6d6ef",
+      "byte_size": 1253
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-002/candidate.json",
+      "sha256": "b0892cdd6da81a9cc72465cabd09552b07271b9dc92cc1170a406687d725d72a",
+      "byte_size": 7012
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-003/run.json",
+      "sha256": "f610cf3187615bc106fc143026f099bdf08be8277beb5c607075a7909d42d0d8",
+      "byte_size": 1258
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-003/candidate.json",
+      "sha256": "4e5cc02eaa6688048ae2bf8882ffbd7dcf93de232c75dc373e6b5980049ed3ea",
+      "byte_size": 2421
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-004/run.json",
+      "sha256": "3b478fe59c9d49c393a1c5e379ee18c6134bd51e163b32a0159ea7c13dfb42fd",
+      "byte_size": 1259
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-004/candidate.json",
+      "sha256": "95747762a40d11125810de1a99a1b57bc8d785d537b26ad20e7bed5a1df80953",
+      "byte_size": 2375
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-005/run.json",
+      "sha256": "5b09132597ba3737d380517df2bd197ae5e5b04f0e9d54c16dd1fe280568a34b",
+      "byte_size": 1255
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-005/candidate.json",
+      "sha256": "401a04dbe3424a7d748fbc2e837ace972ea84436eb9e1f1a7aeadaf5b18d93dc",
+      "byte_size": 2033
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-006/run.json",
+      "sha256": "04a2e11160e01b7382473b134a353cf7e45c9a26bd841e99988794bf4e638c39",
+      "byte_size": 1249
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-006/candidate.json",
+      "sha256": "b97ae387c06e8159fe9c05bf18d531060853e002ff4103c3aa312d035359e3eb",
+      "byte_size": 6293
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-007/run.json",
+      "sha256": "586a7bdafd8100e97b37be46df6c262c185470a41294beb920bb70819d545d0d",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-007/candidate.json",
+      "sha256": "5ae615d41567893426996ec967f4c9b6c1796398072578b7961631b484ebf685",
+      "byte_size": 723
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-008/run.json",
+      "sha256": "3184fc93e2f60bb1140e29bfa059e168a797255abad95e55f557e7119205877d",
+      "byte_size": 1257
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-008/candidate.json",
+      "sha256": "b092d90861994f5b53b098ec5e8a851a68e758c9b5c216498ebe596c519c0979",
+      "byte_size": 7051
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-009/run.json",
+      "sha256": "5c533b84b4b4be8e99e5b01c8b9f5e965be57d4618826f2945e5d1bca58cec54",
+      "byte_size": 1258
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-009/candidate.json",
+      "sha256": "5017351e11c07a7c39e36bfbb0343e83f74bdf003207fe9cb7410002256b1a47",
+      "byte_size": 2150
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-010/run.json",
+      "sha256": "516d7733d613b812beb7ecb2539c8109fb00295e5f351d0045bad338fd428a7a",
+      "byte_size": 1260
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-010/candidate.json",
+      "sha256": "98a52b7c552543ef1df944939f8daece3530ddd32428e3d297e38681847d37cf",
+      "byte_size": 2164
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-011/run.json",
+      "sha256": "f37f1993752b1dce6c78712c6ea8c6293b99e7c668e25e41f4610bc20716e288",
+      "byte_size": 1266
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-011/candidate.json",
+      "sha256": "9333f867a1d2e754fcbe952a51e4ef63bd1363601c1dc18149e6e6abda9db827",
+      "byte_size": 2378
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-012/run.json",
+      "sha256": "e8a7af52d7cac696d7bcc23a8903916abcdc3fdc9558c09e250e8c49e509dee1",
+      "byte_size": 1259
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-012/candidate.json",
+      "sha256": "69903fc03edecd6a9fdd5a442dd4b683db8cbee8fd9f0c7c1ed95800b1178fb7",
+      "byte_size": 5239
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-013/run.json",
+      "sha256": "dd95672175fb96f2be68741e0a899cf6d054d48a3f112a206982238833a8cfc7",
+      "byte_size": 1260
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-013/candidate.json",
+      "sha256": "42ebfadc67ba7cca4a31812cac6864721c01e04863c6926cc851cd5f88520068",
+      "byte_size": 694
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-014/run.json",
+      "sha256": "16df3fcd6a10bbe99cae3085e3e7ec43e3deb734f94734ae9b86751531af1b38",
+      "byte_size": 1259
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-014/candidate.json",
+      "sha256": "12c1babe2ccf0cb863e4fe6869fb84d38e77295b2b242f09f0ebf012f13c0f67",
+      "byte_size": 5388
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-015/run.json",
+      "sha256": "762885fd4b75afc4784a7b48f33bfbbc69b09df268e277710ed45ae5526fdea5",
+      "byte_size": 1265
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-015/candidate.json",
+      "sha256": "0c3795c1a2c87220e3a51e757dae95a23a0efe15f22dd43d5b86c8764eeefdc6",
+      "byte_size": 2111
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-016/run.json",
+      "sha256": "207f255dba07da1e5260922015a6140aa831d77cb5f008e22f908bec5b4bfb46",
+      "byte_size": 1251
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-016/candidate.json",
+      "sha256": "fea5e809dc0330ad6a7df18e3ee9411e770fb169e0b6bddc7cbeb7df49c62174",
+      "byte_size": 19123
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-017/run.json",
+      "sha256": "e6273d9377627f783500c17a31c08b613a44e507a70ad6008bcbec2a7ca93b9b",
+      "byte_size": 1274
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-017/candidate.json",
+      "sha256": "6a08955f8e74f2d0eeb5a7d05b34dc53b31276c71877b397ef07e7b87095db88",
+      "byte_size": 2906
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-018/run.json",
+      "sha256": "e5b4c3855e47ff57d41c9fc7b5ca1520084a357af425a54949c430d90b285aae",
+      "byte_size": 1278
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-018/candidate.json",
+      "sha256": "cbcc35b23dda9a32a235cd73401cb6a8cd2d83a72dcf05bf0395b6673a6fd891",
+      "byte_size": 2481
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-019/run.json",
+      "sha256": "9e52b6d05c1f314cc6a252c987aec63f9ecd23ed939747a41800641c43ea7e38",
+      "byte_size": 1256
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-019/candidate.json",
+      "sha256": "4d09cb86b04462d3abe37cbbad5c35d3206e687b5dee7a8dbfd3079c5a852e27",
+      "byte_size": 2495
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-020/run.json",
+      "sha256": "9ea39c99d1c3fc5589b1b98d86ef2a6d82ea8ff025d4cd54504c163f7702f422",
+      "byte_size": 1266
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-020/candidate.json",
+      "sha256": "abbf6c90e0aeb0ed34a1ccc594dd1890ab494248c084da29a3571fa2331d2c93",
+      "byte_size": 2235
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-021/run.json",
+      "sha256": "237108bd7acafb566ab57e8e32a5765a94e65e1294fa0a3881994fa96b669763",
+      "byte_size": 1263
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-021/candidate.json",
+      "sha256": "765b15a2f362ce3820803d0b33a0ef1b0a6202b03df9f9d60f998e39d5127d77",
+      "byte_size": 2374
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-022/run.json",
+      "sha256": "c1ce18aabd426fff00cdd83e9fc06000cb70a3364b7181ff58ae27e5f681ac27",
+      "byte_size": 1258
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-022/candidate.json",
+      "sha256": "3937da09c12c09382c54634ed178bcede958d13b9ab6d82c7044fc08d9407b6f",
+      "byte_size": 2168
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-023/run.json",
+      "sha256": "f2c5d11cd8713a6e62e5b792b0e6669f585f3ab73290053ed9cc1d3d32aefd15",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-023/candidate.json",
+      "sha256": "7658c4d86a72c193073f021131764dc073f201b02aea6c84cef8be7a0f05b219",
+      "byte_size": 1964
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-024/run.json",
+      "sha256": "9f6cf2059a3dd788bf6594b3ce0986ec2db9ddd1fb0f9ff9e2d4eff5993413c4",
+      "byte_size": 1259
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-024/candidate.json",
+      "sha256": "ec2088fc42d12bcbaa8102da12e3e10beadeb10ca2cbad60efbab979ded31838",
+      "byte_size": 5320
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-025/run.json",
+      "sha256": "2409d37b60b081b727d7bf07ef937d539ae06d41b7a1c86e6b7d4fe375223a28",
+      "byte_size": 1262
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-025/candidate.json",
+      "sha256": "db76a45625b0a38d51be1eadf087b2fda39ade9ee10abffb9bb8d2ac574e7fb6",
+      "byte_size": 6884
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-026/run.json",
+      "sha256": "42438acb095eb2bd4726f5cf3ff82c06bf00ae4a5aeff7ca84ac7b8fce6abf6e",
+      "byte_size": 1270
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-026/candidate.json",
+      "sha256": "b6e014d0e44ae898759fa850090babb2075a4855f080da99bce9a907a1092b76",
+      "byte_size": 2440
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-027/run.json",
+      "sha256": "7871d5cd96e380ff47b4f65ab54fd4e1b77f72584de80a64fee6a7e12daf8d09",
+      "byte_size": 1260
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-027/candidate.json",
+      "sha256": "7e54f4d680e47277778490fc2b92c2d5847d0b8e1922eb94382ff015d06cbb0d",
+      "byte_size": 5212
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-028/run.json",
+      "sha256": "9c38b433806f2285e8a19c5b32f12f9077f7e0afebc9de9b11156e8a1f1246ce",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-028/candidate.json",
+      "sha256": "b10e9a8bc71def5cde7964245e8eaeae7cca6ed3ada1f65918ad93e77f975332",
+      "byte_size": 2482
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-029/run.json",
+      "sha256": "97dddf6528c174968f1eb2e0dba799c7458b5d7625cee645b98e0089ee9d0562",
+      "byte_size": 1256
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-029/candidate.json",
+      "sha256": "cbfaf12eac777e82708fdae656b08efdb3ff84dfe8f8e76153c89893b5de91b2",
+      "byte_size": 7894
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-030/run.json",
+      "sha256": "c499f750aaab449d36cc405e7d3a6891edbef73d046405095caa9f57519ab421",
+      "byte_size": 1263
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-030/candidate.json",
+      "sha256": "f0d23fa4d61c8a09f25c233b462c96fc52f5df828a25ff7402fd9c6527262c20",
+      "byte_size": 2303
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-031/run.json",
+      "sha256": "898197adc0da3fe7d4685f58b2161560ecb842d27ebe545cd73db7400ae8e109",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-031/candidate.json",
+      "sha256": "be5209e12f2708f4f8966c23b716f1be1179ca1070a6cdd8460165ea50255302",
+      "byte_size": 1828
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-032/run.json",
+      "sha256": "b4f5bc4cffb73f298b80b2bd403e6162501a7f5f6c392be29b7bf8889b50d686",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-032/candidate.json",
+      "sha256": "02b6da48d892cce3e9b9f7560886fc7a872f7975f8fb5eb7f58db5807900fecc",
+      "byte_size": 544
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-033/run.json",
+      "sha256": "a00482d312001eb7c883704719c6a4bdef0fb8019b15a871cbe135a089b31b75",
+      "byte_size": 1257
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-033/candidate.json",
+      "sha256": "9def19815892ed247ac7ccb89ba5240402694c4261c67b455ba31aa49ad1d6cf",
+      "byte_size": 6392
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-034/run.json",
+      "sha256": "98ecf261c52fa9ebf9ab28c881f332fb8593224c009dd0de1b875d67f06a9aee",
+      "byte_size": 1262
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-034/candidate.json",
+      "sha256": "0ce7c11b3fb817ff2bf637588190b2e9b2934b109c8a1a8971547fa441c2a1ed",
+      "byte_size": 817
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-035/run.json",
+      "sha256": "a1c2212753cfbee3a2d7ef85fd3f798c7eb07569b379ca24df7f2fcf7027e6be",
+      "byte_size": 1274
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-035/candidate.json",
+      "sha256": "b8cd36f0e1d17a74daf4c231e76788235883566249e3c68bb00021673483ab22",
+      "byte_size": 2201
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-036/run.json",
+      "sha256": "6482250588df7dc7cb87da34360a7ad53647224cde9b6a307d712eb1674fda8a",
+      "byte_size": 1263
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-036/candidate.json",
+      "sha256": "057531c267771dfda6cef1a1bb48cd003cbc463460d1f18dfc438137351f20fd",
+      "byte_size": 2211
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-037/run.json",
+      "sha256": "9518769cc2494dd5a5e3ba402e9d9b5d111ded6f58b56a35d769f50d4c74147a",
+      "byte_size": 1271
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-037/candidate.json",
+      "sha256": "6409814b2d780e1d2b232a57c9cb055abbd2d702acb910ce3c109f67498e8df4",
+      "byte_size": 1823
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-038/run.json",
+      "sha256": "322dc4bade0e89d8855b7802a8e88196af3e484332cda5e4b146bce4f6ad53cb",
+      "byte_size": 1275
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-038/candidate.json",
+      "sha256": "0b090acf7b8e2d2bee4c42385f1b1ecad1cddf4af81772493a29f0a034b5c9ec",
+      "byte_size": 604
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-039/run.json",
+      "sha256": "b89b2958ef60eed649d1a2ed96c600708dc02052dffddf0c5664c29b4394f737",
+      "byte_size": 1272
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-039/candidate.json",
+      "sha256": "dac3a28bd8a681bf0a5ab579a452df93185cef59043c5969949bd9bd12acf1b9",
+      "byte_size": 4271
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-040/run.json",
+      "sha256": "34a484d56f7474ed0cf5d8cac075f34d4a8a647fb7a01a408019c959029f4c67",
+      "byte_size": 1282
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-040/candidate.json",
+      "sha256": "50ce0cda19f8832edb87be6619baf13adb3e882849e7b13444b0d804f953ded0",
+      "byte_size": 2379
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-041/run.json",
+      "sha256": "07a1e5b1d39f9115b2c43c7f48d775401bdd054de619ab7b874e87729c3e002a",
+      "byte_size": 1590
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-041/candidate.json",
+      "sha256": "cd25edae7b52f8da0a7812a055494212fd45d299877cf174cd95e51a62034173",
+      "byte_size": 1535
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-042/run.json",
+      "sha256": "a5dc96d82bf841e41aa06270e1fc7918b0739e8ce7ceb80da2576ae8ae374861",
+      "byte_size": 1508
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-042/candidate.json",
+      "sha256": "48d29210265bd677c33c6c57978170c2a07d69f305ea0cd063dfe9ad6e9c7806",
+      "byte_size": 561
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-043/run.json",
+      "sha256": "5f73ed2846890414a9ef9db16b1a68d3f377eb7f9c0a48328bed23a7ed795b4a",
+      "byte_size": 1525
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-043/candidate.json",
+      "sha256": "00e8256b7791d372643e9526ee9ce3a4d0aa84404e1076fbc0a438e3b49c5f59",
+      "byte_size": 1912
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-044/run.json",
+      "sha256": "41e385d357fbdb8238764b8f95dfcf8c86c5d4e45b413681ac4ec1db43378ca8",
+      "byte_size": 1576
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-044/candidate.json",
+      "sha256": "5a0e847b9c94924338851c1def083bd2a036ec638b6b57c10b3f070ffdc53556",
+      "byte_size": 1732
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-045/run.json",
+      "sha256": "bb428dd633f0abd40b13924368f70fed2289657c258a690671cbadf0abd18a0c",
+      "byte_size": 1522
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-045/candidate.json",
+      "sha256": "57517c70e8a24f97b3ec280934a96c4dedbf79e324682015e2d242dadb1caad3",
+      "byte_size": 1919
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-046/run.json",
+      "sha256": "0111b76a25163f1d25844b8fd6305e94f94e1326676bfafcc614ac1dc23e7898",
+      "byte_size": 1500
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-046/candidate.json",
+      "sha256": "6ceb1281a646aa7202ecb4c983410f6695e6b0ee687fe30e9225eac4830602b7",
+      "byte_size": 4683
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-047/run.json",
+      "sha256": "4c13aa9ee33eecce9aeb6ebdc6ddd1ed0d2a3afe663dd98187155acf859e246e",
+      "byte_size": 1650
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-047/candidate.json",
+      "sha256": "5cc4c1b093c7963c3ea1e6d78947190f86066773c76f3fceda025388bd0ee3d7",
+      "byte_size": 624
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-048/run.json",
+      "sha256": "294220e3296a12721eb509407865655fb2366ec8fd48e175ee2883dae2b68ddc",
+      "byte_size": 1524
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-048/candidate.json",
+      "sha256": "f4db21fb0715673096a07eadf06363fb80a8675bfd47d03e9d0580335b9b3b41",
+      "byte_size": 4867
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-049/run.json",
+      "sha256": "489dac43ef39e4d716af33f61d068d5dafd8ed8d01a0af64e88caba5e3b0ef3c",
+      "byte_size": 1523
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-049/candidate.json",
+      "sha256": "ea1b1e66d00ed67256996bfaf7b47c637f651d96bab964633254ff3a2e83a67d",
+      "byte_size": 1559
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-050/run.json",
+      "sha256": "6d46a5cc83a983f669ac55ed4f894c337d375ff6b4994857825c6137836f5c5c",
+      "byte_size": 1861
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-051/run.json",
+      "sha256": "eccb2527d81cc90f980378d69facf819032f57a154ec0a361196a1b5fc100072",
+      "byte_size": 1569
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-051/candidate.json",
+      "sha256": "b4184a8ed265b279629380d209cda9521c08534013c8768696d831a3fd8c687b",
+      "byte_size": 1732
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-052/run.json",
+      "sha256": "20286aafdab9096f80c960c69d1c08c5d635277ea3347ef28b53187e2f81f0e4",
+      "byte_size": 1509
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-052/candidate.json",
+      "sha256": "b74c6b616542c64cdc959bd19d43517ce9e50de7c8f3e018c68462e4abaaec7a",
+      "byte_size": 3679
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-053/run.json",
+      "sha256": "a6c80fb07de9db0f318d60ac90afc1d17a5405745fc792002003b443e6d2b272",
+      "byte_size": 1520
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-053/candidate.json",
+      "sha256": "79859fbb1f51875b1dcc35d30e6e1217773625c9fe86a5d1414a62d11ec5eabb",
+      "byte_size": 750
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-054/run.json",
+      "sha256": "4812f36ec56d2472cfb32f90b6c14bdbeffc8fcb827e8975f452bae876029062",
+      "byte_size": 1513
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-054/candidate.json",
+      "sha256": "6535cac02a5e5b0facef70402ad68d82b0b569b967efe5d7d1407839dc982055",
+      "byte_size": 3590
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-055/run.json",
+      "sha256": "1b23db4697c5425b2225b0523f529a92514eadd8a29a652da88a2ca5b5141ae1",
+      "byte_size": 1570
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-055/candidate.json",
+      "sha256": "f30b632e86861810debe557d19e0e327d68e45ae2fc65b82f6ba2844678a15a9",
+      "byte_size": 1480
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-056/run.json",
+      "sha256": "f3e34f0e7da247168b02c82d2e6e6777df660671884e7e4d445d8f3f4fb071b2",
+      "byte_size": 1439
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-056/candidate.json",
+      "sha256": "7dd1ea5c650392802d5a9a749787978a8d41695a43efe09151139ea1af01bbc8",
+      "byte_size": 13415
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-057/run.json",
+      "sha256": "c08262a44674fc4f538b611ad58d53115dfdafcf992d41aa70570f33330a72ac",
+      "byte_size": 1700
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-057/candidate.json",
+      "sha256": "5bf1c8d3e5587e73e666c8ef1772aa4210744549de100994d56d05c6bff75310",
+      "byte_size": 916
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-058/run.json",
+      "sha256": "6df26e405a994028068cf7fc98002251c6469e53689c5a6f586b04d552616632",
+      "byte_size": 1655
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-058/candidate.json",
+      "sha256": "1a3516d08b9ad77112b526a778bea3851dd5a6404e26f156788ee52030c74126",
+      "byte_size": 1039
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-059/run.json",
+      "sha256": "39aa62a4d05c06cb0d9fbdd6db25289c2c02138661d8f5cde4c1dd3f81cd08de",
+      "byte_size": 1521
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-059/candidate.json",
+      "sha256": "d5970250c51aafb1d67c6496c31a6e839367af547f44bbf544b4d08d10eff92f",
+      "byte_size": 1589
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-060/run.json",
+      "sha256": "9dc266ab1a9e92ed2fb74907db0c9c50e05bed5836bed256fe105dceeb0d5cf7",
+      "byte_size": 1585
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-060/candidate.json",
+      "sha256": "cd004197201f62ef2f439a61e8e25c25e2f4fa158a4f052b6aa4aa84ef2c6076",
+      "byte_size": 1517
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-061/run.json",
+      "sha256": "5f6f351d17473cbe66dafb8361e5fc271b2ba6df94d9a3f9931071eaa5d2457e",
+      "byte_size": 1593
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-061/candidate.json",
+      "sha256": "57fae01d921058658b89fb410638167f14b9509d914d28f2f8c69fa5ef268399",
+      "byte_size": 1563
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-062/run.json",
+      "sha256": "f88abeaf63b49e652906f48e73ae7fe758e7423c02a6124036d9915e96495a26",
+      "byte_size": 1521
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-062/candidate.json",
+      "sha256": "7a982e7dbca148369800e2cdab3613d718f1c7ddd47fba5d3ecb243911abf3dc",
+      "byte_size": 1476
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-063/run.json",
+      "sha256": "4e367f00a13726364e3d9672ecde8ede0192a4033ed322e33c5a8072f6ed48f9",
+      "byte_size": 1642
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-063/candidate.json",
+      "sha256": "def736f8891aaa1243833d97c73dd59bf9ef8da1b76860adfa7bfbec12c1d1dc",
+      "byte_size": 1632
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-064/run.json",
+      "sha256": "d1204868fbcba7ebae88cde062bfb9ce825f8d92d1071d72d0fd8a9711c1dcf6",
+      "byte_size": 1509
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-064/candidate.json",
+      "sha256": "770add76073c26b45a8465564ca4ff007b36260db3089a54e5e87ff04f1e3c86",
+      "byte_size": 3823
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-065/run.json",
+      "sha256": "bfd4cbc9b1036018c4ca928a24eba1a12d593475ad2689a82887f60cfd636b24",
+      "byte_size": 1522
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-065/candidate.json",
+      "sha256": "e822aeb83d1f8ca5d5056ea8eb6deb238f46a24fa5259ac1fe8175d8687f1a00",
+      "byte_size": 4711
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-066/run.json",
+      "sha256": "a2facbda768a4547c9d1a24a22b4e481e013e7ab6ca09dd5754694dc3dd31953",
+      "byte_size": 1647
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-066/candidate.json",
+      "sha256": "05355197e3d7d34f997cd1cde04f72aed2f4fcd9b1eb306385288f27e073ae3d",
+      "byte_size": 1879
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-067/run.json",
+      "sha256": "6162c9fe9b900797c8a3db290c542009b71be7eb2ea8b589db004de4e591ffde",
+      "byte_size": 1509
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-067/candidate.json",
+      "sha256": "222940ab9ab37b9afdb9ef48029fabef10217ec2fcad6e1c6f3ffaa654930228",
+      "byte_size": 3846
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-068/run.json",
+      "sha256": "d289ff5d6855f3616b99bb20ce63172412c0b7e5d65f60ed2d1c5c23d42fd5db",
+      "byte_size": 1586
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-068/candidate.json",
+      "sha256": "16993a325774f0236e3481c1face3ca91e3d75620555f92b723f396d9f48b8ea",
+      "byte_size": 1530
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-069/run.json",
+      "sha256": "5569f0c16fcf19659c873109be8a029e0bdbec783e5971d5c560c9145acf971b",
+      "byte_size": 1517
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-069/candidate.json",
+      "sha256": "b79fccc16764a86a7276f8feb370a329416ec71fddc4d8e7d2c00f43d884d6a3",
+      "byte_size": 5180
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-070/run.json",
+      "sha256": "6b7bf22c0a850b0f6a0d6ea61e411cdb3603d9f19a0f6506af79eff668b2f926",
+      "byte_size": 1591
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-070/candidate.json",
+      "sha256": "32f0463a3ce27c5f868e094cbc34e84bc9c7be8a701f229f10edc39938fd6a0d",
+      "byte_size": 1463
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-071/run.json",
+      "sha256": "386d7ee6987b343f837fa5939d395f759199ca84119125668e7d02b3eb5a9fb3",
+      "byte_size": 1647
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-071/candidate.json",
+      "sha256": "187aebcdb6882d8b581389c5b22a3086f02c61e30f7a8051b9a40fd5e0ec45e0",
+      "byte_size": 1734
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-072/run.json",
+      "sha256": "d4489ac3a9b84b8bc40d868d275268bde93010f7b30bd665791d970e7bb454be",
+      "byte_size": 1862
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-073/run.json",
+      "sha256": "8426e9fe469d8227ae636aa6761515038834729344c52e4c31a436c34f220544",
+      "byte_size": 1850
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-074/run.json",
+      "sha256": "62d6139e3cd876a51147aa282eb88d46e692bee9493a62ee4cc695ce26b71008",
+      "byte_size": 1525
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-074/candidate.json",
+      "sha256": "7ec48f498669d229f25f628b241a5c56fa9cd0d50ff17d39fc992d7df6e9e403",
+      "byte_size": 551
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-075/run.json",
+      "sha256": "68d183536b0c608cc16415ff09f6e3dd44444d799fd19e3fecd7004976377370",
+      "byte_size": 1649
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-075/candidate.json",
+      "sha256": "a3800f8c9e30f0bc541b06dd48b38b3a9310513d9f58c8e41377de1e5fb4bc2b",
+      "byte_size": 2004
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-076/run.json",
+      "sha256": "e63b971ea9f4dde581902cf09783927a856e815317cd733277282683712ecf2d",
+      "byte_size": 1593
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-076/candidate.json",
+      "sha256": "78115fc1c930d773a3012514b7edff7f68917ae3e65a79483eab48fa9f4483da",
+      "byte_size": 1551
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-077/run.json",
+      "sha256": "c112904853c94e2e350b76d541027539f34a796970c1688a11e3f4fe814e08fc",
+      "byte_size": 1580
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-077/candidate.json",
+      "sha256": "5afed173b3db6cf06b24dcdfb923a47670ecd2ee5ad9be7022c1dec8cd64d867",
+      "byte_size": 1626
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-078/run.json",
+      "sha256": "115499383d0af3fae9c46ea2adc00f700a144259c87bf4b31941ba33cc45c7c9",
+      "byte_size": 1955
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-079/run.json",
+      "sha256": "48f44955bd79d39ac76024c5772c2f35ddc1760552f6cb21e22737fdb95e07d5",
+      "byte_size": 1572
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-079/candidate.json",
+      "sha256": "58b0807e32cba878bc88557e2486af1266f2540fc4e29db5645988f0d471a958",
+      "byte_size": 2596
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-080/run.json",
+      "sha256": "f47dbcee672000d9dcc1712ed5226b4f0ffc46c6327798c16faf8e35d21955c1",
+      "byte_size": 1657
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-080/candidate.json",
+      "sha256": "d700d9f6be25ab6b3f903b71b35e96061c0ec806b88d59efe23b5e76ecf1727f",
+      "byte_size": 831
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-081/run.json",
+      "sha256": "ebbbd86a35630a4905c2d943a8cd4a0206651591bdc19134997b87e5eacb1caa",
+      "byte_size": 5934
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-081/candidate.json",
+      "sha256": "b8f2ef67c3a9c6ce345610708e7a4b007a3d3b1dd4e97d7e8ed92a1451d2efff",
+      "byte_size": 1492
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-082/run.json",
+      "sha256": "b1e5ab02bc361bd0ee5eab63e2992ac4403d823077ba1ac873a4d163e8161491",
+      "byte_size": 4374
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-082/candidate.json",
+      "sha256": "a83930bb225113c60ae92d2fb82ecdd47b46fae609a4ab547c723d9e8002d574",
+      "byte_size": 550
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-083/run.json",
+      "sha256": "568a75d6c2055964b971de5e49128031d0c8af8e9eeec22e8930e26615175460",
+      "byte_size": 8477
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-083/candidate.json",
+      "sha256": "61e1871910a090f01faa5382c36713fda9de13c508020232de5c868113cc8a47",
+      "byte_size": 1646
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-084/run.json",
+      "sha256": "33504ef75e2d25e86aa00603d0b9fd730817f415819c7bc1b99b2a85f658c907",
+      "byte_size": 7188
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-084/candidate.json",
+      "sha256": "7f25fc53f0db4aa1562dd364066dd4d550dc234e9d961961de06a2124fe41bc8",
+      "byte_size": 1547
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-085/run.json",
+      "sha256": "2d90b90999c722738c83022dcae087853b03de628be94322c124a319a75d1e0f",
+      "byte_size": 6640
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-085/candidate.json",
+      "sha256": "0661efe06fa9a74c4add0c6c6483463923ddad0304f153f213cb57e496aec132",
+      "byte_size": 1591
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-086/run.json",
+      "sha256": "91f0d4d0f300b19d728f83bdb25128fd1eb306c865e0aa82bc46e10f144e0718",
+      "byte_size": 13662
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-086/candidate.json",
+      "sha256": "34f15314defa462b1150775da670589986603ce1ec57a2d3fcbe1407b46d434e",
+      "byte_size": 4846
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-087/run.json",
+      "sha256": "272b61a099db8e237d26c6f37e25bd4feacd0db85751d07b6f97788be3e13363",
+      "byte_size": 5356
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-087/candidate.json",
+      "sha256": "a9b21c4396372f0e83174c28b2e5343d91da1e95d03dbe08af0231217e3f5d75",
+      "byte_size": 542
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-088/run.json",
+      "sha256": "7b92e5a0725c72e999ccd392536820898b5b0d907b84250c66eea850787a3cb9",
+      "byte_size": 9250
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-088/candidate.json",
+      "sha256": "e2aaa7c918a507455f490694ec1ec992194b81afbaf5c3648f9a17b9aad38f93",
+      "byte_size": 4860
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-089/run.json",
+      "sha256": "9bda9f3786fd61328b9702cd2a6cb0add87f270b8c8a576b819d5ba171c247c5",
+      "byte_size": 6877
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-089/candidate.json",
+      "sha256": "7313ac9c42fa5141780613fc2b9bd8f38a40781573afbaadef37c15902a433e1",
+      "byte_size": 1646
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-090/run.json",
+      "sha256": "d676ffcc18c0900814f82438af3f86efdcc3d985efa7404d199da2b1ae042a76",
+      "byte_size": 7421
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-090/candidate.json",
+      "sha256": "faf078e1b8257da74f5bfb7f360f71929d34ea769f49164683da142aa369ddbe",
+      "byte_size": 1597
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-091/run.json",
+      "sha256": "1bd38e96f1eba4e3777ae6041cc87c4117d22003402c827a59bf8b4674e266b0",
+      "byte_size": 4667
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-091/candidate.json",
+      "sha256": "6632f3cbae7f6c75747de857a2558dff752371a1b7b1973c89e5e3bba920f2bf",
+      "byte_size": 1544
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-092/run.json",
+      "sha256": "b2411a5d191565d65d660ef755c4f89883954839057b6a2ca3f0fe31213c1723",
+      "byte_size": 7897
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-092/candidate.json",
+      "sha256": "de0733f355f51f905b54d800aeb017be799d887df8363869fc9b4059150970d7",
+      "byte_size": 3816
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-093/run.json",
+      "sha256": "0f401b63a051beee8cfaeed3c0c1b31dcfcdb6792154cdd9c3af599170d6b4fc",
+      "byte_size": 5818
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-093/candidate.json",
+      "sha256": "9c6bc732ba6c0fa447892ae143faea68c1d2967484415952e01a7b48074b3bc1",
+      "byte_size": 590
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-094/run.json",
+      "sha256": "8f6f7c114124e20134eddaa45e2ff31b5efec9cc8acb0609f7723f529b7bf909",
+      "byte_size": 10447
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-094/candidate.json",
+      "sha256": "319e3544b1ef92bc25f0124207548b03ccb87a6ef513eb7537656c22e9ec6035",
+      "byte_size": 3885
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-095/run.json",
+      "sha256": "cdf48ceb7495653c94c5dc84e8f2a7bd202a59a798690bb7b801ad25ed86f9a8",
+      "byte_size": 6182
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-095/candidate.json",
+      "sha256": "c9c211808bdb73a19062783d39e362d79ba10e1b90c14b3e2e9723cf1a4dbc73",
+      "byte_size": 1439
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-096/run.json",
+      "sha256": "8de976fc84cc7cdbd4d2ec924b814be146b8cc3105b9b7c68e8aedc47f612077",
+      "byte_size": 16949
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-096/candidate.json",
+      "sha256": "ca8c533b120ae3ef57b021c629ddbd1f82a0980155a451f19cca8064fd91b5bf",
+      "byte_size": 13321
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-097/run.json",
+      "sha256": "99e518977f9724f4045fd0f93a49d6e7f5be17c01e7df7d1207735cee1e5c9db",
+      "byte_size": 7180
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-097/candidate.json",
+      "sha256": "8c6a52d01dd2d790274e9ca5578fbbac961a2d1967d8084a575ea487f2dad072",
+      "byte_size": 1810
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-098/run.json",
+      "sha256": "4b36193fe0d8881d21b307c8caa7116f72ed28816925bfa18920f38f9e80a6f0",
+      "byte_size": 7415
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-098/candidate.json",
+      "sha256": "9c331ff862449128325cbd526e307e385647caf6e52cdc4791133e594feb328d",
+      "byte_size": 1697
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-099/run.json",
+      "sha256": "984b82c1e54fda67855a815f045f7222bacb0fea84073fac6c5cb59765085b23",
+      "byte_size": 5095
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-099/candidate.json",
+      "sha256": "77782dbdb2b46c08904fb97debf75684603aca6f7331ed9ba766f35653b12198",
+      "byte_size": 1547
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-100/run.json",
+      "sha256": "c752ddab79aefa7772b555b4a613ed6727e4903fb13234039b3e54b394d67354",
+      "byte_size": 8036
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-100/candidate.json",
+      "sha256": "292aed809d7175213095fe6c0281cf49f282277515f68b0924dd52fa0323c99c",
+      "byte_size": 1686
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-101/run.json",
+      "sha256": "194f40db1c6c1094c9a312a71a5771bc6ffbbfa22ae53fee780db0d0b07262dd",
+      "byte_size": 4998
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-101/candidate.json",
+      "sha256": "8987efa28ca0274c81968a853642381e35d02ab2dc24420036fa695b8e8c4051",
+      "byte_size": 1549
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-102/run.json",
+      "sha256": "956f8e55874c14615c3b072f90b3f043b7710c46dedbf54cebcd050bc51b4f58",
+      "byte_size": 5612
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-102/candidate.json",
+      "sha256": "163dfa1e50b81067d73c66a717941a70370f2bf0286a385ba506627caa1d0da2",
+      "byte_size": 1461
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-103/run.json",
+      "sha256": "ad4c0a286a9e2918bc6d8e7d22d4b075c91a55d34daa2bb0cbf9c3b803089167",
+      "byte_size": 5283
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-103/candidate.json",
+      "sha256": "fb16e74768ff94669102c0599817c52f12ef8b888a46ae3a70a4020c4666d056",
+      "byte_size": 1462
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-104/run.json",
+      "sha256": "1fa0adfcdaf4ca574ba25179d6a86486b5203a0b1f7dc990fe070182fa4d3402",
+      "byte_size": 7254
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-104/candidate.json",
+      "sha256": "f17b23b7ef5355c751c774e06d77386b15230a525c56d2014585f5bbb190099f",
+      "byte_size": 3787
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-105/run.json",
+      "sha256": "5927074b7aa750b6b16119192e21cbc9c5fee28b3a1be9f4e0d4cc7f3f2e7c77",
+      "byte_size": 8223
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-105/candidate.json",
+      "sha256": "581a527f291675cb7106590d7312a04d5048193c7fd290b5880fbcfa8eff3a65",
+      "byte_size": 4613
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-106/run.json",
+      "sha256": "71c1cda51075834ef9e646de931d010abe5f6f39a6a76a8eee4ff2509bb9a234",
+      "byte_size": 8064
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-106/candidate.json",
+      "sha256": "5c507cbc697efad6c0bb850ab8355d53c5fb113d0845c4a3c12bf42571b99e8b",
+      "byte_size": 2086
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-107/run.json",
+      "sha256": "b37d94caf9d95c9fa0facc7aaf0b19e9be6bd7a758168a38472e425ef1c59e17",
+      "byte_size": 8602
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-107/candidate.json",
+      "sha256": "a7de5c4236960fe0a17d8436ee48b2ca8ba18f08ff6498c5352564b249c1a799",
+      "byte_size": 3809
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-108/run.json",
+      "sha256": "30d7754c668f51e15acb60b3823393bafdcf873968bc02ebba0f3c65c3dc3075",
+      "byte_size": 7312
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-108/candidate.json",
+      "sha256": "c0f99ac76587fea6101a202c5d748a6cb871a3a80c20a1cc8d8e65b6cf23153b",
+      "byte_size": 1667
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-109/run.json",
+      "sha256": "452e3a6312d8d8e4be592cffdde1e5ee2b53291accf6adf693e73719ee03ba2a",
+      "byte_size": 10247
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-109/candidate.json",
+      "sha256": "470c2a342c1a3c77d8834342c32de815a3e92d4fd189900cfa0d99f4a7b36d2b",
+      "byte_size": 5197
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-110/run.json",
+      "sha256": "a02074418754be4ab8244abb95fbe29bec3e881322df4173b5226f610dee44c3",
+      "byte_size": 5994
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-110/candidate.json",
+      "sha256": "e6b79a72fdc57709205de3a71115af316d045c7577fa337be9aa78b017aab7cc",
+      "byte_size": 1640
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-111/run.json",
+      "sha256": "da1a4a6cd797537c657fff7ed512f47ad3f512e693ebbb5f7c02c8a71bcf217a",
+      "byte_size": 5165
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-111/candidate.json",
+      "sha256": "b8bccc373b753a467cf98b8751d63e1bc50ac43aced1aaee8cbbabde32e60a26",
+      "byte_size": 1439
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-112/run.json",
+      "sha256": "be886b361faccc5b8dfe93910e41962dffdc3583c37c184e3746df96bc8c60bb",
+      "byte_size": 5129
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-112/candidate.json",
+      "sha256": "97f7d9b6f967b9846fa1eee2316f3e26a051fafa3df54f737ebafcfd1f2bf965",
+      "byte_size": 525
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-113/run.json",
+      "sha256": "dc68851a8b03775574836a6da02bd52c986173b3167d56b1b97fc1b6fcc673c2",
+      "byte_size": 10675
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-113/candidate.json",
+      "sha256": "cc6395df171303e9b1c6d510e774ce79f0db5ca558a42a5e0275a0d1538e5a5e",
+      "byte_size": 4952
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-114/run.json",
+      "sha256": "a5c7adebd50dc102d3ba7fa4da6b9cdc32cbcf5b8b21ba0d2701f83153928df9",
+      "byte_size": 4459
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-114/candidate.json",
+      "sha256": "d07107285cbec3306059557cb7f3ba24022fed1235b94d460d8b6d0321eb8930",
+      "byte_size": 536
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-115/run.json",
+      "sha256": "09b2304d0efb4d64078749af79132b8dfc5ce515079d77de8465a8efad486914",
+      "byte_size": 8454
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-115/candidate.json",
+      "sha256": "4caab626c55d99cf19a2b9c4c1d5e95bd57b4e3d7e10090ad8e42970b41a16c8",
+      "byte_size": 1810
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-116/run.json",
+      "sha256": "c756333c85cde273642fe23432263f5108f4f858a81b43eb2c008f4382622085",
+      "byte_size": 6511
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-116/candidate.json",
+      "sha256": "c8468c81217309a18c5ceecf18a56d3c2e668a1dd98bb4001b556000eddb6265",
+      "byte_size": 1611
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-117/run.json",
+      "sha256": "4a550d00cde1ed881b7bb503a7b0d526757d23b6002285e8de5f2a47ae7ee4ec",
+      "byte_size": 6504
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-117/candidate.json",
+      "sha256": "4ab776ba571e3f6ba242b3348eeca56f90bcac105633b0e8084530e26f345d3f",
+      "byte_size": 1475
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-118/run.json",
+      "sha256": "a96111607db34a9d31892cbed3e2ada55488c28910820c22b7e9a10722a99df7",
+      "byte_size": 5357
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-118/candidate.json",
+      "sha256": "17a39318deffca96fc17ffaa16f80e52a0d0586c18a380444e11c57e6eced20e",
+      "byte_size": 650
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-119/run.json",
+      "sha256": "efdebc3dc4100651f166aa8269b0b23ed976ba7016b785b19a92b3f64ae0322c",
+      "byte_size": 10570
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-119/candidate.json",
+      "sha256": "2efac11c56af29269a8de8fd9a894c61afced8b08d9e13aa6cd367b858d1b3b0",
+      "byte_size": 2911
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-120/run.json",
+      "sha256": "d11996c54d7bb8df4c2694003cada6b379fc610a0c45ecc5398e9f18b6d8f94c",
+      "byte_size": 13377
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-120/candidate.json",
+      "sha256": "27a4395969fb05a8fcfe8a1d7b2b7d4f39ba5b175ef34c80732c1995b77ec859",
+      "byte_size": 2164
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-121/run.json",
+      "sha256": "d6a9f13de75d5502969f290f47f01010a2386307508d3c40aeb91861cd3378ff",
+      "byte_size": 1581
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-121/candidate.json",
+      "sha256": "ad7c9255b367fb27ff7f6e9183ccdc4beb18efdaa63375cfb48b6a113d210897",
+      "byte_size": 1491
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-122/run.json",
+      "sha256": "689c737a299c9f1e17793c1cca957fe0746f6175427d68654394ac7201531f32",
+      "byte_size": 1512
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-122/candidate.json",
+      "sha256": "fc791576e7ed7e30817589c97b6d443a2543845f8b169da4a13886f5dc5c0b30",
+      "byte_size": 777
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-123/run.json",
+      "sha256": "4b1939317dfceadb223d3dba1e8de97f8900ffca9a752207c4c2ee25aca6d6ae",
+      "byte_size": 1573
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-123/candidate.json",
+      "sha256": "773af0ba6153023df06b3b6733157976ab4eeab292e63a7860e90c77f528b169",
+      "byte_size": 1546
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-124/run.json",
+      "sha256": "121500fb5627900d8d46409e04a3c08ae25742103b04da290e012eff396af252",
+      "byte_size": 1525
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-124/candidate.json",
+      "sha256": "458e0dd3cf21a14a37412b41c85ffa2e5ebdcf64021703886cbe2bac768b417d",
+      "byte_size": 4945
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-125/run.json",
+      "sha256": "3666e30b4fff5fdaf840d3281f4054f380e4c78b0e388692386ee3d85b8ef61e",
+      "byte_size": 1524
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-125/candidate.json",
+      "sha256": "a5812eb6ef841e60163130e383c59247f25e170858be3c8ac329be1c5ba7982e",
+      "byte_size": 1582
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-126/run.json",
+      "sha256": "7486461b593afe084e7cb8e9b8bc6ccc9e9884af593d18b796c6a2474a852a8b",
+      "byte_size": 1588
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-126/candidate.json",
+      "sha256": "9c5e875db1b69472573fa9517610eec30b1ba64c32e9d58978b4a269e26cee2e",
+      "byte_size": 1778
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-127/run.json",
+      "sha256": "f248d411d9fcc0e3345ea5f999d0dc6d2af3465c8a83d8d50eebb022106b4a56",
+      "byte_size": 1580
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-127/candidate.json",
+      "sha256": "c0aeb899a75750c1d2e6c10696d79b769543130bb7bdb029c76f4890e96318c1",
+      "byte_size": 1703
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-128/run.json",
+      "sha256": "4dcf1c23df5f06b009804b99409beb36cfbb424090508ac1eebe3f7543226e1a",
+      "byte_size": 1512
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-128/candidate.json",
+      "sha256": "e13d949e2d29bcb94a3085a5c84090a65b66d1aa201347afe0aec612a1511c65",
+      "byte_size": 3973
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-129/run.json",
+      "sha256": "d00afd414adc79d30cd3d53725f9fd7ef1f901ad2e2589760135734e94e2984e",
+      "byte_size": 1650
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-129/candidate.json",
+      "sha256": "11b0f1a1083b5aae9523f373094d97ce09e0ec0a63ecc2dc9251b80c8d091639",
+      "byte_size": 2016
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-130/run.json",
+      "sha256": "0c381365325bd86031d183e9baa754c75aa342cf6bdbf08f41ad3982dfafea25",
+      "byte_size": 1661
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-130/candidate.json",
+      "sha256": "96ce0172e40159007c2bc95ba93b6a36f68a1d62b317632194778f4e8caab3ba",
+      "byte_size": 620
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-131/run.json",
+      "sha256": "e55aae0eb0ad60bfa3f02a8638790e97af7c16ec6e0cac231e6cd382366344d0",
+      "byte_size": 1639
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-131/candidate.json",
+      "sha256": "b8bb3f295a82812da2371660e3fb941478b08f28ff5b9294708f69ae3e3a0fe4",
+      "byte_size": 535
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-132/run.json",
+      "sha256": "3a55df297b1543d9eb5cbb6dd9eeef126ba823e136bd9008c94a5d99a5774e13",
+      "byte_size": 1443
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-132/candidate.json",
+      "sha256": "0b4698d463f3852f2cef2a81f6bcaea7b5bf82b8930577b5c844f10144abdd7a",
+      "byte_size": 12941
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-133/run.json",
+      "sha256": "8948bd97d4a32c5dafd1e5735964ba169b34900c7d3340b27b759f8094a0aa85",
+      "byte_size": 1657
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-133/candidate.json",
+      "sha256": "168d9ed02ec3ed47c7262f1bb5b301425e4cdfe3c9061b58d095afb6b287e9cf",
+      "byte_size": 577
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-134/run.json",
+      "sha256": "839decfc4cb018983022604e50d3685cc92cba4d6a2c2dfd065e34a394ac1015",
+      "byte_size": 1595
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-134/candidate.json",
+      "sha256": "bd3a964048de330de60f8998f6cb07f4494f4fa0e23734adee30bb17c711c674",
+      "byte_size": 1539
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-135/run.json",
+      "sha256": "9d8e7d65d8e48e6e6f12c177030daffd91392553eca47234aa3be5c09e3366d1",
+      "byte_size": 1649
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-135/candidate.json",
+      "sha256": "ff65801446cd82f9310c1384db0efb1f762e37d5b1021526a55588f09d9ab0ed",
+      "byte_size": 1458
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-136/run.json",
+      "sha256": "240f1342bbfbe35e8c440fb76ed92155906f58ef5ca32ded68d2044f1a5fdc5e",
+      "byte_size": 1527
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-136/candidate.json",
+      "sha256": "034c817de2ba17dc1ceba517d0981f4de605162d50b7ca88fc19fffd229313e8",
+      "byte_size": 1650
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-137/run.json",
+      "sha256": "cd7ee72b9a8b786f387c3a584c76187874bf7cf63e69d53ac0b9036d09f52b8d",
+      "byte_size": 1651
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-137/candidate.json",
+      "sha256": "8ce4c07bfef0e2305f677616424299c2b6bbf1c949619845af0a4d3c93ec3030",
+      "byte_size": 1008
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-138/run.json",
+      "sha256": "adf9093192fc5c4301cfad8a6c792ca196f1568930a66363ec1976a205a67808",
+      "byte_size": 1513
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-138/candidate.json",
+      "sha256": "35310b602226966d59667aed92c6f03d2093445a03fb2e060525af9917065ec4",
+      "byte_size": 3900
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-139/run.json",
+      "sha256": "2ac2b8e659873697666da4b42f026b3e9fc5a1ef1c9b7c57167309d5c74f2192",
+      "byte_size": 1574
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-139/candidate.json",
+      "sha256": "39fd7751723fbbc206ef5e1fcbf4da9261a378cd5b182bd81bef8e7cb4a237ae",
+      "byte_size": 2694
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-140/run.json",
+      "sha256": "9358c3f1b691c8ac27baaeefe427d7a311aa24185dae3ca7fadffad088a59fcd",
+      "byte_size": 26135
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-141/run.json",
+      "sha256": "8ecda0f0f69f0c746bccd6a706dd415aaa8a2e1eabad52af282cb1908323b604",
+      "byte_size": 1525
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-141/candidate.json",
+      "sha256": "54f84dfe3f421e59942412b721ad13c422f78ec312d67d63bdbcaf4f4b43174a",
+      "byte_size": 631
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-142/run.json",
+      "sha256": "c8f7c7fa37ceae3964bfb47f95999c19726ae06a135740d66db3c66a5b98dff8",
+      "byte_size": 1509
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-142/candidate.json",
+      "sha256": "fef40f929d35c6c1593d544c72ba0597b5cebc1c42c8986491e9c498a716127e",
+      "byte_size": 4544
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-143/run.json",
+      "sha256": "9ae477d842ec0d670ea5ae13dfb0d81f8380a17a40065f84d55929db688ce821",
+      "byte_size": 1659
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-143/candidate.json",
+      "sha256": "d9c379cea61149514931be49121af6caac16ce8e5e86da80f432cc4b9337be7e",
+      "byte_size": 1746
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-144/run.json",
+      "sha256": "dd6524fe3a002436258f5e6d29d6f52eb93ed8279f0a6de60ebae72dedb960eb",
+      "byte_size": 1505
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-144/candidate.json",
+      "sha256": "8bd46566fd51a5fb256ee8323656e34abf303c6dd6b5cb9c73358ad1ffaf5890",
+      "byte_size": 4836
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-145/run.json",
+      "sha256": "9a32788372d56c736adcde653c72966843c5f5e5062c59589c06da8882f4063d",
+      "byte_size": 1646
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-145/candidate.json",
+      "sha256": "2d4bafd2f4a81b9306fa62cd93a9d5d584efa9e1e9ffb3aeaf329e2fd69ecfd8",
+      "byte_size": 1461
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-146/run.json",
+      "sha256": "e5df73ae4cd81a498886652e4f40b7d7afb252c8e42eb5804d9aa3b03d9f5419",
+      "byte_size": 1593
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-146/candidate.json",
+      "sha256": "2f4c30923ea1e3d4e5354c49b91d61f0fc8be2d109da0c40f465d63113eae8b5",
+      "byte_size": 1504
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-147/run.json",
+      "sha256": "91dd07c6a2f8a4525b1a6a36560cc4a95d404a5abb3e052dc84174e7ba71f467",
+      "byte_size": 1597
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-147/candidate.json",
+      "sha256": "1cb2de21b1f7dff895d30e01c0482bc73aa7690d9d5e89ba190aa7b6542a92f3",
+      "byte_size": 1691
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-148/run.json",
+      "sha256": "3c016143fe97427437a09cd67f05be94a4229af865ed97bffc42a1a8990cc682",
+      "byte_size": 1704
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-148/candidate.json",
+      "sha256": "3f36ce0c113d9e1f6fcd1425241fa81e21a18faab5437fa9910e2552955cfb3e",
+      "byte_size": 1934
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-149/run.json",
+      "sha256": "466c58557938da2e2ff6a1ca0431aea97d44bcfe17df5af9fef905750819681b",
+      "byte_size": 1591
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-149/candidate.json",
+      "sha256": "c2d5e48ae18da6d04a50c5d7016b48c91a94fc71b2e61d4333b9e357f492f5ff",
+      "byte_size": 1733
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-150/run.json",
+      "sha256": "4f929fc0768cea189db165bf1a3d9fbcccf2634bc6ddbe194f0dfb23c99880d3",
+      "byte_size": 1595
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-150/candidate.json",
+      "sha256": "d9101e838501cfdf5fb98d781ccc22aa3314cb6606729d7694434bda5aa732a9",
+      "byte_size": 1466
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-151/run.json",
+      "sha256": "8b260a5431c911b259679e227c46e2d104c315922666551888130eec5cdc2216",
+      "byte_size": 1529
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-151/candidate.json",
+      "sha256": "a96200cc2abeacae350ca13840afde8fb203dcd46169f99eba85efd20be3ce88",
+      "byte_size": 4914
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-152/run.json",
+      "sha256": "7a33ab060c3a637420370f87b30bf0db4aa5cd2a8639563e580dfc63abf301d4",
+      "byte_size": 1573
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-152/candidate.json",
+      "sha256": "09b4469ac303c612bc4d5094dc4adc7e0cfe0aa503f5c261c0fa80429e218044",
+      "byte_size": 1790
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-153/run.json",
+      "sha256": "24b845e46f2ebba0a0ce41c7b6c60fb5480840690a47c028e69e36cfda88beee",
+      "byte_size": 1522
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-153/candidate.json",
+      "sha256": "11350dd6c0524327da4c7810303eedb1a101029a1e1e2c83508cf0873b8630d4",
+      "byte_size": 513
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-154/run.json",
+      "sha256": "c3f31d6947d077d3211de941c780c20762d4219d565dfec7c35a75d28fb2fc6c",
+      "byte_size": 1517
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-154/candidate.json",
+      "sha256": "6b17d7efbba7d400618bb442526ce8c2f82bc901a24945f333d2b68f9981fa48",
+      "byte_size": 3859
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-155/run.json",
+      "sha256": "36d3d7c7296185c652033a3895a785566d4986b4f315bc0902fddb201a5f5f67",
+      "byte_size": 1513
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-155/candidate.json",
+      "sha256": "f72cbe0806043fdf7c63b1ae248b85062ecea423015d10af55dfd1e932de59e3",
+      "byte_size": 3750
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-156/run.json",
+      "sha256": "25c7e3950dfd269ed218f5b79b8284ddf8bcfb3c21e60df9b830abf249e3d2b7",
+      "byte_size": 1659
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-156/candidate.json",
+      "sha256": "350054eaa1b60a627f68d31976209c98262227a0bd078dfe6f6c5ea1d52e7633",
+      "byte_size": 868
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-157/run.json",
+      "sha256": "6b6765dc8e49ed9f61268e0b7e8c85a85b80eba24929f790842be4c5f526a349",
+      "byte_size": 1530
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-157/candidate.json",
+      "sha256": "c1a13d4f03d8fdedafaef546043bd41ca95e7e501911f889fa8b96923384fa28",
+      "byte_size": 1866
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-158/run.json",
+      "sha256": "95f7e643ca6e2ab91566f5c788e3d1268472b79c427456fd8b1f45cb847c30a5",
+      "byte_size": 1523
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-158/candidate.json",
+      "sha256": "5e5c0f397296aa1f7e335b319353bc60d71cf978eabdaac4834d10ad3a1342ae",
+      "byte_size": 1760
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-159/run.json",
+      "sha256": "a5ddf94a30e638aed8aefcd92c7dc17433a3cf01afb18469ff8862d49f1cfbf1",
+      "byte_size": 1527
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-159/candidate.json",
+      "sha256": "fb42825e7d865a445c4466ea0b9072696dcf504bf015df8cdefa3a7d4965e061",
+      "byte_size": 1705
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-160/run.json",
+      "sha256": "4f77973d8f45f4341f3fd0ee37f8f1b12d0b1e519bb56581c661d3cf0bcb3c9c",
+      "byte_size": 1520
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-160/candidate.json",
+      "sha256": "6666e6811af9f0a7a2f74571fd9c9b3f10df6b5c8835368e45f3a3d60564a4c3",
+      "byte_size": 5391
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-161/run.json",
+      "sha256": "e05e98da15dae9dbf9cefe5ae70ab4a13251c3d884cf88fa118ac4395ef0e541",
+      "byte_size": 7751
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-161/candidate.json",
+      "sha256": "1832115bf8ed98fdda9928b24049db35532d156eec62722e574aae8075db34b3",
+      "byte_size": 1638
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-162/run.json",
+      "sha256": "997fc8ae29524a948eafffa15ce10cafc345ac1ad4a4e89ad40e3fd5f197f5a8",
+      "byte_size": 4596
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-162/candidate.json",
+      "sha256": "2288d6b2b9e8fbc18d97e8913746a08b78403f34481113fcdb9a688987d407ad",
+      "byte_size": 503
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-163/run.json",
+      "sha256": "2278f8f89044aec9b996f8ba08d0d01e99c08fab073cfa0be88f34a769e4163a",
+      "byte_size": 6053
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-163/candidate.json",
+      "sha256": "8c827726efda7416564c0db5d0193fcd662df4da5d53f40c666466a356d7ddff",
+      "byte_size": 1454
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-164/run.json",
+      "sha256": "e5f20fb56061d25ecf2e9b0fb2b7c5911d369da02659e68edf0d5593b535f0a7",
+      "byte_size": 10811
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-164/candidate.json",
+      "sha256": "a617deee3fadfea7dacbbf51d6c0d0111c60e3df02ddd9d364a22ab63f2ab479",
+      "byte_size": 4971
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-165/run.json",
+      "sha256": "9e32940e8ae3568919c002428897345978f69ff24be77965723a25c3292aa960",
+      "byte_size": 7676
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-165/candidate.json",
+      "sha256": "6c83f478577172aaad18aaa7444c539274fc914a4a3f964e3750496bcba576aa",
+      "byte_size": 1700
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-166/run.json",
+      "sha256": "5d0622bb983b33c23f511727dfbd841250c5ff2c7c444f3dad2676ab59ebd454",
+      "byte_size": 7858
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-166/candidate.json",
+      "sha256": "3e789c7f07b04e3d1d9c619958c768959b55535c9f50f41268be7e2e51f78b9d",
+      "byte_size": 1773
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-167/run.json",
+      "sha256": "f29a3d620659a94d4183fcf2c9094d5b875c7fdf471819ce3582acf3ea42c247",
+      "byte_size": 5976
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-167/candidate.json",
+      "sha256": "c2b39a05bfa516f327c3158326e8455193b448a72e7c00ef9f804d07f04f79b0",
+      "byte_size": 1538
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-168/run.json",
+      "sha256": "967eb2495da186cd90a4d09bea385432afaf6f05b686e4a8e71331ced41895ee",
+      "byte_size": 7088
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-168/candidate.json",
+      "sha256": "7898ffe85dc44f2a2edaa8eef135d5265614b550c5f6977a617c36416727ace6",
+      "byte_size": 3716
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-169/run.json",
+      "sha256": "1816248a5babdef70a1ea9fb94f35c188a203028b5847367b5f74566c9ef901a",
+      "byte_size": 8080
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-169/candidate.json",
+      "sha256": "ba9855d8ae7cd9e193dc72c3648a78a17eeb0bde2625b6e31b770950ecd862ed",
+      "byte_size": 1897
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-170/run.json",
+      "sha256": "d5a7756c13b57788dd4ca5447584ca4c605a7579d4eef27582282afbce26f501",
+      "byte_size": 5731
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-170/candidate.json",
+      "sha256": "de4607bb9356f4c26d4f6734b00f1cd8a7e94768d1cb8b8120b97b20e53b8ea6",
+      "byte_size": 663
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-171/run.json",
+      "sha256": "5406667d37592e2dae6485fe2852c61c6d99d4f8dcef1e0c28ec0507c4d354d2",
+      "byte_size": 5855
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-171/candidate.json",
+      "sha256": "a5f052e7320be52dd636159205d6cd4fa1f387c3154406ce6c84ac7fedf5878a",
+      "byte_size": 563
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-172/run.json",
+      "sha256": "61300b60d4c34b4a62b61e30cddec59c330018a86585b489d15b7811b44041e3",
+      "byte_size": 11969
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-172/candidate.json",
+      "sha256": "4b3878b0f8cc49813f19a7e00f086282bbd2f868144b31b6ec3928170d378720",
+      "byte_size": 13036
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-173/run.json",
+      "sha256": "cbab48f66c7cb8d856b731219911e41aa2f5e010bef958f2236a887f15c3a4cd",
+      "byte_size": 5881
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-173/candidate.json",
+      "sha256": "84fa665f6a173114f76ba4e3a1491fd21cde40babb48c9dc3b82db371bbea1f9",
+      "byte_size": 550
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-174/run.json",
+      "sha256": "c131860ad173fca5c9c82a94b00ea06446988b9a5f5138f043c4b142b2731c4d",
+      "byte_size": 4953
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-174/candidate.json",
+      "sha256": "82ccab9cfd741c31609775142d0f8ae09b1d5db0fd38623da2e7bcabd8329053",
+      "byte_size": 1452
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-175/run.json",
+      "sha256": "6d53a4935880286269c8614311608807e6c2441cfa131dc2468ce5154e1cd209",
+      "byte_size": 5175
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-175/candidate.json",
+      "sha256": "819c8b944164cde6793b68acf6c531e4e06da02505c96940402bc39ade6ae6ca",
+      "byte_size": 1448
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-176/run.json",
+      "sha256": "6cd8fed2e282342fcbc8471d4f5db2d2838c76e08de70f88daa11735ba50e5b4",
+      "byte_size": 5563
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-176/candidate.json",
+      "sha256": "7999ee3eaca19619b9a9fe700696eb829336e6a4756dbcca74614d53b6d054f7",
+      "byte_size": 1524
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-177/run.json",
+      "sha256": "6faf780a7ff3cee538a779d0c8d6eceeb4e0e448da8e4f17f2d1313808394e2d",
+      "byte_size": 7460
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-177/candidate.json",
+      "sha256": "715367596d2ca7297d79df65246ebd8edbf450e779fe9d87753bcc737c010479",
+      "byte_size": 1818
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-178/run.json",
+      "sha256": "6ee00b042825547b3e308e234e258a6c4ed7b6e179cc471de6fbad337f8ae856",
+      "byte_size": 8685
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-178/candidate.json",
+      "sha256": "b7febcb988c75c4694ee207d21c3e8e9034648b222a58c6c18c1b4c161569c36",
+      "byte_size": 3782
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-179/run.json",
+      "sha256": "a38baba6227c35bddd8f43f666bf7427d326b4ae2e5945dd7c79dbf778047e6b",
+      "byte_size": 8382
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-179/candidate.json",
+      "sha256": "a1585e3f416ed112f2a15d862b025fb4dc27b14f545b21b52d7646e076023f77",
+      "byte_size": 2684
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-180/run.json",
+      "sha256": "1d5c80c8976e74a82ff1dc1411244325c914f4929548fdfbcf5164c2eeb1647a",
+      "byte_size": 7872
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-180/candidate.json",
+      "sha256": "ae1528e97df1196a1b1f0eabfddc7fa2a8057aa366dd99c46b260ec8fdb00e85",
+      "byte_size": 1612
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-181/run.json",
+      "sha256": "6c4eaffb20a56c5a82f571ee72da938593c051f0eea12c34e2d2116603406043",
+      "byte_size": 5369
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-181/candidate.json",
+      "sha256": "b77d81d23cd0129c5504ff34cb6046465e000ebaf8a163deeb91495d8cf8d271",
+      "byte_size": 599
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-182/run.json",
+      "sha256": "183915cd5a856ffaa95328a5c80696cb55373f764061ccc044067dc166cdbf99",
+      "byte_size": 10585
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-182/candidate.json",
+      "sha256": "36f5bc58270c04c1e71963abd0bdabbf0cbac861fa9f40e1f4df18bfd4209efa",
+      "byte_size": 4878
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-183/run.json",
+      "sha256": "8d8c52f143a50069273a3fd0b3441591835d480953c0db9d11113ae5734d2e0a",
+      "byte_size": 10057
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-183/candidate.json",
+      "sha256": "a4ff373064cb1095ad9da5ff34eb29071d0cfc6dfcbd18a8a92694aae68457b1",
+      "byte_size": 1836
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-184/run.json",
+      "sha256": "94045c7aad0773faace15492e812788724e8d4d0541d151e022dfcca2dadbeb1",
+      "byte_size": 8751
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-184/candidate.json",
+      "sha256": "e4850b850b9d7c0efbd4f2e31c597c67962e17e857cb2c1b8dd89bc3fe89efab",
+      "byte_size": 4663
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-185/run.json",
+      "sha256": "f995453d44b823afcddb074b3de0c8aaa9ee31773b07db5e7b15575abb8a9342",
+      "byte_size": 6140
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-185/candidate.json",
+      "sha256": "c039f3cced99dfee49c47b4f91783ef44c9a9512e21815cd7e156fde85db50a4",
+      "byte_size": 1430
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-186/run.json",
+      "sha256": "ed1a1a0fe30bc4b6da6c560ee7e00c368211f7da03a7e914f255f00e4aac52e1",
+      "byte_size": 26612
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-187/run.json",
+      "sha256": "81be11a6ac064036dd9a21930dc70e3c380b18234b9839f3df24c25a4a9bb644",
+      "byte_size": 4963
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-187/candidate.json",
+      "sha256": "33899ab87d33019f2d229b264e16cef35566ac95dc6073cb993a614648629c00",
+      "byte_size": 1481
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-188/run.json",
+      "sha256": "afc389a29a6636743ae4d61f667eed763c310ea1aaaa0585104a54b6fe4432a6",
+      "byte_size": 7582
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-188/candidate.json",
+      "sha256": "a2c1d7264653f6195b0f36acab66763132afba54ef29a95a446c27070e1c5e5f",
+      "byte_size": 2066
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-189/run.json",
+      "sha256": "de314ac6a148c291d41f66a9f4dcdeff28f6618e19f7303e188db2b2b36bd3ca",
+      "byte_size": 4667
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-189/candidate.json",
+      "sha256": "9efc600f9fcb5efdf4f99be5e06f3cba8a1ecdce145150b74c2fc415d2ff2ef9",
+      "byte_size": 1457
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-190/run.json",
+      "sha256": "d43bded6ae933319b1d92e86454a4a36daa7ebdc81f5498ba4b693e8adfd4aae",
+      "byte_size": 4959
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-190/candidate.json",
+      "sha256": "7e8d3ec0c5946cfe5633c79e5f6f4bbe9b5e2c8ef552cfcefa01666a4cd7a6dc",
+      "byte_size": 1522
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-191/run.json",
+      "sha256": "b30895aa265c5900ab482ffa44cb56cfe5609bc7fa36786b864f14784b9f4771",
+      "byte_size": 8389
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-191/candidate.json",
+      "sha256": "751e092b01d87caad1f368400c954dfdbf7b5d9b69e7fe87b395a22200106787",
+      "byte_size": 5041
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-192/run.json",
+      "sha256": "ae7f68214b8d3c570835f8125e91fae6abfce891c730a11d8be568ae163200e1",
+      "byte_size": 7047
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-192/candidate.json",
+      "sha256": "a06c6742f0cedbb6359dfd19148fb04c6437cec9b47405e0cd6b4ca024de9164",
+      "byte_size": 1738
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-193/run.json",
+      "sha256": "fc7388cb0c5ce0cdd3a24bf8b7e3c5061801cd7a4bc667b81554b86c6253412a",
+      "byte_size": 5654
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-193/candidate.json",
+      "sha256": "970e14298cf68027d079617d2086bc3e8bed42896dc891fa3c6f7a9ea60d7c9d",
+      "byte_size": 644
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-194/run.json",
+      "sha256": "a985b9c983230926f1c191169f45089ae877a6f4775f92c55dd39b5fbc7bf0df",
+      "byte_size": 9125
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-194/candidate.json",
+      "sha256": "f75dc02ccd8c9b60d6c36b404f67148083ffe092a664c6b0882fd5d1ab6d6894",
+      "byte_size": 3964
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-195/run.json",
+      "sha256": "155e9dbf848b592bae1ea60921013e350dd8af4ef60df956045e808c392c3ec2",
+      "byte_size": 8127
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-195/candidate.json",
+      "sha256": "4d7235039bef8832da08a965623618a7ef9cf787cd21b78fb88a397a37739c20",
+      "byte_size": 3745
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-196/run.json",
+      "sha256": "060a5cf2a76e6d5af7ab7c0df3b437f30d0feb466c4a631209f5ccf6fbf14bc7",
+      "byte_size": 9027
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-196/candidate.json",
+      "sha256": "d675f8f75b987921be14e463074a047aa84a7f8d54c2574e7c9bca86f6c8d5e2",
+      "byte_size": 1992
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-197/run.json",
+      "sha256": "638aae9336c851325134e3f285a9aaff957d4446fe5e8feb45434489b4c2b692",
+      "byte_size": 5644
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-197/candidate.json",
+      "sha256": "b1ef2a63a1168f05a24bd13a4de02b5da053ba62252ff9e159e3e2df160b7da5",
+      "byte_size": 1498
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-198/run.json",
+      "sha256": "3656778f8a5f6fb0aa22eb19260cca82f584e43a8ba53c082863fe4f0723ef42",
+      "byte_size": 7811
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-198/candidate.json",
+      "sha256": "018c49c5e4022dd574e3a38d954db04b8493c9d7587ea166696a0416a8900a01",
+      "byte_size": 1751
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-199/run.json",
+      "sha256": "b9c3409e75f102f22f17f82f32288da7fde79421855ebce0c0f86b0d7bc39ae7",
+      "byte_size": 7901
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-199/candidate.json",
+      "sha256": "12ce703c76ba66eeb73e2d64cc427340cab3b24e23603170daaa92b7f6067f12",
+      "byte_size": 1671
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-200/run.json",
+      "sha256": "c992bfb390ec5c032a2b912d4a4531812df09208c65283e1d51afe69d4fb7881",
+      "byte_size": 9416
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-200/candidate.json",
+      "sha256": "e98946d57ef98d5636fd8c7cf84c011dbc0054485ca2d9ed5c5b405557625b2b",
+      "byte_size": 5218
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-201/run.json",
+      "sha256": "026eed519fed59dc3620890057aee9ef45ef2404fcffdaf934c02c58b328bdc3",
+      "byte_size": 1274
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-201/candidate.json",
+      "sha256": "da728bdf06d623077bf4a441b5e4bcaf721837fd99e142d26faffbb64a2c8a5f",
+      "byte_size": 1992
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-202/run.json",
+      "sha256": "473b5fcc59d4fb8ccb8c4c14fb453d159e1c334525d137863cade75eb58411f4",
+      "byte_size": 1264
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-202/candidate.json",
+      "sha256": "063bc1c8c2495efea1eabed3cebfb1c010bf5e5868b093ff04122d54dd0ddceb",
+      "byte_size": 7014
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-203/run.json",
+      "sha256": "75ac06e06a7a586e7a775d5c91c488be1edd8e6bc3287f2a2f9a04287f75b36e",
+      "byte_size": 1270
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-203/candidate.json",
+      "sha256": "9a1706b5dfa99b0c3666a11c2ef7f68a9face881a571f346d4f960e9f4581442",
+      "byte_size": 1841
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-204/run.json",
+      "sha256": "8cb06576aee32f1f0945a392eba0d8901e8e7e5666512ae48bc0817fa8ee1ba8",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-204/candidate.json",
+      "sha256": "166ca81792f442b776cbafcfeae4c8d1d92abebc88e1bfdc1fbaac4282afe6cb",
+      "byte_size": 6758
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-205/run.json",
+      "sha256": "eaddae0e30976bc2c2367a3c70c6d82c779dee80cf84385a92f7c74c4c6c4184",
+      "byte_size": 1263
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-205/candidate.json",
+      "sha256": "6d10f231f2ae1f0a0bc835b47d1dea0390b368964f665cde58b0f777630a2b68",
+      "byte_size": 2013
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-206/run.json",
+      "sha256": "f98419319ac9b4e0acb7b15f4ef237e81ec07d6d08b0cd0fe8d114c6bf98a233",
+      "byte_size": 1273
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-206/candidate.json",
+      "sha256": "a2727809da561a4d572b6ff921fb8a3aed4ca0e64fde6d54de4537e7937b7ede",
+      "byte_size": 2547
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-207/run.json",
+      "sha256": "61471242f55d8b62678b2f631794fe019688377dfc314a68ef274a89331bba17",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-207/candidate.json",
+      "sha256": "7ccfb589eceb3ce74427c8abdda96e31c8f33c60581998fe39ce9da734ea4aa8",
+      "byte_size": 2440
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-208/run.json",
+      "sha256": "5681557e4b403be4584e9df7c93fd9848e64ddb59abb0dc4872e697a5abe13cf",
+      "byte_size": 1264
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-208/candidate.json",
+      "sha256": "27e1c56fcb1326a8a2889b57d7ed0dd7ae721cb665f7b683348bbd176e9efa6c",
+      "byte_size": 5346
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-209/run.json",
+      "sha256": "ac66c76690104658769043c8a75f26acb7ce3b628ea0663e94e43ed33f059714",
+      "byte_size": 1275
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-209/candidate.json",
+      "sha256": "0b781b1734cef89e8257e7de1f899dbbd20dd9f86516dd9f11c54e105924bed8",
+      "byte_size": 2482
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-210/run.json",
+      "sha256": "ad284822723da0c80b6e4e7765dbfdaabd1af67868fbf808e3f86a84d90fb3b4",
+      "byte_size": 1279
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-210/candidate.json",
+      "sha256": "21246842401805011abb611282ddd9fdff9209764ce7a3911f98704d559817bf",
+      "byte_size": 696
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-211/run.json",
+      "sha256": "abecfe0e16f60244264ee4ee4b07f4f0765a2af7a8204d6dde067b3718817b1f",
+      "byte_size": 1273
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-211/candidate.json",
+      "sha256": "a3880374652744c5553f131e6d4af5c4a1da95e307b9f727fd3cadf2fcdeed7d",
+      "byte_size": 900
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-212/run.json",
+      "sha256": "3e8c3ce41a09d94b067b1b453a51d476afaa6e24f7424569e9b3f2670e55740d",
+      "byte_size": 66806
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-213/run.json",
+      "sha256": "41d27875407531c85cae68307522dff38c696c88c17bb891cfd79d217ed1442c",
+      "byte_size": 1279
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-213/candidate.json",
+      "sha256": "88af47892602fbae3b5786ff7a0959335c65515a704b53be2c74ef85333a9bd5",
+      "byte_size": 761
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-214/run.json",
+      "sha256": "ceafb1b1cbe60f6d44c76b1370e1f2ccdbc15d2785b18e559f99493b16ac7553",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-214/candidate.json",
+      "sha256": "44c3ece8de4db488c3ef88e0176c95558c35458a0ec1928564d0765a46e06c40",
+      "byte_size": 2192
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-215/run.json",
+      "sha256": "c49789bdd728d6308a808d6dfd4bebbbdbbdff973658f8f880e9a4a3fe09e56f",
+      "byte_size": 1273
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-215/candidate.json",
+      "sha256": "266c93e8e7b26686ea3324db155f946b297c477ccba92f33d61d8a64f21eb144",
+      "byte_size": 2019
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-216/run.json",
+      "sha256": "cf8a1a5268cd85b2d2175898e4898a2ab9dae6a230ab8344ca963c8473e63408",
+      "byte_size": 1266
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-216/candidate.json",
+      "sha256": "56e78832ccd26eb7928787e0b9c1910fdb5a55b3b74885f14196a1e54828e6a5",
+      "byte_size": 2007
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-217/run.json",
+      "sha256": "f2c641ac6c463fe25e6b8d4baacfd9a96a3172ee91a08b168424aa14619865b3",
+      "byte_size": 1278
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-217/candidate.json",
+      "sha256": "fb480f131e3f295a647d7f556364861915360e03a912b1976fd56d122c23457e",
+      "byte_size": 2548
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-218/run.json",
+      "sha256": "64d7311674dd053bd744680764a03e6bbd97af10757c4e2ee1953b3cc5502111",
+      "byte_size": 1265
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-218/candidate.json",
+      "sha256": "0bb2ef83df592644b54dd54c9c243ec79a6135dde8c697d142cfab46299a6da5",
+      "byte_size": 5261
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-219/run.json",
+      "sha256": "2790c46631d98f437935197316d8cbd72a07ea4af46bff40a971749654947a9d",
+      "byte_size": 1276
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-219/candidate.json",
+      "sha256": "d9de4a4bce62d31e278f619e32664ad8073964af24e03ab75c024910fdcba048",
+      "byte_size": 4328
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-220/run.json",
+      "sha256": "1194d412dbb0cac47675f0a583d4f69b875642069a0a6f7e2e5c22baf6329ef5",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-220/candidate.json",
+      "sha256": "72fe3489b2357dec40f33bb53e0bc395868da6af7f3bd6e24fbc73c7bd9f419f",
+      "byte_size": 2121
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-221/run.json",
+      "sha256": "349ba558855e319a664571db0c83c9af377bb286cbfed9c56d1791399d0d8c99",
+      "byte_size": 1266
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-221/candidate.json",
+      "sha256": "75493b5ce7984d3ef2d5f6350efdead59249f6310f2bf95ed8243e1dfb12aba7",
+      "byte_size": 568
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-222/run.json",
+      "sha256": "905ac84969173dea4849b51e4f31ca4713df12f3e99fb644d1b04954123f046d",
+      "byte_size": 1261
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-222/candidate.json",
+      "sha256": "ab1777452afe7f470b52e978837792f541882642de3dfa025e5c6b7672a4b976",
+      "byte_size": 6368
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-223/run.json",
+      "sha256": "f4a0a383962a4e6d280b8cfa7321485c3467cc7bfc8d6eabb83464ab213bacce",
+      "byte_size": 1285
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-223/candidate.json",
+      "sha256": "7379c245d19e2d40a00cb2190435785250e72769cbba76a2be4609c1d6bea703",
+      "byte_size": 2278
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-224/run.json",
+      "sha256": "d2e2afe1e3682750f9a71f98a44ec45fc6a8d94017ce5d21d8a7a90df3c98382",
+      "byte_size": 1258
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-224/candidate.json",
+      "sha256": "7a17fbc23ee8dcb9ecc3c254c5b98dd60ffa228e9107a4aa6bd32dc002710434",
+      "byte_size": 6419
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-225/run.json",
+      "sha256": "7cdd81f2bfa0baa3a5bad2d48c7afa5a2f4a17c8cc27b23c3051623750acc59a",
+      "byte_size": 1275
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-225/candidate.json",
+      "sha256": "3c460d1ee70836217b4bbe028f8aaa2db6cff70366c24e8f738e1d9d5b8ed715",
+      "byte_size": 2069
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-226/run.json",
+      "sha256": "b6e0e74ca4b95ec643873e6fca9b9bec1799b9b6cd2100a4188849fa41b3cef0",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-226/candidate.json",
+      "sha256": "0865fbf6f904afbd965ddaaa74f084ecf70e45d58be89b11a4b812ddd0284042",
+      "byte_size": 2271
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-227/run.json",
+      "sha256": "2980eb3ca034fdbb9d4c623cf9ddaf6933d0ee1da1f98b25b5f1c32e84ee74cc",
+      "byte_size": 1270
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-227/candidate.json",
+      "sha256": "3e9748e9b2f37dc6866ff48337b7379aafd328ed373809cff2bc7bd7c7d293e6",
+      "byte_size": 2323
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-228/run.json",
+      "sha256": "4803afddb0267a1f18012367c9935127c1df2df8107229789f5695ec525d31e0",
+      "byte_size": 1281
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-228/candidate.json",
+      "sha256": "8bf6326a74af7f65d1bdfde17728c53b8c076c5d187838eb3fe7c572579afb55",
+      "byte_size": 2562
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-229/run.json",
+      "sha256": "d57d7a52312c01e886e3e9650bc432840e826dbb64f829c81fa38c6d989af516",
+      "byte_size": 1273
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-229/candidate.json",
+      "sha256": "ee69862cf0bc751c2aca9354bdd09579a6cce4c1fb04ff650a6736cccf606ec8",
+      "byte_size": 2175
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-230/run.json",
+      "sha256": "bc8ed141abf77c1818724d7fb340ea838a9eaf21e9e51f5c35b0163f59485832",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-230/candidate.json",
+      "sha256": "38aa3d4f7c1fc7f6f7ee7448209c1fcc56fa99540d81492f8b7dc46913e8b3db",
+      "byte_size": 2356
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-231/run.json",
+      "sha256": "fceed3d16d27c9802860da4a88c3bb771db67f6494caffcc052a5411d603ae43",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-231/candidate.json",
+      "sha256": "67eb495c7583262a35b4fe0ff6f82bff9c428f7393c23e97accad5d411d5f558",
+      "byte_size": 6652
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-232/run.json",
+      "sha256": "ca5acd6b9341cd47b2a1c246a8cc497803231de421a1c6c916e05f0d7c0d4139",
+      "byte_size": 1273
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-232/candidate.json",
+      "sha256": "e910508b2949b57a6c77979e7f97b2f1802625482983ee16f1cc215016102d23",
+      "byte_size": 2340
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-233/run.json",
+      "sha256": "815525e82f5a40988411028e69c91222e1e2da49710e8211c3fbff156158c306",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-233/candidate.json",
+      "sha256": "f6d74c94b3fb44bdf084541eaf15b8cc2dc35ed7f4254ea4bb1eaa0074fbca4a",
+      "byte_size": 735
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-234/run.json",
+      "sha256": "6141360c8cf9cb8cfc3a78580cb8eb331f73fa1ebd93f6f719ab3e13ff30b80c",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-234/candidate.json",
+      "sha256": "12c88b58a0be9918e9fcb97838111cfa2aa747dbfc93c6341feb07f4d491a8d3",
+      "byte_size": 5594
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-235/run.json",
+      "sha256": "4c32ea63c2733998b068222e7a8912221e043793aa679d4fb016a6d5a59ad26f",
+      "byte_size": 1266
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-235/candidate.json",
+      "sha256": "219c31b19d81c45d77d29e97cb60380d0aa269fa725b34497d1b84fcd28b0b4b",
+      "byte_size": 5349
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-236/run.json",
+      "sha256": "1a3ebdfb3bb1379c3a1d5cb0d393c6ac138680a7a72cce97819288667656992e",
+      "byte_size": 1287
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-236/candidate.json",
+      "sha256": "79ed612e33b2d1f3e61da17cbc72b77810f1cb61d42f86149e8264e1ad639836",
+      "byte_size": 2788
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-237/run.json",
+      "sha256": "85e798d76ba5e42722df97f5d74dbc960ba13b284376e72285e3632c22cbb054",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-237/candidate.json",
+      "sha256": "f47df9064cb5d50b2572a2a1f8694eac6f9c311b77a5f875ef6257f71943db5f",
+      "byte_size": 2001
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-238/run.json",
+      "sha256": "f8732d8a2da8e56279b2be16669f5445fa7eaa8c1783623a9ea0339beb67c98b",
+      "byte_size": 1265
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-238/candidate.json",
+      "sha256": "c5f79ed59e45092b9305339cda7bda37365930bd10e21a5fd3e1bbb9847480a2",
+      "byte_size": 2444
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-239/run.json",
+      "sha256": "45336fc4bf8e3e2b2bafaf6507a888c4cfa5a5fca7a0bf3043315804419acb3f",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-239/candidate.json",
+      "sha256": "16c32d566d53e36a6fc790c2b844852da7aed6d7d486a06587b060552eb6b1e6",
+      "byte_size": 2075
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-240/run.json",
+      "sha256": "04e3fda82a2fb6e840386e4b92a86e5122d1317b09979a7ef6977c3d57e37258",
+      "byte_size": 40227
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-241/run.json",
+      "sha256": "5bc666d0c6d25793f143711c6ab201487642764cd803c73eee96ab034b5ae964",
+      "byte_size": 5493
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-241/candidate.json",
+      "sha256": "1035b2837493a1f5a01e6bd3b0ec4df63311e585f1c412db733996673a4978c6",
+      "byte_size": 1529
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-242/run.json",
+      "sha256": "1938eac88410661f5c22f206306595905b55c8d2941e1cd40bedc177038b0089",
+      "byte_size": 7957
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-242/candidate.json",
+      "sha256": "fcdb45d7fbae87fcfb4e28a3e21caa619a53a28ebe98c4d644373a8cde5b613b",
+      "byte_size": 1646
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-243/run.json",
+      "sha256": "d44c1d8c3b2a8a612ab6ec3d36e5260dc675f929888a7c374a45694ea5f4633c",
+      "byte_size": 8475
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-243/candidate.json",
+      "sha256": "4a6aa814522a279684892e118302eaefcd9b37451bfd461513de7087d6a52211",
+      "byte_size": 4809
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-244/run.json",
+      "sha256": "e7563929fd60f546b503cc01b6f3280e80122aa278ad11306f6314db0a3b4a66",
+      "byte_size": 5057
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-244/candidate.json",
+      "sha256": "3f8081e2f2edeb2be87f3864b2615925dec44057346c40313ac5b26415c9c04e",
+      "byte_size": 1439
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-245/run.json",
+      "sha256": "3805575a0fddefc980985b0d2679a98b6bb4ce3a39d39e313eeafd85c8917ec7",
+      "byte_size": 9388
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-245/candidate.json",
+      "sha256": "c90ff5293c29408f855703a7eecbb4dd8d4121acc8b2537e5e1022b71a3d4514",
+      "byte_size": 1758
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-246/run.json",
+      "sha256": "07664b6ff6239121ab86521e8dbbc019369a28b9604d0c85ecc6c10317c4948d",
+      "byte_size": 8917
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-246/candidate.json",
+      "sha256": "49f794cb611175916d124d86fae5cfd22f0739c6f55f7b20ddd9cf2d83e2f263",
+      "byte_size": 4835
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-247/run.json",
+      "sha256": "90a7eb34f3c24d8c71354d4e61000046b545df9eda0f5bfff39f237261f9e7ab",
+      "byte_size": 5289
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-247/candidate.json",
+      "sha256": "651944f8fc4bf571f07fce9a8eb90aaa5ab4dbbcc4c82c372c54d06b98051025",
+      "byte_size": 550
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-248/run.json",
+      "sha256": "c4761d02b71cefe26cfff2e95e242a1da7e5324ea8117b0fd64355ff063e8b99",
+      "byte_size": 6311
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-248/candidate.json",
+      "sha256": "3acb30be0820aee92c7e045c95d6e30d9b46ad18b2f34209ba65278b7e43e736",
+      "byte_size": 1538
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-249/run.json",
+      "sha256": "563380ac20f4815af3676c2e6061d3b2c7573241d6df16481e4e6ca503a72afc",
+      "byte_size": 7783
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-249/candidate.json",
+      "sha256": "04ce83d4ed58d08b1da421ea190b0b09763140944789e7348928c17891be97ba",
+      "byte_size": 1529
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-250/run.json",
+      "sha256": "f95d9a48495799b036dd240bd96b40426f2a664ce818569c70d8729d7cad71ad",
+      "byte_size": 9293
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-250/candidate.json",
+      "sha256": "cb3f2aac9b78ca13ae54d21a78ee1365b57384e1dc8aa2aa32e7a318f1cf3643",
+      "byte_size": 5084
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-251/run.json",
+      "sha256": "bf9530a6be44766be43e7344b57572436f6d952539b88621960a6b688e268454",
+      "byte_size": 6712
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-251/candidate.json",
+      "sha256": "e44d426408529328c51d362c8a0280e9c59435d806af36f422253ee6bf684eba",
+      "byte_size": 1468
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-252/run.json",
+      "sha256": "391a486ba0f178086f650775702a3e6e76c3b13027cf26faaf80539ab2eb7dcc",
+      "byte_size": 10236
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-252/candidate.json",
+      "sha256": "0091d5d018d5c182fae7f1a6cb8feb5561026b653b472c4af2fc459f77a7b0b1",
+      "byte_size": 4909
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-253/run.json",
+      "sha256": "c04ff734f4e4609b8f6397b3bfd4f907c0f607c6358eca394925a30507a155d3",
+      "byte_size": 6927
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-253/candidate.json",
+      "sha256": "3a3d91a9a27ccfa8551194f05bf1b29a2ea11f5f3056764dc5048acf126e7bf1",
+      "byte_size": 1497
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-254/run.json",
+      "sha256": "6519a3e1827dc16f073497e17b0d8d396c85ce32f989b1d5f3bca7ed29b23ae5",
+      "byte_size": 7828
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-254/candidate.json",
+      "sha256": "5bd581a9908cbc93bae4602a1cf8003c46c8bfa3e950e2ffe54cd6f045fe06e5",
+      "byte_size": 4004
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-255/run.json",
+      "sha256": "abd4ef94c241acf7d6a6d3bc91bd3e5a84b0d24fbbb3e282e6a60fed5a74d761",
+      "byte_size": 23604
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-256/run.json",
+      "sha256": "1b3bba0f3d0835c76e44ca3d3185ef1875239a6b89a5e5b8c728ca23c882284c",
+      "byte_size": 8529
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-256/candidate.json",
+      "sha256": "c8f79f7973cb11bd3608184bb92e7f0b87b05691747be6ad2380e9ca0bdb3fa1",
+      "byte_size": 2682
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-257/run.json",
+      "sha256": "3395778c660cee6e73e042e94a1cbef5b4e3ea6d8659b13a5f1199fe149f9d8a",
+      "byte_size": 5033
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-257/candidate.json",
+      "sha256": "aa6b32eca17cb4da92ba9ed9c408c35e108743d8a40b6534bb82060aa52d5f37",
+      "byte_size": 1436
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-258/run.json",
+      "sha256": "3b176b2779cbf7f4ce0e4fa85c7a12c8099cff3272a367b9b3581f4d27ba4b78",
+      "byte_size": 4494
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-258/candidate.json",
+      "sha256": "5d988f979934e8c3c423054d0c2205ad2d282633006fa52d1f9cfc9e291baf26",
+      "byte_size": 491
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-259/run.json",
+      "sha256": "babf022edde8b0e0f2bc93ca5b6d0e5e0f7833bcbc24e559f5895d681924a4de",
+      "byte_size": 5433
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-259/candidate.json",
+      "sha256": "14e883cc823892d3a7736e5d3af6685517367b2c96d92d9b0af9f4a52065c358",
+      "byte_size": 601
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-260/run.json",
+      "sha256": "100297061eac7e97cb7d551c3e6bf4deb72f0046aa7eb1908feaba179f7bc824",
+      "byte_size": 6998
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-260/candidate.json",
+      "sha256": "dc0778e4faf3f920bb9adbdec92bfa2cefca4c69c4fb1ee9c59b223a7616f2d2",
+      "byte_size": 1667
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-261/run.json",
+      "sha256": "dc846e4f746adaa8ca1d8892934d909a46379bc1b922395ae3818d31550b0b89",
+      "byte_size": 9431
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-261/candidate.json",
+      "sha256": "a6293215d8417ddab08b604be979835b4eb1b705dcce86dccfab7fa9ebeeccdf",
+      "byte_size": 1824
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-262/run.json",
+      "sha256": "108cc38197fd329d3853fcc42d384776fbd9e8d5433a24c029b9f0d12bd3f516",
+      "byte_size": 11314
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-262/candidate.json",
+      "sha256": "aea316b77ecf4e75c55b9df9c029ba842904ea53a1c61831af720ddfc2444aaf",
+      "byte_size": 5001
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-263/run.json",
+      "sha256": "68de6b0a68008af465bee24effb8137c3eb66495e6b39d63379c2877be635d0b",
+      "byte_size": 6196
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-263/candidate.json",
+      "sha256": "c8cd7afb3488a25ae44c365522b2fff228caf1fd56098d5be4e2e61385eb34b2",
+      "byte_size": 1752
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-264/run.json",
+      "sha256": "b12ff61272926a44827e78d395e5e20dfad151c41199b74289d549616e8f7000",
+      "byte_size": 5304
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-264/candidate.json",
+      "sha256": "1ed0a2f42b2151eee51fbeff128cc00a5a44d813b9ff6349738679e289526b31",
+      "byte_size": 607
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-265/run.json",
+      "sha256": "28bd3ab422fd522eee8b9ec6e2123d9bbf918e473aaf6ba1ab9b1fbf726b22c9",
+      "byte_size": 20818
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-265/candidate.json",
+      "sha256": "43d671830cb2faa81a455ee78bfee51a6fe5d0a9b3a0b076f47156e8c0c4ea64",
+      "byte_size": 13421
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-266/run.json",
+      "sha256": "828e64161629be8d196ca5316d81db640d1b2e14fb7a15b526ce3c785218503f",
+      "byte_size": 13150
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-266/candidate.json",
+      "sha256": "cac27df4ed2d372996a7a6f789412d48770d81725c37cd1ca32421c3b698c804",
+      "byte_size": 2115
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-267/run.json",
+      "sha256": "4ba87e02d52ce110686192177f63a552c752b335e7187a69e9167856d470793b",
+      "byte_size": 7693
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-267/candidate.json",
+      "sha256": "3c90d5f9eaeafa12f1ca96da456f3cf6ef3ef8566262328f2949445fd707d4dd",
+      "byte_size": 1659
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-268/run.json",
+      "sha256": "2f70a8e51466e3455c076e952229817fb50fb4b8703a15dbfe1a0fa116cc29e8",
+      "byte_size": 6284
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-268/candidate.json",
+      "sha256": "ce472a3c3c6fb05371fb0ca5c6cf27606599011f419bdc95dd7707706fc1daec",
+      "byte_size": 1649
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-269/run.json",
+      "sha256": "750d92e1a2d50f6fe73745e94ddbcf9a68ef8270cd984b3cbe959ff540f2ac67",
+      "byte_size": 13092
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-269/candidate.json",
+      "sha256": "2970f78c77cd10dabaa473a472320aeffa8efd731b2c9dccdc7bbc118d0ddea0",
+      "byte_size": 4001
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-270/run.json",
+      "sha256": "056142b1fdc6715309236b0d0ab7af532ec2a467da8aa25a2e16fe1e4a69577a",
+      "byte_size": 6726
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-270/candidate.json",
+      "sha256": "7b641c944f4e14aafe85631ec86785a81dbceaef41d9ee9d552dd22628165c34",
+      "byte_size": 1848
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-271/run.json",
+      "sha256": "e3ea7e299812896229c942c9d07af256e5a7672944b235dc7b2bdfeb832bbe4a",
+      "byte_size": 5834
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-271/candidate.json",
+      "sha256": "d096651b148717462becb1edf9089aae35308ac0cdf77a2e8207b16642106d44",
+      "byte_size": 1530
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-272/run.json",
+      "sha256": "6ed8f00f60a6aebabbe87810f900e195ee56aea85b447be601223692e4a2a3b5",
+      "byte_size": 8661
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-272/candidate.json",
+      "sha256": "22313133bf7b9e396df64719446fbf64427edc86d04ccf6260762b5166a10e33",
+      "byte_size": 4899
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-273/run.json",
+      "sha256": "a84b1078331d52891e053505cd5af4b4e0be1e1eba97ddfb1993c63194b654d5",
+      "byte_size": 5546
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-273/candidate.json",
+      "sha256": "8da31b3c5e52177287f04177baef0d212ab8d9a6fbb4cd060ef96f959549c919",
+      "byte_size": 1490
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-274/run.json",
+      "sha256": "ce269975b694ca7ebbc8513aeb4f2c8f95b6dbe1521937a3d4391a0bed639671",
+      "byte_size": 8966
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-274/candidate.json",
+      "sha256": "0ea5af2cb04edb928aa0ab8d8a265cbd50cc7c569a999f35a091f7a6a85c80bc",
+      "byte_size": 1586
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-275/run.json",
+      "sha256": "976db8d63d54aa5b7a14c60d29db0857a1b7dc2b6a4cbad789fd399b3bb62bc6",
+      "byte_size": 7988
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-275/candidate.json",
+      "sha256": "3f2baffa9c3681af4ee798efe5b0d5f6e655a3b35e449e11e9728a824fa29aab",
+      "byte_size": 3859
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-276/run.json",
+      "sha256": "ef7fede1461b1c69cf86e12404d9654f035a736b62ed4f9f6193f476860279c3",
+      "byte_size": 9441
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-276/candidate.json",
+      "sha256": "42f8cfb4ec538c0948137fca6bef38f2b127b9819699988472e84dc422906fb0",
+      "byte_size": 2096
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-277/run.json",
+      "sha256": "03562cf1dfb91cb3b3c6dfe2caf90a764187e9001c00ebb7d8e53e53a926c949",
+      "byte_size": 5075
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-277/candidate.json",
+      "sha256": "c555ba423d0a47440caaa73b86dce65916400bdad6825da7008fbd94a77f224f",
+      "byte_size": 1507
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-278/run.json",
+      "sha256": "cb1daad35e004b9292724f24f9d1c18326abbcca632432e2e2a048223d4b1940",
+      "byte_size": 13531
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-278/candidate.json",
+      "sha256": "4f70bc286ce95b39491bfabbdb11f5537060c27ff16563de8a99da824d6266a5",
+      "byte_size": 3945
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-279/run.json",
+      "sha256": "8bd092a3f86ea0f60b6baba86619cf7348edb98c31ed5908235e3b7b9f711a09",
+      "byte_size": 6842
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-279/candidate.json",
+      "sha256": "83c72423dc530ef65e0d87e3a664e85d2035081818b674cd2482a5a80842b03e",
+      "byte_size": 1540
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-280/run.json",
+      "sha256": "9d3896051f5b0d5513d13c5440a9adc799c8273b2c9f4898ba54e89a70966b34",
+      "byte_size": 6631
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-280/candidate.json",
+      "sha256": "2bf303da650820c470ac54bf73cdf7ac33bf133ce22a6632d88cf17875761170",
+      "byte_size": 1693
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-281/run.json",
+      "sha256": "d1fd6de53f56dcc3318f1ee48b6a2de20ed68b402caf85a38e6c54ce72ca5e66",
+      "byte_size": 1270
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-281/candidate.json",
+      "sha256": "1044a4afa0f802e15686bd2ef6b5eb022574e39e94c60bbc18debff6af26a623",
+      "byte_size": 2400
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-282/run.json",
+      "sha256": "6997359c5720a48b8e35ca0ab8b619c98d38b1abb80ca6b2207eca8d1fa7f453",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-282/candidate.json",
+      "sha256": "ed2696d1f2b0ada93b67d8173f89a819a26c13fe32900f94de0e76bd06049262",
+      "byte_size": 2114
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-283/run.json",
+      "sha256": "9635e3bda071219a7e5910c24a56674f66f62b909c077658c3508a3c97af8b4c",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-283/candidate.json",
+      "sha256": "5f98985e28a8000215083c69a6fc1e3cbf5d73db942f89b90f54155540e9ac37",
+      "byte_size": 6912
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-284/run.json",
+      "sha256": "b6103ff39906782020399e27e65fcf7fa5a381b6c11c61c5a0a3d92aed6efdf4",
+      "byte_size": 1274
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-284/candidate.json",
+      "sha256": "0693af81cb70bee41854aadf74610b36370e33d481acb60dcf4677530e7ca728",
+      "byte_size": 1842
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-285/run.json",
+      "sha256": "469854806aa1e1355324ab90a7e1686fc29847d9ab3b35c24fec7e225cf1098e",
+      "byte_size": 1270
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-285/candidate.json",
+      "sha256": "6e5fcd49ba0e91ce0e55d2ad145b1e4d6cbf1542d2df99732cf2365df3a71aad",
+      "byte_size": 2108
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-286/run.json",
+      "sha256": "1ec697203dbd17cd3e1267b558a5b7cafbad5d526895538a3af6cc560758a8d0",
+      "byte_size": 1266
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-286/candidate.json",
+      "sha256": "6f3be25cd9bd8a04371accb123d4a97abc723d96591c380711a889dfc1a0a468",
+      "byte_size": 7107
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-287/run.json",
+      "sha256": "c1f9be4ca633ae1148db952a440f8ef5a92cac1c8eb2a79ea6e2bdaf33d5beb1",
+      "byte_size": 1272
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-287/candidate.json",
+      "sha256": "4174658f7a0898fe721aba3e847b65c35a623f3b2e752c49a5cc459ad630915c",
+      "byte_size": 769
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-288/run.json",
+      "sha256": "8cd8b3a18c6944b4f060bc3e8dfa52475632b597258673ac81a6c0797f8cdf42",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-288/candidate.json",
+      "sha256": "243c5857fbb532a4f6d731536efaffb4c06fa67f679b9b118b60e9920b389d2f",
+      "byte_size": 2080
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-289/run.json",
+      "sha256": "e72397e22ff294a2a4a037be64ab867a01cbb222aac53bf11559974ea720ace7",
+      "byte_size": 1271
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-289/candidate.json",
+      "sha256": "8bb56e94f77965206aaa56238cc687efd7c96c82ca70fec84e54da782903b6bf",
+      "byte_size": 2125
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-290/run.json",
+      "sha256": "b313d50a96cb2367d14acb42a2e137b90173879df061a5201d3d2debd8809066",
+      "byte_size": 72983
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-291/run.json",
+      "sha256": "7a1947e38b07f940bb133cc2b942ae2c8e260b6f1d24b1b867f97280dcb7c1c3",
+      "byte_size": 1266
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-291/candidate.json",
+      "sha256": "ba64e010fd05f05a830d1eba0d5f88ad6859d050a51393722b3f8366fd25639e",
+      "byte_size": 2175
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-292/run.json",
+      "sha256": "c89343c8ffcbc565a16cef20024a6ff1a52135c7982f563cb39c2035c9c92c2e",
+      "byte_size": 1261
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-292/candidate.json",
+      "sha256": "54a68dd052d9cc7fcd78ea2b6b883891eba29a1caf928382b56af016cdba2d88",
+      "byte_size": 6400
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-293/run.json",
+      "sha256": "ba3c4dbb8cd34853eca06f1eff8406d74f30339cb58c222e2a2816ee4e20bcb4",
+      "byte_size": 1273
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-293/candidate.json",
+      "sha256": "3473086d67b93f266a6f6a555ed3d032195257f9ea905d98c3b205c2f26adf99",
+      "byte_size": 2024
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-294/run.json",
+      "sha256": "18b33465b9beb5fac3285fb22f5b494fab6ea214112696433defe80df22fd2c0",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-294/candidate.json",
+      "sha256": "5ca25526dd247645e9858687088fdf63821136ed81a7cfccb4b5794b80fe1043",
+      "byte_size": 5367
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-295/run.json",
+      "sha256": "86f8b7bd72061795ee2bf8b8bda39c28b7001c38616e65e17a1aa2a2a6665d82",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-295/candidate.json",
+      "sha256": "d83e5e6e1cbfd8b1913caeba29724e27857afd7059172583115e011983827af9",
+      "byte_size": 629
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-296/run.json",
+      "sha256": "d5d11e1a1e545008dbd2b6c4cf809190fc45ab141d0842f38769645f14af4fe0",
+      "byte_size": 1278
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-296/candidate.json",
+      "sha256": "cf1c7f464c072712fa052ca15a3e3808e691bfb20bcf28686325403f4336b6da",
+      "byte_size": 4510
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-297/run.json",
+      "sha256": "8e8e1e0729f00fa7dd7ef4930bbaea508ae302fa07edb588127b37e988147f03",
+      "byte_size": 1276
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-297/candidate.json",
+      "sha256": "847f9e41f95c48e1dbaf427be053a1895777cb5d8c92888d77874187606bc38d",
+      "byte_size": 1833
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-298/run.json",
+      "sha256": "dccf7746f73e0dc7aba2055d1d66df425ceff88081d7ce7290370944fa87ffe0",
+      "byte_size": 1281
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-298/candidate.json",
+      "sha256": "2d252d2246982abd5be735f4aa7d8f9cf4dc58818fd63a4b3c53cad82fe3c036",
+      "byte_size": 745
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-299/run.json",
+      "sha256": "2bf8915bd4200dea7bcba026cbdc0d8cf1bc7a404f53df3239025a2c1453be33",
+      "byte_size": 1268
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-299/candidate.json",
+      "sha256": "c630e09a8544fc04b038bbaf8e21ffc1b6173819b7328959ba061e6b71615a16",
+      "byte_size": 633
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-300/run.json",
+      "sha256": "b50a8ebbe4275f01977594f8b2061a272ffd7d720c71a8098c1c4deef8fabc87",
+      "byte_size": 1274
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-300/candidate.json",
+      "sha256": "4dfeff79a699f9a2d816c83c9c83b278e206fab8fc5f8e629259ce3edafba2fd",
+      "byte_size": 2338
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-301/run.json",
+      "sha256": "ab814fe6b90df0d85328dc20ccf424629e9ffd24284f6e7653234e222036cb1e",
+      "byte_size": 1280
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-301/candidate.json",
+      "sha256": "7c21fbe6d85e0405b0a2009b1787aa0ae66c07cf30b8f9779602ba7988bcd66b",
+      "byte_size": 2471
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-302/run.json",
+      "sha256": "62a1f3c3f97e746edc272275ba75e828faea57a7e08d566200834dabfe547853",
+      "byte_size": 1263
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-302/candidate.json",
+      "sha256": "dae2dc1a336cae01ad3186f627075f063c46902eed59ebc2005d778fcacc1b63",
+      "byte_size": 6533
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-303/run.json",
+      "sha256": "05f164019a75502290423e986200787128a4f7213fc61219dd1e824e0af78f23",
+      "byte_size": 1272
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-303/candidate.json",
+      "sha256": "2f3d1c3195699c06bf748721f1c2ec8b22076917c9a21ee5273efd28a48c603c",
+      "byte_size": 2733
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-304/run.json",
+      "sha256": "c65988674fdca70ab56ef3955c14caacb2dd7e2d027043219521119b1e666d3e",
+      "byte_size": 1281
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-304/candidate.json",
+      "sha256": "eb1d469fceaa32998426d21fe520beca68aeed5a7a9bb1223864fa6a4567fcde",
+      "byte_size": 591
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-305/run.json",
+      "sha256": "705b49056bf167dcaad10fa9dfdaa95fed7890c09cf79b41973c0f02d025d0e5",
+      "byte_size": 1259
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-305/candidate.json",
+      "sha256": "05e1ce23d98578592d16254f272c7072e605bb2167fbd4381a43730e49480925",
+      "byte_size": 19154
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-306/run.json",
+      "sha256": "0b7d1acc194a0f8437c872aeef4185d8aedfb47d8d4ec2fb9ce70c16290898a4",
+      "byte_size": 1288
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-306/candidate.json",
+      "sha256": "5c207a18bd45304a07dd1c83c00bee017f8ee4773a33529430850f32d42eda26",
+      "byte_size": 2252
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-307/run.json",
+      "sha256": "3643da420fcd5c47afa81ba9f5c65fc003be6bcf3e3538dd1bedccffda43fb35",
+      "byte_size": 1275
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-307/candidate.json",
+      "sha256": "964e79d3885ad55c665031161a3a46f1571b2a01fb47234795abf2bad4a6f958",
+      "byte_size": 2030
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-308/run.json",
+      "sha256": "9351249e5985aff0fcfd47d90c9d51247e8b5b3b4e5b2feda5d38c5bbc3b8b4b",
+      "byte_size": 1286
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-308/candidate.json",
+      "sha256": "0165871651c7f7e8deda7497b5919568a948297edc4ef9730fae57f16d8fac55",
+      "byte_size": 2301
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-309/run.json",
+      "sha256": "2bb597b0e5132223e6ccbd2ee9fd43360f3122ffd144436a66f0b76d5b13680f",
+      "byte_size": 1267
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-309/candidate.json",
+      "sha256": "d12840eaa4b3ffa9922aaf1b665a6e8b9bb96802949e9f604046a34c764f8ca7",
+      "byte_size": 5558
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-310/run.json",
+      "sha256": "1d99193293eff8a2db0bea15f535e5eb4d13a6a3b5418e690a325c29878315d6",
+      "byte_size": 1276
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-310/candidate.json",
+      "sha256": "e646694f57b2df371a33197742286101b02422e1ad24a47be2a3f9ce389acc37",
+      "byte_size": 2536
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-311/run.json",
+      "sha256": "d017a06798820c39ef5baf8dfcd994e2a28558163365af39722c265bab4856e2",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-311/candidate.json",
+      "sha256": "949e164fb0137f7318e79ef03767bcc02d7453c622940c36d3d9f29bd5a52c93",
+      "byte_size": 2269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-312/run.json",
+      "sha256": "a32d3508ba907ad85f7400031ce7cc9b10fb6b21036aa856766c513e467a3f57",
+      "byte_size": 1270
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-312/candidate.json",
+      "sha256": "efaf697bd7bad7446635d2dde03695889ed8a7795244fd270d448b8214d5a080",
+      "byte_size": 6771
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-313/run.json",
+      "sha256": "6cdaf320af70ab9b25f683d035f303211e10cc77e9ef0d085e43a09f6b5d5b83",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-313/candidate.json",
+      "sha256": "510deae1a6f04c74b65653a46b6c76a8ce0947b8ece91e05603c4f353b6698df",
+      "byte_size": 2357
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-314/run.json",
+      "sha256": "b6263ce3a77d6c623e7f71fb12164d7865d89550bd99cfe93e3a92c25c1c13dd",
+      "byte_size": 1266
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-314/candidate.json",
+      "sha256": "529e2664d81e8a7c2910ec2d319f6f54067a5e5e47f580fa436775689e27123f",
+      "byte_size": 2561
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-315/run.json",
+      "sha256": "16cc30d053d0fc934d555d61952a0146ccee21d97de697602fba45c2a88e7347",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-315/candidate.json",
+      "sha256": "b4abc8dd5bb7fb039feb6f771994c4740d0ce0159ee56f6e07c4fa7d04ee4fee",
+      "byte_size": 5416
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-316/run.json",
+      "sha256": "9fca18d1c4b0d1fd3bee73b23e4cc4df49cbd1771d811a12a340d65fb62cfeb0",
+      "byte_size": 1282
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-316/candidate.json",
+      "sha256": "7f0b28d059a8507de9379cbbb3596a36d283523510b30de825f7c3433dacd025",
+      "byte_size": 2581
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-317/run.json",
+      "sha256": "28e71c443b7cb4106a0bab88d58843065154ef97d6e0e0a025aa4b9dc4406687",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-317/candidate.json",
+      "sha256": "cf56e1950e78861abb597dc079eaae3dbbe81f69d549fe9d4c179cd2554e9257",
+      "byte_size": 2331
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-318/run.json",
+      "sha256": "bddfb523ac69ae98cdb5813a822f35bd7c8ee2b61e5b6f9eacfe73b87a85a959",
+      "byte_size": 1265
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-318/candidate.json",
+      "sha256": "bd68a6784abd4fa0d2e3e0cfd0131b50bc4294238003a073e30a79c61736f44d",
+      "byte_size": 5263
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-319/run.json",
+      "sha256": "55bac0fa1c66f2d5b87ed33b0ecac09237dfafcacd824b04dbc664acfc3a3d4f",
+      "byte_size": 1269
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-319/candidate.json",
+      "sha256": "c5f2e7f76514dfb07c54cf65325bdbf89fde40f6e3456f9a632d3537d5eae30c",
+      "byte_size": 2101
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-320/run.json",
+      "sha256": "e9d8733b118642076bca150a2bdd85143877ec5e82c87b73f75f86179d335265",
+      "byte_size": 1276
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-320/candidate.json",
+      "sha256": "33691c858240c5093c50fd8180a2ab0246c22a10aab0002118601e3bbec099b4",
+      "byte_size": 2556
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-321/run.json",
+      "sha256": "16e88c2572946124a5db457bb9c74ebe9d7842ebc91f6a4675f65a20f9093565",
+      "byte_size": 1598
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-321/candidate.json",
+      "sha256": "b20a89151890b583a686296457d5abb199d4279811bb9dfb2540d921e4bc84f9",
+      "byte_size": 1563
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-322/run.json",
+      "sha256": "66f3aecfcb03e5b10abc43cdd866af6bee66e3a1b7d88f577a67c6fd2f6e40f2",
+      "byte_size": 1526
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-322/candidate.json",
+      "sha256": "885f92fed8c479ff0f5a1c44b7be66078fbacd808e8cba1a46e102eee106ff59",
+      "byte_size": 1493
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-323/run.json",
+      "sha256": "d6df479de3310f1b0cf7e45760a31f4ec2019bbf25b5c909ea88766a53d88579",
+      "byte_size": 1530
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-323/candidate.json",
+      "sha256": "ea52df740a050303165a839bf0d4c8444123314055261bdc1c8160bec08dda21",
+      "byte_size": 5041
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-324/run.json",
+      "sha256": "c3ff6091c518ad3da82cf516a3e43aeb03dd0a907a9553b195129e1d32300a6b",
+      "byte_size": 1650
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-324/candidate.json",
+      "sha256": "4fdea55f8ddc354c87e7ebfb4ff49a591f2bc611b3e47d5e32abd20086452707",
+      "byte_size": 1471
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-325/run.json",
+      "sha256": "faa2ab9dad0a6d5bd79e594e1f9ce3b5cc697d7c2756d1801fb5dd18bdc7b3ef",
+      "byte_size": 1531
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-325/candidate.json",
+      "sha256": "94297c7838a84c36229b6e12c77ca5774b980fb2d7f77b3a01fe9523e7bbf533",
+      "byte_size": 1626
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-326/run.json",
+      "sha256": "751d784e5fa7a0374ef8095f9137c3a0c409befb920f8cb14d4279f4fb246106",
+      "byte_size": 1514
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-326/candidate.json",
+      "sha256": "9c077be3861163b23625ef40992713f9df83646081d9543200a1ce340ffdf4a0",
+      "byte_size": 543
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-327/run.json",
+      "sha256": "1c2b8e2d062394127bbad99669185a3969014bb220ab7032256655a174f4df22",
+      "byte_size": 1640
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-327/candidate.json",
+      "sha256": "2eedebd32b17782a6e8d78ea8ee75a87584fc8ca4974214be18f8e50c8991b13",
+      "byte_size": 507
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-328/run.json",
+      "sha256": "0fb51119bcf0658ad7214c1a709761397f5f69930fadb6e74196c9d0c4669820",
+      "byte_size": 1528
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-328/candidate.json",
+      "sha256": "6011ee862e455bf9cb77f0a034cf81d03da476814bf61d9dab81761c993cfede",
+      "byte_size": 1497
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-329/run.json",
+      "sha256": "55299ece1bf562c0ba50a1840318fa1a20e82e2e87d6307530e8791892a48801",
+      "byte_size": 1590
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-329/candidate.json",
+      "sha256": "f9644da74f0b379d19a40b97c0342a6a06100568f1df10139cc7c50100dd03fe",
+      "byte_size": 1525
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-330/run.json",
+      "sha256": "16cfe21ed2d9ff4496c1d08c6dd6a464065b107674e70e865f051b704a6ea72e",
+      "byte_size": 1522
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-330/candidate.json",
+      "sha256": "a7959ef7cdd3aa26fa3a7a538d9ca492f91b146ca2c001df589927579ad5c508",
+      "byte_size": 5517
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-331/run.json",
+      "sha256": "f21fa4cdf85319320e1716dee06fd0d494b6bf64b374919eb8c090a85a569e13",
+      "byte_size": 1527
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-331/candidate.json",
+      "sha256": "4395d65d2c85c325671cd9e9e992d8128068cc084caf4a57f6b4bf1d588c7663",
+      "byte_size": 1483
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-332/run.json",
+      "sha256": "42e1f3455d358ad9ea744e39c3a866f3e361d07c6a3acbc5e6e30ec88b27cdab",
+      "byte_size": 27614
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-333/run.json",
+      "sha256": "3b951e9480d9b9eb1214ec0b67d2c4437932317e4b0183ab9d407807b36a208a",
+      "byte_size": 1576
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-333/candidate.json",
+      "sha256": "00a22cc7becb287d7a3f17667045dace5a4ee1482b8e0c14c378f4d85d97043f",
+      "byte_size": 1575
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-334/run.json",
+      "sha256": "e8b6cd6bcb77602a9296f9b1c745dd5dd770340f14b39d38e72bedd9f50ceb19",
+      "byte_size": 29505
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-335/run.json",
+      "sha256": "64f8bed7065eef882d125944da47cc573caf19bb461a4089d366577bf51f7751",
+      "byte_size": 1527
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-335/candidate.json",
+      "sha256": "a46b446990a0b030c4e18fd3ceae243fabf3c8b0977b577bb31122f887a888b8",
+      "byte_size": 588
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-336/run.json",
+      "sha256": "b85ed881666315d90a9731c632ba2576f0f6777b62b2c28e32a69590c667c5b8",
+      "byte_size": 1576
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-336/candidate.json",
+      "sha256": "98f8d67b45031ee2c029c1b37891e95d246f613b6550773b5e31b167c4b5aba5",
+      "byte_size": 2727
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-337/run.json",
+      "sha256": "d53ff586bd7c8f04f06dcb8163685137dcae28167585dfc79dbe2bcc4c4c6084",
+      "byte_size": 1648
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-337/candidate.json",
+      "sha256": "fd8eeabaa3503a6dbd6dca22b7bcf845b0b6979e21e581c5f1cc7e1a9d60ec0c",
+      "byte_size": 1458
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-338/run.json",
+      "sha256": "e8bd73c20fbb0a0c528323e63f63b635c0eda0a88e045283c1c2207654757c13",
+      "byte_size": 1657
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-338/candidate.json",
+      "sha256": "25b41a6b642423309775f1d41f53c99f1ea2b5a470d5e2ccbc15998da4cd423b",
+      "byte_size": 569
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-339/run.json",
+      "sha256": "ab03030c1c74477d7aaef38b207e2d2b75d3c807a48d3ae4dfc0730658b468d3",
+      "byte_size": 1526
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-339/candidate.json",
+      "sha256": "c38467f950128c1b4df3adc57f9dd33cd2a385106d73dc92290c61bd327df311",
+      "byte_size": 555
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-340/run.json",
+      "sha256": "996d76303ba46e13448c770c13b4592c542424e8fc15a2958cd604ea2b94e8a6",
+      "byte_size": 1575
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-340/candidate.json",
+      "sha256": "7a862a6f21a5383510243947fa5f1a4cb5f6c5c2173ae7aa53f9d05bf37d78aa",
+      "byte_size": 1688
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-341/run.json",
+      "sha256": "90a2ad6b4b019f3905c84caea6068f5852b9699cea2cc6f01087a6b9b7bae3e0",
+      "byte_size": 1653
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-341/candidate.json",
+      "sha256": "c29caea3257ac40ec27da8ea219dbd71b76b45826e059f1135972db8fe5e2c16",
+      "byte_size": 809
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-342/run.json",
+      "sha256": "4241efcf8ee1ff2474ef1e84ce445b6c43c1e07205868aab35cee2eaa27b1d34",
+      "byte_size": 1511
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-342/candidate.json",
+      "sha256": "95c0d4b0a203c912dd9515f71276278d29ebb875a209a726100ea6e9519c999d",
+      "byte_size": 4713
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-343/run.json",
+      "sha256": "174f18549393db0ec1b71288721521cb6ce82aecc1015d2b846d46cd5a6d3dd8",
+      "byte_size": 1583
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-343/candidate.json",
+      "sha256": "b0f91ae5a838e46472f23eca50cb4468687b197bf0b3e52f1e4ca7625284a301",
+      "byte_size": 1726
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-344/run.json",
+      "sha256": "447a2348bd29daaa41df9afd08befed4c68cbc3154fdf356cc9732679b6d8d6c",
+      "byte_size": 1663
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-344/candidate.json",
+      "sha256": "10c24b5d9cf24e147462275562afc9467db9ebbfc736b2063fdd660539c2d74a",
+      "byte_size": 624
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-345/run.json",
+      "sha256": "f7bff546274e8eb8750e1d8c9cfd79dece8f5c5f9401699b198d02087b8f2106",
+      "byte_size": 1445
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-345/candidate.json",
+      "sha256": "9e39fa68d91e2d5403fa288c3c38ecc5cf2181987ae45bac0515d6408a8016e8",
+      "byte_size": 13224
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-346/run.json",
+      "sha256": "98958b1e4e0086bdd31573fa7fdb65715e083891794d53ce18ae314ac200fa6a",
+      "byte_size": 1661
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-346/candidate.json",
+      "sha256": "925294c3e00c8ac7fa9cf9e349a2b09b63273d471acdc66307c05d313ff4a574",
+      "byte_size": 1076
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-347/run.json",
+      "sha256": "4af231f7272b706eb49ef87baed8efd4aaa128aee3524a46bc160d76449fcdcc",
+      "byte_size": 1584
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-347/candidate.json",
+      "sha256": "c0bd086da21c96531d22c80f85fd3589c4c12c4a8ea211e07d4fb41e992d712d",
+      "byte_size": 1548
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-348/run.json",
+      "sha256": "2c42a572d6422ef895bde89f397c06531542598ae514ab705dfe371f78a17e2b",
+      "byte_size": 1661
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-348/candidate.json",
+      "sha256": "e1e337894bd9a8b8b6aac91daba4cfd415caee877e930f636b624c9af70ca75c",
+      "byte_size": 1787
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-349/run.json",
+      "sha256": "08d063977aec9640dee21abe0ae367a82c0ae4c5f3fffd155563aa4f2376514e",
+      "byte_size": 1515
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-349/candidate.json",
+      "sha256": "7d566f39acd0f4d0ce4b2f04e325df95cd9293de6f1f53f39ea4fc5360f90025",
+      "byte_size": 3763
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-350/run.json",
+      "sha256": "5df5d95173901df1e83ce23c7634579e0940731ee2de2d4c2d4a7b1a82f6993a",
+      "byte_size": 1653
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-350/candidate.json",
+      "sha256": "5d29a55b882de64ba7f0ddad9d10f3dc757c8b037443a8af04b3dd6a527b9c10",
+      "byte_size": 1908
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-351/run.json",
+      "sha256": "5367bd832ffd8d902b3907c0901153d0a85296c1dde187b503cb6555960e7066",
+      "byte_size": 1654
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-351/candidate.json",
+      "sha256": "24f12ecd90a8066e016025584fa2901022f1065f90dbd42a8d39716b387aa7cc",
+      "byte_size": 1499
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-352/run.json",
+      "sha256": "c7ff7f7fb73a8649d2f0bf84bf4c567bc21c086d98b4ed6cfd0a9801f49069f0",
+      "byte_size": 1528
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-352/candidate.json",
+      "sha256": "f56ab915ac0179e3903703e18bf6f71a3038ecb1a28a7355537469f103456c09",
+      "byte_size": 4917
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-353/run.json",
+      "sha256": "ce598032a69f751f3db26b61b1ab9cdb644b6335083cee0e128ebfa7d1f04482",
+      "byte_size": 1597
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-353/candidate.json",
+      "sha256": "397bf82e548fb24867494293ef5c98d8b066bf52108198f2af6709125096e7a0",
+      "byte_size": 1660
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-354/run.json",
+      "sha256": "9febd9d0500b2c32fac623dfb37d65d938de78d2e86f885aa1e7e15f059c226b",
+      "byte_size": 1527
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-354/candidate.json",
+      "sha256": "3c560db9ac487fd595abd2a3108c2cfd0715760055d9087eaa1d6d5b6f2fe4af",
+      "byte_size": 1626
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-355/run.json",
+      "sha256": "80f7ac077e3abf05353e5a0607a566dcd2d7358aa35228a791ec9a5265754d51",
+      "byte_size": 1519
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-355/candidate.json",
+      "sha256": "0dc3d5774d4fb0de3fc9f76391c6c48688e9221a45aeb52cc7730e5d29cb4444",
+      "byte_size": 4221
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-356/run.json",
+      "sha256": "c913d880bf2b13e540940b754585219c0b434bc0ffd2f14891953407fa9fc2ae",
+      "byte_size": 1706
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-356/candidate.json",
+      "sha256": "82c72a3443b7aaf002b58c0cf53ab95339c7cae561aeafb04c42445539c4c835",
+      "byte_size": 818
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-357/run.json",
+      "sha256": "45a2e1e55251081b7c18de123fe4f6b748acc9726395e7fda4e3088b705c1c00",
+      "byte_size": 1597
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-357/candidate.json",
+      "sha256": "d339f0313b4ab6bc8f315061d7d2483cbbb70bbed21084610925130539721098",
+      "byte_size": 1549
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-358/run.json",
+      "sha256": "a347518ff3910439a8aa310571b100aeffd622c6e8ba728eed19fd1f962b4147",
+      "byte_size": 1513
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-358/candidate.json",
+      "sha256": "bbdc912ea04bb6c6621484730cfb903ee46a63e3264baeb8b49b79aad3ff1d0d",
+      "byte_size": 3928
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-359/run.json",
+      "sha256": "c8cda4e5258180ebdcad7937d100044fbdcbafd4216129a8ef1474ce98fa9808",
+      "byte_size": 1528
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-359/candidate.json",
+      "sha256": "96cc477664dba6149c7de7efd0a781d46ff667c9492c4157dd11812e4a2400fe",
+      "byte_size": 1479
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-360/run.json",
+      "sha256": "8b7419b9553dcef5d4fb2b8feb3ccf1df7e626099c31b6bb1d86d1bb456b93ce",
+      "byte_size": 1591
+    },
+    {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/primary/gate4-primary-360/candidate.json",
+      "sha256": "8a00aee65676372e8cd2122fa58ac062c0da2ae4135a734d831e858a4ab7e1e6",
+      "byte_size": 1805
+    }
+  ],
+  "files_canonical_sha256": "cec2893dc64505f0403f165db736c320ac87eab6557b76bf2323ad287202d900",
+  "reference_answers_read": false,
+  "scoring_performed": false,
+  "post_run_audit_generated": false,
+  "model_calls_made": 0
+}

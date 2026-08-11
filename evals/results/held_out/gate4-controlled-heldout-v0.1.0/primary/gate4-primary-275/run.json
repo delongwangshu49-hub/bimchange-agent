@@ -1,0 +1,209 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 275,
+  "execution_id": "gate4-primary-275",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 35,
+  "question_id": "gate3-q20-column-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "196b59cc-6d0a-49dc-bfaa-992b46556e8a",
+      "9862dc81-44d2-4d64-9df3-14d97131a98f",
+      "c1808f87-4275-4375-a29d-55064c4cd794"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcColumn"
+        ]
+      }
+    },
+    "tool_result_count": 3,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are three verified revision events involving IfcColumn elements in the referenced change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified query result filters on entity_types IfcColumn, reports result_count 3, and returns exactly these three IfcColumn records."
+        },
+        {
+          "claim": "An IfcColumn was added at Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record gate4-added-column-level01 has change_type 'added', entity_type 'IfcColumn', and location Level 01."
+        },
+        {
+          "claim": "An IfcColumn was deleted at Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The change record gate4-deleted-column-roof has change_type 'deleted', entity_type 'IfcColumn', and location Roof."
+        },
+        {
+          "claim": "An IfcColumn at Ground Floor had its Pset_ColumnCommon.IsExternal property changed from true to false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The change record gate4-property-column-ground has change_type 'property_modified', field Pset_ColumnCommon.IsExternal, old_value true, new_value false, and location Ground Floor."
+        },
+        {
+          "claim": "The answer is limited to the three IfcColumn revision events returned by the referenced change-query records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified query result reports result_count 3 for the IfcColumn filter, matching these three records."
+        },
+        {
+          "claim": "No additional IfcColumn revision events are asserted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified query result returns only these three IfcColumn change records, and the candidate answer asserts nothing beyond them."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are three verified revision events involving IfcColumn elements in the referenced change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified query result filters on entity_types IfcColumn, reports result_count 3, and returns exactly these three IfcColumn records."
+        },
+        {
+          "claim": "An IfcColumn was added at Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The change record gate4-added-column-level01 has change_type 'added', entity_type 'IfcColumn', and location Level 01."
+        },
+        {
+          "claim": "An IfcColumn was deleted at Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The change record gate4-deleted-column-roof has change_type 'deleted', entity_type 'IfcColumn', and location Roof."
+        },
+        {
+          "claim": "An IfcColumn at Ground Floor had its Pset_ColumnCommon.IsExternal property changed from true to false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The change record gate4-property-column-ground has change_type 'property_modified', field Pset_ColumnCommon.IsExternal, old_value true, new_value false, and location Ground Floor."
+        },
+        {
+          "claim": "The answer is limited to the three IfcColumn revision events returned by the referenced change-query records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified query result reports result_count 3 for the IfcColumn filter, matching these three records."
+        },
+        {
+          "claim": "No additional IfcColumn revision events are asserted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified query result returns only these three IfcColumn change records, and the candidate answer asserts nothing beyond them."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 614,
+    "successful_responses": 605,
+    "input_tokens": 2263493,
+    "cached_input_tokens": 1440640,
+    "output_tokens": 995881,
+    "estimated_cost_usd": 0.398081,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.98081
+}

@@ -1,0 +1,219 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q12-property-summary",
+      "status": "answered",
+      "answer": "Based on the model-pair summary, four scalar property values changed between the source and revised versions: Column GF 01 IsExternal changed from true to false; Wall L1 01 FireRating changed from 60 to 90; Slab RF 01 LoadBearing changed from false to true; and Beam RF 01 LoadBearing changed from false to true.",
+      "predictions": [
+        {
+          "change_type": "modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_ColumnCommon",
+                "name": "IsExternal"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_ColumnCommon",
+                "name": "IsExternal"
+              }
+            }
+          ]
+        },
+        {
+          "change_type": "modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_WallCommon",
+                "name": "FireRating"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_WallCommon",
+                "name": "FireRating"
+              }
+            }
+          ]
+        },
+        {
+          "change_type": "modified",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_SlabCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_SlabCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        },
+        {
+          "change_type": "modified",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only scalar property-set values represented in the supplied model-pair summary were considered; geometry, placement, materials, classifications, quantities, and nested property values were outside scope.",
+        "Element additions and removals are not reported here because the question asks for scalar property-value revisions."
+      ]
+    }
+  ]
+}

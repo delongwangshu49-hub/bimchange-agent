@@ -1,0 +1,507 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 265,
+  "execution_id": "gate4-primary-265",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 25,
+  "question_id": "gate3-q09-all-changes",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "4dfdeb0d-7007-4178-9645-1972adbd016c",
+      "fbb5a979-0e0b-4f7c-b420-fe4fff9bf48f",
+      "21ad6240-6cbe-4638-a5ec-40329062f905"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {}
+    },
+    "tool_result_count": 12,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 12,
+      "evidence_supported_count": 12,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 12,
+      "prediction_count": 12,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are 4 verified addition events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified_query_result contains exactly 12 results, of which four have change_type 'added'."
+        },
+        {
+          "claim": "There are 4 verified deletion events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified_query_result contains exactly four results with change_type 'deleted'."
+        },
+        {
+          "claim": "There are 4 verified property modification events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result contains exactly four results with change_type 'property_modified'."
+        },
+        {
+          "claim": "The events are distributed across the three building storeys: Ground Floor, Level 01, and Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Each verified result's location names one of these three storeys, and no other storey name appears in the results."
+        },
+        {
+          "claim": "Added beam BM-GF-05 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified result gate4-added-beam-ground has entity_type IfcBeam, new_value.tag BM-GF-05, and location Ground Floor."
+        },
+        {
+          "claim": "Added column CL-L1-05 is on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified result gate4-added-column-level01 has entity_type IfcColumn, new_value.tag CL-L1-05, and location Level 01."
+        },
+        {
+          "claim": "Added slab SL-GF-05 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified result gate4-added-slab-ground has entity_type IfcSlab, new_value.tag SL-GF-05, and location Ground Floor."
+        },
+        {
+          "claim": "Added wall WL-RF-05 is on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified result gate4-added-wall-roof has entity_type IfcWall, new_value.tag WL-RF-05, and location Roof."
+        },
+        {
+          "claim": "Deleted beam BM-L1-01 is on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified result gate4-deleted-beam-level01 has entity_type IfcBeam, old_value.tag BM-L1-01, and location Level 01."
+        },
+        {
+          "claim": "Deleted column CL-RF-01 is on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified result gate4-deleted-column-roof has entity_type IfcColumn, old_value.tag CL-RF-01, and location Roof."
+        },
+        {
+          "claim": "Deleted slab SL-L1-01 is on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified result gate4-deleted-slab-level01 has entity_type IfcSlab, old_value.tag SL-L1-01, and location Level 01."
+        },
+        {
+          "claim": "Deleted wall WL-GF-01 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified result gate4-deleted-wall-ground has entity_type IfcWall, old_value.tag WL-GF-01, and location Ground Floor."
+        },
+        {
+          "claim": "Property modification: beam LoadBearing changes from false to true on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified result gate4-property-beam-roof has entity_type IfcBeam, field Pset_BeamCommon LoadBearing, old_value false, new_value true, and location Roof."
+        },
+        {
+          "claim": "Property modification: column IsExternal changes from true to false on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified result gate4-property-column-ground has entity_type IfcColumn, field Pset_ColumnCommon IsExternal, old_value true, new_value false, and location Ground Floor."
+        },
+        {
+          "claim": "Property modification: slab LoadBearing changes from false to true on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified result gate4-property-slab-roof has entity_type IfcSlab, field Pset_SlabCommon LoadBearing, old_value false, new_value true, and location Roof."
+        },
+        {
+          "claim": "Property modification: wall FireRating changes from 60 to 90 on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result gate4-property-wall-level01 has entity_type IfcWall, field Pset_WallCommon FireRating, old_value '60', new_value '90', and location Level 01."
+        },
+        {
+          "claim": "Only the 12 change records returned from the supplied gate2-change-records.json are included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result reports result_count 12 and source.path data/ground_truth/gate2-change-records.json."
+        },
+        {
+          "claim": "No additional model pair summary evidence was used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "This is an explicit boundary statement matching the supplied evidence: the verified query result contains only gate2-change-records.json records and no model-pair summary source."
+        },
+        {
+          "claim": "Spatial containment of elements is inferred from the building storey reported in the change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Each verified result provides building_storey and spatial_container storey information, and no separate containment evidence is supplied."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 12,
+      "evidence_supported_count": 12,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 12,
+      "prediction_count": 12,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are 4 verified addition events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified_query_result contains exactly 12 results, of which four have change_type 'added'."
+        },
+        {
+          "claim": "There are 4 verified deletion events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified_query_result contains exactly four results with change_type 'deleted'."
+        },
+        {
+          "claim": "There are 4 verified property modification events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result contains exactly four results with change_type 'property_modified'."
+        },
+        {
+          "claim": "The events are distributed across the three building storeys: Ground Floor, Level 01, and Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Each verified result's location names one of these three storeys, and no other storey name appears in the results."
+        },
+        {
+          "claim": "Added beam BM-GF-05 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified result gate4-added-beam-ground has entity_type IfcBeam, new_value.tag BM-GF-05, and location Ground Floor."
+        },
+        {
+          "claim": "Added column CL-L1-05 is on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified result gate4-added-column-level01 has entity_type IfcColumn, new_value.tag CL-L1-05, and location Level 01."
+        },
+        {
+          "claim": "Added slab SL-GF-05 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified result gate4-added-slab-ground has entity_type IfcSlab, new_value.tag SL-GF-05, and location Ground Floor."
+        },
+        {
+          "claim": "Added wall WL-RF-05 is on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified result gate4-added-wall-roof has entity_type IfcWall, new_value.tag WL-RF-05, and location Roof."
+        },
+        {
+          "claim": "Deleted beam BM-L1-01 is on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified result gate4-deleted-beam-level01 has entity_type IfcBeam, old_value.tag BM-L1-01, and location Level 01."
+        },
+        {
+          "claim": "Deleted column CL-RF-01 is on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified result gate4-deleted-column-roof has entity_type IfcColumn, old_value.tag CL-RF-01, and location Roof."
+        },
+        {
+          "claim": "Deleted slab SL-L1-01 is on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified result gate4-deleted-slab-level01 has entity_type IfcSlab, old_value.tag SL-L1-01, and location Level 01."
+        },
+        {
+          "claim": "Deleted wall WL-GF-01 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified result gate4-deleted-wall-ground has entity_type IfcWall, old_value.tag WL-GF-01, and location Ground Floor."
+        },
+        {
+          "claim": "Property modification: beam LoadBearing changes from false to true on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified result gate4-property-beam-roof has entity_type IfcBeam, field Pset_BeamCommon LoadBearing, old_value false, new_value true, and location Roof."
+        },
+        {
+          "claim": "Property modification: column IsExternal changes from true to false on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified result gate4-property-column-ground has entity_type IfcColumn, field Pset_ColumnCommon IsExternal, old_value true, new_value false, and location Ground Floor."
+        },
+        {
+          "claim": "Property modification: slab LoadBearing changes from false to true on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified result gate4-property-slab-roof has entity_type IfcSlab, field Pset_SlabCommon LoadBearing, old_value false, new_value true, and location Roof."
+        },
+        {
+          "claim": "Property modification: wall FireRating changes from 60 to 90 on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result gate4-property-wall-level01 has entity_type IfcWall, field Pset_WallCommon FireRating, old_value '60', new_value '90', and location Level 01."
+        },
+        {
+          "claim": "Only the 12 change records returned from the supplied gate2-change-records.json are included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result reports result_count 12 and source.path data/ground_truth/gate2-change-records.json."
+        },
+        {
+          "claim": "No additional model pair summary evidence was used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "This is an explicit boundary statement matching the supplied evidence: the verified query result contains only gate2-change-records.json records and no model-pair summary source."
+        },
+        {
+          "claim": "Spatial containment of elements is inferred from the building storey reported in the change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Each verified result provides building_storey and spatial_container storey information, and no separate containment evidence is supplied."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 584,
+    "successful_responses": 575,
+    "input_tokens": 2219219,
+    "cached_input_tokens": 1409408,
+    "output_tokens": 941332,
+    "estimated_cost_usd": 0.380894,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.80894
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The change record shows the FireRating for wall 1aO4mYJaTLLf6oT4DTcfok was revised from 60 to 90; however, no regulatory threshold or required rating is documented in the available source, so this revision alone does not prove regulatory compliance.",
+      "predictions": [
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-wall-level01",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The available source documents only the FireRating property change from 60 to 90; it does not contain the applicable regulatory requirement, required fire-resistance rating, or any compliance assessment for this wall.",
+        "No boundary-condition details or code references are present in the change record, so an engineering conclusion about regulatory compliance cannot be justified."
+      ]
+    }
+  ]
+}

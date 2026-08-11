@@ -1,0 +1,236 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "audit_stage": "post_run",
+  "status": "COMPLETE_WITH_RECORDED_LIMITATIONS",
+  "single_human_review": {
+    "reviewer_count": 1,
+    "inter_rater_agreement_claimed": false,
+    "selection": {
+      "selected_question_count": 15,
+      "execution_count": 135,
+      "all_five_evidence_boundary_questions_included": true,
+      "ten_stratified_additional_questions_included": true
+    },
+    "overall": {
+      "audited_execution_count": 135,
+      "audited_candidate_count": 131,
+      "audited_experimental_failure_count": 4,
+      "atomic_claim_count": 505,
+      "claim_label_counts": {
+        "indeterminate": 3,
+        "supported": 501,
+        "unsupported": 1
+      },
+      "unsupported_or_indeterminate_claim_rate": 0.007920792079207921,
+      "evidence_references_verified_count": 90,
+      "evidence_references_not_verified_count": 41,
+      "safety_overreach_count": 1,
+      "failure_category_counts": {
+        "data_does_not_support_answer": 3,
+        "evidence_citation": 41,
+        "safety_overreach": 1,
+        "schema_or_output_format": 4
+      },
+      "all_reviews_complete": true
+    },
+    "by_workflow": {
+      "direct_llm": {
+        "audited_execution_count": 45,
+        "audited_candidate_count": 43,
+        "audited_experimental_failure_count": 2,
+        "atomic_claim_count": 166,
+        "claim_label_counts": {
+          "indeterminate": 3,
+          "supported": 163
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.018072289156626505,
+        "evidence_references_verified_count": 6,
+        "evidence_references_not_verified_count": 37,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "data_does_not_support_answer": 3,
+          "evidence_citation": 37,
+          "schema_or_output_format": 2
+        },
+        "all_reviews_complete": true
+      },
+      "tool_using_agent": {
+        "audited_execution_count": 45,
+        "audited_candidate_count": 43,
+        "audited_experimental_failure_count": 2,
+        "atomic_claim_count": 167,
+        "claim_label_counts": {
+          "supported": 166,
+          "unsupported": 1
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.005988023952095809,
+        "evidence_references_verified_count": 42,
+        "evidence_references_not_verified_count": 1,
+        "safety_overreach_count": 1,
+        "failure_category_counts": {
+          "evidence_citation": 1,
+          "safety_overreach": 1,
+          "schema_or_output_format": 2
+        },
+        "all_reviews_complete": true
+      },
+      "proposed": {
+        "audited_execution_count": 45,
+        "audited_candidate_count": 45,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 172,
+        "claim_label_counts": {
+          "supported": 172
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 42,
+        "evidence_references_not_verified_count": 3,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "evidence_citation": 3
+        },
+        "all_reviews_complete": true
+      }
+    },
+    "by_category": {
+      "evidence_boundary": {
+        "audited_execution_count": 45,
+        "audited_candidate_count": 45,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 170,
+        "claim_label_counts": {
+          "indeterminate": 1,
+          "supported": 168,
+          "unsupported": 1
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.011764705882352941,
+        "evidence_references_verified_count": 28,
+        "evidence_references_not_verified_count": 17,
+        "safety_overreach_count": 1,
+        "failure_category_counts": {
+          "data_does_not_support_answer": 1,
+          "evidence_citation": 17,
+          "safety_overreach": 1
+        },
+        "all_reviews_complete": true
+      },
+      "fact_lookup": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 18,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 79,
+        "claim_label_counts": {
+          "indeterminate": 2,
+          "supported": 77
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.02531645569620253,
+        "evidence_references_verified_count": 11,
+        "evidence_references_not_verified_count": 7,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "data_does_not_support_answer": 2,
+          "evidence_citation": 7
+        },
+        "all_reviews_complete": true
+      },
+      "filtered_lookup": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 18,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 75,
+        "claim_label_counts": {
+          "supported": 75
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 12,
+        "evidence_references_not_verified_count": 6,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "evidence_citation": 6
+        },
+        "all_reviews_complete": true
+      },
+      "negative_control": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 17,
+        "audited_experimental_failure_count": 1,
+        "atomic_claim_count": 39,
+        "claim_label_counts": {
+          "supported": 39
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 17,
+        "evidence_references_not_verified_count": 0,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "schema_or_output_format": 1
+        },
+        "all_reviews_complete": true
+      },
+      "property_change": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 18,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 67,
+        "claim_label_counts": {
+          "supported": 67
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 12,
+        "evidence_references_not_verified_count": 6,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "evidence_citation": 6
+        },
+        "all_reviews_complete": true
+      },
+      "summary": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 15,
+        "audited_experimental_failure_count": 3,
+        "atomic_claim_count": 75,
+        "claim_label_counts": {
+          "supported": 75
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 10,
+        "evidence_references_not_verified_count": 5,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "evidence_citation": 5,
+          "schema_or_output_format": 3
+        },
+        "all_reviews_complete": true
+      }
+    }
+  },
+  "unblinding": {
+    "performed_only_after_all_135_reviews_complete": true,
+    "mapping_sha256": "baa683480af050669e7523ab2339f56e787784b5eaa94e6628d71cf73dc13f4a",
+    "completed_audit_packet_sha256": "1d3a40deadc99f337df6ee42af6589c108e3073afe6b38cbe3c903dba930df10"
+  },
+  "scoring": {
+    "frozen_gate3_scorer_used": true,
+    "scores_sha256": "7df5bcbbf539cd8a9879cf4c5b97122fc15e96210091fbc6182b2c9a12eb3450",
+    "independent_validation_required_before_publication": true,
+    "free_text_scored": false
+  },
+  "operational_limitations": {
+    "latency_available": false,
+    "per_call_kind_token_and_cost_split_available": false,
+    "details": [
+      "Results are repeated measurements on one independently constructed controlled synthetic held-out fixture, not a universal BIM benchmark.",
+      "Only three repetitions, one model provider, and the frozen added/deleted/property_modified change boundary are covered.",
+      "Free-text answer semantics are not scored by the deterministic scorer; the preselected single-reviewer manual audit is reported separately.",
+      "No inter-rater agreement can be claimed because there was one human reviewer.",
+      "Per-execution and per-call-kind latency was not persisted and is unavailable; no estimate is substituted.",
+      "Per-call-kind token and cost allocation is unavailable because retained usage is cumulative and four legacy failure rows lack token metadata.",
+      "Bootstrap intervals describe clustered resampling uncertainty on this fixture and do not by themselves establish statistical significance or external generalizability."
+    ]
+  },
+  "result_summary_sha256": "bbcb09c7daf34b83de8e4dd36a7af3abe342bc4c41724b2a6fffa022fedb9694",
+  "public_release_authorized": false,
+  "uploaded": false,
+  "model_calls_made": 0
+}

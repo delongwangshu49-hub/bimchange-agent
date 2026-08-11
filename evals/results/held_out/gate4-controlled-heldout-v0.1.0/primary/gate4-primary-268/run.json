@@ -1,0 +1,171 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 268,
+  "execution_id": "gate4-primary-268",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 28,
+  "question_id": "gate3-q46-beam-responsibility-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "81a4da91-4015-4d21-9ce7-30ddca75e327",
+      "0e8534a8-b967-4747-9643-867fff86789e",
+      "496e719c-4230-426d-bc31-94744e67150e"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcBeam"
+        ],
+        "global_ids": [
+          "3TNmmeV$vP1wtU7$eM6gTb"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Beam 3TNmmeV$vP1wtU7$eM6gTb was deleted per the change record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified change record gate4-deleted-beam-level01 lists change_type 'deleted' for global_id 3TNmmeV$vP1wtU7$eM6gTb."
+        },
+        {
+          "claim": "The available source does not identify who is responsible for deleting it.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified change record contains change metadata, location, old and new values, and evidence provenance, but no ownership, responsibility, or authoring field."
+        },
+        {
+          "claim": "The change record confirms the deletion of the specified beam.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified query result for the deleted IfcBeam returns change_type 'deleted' with matching global_id and old value information."
+        },
+        {
+          "claim": "The change record does not contain ownership, responsibility, or authoring information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The supplied result fields are limited to change_id, change_type, entity_type, global_id, location, field, old_value, new_value, and evidence; none records ownership, responsibility, or authoring."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Beam 3TNmmeV$vP1wtU7$eM6gTb was deleted per the change record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified change record gate4-deleted-beam-level01 lists change_type 'deleted' for global_id 3TNmmeV$vP1wtU7$eM6gTb."
+        },
+        {
+          "claim": "The available source does not identify who is responsible for deleting it.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified change record contains change metadata, location, old and new values, and evidence provenance, but no ownership, responsibility, or authoring field."
+        },
+        {
+          "claim": "The change record confirms the deletion of the specified beam.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified query result for the deleted IfcBeam returns change_type 'deleted' with matching global_id and old value information."
+        },
+        {
+          "claim": "The change record does not contain ownership, responsibility, or authoring information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The supplied result fields are limited to change_id, change_type, entity_type, global_id, location, field, old_value, new_value, and evidence; none records ownership, responsibility, or authoring."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 593,
+    "successful_responses": 584,
+    "input_tokens": 2230911,
+    "cached_input_tokens": 1418240,
+    "output_tokens": 958355,
+    "estimated_cost_usd": 0.386085,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.86085
+}

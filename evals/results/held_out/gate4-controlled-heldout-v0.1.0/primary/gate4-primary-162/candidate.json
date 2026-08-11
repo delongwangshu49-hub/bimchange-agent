@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q25-roof-filter",
+      "status": "not_found",
+      "answer": "No verified revision events are explicitly associated with IfcRoof in the available gate2 change records.",
+      "predictions": [],
+      "limitations": [
+        "The change records contain no entries with entity type IfcRoof."
+      ]
+    }
+  ]
+}

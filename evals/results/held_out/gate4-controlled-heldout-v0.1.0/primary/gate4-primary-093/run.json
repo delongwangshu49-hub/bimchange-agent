@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 93,
+  "execution_id": "gate4-primary-093",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 13,
+  "question_id": "gate3-q39-no-geometry",
+  "category": "negative_control",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "ced43639-1e6a-4373-8991-7034223ad894",
+      "a3e58ff8-de4e-4b8e-96c0-cd12257cf058",
+      "fb27e7a0-d8fe-4f05-a557-b4eb392e15dc"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "geometry_modified"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No geometry modification is verified in this revision set.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified change query filtered by change_type 'geometry_modified' returned result_count 0 and an empty results list, so no geometry modification is verified by the change records."
+        },
+        {
+          "claim": "The supported change query for geometry modifications returned zero records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified_query_result explicitly reports result_count: 0 and results: [], matching the claim that zero records were returned."
+        },
+        {
+          "claim": "The change records source contains no records with change_type geometry_modified.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified change query applied the filter change_types: ['geometry_modified'] to the change records source and returned zero records, indicating no matching records exist in the queried source."
+        },
+        {
+          "claim": "No geometry change can be reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "Since the verified query for geometry_modified records returned zero results, there is no change record available from which a geometry change could be reported."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No geometry modification is verified in this revision set.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified change query filtered by change_type 'geometry_modified' returned result_count 0 and an empty results list, so no geometry modification is verified by the change records."
+        },
+        {
+          "claim": "The supported change query for geometry modifications returned zero records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified_query_result explicitly reports result_count: 0 and results: [], matching the claim that zero records were returned."
+        },
+        {
+          "claim": "The change records source contains no records with change_type geometry_modified.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified change query applied the filter change_types: ['geometry_modified'] to the change records source and returned zero records, indicating no matching records exist in the queried source."
+        },
+        {
+          "claim": "No geometry change can be reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "Since the verified query for geometry_modified records returned zero results, there is no change record available from which a geometry change could be reported."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 164,
+    "successful_responses": 159,
+    "input_tokens": 907648,
+    "cached_input_tokens": 238848,
+    "output_tokens": 252148,
+    "estimated_cost_usd": 0.164903,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.64903
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q23-ground-filter",
+      "status": "answered",
+      "answer": "Four verified revision events are explicitly associated with Ground Floor: (1) added IfcBeam Beam GF 05 (tag BM-GF-05), (2) added IfcSlab Slab GF 05 (tag SL-GF-05), (3) deleted IfcWall Wall GF 01 (tag WL-GF-01), and (4) property modification of IfcColumn IsExternal from true to false.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-beam-ground",
+              "global_id": "3Z1rgbb$PMDfsfeWvsKUUB"
+            }
+          ]
+        },
+        {
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-slab-ground",
+              "global_id": "1hD8Z2VI5Q48QgyBkf6YcB"
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-deleted-wall-ground",
+              "global_id": "0z7L81IEbQPggjg__OrrlU"
+            }
+          ]
+        },
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-column-ground",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Review limited to the four records returned from the change-query file; no other sources were used to infer additional revision events."
+      ]
+    }
+  ]
+}

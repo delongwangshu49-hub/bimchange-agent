@@ -1,0 +1,371 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 86,
+  "execution_id": "gate4-primary-086",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 6,
+  "question_id": "gate3-q10-added-summary",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "aa2b0e50-dc53-4794-ac94-e2b215618b17",
+      "0ea8abe1-3d00-42ed-9f85-087f5961f575",
+      "d99e6f50-1557-4349-818a-efd11d593027"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The revised IFC model adds four elements.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record query filtered to 'added' returns exactly four results with these global IDs."
+        },
+        {
+          "claim": "The revised IFC model adds a beam on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified result gate4-added-beam-ground lists an IfcBeam with spatial_container Ground Floor."
+        },
+        {
+          "claim": "The added beam is named Beam GF 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified result lists new_value.name as Beam GF 05."
+        },
+        {
+          "claim": "The added beam has tag BM-GF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified result lists new_value.tag as BM-GF-05."
+        },
+        {
+          "claim": "The revised IFC model adds a column on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified result gate4-added-column-level01 lists an IfcColumn with spatial_container Level 01."
+        },
+        {
+          "claim": "The added column is named Column L1 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified result lists new_value.name as Column L1 05."
+        },
+        {
+          "claim": "The added column has tag CL-L1-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified result lists new_value.tag as CL-L1-05."
+        },
+        {
+          "claim": "The revised IFC model adds a slab on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified result gate4-added-slab-ground lists an IfcSlab with spatial_container Ground Floor."
+        },
+        {
+          "claim": "The added slab is named Slab GF 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified result lists new_value.name as Slab GF 05."
+        },
+        {
+          "claim": "The added slab has tag SL-GF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified result lists new_value.tag as SL-GF-05."
+        },
+        {
+          "claim": "The revised IFC model adds a wall on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified result gate4-added-wall-roof lists an IfcWall with spatial_container Roof."
+        },
+        {
+          "claim": "The added wall is named Wall RF 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified result lists new_value.name as Wall RF 05."
+        },
+        {
+          "claim": "The added wall has tag WL-RF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified result lists new_value.tag as WL-RF-05."
+        },
+        {
+          "claim": "Only the four added elements recorded in data/ground_truth/gate2-change-records.json are reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The candidate answer lists exactly the four added elements present in the verified record, and no other added elements appear in the answer or records."
+        },
+        {
+          "claim": "No other model pair summary source was used.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The verified change records and structured predictions provide no information about which summary sources were or were not used by the candidate."
+        },
+        {
+          "claim": "The summary does not include any inferred additions beyond the elements explicitly present in the cited change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "All elements in the summary correspond exactly to the explicit added change records; no additional inferred elements are present in the records or answer."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The revised IFC model adds four elements.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record query filtered to 'added' returns exactly four results with these global IDs."
+        },
+        {
+          "claim": "The revised IFC model adds a beam on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified result gate4-added-beam-ground lists an IfcBeam with spatial_container Ground Floor."
+        },
+        {
+          "claim": "The added beam is named Beam GF 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified result lists new_value.name as Beam GF 05."
+        },
+        {
+          "claim": "The added beam has tag BM-GF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified result lists new_value.tag as BM-GF-05."
+        },
+        {
+          "claim": "The revised IFC model adds a column on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified result gate4-added-column-level01 lists an IfcColumn with spatial_container Level 01."
+        },
+        {
+          "claim": "The added column is named Column L1 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified result lists new_value.name as Column L1 05."
+        },
+        {
+          "claim": "The added column has tag CL-L1-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified result lists new_value.tag as CL-L1-05."
+        },
+        {
+          "claim": "The revised IFC model adds a slab on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified result gate4-added-slab-ground lists an IfcSlab with spatial_container Ground Floor."
+        },
+        {
+          "claim": "The added slab is named Slab GF 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified result lists new_value.name as Slab GF 05."
+        },
+        {
+          "claim": "The added slab has tag SL-GF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified result lists new_value.tag as SL-GF-05."
+        },
+        {
+          "claim": "The revised IFC model adds a wall on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified result gate4-added-wall-roof lists an IfcWall with spatial_container Roof."
+        },
+        {
+          "claim": "The added wall is named Wall RF 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified result lists new_value.name as Wall RF 05."
+        },
+        {
+          "claim": "The added wall has tag WL-RF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified result lists new_value.tag as WL-RF-05."
+        },
+        {
+          "claim": "Only the four added elements recorded in data/ground_truth/gate2-change-records.json are reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The candidate answer lists exactly the four added elements present in the verified record, and no other added elements appear in the answer or records."
+        },
+        {
+          "claim": "No other model pair summary source was used.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The verified change records and structured predictions provide no information about which summary sources were or were not used by the candidate."
+        },
+        {
+          "claim": "The summary does not include any inferred additions beyond the elements explicitly present in the cited change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "All elements in the summary correspond exactly to the explicit added change records; no additional inferred elements are present in the records or answer."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 142,
+    "successful_responses": 137,
+    "input_tokens": 876789,
+    "cached_input_tokens": 215680,
+    "output_tokens": 218178,
+    "estimated_cost_usd": 0.154249,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.54249
+}

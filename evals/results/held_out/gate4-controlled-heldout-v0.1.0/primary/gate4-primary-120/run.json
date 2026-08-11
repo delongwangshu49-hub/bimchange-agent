@@ -1,0 +1,333 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 120,
+  "execution_id": "gate4-primary-120",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 40,
+  "question_id": "gate3-q48-wall-constructability-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "00767184-8e1d-44d8-b028-b08e317d5f88",
+      "06651bb8-6a70-451b-b0a7-8dc7d0473219",
+      "74aa0d27-f173-41f5-b8e9-fdb260f36629"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "global_ids": [
+          "2rg8G55UvONxUu2GmkwF$d"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The change record confirms that wall 2rg8G55UvONxUu2GmkwF$d was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record gate4-added-wall-roof has change_type 'added' and entity_type 'IfcWall' for this global_id."
+        },
+        {
+          "claim": "The wall was added on the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified change record's location identifies IfcBuildingStorey 'Roof' as the spatial container."
+        },
+        {
+          "claim": "The wall has name 'Wall RF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record's new_value contains name 'Wall RF 05'."
+        },
+        {
+          "claim": "The wall has tag 'WL-RF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record's new_value contains tag 'WL-RF-05'."
+        },
+        {
+          "claim": "The available source contains no geometric dimensions for the wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record does not include length, height, thickness, profile, or any geometric dimension fields."
+        },
+        {
+          "claim": "The available source contains no spatial boundaries for the wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record contains only change metadata, location, name, and tag, with no spatial boundary data."
+        },
+        {
+          "claim": "The available source contains no connectivity information for the wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "No adjacent elements, connections, or other connectivity data appear in the verified change record."
+        },
+        {
+          "claim": "The available source contains no context information needed to determine whether the wall is constructible.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record lacks contextual model data beyond the fact of addition, name, tag, and storey location."
+        },
+        {
+          "claim": "Constructability cannot be confirmed based solely on this record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record provides no geometric, boundary, or connectivity data from which a positive constructability determination could be made."
+        },
+        {
+          "claim": "Constructability cannot be refuted based solely on this record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record provides no geometric, boundary, or connectivity data from which a negative constructability determination could be made."
+        },
+        {
+          "claim": "The change record does not provide geometric data including length, height, thickness, or profile for the wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record has no geometry fields beyond name, tag, and location."
+        },
+        {
+          "claim": "The change record does not provide information about adjacent elements, supports, or boundary conditions needed for constructability assessment.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "No adjacent elements, supports, or boundary conditions are present in the verified change record."
+        },
+        {
+          "claim": "Only the fact that the wall was added is supported by the cited source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record confirms the addition but contains no further model data from which constructability could be assessed."
+        },
+        {
+          "claim": "No engineering constructability conclusion can be derived from the cited source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Because the cited record lacks required geometry, connectivity, and boundary information, the evidence boundary supports that no constructability conclusion is derivable."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The change record confirms that wall 2rg8G55UvONxUu2GmkwF$d was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record gate4-added-wall-roof has change_type 'added' and entity_type 'IfcWall' for this global_id."
+        },
+        {
+          "claim": "The wall was added on the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified change record's location identifies IfcBuildingStorey 'Roof' as the spatial container."
+        },
+        {
+          "claim": "The wall has name 'Wall RF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record's new_value contains name 'Wall RF 05'."
+        },
+        {
+          "claim": "The wall has tag 'WL-RF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record's new_value contains tag 'WL-RF-05'."
+        },
+        {
+          "claim": "The available source contains no geometric dimensions for the wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record does not include length, height, thickness, profile, or any geometric dimension fields."
+        },
+        {
+          "claim": "The available source contains no spatial boundaries for the wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record contains only change metadata, location, name, and tag, with no spatial boundary data."
+        },
+        {
+          "claim": "The available source contains no connectivity information for the wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "No adjacent elements, connections, or other connectivity data appear in the verified change record."
+        },
+        {
+          "claim": "The available source contains no context information needed to determine whether the wall is constructible.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record lacks contextual model data beyond the fact of addition, name, tag, and storey location."
+        },
+        {
+          "claim": "Constructability cannot be confirmed based solely on this record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record provides no geometric, boundary, or connectivity data from which a positive constructability determination could be made."
+        },
+        {
+          "claim": "Constructability cannot be refuted based solely on this record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record provides no geometric, boundary, or connectivity data from which a negative constructability determination could be made."
+        },
+        {
+          "claim": "The change record does not provide geometric data including length, height, thickness, or profile for the wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record has no geometry fields beyond name, tag, and location."
+        },
+        {
+          "claim": "The change record does not provide information about adjacent elements, supports, or boundary conditions needed for constructability assessment.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "No adjacent elements, supports, or boundary conditions are present in the verified change record."
+        },
+        {
+          "claim": "Only the fact that the wall was added is supported by the cited source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified change record confirms the addition but contains no further model data from which constructability could be assessed."
+        },
+        {
+          "claim": "No engineering constructability conclusion can be derived from the cited source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Because the cited record lacks required geometry, connectivity, and boundary information, the evidence boundary supports that no constructability conclusion is derivable."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 253,
+    "successful_responses": 247,
+    "input_tokens": 1043410,
+    "cached_input_tokens": 332032,
+    "output_tokens": 397151,
+    "estimated_cost_usd": 0.211725,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.11725
+}

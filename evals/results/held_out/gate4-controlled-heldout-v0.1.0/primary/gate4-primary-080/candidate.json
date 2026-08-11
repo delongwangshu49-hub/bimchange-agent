@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The available change record confirms only that wall 2rg8G55UvONxUu2GmkwF$d was added; it does not provide any geometric, adjacency, or boundary data needed to determine whether the wall is constructible as shown.",
+      "predictions": [],
+      "limitations": [
+        "The queried change record describes the added wall and its storey placement but contains no geometry, connections, or boundary conditions.",
+        "A constructability conclusion cannot be derived from the available change-query evidence alone."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 246,
+  "execution_id": "gate4-primary-246",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 6,
+  "question_id": "gate3-q25-roof-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "71eb923a-3c42-4c23-9d40-14ac20578d8b",
+      "18dbb431-c2fc-41ef-ad5f-d2ffaf80decb",
+      "13c1a14e-1165-440c-9094-7f7665c99cb8"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "building_storey_names": [
+          "Roof"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four verified revision events are explicitly associated with the building storey named Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result has result_count 4 and all four returned records list building_storey.name as Roof."
+        },
+        {
+          "claim": "One verified revision event is an IfcWall added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record gate4-added-wall-roof has change_type added, entity_type IfcWall, and location building_storey.name Roof."
+        },
+        {
+          "claim": "One verified revision event is an IfcColumn deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The record gate4-deleted-column-roof has change_type deleted, entity_type IfcColumn, and location building_storey.name Roof."
+        },
+        {
+          "claim": "One verified revision event modifies the IfcBeam LoadBearing property.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The record gate4-property-beam-roof has change_type property_modified, entity_type IfcBeam, field Pset_BeamCommon LoadBearing, old value false, and new value true."
+        },
+        {
+          "claim": "One verified revision event modifies the IfcSlab LoadBearing property.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The record gate4-property-slab-roof has change_type property_modified, entity_type IfcSlab, field Pset_SlabCommon LoadBearing, old value false, and new value true."
+        },
+        {
+          "claim": "Only verified change records explicitly placed under the building storey named Roof were included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result used filter building_storey_names containing Roof and all four returned records have Roof as the building storey."
+        },
+        {
+          "claim": "No additional model evidence or unrecorded revision events were used.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The supplied verified change records and structured predictions do not document the absence of additional model evidence or unrecorded revision events, so this self-reported limitation cannot be confirmed from the evidence."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four verified revision events are explicitly associated with the building storey named Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result has result_count 4 and all four returned records list building_storey.name as Roof."
+        },
+        {
+          "claim": "One verified revision event is an IfcWall added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record gate4-added-wall-roof has change_type added, entity_type IfcWall, and location building_storey.name Roof."
+        },
+        {
+          "claim": "One verified revision event is an IfcColumn deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The record gate4-deleted-column-roof has change_type deleted, entity_type IfcColumn, and location building_storey.name Roof."
+        },
+        {
+          "claim": "One verified revision event modifies the IfcBeam LoadBearing property.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The record gate4-property-beam-roof has change_type property_modified, entity_type IfcBeam, field Pset_BeamCommon LoadBearing, old value false, and new value true."
+        },
+        {
+          "claim": "One verified revision event modifies the IfcSlab LoadBearing property.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The record gate4-property-slab-roof has change_type property_modified, entity_type IfcSlab, field Pset_SlabCommon LoadBearing, old value false, and new value true."
+        },
+        {
+          "claim": "Only verified change records explicitly placed under the building storey named Roof were included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result used filter building_storey_names containing Roof and all four returned records have Roof as the building storey."
+        },
+        {
+          "claim": "No additional model evidence or unrecorded revision events were used.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The supplied verified change records and structured predictions do not document the absence of additional model evidence or unrecorded revision events, so this self-reported limitation cannot be confirmed from the evidence."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 523,
+    "successful_responses": 514,
+    "input_tokens": 2123496,
+    "cached_input_tokens": 1343232,
+    "output_tokens": 836554,
+    "estimated_cost_usd": 0.347234,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.47234
+}

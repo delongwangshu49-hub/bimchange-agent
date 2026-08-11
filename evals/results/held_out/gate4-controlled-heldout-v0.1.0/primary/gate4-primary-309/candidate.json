@@ -1,0 +1,152 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q21-wall-filter",
+      "status": "answered",
+      "answer": "Verified IfcWall revision events in the model pair summary are: Wall L1 01 (1aO4mYJaTLLf6oT4DTcfok) FireRating changed from 60 to 90; Wall GF 01 (0z7L81IEbQPggjg__OrrlU) was deleted; and Wall RF 05 (2rg8G55UvONxUu2GmkwF$d) was added with FireRating 60. No other IfcWall entity changes appear in the compared versions.",
+      "predictions": [
+        {
+          "change_type": "modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_WallCommon",
+                "name": "FireRating"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_WallCommon",
+                "name": "FireRating"
+              }
+            }
+          ]
+        },
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0z7L81IEbQPggjg__OrrlU",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0z7L81IEbQPggjg__OrrlU",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        },
+        {
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2rg8G55UvONxUu2GmkwF$d",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2rg8G55UvONxUu2GmkwF$d",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only changes explicitly represented by the provided model pair summary are reported.",
+        "Geometry, placement coordinates, materials, classifications, quantities, and nested property values are outside the model pair summary scope.",
+        "No precomputed IFC change records were used; revision events are inferred by comparing source and revised element summaries."
+      ]
+    }
+  ]
+}

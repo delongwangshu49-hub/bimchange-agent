@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q39-no-geometry",
+      "status": "not_found",
+      "answer": "No geometry modification is verified in this revision set. The supported change query for geometry modifications returned zero records.",
+      "predictions": [],
+      "limitations": [
+        "The change records source contains no records with change_type geometry_modified, so no geometry change can be reported."
+      ]
+    }
+  ]
+}

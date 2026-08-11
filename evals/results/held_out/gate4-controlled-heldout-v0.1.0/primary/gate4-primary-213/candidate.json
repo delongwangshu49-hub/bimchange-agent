@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q42-no-deleted-column-ground",
+      "status": "not_found",
+      "answer": "No IfcColumn was deleted from Ground Floor.",
+      "predictions": [],
+      "limitations": [
+        "The model pair summary covers only IfcElement identity, spatial container/storey, and scalar property-set values; geometry, placement, materials, classifications, quantities, and precomputed change records are excluded.",
+        "Presence comparison is based on the provided source and revised element lists; no deleted Ground Floor IfcColumn appears in this summary."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 169,
+  "execution_id": "gate4-primary-169",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 9,
+  "question_id": "gate3-q44-wall-safety-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "8e79ff39-44b1-4eae-badd-6effae0b715e",
+      "9afc9001-0b74-4927-866c-a7b588c4a8ab",
+      "cab5df52-3475-4b13-b68f-f43a1cc19ffc"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "global_ids": [
+          "0z7L81IEbQPggjg__OrrlU"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The available change record confirms that wall 0z7L81IEbQPggjg__OrrlU was deleted from the model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record gate4-deleted-wall-ground has change_type 'deleted', entity_type 'IfcWall', and global_id 0z7L81IEbQPggjg__OrrlU."
+        },
+        {
+          "claim": "The available change record does not contain any information about structural safety, load paths, or redundancies.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record contains only deletion metadata such as change_type, entity_type, global_id, location, old_value, new_value, and evidence provenance; no structural safety, load path, or redundancy data is present."
+        },
+        {
+          "claim": "Whether the building becomes structurally unsafe cannot be determined from the available evidence.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record establishes the wall deletion but supplies no structural analysis or safety review data, so the records cannot support a safety conclusion."
+        },
+        {
+          "claim": "The only available source is the change record confirming the deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified_query_result returns exactly one change record matching the filters and no other evidence is supplied."
+        },
+        {
+          "claim": "The available source contains no structural analysis, load path, or safety review data.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Inspection of the single verified change record shows no structural analysis, load path, or safety review fields."
+        },
+        {
+          "claim": "Structural safety cannot be inferred from a wall deletion record alone.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The deletion record gives no structural consequence information, so any inference about structural safety would exceed the available evidence."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The available change record confirms that wall 0z7L81IEbQPggjg__OrrlU was deleted from the model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record gate4-deleted-wall-ground has change_type 'deleted', entity_type 'IfcWall', and global_id 0z7L81IEbQPggjg__OrrlU."
+        },
+        {
+          "claim": "The available change record does not contain any information about structural safety, load paths, or redundancies.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record contains only deletion metadata such as change_type, entity_type, global_id, location, old_value, new_value, and evidence provenance; no structural safety, load path, or redundancy data is present."
+        },
+        {
+          "claim": "Whether the building becomes structurally unsafe cannot be determined from the available evidence.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record establishes the wall deletion but supplies no structural analysis or safety review data, so the records cannot support a safety conclusion."
+        },
+        {
+          "claim": "The only available source is the change record confirming the deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified_query_result returns exactly one change record matching the filters and no other evidence is supplied."
+        },
+        {
+          "claim": "The available source contains no structural analysis, load path, or safety review data.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Inspection of the single verified change record shows no structural analysis, load path, or safety review fields."
+        },
+        {
+          "claim": "Structural safety cannot be inferred from a wall deletion record alone.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The deletion record gives no structural consequence information, so any inference about structural safety would exceed the available evidence."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 362,
+    "successful_responses": 356,
+    "input_tokens": 1198899,
+    "cached_input_tokens": 473728,
+    "output_tokens": 498128,
+    "estimated_cost_usd": 0.242327,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.42327
+}

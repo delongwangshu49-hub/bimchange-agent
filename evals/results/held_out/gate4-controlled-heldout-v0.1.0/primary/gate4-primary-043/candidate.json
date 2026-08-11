@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q15-column-level01-guid",
+      "status": "answered",
+      "answer": "The verified revision event for element 2$orIofUHKcQaHhLlr75_n is 'added' (IfcColumn), with the column added to building storey 'Level 01' (IfcBuildingStorey, 16B$afW8bSivOT_ExWbFiL). The change record reports the new column identity as name 'Column L1 05' and tag 'CL-L1-05'.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-column-level01",
+              "global_id": "2$orIofUHKcQaHhLlr75_n"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only records from data/ground_truth/gate2-change-records.json were used; no model pair summary data was available for cross-verification.",
+        "The evidence source identifies no property-level field change for this added element, so only the entity addition is reported."
+      ]
+    }
+  ]
+}

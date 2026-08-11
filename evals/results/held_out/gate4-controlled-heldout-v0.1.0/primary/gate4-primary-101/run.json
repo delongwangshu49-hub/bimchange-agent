@@ -1,0 +1,152 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 101,
+  "execution_id": "gate4-primary-101",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 21,
+  "question_id": "gate3-q33-column-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "afb60657-7b75-48ef-bf99-a45244141d8e",
+      "405ef014-3914-490e-829c-0cc3a09763a8",
+      "b94cf9bd-7196-4b4b-a022-e75b6c3da180"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "0Iqxc9CtTOgPV$1Tej3xGK"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The changed scalar property for column 0Iqxc9CtTOgPV$1Tej3xGK is IsExternal in Pset_ColumnCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record gate4-property-column-ground identifies a property_modified change for global ID 0Iqxc9CtTOgPV$1Tej3xGK with field Pset_ColumnCommon/IsExternal."
+        },
+        {
+          "claim": "The old value is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record sets old_value to true for the modified property."
+        },
+        {
+          "claim": "The new value is false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record sets new_value to false for the modified property."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The changed scalar property for column 0Iqxc9CtTOgPV$1Tej3xGK is IsExternal in Pset_ColumnCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record gate4-property-column-ground identifies a property_modified change for global ID 0Iqxc9CtTOgPV$1Tej3xGK with field Pset_ColumnCommon/IsExternal."
+        },
+        {
+          "claim": "The old value is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record sets old_value to true for the modified property."
+        },
+        {
+          "claim": "The new value is false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified change record sets new_value to false for the modified property."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 191,
+    "successful_responses": 185,
+    "input_tokens": 952158,
+    "cached_input_tokens": 268288,
+    "output_tokens": 294462,
+    "estimated_cost_usd": 0.178943,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.78943
+}

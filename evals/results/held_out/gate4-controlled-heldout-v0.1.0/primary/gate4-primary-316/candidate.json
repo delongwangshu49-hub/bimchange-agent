@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The FireRating revision for wall 1aO4mYJaTLLf6oT4DTcfok changes its value from 60 to 90, but the available model pair summary does not include any regulatory threshold or compliance criteria. Therefore, the revision cannot be used to prove regulatory compliance.",
+      "predictions": [
+        {
+          "change_type": "modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_WallCommon",
+                "name": "FireRating"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_WallCommon",
+                "name": "FireRating"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The model pair summary explicitly excludes engineering, safety, compliance, responsibility, and priority judgments.",
+        "No regulatory threshold, code reference, or compliance criterion is present in the available source."
+      ]
+    }
+  ]
+}

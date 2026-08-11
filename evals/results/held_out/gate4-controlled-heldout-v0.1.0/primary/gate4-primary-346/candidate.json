@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The available change record confirms that wall 2rg8G55UvONxUu2GmkwF$d was added as 'Wall RF 05' (tag WL-RF-05) on the Roof storey, but it contains no geometric, structural, or boundary-condition data (e.g., connections to structure, clearances, intersections, or material properties). A constructability determination cannot be justified from this source alone.",
+      "predictions": [],
+      "limitations": [
+        "The change record describes the wall addition and its location but provides only name/tag, with no geometry, support, or host information.",
+        "No model pair summaries or construction rules were available to evaluate constructability as shown.",
+        "The change record lacks any explicit engineering or constructability conclusion."
+      ]
+    }
+  ]
+}

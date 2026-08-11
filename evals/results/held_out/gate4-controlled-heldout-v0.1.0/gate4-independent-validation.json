@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "status": "PASS_WITH_RECORDED_DATA_LIMITATIONS",
+  "validated_artifacts": {
+    "scores": {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-scored-executions.json",
+      "sha256": "7df5bcbbf539cd8a9879cf4c5b97122fc15e96210091fbc6182b2c9a12eb3450"
+    },
+    "summary": {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-offline-summary.json",
+      "sha256": "bbcb09c7daf34b83de8e4dd36a7af3abe342bc4c41724b2a6fffa022fedb9694"
+    },
+    "post_run_audit": {
+      "path": "evals/audits/held_out/gate4-post-run-audit.json",
+      "sha256": "91c5ccad2f38c62f58049ee142ead927cb1c71aa4d94847ec455d106632b908b"
+    },
+    "private_review_package": {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-private-review-package.json",
+      "sha256": "22fe7d3f6b3d5a4dff6e0ca7d9e012e10cd0436a7fdf8ffee2d65fa093e8cf72"
+    }
+  },
+  "checks": {
+    "exact_deterministic_regeneration": true,
+    "independent_manual_label_recount": true,
+    "execution_and_candidate_grain_reconciliation": true,
+    "request_and_usage_ledger_reconciliation": true,
+    "bootstrap_seed_and_resample_count_verified": true,
+    "limitations_preserved": true,
+    "public_release_guards_preserved": true
+  },
+  "recorded_data_limitations": [
+    "Per-execution latency is unavailable because duration fields were not persisted.",
+    "Seven executions occupy three combined usage-attribution pools because four legacy failure rows lack cumulative token/cost metadata.",
+    "Per-call-kind token and cost allocation is unavailable from cumulative-only usage records.",
+    "Free-text semantics were not deterministically scored; manual audit used one reviewer and cannot support inter-rater agreement."
+  ],
+  "private_review_readiness": "READY",
+  "public_release_readiness": "NOT_READY_REQUIRES_PRIVATE_REVIEW_DECISION",
+  "uploaded": false,
+  "model_calls_made": 0
+}

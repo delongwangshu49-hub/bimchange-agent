@@ -1,0 +1,275 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 262,
+  "execution_id": "gate4-primary-262",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 22,
+  "question_id": "gate3-q11-deleted-summary",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "e417fd82-7643-4242-ae77-3b8db602417e",
+      "1eb72cdb-f6f2-4d09-b4af-a9fee791788c",
+      "64b1149c-5b2c-4135-9e57-2a3951bab580"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The source IFC model contains four elements that are present only in the source and were deleted from the revised model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result contains exactly four deleted-change records: one IfcBeam, one IfcColumn, one IfcSlab, and one IfcWall, matching the four elements described."
+        },
+        {
+          "claim": "A beam with tag BM-L1-01 is on storey Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified record for global_id 3TNmmeV$vP1wtU7$eM6gTb is a deleted IfcBeam with old_value.tag BM-L1-01 and location Level 01."
+        },
+        {
+          "claim": "A column with tag CL-RF-01 is on storey Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified record for global_id 12Po3y91HK4PYkc6lR0Ean is a deleted IfcColumn with old_value.tag CL-RF-01 and location Roof."
+        },
+        {
+          "claim": "A slab with tag SL-L1-01 is on storey Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified record for global_id 3QgprvELLQBgvTF$EPliSW is a deleted IfcSlab with old_value.tag SL-L1-01 and location Level 01."
+        },
+        {
+          "claim": "A wall with tag WL-GF-01 is on storey Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified record for global_id 0z7L81IEbQPggjg__OrrlU is a deleted IfcWall with old_value.tag WL-GF-01 and location Ground Floor."
+        },
+        {
+          "claim": "The summary is based solely on the four deleted change records returned from data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json with filters change_types=[deleted] and result_count=4, and the answer uses exactly those four records."
+        },
+        {
+          "claim": "No assertions are made about other source-only elements outside that record set.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The candidate answer explicitly limits its claims to the four deleted records, and the supplied verified result contains no additional deleted records that the answer omits."
+        },
+        {
+          "claim": "No property-level information is available for these deleted elements.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Each verified deleted record contains entity type, location, old_value, and change metadata, but none contains property-level fields."
+        },
+        {
+          "claim": "Only their entity type, storey location, name, and tag are reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Each verified record reports entity_type, location with building storey, old_value.name, and old_value.tag, matching the fields described in the limitation."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The source IFC model contains four elements that are present only in the source and were deleted from the revised model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result contains exactly four deleted-change records: one IfcBeam, one IfcColumn, one IfcSlab, and one IfcWall, matching the four elements described."
+        },
+        {
+          "claim": "A beam with tag BM-L1-01 is on storey Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The verified record for global_id 3TNmmeV$vP1wtU7$eM6gTb is a deleted IfcBeam with old_value.tag BM-L1-01 and location Level 01."
+        },
+        {
+          "claim": "A column with tag CL-RF-01 is on storey Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified record for global_id 12Po3y91HK4PYkc6lR0Ean is a deleted IfcColumn with old_value.tag CL-RF-01 and location Roof."
+        },
+        {
+          "claim": "A slab with tag SL-L1-01 is on storey Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified record for global_id 3QgprvELLQBgvTF$EPliSW is a deleted IfcSlab with old_value.tag SL-L1-01 and location Level 01."
+        },
+        {
+          "claim": "A wall with tag WL-GF-01 is on storey Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified record for global_id 0z7L81IEbQPggjg__OrrlU is a deleted IfcWall with old_value.tag WL-GF-01 and location Ground Floor."
+        },
+        {
+          "claim": "The summary is based solely on the four deleted change records returned from data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json with filters change_types=[deleted] and result_count=4, and the answer uses exactly those four records."
+        },
+        {
+          "claim": "No assertions are made about other source-only elements outside that record set.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The candidate answer explicitly limits its claims to the four deleted records, and the supplied verified result contains no additional deleted records that the answer omits."
+        },
+        {
+          "claim": "No property-level information is available for these deleted elements.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Each verified deleted record contains entity type, location, old_value, and change metadata, but none contains property-level fields."
+        },
+        {
+          "claim": "Only their entity type, storey location, name, and tag are reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Each verified record reports entity_type, location with building storey, old_value.name, and old_value.tag, matching the fields described in the limitation."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 573,
+    "successful_responses": 564,
+    "input_tokens": 2196661,
+    "cached_input_tokens": 1396352,
+    "output_tokens": 914841,
+    "estimated_cost_usd": 0.372109,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.72109
+}

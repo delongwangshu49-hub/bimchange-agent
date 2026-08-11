@@ -1,0 +1,231 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 180,
+  "execution_id": "gate4-primary-180",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 20,
+  "question_id": "gate3-q16-slab-level01-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "e17286f9-542a-4193-b5d4-e770105e0dd9",
+      "2d49be07-3fd0-4d73-9877-1505a2a5b580",
+      "1848bff3-d408-4152-9a4d-ad7acfec4d7b"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "3QgprvELLQBgvTF$EPliSW"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "A verified revision event exists for element 3QgprvELLQBgvTF$EPliSW.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified change record with global_id 3QgprvELLQBgvTF$EPliSW is present in the change records result."
+        },
+        {
+          "claim": "The revision event is a deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The change record has change_type 'deleted'."
+        },
+        {
+          "claim": "The entity type is IfcSlab.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The change record lists entity_type 'IfcSlab'."
+        },
+        {
+          "claim": "The IfcSlab is named 'Slab L1 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The change record old_value contains name 'Slab L1 01'."
+        },
+        {
+          "claim": "The IfcSlab has tag 'SL-L1-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The change record old_value contains tag 'SL-L1-01'."
+        },
+        {
+          "claim": "The IfcSlab was located on building storey 'Level 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record location building_storey has name 'Level 01' with global_id 16B$afW8bSivOT_ExWbFiL."
+        },
+        {
+          "claim": "The building storey global ID is 16B$afW8bSivOT_ExWbFiL.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record location lists building_storey.global_id as 16B$afW8bSivOT_ExWbFiL."
+        },
+        {
+          "claim": "Only the single returned change record for this GUID was used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result has result_count 1 and the structured prediction references the same single change record."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "A verified revision event exists for element 3QgprvELLQBgvTF$EPliSW.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified change record with global_id 3QgprvELLQBgvTF$EPliSW is present in the change records result."
+        },
+        {
+          "claim": "The revision event is a deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The change record has change_type 'deleted'."
+        },
+        {
+          "claim": "The entity type is IfcSlab.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The change record lists entity_type 'IfcSlab'."
+        },
+        {
+          "claim": "The IfcSlab is named 'Slab L1 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The change record old_value contains name 'Slab L1 01'."
+        },
+        {
+          "claim": "The IfcSlab has tag 'SL-L1-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The change record old_value contains tag 'SL-L1-01'."
+        },
+        {
+          "claim": "The IfcSlab was located on building storey 'Level 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record location building_storey has name 'Level 01' with global_id 16B$afW8bSivOT_ExWbFiL."
+        },
+        {
+          "claim": "The building storey global ID is 16B$afW8bSivOT_ExWbFiL.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record location lists building_storey.global_id as 16B$afW8bSivOT_ExWbFiL."
+        },
+        {
+          "claim": "Only the single returned change record for this GUID was used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The verified query result has result_count 1 and the structured prediction references the same single change record."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 398,
+    "successful_responses": 392,
+    "input_tokens": 1255424,
+    "cached_input_tokens": 512896,
+    "output_tokens": 552862,
+    "estimated_cost_usd": 0.260192,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.60192
+}

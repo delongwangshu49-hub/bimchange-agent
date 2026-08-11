@@ -1,0 +1,184 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 81,
+  "execution_id": "gate4-primary-081",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 1,
+  "question_id": "gate3-q35-beam-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "33857c08-b495-4606-9bff-f85d02e86926",
+      "b859583f-9e41-4155-ab20-0530d2474f85",
+      "da959d15-71db-4968-a27f-ab2f1d52f41b"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "3JuqHVfXrLlA8tnQP5xv53"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "A property changed for beam 3JuqHVfXrLlA8tnQP5xv53.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record identifies entity_type IfcBeam with global_id 3JuqHVfXrLlA8tnQP5xv53 and change_type property_modified."
+        },
+        {
+          "claim": "The changed property is named LoadBearing.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record field is property_set Pset_BeamCommon with name LoadBearing."
+        },
+        {
+          "claim": "The property belongs to Pset_BeamCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record lists property_set as Pset_BeamCommon."
+        },
+        {
+          "claim": "The old value was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record gives old_value as false."
+        },
+        {
+          "claim": "The new value is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record gives new_value as true."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "A property changed for beam 3JuqHVfXrLlA8tnQP5xv53.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record identifies entity_type IfcBeam with global_id 3JuqHVfXrLlA8tnQP5xv53 and change_type property_modified."
+        },
+        {
+          "claim": "The changed property is named LoadBearing.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record field is property_set Pset_BeamCommon with name LoadBearing."
+        },
+        {
+          "claim": "The property belongs to Pset_BeamCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record lists property_set as Pset_BeamCommon."
+        },
+        {
+          "claim": "The old value was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record gives old_value as false."
+        },
+        {
+          "claim": "The new value is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified change record gives new_value as true."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 126,
+    "successful_responses": 122,
+    "input_tokens": 856230,
+    "cached_input_tokens": 198400,
+    "output_tokens": 198066,
+    "estimated_cost_usd": 0.148111,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.48111
+}

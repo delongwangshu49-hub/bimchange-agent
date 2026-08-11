@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q43-no-property-slab-level01",
+      "status": "not_found",
+      "answer": "No IfcSlab on Level 01 has a verified property modification.",
+      "predictions": [],
+      "limitations": [
+        "No surviving Level 01 IfcSlab changed a scalar property between source and revised; the only Level 01 slab absent from the revised version is a removal, not a property modification."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q39-no-geometry",
+      "status": "insufficient_evidence",
+      "answer": "No geometry modification can be verified from the provided model pair summary because geometry and placement coordinates are excluded from its scope.",
+      "predictions": [],
+      "limitations": [
+        "The model pair summary explicitly excludes geometry and placement coordinates, so it cannot justify a geometry modification conclusion."
+      ]
+    }
+  ]
+}

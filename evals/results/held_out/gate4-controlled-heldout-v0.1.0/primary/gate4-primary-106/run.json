@@ -1,0 +1,199 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 106,
+  "execution_id": "gate4-primary-106",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 26,
+  "question_id": "gate3-q44-wall-safety-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "b0bd2543-90be-450a-bc8d-01c19b73d624",
+      "a2cebba4-f045-4110-bc01-50830d2a2fb5",
+      "98bfed2e-9235-4b52-968a-47a3a9a2ba10",
+      "a490d991-ed2d-477e-9b3e-8da6b67d458b",
+      "af5bfb10-9363-428a-a483-4449c954c0df"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "global_ids": [
+          "0z7L81IEbQPggjg__OrrlU"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 1,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 0,
+      "coverage_rate": 0.0,
+      "missing_change_ids": [
+        "gate4-deleted-wall-ground"
+      ],
+      "unexpected_prediction_count": 0,
+      "complete": false
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The deletion of wall 0z7L81IEbQPggjg__OrrlU is confirmed.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record has change_type 'deleted' and entity_type 'IfcWall' with global_id 0z7L81IEbQPggjg__OrrlU; old_value is populated and new_value is null."
+        },
+        {
+          "claim": "The available change record contains no structural analysis, load-path, or safety assessment.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The record contains only change metadata, spatial location, old/new values, and evidence fields; no structural or safety analysis is included."
+        },
+        {
+          "claim": "It cannot be determined from the supplied evidence whether the building becomes structurally unsafe.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The supplied evidence boundary contains the deletion record but no structural performance data, so a safety conclusion cannot be derived from it."
+        },
+        {
+          "claim": "The query returned exactly one source record for this deletion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "verified_query_result reports result_count 1 with a single result matching global_id 0z7L81IEbQPggjg__OrrlU and change_id gate4-deleted-wall-ground."
+        },
+        {
+          "claim": "The returned record reports the deletion event but includes no structural engineering analysis or safety conclusion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The single result has change_type 'deleted' and its content is limited to identification, location, old/new values, and evidence metadata."
+        },
+        {
+          "claim": "No structural model results, member forces, stability checks, or code-based structural safety evaluation are available to justify a structural safety conclusion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "None of these items appear anywhere in the returned change record, and no other verification data was supplied."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The deletion of wall 0z7L81IEbQPggjg__OrrlU is confirmed by the returned change record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result includes change_id gate4-deleted-wall-ground with change_type 'deleted', entity_type 'IfcWall', and global_id 0z7L81IEbQPggjg__OrrlU."
+        },
+        {
+          "claim": "The returned change record contains no structural analysis, load-path information, or safety assessment.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified result contains only deletion metadata, location, old value, and evidence provenance; no structural engineering content is present."
+        },
+        {
+          "claim": "It cannot be determined from the supplied evidence whether deleting this wall makes the building structurally unsafe.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The supplied change record documents only the deletion event and does not include structural analysis or safety conclusions, so the evidence cannot establish structural unsafety."
+        },
+        {
+          "claim": "The only returned source record is change_query/gate4-deleted-wall-ground/0z7L81IEbQPggjg__OrrlU, which reports the deletion event but does not include any structural engineering analysis or safety conclusion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "verified_query_result has result_count 1, and the single result lacks structural engineering analysis or safety conclusion."
+        },
+        {
+          "claim": "No structural model results, member forces, stability checks, or code-based structural safety evaluation were available to justify a conclusion about the building's structural safety.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Nothing in the verified query result includes structural model results, member forces, stability checks, or code-based safety evaluation."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 208,
+    "successful_responses": 202,
+    "input_tokens": 978809,
+    "cached_input_tokens": 285952,
+    "output_tokens": 321786,
+    "estimated_cost_usd": 0.187901,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.87901
+}

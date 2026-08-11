@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 285,
+  "execution_id": "gate4-primary-285",
+  "repetition": 3,
+  "workflow": "direct_llm",
+  "question_position": 5,
+  "question_id": "gate3-q15-column-level01-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "29f28dc4-a7b4-4be2-9755-6238128e7d0f"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 637,
+    "successful_responses": 627,
+    "input_tokens": 2381586,
+    "cached_input_tokens": 1551104,
+    "output_tokens": 1036449,
+    "estimated_cost_usd": 0.410817,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 4.10817
+}

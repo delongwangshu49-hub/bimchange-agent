@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q41-absent-guid",
+      "status": "not_found",
+      "answer": "No verified revision event involves element 0AAAAAAAAAAAAAAAAAAAAA; that GlobalId does not appear in either the source or revised model summaries.",
+      "predictions": [],
+      "limitations": [
+        "The model pair summary contains element listings for both versions; no element with global_id 0AAAAAAAAAAAAAAAAAAAAA is present in either version."
+      ]
+    }
+  ]
+}

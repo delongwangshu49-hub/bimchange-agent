@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q27-deleted-column-filter",
+      "status": "answered",
+      "answer": "One IfcColumn element was deleted: the column with global ID 12Po3y91HK4PYkc6lR0Ean, originally named 'Column RF 01' (tag 'CL-RF-01') on the Roof storey.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcColumn",
+          "global_id": "12Po3y91HK4PYkc6lR0Ean",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Column RF 01",
+            "tag": "CL-RF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-deleted-column-roof",
+              "global_id": "12Po3y91HK4PYkc6lR0Ean"
+            }
+          ]
+        }
+      ],
+      "limitations": []
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q26-added-beam-filter",
+      "status": "answered",
+      "answer": "One IfcBeam was added: Beam GF 05 (GlobalId 3Z1rgbb$PMDfsfeWvsKUUB), tag BM-GF-05, located on Ground Floor. No other IfcBeam elements were added.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcBeam",
+          "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Beam GF 05",
+            "tag": "BM-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3Z1rgbb$PMDfsfeWvsKUUB",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The comparison is based solely on the entity and presence data in the supplied model pair summary; geometry, placements, materials, classifications, quantities, and nested property values are outside its scope."
+      ]
+    }
+  ]
+}

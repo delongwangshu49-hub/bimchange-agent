@@ -1,0 +1,143 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 118,
+  "execution_id": "gate4-primary-118",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 38,
+  "question_id": "gate3-q43-no-property-slab-level01",
+  "category": "negative_control",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "e9e947e7-2e9c-4fb0-b4e3-4d74ceba78f1",
+      "2d5e7093-a412-488f-bbf0-588c5ab2977d",
+      "be20ba1f-e8af-44c0-9946-8f763795eaeb"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "building_storey_names": [
+          "Level 01"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified property modification was found for an IfcSlab on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result filtered by change_types ['property_modified'], entity_types ['IfcSlab'], and building_storey_names ['Level 01'] returned result_count 0 with no results."
+        },
+        {
+          "claim": "The change record query for IfcSlab, property modification, and Level 01 returned zero records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result reports result_count 0 for exactly those filters."
+        },
+        {
+          "claim": "Absence from the queried change records does not rule out unverified or differently categorized changes outside this source.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The evidence boundary is limited to the single supplied change-record source; the empty result only shows absence within that source and does not assert completeness over unrecorded or differently categorized changes."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified property modification was found for an IfcSlab on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result filtered by change_types ['property_modified'], entity_types ['IfcSlab'], and building_storey_names ['Level 01'] returned result_count 0 with no results."
+        },
+        {
+          "claim": "The change record query for IfcSlab, property modification, and Level 01 returned zero records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result reports result_count 0 for exactly those filters."
+        },
+        {
+          "claim": "Absence from the queried change records does not rule out unverified or differently categorized changes outside this source.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The evidence boundary is limited to the single supplied change-record source; the empty result only shows absence within that source and does not assert completeness over unrecorded or differently categorized changes."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 247,
+    "successful_responses": 241,
+    "input_tokens": 1034690,
+    "cached_input_tokens": 325888,
+    "output_tokens": 382579,
+    "estimated_cost_usd": 0.207267,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.07267
+}

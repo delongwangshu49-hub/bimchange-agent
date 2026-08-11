@@ -1,0 +1,256 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 119,
+  "execution_id": "gate4-primary-119",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 39,
+  "question_id": "gate3-q37-loadbearing-properties",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "05fbaf52-fce9-454e-b573-fc0c24b3faf7",
+      "b0da3bf3-4178-46a4-896f-f202b9f90928",
+      "0a71a01d-3644-4e98-9441-644922302778"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "property_name": "LoadBearing"
+      }
+    },
+    "tool_result_count": 2,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 2,
+      "evidence_supported_count": 2,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 2,
+      "prediction_count": 2,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are exactly two verified property modifications that affect a LoadBearing field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified_query_result has result_count=2 and both results are property_modified changes with field.name LoadBearing."
+        },
+        {
+          "claim": "The first verified property modification affects IfcBeam 3JuqHVfXrLlA8tnQP5xv53.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The first verified result has change_id gate4-property-beam-roof, entity_type IfcBeam, and global_id 3JuqHVfXrLlA8tnQP5xv53."
+        },
+        {
+          "claim": "The IfcBeam 3JuqHVfXrLlA8tnQP5xv53 is in the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified result for this IfcBeam lists both spatial_container and building_storey as IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j named Roof."
+        },
+        {
+          "claim": "The IfcBeam 3JuqHVfXrLlA8tnQP5xv53 has Pset_BeamCommon.LoadBearing changed from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified result field is kind=property, property_set=Pset_BeamCommon, name=LoadBearing, with old_value=false and new_value=true."
+        },
+        {
+          "claim": "The second verified property modification affects IfcSlab 2WfINAQAHRERPwEp7Nos0$.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The second verified result has change_id gate4-property-slab-roof, entity_type IfcSlab, and global_id 2WfINAQAHRERPwEp7Nos0$."
+        },
+        {
+          "claim": "The IfcSlab 2WfINAQAHRERPwEp7Nos0$ is in the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified result for this IfcSlab lists both spatial_container and building_storey as IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j named Roof."
+        },
+        {
+          "claim": "The IfcSlab 2WfINAQAHRERPwEp7Nos0$ has Pset_SlabCommon.LoadBearing changed from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified result field is kind=property, property_set=Pset_SlabCommon, name=LoadBearing, with old_value=false and new_value=true."
+        },
+        {
+          "claim": "Only the two records returned from data/ground_truth/gate2-change-records.json were used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The structured predictions contain exactly these two evidence_refs, both from source_path data/ground_truth/gate2-change-records.json."
+        },
+        {
+          "claim": "No other LoadBearing property modifications were found in the source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified_query_result, with filters change_types=[property_modified] and property_name=LoadBearing for data/ground_truth/gate2-change-records.json, returns result_count=2 and no additional results."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 2,
+      "evidence_supported_count": 2,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 2,
+      "prediction_count": 2,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are exactly two verified property modifications that affect a LoadBearing field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified_query_result has result_count=2 and both results are property_modified changes with field.name LoadBearing."
+        },
+        {
+          "claim": "The first verified property modification affects IfcBeam 3JuqHVfXrLlA8tnQP5xv53.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The first verified result has change_id gate4-property-beam-roof, entity_type IfcBeam, and global_id 3JuqHVfXrLlA8tnQP5xv53."
+        },
+        {
+          "claim": "The IfcBeam 3JuqHVfXrLlA8tnQP5xv53 is in the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified result for this IfcBeam lists both spatial_container and building_storey as IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j named Roof."
+        },
+        {
+          "claim": "The IfcBeam 3JuqHVfXrLlA8tnQP5xv53 has Pset_BeamCommon.LoadBearing changed from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified result field is kind=property, property_set=Pset_BeamCommon, name=LoadBearing, with old_value=false and new_value=true."
+        },
+        {
+          "claim": "The second verified property modification affects IfcSlab 2WfINAQAHRERPwEp7Nos0$.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The second verified result has change_id gate4-property-slab-roof, entity_type IfcSlab, and global_id 2WfINAQAHRERPwEp7Nos0$."
+        },
+        {
+          "claim": "The IfcSlab 2WfINAQAHRERPwEp7Nos0$ is in the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified result for this IfcSlab lists both spatial_container and building_storey as IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j named Roof."
+        },
+        {
+          "claim": "The IfcSlab 2WfINAQAHRERPwEp7Nos0$ has Pset_SlabCommon.LoadBearing changed from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified result field is kind=property, property_set=Pset_SlabCommon, name=LoadBearing, with old_value=false and new_value=true."
+        },
+        {
+          "claim": "Only the two records returned from data/ground_truth/gate2-change-records.json were used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The structured predictions contain exactly these two evidence_refs, both from source_path data/ground_truth/gate2-change-records.json."
+        },
+        {
+          "claim": "No other LoadBearing property modifications were found in the source.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified_query_result, with filters change_types=[property_modified] and property_name=LoadBearing for data/ground_truth/gate2-change-records.json, returns result_count=2 and no additional results."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 250,
+    "successful_responses": 244,
+    "input_tokens": 1039421,
+    "cached_input_tokens": 329088,
+    "output_tokens": 390702,
+    "estimated_cost_usd": 0.209765,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.09765
+}

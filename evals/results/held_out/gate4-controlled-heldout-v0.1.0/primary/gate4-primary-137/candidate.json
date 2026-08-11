@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The available change record confirms that slab 1hD8Z2VI5Q48QgyBkf6YcB was added on the Ground Floor (new value: name Slab GF 05, tag SL-GF-05), but the source contains no priority or coordination-ranking information. Therefore, whether this slab should receive the highest coordination priority cannot be justified from the available evidence.",
+      "predictions": [],
+      "limitations": [
+        "The only returned change record for this entity indicates an added slab (change_id gate4-added-slab-ground) and provides its name, tag, and ground-floor storey location.",
+        "No coordination priority attribute, ranking field, or related priority evidence exists in the retrieved change record."
+      ]
+    }
+  ]
+}

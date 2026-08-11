@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The returned change record confirms that slab 1hD8Z2VI5Q48QgyBkf6YcB (SL-GF-05) was added on the Ground Floor, but it contains no coordination priority, severity, or ranking information. Therefore, whether this slab should receive the highest coordination priority cannot be determined from the available evidence.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-slab-ground",
+              "global_id": "1hD8Z2VI5Q48QgyBkf6YcB"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The only available source is the gate2 change record for the added slab; it contains no priority, severity, or ranking fields."
+      ]
+    }
+  ]
+}
