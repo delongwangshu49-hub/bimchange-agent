@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="760" viewBox="0 0 1900 760" role="img">
+<rect width="1900" height="760" fill="#FDFDFC"/>
+<text x="70" y="42" fill="#2D302F" font-size="36" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Blinded manual audit / 盲法人工审计</text>
+<text x="70" y="92" fill="#717572" font-size="20" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">One reviewer · 135 sampled executions · 505 atomic claims / 1 名审阅者 · 135 次抽样执行 · 505 条原子声明</text>
+<circle cx="1822" cy="50" r="5" fill="#6F7872" stroke="none" stroke-width="0"/>
+<circle cx="1832" cy="58" r="5" fill="#918674" stroke="none" stroke-width="0"/>
+<circle cx="1828" cy="70" r="5" fill="#88746A" stroke="none" stroke-width="0"/>
+<circle cx="1816" cy="70" r="5" fill="#777D73" stroke="none" stroke-width="0"/>
+<circle cx="1812" cy="58" r="5" fill="#858079" stroke="none" stroke-width="0"/>
+<circle cx="1822" cy="61" r="4" fill="#2D302F" stroke="none" stroke-width="0"/>
+<line x1="70" y1="136" x2="1830" y2="136" stroke="#DDDFDC" stroke-width="2"/>
+<text x="540.0" y="176" fill="#2D302F" font-size="20" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="hanging">Citation verification / 引用核验</text>
+<line x1="360.0" y1="225" x2="360.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="360.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">0.0%</text>
+<line x1="450.0" y1="225" x2="450.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="450.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">25.0%</text>
+<line x1="540.0" y1="225" x2="540.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="540.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">50.0%</text>
+<line x1="630.0" y1="225" x2="630.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="630.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">75.0%</text>
+<line x1="720.0" y1="225" x2="720.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="720.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">100.0%</text>
+<rect x="360" y="270" width="50.23255813953489" height="42" rx="1" fill="#858985" stroke="none" stroke-width="0"/>
+<text x="342" y="278" fill="#2D302F" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end" dominant-baseline="hanging">Direct LLM / 直接模型</text>
+<text x="890" y="278" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">6/43 · 13.95%</text>
+<rect x="360" y="375" width="351.6279069767441" height="42" rx="1" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="342" y="383" fill="#2D302F" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end" dominant-baseline="hanging">Tool-Using Agent / 工具型智能体</text>
+<text x="890" y="383" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">42/43 · 97.67%</text>
+<rect x="360" y="480" width="336.0" height="42" rx="1" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="342" y="488" fill="#2D302F" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end" dominant-baseline="hanging">Proposed / 本方法</text>
+<text x="890" y="488" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">42/45 · 93.33%</text>
+<text x="1390.0" y="176" fill="#2D302F" font-size="20" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="hanging">Exceptional claims / 异常声明</text>
+<line x1="1210.0" y1="225" x2="1210.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1210.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">0.0%</text>
+<line x1="1300.0" y1="225" x2="1300.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1300.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">0.5%</text>
+<line x1="1390.0" y1="225" x2="1390.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1390.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">1.0%</text>
+<line x1="1480.0" y1="225" x2="1480.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1480.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">1.5%</text>
+<line x1="1570.0" y1="225" x2="1570.0" y2="590" stroke="#DDDFDC" stroke-width="2"/>
+<text x="1570.0" y="606" fill="#717572" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">2.0%</text>
+<rect x="1210" y="270" width="325.3012048192771" height="42" rx="1" fill="#858985" stroke="none" stroke-width="0"/>
+<text x="1192" y="278" fill="#2D302F" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end" dominant-baseline="hanging">Direct LLM / 直接模型</text>
+<text x="1830" y="278" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">3/166 · 1.81%</text>
+<rect x="1210" y="375" width="107.78443113772457" height="42" rx="1" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="1192" y="383" fill="#2D302F" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end" dominant-baseline="hanging">Tool-Using Agent / 工具型智能体</text>
+<text x="1830" y="383" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">1/167 · 0.60%</text>
+<rect x="1210" y="480" width="0.0" height="42" rx="1" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="1192" y="488" fill="#2D302F" font-size="14" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end" dominant-baseline="hanging">Proposed / 本方法</text>
+<text x="1830" y="488" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">0/172 · 0.00%</text>
+<line x1="70" y1="696" x2="1830" y2="696" stroke="#DDDFDC" stroke-width="2"/>
+<text x="70" y="712" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">BIMChange-Agent v0.1.0 · frozen Gate 4 data / Gate 4 冻结数据</text>
+<text x="1830" y="712" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">gate4-offline-summary.json / manual_audit</text>
+</svg>

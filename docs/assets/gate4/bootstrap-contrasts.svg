@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img">
+<rect width="1600" height="760" fill="#FDFDFC"/>
+<text x="70" y="42" fill="#2D302F" font-size="36" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Question-clustered paired bootstrap contrasts / 问题聚类配对 Bootstrap 对比</text>
+<text x="70" y="92" fill="#717572" font-size="20" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">Proposed minus comparator · 2,000 resamples · seed 20260808 · percentage points / 本方法减对照 · 百分点</text>
+<circle cx="1522" cy="50" r="5" fill="#6F7872" stroke="none" stroke-width="0"/>
+<circle cx="1532" cy="58" r="5" fill="#918674" stroke="none" stroke-width="0"/>
+<circle cx="1528" cy="70" r="5" fill="#88746A" stroke="none" stroke-width="0"/>
+<circle cx="1516" cy="70" r="5" fill="#777D73" stroke="none" stroke-width="0"/>
+<circle cx="1512" cy="58" r="5" fill="#858079" stroke="none" stroke-width="0"/>
+<circle cx="1522" cy="61" r="4" fill="#2D302F" stroke="none" stroke-width="0"/>
+<line x1="70" y1="136" x2="1530" y2="136" stroke="#DDDFDC" stroke-width="2"/>
+<line x1="553.0769230769231" y1="200" x2="553.0769230769231" y2="630" stroke="#2D302F" stroke-width="2"/>
+<text x="553.0769230769231" y="644" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="middle" dominant-baseline="hanging">+0</text>
+<line x1="659.2307692307693" y1="200" x2="659.2307692307693" y2="630" stroke="#DDDFDC" stroke-width="1"/>
+<text x="659.2307692307693" y="644" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="middle" dominant-baseline="hanging">+10</text>
+<line x1="765.3846153846154" y1="200" x2="765.3846153846154" y2="630" stroke="#DDDFDC" stroke-width="1"/>
+<text x="765.3846153846154" y="644" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="middle" dominant-baseline="hanging">+20</text>
+<line x1="871.5384615384615" y1="200" x2="871.5384615384615" y2="630" stroke="#DDDFDC" stroke-width="1"/>
+<text x="871.5384615384615" y="644" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="middle" dominant-baseline="hanging">+30</text>
+<line x1="977.6923076923076" y1="200" x2="977.6923076923076" y2="630" stroke="#DDDFDC" stroke-width="1"/>
+<text x="977.6923076923076" y="644" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="middle" dominant-baseline="hanging">+40</text>
+<line x1="1083.8461538461538" y1="200" x2="1083.8461538461538" y2="630" stroke="#DDDFDC" stroke-width="1"/>
+<text x="1083.8461538461538" y="644" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="middle" dominant-baseline="hanging">+50</text>
+<line x1="1190.0" y1="200" x2="1190.0" y2="630" stroke="#DDDFDC" stroke-width="1"/>
+<text x="1190.0" y="644" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="middle" dominant-baseline="hanging">+60</text>
+<text x="70" y="223" fill="#2D302F" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed − Direct LLM / 本方法 − 直接模型</text>
+<text x="70" y="252" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">Exact match / 精确匹配</text>
+<line x1="871.5384615384614" y1="245" x2="1145.7692307692307" y2="245" stroke="#88746A" stroke-width="5"/>
+<line x1="871.5384615384614" y1="234" x2="871.5384615384614" y2="256" stroke="#88746A" stroke-width="3"/>
+<line x1="1145.7692307692307" y1="234" x2="1145.7692307692307" y2="256" stroke="#88746A" stroke-width="3"/>
+<circle cx="1004.2307692307693" cy="245" r="11" fill="#88746A" stroke="#FDFDFC" stroke-width="2"/>
+<text x="1510" y="234" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">+42.50 pp [+30.00, +55.83]</text>
+<text x="70" y="315" fill="#2D302F" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed − Direct LLM / 本方法 − 直接模型</text>
+<text x="70" y="344" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">Change F1 / 变更 F1</text>
+<line x1="801.2644254087045" y1="337" x2="1039.1284781461732" y2="337" stroke="#88746A" stroke-width="5"/>
+<line x1="801.2644254087045" y1="326" x2="801.2644254087045" y2="348" stroke="#88746A" stroke-width="3"/>
+<line x1="1039.1284781461732" y1="326" x2="1039.1284781461732" y2="348" stroke="#88746A" stroke-width="3"/>
+<circle cx="921.9000028311771" cy="337" r="11" fill="#88746A" stroke="#FDFDFC" stroke-width="2"/>
+<text x="1510" y="326" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">+34.74 pp [+23.38, +45.79]</text>
+<text x="70" y="407" fill="#2D302F" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed − Tool-Using Agent / 本方法 − 工具型智能体</text>
+<text x="70" y="436" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">Exact match / 精确匹配</text>
+<line x1="606.1538461538461" y1="429" x2="774.230769230769" y2="429" stroke="#6F7872" stroke-width="5"/>
+<line x1="606.1538461538461" y1="418" x2="606.1538461538461" y2="440" stroke="#6F7872" stroke-width="3"/>
+<line x1="774.230769230769" y1="418" x2="774.230769230769" y2="440" stroke="#6F7872" stroke-width="3"/>
+<circle cx="685.7692307692307" cy="429" r="11" fill="#6F7872" stroke="#FDFDFC" stroke-width="2"/>
+<text x="1510" y="418" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">+12.50 pp [+5.00, +20.83]</text>
+<text x="70" y="499" fill="#2D302F" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed − Tool-Using Agent / 本方法 − 工具型智能体</text>
+<text x="70" y="528" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">Change F1 / 变更 F1</text>
+<line x1="578.2967142069325" y1="521" x2="670.5231990542387" y2="521" stroke="#6F7872" stroke-width="5"/>
+<line x1="578.2967142069325" y1="510" x2="578.2967142069325" y2="532" stroke="#6F7872" stroke-width="3"/>
+<line x1="670.5231990542387" y1="510" x2="670.5231990542387" y2="532" stroke="#6F7872" stroke-width="3"/>
+<circle cx="617.3026119179966" cy="521" r="11" fill="#6F7872" stroke="#FDFDFC" stroke-width="2"/>
+<text x="1510" y="510" fill="#2D302F" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">+6.05 pp [+2.38, +11.06]</text>
+<line x1="70" y1="696" x2="1530" y2="696" stroke="#DDDFDC" stroke-width="2"/>
+<text x="70" y="712" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">BIMChange-Agent v0.1.0 · frozen Gate 4 data / Gate 4 冻结数据</text>
+<text x="1530" y="712" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">gate4-offline-summary.json / uncertainty</text>
+</svg>

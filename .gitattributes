@@ -1,1 +1,5 @@
 *.ifc binary
+docs/assets/gate4/*.svg text eol=lf
+docs/assets/gate4/*.png binary
+docs/assets/gate4/chart-manifest.json text eol=lf
+scripts/generate_gate4_visualizations.py text eol=lf

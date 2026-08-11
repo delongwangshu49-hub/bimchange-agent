@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820" role="img">
+<rect width="1500" height="820" fill="#FDFDFC"/>
+<text x="70" y="42" fill="#2D302F" font-size="36" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Gate 4 workflow performance / Gate 4 工作流表现</text>
+<text x="70" y="92" fill="#717572" font-size="20" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">120 scheduled executions per workflow · controlled synthetic IFC4 fixture / 每种工作流 120 次计划执行 · 受控合成 IFC4 样例</text>
+<circle cx="1422" cy="50" r="5" fill="#6F7872" stroke="none" stroke-width="0"/>
+<circle cx="1432" cy="58" r="5" fill="#918674" stroke="none" stroke-width="0"/>
+<circle cx="1428" cy="70" r="5" fill="#88746A" stroke="none" stroke-width="0"/>
+<circle cx="1416" cy="70" r="5" fill="#777D73" stroke="none" stroke-width="0"/>
+<circle cx="1412" cy="58" r="5" fill="#858079" stroke="none" stroke-width="0"/>
+<circle cx="1422" cy="61" r="4" fill="#2D302F" stroke="none" stroke-width="0"/>
+<line x1="70" y1="136" x2="1430" y2="136" stroke="#DDDFDC" stroke-width="2"/>
+<line x1="390.0" y1="196" x2="390.0" y2="680" stroke="#DDDFDC" stroke-width="1"/>
+<text x="390.0" y="692" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">0%</text>
+<line x1="554.0" y1="196" x2="554.0" y2="680" stroke="#DDDFDC" stroke-width="1"/>
+<text x="554.0" y="692" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">20%</text>
+<line x1="718.0" y1="196" x2="718.0" y2="680" stroke="#DDDFDC" stroke-width="1"/>
+<text x="718.0" y="692" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">40%</text>
+<line x1="882.0" y1="196" x2="882.0" y2="680" stroke="#DDDFDC" stroke-width="1"/>
+<text x="882.0" y="692" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">60%</text>
+<line x1="1046.0" y1="196" x2="1046.0" y2="680" stroke="#DDDFDC" stroke-width="1"/>
+<text x="1046.0" y="692" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">80%</text>
+<line x1="1210.0" y1="196" x2="1210.0" y2="680" stroke="#DDDFDC" stroke-width="1"/>
+<text x="1210.0" y="692" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="middle" dominant-baseline="hanging">100%</text>
+<text x="70" y="221" fill="#2D302F" font-size="17" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Semantic exact match</text>
+<text x="70" y="246" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">语义精确匹配</text>
+<rect x="390" y="196" width="444.16666666666663" height="29" rx="1" fill="#858985" stroke="none" stroke-width="0"/>
+<text x="402" y="201" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Direct LLM / 直接模型</text>
+<text x="1410" y="201" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">54.17%</text>
+<rect x="390" y="234" width="690.1666666666666" height="29" rx="1" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="402" y="239" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Tool-Using Agent / 工具型智能体</text>
+<text x="1410" y="239" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">84.17%</text>
+<rect x="390" y="272" width="792.6666666666666" height="29" rx="1" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="402" y="277" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed / 本方法</text>
+<text x="1410" y="277" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">96.67%</text>
+<text x="70" y="373" fill="#2D302F" font-size="17" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Change F1</text>
+<text x="70" y="398" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">变更 F1</text>
+<rect x="390" y="348" width="517.8947368421052" height="29" rx="1" fill="#858985" stroke="none" stroke-width="0"/>
+<text x="402" y="353" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Direct LLM / 直接模型</text>
+<text x="1410" y="353" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">63.16%</text>
+<rect x="390" y="386" width="753.1851851851852" height="29" rx="1" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="402" y="391" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Tool-Using Agent / 工具型智能体</text>
+<text x="1410" y="391" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">91.85%</text>
+<rect x="390" y="424" width="802.7972027972029" height="29" rx="1" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="402" y="429" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed / 本方法</text>
+<text x="1410" y="429" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">97.90%</text>
+<text x="70" y="525" fill="#2D302F" font-size="17" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Deterministic evidence support</text>
+<text x="70" y="550" fill="#717572" font-size="16" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">确定性证据支持</text>
+<rect x="390" y="500" width="539.7989949748743" height="29" rx="1" fill="#858985" stroke="none" stroke-width="0"/>
+<text x="402" y="505" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Direct LLM / 直接模型</text>
+<text x="1410" y="505" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">65.83%</text>
+<rect x="390" y="538" width="820.0" height="29" rx="1" fill="#6F7872" stroke="none" stroke-width="0"/>
+<text x="402" y="543" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Tool-Using Agent / 工具型智能体</text>
+<text x="1410" y="543" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">100.00%</text>
+<rect x="390" y="576" width="820.0" height="29" rx="1" fill="#88746A" stroke="none" stroke-width="0"/>
+<text x="402" y="581" fill="#FDFDFC" font-size="13" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start" dominant-baseline="hanging">Proposed / 本方法</text>
+<text x="1410" y="581" fill="#2D302F" font-size="16" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">100.00%</text>
+<line x1="70" y1="756" x2="1430" y2="756" stroke="#DDDFDC" stroke-width="2"/>
+<text x="70" y="772" fill="#717572" font-size="15" font-family="Inter, Microsoft YaHei, Noto Sans CJK SC, Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start" dominant-baseline="hanging">BIMChange-Agent v0.1.0 · frozen Gate 4 data / Gate 4 冻结数据</text>
+<text x="1430" y="772" fill="#717572" font-size="15" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="400" text-anchor="end" dominant-baseline="hanging">gate4-offline-summary.json / overall_by_workflow</text>
+</svg>

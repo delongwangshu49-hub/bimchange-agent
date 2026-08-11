@@ -1,0 +1,162 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "canonical_numeric_source": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-offline-summary.json",
+  "canonical_numeric_source_sha256": "bbcb09c7daf34b83de8e4dd36a7af3abe342bc4c41724b2a6fffa022fedb9694",
+  "independent_validation_source": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-independent-validation.json",
+  "independent_validation_status": "PASS_WITH_RECORDED_DATA_LIMITATIONS",
+  "model_calls_made": 0,
+  "canonical_format": "SVG",
+  "png_role": "convenience derivative rendered from the same scene graph",
+  "charts": [
+    {
+      "id": "workflow-performance",
+      "question": "How do the three workflows compare on structured accuracy and evidence support?",
+      "family": "comparison",
+      "variant": "grouped horizontal bar",
+      "source_fields": [
+        "overall_by_workflow.*.semantic_exact_match_accuracy",
+        "overall_by_workflow.*.change_f1",
+        "overall_by_workflow.*.evidence_support_rate"
+      ],
+      "readme": true,
+      "dimensions": {
+        "width": 1500,
+        "height": 820
+      },
+      "outputs": {
+        "svg": {
+          "path": "docs/assets/gate4/workflow-performance.svg",
+          "sha256": "9ed7164286394db4f67c3cac09d1b57b0f8da35e5963bbb516edf7d581b2cbe6"
+        },
+        "png": {
+          "path": "docs/assets/gate4/workflow-performance.png",
+          "sha256": "a916cf8a5cc22cc1a0d2f08901bf3ab9c1f0fbd10ee32f251f58726e4057080c"
+        }
+      }
+    },
+    {
+      "id": "category-exact-match",
+      "question": "Where does exact-match performance vary across the frozen question taxonomy?",
+      "family": "matrix and cohort",
+      "variant": "annotated heatmap",
+      "source_fields": [
+        "per_category.*.*.semantic_exact_match_accuracy"
+      ],
+      "readme": true,
+      "dimensions": {
+        "width": 1580,
+        "height": 840
+      },
+      "outputs": {
+        "svg": {
+          "path": "docs/assets/gate4/category-exact-match.svg",
+          "sha256": "05810a941e83c41b3a5499720ae2a7a32ae185634178568eb5da2b62cdc6792b"
+        },
+        "png": {
+          "path": "docs/assets/gate4/category-exact-match.png",
+          "sha256": "f43d85cc3cac6e725c1c7a28e2a2a998022067a270b4c4aebdc1af51a394f4ea"
+        }
+      }
+    },
+    {
+      "id": "question-repeatability",
+      "question": "How consistently does each workflow answer the same questions exactly across repetitions?",
+      "family": "composition",
+      "variant": "100% stacked bar with counts",
+      "source_fields": [
+        "question_success_frequency.*.frequency_distribution"
+      ],
+      "readme": false,
+      "dimensions": {
+        "width": 1500,
+        "height": 670
+      },
+      "outputs": {
+        "svg": {
+          "path": "docs/assets/gate4/question-repeatability.svg",
+          "sha256": "cd0c9bc681316fcf4a342a11a12f4656f7df327cbb8aa4286337fe6d1c8903ee"
+        },
+        "png": {
+          "path": "docs/assets/gate4/question-repeatability.png",
+          "sha256": "fe3745d63fa79758d43c81a03dd752b04412c92a7bfc030397b0d38110089562"
+        }
+      }
+    },
+    {
+      "id": "repetition-stability",
+      "question": "What run-to-run variation remains across the three repetition blocks?",
+      "family": "uncertainty and benchmark",
+      "variant": "dot and observed-range plot",
+      "source_fields": [
+        "repetition.*.per_repetition",
+        "repetition.*.across_repetition_summary"
+      ],
+      "readme": false,
+      "dimensions": {
+        "width": 1700,
+        "height": 900
+      },
+      "outputs": {
+        "svg": {
+          "path": "docs/assets/gate4/repetition-stability.svg",
+          "sha256": "5d563d77f8e360a7ab3b1eaa0562c538277ec5e4c064da69f724e1f663b63dbb"
+        },
+        "png": {
+          "path": "docs/assets/gate4/repetition-stability.png",
+          "sha256": "6850f58b1a93915be0c882b864e67a9191daa01b179fb4ae1e7c14d8eeb049de"
+        }
+      }
+    },
+    {
+      "id": "bootstrap-contrasts",
+      "question": "What uncertainty surrounds Proposed's exact-match and F1 differences on this fixture?",
+      "family": "uncertainty and benchmark",
+      "variant": "paired-bootstrap forest plot",
+      "source_fields": [
+        "uncertainty.pairs.*.semantic_exact_match_accuracy",
+        "uncertainty.pairs.*.change_f1"
+      ],
+      "transformation": "Signs are inverted from source left-minus-Proposed contrasts to display Proposed-minus-comparator.",
+      "readme": false,
+      "dimensions": {
+        "width": 1600,
+        "height": 760
+      },
+      "outputs": {
+        "svg": {
+          "path": "docs/assets/gate4/bootstrap-contrasts.svg",
+          "sha256": "dba22716aab3a4f580834657ba771f4c76b1df7378b1e37c0735230f574e2215"
+        },
+        "png": {
+          "path": "docs/assets/gate4/bootstrap-contrasts.png",
+          "sha256": "2ef397c52712a9e972d8e1aae2f06b7dcd58eb46b35d131e59ddb11cf0dc181a"
+        }
+      }
+    },
+    {
+      "id": "manual-audit",
+      "question": "How do human citation verification and claim-level exceptions differ by workflow?",
+      "family": "comparison",
+      "variant": "two-panel horizontal bar",
+      "source_fields": [
+        "manual_audit.by_workflow"
+      ],
+      "readme": false,
+      "dimensions": {
+        "width": 1900,
+        "height": 760
+      },
+      "outputs": {
+        "svg": {
+          "path": "docs/assets/gate4/manual-audit.svg",
+          "sha256": "3979b77a652244a5d4fed7e921e917c1de84ff511cedb42a7bbd582c666fdf3d"
+        },
+        "png": {
+          "path": "docs/assets/gate4/manual-audit.png",
+          "sha256": "bbc0f838517f5538018225dbc319db3a9e1d852786f64eea9b60a76366b13bd0"
+        }
+      }
+    }
+  ]
+}
