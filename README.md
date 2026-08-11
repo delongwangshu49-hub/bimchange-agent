@@ -1,135 +1,108 @@
 # BIMChange-Agent / BIM 变更分析智能体
 
-Evidence-grounded IFC/BIM revision analysis with deterministic tools and AI agents.
+Evidence-grounded IFC/BIM revision analysis with deterministic tools and AI-agent evaluation.
 
-基于确定性工具与 AI 智能体、可追溯到 IFC 证据的 BIM 版本变更分析。
+基于确定性工具、结构化证据与 AI 智能体评测的 IFC/BIM 版本变更分析研究原型。
 
-> **Status:** Gates 1–3 are complete for the controlled development scope. The Gate 4 fixture, 40 held-out questions, deterministic references, and non-diff Direct input are verified offline; the remaining pre-call freeze artifacts are next.
+> **Current status — v0.1.0:** Gates 1–4 are complete for the controlled research scope. The Gate 4 held-out evaluation, private review, full reproducibility payload, public PR, and merge are complete. Read the [final bilingual Gate 4 report](docs/gate4-held-out-results.md).
 >
-> 受控开发范围内的 Gate 1–3 已完成；Gate 4 样例、40 道留出问题、确定性参考答案与无差异 Direct 输入均已通过离线验证，下一步为其余调用前冻结产物。
+> **当前状态 — v0.1.0：** 受控研究范围内的 Gate 1–4 已全部完成。Gate 4 留出评测、私人审查、完整复现载荷、公开 PR 与合并闭环均已完成。详见[最终 Gate 4 双语报告](docs/gate4-held-out-results.md)。
 
-## Overview / 项目概述
+## What this is / 产品定位
 
-BIMChange-Agent explores whether an AI agent can turn deterministic IFC comparison results into accurate, traceable revision explanations for AEC practitioners. Material claims are linked to structured Change Records rather than inferred from fluent text alone.
+BIMChange-Agent is currently a **source-run research prototype and developer toolkit**. It demonstrates an auditable path from IFC revision evidence to structured, evidence-linked answers and includes the complete controlled Gate 4 evaluation artifacts.
 
-BIMChange-Agent 探索 AI 智能体能否将确定性的 IFC 比较结果转化为面向 AEC 从业者的准确、可追溯版本说明。关键结论需关联结构化 Change Record，而不是仅依赖语言模型生成的流畅文本。
+BIMChange-Agent 当前是一个**从源码运行的研究原型与开发工具包**。它展示了从 IFC 版本证据到结构化、可追溯答案的可审计路径，并公开了完整的受控 Gate 4 评测产物。
 
-The repository currently contains a reproducible Windows pipeline for loading IFC files, generating controlled revisions, detecting and normalizing changes, querying Change Records, running three model workflows, and scoring structured evidence.
+It is **not** currently a pip-installable package, desktop application, Revit plug-in, hosted service, or production-ready command-line product. In particular, the repository does not yet provide a supported one-command converter for arbitrary pairs of real-world IFC files into normalized Change Records.
 
-本仓库目前包含一套可在 Windows 上复现的流程：读取 IFC、生成受控版本、检测并规范化变更、查询 Change Record、运行三种模型工作流，以及评估结构化证据。
+它目前**不是**可通过 pip 安装的软件包、桌面应用、Revit 插件、托管服务或生产级命令行产品。尤其需要注意：仓库尚未提供将任意两份真实项目 IFC 一键转换为规范化 Change Records 的受支持通用入口。
 
-## Current Progress / 当前进度
+## What works now / 当前可用能力
 
-- **Gate 1 — Technical feasibility:** IfcOpenShell and IfcDiff load a public IFC4 model and verify a controlled property change.
-  IfcOpenShell 与 IfcDiff 已能读取公开 IFC4 模型，并验证受控属性变更。
-- **Gate 2 — Data and reference answers:** one added beam, one deleted wall, and one property modification are normalized into three auditable Change Records.
-  一个新增梁、一个删除墙和一个属性修改已规范化为三条可审计的 Change Record。
-- **Gate 3 — Agent prototype:** Direct LLM, Tool-Using Agent, and Proposed workflows run against the same eight-question development set with common schemas and scoring.
-  Direct LLM、Tool-Using Agent 与 Proposed 三种流程已在同一组八题开发集上运行，并采用统一 Schema 与评分方式。
-- **Gate 4 — In progress:** the frozen guard protects a deterministic three-storey IFC4 fixture with 40 unchanged elements and 12 independently verified changes; 40 held-out questions, deterministic references, and the two-inventory Direct input now pass offline verification, while the remaining pre-call freeze artifacts and model runs are pending.
-  冻结守卫保护一个确定性的三楼层 IFC4 样例，其中 40 个构件保持不变、12 条变更通过独立验证；40 道留出问题、确定性参考答案与双清单 Direct 输入现已通过离线验证，其余调用前冻结产物与模型运行仍待完成。
+| Capability / 能力 | Status / 状态 | Input → output / 输入 → 输出 |
+|---|---|---|
+| IFC inspection / IFC 检查 | Directly usable offline / 可直接离线使用 | One IFC path → schema, hash, entity totals and selected entity counts / 单个 IFC 路径 → Schema、哈希、实体总数与分类计数 |
+| Change Record query / 变更记录查询 | Directly usable offline / 可直接离线使用 | JSON filter request + schema-valid Change Record artifact → validated JSON matches with source hash and evidence / JSON 筛选请求 + 合规 Change Record 产物 → 带来源哈希和证据的校验后 JSON 结果 |
+| Controlled fixture pipeline / 受控样例流程 | Reproducible offline / 可离线复现 | Included IFC fixture generators → revised IFC, IfcDiff output, normalized Change Records and verification / 仓库内样例生成器 → 修订 IFC、IfcDiff 输出、规范化 Change Records 与验证结果 |
+| Gate 4 evaluation / Gate 4 评测 | Published and reproducible offline / 已发布且可离线复现 | Frozen runs, scores and audit artifacts → verified summary and bilingual report / 冻结运行、评分及审核产物 → 已验证汇总与双语报告 |
+| AI workflows / AI 工作流 | Experimental / 实验性 | Frozen prompts and structured inputs → schema-validated candidate answers; live use requires an explicitly configured provider key and cost authorization / 冻结提示词与结构化输入 → 通过 Schema 校验的候选答案；实时使用需要显式配置供应商密钥并授权费用 |
+| Arbitrary IFC-to-Change-Record conversion / 任意 IFC 到 Change Record 转换 | Not productized / 尚未产品化 | No supported general-purpose entry point yet / 尚无受支持的通用入口 |
 
-## Gate 3 Development Snapshot / Gate 3 开发集概览
+## Quickstart / 快速开始
 
-All retained runs used DeepSeek V4 Flash with the same eight development questions and one retained answer per question and condition.
+Validated environment: 64-bit Python 3.13 on Windows (the release was verified with Python 3.13.15). Commands below are offline and make no model/API calls.
 
-所有保留运行均使用 DeepSeek V4 Flash，并采用相同的八道开发问题；每个问题与实验条件保留一次最终答案。
-
-| Workflow / 工作流 | Completion / 完成率 | Status accuracy / 状态准确率 | Exact match / 精确匹配 | Change F1 / 变更 F1 | Evidence support / 证据支持率 |
-|---|---:|---:|---:|---:|---:|
-| Direct LLM | 100% | 87.5% | 37.5% | 0.600 | 0.700 |
-| Tool-Using Agent | 100% | 100% | 87.5% | 0.947 | 1.000 |
-| Proposed | 100% | 100% | 100% | 1.000 | 1.000 |
-
-These figures are preliminary development-set results produced after iterative prompt and contract debugging. They are not held-out benchmark results, do not estimate variance, and must not be interpreted as general model performance.
-
-上述数据是在提示词与契约反复调试后得到的初步开发集结果，并非独立留出基准；目前没有方差估计，也不能据此推断模型的通用性能。
-
-See [Gate 3 development results](docs/gate3-development-results.md) for the recorded configuration, cost, failure modes, and limitations. The machine-readable summary is stored in [evals/results/development/summary.json](evals/results/development/summary.json).
-
-运行配置、成本、失败模式与局限详见 [Gate 3 开发集结果](docs/gate3-development-results.md)；机器可读汇总位于 [evals/results/development/summary.json](evals/results/development/summary.json)。
-
-## Reproduce Locally / 本地复现
-
-Prerequisite: 64-bit Python 3.13 on Windows. The current environment was validated with Python 3.13.15.
-
-前置条件：Windows 上的 64 位 Python 3.13；当前环境使用 Python 3.13.15 完成验证。
+已验证环境：Windows 64 位 Python 3.13（本发布使用 Python 3.13.15 验证）。以下命令完全离线，不会调用模型/API。
 
 ```powershell
 git clone https://github.com/delongwangshu49-hub/bimchange-agent.git
 cd bimchange-agent
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe scripts\run_gate1_diff.py
-.\.venv\Scripts\python.exe scripts\run_gate2_diff.py
-.\.venv\Scripts\python.exe scripts\generate_gate3_reference_answers.py
-.\.venv\Scripts\python.exe scripts\test_gate3_scoring.py
-.\.venv\Scripts\python.exe scripts\test_change_query.py
-.\.venv\Scripts\python.exe scripts\test_gate3_candidate_contract.py
-.\.venv\Scripts\python.exe scripts\test_gate3_workflows.py
+
+# Inspect the included IFC file.
+.\.venv\Scripts\python.exe scripts\check_ifc.py
+
+# Query the included Change Records with a real example request.
+.\.venv\Scripts\python.exe scripts\query_change_records.py examples\query-added-beams.json
+
+# Verify both quickstart commands end to end.
+.\.venv\Scripts\python.exe scripts\test_quickstart.py
+```
+
+The query returns one matching `IfcBeam` addition, including its stable change ID, GlobalId, old/new values, and evidence selector. To query another schema-valid Change Record artifact, add `--change-records path\to\change-records.json`.
+
+查询命令会返回一条匹配的 `IfcBeam` 新增记录，其中包含稳定的变更 ID、GlobalId、新旧值和证据选择器。若要查询另一份符合 Schema 的 Change Record 产物，可添加 `--change-records path\to\change-records.json`。
+
+See [Quickstart and usage guide](docs/quickstart.md) for complete inputs, output examples, Gate 4 verification commands, safe dry-run behavior, and current product boundaries.
+
+完整输入、输出示例、Gate 4 验证命令、安全 dry-run 行为与当前产品边界，详见[快速开始与使用说明](docs/quickstart.md)。
+
+## Gate 4 release result / Gate 4 发布结果
+
+The controlled held-out fixture contains 40 English questions, three frozen workflows, and three repetitions: 360 primary executions in total. Across 120 scheduled executions per workflow, Proposed achieved 96.67% semantic exact match and 97.90% change F1; Tool-Using Agent achieved 84.17% and 91.85%; Direct LLM achieved 54.17% and 63.16%. These are results from one independently constructed synthetic fixture, not a universal BIM benchmark.
+
+受控留出样例包含 40 道英文问题、三个冻结工作流和三次重复，共 360 次主执行。每个工作流的 120 次计划执行中，Proposed 的语义精确匹配率为 96.67%、Change F1 为 97.90%；Tool-Using Agent 分别为 84.17% 和 91.85%；Direct LLM 分别为 54.17% 和 63.16%。这些结果来自一个独立构造的合成样例，并非通用 BIM 基准。
+
+- [Final bilingual report / 最终双语报告](docs/gate4-held-out-results.md)
+- [Machine-readable offline summary / 机器可读离线汇总](evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-offline-summary.json)
+- [Independent validation / 独立验证记录](evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-independent-validation.json)
+- [Post-run audit / 运行后审计](evals/audits/held_out/gate4-post-run-audit.json)
+- [Release v0.1.0](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.1.0)
+
+## Offline reproduction / 离线复现
+
+The following checks validate the published Gate 4 artifacts without generating new model outputs:
+
+以下检查不会生成新的模型输出，用于验证已发布的 Gate 4 产物：
+
+```powershell
 .\.venv\Scripts\python.exe scripts\verify_gate4_foundation.py
-.\.venv\Scripts\python.exe scripts\test_gate4_foundation.py
-.\.venv\Scripts\python.exe scripts\run_gate4_fixture.py
-.\.venv\Scripts\python.exe scripts\test_gate4_fixture.py
+.\.venv\Scripts\python.exe scripts\verify_gate4_scores.py
+.\.venv\Scripts\python.exe scripts\verify_gate4_offline_summary.py
+.\.venv\Scripts\python.exe scripts\generate_gate4_results_document.py --check
 ```
 
-The Gate 4 fixture commands are fully offline. They regenerate two IFC4 files, the operation ledger, Change Records, and IfcDiff evidence, then verify exact changes and byte-identical clean reproduction. See [Gate 4 held-out fixture](docs/gate4-held-out-fixture.md).
+The Gate 3 and Gate 4 workflow runners default to dry-run/offline behavior. Do not add `--live` unless a model call, provider credential, and cost are explicitly intended. No additional live calls are needed to inspect or verify this release.
 
-Gate 4 样例命令完全离线运行：重新生成两个 IFC4 文件、操作账本、Change Record 与 IfcDiff 证据，并验证精确变更及干净重建的字节一致性。详见 [Gate 4 留出样例](docs/gate4-held-out-fixture.md)。
+Gate 3 与 Gate 4 工作流运行器默认执行 dry-run/离线路径。除非明确需要模型调用、已配置供应商凭据并接受费用，否则不要添加 `--live`。查看或验证本发布不需要任何新增实时调用。
 
-Generate and verify the guarded Gate 4 question-side artifacts without a model call:
+## Repository guide / 仓库导航
 
-在不调用模型的情况下生成并验证受守卫保护的 Gate 4 问题侧产物：
+- `examples/` — runnable input examples / 可运行的输入样例
+- `src/bimchange_agent/` — deterministic query, evidence validation, fixture and workflow logic / 确定性查询、证据验证、样例与工作流逻辑
+- `schemas/` — versioned JSON Schemas / 版本化 JSON Schema
+- `scripts/` — generation, comparison, query, scoring, verification and tests / 生成、比较、查询、评分、验证与测试脚本
+- `data/` — attributed source IFC plus controlled generated fixtures and Change Records / 已署名源 IFC、受控生成样例与 Change Records
+- `evals/` — frozen development and Gate 4 evaluation artifacts / 冻结开发集与 Gate 4 评测产物
+- `docs/` — contracts, findings, limitations and usage guidance / 契约、结果、限制与使用说明
 
-```powershell
-.\.venv\Scripts\python.exe scripts\generate_gate4_question_artifacts.py
-.\.venv\Scripts\python.exe scripts\generate_gate4_direct_input.py
-.\.venv\Scripts\python.exe scripts\verify_gate4_question_artifacts.py
-.\.venv\Scripts\python.exe scripts\test_gate4_question_artifacts.py
-```
+## License and safety / 许可与安全
 
-These commands retain 40 English questions, deterministic references, and a two-inventory Direct input while checking coverage, development-set independence, leakage, and clean regeneration. See [Gate 4 question artifacts](docs/gate4-held-out-question-artifacts.md).
+Original code and documentation are licensed under MIT. The initial IFC sample comes from buildingSMART's `Sample-Test-Files` repository under CC BY 4.0; source, attribution, retrieval date, and checksum are recorded in [data/README.md](data/README.md).
 
-这些命令会保留 40 道英文问题、确定性参考答案与双清单 Direct 输入，并检查覆盖率、开发集独立性、泄漏与干净重建。详见 [Gate 4 问题产物](docs/gate4-held-out-question-artifacts.md)。
-
-The Gate 3 runner defaults to a dry run and sends no API request. Live runs require a locally stored `DEEPSEEK_API_KEY`; copy `.env.example` to the ignored `.env.local`, or use the hidden-input helper.
-
-Gate 3 运行器默认仅执行 dry run，不会发送 API 请求。实时运行需要在本地配置 `DEEPSEEK_API_KEY`；可将 `.env.example` 复制为已被忽略的 `.env.local`，或使用隐藏输入辅助脚本。
-
-```powershell
-.\scripts\set_deepseek_key.ps1
-.\.venv\Scripts\python.exe scripts\run_gate3_workflows.py
-# Add --live only when an API call and its cost are intended.
-```
-
-Never commit API keys, `.env.local`, diagnostic runs, or smoke-test outputs.
-
-请勿提交 API 密钥、`.env.local`、诊断运行或冒烟测试输出。
-
-## Repository Guide / 仓库导览
-
-- `src/bimchange_agent/` — deterministic query, evidence validation, and Gate 3 runner logic.
-  确定性查询、证据验证与 Gate 3 运行逻辑。
-- `schemas/` — versioned JSON Schemas for Change Records, requests, answers, and claim validation.
-  Change Record、请求、答案及声明验证所用的版本化 JSON Schema。
-- `configs/` — reviewed Gate 4 frozen-file hashes and independent held-out path registry.
-  Gate 4 已审核冻结文件哈希与独立留出路径注册表。
-- `scripts/` — reproducible generation, comparison, scoring, testing, and workflow commands.
-  可复现的生成、比较、评分、测试与工作流命令。
-- `evals/` — fixed development materials plus independently retained held-out IfcDiff evidence, questions, references, and non-diff Direct input.
-  固定的开发材料，以及独立保留的留出 IfcDiff 证据、问题、参考答案与无差异 Direct 输入。
-- `docs/` — experiment contracts, evidence, findings, and limitations.
-  实验契约、证据、发现与局限说明。
-
-The public roadmap and decision gates are described in [PROJECT_PLAN.md](PROJECT_PLAN.md).
-
-公开路线图与决策门详见 [PROJECT_PLAN.md](PROJECT_PLAN.md)。
-
-## Data, License, and Safety / 数据、许可与安全边界
-
-The initial IFC sample comes from buildingSMART's `Sample-Test-Files` repository under CC BY 4.0. Source, attribution, retrieval date, and checksum are recorded in [data/README.md](data/README.md). Original project code and documentation are licensed under MIT.
-
-初始 IFC 样本来自 buildingSMART 的 `Sample-Test-Files` 仓库，采用 CC BY 4.0 许可；来源、署名、获取日期与校验和记录于 [data/README.md](data/README.md)。项目原创代码与文档采用 MIT 许可。
+原创代码与文档采用 MIT 许可。初始 IFC 样本来自 buildingSMART 的 `Sample-Test-Files` 仓库，采用 CC BY 4.0 许可；来源、署名、获取日期与校验和见 [data/README.md](data/README.md)。
 
 This research prototype is not a substitute for professional BIM coordination, engineering review, structural-safety assessment, or formal regulatory-compliance checking.
 
