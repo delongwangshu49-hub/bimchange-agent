@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bimchange-agent.local/product-change-record-0.2.0-preview.schema.json",
+  "title": "BIMChange-Agent bounded product Change Records",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "schema",
+    "generator",
+    "limits",
+    "source",
+    "revised",
+    "pair_diagnostics",
+    "summary",
+    "warnings",
+    "changes",
+    "unsupported_changes",
+    "model_calls_made"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.2.0-preview.1" },
+    "schema": { "const": "bimchange-agent://schemas/product-change-record-0.2.0-preview.1" },
+    "generator": {
+      "type": "object",
+      "required": ["name", "version", "detector", "relationships"],
+      "properties": {
+        "name": { "const": "BIMChange-Agent" },
+        "version": { "type": "string" },
+        "detector": { "type": "string" },
+        "relationships": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "limits": { "$ref": "#/$defs/limits" },
+    "source": { "$ref": "#/$defs/model_summary" },
+    "revised": { "$ref": "#/$defs/model_summary" },
+    "pair_diagnostics": {
+      "type": "object",
+      "required": ["shared_element_guid_count", "shared_element_guid_ratio"],
+      "properties": {
+        "shared_element_guid_count": { "type": "integer", "minimum": 0 },
+        "shared_element_guid_ratio": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["total_supported", "added", "deleted", "property_modified", "unsupported"],
+      "properties": {
+        "total_supported": { "type": "integer", "minimum": 0 },
+        "added": { "type": "integer", "minimum": 0 },
+        "deleted": { "type": "integer", "minimum": 0 },
+        "property_modified": { "type": "integer", "minimum": 0 },
+        "unsupported": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "changes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/change_record" }
+    },
+    "unsupported_changes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/unsupported_change" }
+    },
+    "model_calls_made": { "const": 0 }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "limits": {
+      "type": "object",
+      "required": ["required_schema", "max_file_mib", "max_elements", "min_shared_guid_ratio"],
+      "properties": {
+        "required_schema": { "const": "IFC4" },
+        "max_file_mib": { "type": "integer", "minimum": 1 },
+        "max_elements": { "type": "integer", "minimum": 1 },
+        "min_shared_guid_ratio": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "model_summary": {
+      "type": "object",
+      "required": ["file_name", "sha256", "file_size_bytes", "ifc_schema", "entity_count", "element_count", "duplicate_root_guid_count"],
+      "properties": {
+        "file_name": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "file_size_bytes": { "type": "integer", "minimum": 1 },
+        "ifc_schema": { "const": "IFC4" },
+        "entity_count": { "type": "integer", "minimum": 1 },
+        "element_count": { "type": "integer", "minimum": 1 },
+        "duplicate_root_guid_count": { "const": 0 }
+      },
+      "additionalProperties": false
+    },
+    "entity_reference": {
+      "type": "object",
+      "required": ["entity_type", "global_id", "name"],
+      "properties": {
+        "entity_type": { "type": "string", "pattern": "^Ifc" },
+        "global_id": { "type": "string", "pattern": "^[0-3][0-9A-Za-z_$]{21}$" },
+        "name": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object",
+      "required": ["spatial_container", "building_storey"],
+      "properties": {
+        "spatial_container": { "oneOf": [{ "$ref": "#/$defs/entity_reference" }, { "type": "null" }] },
+        "building_storey": { "oneOf": [{ "$ref": "#/$defs/entity_reference" }, { "type": "null" }] }
+      },
+      "additionalProperties": false
+    },
+    "field": {
+      "type": "object",
+      "required": ["kind", "property_set", "name"],
+      "properties": {
+        "kind": { "const": "property" },
+        "property_set": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["reference_source", "detector", "result_file", "selector"],
+      "properties": {
+        "reference_source": { "const": "ifcdiff" },
+        "detector": { "type": "string" },
+        "result_file": { "type": "string", "minLength": 1 },
+        "selector": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "change_record": {
+      "type": "object",
+      "required": ["change_id", "change_type", "entity_type", "global_id", "location", "field", "old_value", "new_value", "evidence"],
+      "properties": {
+        "change_id": { "type": "string", "pattern": "^chg-[0-9a-f]{16}$" },
+        "change_type": { "enum": ["added", "deleted", "property_modified"] },
+        "entity_type": { "type": "string", "pattern": "^Ifc" },
+        "global_id": { "type": "string", "pattern": "^[0-3][0-9A-Za-z_$]{21}$" },
+        "location": { "$ref": "#/$defs/location" },
+        "field": { "oneOf": [{ "$ref": "#/$defs/field" }, { "type": "null" }] },
+        "old_value": {},
+        "new_value": {},
+        "evidence": { "$ref": "#/$defs/evidence" }
+      },
+      "additionalProperties": false
+    },
+    "unsupported_change": {
+      "type": "object",
+      "required": ["global_id", "reason", "selector"],
+      "properties": {
+        "global_id": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 },
+        "selector": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  }
+}

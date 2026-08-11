@@ -4,39 +4,59 @@
 
 **以结构化证据为基础、可审计的 IFC 版本变更智能。**
 
-BIMChange-Agent is an offline-first research prototype and developer toolkit for inspecting IFC models, querying normalized BIM Change Records, and reproducing evidence-grounded agent evaluation.
+BIMChange-Agent is an offline-first IFC revision research project now entering an early Windows desktop engineering preview. It combines bounded deterministic IFC4 comparison, normalized Change Records, optional AI explanation, and a fully reproducible research evaluation track.
 
-BIMChange-Agent 是一个离线优先的研究原型与开发工具包，用于检查 IFC 模型、查询规范化 BIM 变更记录，并复现基于结构化证据的智能体评测。
+BIMChange-Agent 是一个离线优先的 IFC 版本变更研究项目，现已进入 Windows 桌面端早期工程预览阶段：提供受限的确定性 IFC4 比较、规范化 Change Records、可选 AI 解读，并保留完整可复现的科研评测路线。
 
-[![Release](https://img.shields.io/badge/release-v0.1.0-6F7872)](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.1.0)
+[![Engineering Preview](https://img.shields.io/badge/engineering_preview-v0.2.0--preview.1-315F72)](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.2.0-preview.1)
+[![Research Release](https://img.shields.io/badge/research_release-v0.1.0-6F7872)](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.1.0)
 ![Python](https://img.shields.io/badge/validated-Python_3.13-2D302F)
-![Mode](https://img.shields.io/badge/quickstart-offline-918674)
-![Status](https://img.shields.io/badge/status-research_prototype-88746A)
+![Platform](https://img.shields.io/badge/desktop-Windows_x64-918674)
+![Status](https://img.shields.io/badge/status-early_engineering_preview-88746A)
 
 > [!IMPORTANT]
-> v0.1.0 is source-run software, not an end-user BIM product. It does **not** yet provide a supported one-command path from arbitrary `old.ifc + new.ifc` files to normalized Change Records. The complete Gate 4 evaluation is public, but it is one controlled synthetic fixture—not a universal BIM benchmark.
+> v0.2.0 Preview 1 is an **early engineering preview**, not the final product experience and not a claim of general IFC compatibility. It accepts only a deliberately bounded IFC4 subset and is intended to validate the desktop workflow with representative files. v0.1.0 remains the frozen research release and Gate 4 evidence baseline.
 >
-> v0.1.0 是从源码运行的研究软件，并非面向最终用户的 BIM 产品。它尚未提供将任意 `old.ifc + new.ifc` 一键转换为规范化 Change Records 的受支持路径；已公开的 Gate 4 评测仅基于一个受控合成样例，不是通用 BIM 基准。
+> v0.2.0 Preview 1 是**早期工程预览版**，不代表最终产品效果，也不宣称通用 IFC 兼容性。它只接受经过主动收窄的 IFC4 输入范围，用于通过代表性文件验证桌面工作流。v0.1.0 继续作为冻结的研究发布版与 Gate 4 证据基线。
+
+## Download the Windows preview / 下载 Windows 预览版
+
+Download `BIMChange-Agent-0.2.0-preview.1-win-x64.zip` from the [v0.2.0 Preview 1 pre-release](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.2.0-preview.1), verify the accompanying SHA-256, extract the entire ZIP, and double-click `BIMChange-Agent.exe`. Python is not required.
+
+从 [v0.2.0 Preview 1 预发布页面](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.2.0-preview.1)下载 `BIMChange-Agent-0.2.0-preview.1-win-x64.zip`，核对随附 SHA-256，完整解压后双击 `BIMChange-Agent.exe`，无需安装 Python。
+
+1. Select or drag an old IFC into the left panel. / 在左栏选择或拖入旧版 IFC。
+2. Select or drag the revised IFC into the right panel. / 在右栏选择或拖入新版 IFC。
+3. Keep AI off for a fully local deterministic report, then click **Start analysis**. / AI 保持关闭即可完全本地分析，然后点击“开始分析”。
+4. Review the report and export JSON or self-contained HTML. / 查看报告并按需导出 JSON 或独立 HTML。
+
+The preview supports exact IFC4, at most 50 MiB and 5,000 `IfcElement` objects per file, and requires at least 50% shared element GlobalIds on the smaller side. Supported normalized changes are addition, deletion, and property-value modification. The executable is not code-signed, so Windows SmartScreen may show an unknown-publisher warning; download only from this repository and verify the checksum.
+
+预览版仅支持精确 IFC4、单文件不超过 50 MiB、每版最多 5,000 个 `IfcElement`，且较小一侧至少 50% 的构件 GlobalId 重合；当前规范化新增、删除与属性值修改。程序尚未代码签名，Windows SmartScreen 可能提示未知发布者，请只从本仓库下载并核对校验值。
+
+Welcome to try it and [open an issue](https://github.com/delongwangshu49-hub/bimchange-agent/issues/new/choose). Please include the preview version, Windows version, IFC schema, file sizes, and reproducible steps—but never upload confidential IFC files, API keys, or unredacted reports to a public issue.
+
+欢迎试用并[提交反馈](https://github.com/delongwangshu49-hub/bimchange-agent/issues/new/choose)。请说明预览版版本、Windows 版本、IFC Schema、文件大小和复现步骤，但不要向公开 Issue 上传保密 IFC、API Key 或未经脱敏的报告。
 
 ## See it in 30 seconds / 30 秒了解项目
 
 ```mermaid
 flowchart LR
-    A["One IFC file<br/>单个 IFC 文件"] --> B["Inspect<br/>检查"]
-    B --> C["Schema · SHA-256 · entity counts<br/>Schema · 哈希 · 实体计数"]
-    D["Normalized Change Records<br/>规范化变更记录"] --> E["Validate + query<br/>校验与查询"]
-    E --> F["Matched changes · source hash · evidence<br/>匹配变更 · 来源哈希 · 证据"]
-    G["Controlled old/new fixtures<br/>受控新旧样例"] --> H["IfcDiff + deterministic normalization<br/>IfcDiff + 确定性规范化"]
-    H --> D
+    A["Old IFC4<br/>旧版 IFC4"] --> C["Bounded local diff<br/>受限本地差分"]
+    B["Revised IFC4<br/>新版 IFC4"] --> C
+    C --> D["Normalized Change Records<br/>规范化变更记录"]
+    D --> E["Desktop report<br/>桌面报告"]
+    E --> F["JSON · HTML · optional AI explanation<br/>JSON · HTML · 可选 AI 解读"]
 ```
 
-The first two lanes are directly usable offline. The third demonstrates the full pipeline on repository-controlled fixtures; arbitrary real-project IFC pairs are not yet a supported input.
+The deterministic path stays local and is authoritative. AI is off by default and is only an optional explanation layer. Arbitrary real-project IFC pairs remain outside the support claim until the compatibility envelope is measured.
 
-前两条路径可以直接离线使用；第三条路径用于在仓库受控样例上演示完整流程。任意真实项目的 IFC 文件对目前仍不是受支持输入。
+确定性路径在本地运行并作为权威结果；AI 默认关闭，只是可选解释层。在真实样本兼容范围完成测量前，本项目仍不宣称支持任意真实工程 IFC 文件对。
 
 | Run today / 现在可运行 | Input / 输入 | Output / 输出 |
 |---|---|---|
 | **Inspect IFC / 检查 IFC** | one `.ifc` path / 单个 `.ifc` 路径 | deterministic JSON with schema, hash, entity total, and selected type counts / 包含 Schema、哈希、实体总数与分类计数的确定性 JSON |
+| **Windows desktop preview / Windows 桌面预览** | bounded old/new IFC4 pair / 受限新旧 IFC4 文件对 | in-app report plus JSON/HTML export / 应用内报告及 JSON/HTML 导出 |
 | **Query changes / 查询变更** | JSON filters + schema-valid Change Records / JSON 筛选条件与符合 Schema 的变更记录 | validated matches with stable IDs, old/new values, source hash, and evidence selector / 带稳定 ID、新旧值、来源哈希和证据选择器的校验后结果 |
 | **Verify end to end / 端到端验证** | included sample and query / 仓库自带样例与查询 | a PASS record proving the quickstart used zero model calls / 证明快速开始未调用模型的 PASS 记录 |
 | **Reproduce Gate 4 / 复现 Gate 4** | frozen runs, scores, audit artifacts / 冻结运行、评分与审计产物 | independently verified summary, report, and research charts / 经独立验证的汇总、报告与科研图表 |
@@ -157,10 +177,11 @@ This query path consumes **already normalized** Change Records. It does not turn
 | Controlled fixture diff pipeline / 受控样例差分流程 | **reproducible / 可复现** | regenerates known revisions and normalized records for repository fixtures / 可为仓库样例重建已知修订与规范化记录 |
 | Gate 4 evaluation package / Gate 4 评测包 | **published and reproducible / 已发布且可复现** | 360 frozen executions, scores, blind audit, independent validation, report, and chart matrix / 包含 360 次冻结执行、评分、盲审、独立验证、报告与图表矩阵 |
 | Live AI workflows / 实时 AI 工作流 | **experimental / 实验性** | dry-run by default; live use requires a provider key, `--live`, and cost authorization / 默认 dry-run；实时运行需要供应商密钥、`--live` 与费用授权 |
-| Arbitrary IFC pair conversion / 任意 IFC 文件对转换 | **not productized / 尚未产品化** | no supported general `old.ifc + new.ifc → Change Records` command / 尚无受支持的通用转换命令 |
-| Packaging, GUI, Revit integration / 打包、GUI、Revit 集成 | **not available / 尚不可用** | no installable package, desktop UI, plug-in, or hosted API / 尚无可安装包、桌面界面、插件或托管 API |
+| Bounded IFC4 pair conversion / 受限 IFC4 文件对转换 | **early preview / 早期预览** | supported only inside the explicit v0.2 guardrails / 仅在 v0.2 明确护栏内支持 |
+| Windows packaging and GUI / Windows 打包与界面 | **early preview / 早期预览** | portable ZIP and desktop report flow; not code-signed / 便携 ZIP 与桌面报告流程，尚未代码签名 |
+| Arbitrary IFC, 3D and Revit / 任意 IFC、三维与 Revit | **not supported / 尚不支持** | compatibility evidence and integrations remain future work / 兼容证据与集成仍属后续工作 |
 
-直接可用的是 IFC 检查和已规范化 Change Records 查询；评测与受控样例可离线复现；任意 IFC 文件对转换、安装式 CLI、GUI 与 Revit 集成仍属于后续产品化范围。
+当前可用的是受限 IFC4 桌面比较、IFC 检查、Change Records 查询和研究复现；任意 IFC、三维预览与 Revit 集成仍不在支持范围内。
 
 ## Gate 4 research snapshot / Gate 4 科研结果
 
@@ -218,26 +239,34 @@ Gate 3 与 Gate 4 工作流默认执行 dry-run/离线路径；只有在明确�
 
 ```text
 examples/                 runnable query inputs
-src/bimchange_agent/      query, evidence, fixture, and workflow logic
+src/bimchange_agent/      desktop, diff, query, evidence, and workflow logic
 schemas/                  versioned JSON contracts
 scripts/                  inspection, generation, scoring, verification, and tests
+tests/                    offline product-core, report, and desktop regression tests
+packaging/                Windows start guide and third-party notices
 data/                     attributed IFC source, fixtures, and Change Records
 evals/                    frozen development and Gate 4 artifacts
 docs/                     methods, boundaries, results, release notes, and visualizations
+pyproject.toml            installable CLI/desktop package and pinned preview dependencies
+constraints-preview.txt   exact dependency set used for the Windows preview build
 ```
 
 ## Productization path / 产品化路线
 
-1. **General diff core** — validate a supported `old.ifc + new.ifc → normalized Change Records` pipeline across explicit change types and failure modes.
-2. **Installable CLI** — add `pyproject.toml` and coherent `bimchange inspect`, `bimchange diff`, and `bimchange query` commands.
-3. **Compatibility envelope** — add cross-platform CI, real-project fixtures, exporter/schema coverage, performance budgets, and documented limits.
-4. **Optional experience layers** — only then evaluate model-assisted explanations, GUI/Revit integration, and professional review workflows.
+The v0.2.0 Preview 1 checkpoint adds a bounded IFC4 diff/normalization service, installable `inspect/diff/query` commands, a PySide6 desktop flow, JSON/HTML reports, and an optional DeepSeek explanation boundary. It is an engineering checkpoint—not a replacement for the frozen v0.1.0 research release or evidence package. See the [preview contract](docs/product-preview-v0.2.md), [privacy and security boundary](docs/privacy-and-security.md), [release notes](docs/releases/v0.2.0-preview.1.md), and [roadmap](docs/roadmap.md).
 
-产品化顺序是：先完成通用差分核心，再提供可安装 CLI，随后建立跨平台兼容性与性能边界；模型解释、GUI/Revit 集成和专业审核工作流应最后考虑。
+v0.2.0 Preview 1 定档包含受限 IFC4 差分/规范化、可安装 `inspect/diff/query`、PySide6 桌面流程、JSON/HTML 报告和可选 DeepSeek 解读边界。它是工程检查点，不替代冻结的 v0.1.0 科研发布与证据包。详见[预览契约](docs/product-preview-v0.2.md)、[隐私与安全边界](docs/privacy-and-security.md)、[版本说明](docs/releases/v0.2.0-preview.1.md)和[路线图](docs/roadmap.md)。
+
+1. **Stabilize the preview** — collect real IFC4 compatibility evidence, improve error taxonomy, and fix critical failures.
+2. **Define the compatibility envelope** — exporter/schema matrix, performance budgets, signed builds, and repeatable release checks.
+3. **Add integrated 3D economically** — reuse one local Three.js viewer from external proof to embedded Qt WebEngine, keyed by `GlobalId`.
+4. **Expand deliberately** — multi-provider AI, updater checks, broader IFC schemas, Revit integration, and professional review workflows only after measured demand.
+
+后续顺序是：先通过真实样本稳定预览版，再建立明确兼容矩阵与发布闸门；三维采用“同一套本地 Three.js 查看器先外部验证、再嵌入 Qt WebEngine”的复用路线；多服务商、自动更新、Revit 与专业审核后置。三维工程评估见[后续三维预览选项](docs/three-dimensional-preview-options.md)。
 
 ## License, attribution, and safety
 
-Original code and documentation are MIT licensed. The initial IFC sample comes from buildingSMART's `Sample-Test-Files` repository under CC BY 4.0; provenance, retrieval date, and checksum are recorded in [`data/README.md`](data/README.md).
+Original code and documentation are MIT licensed. The Windows package also contains third-party components under their own licenses, including LGPL components; see [`packaging/THIRD-PARTY-NOTICES.txt`](packaging/THIRD-PARTY-NOTICES.txt). The initial IFC sample comes from buildingSMART's `Sample-Test-Files` repository under CC BY 4.0; provenance, retrieval date, and checksum are recorded in [`data/README.md`](data/README.md).
 
 BIMChange-Agent does not replace professional BIM coordination, engineering review, structural-safety assessment, or formal regulatory-compliance checking.
 
