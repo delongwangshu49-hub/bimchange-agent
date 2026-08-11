@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q15-column-level01-guid",
+      "status": "answered",
+      "answer": "The verified revision event is the addition of IfcColumn 2$orIofUHKcQaHhLlr75_n (name \"Column L1 05\", tag \"CL-L1-05\") within IfcBuildingStorey 16B$afW8bSivOT_ExWbFiL on Level 01.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcColumn",
+          "global_id": "2$orIofUHKcQaHhLlr75_n",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Column L1 05",
+            "tag": "CL-L1-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-column-level01",
+              "global_id": "2$orIofUHKcQaHhLlr75_n"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The change record does not specify a modified attribute, so the prediction only asserts the addition itself and its declared name/tag.",
+        "Only one matching change record was found for the supplied global identifier."
+      ]
+    }
+  ]
+}

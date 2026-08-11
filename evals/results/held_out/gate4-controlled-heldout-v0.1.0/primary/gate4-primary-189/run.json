@@ -1,0 +1,138 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 189,
+  "execution_id": "gate4-primary-189",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 29,
+  "question_id": "gate3-q30-slab-ground-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "77851e09-cf44-4c1c-8112-939ec8c76d00",
+      "c9e05e38-faf5-4a39-af13-3594268c81e1",
+      "44d95764-f597-44d4-b3ca-a4d1211d8c0b"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "One verified revision event involves an IfcSlab on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified query result has result_count 1 and lists an IfcSlab with global id 1hD8Z2VI5Q48QgyBkf6YcB located in the Ground Floor building storey with global id 1fw5N5GZfPh95hsaUid9Fb."
+        },
+        {
+          "claim": "The slab with global id 1hD8Z2VI5Q48QgyBkf6YcB was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified change record gate4-added-slab-ground specifies change_type 'added', entity_type 'IfcSlab', and global_id '1hD8Z2VI5Q48QgyBkf6YcB'."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "One verified revision event involves an IfcSlab on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified query result has result_count 1 and lists an IfcSlab with global id 1hD8Z2VI5Q48QgyBkf6YcB located in the Ground Floor building storey with global id 1fw5N5GZfPh95hsaUid9Fb."
+        },
+        {
+          "claim": "The slab with global id 1hD8Z2VI5Q48QgyBkf6YcB was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified change record gate4-added-slab-ground specifies change_type 'added', entity_type 'IfcSlab', and global_id '1hD8Z2VI5Q48QgyBkf6YcB'."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 424,
+    "successful_responses": 418,
+    "input_tokens": 1292671,
+    "cached_input_tokens": 540288,
+    "output_tokens": 596015,
+    "estimated_cost_usd": 0.273731,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.73731
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 91,
+  "execution_id": "gate4-primary-091",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 11,
+  "question_id": "gate3-q38-wall-pset-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "7943d0bd-d2e9-4614-ae2e-936c68dbbd34",
+      "e7dede9d-f6b1-4083-958b-8da8e3d4104f",
+      "1fa9e9be-1a16-40b1-af2c-fa92ebd5ec04"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "property_set": "Pset_WallCommon"
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified property modification affecting Pset_WallCommon is the FireRating property on IfcWall 1aO4mYJaTLLf6oT4DTcfok.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result contains one property_modified change for IfcWall 1aO4mYJaTLLf6oT4DTcfok with field.property_set equal to Pset_WallCommon and field.name equal to FireRating."
+        },
+        {
+          "claim": "The FireRating property changed from \"60\" to \"90\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result records old_value as \"60\" and new_value as \"90\" for the FireRating property on IfcWall 1aO4mYJaTLLf6oT4DTcfok."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified property modification affecting Pset_WallCommon is the FireRating property on IfcWall 1aO4mYJaTLLf6oT4DTcfok.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result contains one property_modified change for IfcWall 1aO4mYJaTLLf6oT4DTcfok with field.property_set equal to Pset_WallCommon and field.name equal to FireRating."
+        },
+        {
+          "claim": "The FireRating property changed from \"60\" to \"90\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result records old_value as \"60\" and new_value as \"90\" for the FireRating property on IfcWall 1aO4mYJaTLLf6oT4DTcfok."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 158,
+    "successful_responses": 153,
+    "input_tokens": 899278,
+    "cached_input_tokens": 232704,
+    "output_tokens": 243935,
+    "estimated_cost_usd": 0.162274,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.62274
+}

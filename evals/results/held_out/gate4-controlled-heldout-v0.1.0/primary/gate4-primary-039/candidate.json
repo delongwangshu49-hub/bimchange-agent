@@ -1,0 +1,118 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q37-loadbearing-properties",
+      "status": "answered",
+      "answer": "The verified property modifications affecting a LoadBearing field are: Slab RF 01 (2WfINAQAHRERPwEp7Nos0$) changed LoadBearing in Pset_SlabCommon from false to true; Beam RF 01 (3JuqHVfXrLlA8tnQP5xv53) changed LoadBearing in Pset_BeamCommon from false to true.",
+      "predictions": [
+        {
+          "change_type": "modify",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_SlabCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_SlabCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        },
+        {
+          "change_type": "modify",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only LoadBearing property value modifications are reported; element additions/deletions are not treated as property modifications unless a LoadBearing value changed between source and revised versions for the same element."
+      ]
+    }
+  ]
+}

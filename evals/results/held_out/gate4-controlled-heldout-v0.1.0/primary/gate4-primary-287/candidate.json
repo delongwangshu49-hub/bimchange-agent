@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q40-no-added-beam-roof",
+      "status": "not_found",
+      "answer": "No IfcBeam was added on Roof. The Roof storey already contains IfcBeam elements (Beam RF 01, RF 02, RF 03, RF 04) in both the source and revised versions, and no new IfcBeam appears on Roof in the revised model.",
+      "predictions": [],
+      "limitations": [
+        "The model pair summary covers IFC element identity, spatial containers, storeys, and scalar property-set values only; geometry, placement, materials, classifications, quantities, and nested properties are excluded."
+      ]
+    }
+  ]
+}

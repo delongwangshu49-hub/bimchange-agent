@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 149,
+  "execution_id": "gate4-primary-149",
+  "repetition": 2,
+  "workflow": "tool_using_agent",
+  "question_position": 29,
+  "question_id": "gate3-q30-slab-ground-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "f609ad92-e682-49ca-8ca0-214d165b44d1",
+      "ec22bbc9-a4ed-4784-81cb-b2c75c139ba3"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0
+  },
+  "cumulative_usage": {
+    "request_attempts": 312,
+    "successful_responses": 306,
+    "input_tokens": 1127902,
+    "cached_input_tokens": 413824,
+    "output_tokens": 438319,
+    "estimated_cost_usd": 0.223859,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.23859
+}

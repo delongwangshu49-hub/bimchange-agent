@@ -1,0 +1,125 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 82,
+  "execution_id": "gate4-primary-082",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 2,
+  "question_id": "gate3-q25-roof-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "41eab49a-2a5d-4c4b-b5f8-056912a74ee2",
+      "095d1a9d-6c1a-479d-ad30-43b7f711b3dc",
+      "832899f8-612b-46e4-9b83-9dc850551485"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcRoof"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified revision events explicitly associated with Roof (IfcRoof) were found in the change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result reports result_count 0 for entity_types ['IfcRoof'], establishing that no such revision events were found."
+        },
+        {
+          "claim": "The filtered query for entity_type IfcRoof in data/ground_truth/gate2-change-records.json returned zero results.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result explicitly states result_count: 0 and the source path matches data/ground_truth/gate2-change-records.json."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified revision events explicitly associated with Roof (IfcRoof) were found in the change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result reports result_count 0 for entity_types ['IfcRoof'], establishing that no such revision events were found."
+        },
+        {
+          "claim": "The filtered query for entity_type IfcRoof in data/ground_truth/gate2-change-records.json returned zero results.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result explicitly states result_count: 0 and the source path matches data/ground_truth/gate2-change-records.json."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 129,
+    "successful_responses": 125,
+    "input_tokens": 859230,
+    "cached_input_tokens": 201088,
+    "output_tokens": 200124,
+    "estimated_cost_usd": 0.148738,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.48738
+}

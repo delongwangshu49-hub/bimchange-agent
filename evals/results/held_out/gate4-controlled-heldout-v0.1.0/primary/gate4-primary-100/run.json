@@ -1,0 +1,234 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 100,
+  "execution_id": "gate4-primary-100",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 20,
+  "question_id": "gate3-q30-slab-ground-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "cbec9513-a416-4428-90ee-e0f3d4b883ee",
+      "b3c5c827-6b2b-40d4-90a5-161757e3fa9d",
+      "467cbb61-6592-403d-a73c-905974600872"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There is exactly one verified revision event involving an IfcSlab on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "verified_query_result.result_count is 1 and the sole result matches the IfcSlab and Ground Floor filters."
+        },
+        {
+          "claim": "The verified revision event is an addition.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The record has change_type 'added'."
+        },
+        {
+          "claim": "The added IfcSlab has global ID 1hD8Z2VI5Q48QgyBkf6YcB.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The result's global_id matches this ID."
+        },
+        {
+          "claim": "The IfcSlab has name 'Slab GF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "new_value.name is 'Slab GF 05'."
+        },
+        {
+          "claim": "The IfcSlab has tag 'SL-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "new_value.tag is 'SL-GF-05'."
+        },
+        {
+          "claim": "The IfcSlab is located in building storey 'Ground Floor'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "location.building_storey.name is 'Ground Floor' with global_id 1fw5N5GZfPh95hsaUid9Fb; spatial_container matches."
+        },
+        {
+          "claim": "Only the single record returned from data/ground_truth/gate2-change-records.json is used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "verified_query_result.source.path is data/ground_truth/gate2-change-records.json and result_count is 1."
+        },
+        {
+          "claim": "No unverified or additional slab events are inferred.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The supplied verified query result contains exactly one matching record, and no additional slab event records are present."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There is exactly one verified revision event involving an IfcSlab on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "verified_query_result.result_count is 1 and the sole result matches the IfcSlab and Ground Floor filters."
+        },
+        {
+          "claim": "The verified revision event is an addition.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The record has change_type 'added'."
+        },
+        {
+          "claim": "The added IfcSlab has global ID 1hD8Z2VI5Q48QgyBkf6YcB.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The result's global_id matches this ID."
+        },
+        {
+          "claim": "The IfcSlab has name 'Slab GF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "new_value.name is 'Slab GF 05'."
+        },
+        {
+          "claim": "The IfcSlab has tag 'SL-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "new_value.tag is 'SL-GF-05'."
+        },
+        {
+          "claim": "The IfcSlab is located in building storey 'Ground Floor'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "location.building_storey.name is 'Ground Floor' with global_id 1fw5N5GZfPh95hsaUid9Fb; spatial_container matches."
+        },
+        {
+          "claim": "Only the single record returned from data/ground_truth/gate2-change-records.json is used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "verified_query_result.source.path is data/ground_truth/gate2-change-records.json and result_count is 1."
+        },
+        {
+          "claim": "No unverified or additional slab events are inferred.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The supplied verified query result contains exactly one matching record, and no additional slab event records are present."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 188,
+    "successful_responses": 182,
+    "input_tokens": 948221,
+    "cached_input_tokens": 265344,
+    "output_tokens": 291718,
+    "estimated_cost_usd": 0.178027,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.78027
+}

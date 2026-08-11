@@ -1,0 +1,172 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 167,
+  "execution_id": "gate4-primary-167",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 7,
+  "question_id": "gate3-q29-beam-roof-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "eec51484-f99b-4f8c-9954-095b5c595345",
+      "562dd464-9cef-4b08-be42-ac9af10c91cb",
+      "7acad96d-cd9f-47fa-a8ee-88ffe2a94018"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcBeam"
+        ],
+        "building_storey_names": [
+          "Roof"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There is exactly one verified revision event involving an IfcBeam on building storey Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "verified_query_result.result_count is 1 and the single result has entity_type IfcBeam and location/building_storey name Roof."
+        },
+        {
+          "claim": "The IfcBeam has global ID 3JuqHVfXrLlA8tnQP5xv53.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "verified_query_result.results[0].global_id is 3JuqHVfXrLlA8tnQP5xv53."
+        },
+        {
+          "claim": "The IfcBeam is on building storey Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "verified_query_result.results[0].location.spatial_container and building_storey both identify IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j with name Roof."
+        },
+        {
+          "claim": "The revision event changes LoadBearing from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "verified_query_result.results[0].field is property Pset_BeamCommon LoadBearing; old_value is false and new_value is true."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There is exactly one verified revision event involving an IfcBeam on building storey Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "verified_query_result.result_count is 1 and the single result has entity_type IfcBeam and location/building_storey name Roof."
+        },
+        {
+          "claim": "The IfcBeam has global ID 3JuqHVfXrLlA8tnQP5xv53.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "verified_query_result.results[0].global_id is 3JuqHVfXrLlA8tnQP5xv53."
+        },
+        {
+          "claim": "The IfcBeam is on building storey Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "verified_query_result.results[0].location.spatial_container and building_storey both identify IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j with name Roof."
+        },
+        {
+          "claim": "The revision event changes LoadBearing from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "verified_query_result.results[0].field is property Pset_BeamCommon LoadBearing; old_value is false and new_value is true."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 356,
+    "successful_responses": 350,
+    "input_tokens": 1189651,
+    "cached_input_tokens": 467328,
+    "output_tokens": 488076,
+    "estimated_cost_usd": 0.239095,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.39095
+}

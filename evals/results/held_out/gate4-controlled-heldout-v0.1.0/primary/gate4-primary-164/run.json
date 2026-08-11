@@ -1,0 +1,247 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 164,
+  "execution_id": "gate4-primary-164",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 4,
+  "question_id": "gate3-q24-level01-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "798d8a39-0891-450e-ba7c-683ee445fd13",
+      "df90296f-e685-491d-9e49-9c4f59025d7f",
+      "408a82d1-fe03-4eea-aa39-5260d8e837b2"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "building_storey_names": [
+          "Level 01"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are four verified revision events explicitly associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "3QgprvELLQBgvTF$EPliSW",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result reports result_count 4 and lists exactly four results, each with a building_storey name of Level 01."
+        },
+        {
+          "claim": "One verified revision event is an added column (IfcColumn, global_id 2$orIofUHKcQaHhLlr75_n) associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The first verified result has change_type 'added', entity_type 'IfcColumn', global_id '2$orIofUHKcQaHhLlr75_n', and Level 01 in both spatial_container and building_storey."
+        },
+        {
+          "claim": "One verified revision event is a deleted beam (IfcBeam, global_id 3TNmmeV$vP1wtU7$eM6gTb) associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The second verified result has change_type 'deleted', entity_type 'IfcBeam', global_id '3TNmmeV$vP1wtU7$eM6gTb', and Level 01 in both spatial_container and building_storey."
+        },
+        {
+          "claim": "One verified revision event is a deleted slab (IfcSlab, global_id 3QgprvELLQBgvTF$EPliSW) associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The third verified result has change_type 'deleted', entity_type 'IfcSlab', global_id '3QgprvELLQBgvTF$EPliSW', and Level 01 in both spatial_container and building_storey."
+        },
+        {
+          "claim": "One verified revision event is a property modification on a wall (IfcWall, global_id 1aO4mYJaTLLf6oT4DTcfok) associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The fourth verified result has change_type 'property_modified', entity_type 'IfcWall', global_id '1aO4mYJaTLLf6oT4DTcfok', and Level 01 in both spatial_container and building_storey."
+        },
+        {
+          "claim": "The wall property modification changes FireRating from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result for the wall records field property_set 'Pset_WallCommon' and name 'FireRating', with old_value '60' and new_value '90'."
+        },
+        {
+          "claim": "Only revision events explicitly associated with Level 01 in data/ground_truth/gate2-change-records.json were considered.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "3QgprvELLQBgvTF$EPliSW",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result sources data/ground_truth/gate2-change-records.json and applies filters for building_storey_names 'Level 01', returning only Level 01 events from that source."
+        },
+        {
+          "claim": "Events not recorded in data/ground_truth/gate2-change-records.json were excluded.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "3QgprvELLQBgvTF$EPliSW",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result presents only results from data/ground_truth/gate2-change-records.json; no events from outside that source appear in the verified result set."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are four verified revision events explicitly associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "3QgprvELLQBgvTF$EPliSW",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result reports result_count 4 and lists exactly four results, each with a building_storey name of Level 01."
+        },
+        {
+          "claim": "One verified revision event is an added column (IfcColumn, global_id 2$orIofUHKcQaHhLlr75_n) associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The first verified result has change_type 'added', entity_type 'IfcColumn', global_id '2$orIofUHKcQaHhLlr75_n', and Level 01 in both spatial_container and building_storey."
+        },
+        {
+          "claim": "One verified revision event is a deleted beam (IfcBeam, global_id 3TNmmeV$vP1wtU7$eM6gTb) associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "The second verified result has change_type 'deleted', entity_type 'IfcBeam', global_id '3TNmmeV$vP1wtU7$eM6gTb', and Level 01 in both spatial_container and building_storey."
+        },
+        {
+          "claim": "One verified revision event is a deleted slab (IfcSlab, global_id 3QgprvELLQBgvTF$EPliSW) associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "The third verified result has change_type 'deleted', entity_type 'IfcSlab', global_id '3QgprvELLQBgvTF$EPliSW', and Level 01 in both spatial_container and building_storey."
+        },
+        {
+          "claim": "One verified revision event is a property modification on a wall (IfcWall, global_id 1aO4mYJaTLLf6oT4DTcfok) associated with Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The fourth verified result has change_type 'property_modified', entity_type 'IfcWall', global_id '1aO4mYJaTLLf6oT4DTcfok', and Level 01 in both spatial_container and building_storey."
+        },
+        {
+          "claim": "The wall property modification changes FireRating from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result for the wall records field property_set 'Pset_WallCommon' and name 'FireRating', with old_value '60' and new_value '90'."
+        },
+        {
+          "claim": "Only revision events explicitly associated with Level 01 in data/ground_truth/gate2-change-records.json were considered.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "3QgprvELLQBgvTF$EPliSW",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result sources data/ground_truth/gate2-change-records.json and applies filters for building_storey_names 'Level 01', returning only Level 01 events from that source."
+        },
+        {
+          "claim": "Events not recorded in data/ground_truth/gate2-change-records.json were excluded.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "3QgprvELLQBgvTF$EPliSW",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result presents only results from data/ground_truth/gate2-change-records.json; no events from outside that source appear in the verified result set."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 347,
+    "successful_responses": 341,
+    "input_tokens": 1178021,
+    "cached_input_tokens": 458496,
+    "output_tokens": 474055,
+    "estimated_cost_usd": 0.234753,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.34753
+}

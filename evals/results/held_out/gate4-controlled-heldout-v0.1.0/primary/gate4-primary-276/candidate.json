@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q45-fire-compliance-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The FireRating revision alone does not prove regulatory compliance. The verified change record only shows FireRating updated from '60' to '90' for wall 1aO4mYJaTLLf6oT4DTcfok on Level 01 and contains no governing regulatory requirement, fire-rating threshold, or compliance determination.",
+      "predictions": [
+        {
+          "change_type": "property_modified",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-property-wall-level01",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The only available source is a change record showing FireRating updated from '60' to '90' (change_id gate4-property-wall-level01, global_id 1aO4mYJaTLLf6oT4DTcfok); it does not specify an applicable building code/fire-rating threshold or a compliance conclusion.",
+        "No regulatory requirement or boundary document was provided for comparison against the revised FireRating."
+      ]
+    }
+  ]
+}

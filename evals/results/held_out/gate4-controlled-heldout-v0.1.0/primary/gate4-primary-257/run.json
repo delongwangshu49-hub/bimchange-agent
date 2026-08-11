@@ -1,0 +1,157 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 257,
+  "execution_id": "gate4-primary-257",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 17,
+  "question_id": "gate3-q31-added-column-level01",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "e05f4663-dcaf-4c78-8db0-8deb5902f2ff",
+      "bdcea272-3cee-4f0f-8896-0f7a19642048",
+      "32f51db0-5235-47ea-a9d8-880acf34da80"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcColumn"
+        ],
+        "building_storey_names": [
+          "Level 01"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The IfcColumn added on Level 01 has global ID 2$orIofUHKcQaHhLlr75_n.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified change record shows one added IfcColumn on Level 01 with global_id 2$orIofUHKcQaHhLlr75_n."
+        },
+        {
+          "claim": "The added IfcColumn is named 'Column L1 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record contains new_value.name 'Column L1 05' for this IfcColumn."
+        },
+        {
+          "claim": "The added IfcColumn has tag 'CL-L1-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record contains new_value.tag 'CL-L1-05' for this IfcColumn."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The IfcColumn added on Level 01 has global ID 2$orIofUHKcQaHhLlr75_n.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified change record shows one added IfcColumn on Level 01 with global_id 2$orIofUHKcQaHhLlr75_n."
+        },
+        {
+          "claim": "The added IfcColumn is named 'Column L1 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record contains new_value.name 'Column L1 05' for this IfcColumn."
+        },
+        {
+          "claim": "The added IfcColumn has tag 'CL-L1-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record contains new_value.tag 'CL-L1-05' for this IfcColumn."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 556,
+    "successful_responses": 547,
+    "input_tokens": 2172916,
+    "cached_input_tokens": 1379456,
+    "output_tokens": 885173,
+    "estimated_cost_usd": 0.362796,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.62796
+}

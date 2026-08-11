@@ -1,0 +1,125 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 114,
+  "execution_id": "gate4-primary-114",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 34,
+  "question_id": "gate3-q41-absent-guid",
+  "category": "negative_control",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "020ec2e5-8a17-45d5-9a4c-78b6ce865991",
+      "613038a6-88d9-4444-9269-af2327e9cf2f",
+      "aaad37ae-cd74-468c-a5e1-0b3d64a62925"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "0AAAAAAAAAAAAAAAAAAAAA"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified revision event was found for element 0AAAAAAAAAAAAAAAAAAAAA in the available change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result for global_id 0AAAAAAAAAAAAAAAAAAAAA returned result_count 0 and an empty results array, so the supplied change records contain no revision event for this element."
+        },
+        {
+          "claim": "The supported gate2 change-record source contains no entry with global_id 0AAAAAAAAAAAAAAAAAAAAA.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The query filtered by global_ids [0AAAAAAAAAAAAAAAAAAAAA] against the gate2-change-records.json source produced no results."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified revision event was found for element 0AAAAAAAAAAAAAAAAAAAAA in the available change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result for global_id 0AAAAAAAAAAAAAAAAAAAAA returned result_count 0 and an empty results array, so the supplied change records contain no revision event for this element."
+        },
+        {
+          "claim": "The supported gate2 change-record source contains no entry with global_id 0AAAAAAAAAAAAAAAAAAAAA.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The query filtered by global_ids [0AAAAAAAAAAAAAAAAAAAAA] against the gate2-change-records.json source produced no results."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 232,
+    "successful_responses": 226,
+    "input_tokens": 1014271,
+    "cached_input_tokens": 311168,
+    "output_tokens": 362814,
+    "estimated_cost_usd": 0.200894,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.00894
+}

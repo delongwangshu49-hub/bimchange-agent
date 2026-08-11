@@ -1,0 +1,179 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 185,
+  "execution_id": "gate4-primary-185",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 25,
+  "question_id": "gate3-q31-added-column-level01",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "27f308f4-7646-4688-ae12-7ab539c9cf22",
+      "580a77e9-85a3-4f1f-bce6-833413d8a424",
+      "9d2ec66d-c023-40c3-b720-ea9caf68d6e6"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcColumn"
+        ],
+        "building_storey_names": [
+          "Level 01"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified query result identifies exactly one IfcColumn added on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified Change Record has result_count 1 and lists a single added IfcColumn with building storey Level 01."
+        },
+        {
+          "claim": "The IfcColumn added on Level 01 has global ID 2$orIofUHKcQaHhLlr75_n.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified Change Record for change_id gate4-added-column-level01 lists this global_id for the added IfcColumn located in Level 01."
+        },
+        {
+          "claim": "The IfcColumn added on Level 01 has name 'Column L1 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record's new_value.name is 'Column L1 05' for the IfcColumn with this global ID."
+        },
+        {
+          "claim": "The IfcColumn added on Level 01 has tag 'CL-L1-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record's new_value.tag is 'CL-L1-05' for the IfcColumn with this global ID."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified query result identifies exactly one IfcColumn added on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified Change Record has result_count 1 and lists a single added IfcColumn with building storey Level 01."
+        },
+        {
+          "claim": "The IfcColumn added on Level 01 has global ID 2$orIofUHKcQaHhLlr75_n.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified Change Record for change_id gate4-added-column-level01 lists this global_id for the added IfcColumn located in Level 01."
+        },
+        {
+          "claim": "The IfcColumn added on Level 01 has name 'Column L1 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record's new_value.name is 'Column L1 05' for the IfcColumn with this global ID."
+        },
+        {
+          "claim": "The IfcColumn added on Level 01 has tag 'CL-L1-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The change record's new_value.tag is 'CL-L1-05' for the IfcColumn with this global ID."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 413,
+    "successful_responses": 407,
+    "input_tokens": 1278204,
+    "cached_input_tokens": 528768,
+    "output_tokens": 586693,
+    "estimated_cost_usd": 0.270676,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.70676
+}

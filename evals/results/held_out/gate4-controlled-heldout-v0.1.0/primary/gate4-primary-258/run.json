@@ -1,0 +1,131 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 258,
+  "execution_id": "gate4-primary-258",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 18,
+  "question_id": "gate3-q42-no-deleted-column-ground",
+  "category": "negative_control",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "87e48742-a734-4600-9e75-322fc76442ed",
+      "1e929444-c2d3-40cb-b460-08b3e1f762c8",
+      "86ec0dd0-13c7-4cf3-a4f1-47ca70919ab0"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcColumn"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No deleted IfcColumn was found on Ground Floor in the available change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result applied filters for change_types=deleted, entity_types=IfcColumn, and building_storey_names=Ground Floor and returned result_count 0."
+        },
+        {
+          "claim": "The change records contain no deleted IfcColumn on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result's results array is empty, so no change record satisfies the requested filters, confirming the limitation as an evidence-bound conclusion."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No deleted IfcColumn was found on Ground Floor in the available change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result applied filters for change_types=deleted, entity_types=IfcColumn, and building_storey_names=Ground Floor and returned result_count 0."
+        },
+        {
+          "claim": "The change records contain no deleted IfcColumn on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result's results array is empty, so no change record satisfies the requested filters, confirming the limitation as an evidence-bound conclusion."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 559,
+    "successful_responses": 550,
+    "input_tokens": 2175940,
+    "cached_input_tokens": 1382144,
+    "output_tokens": 886517,
+    "estimated_cost_usd": 0.363227,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.63227
+}

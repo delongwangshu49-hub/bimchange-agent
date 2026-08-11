@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 209,
+  "execution_id": "gate4-primary-209",
+  "repetition": 2,
+  "workflow": "direct_llm",
+  "question_position": 9,
+  "question_id": "gate3-q44-wall-safety-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "39092038-c7b1-4fcc-a2ba-9e9cf5d02c4f"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 469,
+    "successful_responses": 463,
+    "input_tokens": 1516161,
+    "cached_input_tokens": 746368,
+    "output_tokens": 697150,
+    "estimated_cost_usd": 0.305064,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.05064
+}

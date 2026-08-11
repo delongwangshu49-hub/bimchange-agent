@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 52,
+  "execution_id": "gate4-primary-052",
+  "repetition": 1,
+  "workflow": "tool_using_agent",
+  "question_position": 12,
+  "question_id": "gate3-q21-wall-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "c0f82be6-95d8-42a7-88c0-8935206574df",
+      "756ae02c-7421-4152-acf6-3aff1157ac34"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcWall"
+        ]
+      }
+    },
+    "tool_result_count": 3,
+    "repair_count": 0
+  },
+  "cumulative_usage": {
+    "request_attempts": 68,
+    "successful_responses": 64,
+    "input_tokens": 776399,
+    "cached_input_tokens": 143872,
+    "output_tokens": 155257,
+    "estimated_cost_usd": 0.132428,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.32428
+}

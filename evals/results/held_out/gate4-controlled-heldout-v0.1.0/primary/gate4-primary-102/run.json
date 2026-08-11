@@ -1,0 +1,165 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 102,
+  "execution_id": "gate4-primary-102",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 22,
+  "question_id": "gate3-q18-wall-roof-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "0956dca8-f0f5-499e-911e-921505e2a97c",
+      "bd3dc008-76bc-4081-abef-64a006042599",
+      "408a90db-b257-431e-91f5-5f634a824ee1"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "2rg8G55UvONxUu2GmkwF$d"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is gate4-added-wall-roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The change record with change_id gate4-added-wall-roof exactly matches the global_id 2rg8G55UvONxUu2GmkwF$d."
+        },
+        {
+          "claim": "The event added IfcWall 2rg8G55UvONxUu2GmkwF$d.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record specifies change_type 'added', entity_type 'IfcWall', and global_id '2rg8G55UvONxUu2GmkwF$d'."
+        },
+        {
+          "claim": "The wall has name Wall RF 05 and tag WL-RF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record's new_value contains name 'Wall RF 05' and tag 'WL-RF-05'."
+        },
+        {
+          "claim": "The wall was added on building storey Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The record's location identifies both spatial_container and building_storey as IfcBuildingStorey with global_id '3Oz3veLPTRYhlejGdV1B7j' and name 'Roof'."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is gate4-added-wall-roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The change record with change_id gate4-added-wall-roof exactly matches the global_id 2rg8G55UvONxUu2GmkwF$d."
+        },
+        {
+          "claim": "The event added IfcWall 2rg8G55UvONxUu2GmkwF$d.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record specifies change_type 'added', entity_type 'IfcWall', and global_id '2rg8G55UvONxUu2GmkwF$d'."
+        },
+        {
+          "claim": "The wall has name Wall RF 05 and tag WL-RF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record's new_value contains name 'Wall RF 05' and tag 'WL-RF-05'."
+        },
+        {
+          "claim": "The wall was added on building storey Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The record's location identifies both spatial_container and building_storey as IfcBuildingStorey with global_id '3Oz3veLPTRYhlejGdV1B7j' and name 'Roof'."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 194,
+    "successful_responses": 188,
+    "input_tokens": 955991,
+    "cached_input_tokens": 271232,
+    "output_tokens": 296843,
+    "estimated_cost_usd": 0.179742,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.79742
+}

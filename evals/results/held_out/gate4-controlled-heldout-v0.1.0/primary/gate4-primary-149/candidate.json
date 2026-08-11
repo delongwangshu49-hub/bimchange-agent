@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q30-slab-ground-filter",
+      "status": "answered",
+      "answer": "One verified revision event involves an IfcSlab on Ground Floor: change_id gate4-added-slab-ground added IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB, located on Ground Floor, with new value name Slab GF 05 and tag SL-GF-05.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-added-slab-ground",
+              "global_id": "1hD8Z2VI5Q48QgyBkf6YcB"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only change records explicitly present in data/ground_truth/gate2-change-records.json were considered; no inference was made about other possible revision events."
+      ]
+    }
+  ]
+}

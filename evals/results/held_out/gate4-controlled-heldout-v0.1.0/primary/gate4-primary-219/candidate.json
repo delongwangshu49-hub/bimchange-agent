@@ -1,0 +1,119 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q37-loadbearing-properties",
+      "status": "answered",
+      "answer": "Verified LoadBearing property modifications in the model pair summary: IfcSlab Slab RF 01 (2WfINAQAHRERPwEp7Nos0$) changed LoadBearing from false to true; IfcBeam Beam RF 01 (3JuqHVfXrLlA8tnQP5xv53) changed LoadBearing from false to true.",
+      "predictions": [
+        {
+          "change_type": "modify",
+          "entity_type": "IfcSlab",
+          "global_id": "2WfINAQAHRERPwEp7Nos0$",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_SlabCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_SlabCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2WfINAQAHRERPwEp7Nos0$",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_SlabCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        },
+        {
+          "change_type": "modify",
+          "entity_type": "IfcBeam",
+          "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_BeamCommon",
+            "name": "LoadBearing"
+          },
+          "old_value": false,
+          "new_value": true,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3JuqHVfXrLlA8tnQP5xv53",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_BeamCommon",
+                "name": "LoadBearing"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only scalar property-set values included in the model pair summary are considered; no engineering, safety, or compliance conclusions are made.",
+        "The model pair summary does not include precomputed change records or nested property values, so only the listed LoadBearing field values are used."
+      ]
+    }
+  ]
+}

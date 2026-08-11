@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 79,
+  "execution_id": "gate4-primary-079",
+  "repetition": 1,
+  "workflow": "tool_using_agent",
+  "question_position": 39,
+  "question_id": "gate3-q37-loadbearing-properties",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "130bd6f7-d25a-49b8-8437-325388783f7f",
+      "98aae8a5-9e13-49e1-a0bf-7d185d837387"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "property_name": "LoadBearing"
+      }
+    },
+    "tool_result_count": 2,
+    "repair_count": 0
+  },
+  "cumulative_usage": {
+    "request_attempts": 121,
+    "successful_responses": 117,
+    "input_tokens": 849616,
+    "cached_input_tokens": 193536,
+    "output_tokens": 194555,
+    "estimated_cost_usd": 0.146869,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.46869
+}

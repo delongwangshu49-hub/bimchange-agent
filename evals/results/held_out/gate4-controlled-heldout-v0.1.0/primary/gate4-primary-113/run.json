@@ -1,0 +1,243 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 113,
+  "execution_id": "gate4-primary-113",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 33,
+  "question_id": "gate3-q11-deleted-summary",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "73168d5e-d701-4a7f-a672-67d83fed4dca",
+      "ea7d9411-5677-47cd-9367-a9126f6b0bd4",
+      "bdb251ec-7c11-4144-839f-ebce25dd0aff"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "IfcBeam 'Beam L1 01' (BM-L1-01) on Level 01 is present only in the source IFC model (deleted from the revised model).",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "Verified change record gate4-deleted-beam-level01 has change_type 'deleted', entity_type IfcBeam, old_value name 'Beam L1 01' and tag 'BM-L1-01', and location Level 01."
+        },
+        {
+          "claim": "IfcColumn 'Column RF 01' (CL-RF-01) on Roof is present only in the source IFC model (deleted from the revised model).",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "Verified change record gate4-deleted-column-roof has change_type 'deleted', entity_type IfcColumn, old_value name 'Column RF 01' and tag 'CL-RF-01', and location Roof."
+        },
+        {
+          "claim": "IfcSlab 'Slab L1 01' (SL-L1-01) on Level 01 is present only in the source IFC model (deleted from the revised model).",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "Verified change record gate4-deleted-slab-level01 has change_type 'deleted', entity_type IfcSlab, old_value name 'Slab L1 01' and tag 'SL-L1-01', and location Level 01."
+        },
+        {
+          "claim": "IfcWall 'Wall GF 01' (WL-GF-01) on Ground Floor is present only in the source IFC model (deleted from the revised model).",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Verified change record gate4-deleted-wall-ground has change_type 'deleted', entity_type IfcWall, old_value name 'Wall GF 01' and tag 'WL-GF-01', and location Ground Floor."
+        },
+        {
+          "claim": "The summary is based solely on the four deleted-element change records returned from gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result has source path data/ground_truth/gate2-change-records.json, filter change_types 'deleted', result_count 4, and only these four records."
+        },
+        {
+          "claim": "No model pair summary was used.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The supplied change records and structured predictions contain no model-pair-summary entries, but whether the answerer used one is an internal process claim that cannot be verified from these records."
+        },
+        {
+          "claim": "Only entities represented by returned change records are included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The answer lists exactly the four entities appearing in the verified query result, and no additional entity is asserted."
+        },
+        {
+          "claim": "The source model may contain additional elements not covered by the available records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result returns only four deleted-element records, so it establishes those deletions but does not establish exhaustiveness; the limitation is consistent with the evidence boundary."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "IfcBeam 'Beam L1 01' (BM-L1-01) on Level 01 is present only in the source IFC model (deleted from the revised model).",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "Verified change record gate4-deleted-beam-level01 has change_type 'deleted', entity_type IfcBeam, old_value name 'Beam L1 01' and tag 'BM-L1-01', and location Level 01."
+        },
+        {
+          "claim": "IfcColumn 'Column RF 01' (CL-RF-01) on Roof is present only in the source IFC model (deleted from the revised model).",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "Verified change record gate4-deleted-column-roof has change_type 'deleted', entity_type IfcColumn, old_value name 'Column RF 01' and tag 'CL-RF-01', and location Roof."
+        },
+        {
+          "claim": "IfcSlab 'Slab L1 01' (SL-L1-01) on Level 01 is present only in the source IFC model (deleted from the revised model).",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "Verified change record gate4-deleted-slab-level01 has change_type 'deleted', entity_type IfcSlab, old_value name 'Slab L1 01' and tag 'SL-L1-01', and location Level 01."
+        },
+        {
+          "claim": "IfcWall 'Wall GF 01' (WL-GF-01) on Ground Floor is present only in the source IFC model (deleted from the revised model).",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Verified change record gate4-deleted-wall-ground has change_type 'deleted', entity_type IfcWall, old_value name 'Wall GF 01' and tag 'WL-GF-01', and location Ground Floor."
+        },
+        {
+          "claim": "The summary is based solely on the four deleted-element change records returned from gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result has source path data/ground_truth/gate2-change-records.json, filter change_types 'deleted', result_count 4, and only these four records."
+        },
+        {
+          "claim": "No model pair summary was used.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The supplied change records and structured predictions contain no model-pair-summary entries, but whether the answerer used one is an internal process claim that cannot be verified from these records."
+        },
+        {
+          "claim": "Only entities represented by returned change records are included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The answer lists exactly the four entities appearing in the verified query result, and no additional entity is asserted."
+        },
+        {
+          "claim": "The source model may contain additional elements not covered by the available records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result returns only four deleted-element records, so it establishes those deletions but does not establish exhaustiveness; the limitation is consistent with the evidence boundary."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 229,
+    "successful_responses": 223,
+    "input_tokens": 1011264,
+    "cached_input_tokens": 308480,
+    "output_tokens": 360936,
+    "estimated_cost_usd": 0.200316,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.00316
+}

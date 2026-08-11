@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The deletion of wall 0z7L81IEbQPggjg__OrrlU is confirmed by the returned change record, but that record contains no structural analysis, load-path information, or safety assessment. Therefore, it cannot be determined from the supplied evidence whether deleting this wall makes the building structurally unsafe.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-deleted-wall-ground",
+              "global_id": "0z7L81IEbQPggjg__OrrlU"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The only returned source record is change_query/gate4-deleted-wall-ground/0z7L81IEbQPggjg__OrrlU, which reports the deletion event but does not include any structural engineering analysis or safety conclusion.",
+        "No structural model results, member forces, stability checks, or code-based structural safety evaluation were available to justify a conclusion about the building's structural safety."
+      ]
+    }
+  ]
+}

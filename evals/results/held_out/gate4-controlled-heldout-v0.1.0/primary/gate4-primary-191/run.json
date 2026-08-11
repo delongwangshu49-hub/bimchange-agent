@@ -1,0 +1,177 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 191,
+  "execution_id": "gate4-primary-191",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 31,
+  "question_id": "gate3-q23-ground-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "0706c7ce-4fbe-4ba6-b6a5-eec184e5f16e",
+      "efe12120-112d-4515-9f04-7b2a69021fb0",
+      "fe8959eb-d896-47a6-b99b-2b0fa7653475"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Added IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB (Beam GF 05 / BM-GF-05) is a verified revision event explicitly associated with Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified query result includes change gate4-added-beam-ground with change_type 'added', entity_type 'IfcBeam', global_id 3Z1rgbb$PMDfsfeWvsKUUB, and building_storey name 'Ground Floor'."
+        },
+        {
+          "claim": "Added IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB (Slab GF 05 / SL-GF-05) is a verified revision event explicitly associated with Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result includes change gate4-added-slab-ground with change_type 'added', entity_type 'IfcSlab', global_id 1hD8Z2VI5Q48QgyBkf6YcB, and building_storey name 'Ground Floor'."
+        },
+        {
+          "claim": "Deleted IfcWall 0z7L81IEbQPggjg__OrrlU (Wall GF 01 / WL-GF-01) is a verified revision event explicitly associated with Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result includes change gate4-deleted-wall-ground with change_type 'deleted', entity_type 'IfcWall', global_id 0z7L81IEbQPggjg__OrrlU, and building_storey name 'Ground Floor'."
+        },
+        {
+          "claim": "Property modification on IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK (Pset_ColumnCommon IsExternal changed from true to false) is a verified revision event explicitly associated with Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified query result includes change gate4-property-column-ground with change_type 'property_modified', entity_type 'IfcColumn', global_id 0Iqxc9CtTOgPV$1Tej3xGK, field Pset_ColumnCommon IsExternal changed from true to false, and building_storey name 'Ground Floor'."
+        },
+        {
+          "claim": "Only verified revision events returned from the change-query source were considered, and the query filter was restricted to entities explicitly located on Ground Floor by their building storey reference.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result declares source data/ground_truth/gate2-change-records.json, filters building_storey_names ['Ground Floor'], and returns result_count 4, all with building_storey name 'Ground Floor', confirming the stated evidence boundary."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Added IfcBeam 3Z1rgbb$PMDfsfeWvsKUUB (Beam GF 05 / BM-GF-05) is a verified revision event explicitly associated with Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified query result includes change gate4-added-beam-ground with change_type 'added', entity_type 'IfcBeam', global_id 3Z1rgbb$PMDfsfeWvsKUUB, and building_storey name 'Ground Floor'."
+        },
+        {
+          "claim": "Added IfcSlab 1hD8Z2VI5Q48QgyBkf6YcB (Slab GF 05 / SL-GF-05) is a verified revision event explicitly associated with Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result includes change gate4-added-slab-ground with change_type 'added', entity_type 'IfcSlab', global_id 1hD8Z2VI5Q48QgyBkf6YcB, and building_storey name 'Ground Floor'."
+        },
+        {
+          "claim": "Deleted IfcWall 0z7L81IEbQPggjg__OrrlU (Wall GF 01 / WL-GF-01) is a verified revision event explicitly associated with Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result includes change gate4-deleted-wall-ground with change_type 'deleted', entity_type 'IfcWall', global_id 0z7L81IEbQPggjg__OrrlU, and building_storey name 'Ground Floor'."
+        },
+        {
+          "claim": "Property modification on IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK (Pset_ColumnCommon IsExternal changed from true to false) is a verified revision event explicitly associated with Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "The verified query result includes change gate4-property-column-ground with change_type 'property_modified', entity_type 'IfcColumn', global_id 0Iqxc9CtTOgPV$1Tej3xGK, field Pset_ColumnCommon IsExternal changed from true to false, and building_storey name 'Ground Floor'."
+        },
+        {
+          "claim": "Only verified revision events returned from the change-query source were considered, and the query filter was restricted to entities explicitly located on Ground Floor by their building storey reference.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result declares source data/ground_truth/gate2-change-records.json, filters building_storey_names ['Ground Floor'], and returns result_count 4, all with building_storey name 'Ground Floor', confirming the stated evidence boundary."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 431,
+    "successful_responses": 425,
+    "input_tokens": 1305337,
+    "cached_input_tokens": 549504,
+    "output_tokens": 605075,
+    "estimated_cost_usd": 0.276777,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.76777
+}

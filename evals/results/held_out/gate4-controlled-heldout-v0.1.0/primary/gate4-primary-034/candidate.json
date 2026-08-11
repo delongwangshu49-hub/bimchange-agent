@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q41-absent-guid",
+      "status": "not_found",
+      "answer": "No verified revision event is recorded for element 0AAAAAAAAAAAAAAAAAAAAA in the supplied model pair summary. The identifier does not appear in either the source or revised version element lists.",
+      "predictions": [],
+      "limitations": [
+        "The global_id 0AAAAAAAAAAAAAAAAAAAAA is not present in the source or revised elements in evals/inputs/development/gate3-model-pair-summary.json.",
+        "The requested identifier is not a valid 22-character IFC GlobalId, so no revision claim can be derived from the available source."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "status": "READY_FOR_PRIVATE_REVIEW_NOT_PUBLIC_RELEASE",
+  "artifacts": {
+    "completed_blind_audit_packet": {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/blinded-audit-packet.json",
+      "sha256": "1d3a40deadc99f337df6ee42af6589c108e3073afe6b38cbe3c903dba930df10"
+    },
+    "unblinding_mapping": {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/workflow-repetition-mapping.json",
+      "sha256": "baa683480af050669e7523ab2339f56e787784b5eaa94e6628d71cf73dc13f4a"
+    },
+    "execution_scores": {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-scored-executions.json",
+      "sha256": "7df5bcbbf539cd8a9879cf4c5b97122fc15e96210091fbc6182b2c9a12eb3450"
+    },
+    "offline_summary": {
+      "path": "evals/results/held_out/gate4-controlled-heldout-v0.1.0/gate4-offline-summary.json",
+      "sha256": "bbcb09c7daf34b83de8e4dd36a7af3abe342bc4c41724b2a6fffa022fedb9694"
+    },
+    "post_run_audit": {
+      "path": "evals/audits/held_out/gate4-post-run-audit.json",
+      "sha256": "91c5ccad2f38c62f58049ee142ead927cb1c71aa4d94847ec455d106632b908b"
+    }
+  },
+  "review_focus": [
+    "Verify the frozen lineage and independent score recomputation.",
+    "Review workflow/repetition, category, and question-frequency summaries.",
+    "Review clustered bootstrap implementation and interpretation boundary.",
+    "Review single-reviewer manual-audit findings without claiming inter-rater agreement.",
+    "Accept or resolve the unavailable latency and per-call-kind cost allocation limitations.",
+    "Confirm synthetic-fixture, three-repetition, one-provider, and change-type limitations before any public wording."
+  ],
+  "public_release_authorized": false,
+  "uploaded": false,
+  "model_calls_made": 0
+}

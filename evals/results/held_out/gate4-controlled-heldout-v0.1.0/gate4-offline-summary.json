@@ -1,0 +1,1837 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "split": "held_out",
+  "status": "OFFLINE_AGGREGATION_COMPLETE_PRIVATE_REVIEW_REQUIRED",
+  "lineage": {
+    "schedule_sha256": "92360439cef1797615bdb964020cfa92ab8e345a22dfe07b45f5883336db9750",
+    "result_manifest_sha256": "5904ef49e61e196ecc230369d959b2598742c6acdf10aeb739f38dffb4bef8a1",
+    "completed_audit_packet_sha256": "1d3a40deadc99f337df6ee42af6589c108e3073afe6b38cbe3c903dba930df10",
+    "mapping_sha256": "baa683480af050669e7523ab2339f56e787784b5eaa94e6628d71cf73dc13f4a",
+    "reference_answer_artifact_sha256": "4f7ef0e3a87ee7a35f1089ee1d7d9b199140c1cd66d4bc8f67a1dce44082ef1a",
+    "reference_answer_raw_sha256": "7a36081063c735e69b7290722f71b24b87546c49c6af32ec4ba60d2a6a8e9a8c",
+    "scores_sha256": "7df5bcbbf539cd8a9879cf4c5b97122fc15e96210091fbc6182b2c9a12eb3450"
+  },
+  "overall_by_workflow": {
+    "direct_llm": {
+      "execution_count": 120,
+      "candidate_count": 117,
+      "completion_rate": 0.975,
+      "status_accuracy": 0.9416666666666667,
+      "semantic_exact_match_accuracy": 0.5416666666666666,
+      "change_precision": 0.6633165829145728,
+      "change_recall": 0.6027397260273972,
+      "change_f1": 0.631578947368421,
+      "evidence_support_rate": 0.6582914572864321
+    },
+    "tool_using_agent": {
+      "execution_count": 120,
+      "candidate_count": 113,
+      "completion_rate": 0.9416666666666667,
+      "status_accuracy": 0.9083333333333333,
+      "semantic_exact_match_accuracy": 0.8416666666666667,
+      "change_precision": 1.0,
+      "change_recall": 0.8493150684931506,
+      "change_f1": 0.9185185185185185,
+      "evidence_support_rate": 1.0
+    },
+    "proposed": {
+      "execution_count": 120,
+      "candidate_count": 118,
+      "completion_rate": 0.9833333333333333,
+      "status_accuracy": 0.9666666666666667,
+      "semantic_exact_match_accuracy": 0.9666666666666667,
+      "change_precision": 1.0,
+      "change_recall": 0.958904109589041,
+      "change_f1": 0.9790209790209791,
+      "evidence_support_rate": 1.0
+    }
+  },
+  "repetition": {
+    "direct_llm": {
+      "per_repetition": [
+        {
+          "repetition": 1,
+          "candidate_count": 40,
+          "experimental_failure_count": 0,
+          "metrics": {
+            "completion_rate": 1.0,
+            "status_accuracy": 0.95,
+            "semantic_exact_match_accuracy": 0.5,
+            "change_precision": 0.6164383561643836,
+            "change_recall": 0.6164383561643836,
+            "change_f1": 0.6164383561643836,
+            "evidence_support_rate": 0.6027397260273972
+          },
+          "status_consistent": false
+        },
+        {
+          "repetition": 2,
+          "candidate_count": 38,
+          "experimental_failure_count": 2,
+          "metrics": {
+            "completion_rate": 0.95,
+            "status_accuracy": 0.925,
+            "semantic_exact_match_accuracy": 0.525,
+            "change_precision": 0.6491228070175439,
+            "change_recall": 0.5068493150684932,
+            "change_f1": 0.5692307692307693,
+            "evidence_support_rate": 0.6491228070175439
+          },
+          "status_consistent": true
+        },
+        {
+          "repetition": 3,
+          "candidate_count": 39,
+          "experimental_failure_count": 1,
+          "metrics": {
+            "completion_rate": 0.975,
+            "status_accuracy": 0.95,
+            "semantic_exact_match_accuracy": 0.6,
+            "change_precision": 0.7246376811594203,
+            "change_recall": 0.684931506849315,
+            "change_f1": 0.704225352112676,
+            "evidence_support_rate": 0.7246376811594203
+          },
+          "status_consistent": true
+        }
+      ],
+      "across_repetition_summary": {
+        "completion_rate": {
+          "mean": 0.975,
+          "sample_standard_deviation": 0.025000000000000022,
+          "minimum": 0.95,
+          "maximum": 1.0
+        },
+        "status_accuracy": {
+          "mean": 0.9416666666666668,
+          "sample_standard_deviation": 0.014433756729740593,
+          "minimum": 0.925,
+          "maximum": 0.95
+        },
+        "semantic_exact_match_accuracy": {
+          "mean": 0.5416666666666666,
+          "sample_standard_deviation": 0.0520416499866533,
+          "minimum": 0.5,
+          "maximum": 0.6
+        },
+        "change_precision": {
+          "mean": 0.6633996147804493,
+          "sample_standard_deviation": 0.05549453948155269,
+          "minimum": 0.6164383561643836,
+          "maximum": 0.7246376811594203
+        },
+        "change_recall": {
+          "mean": 0.6027397260273973,
+          "sample_standard_deviation": 0.08982792499043833,
+          "minimum": 0.5068493150684932,
+          "maximum": 0.684931506849315
+        },
+        "change_f1": {
+          "mean": 0.6299648258359429,
+          "sample_standard_deviation": 0.0685062653207479,
+          "minimum": 0.5692307692307693,
+          "maximum": 0.704225352112676
+        },
+        "evidence_support_rate": {
+          "mean": 0.6588334047347871,
+          "sample_standard_deviation": 0.06152641422480083,
+          "minimum": 0.6027397260273972,
+          "maximum": 0.7246376811594203
+        }
+      }
+    },
+    "tool_using_agent": {
+      "per_repetition": [
+        {
+          "repetition": 1,
+          "candidate_count": 36,
+          "experimental_failure_count": 4,
+          "metrics": {
+            "completion_rate": 0.9,
+            "status_accuracy": 0.875,
+            "semantic_exact_match_accuracy": 0.8,
+            "change_precision": 1.0,
+            "change_recall": 0.8356164383561644,
+            "change_f1": 0.9104477611940298,
+            "evidence_support_rate": 1.0
+          },
+          "status_consistent": true
+        },
+        {
+          "repetition": 2,
+          "candidate_count": 39,
+          "experimental_failure_count": 1,
+          "metrics": {
+            "completion_rate": 0.975,
+            "status_accuracy": 0.925,
+            "semantic_exact_match_accuracy": 0.875,
+            "change_precision": 1.0,
+            "change_recall": 0.9041095890410958,
+            "change_f1": 0.949640287769784,
+            "evidence_support_rate": 1.0
+          },
+          "status_consistent": true
+        },
+        {
+          "repetition": 3,
+          "candidate_count": 38,
+          "experimental_failure_count": 2,
+          "metrics": {
+            "completion_rate": 0.95,
+            "status_accuracy": 0.925,
+            "semantic_exact_match_accuracy": 0.85,
+            "change_precision": 1.0,
+            "change_recall": 0.8082191780821918,
+            "change_f1": 0.8939393939393939,
+            "evidence_support_rate": 1.0
+          },
+          "status_consistent": true
+        }
+      ],
+      "across_repetition_summary": {
+        "completion_rate": {
+          "mean": 0.9416666666666668,
+          "sample_standard_deviation": 0.03818813079129864,
+          "minimum": 0.9,
+          "maximum": 0.975
+        },
+        "status_accuracy": {
+          "mean": 0.9083333333333333,
+          "sample_standard_deviation": 0.028867513459481315,
+          "minimum": 0.875,
+          "maximum": 0.925
+        },
+        "semantic_exact_match_accuracy": {
+          "mean": 0.8416666666666667,
+          "sample_standard_deviation": 0.03818813079129864,
+          "minimum": 0.8,
+          "maximum": 0.875
+        },
+        "change_precision": {
+          "mean": 1.0,
+          "sample_standard_deviation": 0.0,
+          "minimum": 1.0,
+          "maximum": 1.0
+        },
+        "change_recall": {
+          "mean": 0.8493150684931506,
+          "sample_standard_deviation": 0.04939111336252037,
+          "minimum": 0.8082191780821918,
+          "maximum": 0.9041095890410958
+        },
+        "change_f1": {
+          "mean": 0.9180091476344026,
+          "sample_standard_deviation": 0.02860993388757807,
+          "minimum": 0.8939393939393939,
+          "maximum": 0.949640287769784
+        },
+        "evidence_support_rate": {
+          "mean": 1.0,
+          "sample_standard_deviation": 0.0,
+          "minimum": 1.0,
+          "maximum": 1.0
+        }
+      }
+    },
+    "proposed": {
+      "per_repetition": [
+        {
+          "repetition": 1,
+          "candidate_count": 40,
+          "experimental_failure_count": 0,
+          "metrics": {
+            "completion_rate": 1.0,
+            "status_accuracy": 0.975,
+            "semantic_exact_match_accuracy": 0.975,
+            "change_precision": 1.0,
+            "change_recall": 0.9452054794520548,
+            "change_f1": 0.971830985915493,
+            "evidence_support_rate": 1.0
+          },
+          "status_consistent": true
+        },
+        {
+          "repetition": 2,
+          "candidate_count": 39,
+          "experimental_failure_count": 1,
+          "metrics": {
+            "completion_rate": 0.975,
+            "status_accuracy": 0.95,
+            "semantic_exact_match_accuracy": 0.95,
+            "change_precision": 1.0,
+            "change_recall": 0.9315068493150684,
+            "change_f1": 0.9645390070921985,
+            "evidence_support_rate": 1.0
+          },
+          "status_consistent": true
+        },
+        {
+          "repetition": 3,
+          "candidate_count": 39,
+          "experimental_failure_count": 1,
+          "metrics": {
+            "completion_rate": 0.975,
+            "status_accuracy": 0.975,
+            "semantic_exact_match_accuracy": 0.975,
+            "change_precision": 1.0,
+            "change_recall": 1.0,
+            "change_f1": 1.0,
+            "evidence_support_rate": 1.0
+          },
+          "status_consistent": true
+        }
+      ],
+      "across_repetition_summary": {
+        "completion_rate": {
+          "mean": 0.9833333333333334,
+          "sample_standard_deviation": 0.014433756729740658,
+          "minimum": 0.975,
+          "maximum": 1.0
+        },
+        "status_accuracy": {
+          "mean": 0.9666666666666667,
+          "sample_standard_deviation": 0.014433756729740658,
+          "minimum": 0.95,
+          "maximum": 0.975
+        },
+        "semantic_exact_match_accuracy": {
+          "mean": 0.9666666666666667,
+          "sample_standard_deviation": 0.014433756729740658,
+          "minimum": 0.95,
+          "maximum": 0.975
+        },
+        "change_precision": {
+          "mean": 1.0,
+          "sample_standard_deviation": 0.0,
+          "minimum": 1.0,
+          "maximum": 1.0
+        },
+        "change_recall": {
+          "mean": 0.958904109589041,
+          "sample_standard_deviation": 0.036243168644720436,
+          "minimum": 0.9315068493150684,
+          "maximum": 1.0
+        },
+        "change_f1": {
+          "mean": 0.9787899976692306,
+          "sample_standard_deviation": 0.01872675593751569,
+          "minimum": 0.9645390070921985,
+          "maximum": 1.0
+        },
+        "evidence_support_rate": {
+          "mean": 1.0,
+          "sample_standard_deviation": 0.0,
+          "minimum": 1.0,
+          "maximum": 1.0
+        }
+      }
+    }
+  },
+  "per_category": {
+    "direct_llm": {
+      "evidence_boundary": {
+        "execution_count": 15,
+        "candidate_count": 15,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 0.8666666666666667,
+        "change_precision": 0.8666666666666667,
+        "change_recall": 0.8666666666666667,
+        "change_f1": 0.8666666666666667,
+        "evidence_support_rate": 0.8666666666666667
+      },
+      "fact_lookup": {
+        "execution_count": 18,
+        "candidate_count": 18,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 0.7777777777777778,
+        "change_precision": 0.7777777777777778,
+        "change_recall": 0.7777777777777778,
+        "change_f1": 0.7777777777777778,
+        "evidence_support_rate": 0.7222222222222222
+      },
+      "filtered_lookup": {
+        "execution_count": 42,
+        "candidate_count": 42,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 0.4523809523809524,
+        "change_precision": 0.6774193548387096,
+        "change_recall": 0.6774193548387096,
+        "change_f1": 0.6774193548387096,
+        "evidence_support_rate": 0.6774193548387096
+      },
+      "negative_control": {
+        "execution_count": 15,
+        "candidate_count": 15,
+        "completion_rate": 1.0,
+        "status_accuracy": 0.7333333333333333,
+        "semantic_exact_match_accuracy": 0.7333333333333333,
+        "change_precision": 1.0,
+        "change_recall": 1.0,
+        "change_f1": 1.0,
+        "evidence_support_rate": 1.0
+      },
+      "property_change": {
+        "execution_count": 18,
+        "candidate_count": 18,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 0.1111111111111111,
+        "change_precision": 0.09523809523809523,
+        "change_recall": 0.09523809523809523,
+        "change_f1": 0.09523809523809523,
+        "evidence_support_rate": 0.09523809523809523
+      },
+      "summary": {
+        "execution_count": 12,
+        "candidate_count": 9,
+        "completion_rate": 0.75,
+        "status_accuracy": 0.75,
+        "semantic_exact_match_accuracy": 0.5,
+        "change_precision": 0.7692307692307693,
+        "change_recall": 0.5555555555555556,
+        "change_f1": 0.6451612903225806,
+        "evidence_support_rate": 0.7692307692307693
+      }
+    },
+    "tool_using_agent": {
+      "evidence_boundary": {
+        "execution_count": 15,
+        "candidate_count": 15,
+        "completion_rate": 1.0,
+        "status_accuracy": 0.9333333333333333,
+        "semantic_exact_match_accuracy": 0.4,
+        "change_precision": 1.0,
+        "change_recall": 0.4666666666666667,
+        "change_f1": 0.6363636363636364,
+        "evidence_support_rate": 1.0
+      },
+      "fact_lookup": {
+        "execution_count": 18,
+        "candidate_count": 16,
+        "completion_rate": 0.8888888888888888,
+        "status_accuracy": 0.8888888888888888,
+        "semantic_exact_match_accuracy": 0.8888888888888888,
+        "change_precision": 1.0,
+        "change_recall": 0.8888888888888888,
+        "change_f1": 0.9411764705882353,
+        "evidence_support_rate": 1.0
+      },
+      "filtered_lookup": {
+        "execution_count": 42,
+        "candidate_count": 41,
+        "completion_rate": 0.9761904761904762,
+        "status_accuracy": 0.9047619047619048,
+        "semantic_exact_match_accuracy": 0.9047619047619048,
+        "change_precision": 1.0,
+        "change_recall": 0.8387096774193549,
+        "change_f1": 0.9122807017543859,
+        "evidence_support_rate": 1.0
+      },
+      "negative_control": {
+        "execution_count": 15,
+        "candidate_count": 13,
+        "completion_rate": 0.8666666666666667,
+        "status_accuracy": 0.8666666666666667,
+        "semantic_exact_match_accuracy": 0.8666666666666667,
+        "change_precision": 1.0,
+        "change_recall": 1.0,
+        "change_f1": 1.0,
+        "evidence_support_rate": 1.0
+      },
+      "property_change": {
+        "execution_count": 18,
+        "candidate_count": 18,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 1.0,
+        "change_precision": 1.0,
+        "change_recall": 1.0,
+        "change_f1": 1.0,
+        "evidence_support_rate": 1.0
+      },
+      "summary": {
+        "execution_count": 12,
+        "candidate_count": 10,
+        "completion_rate": 0.8333333333333334,
+        "status_accuracy": 0.8333333333333334,
+        "semantic_exact_match_accuracy": 0.8333333333333334,
+        "change_precision": 1.0,
+        "change_recall": 0.8888888888888888,
+        "change_f1": 0.9411764705882353,
+        "evidence_support_rate": 1.0
+      }
+    },
+    "proposed": {
+      "evidence_boundary": {
+        "execution_count": 15,
+        "candidate_count": 15,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 1.0,
+        "change_precision": 1.0,
+        "change_recall": 1.0,
+        "change_f1": 1.0,
+        "evidence_support_rate": 1.0
+      },
+      "fact_lookup": {
+        "execution_count": 18,
+        "candidate_count": 18,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 1.0,
+        "change_precision": 1.0,
+        "change_recall": 1.0,
+        "change_f1": 1.0,
+        "evidence_support_rate": 1.0
+      },
+      "filtered_lookup": {
+        "execution_count": 42,
+        "candidate_count": 42,
+        "completion_rate": 1.0,
+        "status_accuracy": 0.9523809523809523,
+        "semantic_exact_match_accuracy": 0.9523809523809523,
+        "change_precision": 1.0,
+        "change_recall": 0.9139784946236559,
+        "change_f1": 0.9550561797752808,
+        "evidence_support_rate": 1.0
+      },
+      "negative_control": {
+        "execution_count": 15,
+        "candidate_count": 14,
+        "completion_rate": 0.9333333333333333,
+        "status_accuracy": 0.9333333333333333,
+        "semantic_exact_match_accuracy": 0.9333333333333333,
+        "change_precision": 1.0,
+        "change_recall": 1.0,
+        "change_f1": 1.0,
+        "evidence_support_rate": 1.0
+      },
+      "property_change": {
+        "execution_count": 18,
+        "candidate_count": 17,
+        "completion_rate": 0.9444444444444444,
+        "status_accuracy": 0.9444444444444444,
+        "semantic_exact_match_accuracy": 0.9444444444444444,
+        "change_precision": 1.0,
+        "change_recall": 0.9523809523809523,
+        "change_f1": 0.975609756097561,
+        "evidence_support_rate": 1.0
+      },
+      "summary": {
+        "execution_count": 12,
+        "candidate_count": 12,
+        "completion_rate": 1.0,
+        "status_accuracy": 1.0,
+        "semantic_exact_match_accuracy": 1.0,
+        "change_precision": 1.0,
+        "change_recall": 1.0,
+        "change_f1": 1.0,
+        "evidence_support_rate": 1.0
+      }
+    }
+  },
+  "question_success_frequency": {
+    "direct_llm": {
+      "frequency_distribution": {
+        "0": 14,
+        "1": 5,
+        "2": 3,
+        "3": 18
+      },
+      "questions": [
+        {
+          "question_id": "gate3-q09-all-changes",
+          "category": "summary",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q10-added-summary",
+          "category": "summary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q11-deleted-summary",
+          "category": "summary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q12-property-summary",
+          "category": "summary",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 1
+        },
+        {
+          "question_id": "gate3-q13-beam-ground-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q14-wall-ground-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q15-column-level01-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q16-slab-level01-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q17-beam-roof-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q18-wall-roof-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q19-beam-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q20-column-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q21-wall-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q22-slab-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q23-ground-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q24-level01-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q25-roof-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q26-added-beam-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q27-deleted-column-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q28-property-wall-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q29-beam-roof-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q30-slab-ground-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q31-added-column-level01",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q32-deleted-wall-ground",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q33-column-property",
+          "category": "property_change",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q34-wall-property",
+          "category": "property_change",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q35-beam-property",
+          "category": "property_change",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q36-slab-property",
+          "category": "property_change",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q37-loadbearing-properties",
+          "category": "property_change",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q38-wall-pset-property",
+          "category": "property_change",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q39-no-geometry",
+          "category": "negative_control",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q40-no-added-beam-roof",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q41-absent-guid",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q42-no-deleted-column-ground",
+          "category": "negative_control",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q43-no-property-slab-level01",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q44-wall-safety-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q45-fire-compliance-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q46-beam-responsibility-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q47-slab-priority-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q48-wall-constructability-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        }
+      ]
+    },
+    "tool_using_agent": {
+      "frequency_distribution": {
+        "0": 2,
+        "1": 3,
+        "2": 7,
+        "3": 28
+      },
+      "questions": [
+        {
+          "question_id": "gate3-q09-all-changes",
+          "category": "summary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q10-added-summary",
+          "category": "summary",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q11-deleted-summary",
+          "category": "summary",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q12-property-summary",
+          "category": "summary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q13-beam-ground-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q14-wall-ground-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q15-column-level01-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q16-slab-level01-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q17-beam-roof-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q18-wall-roof-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q19-beam-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q20-column-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q21-wall-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q22-slab-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q23-ground-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q24-level01-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q25-roof-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q26-added-beam-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q27-deleted-column-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q28-property-wall-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q29-beam-roof-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q30-slab-ground-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q31-added-column-level01",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q32-deleted-wall-ground",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q33-column-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q34-wall-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q35-beam-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q36-slab-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q37-loadbearing-properties",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q38-wall-pset-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q39-no-geometry",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q40-no-added-beam-roof",
+          "category": "negative_control",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q41-absent-guid",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q42-no-deleted-column-ground",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q43-no-property-slab-level01",
+          "category": "negative_control",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q44-wall-safety-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q45-fire-compliance-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q46-beam-responsibility-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q47-slab-priority-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q48-wall-constructability-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 0,
+          "candidate_frequency": 3
+        }
+      ]
+    },
+    "proposed": {
+      "frequency_distribution": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 37
+      },
+      "questions": [
+        {
+          "question_id": "gate3-q09-all-changes",
+          "category": "summary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q10-added-summary",
+          "category": "summary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q11-deleted-summary",
+          "category": "summary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q12-property-summary",
+          "category": "summary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q13-beam-ground-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q14-wall-ground-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q15-column-level01-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q16-slab-level01-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q17-beam-roof-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q18-wall-roof-guid",
+          "category": "fact_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q19-beam-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q20-column-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q21-wall-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q22-slab-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q23-ground-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q24-level01-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q25-roof-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 1,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q26-added-beam-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q27-deleted-column-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q28-property-wall-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q29-beam-roof-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q30-slab-ground-filter",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q31-added-column-level01",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q32-deleted-wall-ground",
+          "category": "filtered_lookup",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q33-column-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q34-wall-property",
+          "category": "property_change",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q35-beam-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q36-slab-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q37-loadbearing-properties",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q38-wall-pset-property",
+          "category": "property_change",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q39-no-geometry",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q40-no-added-beam-roof",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q41-absent-guid",
+          "category": "negative_control",
+          "exact_success_frequency": 2,
+          "candidate_frequency": 2
+        },
+        {
+          "question_id": "gate3-q42-no-deleted-column-ground",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q43-no-property-slab-level01",
+          "category": "negative_control",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q44-wall-safety-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q45-fire-compliance-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q46-beam-responsibility-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q47-slab-priority-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        },
+        {
+          "question_id": "gate3-q48-wall-constructability-boundary",
+          "category": "evidence_boundary",
+          "exact_success_frequency": 3,
+          "candidate_frequency": 3
+        }
+      ]
+    }
+  },
+  "uncertainty": {
+    "method": "question-clustered paired bootstrap; all three repetitions retained within each sampled question cluster",
+    "seed": 20260808,
+    "resamples": 2000,
+    "interval": "2.5th to 97.5th percentile",
+    "significance_claim_from_interval_alone": false,
+    "pairs": {
+      "direct_llm_minus_tool_using_agent": {
+        "completion_rate": {
+          "point_difference_left_minus_right": 0.033333333333333326,
+          "bootstrap_mean_difference": 0.03242499999999999,
+          "percentile_95_interval": [
+            -0.025000000000000022,
+            0.08333333333333337
+          ]
+        },
+        "status_accuracy": {
+          "point_difference_left_minus_right": 0.033333333333333326,
+          "bootstrap_mean_difference": 0.031966666666666664,
+          "percentile_95_interval": [
+            -0.05833333333333335,
+            0.1166666666666667
+          ]
+        },
+        "semantic_exact_match_accuracy": {
+          "point_difference_left_minus_right": -0.30000000000000004,
+          "bootstrap_mean_difference": -0.2974,
+          "percentile_95_interval": [
+            -0.4666666666666666,
+            -0.125
+          ]
+        },
+        "change_precision": {
+          "point_difference_left_minus_right": -0.33668341708542715,
+          "bootstrap_mean_difference": -0.33717015349334867,
+          "percentile_95_interval": [
+            -0.45187631027253666,
+            -0.23743054409418501
+          ]
+        },
+        "change_recall": {
+          "point_difference_left_minus_right": -0.2465753424657534,
+          "bootstrap_mean_difference": -0.2409379283214756,
+          "percentile_95_interval": [
+            -0.41666666666666663,
+            -0.04900379506641368
+          ]
+        },
+        "change_f1": {
+          "point_difference_left_minus_right": -0.2869395711500975,
+          "bootstrap_mean_difference": -0.2833756584980934,
+          "percentile_95_interval": [
+            -0.4159416727053645,
+            -0.1398607807159229
+          ]
+        },
+        "evidence_support_rate": {
+          "point_difference_left_minus_right": -0.3417085427135679,
+          "bootstrap_mean_difference": -0.3425624494266385,
+          "percentile_95_interval": [
+            -0.45811421010627124,
+            -0.24200465574357602
+          ]
+        }
+      },
+      "direct_llm_minus_proposed": {
+        "completion_rate": {
+          "point_difference_left_minus_right": -0.008333333333333304,
+          "bootstrap_mean_difference": -0.008516666666666665,
+          "percentile_95_interval": [
+            -0.050000000000000044,
+            0.033333333333333326
+          ]
+        },
+        "status_accuracy": {
+          "point_difference_left_minus_right": -0.025000000000000022,
+          "bootstrap_mean_difference": -0.025604166666666664,
+          "percentile_95_interval": [
+            -0.09999999999999998,
+            0.04166666666666663
+          ]
+        },
+        "semantic_exact_match_accuracy": {
+          "point_difference_left_minus_right": -0.42500000000000004,
+          "bootstrap_mean_difference": -0.42245,
+          "percentile_95_interval": [
+            -0.5583333333333333,
+            -0.29999999999999993
+          ]
+        },
+        "change_precision": {
+          "point_difference_left_minus_right": -0.33668341708542715,
+          "bootstrap_mean_difference": -0.33717015349334867,
+          "percentile_95_interval": [
+            -0.45187631027253666,
+            -0.23743054409418501
+          ]
+        },
+        "change_recall": {
+          "point_difference_left_minus_right": -0.3561643835616438,
+          "bootstrap_mean_difference": -0.35283701729137573,
+          "percentile_95_interval": [
+            -0.48611111111111105,
+            -0.2139303482587065
+          ]
+        },
+        "change_f1": {
+          "point_difference_left_minus_right": -0.34744203165255805,
+          "bootstrap_mean_difference": -0.3459771266775168,
+          "percentile_95_interval": [
+            -0.45787465332610516,
+            -0.23379982103718547
+          ]
+        },
+        "evidence_support_rate": {
+          "point_difference_left_minus_right": -0.3417085427135679,
+          "bootstrap_mean_difference": -0.3425624494266385,
+          "percentile_95_interval": [
+            -0.45811421010627124,
+            -0.24200465574357602
+          ]
+        }
+      },
+      "tool_using_agent_minus_proposed": {
+        "completion_rate": {
+          "point_difference_left_minus_right": -0.04166666666666663,
+          "bootstrap_mean_difference": -0.04094166666666666,
+          "percentile_95_interval": [
+            -0.09166666666666656,
+            0.0
+          ]
+        },
+        "status_accuracy": {
+          "point_difference_left_minus_right": -0.05833333333333335,
+          "bootstrap_mean_difference": -0.05757083333333333,
+          "percentile_95_interval": [
+            -0.10833333333333328,
+            -0.008333333333333304
+          ]
+        },
+        "semantic_exact_match_accuracy": {
+          "point_difference_left_minus_right": -0.125,
+          "bootstrap_mean_difference": -0.12505,
+          "percentile_95_interval": [
+            -0.20833333333333326,
+            -0.04999999999999993
+          ]
+        },
+        "change_precision": {
+          "point_difference_left_minus_right": 0.0,
+          "bootstrap_mean_difference": 0.0,
+          "percentile_95_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "change_recall": {
+          "point_difference_left_minus_right": -0.1095890410958904,
+          "bootstrap_mean_difference": -0.11189908896990015,
+          "percentile_95_interval": [
+            -0.185716237314598,
+            -0.04615248226950361
+          ]
+        },
+        "change_f1": {
+          "point_difference_left_minus_right": -0.06050246050246055,
+          "bootstrap_mean_difference": -0.06260146817942337,
+          "percentile_95_interval": [
+            -0.11063779621051474,
+            -0.023757774252907475
+          ]
+        },
+        "evidence_support_rate": {
+          "point_difference_left_minus_right": 0.0,
+          "bootstrap_mean_difference": 0.0,
+          "percentile_95_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "manual_audit": {
+    "reviewer_count": 1,
+    "inter_rater_agreement_claimed": false,
+    "selection": {
+      "selected_question_count": 15,
+      "execution_count": 135,
+      "all_five_evidence_boundary_questions_included": true,
+      "ten_stratified_additional_questions_included": true
+    },
+    "overall": {
+      "audited_execution_count": 135,
+      "audited_candidate_count": 131,
+      "audited_experimental_failure_count": 4,
+      "atomic_claim_count": 505,
+      "claim_label_counts": {
+        "indeterminate": 3,
+        "supported": 501,
+        "unsupported": 1
+      },
+      "unsupported_or_indeterminate_claim_rate": 0.007920792079207921,
+      "evidence_references_verified_count": 90,
+      "evidence_references_not_verified_count": 41,
+      "safety_overreach_count": 1,
+      "failure_category_counts": {
+        "data_does_not_support_answer": 3,
+        "evidence_citation": 41,
+        "safety_overreach": 1,
+        "schema_or_output_format": 4
+      },
+      "all_reviews_complete": true
+    },
+    "by_workflow": {
+      "direct_llm": {
+        "audited_execution_count": 45,
+        "audited_candidate_count": 43,
+        "audited_experimental_failure_count": 2,
+        "atomic_claim_count": 166,
+        "claim_label_counts": {
+          "indeterminate": 3,
+          "supported": 163
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.018072289156626505,
+        "evidence_references_verified_count": 6,
+        "evidence_references_not_verified_count": 37,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "data_does_not_support_answer": 3,
+          "evidence_citation": 37,
+          "schema_or_output_format": 2
+        },
+        "all_reviews_complete": true
+      },
+      "tool_using_agent": {
+        "audited_execution_count": 45,
+        "audited_candidate_count": 43,
+        "audited_experimental_failure_count": 2,
+        "atomic_claim_count": 167,
+        "claim_label_counts": {
+          "supported": 166,
+          "unsupported": 1
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.005988023952095809,
+        "evidence_references_verified_count": 42,
+        "evidence_references_not_verified_count": 1,
+        "safety_overreach_count": 1,
+        "failure_category_counts": {
+          "evidence_citation": 1,
+          "safety_overreach": 1,
+          "schema_or_output_format": 2
+        },
+        "all_reviews_complete": true
+      },
+      "proposed": {
+        "audited_execution_count": 45,
+        "audited_candidate_count": 45,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 172,
+        "claim_label_counts": {
+          "supported": 172
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 42,
+        "evidence_references_not_verified_count": 3,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "evidence_citation": 3
+        },
+        "all_reviews_complete": true
+      }
+    },
+    "by_category": {
+      "evidence_boundary": {
+        "audited_execution_count": 45,
+        "audited_candidate_count": 45,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 170,
+        "claim_label_counts": {
+          "indeterminate": 1,
+          "supported": 168,
+          "unsupported": 1
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.011764705882352941,
+        "evidence_references_verified_count": 28,
+        "evidence_references_not_verified_count": 17,
+        "safety_overreach_count": 1,
+        "failure_category_counts": {
+          "data_does_not_support_answer": 1,
+          "evidence_citation": 17,
+          "safety_overreach": 1
+        },
+        "all_reviews_complete": true
+      },
+      "fact_lookup": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 18,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 79,
+        "claim_label_counts": {
+          "indeterminate": 2,
+          "supported": 77
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.02531645569620253,
+        "evidence_references_verified_count": 11,
+        "evidence_references_not_verified_count": 7,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "data_does_not_support_answer": 2,
+          "evidence_citation": 7
+        },
+        "all_reviews_complete": true
+      },
+      "filtered_lookup": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 18,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 75,
+        "claim_label_counts": {
+          "supported": 75
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 12,
+        "evidence_references_not_verified_count": 6,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "evidence_citation": 6
+        },
+        "all_reviews_complete": true
+      },
+      "negative_control": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 17,
+        "audited_experimental_failure_count": 1,
+        "atomic_claim_count": 39,
+        "claim_label_counts": {
+          "supported": 39
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 17,
+        "evidence_references_not_verified_count": 0,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "schema_or_output_format": 1
+        },
+        "all_reviews_complete": true
+      },
+      "property_change": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 18,
+        "audited_experimental_failure_count": 0,
+        "atomic_claim_count": 67,
+        "claim_label_counts": {
+          "supported": 67
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 12,
+        "evidence_references_not_verified_count": 6,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "evidence_citation": 6
+        },
+        "all_reviews_complete": true
+      },
+      "summary": {
+        "audited_execution_count": 18,
+        "audited_candidate_count": 15,
+        "audited_experimental_failure_count": 3,
+        "atomic_claim_count": 75,
+        "claim_label_counts": {
+          "supported": 75
+        },
+        "unsupported_or_indeterminate_claim_rate": 0.0,
+        "evidence_references_verified_count": 10,
+        "evidence_references_not_verified_count": 5,
+        "safety_overreach_count": 0,
+        "failure_category_counts": {
+          "evidence_citation": 5,
+          "schema_or_output_format": 3
+        },
+        "all_reviews_complete": true
+      }
+    }
+  },
+  "operations": {
+    "evaluation_wide_ledger": {
+      "request_attempts": 758,
+      "successful_responses": 748,
+      "input_tokens": 3158978,
+      "cached_input_tokens": 2322176,
+      "output_tokens": 1227059,
+      "estimated_cost_usd": 0.467232,
+      "budget_usd": 2.25,
+      "conservative_estimated_cny": 4.67232,
+      "recorded_final_provider_usage_snapshot_cny": 3.59,
+      "authoritative_spend_cny": 4.67232,
+      "hard_ceiling_cny": 25.0,
+      "hard_ceiling_reached": false
+    },
+    "request_accounting": {
+      "retained_logical_core_workflow_responses": 600,
+      "retained_proposed_validator_responses": 126,
+      "retained_proposed_repair_responses": 8,
+      "retained_logical_response_total": 734,
+      "persisted_candidate_response_id_count": 713,
+      "persisted_failure_raw_response_count": 13,
+      "additional_successful_responses_in_cumulative_ledger": 14,
+      "unsuccessful_request_attempt_count": 10,
+      "note": "Logical response counts are reconstructed from the frozen workflow contract; cumulative-ledger excesses include interrupted/recovery attempts and are not reassigned to final outputs."
+    },
+    "usage_attribution": {
+      "exactly_attributable_execution_count": 353,
+      "ambiguous_execution_count": 7,
+      "exact_deltas_by_workflow": {
+        "direct_llm": {
+          "request_attempts": 127,
+          "successful_responses": 120,
+          "input_tokens": 2229849,
+          "cached_input_tokens": 1605120,
+          "output_tokens": 435301,
+          "estimated_cost_usd": 0.21384299999999998,
+          "conservative_estimated_cny": 2.1384299999999996
+        },
+        "tool_using_agent": {
+          "request_attempts": 237,
+          "successful_responses": 237,
+          "input_tokens": 346012,
+          "cached_input_tokens": 305024,
+          "output_tokens": 178605,
+          "estimated_cost_usd": 0.05660100000000001,
+          "conservative_estimated_cny": 0.5660100000000003
+        },
+        "proposed": {
+          "request_attempts": 384,
+          "successful_responses": 381,
+          "input_tokens": 575157,
+          "cached_input_tokens": 406272,
+          "output_tokens": 609918,
+          "estimated_cost_usd": 0.19555799999999998,
+          "conservative_estimated_cny": 1.9555799999999999
+        }
+      },
+      "ambiguous_pools": [
+        {
+          "execution_ids": [
+            "gate4-primary-050",
+            "gate4-primary-051"
+          ],
+          "workflows": [
+            "tool_using_agent",
+            "tool_using_agent"
+          ],
+          "combined_ledger_delta": {
+            "request_attempts": 3,
+            "successful_responses": 3,
+            "input_tokens": 2662,
+            "cached_input_tokens": 1920,
+            "output_tokens": 1628,
+            "estimated_cost_usd": 0.0005649999999999822,
+            "conservative_estimated_cny": 0.005650000000000155
+          },
+          "reason": "one or more legacy failure rows lack cumulative token/cost metadata, so the next recorded cumulative delta cannot be split exactly"
+        },
+        {
+          "execution_ids": [
+            "gate4-primary-072",
+            "gate4-primary-073",
+            "gate4-primary-074"
+          ],
+          "workflows": [
+            "tool_using_agent",
+            "tool_using_agent",
+            "tool_using_agent"
+          ],
+          "combined_ledger_delta": {
+            "request_attempts": 4,
+            "successful_responses": 4,
+            "input_tokens": 2360,
+            "cached_input_tokens": 1920,
+            "output_tokens": 307,
+            "estimated_cost_usd": 0.00015300000000001424,
+            "conservative_estimated_cny": 0.0015300000000000313
+          },
+          "reason": "one or more legacy failure rows lack cumulative token/cost metadata, so the next recorded cumulative delta cannot be split exactly"
+        },
+        {
+          "execution_ids": [
+            "gate4-primary-078",
+            "gate4-primary-079"
+          ],
+          "workflows": [
+            "tool_using_agent",
+            "tool_using_agent"
+          ],
+          "combined_ledger_delta": {
+            "request_attempts": 3,
+            "successful_responses": 3,
+            "input_tokens": 2938,
+            "cached_input_tokens": 1920,
+            "output_tokens": 1300,
+            "estimated_cost_usd": 0.0005120000000000124,
+            "conservative_estimated_cny": 0.005120000000000013
+          },
+          "reason": "one or more legacy failure rows lack cumulative token/cost metadata, so the next recorded cumulative delta cannot be split exactly"
+        }
+      ],
+      "per_call_kind_token_and_cost_split_available": false,
+      "reason": "run.json persists cumulative usage, not per-request token/cost records; four legacy failures also lack token metadata"
+    },
+    "repair": {
+      "proposed_repair_count": 8,
+      "proposed_repair_rate_per_primary_execution": 0.06666666666666667,
+      "proposed_repair_rate_per_persisted_candidate": 0.06779661016949153
+    },
+    "failures": {
+      "total": 12,
+      "by_workflow": {
+        "direct_llm": 3,
+        "proposed": 2,
+        "tool_using_agent": 7
+      },
+      "by_category": {
+        "schema_or_output_format": 12
+      },
+      "retry_allowed_count": 0,
+      "retry_performed_count": 0
+    },
+    "latency": {
+      "per_execution_latency_record_count": 0,
+      "aggregate_latency_available": false,
+      "reason": "retained run.json files do not persist request start time, elapsed duration, or per-execution latency; completed_at exists only inside some failure raw responses and cannot produce durations",
+      "estimated_values_substituted": false
+    }
+  },
+  "limitations": [
+    "Results are repeated measurements on one independently constructed controlled synthetic held-out fixture, not a universal BIM benchmark.",
+    "Only three repetitions, one model provider, and the frozen added/deleted/property_modified change boundary are covered.",
+    "Free-text answer semantics are not scored by the deterministic scorer; the preselected single-reviewer manual audit is reported separately.",
+    "No inter-rater agreement can be claimed because there was one human reviewer.",
+    "Per-execution and per-call-kind latency was not persisted and is unavailable; no estimate is substituted.",
+    "Per-call-kind token and cost allocation is unavailable because retained usage is cumulative and four legacy failure rows lack token metadata.",
+    "Bootstrap intervals describe clustered resampling uncertainty on this fixture and do not by themselves establish statistical significance or external generalizability."
+  ],
+  "publication_status": "HOLD_FOR_INDEPENDENT_VALIDATION_AND_PRIVATE_REVIEW",
+  "uploaded": false,
+  "public_conclusions_issued": false,
+  "model_calls_made": 0
+}

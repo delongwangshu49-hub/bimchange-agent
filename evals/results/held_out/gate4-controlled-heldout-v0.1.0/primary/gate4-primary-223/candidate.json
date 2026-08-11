@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The model pair summary shows that beam 3TNmmeV$vP1wtU7$eM6gTb was present in the source version and absent in the revised version, so it was deleted. However, the summary does not identify any actor or party responsible for that deletion, and responsibility judgments are outside the scope of the available source.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcBeam",
+          "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Beam L1 01",
+            "tag": "BM-L1-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "3TNmmeV$vP1wtU7$eM6gTb",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The model pair summary does not contain ownership, responsibility, or actor information.",
+        "Responsibility judgments are explicitly outside the scope of the available source summary."
+      ]
+    }
+  ]
+}

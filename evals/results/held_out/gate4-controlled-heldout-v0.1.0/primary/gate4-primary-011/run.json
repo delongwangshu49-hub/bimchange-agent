@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 11,
+  "execution_id": "gate4-primary-011",
+  "repetition": 1,
+  "workflow": "direct_llm",
+  "question_position": 11,
+  "question_id": "gate3-q38-wall-pset-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "a1c7a041-c617-4aa0-9fe8-473ce50c1b57"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 12,
+    "successful_responses": 11,
+    "input_tokens": 204405,
+    "cached_input_tokens": 48640,
+    "output_tokens": 34612,
+    "estimated_cost_usd": 0.031635,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 0.31635
+}

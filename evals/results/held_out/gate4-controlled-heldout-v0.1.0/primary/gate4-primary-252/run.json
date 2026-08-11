@@ -1,0 +1,253 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 252,
+  "execution_id": "gate4-primary-252",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 12,
+  "question_id": "gate3-q10-added-summary",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "470049a4-f608-46a5-9a56-ddd5636da27e",
+      "9b89ee5b-74da-417e-8d44-3a2d0806da49",
+      "88813885-5b52-4008-a3f9-e5f4b609d31c"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four elements appear only in the revised IFC model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified query result returns exactly four change records with change_type 'added' and result_count 4, matching the statement that four elements appear only in the revised model."
+        },
+        {
+          "claim": "An IfcBeam named 'Beam GF 05' tagged BM-GF-05 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The record 3Z1rgbb$PMDfsfeWvsKUUB has entity_type IfcBeam, new_value name 'Beam GF 05', tag 'BM-GF-05', and location name 'Ground Floor'."
+        },
+        {
+          "claim": "An IfcColumn named 'Column L1 05' tagged CL-L1-05 is on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The record 2$orIofUHKcQaHhLlr75_n has entity_type IfcColumn, new_value name 'Column L1 05', tag 'CL-L1-05', and location name 'Level 01'."
+        },
+        {
+          "claim": "An IfcSlab named 'Slab GF 05' tagged SL-GF-05 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The record 1hD8Z2VI5Q48QgyBkf6YcB has entity_type IfcSlab, new_value name 'Slab GF 05', tag 'SL-GF-05', and location name 'Ground Floor'."
+        },
+        {
+          "claim": "An IfcWall named 'Wall RF 05' tagged WL-RF-05 is on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record 2rg8G55UvONxUu2GmkwF$d has entity_type IfcWall, new_value name 'Wall RF 05', tag 'WL-RF-05', and location name 'Roof'."
+        },
+        {
+          "claim": "Summary is limited to 'added' change records present in data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json with filter change_types ['added'] and result_count 4."
+        },
+        {
+          "claim": "No property-level field changes are reported for these additions.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Every returned record has field:null, old_value:null, and new_value containing entity attributes, so no property-level field change is present."
+        },
+        {
+          "claim": "No GUIDs, storeys, or other attributes beyond the cited change records were inferred.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "All attributes stated in the summary (names, tags, and storey names) are present in the returned change records; the verified result contains no additional attributes beyond those cited."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four elements appear only in the revised IFC model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified query result returns exactly four change records with change_type 'added' and result_count 4, matching the statement that four elements appear only in the revised model."
+        },
+        {
+          "claim": "An IfcBeam named 'Beam GF 05' tagged BM-GF-05 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The record 3Z1rgbb$PMDfsfeWvsKUUB has entity_type IfcBeam, new_value name 'Beam GF 05', tag 'BM-GF-05', and location name 'Ground Floor'."
+        },
+        {
+          "claim": "An IfcColumn named 'Column L1 05' tagged CL-L1-05 is on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The record 2$orIofUHKcQaHhLlr75_n has entity_type IfcColumn, new_value name 'Column L1 05', tag 'CL-L1-05', and location name 'Level 01'."
+        },
+        {
+          "claim": "An IfcSlab named 'Slab GF 05' tagged SL-GF-05 is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The record 1hD8Z2VI5Q48QgyBkf6YcB has entity_type IfcSlab, new_value name 'Slab GF 05', tag 'SL-GF-05', and location name 'Ground Floor'."
+        },
+        {
+          "claim": "An IfcWall named 'Wall RF 05' tagged WL-RF-05 is on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The record 2rg8G55UvONxUu2GmkwF$d has entity_type IfcWall, new_value name 'Wall RF 05', tag 'WL-RF-05', and location name 'Roof'."
+        },
+        {
+          "claim": "Summary is limited to 'added' change records present in data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json with filter change_types ['added'] and result_count 4."
+        },
+        {
+          "claim": "No property-level field changes are reported for these additions.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Every returned record has field:null, old_value:null, and new_value containing entity attributes, so no property-level field change is present."
+        },
+        {
+          "claim": "No GUIDs, storeys, or other attributes beyond the cited change records were inferred.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "All attributes stated in the summary (names, tags, and storey names) are present in the returned change records; the verified result contains no additional attributes beyond those cited."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 542,
+    "successful_responses": 533,
+    "input_tokens": 2152908,
+    "cached_input_tokens": 1364608,
+    "output_tokens": 865760,
+    "estimated_cost_usd": 0.356597,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.56597
+}

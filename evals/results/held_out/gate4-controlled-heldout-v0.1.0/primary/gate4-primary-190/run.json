@@ -1,0 +1,152 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 190,
+  "execution_id": "gate4-primary-190",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 30,
+  "question_id": "gate3-q36-slab-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "fb109d1b-7306-47cf-a322-d2bcdae103b5",
+      "f08bd2a0-efc8-489c-92ce-c830db876f97",
+      "ef4e6637-4fe5-4891-ab0a-12d1947b6f34"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "2WfINAQAHRERPwEp7Nos0$"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The scalar property that changed for 2WfINAQAHRERPwEp7Nos0$ is LoadBearing in Pset_SlabCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record gate4-property-slab-roof identifies this entity with field property_set Pset_SlabCommon and name LoadBearing."
+        },
+        {
+          "claim": "Its old value was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record for this global ID sets old_value to false for LoadBearing."
+        },
+        {
+          "claim": "Its new value is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record for this global ID sets new_value to true for LoadBearing."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The scalar property that changed for 2WfINAQAHRERPwEp7Nos0$ is LoadBearing in Pset_SlabCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record gate4-property-slab-roof identifies this entity with field property_set Pset_SlabCommon and name LoadBearing."
+        },
+        {
+          "claim": "Its old value was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record for this global ID sets old_value to false for LoadBearing."
+        },
+        {
+          "claim": "Its new value is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record for this global ID sets new_value to true for LoadBearing."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 427,
+    "successful_responses": 421,
+    "input_tokens": 1296578,
+    "cached_input_tokens": 543232,
+    "output_tokens": 598563,
+    "estimated_cost_usd": 0.274588,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.74588
+}

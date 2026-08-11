@@ -1,0 +1,202 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 253,
+  "execution_id": "gate4-primary-253",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 13,
+  "question_id": "gate3-q26-added-beam-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "a47b46bf-731e-4f8f-8149-3f3093d3a1e0",
+      "79080efb-5479-410d-bfd0-acd0ebf8ff0f",
+      "8a1d0184-548d-470f-b1eb-c9a5af4fe703"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcBeam"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "One IfcBeam element was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record has result_count 1 and contains exactly one IfcBeam addition with this global ID."
+        },
+        {
+          "claim": "The added IfcBeam is named 'Beam GF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record's new_value.name is 'Beam GF 05' for this IfcBeam."
+        },
+        {
+          "claim": "The added IfcBeam has tag 'BM-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record's new_value.tag is 'BM-GF-05' for this IfcBeam."
+        },
+        {
+          "claim": "The added IfcBeam has global ID 3Z1rgbb$PMDfsfeWvsKUUB.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record lists this exact global_id for the IfcBeam addition."
+        },
+        {
+          "claim": "The added IfcBeam is located on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified change record's location identifies the IfcBuildingStorey named 'Ground Floor' as the spatial container for this IfcBeam."
+        },
+        {
+          "claim": "The Ground Floor IfcBuildingStorey has global ID 1fw5N5GZfPh95hsaUid9Fb.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified change record's location includes an IfcBuildingStorey with this exact global_id."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "One IfcBeam element was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record has result_count 1 and contains exactly one IfcBeam addition with this global ID."
+        },
+        {
+          "claim": "The added IfcBeam is named 'Beam GF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record's new_value.name is 'Beam GF 05' for this IfcBeam."
+        },
+        {
+          "claim": "The added IfcBeam has tag 'BM-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record's new_value.tag is 'BM-GF-05' for this IfcBeam."
+        },
+        {
+          "claim": "The added IfcBeam has global ID 3Z1rgbb$PMDfsfeWvsKUUB.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record lists this exact global_id for the IfcBeam addition."
+        },
+        {
+          "claim": "The added IfcBeam is located on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified change record's location identifies the IfcBuildingStorey named 'Ground Floor' as the spatial container for this IfcBeam."
+        },
+        {
+          "claim": "The Ground Floor IfcBuildingStorey has global ID 1fw5N5GZfPh95hsaUid9Fb.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified change record's location includes an IfcBuildingStorey with this exact global_id."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 545,
+    "successful_responses": 536,
+    "input_tokens": 2156665,
+    "cached_input_tokens": 1367552,
+    "output_tokens": 869226,
+    "estimated_cost_usd": 0.357689,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.57689
+}

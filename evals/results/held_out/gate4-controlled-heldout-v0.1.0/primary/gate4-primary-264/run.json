@@ -1,0 +1,143 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 264,
+  "execution_id": "gate4-primary-264",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 24,
+  "question_id": "gate3-q43-no-property-slab-level01",
+  "category": "negative_control",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "83ccaa6b-559b-48f2-8f5f-bec3f56159dd",
+      "6fb6a7c5-77bd-4fc9-9408-07ebb9ce699c",
+      "6b52cb8f-2a46-44d1-bb6e-ac8ce1d8f968"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "building_storey_names": [
+          "Level 01"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified property modification for an IfcSlab on Level 01 was found in the queried change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result filters for change_types=['property_modified'], entity_types=['IfcSlab'], and building_storey_names=['Level 01'] and returns result_count=0 with an empty results array."
+        },
+        {
+          "claim": "The conclusion is based solely on gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result explicitly identifies data/ground_truth/gate2-change-records.json as its source and supplies no other change records, establishing that evidence boundary."
+        },
+        {
+          "claim": "No matching property-modified record for an IfcSlab on Level 01 was returned by the change query.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The filtered query for property_modified, IfcSlab, and Level 01 has result_count=0 and results=[]."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified property modification for an IfcSlab on Level 01 was found in the queried change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result filters for change_types=['property_modified'], entity_types=['IfcSlab'], and building_storey_names=['Level 01'] and returns result_count=0 with an empty results array."
+        },
+        {
+          "claim": "The conclusion is based solely on gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result explicitly identifies data/ground_truth/gate2-change-records.json as its source and supplies no other change records, establishing that evidence boundary."
+        },
+        {
+          "claim": "No matching property-modified record for an IfcSlab on Level 01 was returned by the change query.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The filtered query for property_modified, IfcSlab, and Level 01 has result_count=0 and results=[]."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 581,
+    "successful_responses": 572,
+    "input_tokens": 2206923,
+    "cached_input_tokens": 1403648,
+    "output_tokens": 928059,
+    "estimated_cost_usd": 0.376246,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.76246
+}

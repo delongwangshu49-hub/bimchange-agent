@@ -1,0 +1,231 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 83,
+  "execution_id": "gate4-primary-083",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 3,
+  "question_id": "gate3-q15-column-level01-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "29b3311c-389b-427f-961b-97fe2cfe0bd7",
+      "686f4095-042c-46fc-ba5d-e40cd09a24cc",
+      "37cf4831-eb0b-4da1-ad00-1d80d5c56544"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "2$orIofUHKcQaHhLlr75_n"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is an addition with change_type \"added\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record for global_id 2$orIofUHKcQaHhLlr75_n has change_type \"added\"."
+        },
+        {
+          "claim": "The added element is an IfcColumn.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record specifies entity_type \"IfcColumn\" for global_id 2$orIofUHKcQaHhLlr75_n."
+        },
+        {
+          "claim": "The element has global_id 2$orIofUHKcQaHhLlr75_n.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record is filtered by and contains global_id 2$orIofUHKcQaHhLlr75_n."
+        },
+        {
+          "claim": "The addition is located on building storey Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified change record's location includes a spatial_container and building_storey with entity_type IfcBuildingStorey, global_id 16B$afW8bSivOT_ExWbFiL, and name \"Level 01\"."
+        },
+        {
+          "claim": "The building storey has global_id 16B$afW8bSivOT_ExWbFiL.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified change record identifies the building storey as global_id 16B$afW8bSivOT_ExWbFiL in both spatial_container and building_storey."
+        },
+        {
+          "claim": "The added column is introduced as a new value with name \"Column L1 05\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record's new_value contains name \"Column L1 05\"."
+        },
+        {
+          "claim": "The added column has tag \"CL-L1-05\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record's new_value contains tag \"CL-L1-05\"."
+        },
+        {
+          "claim": "No existing field value was changed.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record has field null, old_value null, and change_type \"added\", indicating no prior field value was modified."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is an addition with change_type \"added\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record for global_id 2$orIofUHKcQaHhLlr75_n has change_type \"added\"."
+        },
+        {
+          "claim": "The added element is an IfcColumn.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record specifies entity_type \"IfcColumn\" for global_id 2$orIofUHKcQaHhLlr75_n."
+        },
+        {
+          "claim": "The element has global_id 2$orIofUHKcQaHhLlr75_n.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record is filtered by and contains global_id 2$orIofUHKcQaHhLlr75_n."
+        },
+        {
+          "claim": "The addition is located on building storey Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified change record's location includes a spatial_container and building_storey with entity_type IfcBuildingStorey, global_id 16B$afW8bSivOT_ExWbFiL, and name \"Level 01\"."
+        },
+        {
+          "claim": "The building storey has global_id 16B$afW8bSivOT_ExWbFiL.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified change record identifies the building storey as global_id 16B$afW8bSivOT_ExWbFiL in both spatial_container and building_storey."
+        },
+        {
+          "claim": "The added column is introduced as a new value with name \"Column L1 05\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record's new_value contains name \"Column L1 05\"."
+        },
+        {
+          "claim": "The added column has tag \"CL-L1-05\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record's new_value contains tag \"CL-L1-05\"."
+        },
+        {
+          "claim": "No existing field value was changed.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "The verified change record has field null, old_value null, and change_type \"added\", indicating no prior field value was modified."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 132,
+    "successful_responses": 128,
+    "input_tokens": 863099,
+    "cached_input_tokens": 204032,
+    "output_tokens": 203732,
+    "estimated_cost_usd": 0.149886,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.49886
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q25-roof-filter",
+      "status": "not_found",
+      "answer": "No verified revision events explicitly associated with Roof were found. The gate2-change-records.json source contains no change-query records whose entity type is IfcRoof.",
+      "predictions": [],
+      "limitations": [
+        "The query was restricted to source_type=change_query records in data/ground_truth/gate2-change-records.json. No records with entity_type IfcRoof were returned. This result does not imply the absence of other model elements that may be indirectly linked to a roof."
+      ]
+    }
+  ]
+}

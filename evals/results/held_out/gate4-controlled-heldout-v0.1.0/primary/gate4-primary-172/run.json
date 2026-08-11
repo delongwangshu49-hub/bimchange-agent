@@ -1,0 +1,311 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 172,
+  "execution_id": "gate4-primary-172",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 12,
+  "question_id": "gate3-q09-all-changes",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "5a0e8e32-612d-47aa-affd-b9eab752334b",
+      "fd0f061f-b7c9-4bc5-9eb2-6264c555d328",
+      "4bbb69b8-6aab-4005-a513-c67e800b72ea"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {}
+    },
+    "tool_result_count": 12,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 12,
+      "evidence_supported_count": 12,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 12,
+      "prediction_count": 12,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are three building storeys involved: Ground Floor, Level 01, and Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1fw5N5GZfPh95hsaUid9Fb",
+            "16B$afW8bSivOT_ExWbFiL",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "All verified revision events contain spatial_container/building_storey entries with these exact names and global IDs."
+        },
+        {
+          "claim": "There are 12 verified revision events in total.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result reports result_count 12 and contains exactly 12 change records."
+        },
+        {
+          "claim": "There are exactly 4 addition events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Exactly four verified records have change_type 'added'."
+        },
+        {
+          "claim": "The additions consist of one beam, one column, one slab, and one wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The four added entities are IfcBeam, IfcColumn, IfcSlab, and IfcWall, one of each."
+        },
+        {
+          "claim": "There are exactly 4 deletion events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Exactly four verified records have change_type 'deleted'."
+        },
+        {
+          "claim": "The deletions consist of one beam, one column, one slab, and one wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The four deleted entities are IfcBeam, IfcColumn, IfcSlab, and IfcWall, one of each."
+        },
+        {
+          "claim": "There are exactly 4 property modification events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Exactly four verified records have change_type 'property_modified'."
+        },
+        {
+          "claim": "The property modifications are a beam's LoadBearing, a column's IsExternal, a slab's LoadBearing, and a wall's FireRating.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified property_modified records show IfcBeam LoadBearing, IfcColumn IsExternal, IfcSlab LoadBearing, and IfcWall FireRating."
+        },
+        {
+          "claim": "Only revision events recorded in data/ground_truth/gate2-change-records.json are reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result has source.path data/ground_truth/gate2-change-records.json, and the candidate answer explicitly limits reporting to that record set."
+        },
+        {
+          "claim": "No claim is made about changes outside that record set.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The limitations statement explicitly disclaims coverage beyond the supplied verified change records, which is consistent with the evidence boundary."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 12,
+      "evidence_supported_count": 12,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 12,
+      "prediction_count": 12,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are three building storeys involved: Ground Floor, Level 01, and Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1fw5N5GZfPh95hsaUid9Fb",
+            "16B$afW8bSivOT_ExWbFiL",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "All verified revision events contain spatial_container/building_storey entries with these exact names and global IDs."
+        },
+        {
+          "claim": "There are 12 verified revision events in total.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result reports result_count 12 and contains exactly 12 change records."
+        },
+        {
+          "claim": "There are exactly 4 addition events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Exactly four verified records have change_type 'added'."
+        },
+        {
+          "claim": "The additions consist of one beam, one column, one slab, and one wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The four added entities are IfcBeam, IfcColumn, IfcSlab, and IfcWall, one of each."
+        },
+        {
+          "claim": "There are exactly 4 deletion events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Exactly four verified records have change_type 'deleted'."
+        },
+        {
+          "claim": "The deletions consist of one beam, one column, one slab, and one wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The four deleted entities are IfcBeam, IfcColumn, IfcSlab, and IfcWall, one of each."
+        },
+        {
+          "claim": "There are exactly 4 property modification events.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Exactly four verified records have change_type 'property_modified'."
+        },
+        {
+          "claim": "The property modifications are a beam's LoadBearing, a column's IsExternal, a slab's LoadBearing, and a wall's FireRating.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified property_modified records show IfcBeam LoadBearing, IfcColumn IsExternal, IfcSlab LoadBearing, and IfcWall FireRating."
+        },
+        {
+          "claim": "Only revision events recorded in data/ground_truth/gate2-change-records.json are reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result has source.path data/ground_truth/gate2-change-records.json, and the candidate answer explicitly limits reporting to that record set."
+        },
+        {
+          "claim": "No claim is made about changes outside that record set.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The limitations statement explicitly disclaims coverage beyond the supplied verified change records, which is consistent with the evidence boundary."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 371,
+    "successful_responses": 365,
+    "input_tokens": 1217222,
+    "cached_input_tokens": 484864,
+    "output_tokens": 514645,
+    "estimated_cost_usd": 0.247989,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.47989
+}

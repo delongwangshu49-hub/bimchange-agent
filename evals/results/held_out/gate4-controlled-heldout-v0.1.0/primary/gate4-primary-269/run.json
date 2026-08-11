@@ -1,0 +1,315 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 269,
+  "execution_id": "gate4-primary-269",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 29,
+  "question_id": "gate3-q21-wall-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "071588de-6046-47a7-b5b7-877978c741e3",
+      "314062cd-686c-4cf2-a709-7692675422e3",
+      "723ea28f-460f-4aee-bbe3-b8caefff3b61"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcWall"
+        ]
+      }
+    },
+    "tool_result_count": 3,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There is a verified addition of IfcWall 2rg8G55UvONxUu2GmkwF$d.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Verified change record gate4-added-wall-roof lists change_type 'added' and entity_type 'IfcWall' for this global_id."
+        },
+        {
+          "claim": "The added IfcWall 2rg8G55UvONxUu2GmkwF$d has name Wall RF 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified addition record new_value.name is 'Wall RF 05'."
+        },
+        {
+          "claim": "The added IfcWall 2rg8G55UvONxUu2GmkwF$d has tag WL-RF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified addition record new_value.tag is 'WL-RF-05'."
+        },
+        {
+          "claim": "The addition of IfcWall 2rg8G55UvONxUu2GmkwF$d occurred in the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified addition record has spatial_container and building_storey both named 'Roof' with storey global_id 3Oz3veLPTRYhlejGdV1B7j."
+        },
+        {
+          "claim": "There is a verified deletion of IfcWall 0z7L81IEbQPggjg__OrrlU.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Verified change record gate4-deleted-wall-ground lists change_type 'deleted' and entity_type 'IfcWall' for this global_id."
+        },
+        {
+          "claim": "The deleted IfcWall 0z7L81IEbQPggjg__OrrlU has name Wall GF 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified deletion record old_value.name is 'Wall GF 01'."
+        },
+        {
+          "claim": "The deleted IfcWall 0z7L81IEbQPggjg__OrrlU has tag WL-GF-01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified deletion record old_value.tag is 'WL-GF-01'."
+        },
+        {
+          "claim": "The deletion of IfcWall 0z7L81IEbQPggjg__OrrlU occurred from the Ground Floor storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified deletion record has spatial_container and building_storey both named 'Ground Floor' with storey global_id 1fw5N5GZfPh95hsaUid9Fb."
+        },
+        {
+          "claim": "There is a verified modification of the FireRating property on IfcWall 1aO4mYJaTLLf6oT4DTcfok.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Verified change record gate4-property-wall-level01 lists change_type 'property_modified' and field property_set 'Pset_WallCommon' with name 'FireRating' for this global_id."
+        },
+        {
+          "claim": "The modification of IfcWall 1aO4mYJaTLLf6oT4DTcfok occurred in the Level 01 storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified modification record has spatial_container and building_storey both named 'Level 01' with storey global_id 16B$afW8bSivOT_ExWbFiL."
+        },
+        {
+          "claim": "The FireRating on IfcWall 1aO4mYJaTLLf6oT4DTcfok was modified from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified modification record old_value is '60' and new_value is '90' for Pset_WallCommon FireRating."
+        },
+        {
+          "claim": "Only records returned from data/ground_truth/gate2-change-records.json were used; no model pair summaries or other sources were consulted.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The verified query result identifies the source file and three IfcWall records, but it does not document the process by which the answer was assembled or prove that no other source was consulted."
+        },
+        {
+          "claim": "The list is limited to the three verified change records matching IfcWall in data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "0z7L81IEbQPggjg__OrrlU",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result applies filters.entity_types ['IfcWall'] and reports result_count 3; all three returned records have entity_type IfcWall."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 3,
+      "evidence_supported_count": 3,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 3,
+      "prediction_count": 3,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There is a verified addition of IfcWall 2rg8G55UvONxUu2GmkwF$d.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Verified change record gate4-added-wall-roof lists change_type 'added' and entity_type 'IfcWall' for this global_id."
+        },
+        {
+          "claim": "The added IfcWall 2rg8G55UvONxUu2GmkwF$d has name Wall RF 05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified addition record new_value.name is 'Wall RF 05'."
+        },
+        {
+          "claim": "The added IfcWall 2rg8G55UvONxUu2GmkwF$d has tag WL-RF-05.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified addition record new_value.tag is 'WL-RF-05'."
+        },
+        {
+          "claim": "The addition of IfcWall 2rg8G55UvONxUu2GmkwF$d occurred in the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified addition record has spatial_container and building_storey both named 'Roof' with storey global_id 3Oz3veLPTRYhlejGdV1B7j."
+        },
+        {
+          "claim": "There is a verified deletion of IfcWall 0z7L81IEbQPggjg__OrrlU.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Verified change record gate4-deleted-wall-ground lists change_type 'deleted' and entity_type 'IfcWall' for this global_id."
+        },
+        {
+          "claim": "The deleted IfcWall 0z7L81IEbQPggjg__OrrlU has name Wall GF 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified deletion record old_value.name is 'Wall GF 01'."
+        },
+        {
+          "claim": "The deleted IfcWall 0z7L81IEbQPggjg__OrrlU has tag WL-GF-01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified deletion record old_value.tag is 'WL-GF-01'."
+        },
+        {
+          "claim": "The deletion of IfcWall 0z7L81IEbQPggjg__OrrlU occurred from the Ground Floor storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified deletion record has spatial_container and building_storey both named 'Ground Floor' with storey global_id 1fw5N5GZfPh95hsaUid9Fb."
+        },
+        {
+          "claim": "There is a verified modification of the FireRating property on IfcWall 1aO4mYJaTLLf6oT4DTcfok.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Verified change record gate4-property-wall-level01 lists change_type 'property_modified' and field property_set 'Pset_WallCommon' with name 'FireRating' for this global_id."
+        },
+        {
+          "claim": "The modification of IfcWall 1aO4mYJaTLLf6oT4DTcfok occurred in the Level 01 storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified modification record has spatial_container and building_storey both named 'Level 01' with storey global_id 16B$afW8bSivOT_ExWbFiL."
+        },
+        {
+          "claim": "The FireRating on IfcWall 1aO4mYJaTLLf6oT4DTcfok was modified from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified modification record old_value is '60' and new_value is '90' for Pset_WallCommon FireRating."
+        },
+        {
+          "claim": "Only records returned from data/ground_truth/gate2-change-records.json were used; no model pair summaries or other sources were consulted.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The verified query result identifies the source file and three IfcWall records, but it does not document the process by which the answer was assembled or prove that no other source was consulted."
+        },
+        {
+          "claim": "The list is limited to the three verified change records matching IfcWall in data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d",
+            "0z7L81IEbQPggjg__OrrlU",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result applies filters.entity_types ['IfcWall'] and reports result_count 3; all three returned records have entity_type IfcWall."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 596,
+    "successful_responses": 587,
+    "input_tokens": 2236331,
+    "cached_input_tokens": 1421696,
+    "output_tokens": 968048,
+    "estimated_cost_usd": 0.389084,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.89084
+}

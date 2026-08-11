@@ -1,0 +1,215 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 115,
+  "execution_id": "gate4-primary-115",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 35,
+  "question_id": "gate3-q47-slab-priority-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "1ff15aca-2e93-461e-ada9-177935e2a05a",
+      "8c161d84-bdd9-46cf-8671-6959a59a8764",
+      "e812d138-7bcc-4a36-b2b7-4be7e853fe73",
+      "e9000a9b-8b5b-4890-89f9-909eec8d00b9",
+      "6193f0d7-1bb5-4998-b521-a8d55b77539c"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcSlab"
+        ],
+        "global_ids": [
+          "1hD8Z2VI5Q48QgyBkf6YcB"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 1,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 0,
+      "coverage_rate": 0.0,
+      "missing_change_ids": [
+        "gate4-added-slab-ground"
+      ],
+      "unexpected_prediction_count": 0,
+      "complete": false
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The available change record confirms that slab 1hD8Z2VI5Q48QgyBkf6YcB was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified change record for 1hD8Z2VI5Q48QgyBkf6YcB has change_type 'added' and entity_type 'IfcSlab'."
+        },
+        {
+          "claim": "The available change record does not provide any coordination priority information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The single verified result contains only change_id, change_type, entity_type, global_id, location, field, old_value, new_value, and evidence; no coordination priority field is present."
+        },
+        {
+          "claim": "The available change record does not provide any coordination ranking information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The single verified result contains no field specifying a coordination rank or ranking."
+        },
+        {
+          "claim": "It cannot be determined from the available change record whether this slab should receive the highest coordination priority.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified record confirms only the addition of the slab and lacks any priority or ranking fields, so it cannot support a highest-priority determination."
+        },
+        {
+          "claim": "The only available source is the gate2 change record for the added slab.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result has source 'data/ground_truth/gate2-change-records.json' and result_count 1 for this global_id."
+        },
+        {
+          "claim": "The available change record contains no priority field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The result object has no field named 'priority' or any equivalent priority field; new_value contains only name and tag."
+        },
+        {
+          "claim": "The available change record contains no severity field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The result object has no field named 'severity'."
+        },
+        {
+          "claim": "The available change record contains no ranking field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The result object has no field named 'ranking' or any equivalent ranking field."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The returned change record confirms that slab 1hD8Z2VI5Q48QgyBkf6YcB (SL-GF-05) was added on the Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result shows change_type \"added\", entity_type \"IfcSlab\", global_id \"1hD8Z2VI5Q48QgyBkf6YcB\", location on Ground Floor, and new_value with tag \"SL-GF-05\"."
+        },
+        {
+          "claim": "The returned change record contains no coordination priority, severity, or ranking information.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The supplied change record contains only fields such as change_id, change_type, entity_type, global_id, location, field, old_value, new_value, and evidence; none of these provide priority, severity, or ranking data."
+        },
+        {
+          "claim": "Therefore, whether this slab should receive the highest coordination priority cannot be determined from the available evidence.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "Because the only returned record for this slab provides addition and location details but no coordination priority, severity, or ranking fields, the evidence boundary supports the conclusion that highest coordination priority cannot be determined."
+        },
+        {
+          "claim": "The only available source is the gate2 change record for the added slab.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The verified query result lists source path \"data/ground_truth/gate2-change-records.json\" and returns exactly one record matching the filters for this slab."
+        },
+        {
+          "claim": "It contains no priority, severity, or ranking fields.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "The supplied record object has no properties for priority, severity, or ranking; only the stated change and location metadata are present."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 237,
+    "successful_responses": 231,
+    "input_tokens": 1021965,
+    "cached_input_tokens": 315776,
+    "output_tokens": 372579,
+    "estimated_cost_usd": 0.204073,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.04073
+}

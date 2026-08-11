@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "proposed",
+  "answers": [
+    {
+      "question_id": "gate3-q16-slab-level01-guid",
+      "status": "answered",
+      "answer": "The verified revision event is the deletion of IfcSlab 3QgprvELLQBgvTF$EPliSW (name 'Slab L1 01', tag 'SL-L1-01') from Level 01 (16B$afW8bSivOT_ExWbFiL), confirmed by change record gate4-deleted-slab-level01.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcSlab",
+          "global_id": "3QgprvELLQBgvTF$EPliSW",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Slab L1 01",
+            "tag": "SL-L1-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-deleted-slab-level01",
+              "global_id": "3QgprvELLQBgvTF$EPliSW"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only one change record was found for this global ID in the queried change records source."
+      ]
+    }
+  ]
+}

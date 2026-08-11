@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The available change record confirms that wall 2rg8G55UvONxUu2GmkwF$d was added, but it contains no geometric, topological, or boundary information needed to judge constructability. Constructability as shown cannot be determined from the evidence.",
+      "predictions": [],
+      "limitations": [
+        "Constructability would require geometry, placement, or boundary data, which is not present in the supplied change record.",
+        "Only the added-wall change event was found; no source model geometry or spatial conflict information was provided."
+      ]
+    }
+  ]
+}

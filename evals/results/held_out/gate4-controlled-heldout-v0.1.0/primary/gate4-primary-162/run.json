@@ -1,0 +1,125 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 162,
+  "execution_id": "gate4-primary-162",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 2,
+  "question_id": "gate3-q25-roof-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "50e50ce7-0cc5-4ff3-8615-905b80aaf379",
+      "d1e66536-4041-46a7-a154-abd4eaf6fac2",
+      "949a729b-881e-4348-b916-7271d179b413"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcRoof"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified revision events are explicitly associated with IfcRoof in the available gate2 change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified_query_result filters on entity_types IfcRoof and reports result_count 0 with an empty results array, directly confirming that no verified revision events are associated with IfcRoof in the change records."
+        },
+        {
+          "claim": "The change records contain no entries with entity type IfcRoof.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified_query_result explicitly applies the filter entity_types [IfcRoof] and returns result_count 0, which supports the limitation that no entries of entity type IfcRoof exist in the change records."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No verified revision events are explicitly associated with IfcRoof in the available gate2 change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified_query_result filters on entity_types IfcRoof and reports result_count 0 with an empty results array, directly confirming that no verified revision events are associated with IfcRoof in the change records."
+        },
+        {
+          "claim": "The change records contain no entries with entity type IfcRoof.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified_query_result explicitly applies the filter entity_types [IfcRoof] and returns result_count 0, which supports the limitation that no entries of entity type IfcRoof exist in the change records."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 341,
+    "successful_responses": 335,
+    "input_tokens": 1168090,
+    "cached_input_tokens": 451840,
+    "output_tokens": 465202,
+    "estimated_cost_usd": 0.231797,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.31797
+}

@@ -1,0 +1,168 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 273,
+  "execution_id": "gate4-primary-273",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 33,
+  "question_id": "gate3-q36-slab-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "8045a35b-7917-4c8a-9dd1-247fcbcdb3e9",
+      "8b73af9b-f552-44fa-bd69-a0bfe5ee2d3e",
+      "4d95d401-00e1-476f-be74-62832b989497"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "2WfINAQAHRERPwEp7Nos0$"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The scalar property that changed is LoadBearing in Pset_SlabCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record identifies field.kind as property, property_set Pset_SlabCommon, and name LoadBearing."
+        },
+        {
+          "claim": "The old value of LoadBearing was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record lists old_value false for Pset_SlabCommon.LoadBearing."
+        },
+        {
+          "claim": "The new value of LoadBearing is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record lists new_value true for Pset_SlabCommon.LoadBearing."
+        },
+        {
+          "claim": "The change is for IfcSlab 2WfINAQAHRERPwEp7Nos0$.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record has entity_type IfcSlab and global_id 2WfINAQAHRERPwEp7Nos0$."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The scalar property that changed is LoadBearing in Pset_SlabCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record identifies field.kind as property, property_set Pset_SlabCommon, and name LoadBearing."
+        },
+        {
+          "claim": "The old value of LoadBearing was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record lists old_value false for Pset_SlabCommon.LoadBearing."
+        },
+        {
+          "claim": "The new value of LoadBearing is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record lists new_value true for Pset_SlabCommon.LoadBearing."
+        },
+        {
+          "claim": "The change is for IfcSlab 2WfINAQAHRERPwEp7Nos0$.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record has entity_type IfcSlab and global_id 2WfINAQAHRERPwEp7Nos0$."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 608,
+    "successful_responses": 599,
+    "input_tokens": 2254248,
+    "cached_input_tokens": 1434240,
+    "output_tokens": 986372,
+    "estimated_cost_usd": 0.395002,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.95002
+}

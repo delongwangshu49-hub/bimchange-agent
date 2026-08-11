@@ -1,0 +1,229 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 199,
+  "execution_id": "gate4-primary-199",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 39,
+  "question_id": "gate3-q14-wall-ground-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "ed44f672-6f78-46f0-9886-97c745d2619e",
+      "a4c7165d-a5a2-4315-8f84-f24fab124489",
+      "aea4800e-bf84-43ce-85ae-2c765a09af61"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "0z7L81IEbQPggjg__OrrlU"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event for element 0z7L81IEbQPggjg__OrrlU is 'gate4-deleted-wall-ground'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record for this global_id has change_id 'gate4-deleted-wall-ground'."
+        },
+        {
+          "claim": "The element is an IFC wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record lists entity_type as 'IfcWall'."
+        },
+        {
+          "claim": "The wall is named 'Wall GF 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record old_value.name is 'Wall GF 01'."
+        },
+        {
+          "claim": "The wall has tag 'WL-GF-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record old_value.tag is 'WL-GF-01'."
+        },
+        {
+          "claim": "The wall was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record has change_type 'deleted'."
+        },
+        {
+          "claim": "The deletion occurred from the Ground Floor storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record location identifies an IfcBuildingStorey named 'Ground Floor' as the spatial container and building storey."
+        },
+        {
+          "claim": "Field-level property values are not available for this deletion event.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record has field null and new_value null, so no field-level property value is provided."
+        },
+        {
+          "claim": "Only the pre-deletion object name and tag are provided for this deletion event.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record old_value contains only 'name' and 'tag'."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event for element 0z7L81IEbQPggjg__OrrlU is 'gate4-deleted-wall-ground'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record for this global_id has change_id 'gate4-deleted-wall-ground'."
+        },
+        {
+          "claim": "The element is an IFC wall.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record lists entity_type as 'IfcWall'."
+        },
+        {
+          "claim": "The wall is named 'Wall GF 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record old_value.name is 'Wall GF 01'."
+        },
+        {
+          "claim": "The wall has tag 'WL-GF-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record old_value.tag is 'WL-GF-01'."
+        },
+        {
+          "claim": "The wall was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record has change_type 'deleted'."
+        },
+        {
+          "claim": "The deletion occurred from the Ground Floor storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record location identifies an IfcBuildingStorey named 'Ground Floor' as the spatial container and building storey."
+        },
+        {
+          "claim": "Field-level property values are not available for this deletion event.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record has field null and new_value null, so no field-level property value is provided."
+        },
+        {
+          "claim": "Only the pre-deletion object name and tag are provided for this deletion event.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record old_value contains only 'name' and 'tag'."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 457,
+    "successful_responses": 451,
+    "input_tokens": 1342521,
+    "cached_input_tokens": 575488,
+    "output_tokens": 647388,
+    "estimated_cost_usd": 0.290265,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.90265
+}

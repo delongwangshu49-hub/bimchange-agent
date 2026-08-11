@@ -1,0 +1,212 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 166,
+  "execution_id": "gate4-primary-166",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 6,
+  "question_id": "gate3-q28-property-wall-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "ff0d2af9-8a47-4195-ac8d-e17347e5d11a",
+      "71670919-e3bf-4b90-a17b-c6fd8e0e15a6",
+      "8b4963ba-1efb-4128-ab55-b55ab7ddbbde"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified property modification applies to one IfcWall element.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result has result_count=1 and a single result with entity_type IfcWall."
+        },
+        {
+          "claim": "The IfcWall has global ID 1aO4mYJaTLLf6oT4DTcfok.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result's global_id field matches the stated global ID."
+        },
+        {
+          "claim": "The wall is located on building storey Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "Both spatial_container and building_storey in the verified result identify IfcBuildingStorey 16B$afW8bSivOT_ExWbFiL named Level 01."
+        },
+        {
+          "claim": "Its FireRating property in Pset_WallCommon changed.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result's field is kind=property, property_set=Pset_WallCommon, name=FireRating."
+        },
+        {
+          "claim": "The FireRating changed from \"60\" to \"90\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result gives old_value=\"60\" and new_value=\"90\"."
+        },
+        {
+          "claim": "Only change records with source_type=change_query from data/ground_truth/gate2-change-records.json were used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The supplied structured prediction evidence_refs reference source_type=change_query with source_path data/ground_truth/gate2-change-records.json, matching the verified result's source path."
+        },
+        {
+          "claim": "No model pair summary evidence was cited.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "Neither the candidate predictions nor the verified result contain any model pair summary evidence; the result cites a controlled revision generator change record."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified property modification applies to one IfcWall element.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result has result_count=1 and a single result with entity_type IfcWall."
+        },
+        {
+          "claim": "The IfcWall has global ID 1aO4mYJaTLLf6oT4DTcfok.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result's global_id field matches the stated global ID."
+        },
+        {
+          "claim": "The wall is located on building storey Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "Both spatial_container and building_storey in the verified result identify IfcBuildingStorey 16B$afW8bSivOT_ExWbFiL named Level 01."
+        },
+        {
+          "claim": "Its FireRating property in Pset_WallCommon changed.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result's field is kind=property, property_set=Pset_WallCommon, name=FireRating."
+        },
+        {
+          "claim": "The FireRating changed from \"60\" to \"90\".",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified result gives old_value=\"60\" and new_value=\"90\"."
+        },
+        {
+          "claim": "Only change records with source_type=change_query from data/ground_truth/gate2-change-records.json were used.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The supplied structured prediction evidence_refs reference source_type=change_query with source_path data/ground_truth/gate2-change-records.json, matching the verified result's source path."
+        },
+        {
+          "claim": "No model pair summary evidence was cited.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "Neither the candidate predictions nor the verified result contain any model pair summary evidence; the result cites a controlled revision generator change record."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 353,
+    "successful_responses": 347,
+    "input_tokens": 1185795,
+    "cached_input_tokens": 464384,
+    "output_tokens": 484817,
+    "estimated_cost_usd": 0.238047,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.38047
+}

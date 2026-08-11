@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q34-wall-property",
+      "status": "answered",
+      "answer": "The scalar property that changed is Pset_WallCommon.FireRating, changing from \"60\" to \"90\".",
+      "predictions": [
+        {
+          "change_type": "property_change",
+          "entity_type": "IfcWall",
+          "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "16B$afW8bSivOT_ExWbFiL",
+              "name": "Level 01"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_WallCommon",
+            "name": "FireRating"
+          },
+          "old_value": "60",
+          "new_value": "90",
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_WallCommon",
+                "name": "FireRating"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1aO4mYJaTLLf6oT4DTcfok",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_WallCommon",
+                "name": "FireRating"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Predictions are based only on the scalar property values included in the provided model pair summary."
+      ]
+    }
+  ]
+}

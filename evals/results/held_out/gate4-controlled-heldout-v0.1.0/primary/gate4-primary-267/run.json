@@ -1,0 +1,218 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 267,
+  "execution_id": "gate4-primary-267",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 27,
+  "question_id": "gate3-q27-deleted-column-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "21d5f729-9d81-4b94-a2dd-36441c419080",
+      "05b05c5e-b05c-479f-9a74-13aa3fe86f48",
+      "86af51c0-7c58-4a1a-87f7-2ce9948711b9"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcColumn"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "One IfcColumn element was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified change records return exactly one result with change_type 'deleted' and entity_type 'IfcColumn'."
+        },
+        {
+          "claim": "The deleted IfcColumn has global ID 12Po3y91HK4PYkc6lR0Ean.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified result's global_id exactly matches this value."
+        },
+        {
+          "claim": "The deleted IfcColumn is named 'Column RF 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The old_value.name in the verified change record is 'Column RF 01'."
+        },
+        {
+          "claim": "The deleted IfcColumn has tag 'CL-RF-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The old_value.tag in the verified change record is 'CL-RF-01'."
+        },
+        {
+          "claim": "The deleted IfcColumn is located on the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "Both location.spatial_container and location.building_storey in the verified record name the storey as 'Roof'."
+        },
+        {
+          "claim": "The Roof storey has IfcBuildingStorey global ID 3Oz3veLPTRYhlejGdV1B7j.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified location.building_storey.global_id is 3Oz3veLPTRYhlejGdV1B7j."
+        },
+        {
+          "claim": "The result is derived only from the supplied gate2 change records and covers the single IfcColumn deletion listed therein.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified query result sources data/ground_truth/gate2-change-records.json and has result_count 1 covering exactly this deletion."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "One IfcColumn element was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified change records return exactly one result with change_type 'deleted' and entity_type 'IfcColumn'."
+        },
+        {
+          "claim": "The deleted IfcColumn has global ID 12Po3y91HK4PYkc6lR0Ean.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified result's global_id exactly matches this value."
+        },
+        {
+          "claim": "The deleted IfcColumn is named 'Column RF 01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The old_value.name in the verified change record is 'Column RF 01'."
+        },
+        {
+          "claim": "The deleted IfcColumn has tag 'CL-RF-01'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The old_value.tag in the verified change record is 'CL-RF-01'."
+        },
+        {
+          "claim": "The deleted IfcColumn is located on the Roof storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "Both location.spatial_container and location.building_storey in the verified record name the storey as 'Roof'."
+        },
+        {
+          "claim": "The Roof storey has IfcBuildingStorey global ID 3Oz3veLPTRYhlejGdV1B7j.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified location.building_storey.global_id is 3Oz3veLPTRYhlejGdV1B7j."
+        },
+        {
+          "claim": "The result is derived only from the supplied gate2 change records and covers the single IfcColumn deletion listed therein.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "The verified query result sources data/ground_truth/gate2-change-records.json and has result_count 1 covering exactly this deletion."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 590,
+    "successful_responses": 581,
+    "input_tokens": 2226988,
+    "cached_input_tokens": 1415296,
+    "output_tokens": 954192,
+    "estimated_cost_usd": 0.384774,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.84774
+}

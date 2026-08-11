@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 148,
+  "execution_id": "gate4-primary-148",
+  "repetition": 2,
+  "workflow": "tool_using_agent",
+  "question_position": 28,
+  "question_id": "gate3-q45-fire-compliance-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "5bc39776-0b82-4ff0-a225-7164e1ac1854",
+      "186cbe69-b834-4d20-ae24-6d72368f8948"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "global_ids": [
+          "1aO4mYJaTLLf6oT4DTcfok"
+        ],
+        "property_name": "FireRating"
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0
+  },
+  "cumulative_usage": {
+    "request_attempts": 310,
+    "successful_responses": 304,
+    "input_tokens": 1125278,
+    "cached_input_tokens": 411264,
+    "output_tokens": 437350,
+    "estimated_cost_usd": 0.223572,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.23572
+}

@@ -1,0 +1,441 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 96,
+  "execution_id": "gate4-primary-096",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 16,
+  "question_id": "gate3-q09-all-changes",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "75f6a95d-4150-473e-97d8-c61013419ff1",
+      "9e7a174b-13ec-4e9e-bb01-4143b0ae271e",
+      "beb94250-a702-4da4-9edb-688801887727"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {}
+    },
+    "tool_result_count": 12,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 12,
+      "evidence_supported_count": 12,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 12,
+      "prediction_count": 12,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are 12 verified revision events across the three building storeys.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "verified_query_result.result_count is 12 and the results are distributed across Ground Floor, Level 01, and Roof."
+        },
+        {
+          "claim": "Ground Floor: one beam was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "change_id gate4-added-beam-ground records an added IfcBeam on Ground Floor."
+        },
+        {
+          "claim": "Ground Floor: one slab was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "change_id gate4-added-slab-ground records an added IfcSlab on Ground Floor."
+        },
+        {
+          "claim": "Ground Floor: one wall was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "change_id gate4-deleted-wall-ground records a deleted IfcWall on Ground Floor."
+        },
+        {
+          "claim": "Ground Floor: one column changed IsExternal from true to false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "change_id gate4-property-column-ground records Pset_ColumnCommon IsExternal changing from true to false."
+        },
+        {
+          "claim": "Level 01: one column was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "change_id gate4-added-column-level01 records an added IfcColumn on Level 01."
+        },
+        {
+          "claim": "Level 01: one beam was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "change_id gate4-deleted-beam-level01 records a deleted IfcBeam on Level 01."
+        },
+        {
+          "claim": "Level 01: one slab was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "change_id gate4-deleted-slab-level01 records a deleted IfcSlab on Level 01."
+        },
+        {
+          "claim": "Level 01: one wall changed FireRating from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "change_id gate4-property-wall-level01 records Pset_WallCommon FireRating changing from 60 to 90."
+        },
+        {
+          "claim": "Roof: one wall was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "change_id gate4-added-wall-roof records an added IfcWall on Roof."
+        },
+        {
+          "claim": "Roof: one column was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "change_id gate4-deleted-column-roof records a deleted IfcColumn on Roof."
+        },
+        {
+          "claim": "Roof: one beam changed LoadBearing from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "change_id gate4-property-beam-roof records Pset_BeamCommon LoadBearing changing from false to true."
+        },
+        {
+          "claim": "Roof: one slab changed LoadBearing from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "change_id gate4-property-slab-roof records Pset_SlabCommon LoadBearing changing from false to true."
+        },
+        {
+          "claim": "The summary is limited to the 12 verified change records in data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result source path is data/ground_truth/gate2-change-records.json with exactly 12 results, and all reported events correspond to these records."
+        },
+        {
+          "claim": "No unverified additions, deletions, or property modifications are reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Every reported addition, deletion, and property modification in the candidate answer maps exactly to a record in the verified_query_result; no extra changes are presented."
+        },
+        {
+          "claim": "No material, geometry, or containment changes beyond the recorded storey assignments were inferred.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified records contain only added, deleted, or property_modified changes with storey assignments; no material, geometry, or containment change records are present."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 12,
+      "evidence_supported_count": 12,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 12,
+      "prediction_count": 12,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are 12 verified revision events across the three building storeys.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "verified_query_result.result_count is 12 and the results are distributed across Ground Floor, Level 01, and Roof."
+        },
+        {
+          "claim": "Ground Floor: one beam was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "change_id gate4-added-beam-ground records an added IfcBeam on Ground Floor."
+        },
+        {
+          "claim": "Ground Floor: one slab was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "change_id gate4-added-slab-ground records an added IfcSlab on Ground Floor."
+        },
+        {
+          "claim": "Ground Floor: one wall was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "change_id gate4-deleted-wall-ground records a deleted IfcWall on Ground Floor."
+        },
+        {
+          "claim": "Ground Floor: one column changed IsExternal from true to false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "change_id gate4-property-column-ground records Pset_ColumnCommon IsExternal changing from true to false."
+        },
+        {
+          "claim": "Level 01: one column was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "change_id gate4-added-column-level01 records an added IfcColumn on Level 01."
+        },
+        {
+          "claim": "Level 01: one beam was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "change_id gate4-deleted-beam-level01 records a deleted IfcBeam on Level 01."
+        },
+        {
+          "claim": "Level 01: one slab was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "change_id gate4-deleted-slab-level01 records a deleted IfcSlab on Level 01."
+        },
+        {
+          "claim": "Level 01: one wall changed FireRating from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "change_id gate4-property-wall-level01 records Pset_WallCommon FireRating changing from 60 to 90."
+        },
+        {
+          "claim": "Roof: one wall was added.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "change_id gate4-added-wall-roof records an added IfcWall on Roof."
+        },
+        {
+          "claim": "Roof: one column was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "change_id gate4-deleted-column-roof records a deleted IfcColumn on Roof."
+        },
+        {
+          "claim": "Roof: one beam changed LoadBearing from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "change_id gate4-property-beam-roof records Pset_BeamCommon LoadBearing changing from false to true."
+        },
+        {
+          "claim": "Roof: one slab changed LoadBearing from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "change_id gate4-property-slab-roof records Pset_SlabCommon LoadBearing changing from false to true."
+        },
+        {
+          "claim": "The summary is limited to the 12 verified change records in data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified_query_result source path is data/ground_truth/gate2-change-records.json with exactly 12 results, and all reported events correspond to these records."
+        },
+        {
+          "claim": "No unverified additions, deletions, or property modifications are reported.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Every reported addition, deletion, and property modification in the candidate answer maps exactly to a record in the verified_query_result; no extra changes are presented."
+        },
+        {
+          "claim": "No material, geometry, or containment changes beyond the recorded storey assignments were inferred.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d",
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU",
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified records contain only added, deleted, or property_modified changes with storey assignments; no material, geometry, or containment change records are present."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 173,
+    "successful_responses": 168,
+    "input_tokens": 928950,
+    "cached_input_tokens": 251008,
+    "output_tokens": 271009,
+    "estimated_cost_usd": 0.171498,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.71498
+}

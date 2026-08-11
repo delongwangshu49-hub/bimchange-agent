@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 65,
+  "execution_id": "gate4-primary-065",
+  "repetition": 1,
+  "workflow": "tool_using_agent",
+  "question_position": 25,
+  "question_id": "gate3-q24-level01-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "d9d8446a-b2fd-412f-a0a6-c5f82c74b9aa",
+      "42d0cdd0-39b4-4471-91e5-f040ba6b665a"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "building_storey_names": [
+          "Level 01"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0
+  },
+  "cumulative_usage": {
+    "request_attempts": 95,
+    "successful_responses": 91,
+    "input_tokens": 817087,
+    "cached_input_tokens": 170624,
+    "output_tokens": 177109,
+    "estimated_cost_usd": 0.140573,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.40573
+}

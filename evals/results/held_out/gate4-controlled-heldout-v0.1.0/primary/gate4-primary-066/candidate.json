@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The only available evidence confirms that wall 0z7L81IEbQPggjg__OrrlU was deleted, but it does not include any structural analysis or safety assessment. Therefore the available source cannot justify a conclusion that the building becomes structurally unsafe.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "change_query",
+              "source_path": "data/ground_truth/gate2-change-records.json",
+              "change_id": "gate4-deleted-wall-ground",
+              "global_id": "0z7L81IEbQPggjg__OrrlU"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "No structural analysis or load-bearing assessment is present in the change records.",
+        "The change record only identifies the deletion; it does not indicate whether the wall is structural, non-structural, or otherwise safety-relevant."
+      ]
+    }
+  ]
+}

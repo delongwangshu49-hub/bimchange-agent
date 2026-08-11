@@ -1,0 +1,157 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 244,
+  "execution_id": "gate4-primary-244",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 4,
+  "question_id": "gate3-q32-deleted-wall-ground",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "61a0ebeb-3f47-416e-8c03-65610464ef58",
+      "f40c984a-647d-4954-bfcc-cc43e050720a",
+      "d3d6f013-04a3-4d8f-9e57-c8da30409e7e"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The IfcWall with global_id 0z7L81IEbQPggjg__OrrlU was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record identifies a deleted IfcWall with this global_id."
+        },
+        {
+          "claim": "The IfcWall's name is Wall GF 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record's old_value contains name \"Wall GF 01\" for this IfcWall."
+        },
+        {
+          "claim": "The deletion occurred from Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified change record places the deleted IfcWall in an IfcBuildingStorey named Ground Floor with global_id 1fw5N5GZfPh95hsaUid9Fb."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The IfcWall with global_id 0z7L81IEbQPggjg__OrrlU was deleted.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record identifies a deleted IfcWall with this global_id."
+        },
+        {
+          "claim": "The IfcWall's name is Wall GF 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified change record's old_value contains name \"Wall GF 01\" for this IfcWall."
+        },
+        {
+          "claim": "The deletion occurred from Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified change record places the deleted IfcWall in an IfcBuildingStorey named Ground Floor with global_id 1fw5N5GZfPh95hsaUid9Fb."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 516,
+    "successful_responses": 507,
+    "input_tokens": 2111633,
+    "cached_input_tokens": 1336064,
+    "output_tokens": 824437,
+    "estimated_cost_usd": 0.343164,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.43164
+}

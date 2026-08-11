@@ -1,0 +1,221 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 184,
+  "execution_id": "gate4-primary-184",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 24,
+  "question_id": "gate3-q10-added-summary",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "44501ee0-4bfe-4476-9278-15cbc5d60689",
+      "f15a7881-65e5-41bb-a947-0bfe4935af91",
+      "2b01e0c7-a04e-43c3-b103-b132f07ef9a5"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four elements appear only in the revised IFC model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified query result has result_count 4 and every returned record has change_type 'added', meaning all four elements are additions in the revised model."
+        },
+        {
+          "claim": "An IfcBeam (BM-GF-05) appears only in the revised IFC model on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "Verified change record gate4-added-beam-ground lists an IfcBeam with new_value tag BM-GF-05 and location Ground Floor."
+        },
+        {
+          "claim": "An IfcColumn (CL-L1-05) appears only in the revised IFC model on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "Verified change record gate4-added-column-level01 lists an IfcColumn with new_value tag CL-L1-05 and location Level 01."
+        },
+        {
+          "claim": "An IfcSlab (SL-GF-05) appears only in the revised IFC model on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "Verified change record gate4-added-slab-ground lists an IfcSlab with new_value tag SL-GF-05 and location Ground Floor."
+        },
+        {
+          "claim": "An IfcWall (WL-RF-05) appears only in the revised IFC model on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Verified change record gate4-added-wall-roof lists an IfcWall with new_value tag WL-RF-05 and location Roof."
+        },
+        {
+          "claim": "The summary is based only on the provided change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json and the answer's factual content matches those change records exactly."
+        },
+        {
+          "claim": "No independent inspection of the revised model was performed.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The supplied verified evidence consists only of change-record entries and their automated detector metadata; it contains no independent model inspection record, and the explicit evidence boundary is the change-records source."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four elements appear only in the revised IFC model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified query result has result_count 4 and every returned record has change_type 'added', meaning all four elements are additions in the revised model."
+        },
+        {
+          "claim": "An IfcBeam (BM-GF-05) appears only in the revised IFC model on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "Verified change record gate4-added-beam-ground lists an IfcBeam with new_value tag BM-GF-05 and location Ground Floor."
+        },
+        {
+          "claim": "An IfcColumn (CL-L1-05) appears only in the revised IFC model on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2$orIofUHKcQaHhLlr75_n"
+          ],
+          "reason": "Verified change record gate4-added-column-level01 lists an IfcColumn with new_value tag CL-L1-05 and location Level 01."
+        },
+        {
+          "claim": "An IfcSlab (SL-GF-05) appears only in the revised IFC model on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1hD8Z2VI5Q48QgyBkf6YcB"
+          ],
+          "reason": "Verified change record gate4-added-slab-ground lists an IfcSlab with new_value tag SL-GF-05 and location Ground Floor."
+        },
+        {
+          "claim": "An IfcWall (WL-RF-05) appears only in the revised IFC model on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "Verified change record gate4-added-wall-roof lists an IfcWall with new_value tag WL-RF-05 and location Roof."
+        },
+        {
+          "claim": "The summary is based only on the provided change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB",
+            "2$orIofUHKcQaHhLlr75_n",
+            "1hD8Z2VI5Q48QgyBkf6YcB",
+            "2rg8G55UvONxUu2GmkwF$d"
+          ],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json and the answer's factual content matches those change records exactly."
+        },
+        {
+          "claim": "No independent inspection of the revised model was performed.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The supplied verified evidence consists only of change-record entries and their automated detector metadata; it contains no independent model inspection record, and the explicit evidence boundary is the change-records source."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 410,
+    "successful_responses": 404,
+    "input_tokens": 1274433,
+    "cached_input_tokens": 525824,
+    "output_tokens": 583049,
+    "estimated_cost_usd": 0.269532,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.69532
+}

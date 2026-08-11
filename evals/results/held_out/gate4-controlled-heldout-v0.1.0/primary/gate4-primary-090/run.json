@@ -1,0 +1,209 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 90,
+  "execution_id": "gate4-primary-090",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 10,
+  "question_id": "gate3-q13-beam-ground-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "494245b8-6bd9-45ce-bcb1-a564f121318b",
+      "ead1294d-c4c4-4dbf-861b-4de7576363fb",
+      "5df0b260-e09a-4822-af42-4b3a7dcefc1e"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "3Z1rgbb$PMDfsfeWvsKUUB"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event for element 3Z1rgbb$PMDfsfeWvsKUUB is an addition.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified query result has change_id 'gate4-added-beam-ground' and change_type 'added' for this global_id."
+        },
+        {
+          "claim": "The added entity is an IfcBeam.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record sets entity_type to IfcBeam."
+        },
+        {
+          "claim": "The added beam's name is 'Beam GF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The change record's new_value.name is 'Beam GF 05'."
+        },
+        {
+          "claim": "The added beam's tag is 'BM-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The change record's new_value.tag is 'BM-GF-05'."
+        },
+        {
+          "claim": "The beam is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The location.spatial_container and location.building_storey both have entity_type IfcBuildingStorey and name 'Ground Floor'."
+        },
+        {
+          "claim": "Evidence is limited to the single returned change_query record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "verified_query_result.result_count is 1 and results contains exactly one matching change record for this global_id."
+        },
+        {
+          "claim": "No model pair summary cross-check was performed.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The supplied change record and structured predictions do not state whether or not a model pair summary cross-check was performed, so this methodological claim cannot be confirmed or refuted."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event for element 3Z1rgbb$PMDfsfeWvsKUUB is an addition.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified query result has change_id 'gate4-added-beam-ground' and change_type 'added' for this global_id."
+        },
+        {
+          "claim": "The added entity is an IfcBeam.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The verified change record sets entity_type to IfcBeam."
+        },
+        {
+          "claim": "The added beam's name is 'Beam GF 05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The change record's new_value.name is 'Beam GF 05'."
+        },
+        {
+          "claim": "The added beam's tag is 'BM-GF-05'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The change record's new_value.tag is 'BM-GF-05'."
+        },
+        {
+          "claim": "The beam is on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "The location.spatial_container and location.building_storey both have entity_type IfcBuildingStorey and name 'Ground Floor'."
+        },
+        {
+          "claim": "Evidence is limited to the single returned change_query record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3Z1rgbb$PMDfsfeWvsKUUB"
+          ],
+          "reason": "verified_query_result.result_count is 1 and results contains exactly one matching change record for this global_id."
+        },
+        {
+          "claim": "No model pair summary cross-check was performed.",
+          "verdict": "indeterminate",
+          "evidence_global_ids": [],
+          "reason": "The supplied change record and structured predictions do not state whether or not a model pair summary cross-check was performed, so this methodological claim cannot be confirmed or refuted."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 155,
+    "successful_responses": 150,
+    "input_tokens": 895418,
+    "cached_input_tokens": 229760,
+    "output_tokens": 241397,
+    "estimated_cost_usd": 0.161427,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.61427
+}

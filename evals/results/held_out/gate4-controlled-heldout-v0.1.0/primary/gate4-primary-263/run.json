@@ -1,0 +1,166 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 263,
+  "execution_id": "gate4-primary-263",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 23,
+  "question_id": "gate3-q29-beam-roof-filter",
+  "category": "filtered_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "b786c4ea-6ed8-4764-8da9-aca126a08bee",
+      "89858f14-a69e-41e6-bf71-e34862147fd7",
+      "fbe15828-e5ee-4430-9a5a-23360b637331",
+      "fd215148-de86-4599-a5c5-755980e7ae2d",
+      "7f54343b-921e-4bf9-8199-d7fb307cf3fa"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "entity_types": [
+          "IfcBeam"
+        ],
+        "building_storey_names": [
+          "Roof"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 1,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 0,
+      "coverage_rate": 0.0,
+      "missing_change_ids": [
+        "gate4-property-beam-roof"
+      ],
+      "unexpected_prediction_count": 0,
+      "complete": false
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "fail",
+      "claims": [
+        {
+          "claim": "No verified revision events involving an IfcBeam on Roof were found in the change-query records.",
+          "verdict": "unsupported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified_query_result contains one change record with entity_type IfcBeam, building_storey name Roof, and global_id 3JuqHVfXrLlA8tnQP5xv53, so the stated absence is contradicted."
+        },
+        {
+          "claim": "The returned change records contained no entries with source_type=change_query matching an IfcBeam located on a building storey named Roof.",
+          "verdict": "unsupported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified_query_result returned result_count 1, and that entry has entity_type IfcBeam and a location building_storey named Roof, contradicting the claim that no matching entry exists."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "One verified revision event involves an IfcBeam on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified query result has result_count=1, and the sole result has entity_type IfcBeam and building_storey.name 'Roof'."
+        },
+        {
+          "claim": "The IfcBeam global id is 3JuqHVfXrLlA8tnQP5xv53.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified query result lists the result's global_id as exactly 3JuqHVfXrLlA8tnQP5xv53."
+        },
+        {
+          "claim": "The IfcBeam is located on IfcBuildingStorey Roof with global id 3Oz3veLPTRYhlejGdV1B7j.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "3Oz3veLPTRYhlejGdV1B7j"
+          ],
+          "reason": "The verified query result location.spatial_container and building_storey both specify IfcBuildingStorey 3Oz3veLPTRYhlejGdV1B7j with name 'Roof'."
+        },
+        {
+          "claim": "The LoadBearing property in Pset_BeamCommon changed from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified query result field is kind=property, property_set=Pset_BeamCommon, name=LoadBearing, with old_value=false and new_value=true."
+        },
+        {
+          "claim": "The answer is based solely on the returned records from data/ground_truth/gate2-change-records.json with source_type=change_query.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json, and the structured prediction's evidence_refs specify source_type=change_query with that source_path; no other evidence source is supplied."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 578,
+    "successful_responses": 569,
+    "input_tokens": 2203837,
+    "cached_input_tokens": 1400960,
+    "output_tokens": 924711,
+    "estimated_cost_usd": 0.375245,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.75245
+}

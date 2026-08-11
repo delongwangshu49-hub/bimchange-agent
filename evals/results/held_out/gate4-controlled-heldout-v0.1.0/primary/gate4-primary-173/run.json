@@ -1,0 +1,167 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 173,
+  "execution_id": "gate4-primary-173",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 13,
+  "question_id": "gate3-q42-no-deleted-column-ground",
+  "category": "negative_control",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "f26b5333-751a-421e-914a-87039f953a4f",
+      "db9b443a-0437-4831-b82a-248c12a7c24c",
+      "71a03ca2-8aea-4679-8097-2c3018dee0b9"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ],
+        "entity_types": [
+          "IfcColumn"
+        ],
+        "building_storey_names": [
+          "Ground Floor"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No IfcColumn deleted from Ground Floor was found in the change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.result_count is 0 and results is an empty array under filters change_types=[deleted], entity_types=[IfcColumn], building_storey_names=[Ground Floor]."
+        },
+        {
+          "claim": "The conclusion is limited to records in data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.source.path is data/ground_truth/gate2-change-records.json."
+        },
+        {
+          "claim": "The conclusion is limited to deleted entities.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.filters.change_types contains 'deleted'."
+        },
+        {
+          "claim": "The conclusion is limited to IfcColumn entities.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.filters.entity_types contains 'IfcColumn'."
+        },
+        {
+          "claim": "The conclusion is limited to Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.filters.building_storey_names contains 'Ground Floor'."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No IfcColumn deleted from Ground Floor was found in the change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.result_count is 0 and results is an empty array under filters change_types=[deleted], entity_types=[IfcColumn], building_storey_names=[Ground Floor]."
+        },
+        {
+          "claim": "The conclusion is limited to records in data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.source.path is data/ground_truth/gate2-change-records.json."
+        },
+        {
+          "claim": "The conclusion is limited to deleted entities.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.filters.change_types contains 'deleted'."
+        },
+        {
+          "claim": "The conclusion is limited to IfcColumn entities.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.filters.entity_types contains 'IfcColumn'."
+        },
+        {
+          "claim": "The conclusion is limited to Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "verified_query_result.filters.building_storey_names contains 'Ground Floor'."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 374,
+    "successful_responses": 368,
+    "input_tokens": 1220261,
+    "cached_input_tokens": 487552,
+    "output_tokens": 519437,
+    "estimated_cost_usd": 0.249387,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.49387
+}

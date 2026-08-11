@@ -1,0 +1,62 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q48-wall-constructability-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The model-pair summary confirms that IfcWall 2rg8G55UvONxUu2GmkwF$d is newly added in the revised model: it is present only in the revised version as 'Wall RF 05' (tag WL-RF-05) in the Roof storey, with FireRating=60. However, the available source does not contain geometry, placement, material, or support/connection data required to determine whether the wall is constructible as shown. Therefore, constructibility cannot be confirmed or denied from this summary.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcWall",
+          "global_id": "2rg8G55UvONxUu2GmkwF$d",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "3Oz3veLPTRYhlejGdV1B7j",
+              "name": "Roof"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Wall RF 05",
+            "tag": "WL-RF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "2rg8G55UvONxUu2GmkwF$d",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "2rg8G55UvONxUu2GmkwF$d",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The model-pair summary excludes geometry and placement coordinates, so the wall footprint, height, thickness, and alignment cannot be verified.",
+        "The model-pair summary excludes materials, classifications, quantities, and nested property values, so the wall type or assembly details cannot be assessed.",
+        "The summary does not provide connection, support, or load-path information needed to evaluate constructibility.",
+        "Engineering, safety, compliance, responsibility, and priority judgments are excluded from the available source."
+      ]
+    }
+  ]
+}

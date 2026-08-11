@@ -1,0 +1,233 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 276,
+  "execution_id": "gate4-primary-276",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 36,
+  "question_id": "gate3-q45-fire-compliance-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "07c718cf-4c48-4573-8839-4b78107d036b",
+      "835a75ad-9edf-4122-86ed-805161a60433",
+      "d7c7d2ec-f914-4b72-85e1-d8247d15fcc0",
+      "b5082f98-9c35-4f52-8de7-cdc10fd79d07",
+      "18c06fa5-912b-484b-83a9-2d0a65c2a44e"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "global_ids": [
+          "1aO4mYJaTLLf6oT4DTcfok"
+        ],
+        "property_name": "FireRating"
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 1,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 0,
+      "coverage_rate": 0.0,
+      "missing_change_ids": [
+        "gate4-property-wall-level01"
+      ],
+      "unexpected_prediction_count": 0,
+      "complete": false
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The FireRating revision alone does not prove regulatory compliance.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The only supplied change record for this wall documents a FireRating value change and contains no regulatory threshold or compliance determination, so it cannot establish compliance."
+        },
+        {
+          "claim": "The available change record only indicates a FireRating change from '60' to '90'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified record has old_value '60' and new_value '90' for FireRating and contains no additional compliance-related content."
+        },
+        {
+          "claim": "The change record does not state the governing regulatory requirement.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The record fields cover change type, entity, location, property name, and old/new values only; no regulatory requirement is present."
+        },
+        {
+          "claim": "The change record does not state a compliance determination.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The record contains no compliance conclusion or code-compliance determination."
+        },
+        {
+          "claim": "The only available source is a change record showing FireRating updated from '60' to '90'.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query returned result_count 1 with the specified FireRating change and no other source is supplied."
+        },
+        {
+          "claim": "The change record has change_id gate4-property-wall-level01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified record explicitly lists change_id as gate4-property-wall-level01."
+        },
+        {
+          "claim": "The change record has global_id 1aO4mYJaTLLf6oT4DTcfok.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified record explicitly lists global_id as 1aO4mYJaTLLf6oT4DTcfok."
+        },
+        {
+          "claim": "The change record does not specify an applicable building code or fire-rating threshold.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "No building code identifier, fire-rating threshold, or comparison value appears in the record."
+        },
+        {
+          "claim": "The change record does not specify a compliance conclusion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "No compliance conclusion or pass/fail statement is present in the record."
+        },
+        {
+          "claim": "No regulatory requirement or boundary document was provided for comparison against the revised FireRating.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The supplied evidence set contains only the one change record; no regulatory requirement or boundary document is included."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The FireRating revision alone does not prove regulatory compliance.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified change record contains only the FireRating property modification; it contains no applicable regulatory requirement, fire-rating threshold, or compliance determination, so it cannot by itself prove regulatory compliance."
+        },
+        {
+          "claim": "The verified change record only shows FireRating updated from '60' to '90' for wall 1aO4mYJaTLLf6oT4DTcfok on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok",
+            "16B$afW8bSivOT_ExWbFiL"
+          ],
+          "reason": "The verified change record gate4-property-wall-level01 shows Pset_WallCommon FireRating old_value 60 new_value 90 for IfcWall 1aO4mYJaTLLf6oT4DTcfok located in IfcBuildingStorey 16B$afW8bSivOT_ExWbFiL named Level 01."
+        },
+        {
+          "claim": "The change record contains no governing regulatory requirement, fire-rating threshold, or compliance determination.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified change record contains only change metadata and property values; no fields specify a governing code, threshold, or compliance conclusion."
+        },
+        {
+          "claim": "The only available source is a change record showing FireRating updated from '60' to '90' (change_id gate4-property-wall-level01, global_id 1aO4mYJaTLLf6oT4DTcfok); it does not specify an applicable building code/fire-rating threshold or a compliance conclusion.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The supplied verified query result has result_count 1, and the sole record is gate4-property-wall-level01 with no building code, threshold, or compliance conclusion."
+        },
+        {
+          "claim": "No regulatory requirement or boundary document was provided for comparison against the revised FireRating.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Neither the verified change record nor the supplied structured predictions include a regulatory requirement or boundary document against which the FireRating could be compared."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 620,
+    "successful_responses": 610,
+    "input_tokens": 2271585,
+    "cached_input_tokens": 1446016,
+    "output_tokens": 1006560,
+    "estimated_cost_usd": 0.401466,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 4.01466
+}

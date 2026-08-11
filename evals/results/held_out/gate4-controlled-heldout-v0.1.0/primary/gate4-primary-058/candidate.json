@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "tool_using_agent",
+  "answers": [
+    {
+      "question_id": "gate3-q46-beam-responsibility-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The change record from data/ground_truth/gate2-change-records.json confirms that IfcBeam 3TNmmeV$vP1wtU7$eM6gTb was deleted (change_id gate4-deleted-beam-level01). However, the record contains no responsible party, actor, or ownership attribution for the deletion. Therefore, the available source cannot justify a conclusion about who is responsible for deleting the beam.",
+      "predictions": [],
+      "limitations": [
+        "The only available evidence source, data/ground_truth/gate2-change-records.json, includes a deletion record for the beam but no field indicating responsibility or actor for the deletion.",
+        "No responsibility boundary, assignee, or owner information appears in the returned change record."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q33-column-property",
+      "status": "answered",
+      "answer": "The scalar property that changed for 0Iqxc9CtTOgPV$1Tej3xGK is Pset_ColumnCommon.IsExternal, changing from true to false.",
+      "predictions": [
+        {
+          "change_type": "property_modification",
+          "entity_type": "IfcColumn",
+          "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": {
+            "kind": "property",
+            "property_set": "Pset_ColumnCommon",
+            "name": "IsExternal"
+          },
+          "old_value": true,
+          "new_value": false,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_ColumnCommon",
+                "name": "IsExternal"
+              }
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0Iqxc9CtTOgPV$1Tej3xGK",
+              "expected_present": true,
+              "field": {
+                "kind": "property",
+                "property_set": "Pset_ColumnCommon",
+                "name": "IsExternal"
+              }
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Comparison is based only on the provided model pair summary; no change record identifier was supplied."
+      ]
+    }
+  ]
+}

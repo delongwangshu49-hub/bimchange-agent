@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q41-absent-guid",
+      "status": "not_found",
+      "answer": "No verified revision event involving element 0AAAAAAAAAAAAAAAAAAAAA is present in the supplied model pair summary.",
+      "predictions": [],
+      "limitations": [
+        "The supplied model pair summary does not list element 0AAAAAAAAAAAAAAAAAAAAA in either the source or revised version."
+      ]
+    }
+  ]
+}

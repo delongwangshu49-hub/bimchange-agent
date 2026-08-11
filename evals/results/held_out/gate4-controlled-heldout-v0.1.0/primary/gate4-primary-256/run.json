@@ -1,0 +1,234 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 256,
+  "execution_id": "gate4-primary-256",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 16,
+  "question_id": "gate3-q37-loadbearing-properties",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "46a965f3-550f-46f8-9799-19e6520473a5",
+      "24af6702-cb44-4b42-83c0-df42f6c4eb32",
+      "ac29e6fb-d4e6-430d-ad33-7c4a94e44a40"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "property_name": "LoadBearing"
+      }
+    },
+    "tool_result_count": 2,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 2,
+      "evidence_supported_count": 2,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 2,
+      "prediction_count": 2,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are exactly two verified property modifications that affect a LoadBearing field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result has result_count 2 and contains two property_modified results with property name LoadBearing."
+        },
+        {
+          "claim": "One verified LoadBearing property modification is on an IfcBeam entity.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The first verified result has entity_type IfcBeam."
+        },
+        {
+          "claim": "The IfcBeam LoadBearing modification uses Pset_BeamCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified result for the IfcBeam lists field property_set as Pset_BeamCommon."
+        },
+        {
+          "claim": "The IfcBeam LoadBearing value changes from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified result for the IfcBeam lists old_value false and new_value true."
+        },
+        {
+          "claim": "One verified LoadBearing property modification is on an IfcSlab entity.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The second verified result has entity_type IfcSlab."
+        },
+        {
+          "claim": "The IfcSlab LoadBearing modification uses Pset_SlabCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified result for the IfcSlab lists field property_set as Pset_SlabCommon."
+        },
+        {
+          "claim": "The IfcSlab LoadBearing value changes from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified result for the IfcSlab lists old_value false and new_value true."
+        },
+        {
+          "claim": "The answer is limited to the provided change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json and contains only the matching records, so the stated limitation accurately describes the evidence scope."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 2,
+      "evidence_supported_count": 2,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 2,
+      "prediction_count": 2,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "There are exactly two verified property modifications that affect a LoadBearing field.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result has result_count 2 and contains two property_modified results with property name LoadBearing."
+        },
+        {
+          "claim": "One verified LoadBearing property modification is on an IfcBeam entity.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The first verified result has entity_type IfcBeam."
+        },
+        {
+          "claim": "The IfcBeam LoadBearing modification uses Pset_BeamCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified result for the IfcBeam lists field property_set as Pset_BeamCommon."
+        },
+        {
+          "claim": "The IfcBeam LoadBearing value changes from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "The verified result for the IfcBeam lists old_value false and new_value true."
+        },
+        {
+          "claim": "One verified LoadBearing property modification is on an IfcSlab entity.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The second verified result has entity_type IfcSlab."
+        },
+        {
+          "claim": "The IfcSlab LoadBearing modification uses Pset_SlabCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified result for the IfcSlab lists field property_set as Pset_SlabCommon."
+        },
+        {
+          "claim": "The IfcSlab LoadBearing value changes from false to true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified result for the IfcSlab lists old_value false and new_value true."
+        },
+        {
+          "claim": "The answer is limited to the provided change records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified query result is sourced from data/ground_truth/gate2-change-records.json and contains only the matching records, so the stated limitation accurately describes the evidence scope."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 553,
+    "successful_responses": 544,
+    "input_tokens": 2169144,
+    "cached_input_tokens": 1376512,
+    "output_tokens": 881704,
+    "estimated_cost_usd": 0.361701,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.61701
+}

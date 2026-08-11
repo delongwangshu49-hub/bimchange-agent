@@ -1,0 +1,253 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 182,
+  "execution_id": "gate4-primary-182",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 22,
+  "question_id": "gate3-q11-deleted-summary",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "03b20fec-615a-481c-9b3c-6357a9968905",
+      "e9094410-34d6-4eea-9900-efcdfd549445",
+      "ee3ab08c-52a5-4030-8474-7f3efa25a6c9"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "deleted"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four elements are present only in the source IFC model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result explicitly returns four records with change_type 'deleted' and new_value null, representing exactly four elements present only in the source model."
+        },
+        {
+          "claim": "These four source-only elements were removed in the revised model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "All four verified change records have change_type 'deleted', indicating the elements were removed from the revised model."
+        },
+        {
+          "claim": "One of the four source-only elements is a beam named 'Beam L1 01' with tag BM-L1-01 located on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "Change record gate4-deleted-beam-level01 contains entity_type IfcBeam, old_value name 'Beam L1 01', tag 'BM-L1-01', and location Level 01."
+        },
+        {
+          "claim": "One of the four source-only elements is a column named 'Column RF 01' with tag CL-RF-01 located on the Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "Change record gate4-deleted-column-roof contains entity_type IfcColumn, old_value name 'Column RF 01', tag 'CL-RF-01', and location Roof."
+        },
+        {
+          "claim": "One of the four source-only elements is a slab named 'Slab L1 01' with tag SL-L1-01 located on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "Change record gate4-deleted-slab-level01 contains entity_type IfcSlab, old_value name 'Slab L1 01', tag 'SL-L1-01', and location Level 01."
+        },
+        {
+          "claim": "One of the four source-only elements is a wall named 'Wall GF 01' with tag WL-GF-01 located on the Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Change record gate4-deleted-wall-ground contains entity_type IfcWall, old_value name 'Wall GF 01', tag 'WL-GF-01', and location Ground Floor."
+        },
+        {
+          "claim": "The summary is based solely on the four deletion change records returned from data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query has source path data/ground_truth/gate2-change-records.json, filter change_types ['deleted'], and returns exactly the four cited records."
+        },
+        {
+          "claim": "No other source-only elements were identified from the provided records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result_count is 4 and the results array contains only these four deletion records, so no additional source-only elements appear in the provided evidence."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four elements are present only in the source IFC model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result explicitly returns four records with change_type 'deleted' and new_value null, representing exactly four elements present only in the source model."
+        },
+        {
+          "claim": "These four source-only elements were removed in the revised model.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "All four verified change records have change_type 'deleted', indicating the elements were removed from the revised model."
+        },
+        {
+          "claim": "One of the four source-only elements is a beam named 'Beam L1 01' with tag BM-L1-01 located on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb"
+          ],
+          "reason": "Change record gate4-deleted-beam-level01 contains entity_type IfcBeam, old_value name 'Beam L1 01', tag 'BM-L1-01', and location Level 01."
+        },
+        {
+          "claim": "One of the four source-only elements is a column named 'Column RF 01' with tag CL-RF-01 located on the Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "12Po3y91HK4PYkc6lR0Ean"
+          ],
+          "reason": "Change record gate4-deleted-column-roof contains entity_type IfcColumn, old_value name 'Column RF 01', tag 'CL-RF-01', and location Roof."
+        },
+        {
+          "claim": "One of the four source-only elements is a slab named 'Slab L1 01' with tag SL-L1-01 located on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3QgprvELLQBgvTF$EPliSW"
+          ],
+          "reason": "Change record gate4-deleted-slab-level01 contains entity_type IfcSlab, old_value name 'Slab L1 01', tag 'SL-L1-01', and location Level 01."
+        },
+        {
+          "claim": "One of the four source-only elements is a wall named 'Wall GF 01' with tag WL-GF-01 located on the Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "Change record gate4-deleted-wall-ground contains entity_type IfcWall, old_value name 'Wall GF 01', tag 'WL-GF-01', and location Ground Floor."
+        },
+        {
+          "claim": "The summary is based solely on the four deletion change records returned from data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query has source path data/ground_truth/gate2-change-records.json, filter change_types ['deleted'], and returns exactly the four cited records."
+        },
+        {
+          "claim": "No other source-only elements were identified from the provided records.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3TNmmeV$vP1wtU7$eM6gTb",
+            "12Po3y91HK4PYkc6lR0Ean",
+            "3QgprvELLQBgvTF$EPliSW",
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result_count is 4 and the results array contains only these four deletion records, so no additional source-only elements appear in the provided evidence."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 404,
+    "successful_responses": 398,
+    "input_tokens": 1264504,
+    "cached_input_tokens": 519296,
+    "output_tokens": 565774,
+    "estimated_cost_usd": 0.2642,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.642
+}

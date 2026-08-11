@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q47-slab-priority-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The source confirms that slab 1hD8Z2VI5Q48QgyBkf6YcB was added on the Ground Floor as Slab GF 05, but it cannot support a conclusion about coordination priority. Priority judgments are outside the scope of the available model pair summary, and no basis for assigning the highest coordination priority is provided.",
+      "predictions": [
+        {
+          "change_type": "added",
+          "entity_type": "IfcSlab",
+          "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": null,
+          "new_value": {
+            "name": "Slab GF 05",
+            "tag": "SL-GF-05"
+          },
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+              "expected_present": false,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "1hD8Z2VI5Q48QgyBkf6YcB",
+              "expected_present": true,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The model pair summary explicitly excludes engineering, safety, compliance, responsibility, and priority judgments.",
+        "The available source provides element identity, spatial containment, and scalar property-set values only; it does not include coordination priority or ranking information.",
+        "No geometry, placement, or other engineering context is available to evaluate whether this added slab should receive the highest coordination priority."
+      ]
+    }
+  ]
+}

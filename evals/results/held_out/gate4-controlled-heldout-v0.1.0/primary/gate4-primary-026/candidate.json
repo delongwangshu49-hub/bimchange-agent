@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "gate4-controlled-heldout-v0.1.0",
+  "question_split": "held_out",
+  "workflow": "direct_llm",
+  "answers": [
+    {
+      "question_id": "gate3-q44-wall-safety-boundary",
+      "status": "insufficient_evidence",
+      "answer": "The model pair summary confirms that wall 0z7L81IEbQPggjg__OrrlU was deleted (present in the source version, absent in the revised version). However, the available source cannot justify a structural safety conclusion: the model pair summary explicitly excludes engineering, safety, compliance, and priority judgments, and it does not contain structural analysis, load path, or wall load-bearing data.",
+      "predictions": [
+        {
+          "change_type": "deleted",
+          "entity_type": "IfcWall",
+          "global_id": "0z7L81IEbQPggjg__OrrlU",
+          "location": {
+            "spatial_container": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            },
+            "building_storey": {
+              "entity_type": "IfcBuildingStorey",
+              "global_id": "1fw5N5GZfPh95hsaUid9Fb",
+              "name": "Ground Floor"
+            }
+          },
+          "field": null,
+          "old_value": {
+            "name": "Wall GF 01",
+            "tag": "WL-GF-01"
+          },
+          "new_value": null,
+          "evidence_refs": [
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "source",
+              "global_id": "0z7L81IEbQPggjg__OrrlU",
+              "expected_present": true,
+              "field": null
+            },
+            {
+              "source_type": "model_pair_summary",
+              "source_path": "evals/inputs/development/gate3-model-pair-summary.json",
+              "version_role": "revised",
+              "global_id": "0z7L81IEbQPggjg__OrrlU",
+              "expected_present": false,
+              "field": null
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "The model pair summary excludes engineering, safety, compliance, responsibility, and priority judgments.",
+        "Structural safety would require structural analysis, load path, material, connection, or load-bearing information not present in the available source."
+      ]
+    }
+  ]
+}

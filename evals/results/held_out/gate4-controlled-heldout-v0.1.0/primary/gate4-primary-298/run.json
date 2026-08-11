@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 298,
+  "execution_id": "gate4-primary-298",
+  "repetition": 3,
+  "workflow": "direct_llm",
+  "question_position": 18,
+  "question_id": "gate3-q42-no-deleted-column-ground",
+  "category": "negative_control",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "cd601d40-e5c0-4e69-8dd3-2edf7bb0764c"
+    ]
+  },
+  "cumulative_usage": {
+    "request_attempts": 650,
+    "successful_responses": 640,
+    "input_tokens": 2623100,
+    "cached_input_tokens": 1792384,
+    "output_tokens": 1088791,
+    "estimated_cost_usd": 0.426181,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 4.26181
+}

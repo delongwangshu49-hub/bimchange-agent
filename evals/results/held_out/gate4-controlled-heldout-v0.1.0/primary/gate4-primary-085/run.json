@@ -1,0 +1,183 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 85,
+  "execution_id": "gate4-primary-085",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 5,
+  "question_id": "gate3-q14-wall-ground-guid",
+  "category": "fact_lookup",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "7ffcca32-dab1-45f8-9e83-297180ca0429",
+      "532e474c-e0f3-4ec8-84fd-3dbf245985e0",
+      "d240d136-9ca2-4adb-9557-705215f3dbb4"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "global_ids": [
+          "0z7L81IEbQPggjg__OrrlU"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is the deletion of wall 0z7L81IEbQPggjg__OrrlU.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result contains exactly one change record for this global_id with change_type \"deleted\" and entity_type \"IfcWall\"."
+        },
+        {
+          "claim": "The wall is identified as Wall GF 01 / WL-GF-01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified result's old_value contains name \"Wall GF 01\" and tag \"WL-GF-01\"."
+        },
+        {
+          "claim": "The deletion occurred from the Ground Floor storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified result's location and building_storey both identify an IfcBuildingStorey with global_id 1fw5N5GZfPh95hsaUid9Fb and name \"Ground Floor\"."
+        },
+        {
+          "claim": "The revision event is recorded as change gate4-deleted-wall-ground.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result includes change_id \"gate4-deleted-wall-ground\" for this global_id."
+        },
+        {
+          "claim": "No other verified revision events were returned for this GUID.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result reports result_count 1 for filters global_ids [\"0z7L81IEbQPggjg__OrrlU\"], so no additional revision events are present."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The verified revision event is the deletion of wall 0z7L81IEbQPggjg__OrrlU.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result contains exactly one change record for this global_id with change_type \"deleted\" and entity_type \"IfcWall\"."
+        },
+        {
+          "claim": "The wall is identified as Wall GF 01 / WL-GF-01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified result's old_value contains name \"Wall GF 01\" and tag \"WL-GF-01\"."
+        },
+        {
+          "claim": "The deletion occurred from the Ground Floor storey.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU",
+            "1fw5N5GZfPh95hsaUid9Fb"
+          ],
+          "reason": "The verified result's location and building_storey both identify an IfcBuildingStorey with global_id 1fw5N5GZfPh95hsaUid9Fb and name \"Ground Floor\"."
+        },
+        {
+          "claim": "The revision event is recorded as change gate4-deleted-wall-ground.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result includes change_id \"gate4-deleted-wall-ground\" for this global_id."
+        },
+        {
+          "claim": "No other verified revision events were returned for this GUID.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0z7L81IEbQPggjg__OrrlU"
+          ],
+          "reason": "The verified query result reports result_count 1 for filters global_ids [\"0z7L81IEbQPggjg__OrrlU\"], so no additional revision events are present."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 138,
+    "successful_responses": 134,
+    "input_tokens": 870770,
+    "cached_input_tokens": 209920,
+    "output_tokens": 209702,
+    "estimated_cost_usd": 0.151824,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.51824
+}

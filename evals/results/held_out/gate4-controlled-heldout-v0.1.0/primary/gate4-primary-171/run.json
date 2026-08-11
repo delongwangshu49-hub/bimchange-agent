@@ -1,0 +1,155 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 171,
+  "execution_id": "gate4-primary-171",
+  "repetition": 2,
+  "workflow": "proposed",
+  "question_position": 11,
+  "question_id": "gate3-q40-no-added-beam-roof",
+  "category": "negative_control",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "d8f47079-268e-4beb-a9de-8434cacb421d",
+      "8b2f3c72-afef-430e-9269-569ec157cdaf",
+      "ce3ceee5-2112-4237-a675-aef8669bf00b"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "added"
+        ],
+        "entity_types": [
+          "IfcBeam"
+        ],
+        "building_storey_names": [
+          "Roof"
+        ]
+      }
+    },
+    "tool_result_count": 0,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No IfcBeam was added on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result for change_types=[added], entity_types=[IfcBeam], building_storey_names=[Roof] returned result_count 0 and an empty results array."
+        },
+        {
+          "claim": "The change records contain no entry for an IfcBeam added on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result from data/ground_truth/gate2-change-records.json contains zero records matching the specified filters."
+        },
+        {
+          "claim": "The conclusion is based solely on the change records from data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query source is data/ground_truth/gate2-change-records.json and the structured predictions array is empty, so no other evidence source is present in the supplied verification output."
+        },
+        {
+          "claim": "No model pair summary or other evidence was used.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The supplied verified query result contains only the change-record source and no model pair summary or additional evidence; the predictions array is empty."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 0,
+      "evidence_supported_count": 0,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 0,
+      "prediction_count": 0,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "No IfcBeam was added on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result for change_types=[added], entity_types=[IfcBeam], building_storey_names=[Roof] returned result_count 0 and an empty results array."
+        },
+        {
+          "claim": "The change records contain no entry for an IfcBeam added on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query result from data/ground_truth/gate2-change-records.json contains zero records matching the specified filters."
+        },
+        {
+          "claim": "The conclusion is based solely on the change records from data/ground_truth/gate2-change-records.json.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The verified query source is data/ground_truth/gate2-change-records.json and the structured predictions array is empty, so no other evidence source is present in the supplied verification output."
+        },
+        {
+          "claim": "No model pair summary or other evidence was used.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The supplied verified query result contains only the change-record source and no model pair summary or additional evidence; the predictions array is empty."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 368,
+    "successful_responses": 362,
+    "input_tokens": 1205035,
+    "cached_input_tokens": 479104,
+    "output_tokens": 504596,
+    "estimated_cost_usd": 0.244259,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 2.44259
+}

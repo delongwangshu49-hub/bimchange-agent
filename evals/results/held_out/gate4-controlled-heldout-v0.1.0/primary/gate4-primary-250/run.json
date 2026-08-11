@@ -1,0 +1,231 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 250,
+  "execution_id": "gate4-primary-250",
+  "repetition": 3,
+  "workflow": "proposed",
+  "question_position": 10,
+  "question_id": "gate3-q12-property-summary",
+  "category": "summary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "4c4abe4b-1e51-4282-90aa-8bd1cdd8e852",
+      "cda7c4a0-da72-4d0c-a533-a901e657df1a",
+      "7034f5e1-bf24-4136-8d91-6768000682cc"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ]
+      }
+    },
+    "tool_result_count": 4,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four verified scalar property-value revisions were identified.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result has result_count 4 and contains exactly four property_modified records."
+        },
+        {
+          "claim": "IfcBeam LoadBearing changed from false to true on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "Change record gate4-property-beam-roof shows IfcBeam 3JuqHVfXrLlA8tnQP5xv53 at Roof with Pset_BeamCommon.LoadBearing changed from false to true."
+        },
+        {
+          "claim": "IfcColumn IsExternal changed from true to false on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "Change record gate4-property-column-ground shows IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK at Ground Floor with Pset_ColumnCommon.IsExternal changed from true to false."
+        },
+        {
+          "claim": "IfcSlab LoadBearing changed from false to true on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "Change record gate4-property-slab-roof shows IfcSlab 2WfINAQAHRERPwEp7Nos0$ at Roof with Pset_SlabCommon.LoadBearing changed from false to true."
+        },
+        {
+          "claim": "IfcWall FireRating changed from \"60\" to \"90\" on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Change record gate4-property-wall-level01 shows IfcWall 1aO4mYJaTLLf6oT4DTcfok at Level 01 with Pset_WallCommon.FireRating changed from \"60\" to \"90\"."
+        },
+        {
+          "claim": "Only scalar property-value modifications with change_type=property_modified from the ground-truth change records were included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result source is data/ground_truth/gate2-change-records.json and its filters restrict change_types to property_modified; all four returned records are property_modified scalar revisions."
+        },
+        {
+          "claim": "Geometry, attribute, and non-scalar revisions were not considered.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result applies a change_types filter of property_modified only, and the supplied evidence contains no geometry, attribute, or non-scalar revision records."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 4,
+      "evidence_supported_count": 4,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 4,
+      "prediction_count": 4,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "Four verified scalar property-value revisions were identified.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result has result_count 4 and contains exactly four property_modified records."
+        },
+        {
+          "claim": "IfcBeam LoadBearing changed from false to true on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53"
+          ],
+          "reason": "Change record gate4-property-beam-roof shows IfcBeam 3JuqHVfXrLlA8tnQP5xv53 at Roof with Pset_BeamCommon.LoadBearing changed from false to true."
+        },
+        {
+          "claim": "IfcColumn IsExternal changed from true to false on Ground Floor.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "0Iqxc9CtTOgPV$1Tej3xGK"
+          ],
+          "reason": "Change record gate4-property-column-ground shows IfcColumn 0Iqxc9CtTOgPV$1Tej3xGK at Ground Floor with Pset_ColumnCommon.IsExternal changed from true to false."
+        },
+        {
+          "claim": "IfcSlab LoadBearing changed from false to true on Roof.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "Change record gate4-property-slab-roof shows IfcSlab 2WfINAQAHRERPwEp7Nos0$ at Roof with Pset_SlabCommon.LoadBearing changed from false to true."
+        },
+        {
+          "claim": "IfcWall FireRating changed from \"60\" to \"90\" on Level 01.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Change record gate4-property-wall-level01 shows IfcWall 1aO4mYJaTLLf6oT4DTcfok at Level 01 with Pset_WallCommon.FireRating changed from \"60\" to \"90\"."
+        },
+        {
+          "claim": "Only scalar property-value modifications with change_type=property_modified from the ground-truth change records were included.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result source is data/ground_truth/gate2-change-records.json and its filters restrict change_types to property_modified; all four returned records are property_modified scalar revisions."
+        },
+        {
+          "claim": "Geometry, attribute, and non-scalar revisions were not considered.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "3JuqHVfXrLlA8tnQP5xv53",
+            "0Iqxc9CtTOgPV$1Tej3xGK",
+            "2WfINAQAHRERPwEp7Nos0$",
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result applies a change_types filter of property_modified only, and the supplied evidence contains no geometry, attribute, or non-scalar revision records."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 535,
+    "successful_responses": 526,
+    "input_tokens": 2140475,
+    "cached_input_tokens": 1355648,
+    "output_tokens": 853303,
+    "estimated_cost_usd": 0.352597,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 3.52597
+}

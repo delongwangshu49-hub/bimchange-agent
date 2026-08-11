@@ -1,0 +1,164 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 110,
+  "execution_id": "gate4-primary-110",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 30,
+  "question_id": "gate3-q36-slab-property",
+  "category": "property_change",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "7436533f-4c64-40af-ad81-467cf5f87c8a",
+      "e55a0dac-90bb-474c-908d-f25f34872ade",
+      "4f9a6a8a-b3db-4d1f-a056-37514779dac0"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "global_ids": [
+          "2WfINAQAHRERPwEp7Nos0$"
+        ]
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The scalar property that changed for 2WfINAQAHRERPwEp7Nos0$ is LoadBearing in Pset_SlabCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record gate4-property-slab-roof identifies a property_modified change for global_id 2WfINAQAHRERPwEp7Nos0$ with field kind property, property_set Pset_SlabCommon, and name LoadBearing."
+        },
+        {
+          "claim": "The old value was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record lists old_value: false for the LoadBearing property."
+        },
+        {
+          "claim": "The new value is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record lists new_value: true for the LoadBearing property."
+        },
+        {
+          "claim": "The answer is based solely on the available change record; no additional model files were inspected.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The supplied evidence consists only of verified change records from data/ground_truth/gate2-change-records.json; no model files are included in the verified query result, so the stated limitation matches the evidence boundary."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The scalar property that changed for 2WfINAQAHRERPwEp7Nos0$ is LoadBearing in Pset_SlabCommon.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record gate4-property-slab-roof identifies a property_modified change for global_id 2WfINAQAHRERPwEp7Nos0$ with field kind property, property_set Pset_SlabCommon, and name LoadBearing."
+        },
+        {
+          "claim": "The old value was false.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record lists old_value: false for the LoadBearing property."
+        },
+        {
+          "claim": "The new value is true.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "2WfINAQAHRERPwEp7Nos0$"
+          ],
+          "reason": "The verified change record lists new_value: true for the LoadBearing property."
+        },
+        {
+          "claim": "The answer is based solely on the available change record; no additional model files were inspected.",
+          "verdict": "supported",
+          "evidence_global_ids": [],
+          "reason": "The supplied evidence consists only of verified change records from data/ground_truth/gate2-change-records.json; no model files are included in the verified query result, so the stated limitation matches the evidence boundary."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 220,
+    "successful_responses": 214,
+    "input_tokens": 998399,
+    "cached_input_tokens": 299136,
+    "output_tokens": 343823,
+    "estimated_cost_usd": 0.195005,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.95005
+}

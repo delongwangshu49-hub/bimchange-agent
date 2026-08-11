@@ -1,0 +1,188 @@
+{
+  "schema_version": "0.1.0",
+  "ordinal": 97,
+  "execution_id": "gate4-primary-097",
+  "repetition": 1,
+  "workflow": "proposed",
+  "question_position": 17,
+  "question_id": "gate3-q45-fire-compliance-boundary",
+  "category": "evidence_boundary",
+  "model_config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "reasoning_effort": "high",
+    "max_output_tokens": 16000,
+    "max_transient_retries": 2,
+    "budget_usd": 2.25,
+    "input_usd_per_million": 0.14,
+    "cached_input_usd_per_million": 0.0028,
+    "output_usd_per_million": 0.28,
+    "store": false
+  },
+  "frozen_runtime_mapping": {
+    "logical_split": "held_out",
+    "runtime_question_path": "evals/questions/gate3-questions.json",
+    "runtime_change_record_path": "data/ground_truth/gate2-change-records.json",
+    "runtime_direct_input_path": "evals/inputs/development/gate3-model-pair-summary.json"
+  },
+  "metadata": {
+    "response_ids": [
+      "3fa17053-138a-47b2-9e98-79bbdbb54950",
+      "bbf7f466-c6e7-4f0a-bfe4-21f5c910b3b5",
+      "b633bdb8-44b9-47e7-8b0f-f9a75252c705"
+    ],
+    "tool_request": {
+      "schema_version": "0.1.0",
+      "filters": {
+        "change_types": [
+          "property_modified"
+        ],
+        "entity_types": [
+          "IfcWall"
+        ],
+        "global_ids": [
+          "1aO4mYJaTLLf6oT4DTcfok"
+        ],
+        "property_name": "FireRating"
+      }
+    },
+    "tool_result_count": 1,
+    "repair_count": 0,
+    "initial_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "initial_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "initial_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The FireRating revision for wall 1aO4mYJaTLLf6oT4DTcfok changes the value from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result records old_value '60' and new_value '90' for Pset_WallCommon.FireRating on this wall."
+        },
+        {
+          "claim": "The cited change record alone does not state an applicable regulatory or code requirement.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified change record and structured prediction contain no field or value identifying an applicable regulatory or code requirement."
+        },
+        {
+          "claim": "No regulatory requirement or target FireRating value is available in the cited change record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified change record contains only the changed FireRating values and change metadata; it does not include a regulatory requirement or target FireRating value."
+        },
+        {
+          "claim": "The revision does not prove regulatory compliance.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Because no applicable requirement or target FireRating value is present in the supplied evidence, the recorded change alone cannot demonstrate regulatory compliance."
+        },
+        {
+          "claim": "Compliance cannot be established from the revision alone.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The absence of any recorded regulatory requirement means the supplied change record is insufficient to establish compliance; this is supported by the explicit evidence boundary."
+        }
+      ]
+    },
+    "final_structured_validation": {
+      "schema_compliance": true,
+      "status_consistent": true,
+      "status_violations": [],
+      "prediction_count": 1,
+      "evidence_supported_count": 1,
+      "evidence_support_rate": 1.0,
+      "unsupported_predictions": [],
+      "free_text_semantics_validated": false
+    },
+    "final_tool_coverage_validation": {
+      "expected_record_count": 1,
+      "prediction_count": 1,
+      "coverage_rate": 1.0,
+      "missing_change_ids": [],
+      "unexpected_prediction_count": 0,
+      "complete": true
+    },
+    "final_claim_validation": {
+      "overall_verdict": "pass",
+      "claims": [
+        {
+          "claim": "The FireRating revision for wall 1aO4mYJaTLLf6oT4DTcfok changes the value from 60 to 90.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified query result records old_value '60' and new_value '90' for Pset_WallCommon.FireRating on this wall."
+        },
+        {
+          "claim": "The cited change record alone does not state an applicable regulatory or code requirement.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified change record and structured prediction contain no field or value identifying an applicable regulatory or code requirement."
+        },
+        {
+          "claim": "No regulatory requirement or target FireRating value is available in the cited change record.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The verified change record contains only the changed FireRating values and change metadata; it does not include a regulatory requirement or target FireRating value."
+        },
+        {
+          "claim": "The revision does not prove regulatory compliance.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "Because no applicable requirement or target FireRating value is present in the supplied evidence, the recorded change alone cannot demonstrate regulatory compliance."
+        },
+        {
+          "claim": "Compliance cannot be established from the revision alone.",
+          "verdict": "supported",
+          "evidence_global_ids": [
+            "1aO4mYJaTLLf6oT4DTcfok"
+          ],
+          "reason": "The absence of any recorded regulatory requirement means the supplied change record is insufficient to establish compliance; this is supported by the explicit evidence boundary."
+        }
+      ]
+    }
+  },
+  "cumulative_usage": {
+    "request_attempts": 177,
+    "successful_responses": 171,
+    "input_tokens": 932952,
+    "cached_input_tokens": 254848,
+    "output_tokens": 276241,
+    "estimated_cost_usd": 0.172996,
+    "budget_usd": 2.25
+  },
+  "conservative_estimated_cny": 1.72996
+}
