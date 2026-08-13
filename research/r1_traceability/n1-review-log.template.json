@@ -1,0 +1,38 @@
+{
+  "protocol_id": "r1-n1-review-diagnostic-0.1.0",
+  "session_status": "NOT_STARTED",
+  "participant_count": 1,
+  "participant_role": "sole_developer",
+  "schedule_expected_trial_count": 8,
+  "trials": [],
+  "trial_template": {
+      "trial_id": null,
+      "condition": null,
+      "started_at": null,
+      "completed_at": null,
+      "elapsed_seconds": null,
+      "answer": null,
+      "correctness": null,
+      "missing_or_wrong_fields": [],
+      "navigation_actions": null,
+      "failed_attempts": null,
+      "fact_hint_count": null,
+      "difficulty_1_to_5": null,
+      "confidence_1_to_5": null,
+      "issue_codes": [],
+      "notes": null,
+      "learning_or_order_effect_observed": null
+  },
+  "summary": null,
+  "product_decision": null,
+  "limitations": [
+    "single developer",
+    "participant authored data and implementation",
+    "known task answers",
+    "learning and order effects",
+    "controlled fixture only",
+    "no representative IFC4 smoke test",
+    "not a user study"
+  ],
+  "model_calls_made": 0
+}

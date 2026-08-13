@@ -1,0 +1,62 @@
+{
+  "protocol_id": "r1-n1-review-diagnostic-0.1.0",
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "participant": {
+    "count": 1,
+    "role": "sole_developer",
+    "prior_knowledge": "author_of_data_and_implementation",
+    "claim_boundary": "design_diagnostic_only"
+  },
+  "input_scope": {
+    "controlled_repository_fixture_only": true,
+    "external_ifc_files": false,
+    "representative_ifc4_smoke_test": "cancelled_for_current_flow",
+    "model_calls_made": 0
+  },
+  "frozen_artifacts": {
+    "change-records.json": "7d79cc4352750bfc31d160b1713a7e6ebf083e68e52485df672c9b0800142003",
+    "ifcdiff.json": "2f99969be859f3ef075799cbadde32cf14acf2a6fced197a35085a93dfab7b0c",
+    "trace-manifest.json": "9e27781509a6627b1dcbc5ee69f9f98792b3d659c3a10c48a64c109dcea9596a"
+  },
+  "conditions": {
+    "A": "manual_evidence",
+    "B": "trace_assisted"
+  },
+  "schedule": [
+    {"trial_id": "N1-T01", "condition": "A", "task_type": "deleted_fact_verification"},
+    {"trial_id": "N1-T02", "condition": "B", "task_type": "added_fact_verification"},
+    {"trial_id": "N1-T03", "condition": "A", "task_type": "property_fact_verification"},
+    {"trial_id": "N1-T04", "condition": "B", "task_type": "deleted_trace_verification"},
+    {"trial_id": "N1-T05", "condition": "A", "task_type": "added_manual_completeness"},
+    {"trial_id": "N1-T06", "condition": "B", "task_type": "property_trace_verification"},
+    {"trial_id": "N1-T07", "condition": "A", "task_type": "locator_tamper_detection"},
+    {"trial_id": "N1-T08", "condition": "B", "task_type": "entry_omission_detection"}
+  ],
+  "primary_fields": [
+    "correctness",
+    "elapsed_seconds",
+    "navigation_actions",
+    "failed_attempts",
+    "fact_hint_count",
+    "difficulty_1_to_5",
+    "confidence_1_to_5",
+    "issue_codes"
+  ],
+  "analysis": {
+    "allowed": [
+      "raw_trial_table",
+      "condition_counts",
+      "median_and_range",
+      "issue_frequency",
+      "failure_case_analysis"
+    ],
+    "forbidden": [
+      "significance_test",
+      "confidence_interval",
+      "population_effect",
+      "user_benefit_claim",
+      "pseudo_replication"
+    ]
+  },
+  "execution_status": "NOT_STARTED"
+}
