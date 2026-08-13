@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bimchange-agent://research/r1-traceability-0.1.0",
+  "title": "BIMChange-Agent R1 traceability manifest",
+  "type": "object",
+  "required": [
+    "protocol_id",
+    "manifest_schema_version",
+    "artifacts",
+    "detector",
+    "normalization_rules",
+    "entries",
+    "summary",
+    "model_calls_made"
+  ],
+  "properties": {
+    "protocol_id": { "const": "r1-traceability-0.1.0" },
+    "manifest_schema_version": { "const": "0.1.0" },
+    "artifacts": {
+      "type": "object",
+      "required": ["source", "revised", "change_records", "raw_result"],
+      "properties": {
+        "source": { "$ref": "#/$defs/ifc_artifact" },
+        "revised": { "$ref": "#/$defs/ifc_artifact" },
+        "change_records": { "$ref": "#/$defs/json_artifact" },
+        "raw_result": { "$ref": "#/$defs/json_artifact" }
+      },
+      "additionalProperties": false
+    },
+    "detector": {
+      "type": "object",
+      "required": ["name", "version", "configuration", "verification"],
+      "properties": {
+        "name": { "const": "IfcDiff" },
+        "version": { "const": "0.8.5" },
+        "configuration": {
+          "type": "object",
+          "required": ["relationships", "is_shallow"],
+          "properties": {
+            "relationships": {
+              "const": ["property"]
+            },
+            "is_shallow": { "const": false }
+          },
+          "additionalProperties": false
+        },
+        "verification": {
+          "const": "reexecute_and_compare_canonical_result"
+        }
+      },
+      "additionalProperties": false
+    },
+    "normalization_rules": {
+      "const": {
+        "added": "normalize-added-v1",
+        "deleted": "normalize-deleted-v1",
+        "property_modified": "normalize-property-value-v1"
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "supported_change_records",
+        "resolved_unique",
+        "trace_resolution_rate",
+        "supported_change_types"
+      ],
+      "properties": {
+        "supported_change_records": { "type": "integer", "minimum": 0 },
+        "resolved_unique": { "type": "integer", "minimum": 0 },
+        "trace_resolution_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "supported_change_types": {
+          "type": "array",
+          "items": { "enum": ["added", "deleted", "property_modified"] },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "model_calls_made": { "const": 0 }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "ifc_artifact": {
+      "type": "object",
+      "required": ["role_name", "sha256"],
+      "properties": {
+        "role_name": { "enum": ["source.ifc", "revised.ifc"] },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "additionalProperties": false
+    },
+    "json_artifact": {
+      "type": "object",
+      "required": ["role_name", "sha256", "canonical_json_sha256"],
+      "properties": {
+        "role_name": { "enum": ["change-records.json", "ifcdiff.json"] },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "canonical_json_sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "additionalProperties": false
+    },
+    "locator": {
+      "type": "object",
+      "required": ["section", "global_id", "property_path"],
+      "properties": {
+        "section": { "enum": ["added", "deleted", "changed"] },
+        "global_id": { "type": "string", "pattern": "^[0-3][0-9A-Za-z_$]{21}$" },
+        "property_path": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "trace_id",
+        "change_id",
+        "change_record_sha256",
+        "global_id",
+        "change_type",
+        "raw_evidence",
+        "normalization",
+        "resolution"
+      ],
+      "properties": {
+        "trace_id": { "type": "string", "pattern": "^trace-[0-9a-f]{24}$" },
+        "change_id": { "type": "string", "minLength": 1 },
+        "change_record_sha256": { "$ref": "#/$defs/sha256" },
+        "global_id": { "type": "string", "pattern": "^[0-3][0-9A-Za-z_$]{21}$" },
+        "change_type": { "enum": ["added", "deleted", "property_modified"] },
+        "raw_evidence": {
+          "type": "object",
+          "required": ["locator", "selected_value_sha256"],
+          "properties": {
+            "locator": { "$ref": "#/$defs/locator" },
+            "selected_value_sha256": { "$ref": "#/$defs/sha256" }
+          },
+          "additionalProperties": false
+        },
+        "normalization": {
+          "type": "object",
+          "required": ["rule_id", "decision", "derived_fields_sha256"],
+          "properties": {
+            "rule_id": {
+              "enum": [
+                "normalize-added-v1",
+                "normalize-deleted-v1",
+                "normalize-property-value-v1"
+              ]
+            },
+            "decision": { "const": "supported" },
+            "derived_fields_sha256": { "$ref": "#/$defs/sha256" }
+          },
+          "additionalProperties": false
+        },
+        "resolution": {
+          "const": { "status": "resolved_unique", "match_count": 1 }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
