@@ -39,6 +39,7 @@ ARTIFACT = {
 EXPLANATION = {
     "summary": "One supported change.",
     "key_changes": ["A beam was added."],
+    "rational_analysis": "Review the added beam before lower-priority metadata changes.",
     "limitations": ["Review the source model."],
 }
 
@@ -122,6 +123,17 @@ class ProviderAdapterTests(unittest.TestCase):
         self.assertEqual(response_format["mimeType"], "application/json")
         self.assertEqual(response_format["schema"]["type"], "object")
 
+    def test_output_language_and_rational_analysis_are_explicit(self) -> None:
+        provider = OpenAIExplanationProvider()
+        chinese = json.dumps(
+            provider.build_request(ARTIFACT, language="zh_CN"), ensure_ascii=False
+        )
+        english = json.dumps(provider.build_request(ARTIFACT, language="en"))
+        self.assertIn("Simplified Chinese", chinese)
+        self.assertIn("English", english)
+        schema = provider.build_request(ARTIFACT)["text"]["format"]["schema"]
+        self.assertIn("rational_analysis", schema["required"])
+
     def test_each_adapter_parses_its_offline_response_fixture(self) -> None:
         fixtures = (
             (
@@ -175,6 +187,38 @@ class ProviderAdapterTests(unittest.TestCase):
                 self.assertEqual(result["provider"], provider.provider_id)
                 self.assertEqual(result["explanation"], EXPLANATION)
                 urlopen.assert_called_once()
+
+    def test_deepseek_accepts_fenced_json_and_fills_optional_analysis_fields(self) -> None:
+        partial = {
+            "summary": "发现一项受支持的变更。",
+            "key_changes": ["新增一根梁。"],
+        }
+        fixture = {
+            "model": "deepseek-v4-flash",
+            "choices": [
+                {
+                    "message": {
+                        "content": "```json\n"
+                        + json.dumps(partial, ensure_ascii=False)
+                        + "\n```"
+                    }
+                }
+            ],
+            "usage": {"total_tokens": 10},
+        }
+        provider = DeepSeekExplanationProvider()
+        with patch(
+            "bimchange_agent.ai_providers.urllib.request.urlopen",
+            return_value=_Response(fixture),
+        ):
+            result = provider.explain(
+                ARTIFACT,
+                api_key="offline-test-key",
+                language="zh_CN",
+            )
+        explanation = result["explanation"]
+        self.assertIn("优先逐项核对", explanation["rational_analysis"])
+        self.assertEqual(explanation["limitations"], [])
 
     def test_factory_rejects_cross_provider_settings_and_network_errors_are_generic(self) -> None:
         with self.assertRaises(ProviderConfigurationError):
