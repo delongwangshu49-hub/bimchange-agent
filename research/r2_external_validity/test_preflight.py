@@ -28,8 +28,8 @@ def _sample(role: str, schema: str, digest: str) -> tuple[dict[str, object], set
 
 
 class ExternalValidityPreflightTests(unittest.TestCase):
-    @patch("research.r2_external_validity.preflight._inspect_ledger")
-    @patch("research.r2_external_validity.preflight._inspect_ifc")
+    @patch(f"{audit_sample_set.__module__}._inspect_ledger")
+    @patch(f"{audit_sample_set.__module__}._inspect_ifc")
     def test_report_is_path_free_and_does_not_claim_ifc2x3_support(
         self, inspect_ifc, inspect_ledger
     ) -> None:
@@ -65,8 +65,8 @@ class ExternalValidityPreflightTests(unittest.TestCase):
             "NOT_PERMITTED",
         )
 
-    @patch("research.r2_external_validity.preflight._inspect_ledger")
-    @patch("research.r2_external_validity.preflight._inspect_ifc")
+    @patch(f"{audit_sample_set.__module__}._inspect_ledger")
+    @patch(f"{audit_sample_set.__module__}._inspect_ifc")
     def test_non_identical_repeat_fails(self, inspect_ifc, inspect_ledger) -> None:
         inspect_ifc.side_effect = (
             _sample("ifc4_baseline", "IFC4", "a" * 64),
