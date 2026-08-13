@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bimchange-agent"
-version = "0.5.0"
+version = "0.7.0"
 description = "Evidence-grounded IFC revision analysis for bounded Windows workflows"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
@@ -32,4 +32,4 @@ desktop-build = [
 where = ["src"]
 
 [tool.setuptools.package-data]
-bimchange_agent = ["resources/*.json", "resources/branding/*.png"]
+bimchange_agent = ["resources/*.json", "resources/branding/*.png", "resources/branding/*.gif", "resources/branding/*.xpm"]
