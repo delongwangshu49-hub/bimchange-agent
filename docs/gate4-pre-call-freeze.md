@@ -59,7 +59,7 @@ Automated enforcement uses the frozen Gate 3 USD-per-million-token rates with a 
 
   自动阻断继续使用冻结的 Gate 3 每百万 token 美元费率，并采用每美元人民币 10.00 元的保守换算。内部估算达到 2.25 美元或人民币 22.50 元即停止，并预留人民币 2.50 元，以覆盖提供商账单延迟或缺少可用 token 元数据但仍被计费的失败请求。
 
-The authoritative spend is the greater of attributable provider debit in CNY and the conservative token estimate. Primary calls, validators, repairs, transient retries, and any charged failed attempt are all in scope. A request is blocked before sending if the projection can reach a threshold. An incomplete block is retained and may resume only after explicit review with the identical frozen configuration.
+The authoritative spend is the greater of attributable provider debit in CNY and the conservative token estimate. Primary calls, validators, repairs, transient retries, and any charged failed attempt are all in scope. A request is blocked before sending if the projection can reach a threshold. An incomplete block is retained and may continue only after explicit review with the identical frozen configuration.
 
   权威费用口径取可归因的提供商人民币扣费与保守 token 估算中的较大值。主调用、Validator、修复、瞬态重试以及任何被计费的失败请求全部计入。若下一请求的预测费用可能触及阈值，则在发送前阻断。未完成区组必须保留，且只能在明确审核后使用完全相同的冻结配置续跑。
 
