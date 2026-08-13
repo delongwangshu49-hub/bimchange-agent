@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import json
 import shutil
 import sys
@@ -20,11 +21,13 @@ from PySide6.QtCore import (
     Property,
     QPropertyAnimation,
     QRectF,
+    QSize,
     QSettings,
     QSignalBlocker,
     QStandardPaths,
     Qt,
     QThread,
+    QTimer,
     QUrl,
     Signal,
     Slot,
@@ -38,6 +41,7 @@ from PySide6.QtGui import (
     QIcon,
     QKeyEvent,
     QMouseEvent,
+    QMovie,
     QPaintEvent,
     QPainter,
     QPixmap,
@@ -97,7 +101,7 @@ from .reporting import write_html_report
 
 
 APP_NAME = "BIMChange-Agent"
-DISPLAY_VERSION = "0.5.0"
+DISPLAY_VERSION = "0.7.0"
 HTML_REPORT_FILE_NAME = "report.html"
 APP_ICON_PATH = (
     Path(__file__).resolve().parent
@@ -105,6 +109,58 @@ APP_ICON_PATH = (
     / "branding"
     / "bimchange-app-icon.png"
 )
+BRAND_ANIMATION_PATH = APP_ICON_PATH.with_name("bimchange-logo-evolution.gif")
+
+
+def _ai_explanation_html(
+    explanation: dict[str, Any], language: str
+) -> str:
+    """Turn structured provider output into readable, localized report prose."""
+
+    content = explanation.get("explanation", explanation)
+    if not isinstance(content, dict):
+        content = {}
+
+    def escaped(value: Any) -> str:
+        return html.escape(str(value or "—"), quote=True)
+
+    def items(field: str, empty_key: str) -> str:
+        values = content.get(field, [])
+        if not isinstance(values, list):
+            values = []
+        entries = "".join(
+            f"<li>{escaped(value)}</li>"
+            for value in values
+            if isinstance(value, str) and value.strip()
+        )
+        return f"<ul>{entries}</ul>" if entries else f"<p>{text(language, empty_key)}</p>"
+
+    provider = escaped(explanation.get("provider", "AI"))
+    model = escaped(explanation.get("model", "—"))
+    rational = content.get("rational_analysis")
+    if not isinstance(rational, str) or not rational.strip():
+        rational = text(language, "ai_rational_unavailable")
+    return f"""
+    <style>
+      body {{ margin: 0; line-height: 1.55; }}
+      h3 {{ margin: 14px 0 6px; font-size: 15px; }}
+      p {{ margin: 4px 0 10px; }}
+      ul {{ margin: 5px 0 12px; padding-left: 22px; }}
+      li {{ margin: 0 0 5px; }}
+      .meta {{ opacity: 0.72; font-size: 12px; }}
+      .disclaimer {{ margin-top: 16px; padding: 10px 12px; border-left: 3px solid #8E4E36; }}
+    </style>
+    <p class="meta">{text(language, "ai_generated_by", provider=provider, model=model)}</p>
+    <h3>{text(language, "ai_summary_heading")}</h3>
+    <p>{escaped(content.get("summary"))}</p>
+    <h3>{text(language, "ai_rational_heading")}</h3>
+    <p>{escaped(rational)}</p>
+    <h3>{text(language, "ai_key_changes_heading")}</h3>
+    {items("key_changes", "ai_no_key_changes")}
+    <h3>{text(language, "ai_limitations_heading")}</h3>
+    {items("limitations", "ai_no_limitations")}
+    <p class="disclaimer">{text(language, "ai_disclaimer")}</p>
+    """
 
 
 def _friendly_error_message(error: Exception, language: str = "zh_CN") -> str:
@@ -794,7 +850,11 @@ class ReportPage(QWidget):
 
         self.splitter = QSplitter(Qt.Orientation.Horizontal)
         self.splitter.setChildrenCollapsible(False)
+        self.splitter.setCollapsible(0, False)
+        self.splitter.setCollapsible(1, False)
         self.splitter.setOpaqueResize(False)
+        self.splitter.setHandleWidth(11)
+        self.splitter.splitterMoved.connect(self._clamp_splitter)
         self.table = QTableWidget(0, 5)
         self.table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
@@ -849,6 +909,7 @@ class ReportPage(QWidget):
         self.splitter.addWidget(self.review_tabs)
         self.splitter.setStretchFactor(0, 3)
         self.splitter.setStretchFactor(1, 1)
+        self._configure_splitter(Qt.Orientation.Horizontal)
         layout.addWidget(self.splitter, stretch=1)
 
         actions = QHBoxLayout()
@@ -889,10 +950,7 @@ class ReportPage(QWidget):
         if explanation is None:
             self.ai_output.setPlainText(text(self.language, "ai_disabled_report"))
         else:
-            content = explanation.get("explanation", explanation)
-            self.ai_output.setPlainText(
-                json.dumps(content, indent=2, ensure_ascii=False)
-            )
+            self.ai_output.setHtml(_ai_explanation_html(explanation, self.language))
 
     def _populate_filters(self) -> None:
         current = (
@@ -1002,21 +1060,53 @@ class ReportPage(QWidget):
 
     def resizeEvent(self, event: QResizeEvent) -> None:
         """Give the change table full width before asking users to scroll sideways."""
-        vertical = event.size().width() < 1240
+        vertical = event.size().width() < 1080
         requested = (
             Qt.Orientation.Vertical if vertical else Qt.Orientation.Horizontal
         )
         if self.splitter.orientation() != requested:
             self.splitter.setOrientation(requested)
-            if vertical:
-                self.review_tabs.setMinimumWidth(0)
-                self.review_tabs.setMinimumHeight(90)
-                self.splitter.setSizes([520, 100])
-            else:
-                self.review_tabs.setMinimumHeight(0)
-                self.review_tabs.setMinimumWidth(300)
-                self.splitter.setSizes([900, 310])
+            self._configure_splitter(requested)
         super().resizeEvent(event)
+        QTimer.singleShot(0, self._clamp_splitter)
+
+    def _configure_splitter(self, orientation: Qt.Orientation) -> None:
+        """Apply usable panel bounds whenever the responsive axis changes."""
+
+        if orientation == Qt.Orientation.Vertical:
+            self.table.setMinimumWidth(0)
+            self.review_tabs.setMinimumWidth(0)
+            self.table.setMinimumHeight(100)
+            self.review_tabs.setMinimumHeight(100)
+            self.splitter.setSizes([360, 170])
+        else:
+            self.table.setMinimumHeight(0)
+            self.review_tabs.setMinimumHeight(0)
+            self.table.setMinimumWidth(520)
+            self.review_tabs.setMinimumWidth(340)
+            self.splitter.setSizes([860, 380])
+        QTimer.singleShot(0, self._clamp_splitter)
+
+    @Slot()
+    @Slot(int, int)
+    def _clamp_splitter(self, *_args: object) -> None:
+        """Keep either pane from being dragged outside its usable boundary."""
+
+        sizes = self.splitter.sizes()
+        if len(sizes) != 2:
+            return
+        total = sum(sizes)
+        if self.splitter.orientation() == Qt.Orientation.Vertical:
+            primary_min, review_min = 100, 100
+        else:
+            primary_min, review_min = 520, 340
+        if total < primary_min + review_min:
+            return
+        primary = max(primary_min, min(sizes[0], total - review_min))
+        bounded = [primary, total - primary]
+        if bounded != sizes:
+            with QSignalBlocker(self.splitter):
+                self.splitter.setSizes(bounded)
 
     def _update_detail(self) -> None:
         selected = self.table.selectedItems()
@@ -1066,6 +1156,10 @@ class ReportPage(QWidget):
             self._refresh_table()
         if self.explanation is None:
             self.ai_output.setPlainText(text(self.language, "ai_disabled_report"))
+        else:
+            self.ai_output.setHtml(
+                _ai_explanation_html(self.explanation, self.language)
+            )
 
     def retranslate_ui(self) -> None:
         self.eyebrow.setText(text(self.language, "report_eyebrow"))
@@ -1214,7 +1308,9 @@ class AnalysisWorker(QObject):
                         )
                     )
                     explanation = provider.explain(
-                        artifact, api_key=self.ai_settings.api_key
+                        artifact,
+                        api_key=self.ai_settings.api_key,
+                        language=self.language,
                     )
                 except (ProviderConfigurationError, ProviderRequestError) as error:
                     reason = _provider_error_message(
@@ -1229,6 +1325,9 @@ class AnalysisWorker(QObject):
                         "explanation": {
                             "summary": text(self.language, "ai_failed_body"),
                             "key_changes": [],
+                            "rational_analysis": text(
+                                self.language, "ai_rational_unavailable"
+                            ),
                             "limitations": [
                                 text(
                                     self.language,
@@ -1253,6 +1352,9 @@ class AnalysisWorker(QObject):
                         "explanation": {
                             "summary": text(self.language, "ai_failed_body"),
                             "key_changes": [],
+                            "rational_analysis": text(
+                                self.language, "ai_rational_unavailable"
+                            ),
                             "limitations": [reason],
                         },
                     }
@@ -1261,10 +1363,99 @@ class AnalysisWorker(QObject):
                 artifact,
                 self.output_dir / HTML_REPORT_FILE_NAME,
                 explanation=explanation,
+                language=self.language,
             )
             self.finished.emit(artifact, artifact_path, html_path, explanation)
         except Exception as error:
             self.failed.emit(_friendly_error_message(error, self.language))
+
+
+class BrandSplash(QWidget):
+    """Play the checked-in brand animation once before revealing the workspace."""
+
+    finished = Signal()
+
+    def __init__(self, animation_path: Path = BRAND_ANIMATION_PATH) -> None:
+        super().__init__(
+            None,
+            Qt.WindowType.SplashScreen
+            | Qt.WindowType.FramelessWindowHint
+            | Qt.WindowType.WindowStaysOnTopHint,
+        )
+        self.setObjectName("brandSplash")
+        self.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose, True)
+        self.setStyleSheet("#brandSplash { background: #E7E8E4; }")
+        self._finishing = False
+        self._fade = QPropertyAnimation(self, b"windowOpacity", self)
+        self._fade.setDuration(180)
+        self._fade.setStartValue(1.0)
+        self._fade.setEndValue(0.0)
+        self._fade.setEasingCurve(QEasingCurve.Type.OutCubic)
+        self._fade.finished.connect(self._complete)
+
+        screen = QApplication.primaryScreen()
+        available_width = screen.availableGeometry().width() if screen else 1200
+        width = max(560, min(720, available_width - 120))
+        height = round(width * 360 / 1120)
+        self.setFixedSize(QSize(width, height))
+
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(0, 0, 0, 0)
+        self.animation_label = QLabel()
+        self.animation_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(self.animation_label)
+
+        self.movie = QMovie(str(animation_path))
+        self.movie.setCacheMode(QMovie.CacheMode.CacheAll)
+        self.movie.frameChanged.connect(self._frame_changed)
+
+    def start(self) -> None:
+        if not self.movie.isValid():
+            QTimer.singleShot(0, self._complete)
+            return
+        self.movie.start()
+
+    @Slot(int)
+    def _frame_changed(self, frame_number: int) -> None:
+        frame = self.movie.currentPixmap()
+        if not frame.isNull():
+            scale = max(1.0, self.devicePixelRatioF())
+            target = QSize(
+                round(self.animation_label.width() * scale),
+                round(self.animation_label.height() * scale),
+            )
+            frame = frame.scaled(
+                target,
+                Qt.AspectRatioMode.KeepAspectRatio,
+                Qt.TransformationMode.SmoothTransformation,
+            )
+            frame.setDevicePixelRatio(scale)
+            self.animation_label.setPixmap(frame)
+        frame_count = self.movie.frameCount()
+        if self._finishing or frame_count <= 0 or frame_number < frame_count - 1:
+            return
+        self._finishing = True
+        self.movie.stop()
+        QTimer.singleShot(100, self._fade.start)
+
+    @Slot()
+    def _complete(self) -> None:
+        if not self._finishing:
+            self._finishing = True
+            self.movie.stop()
+        self.finished.emit()
+        self.close()
+
+    def showEvent(self, event: QShowEvent) -> None:
+        super().showEvent(event)
+        screen = self.screen() or QApplication.primaryScreen()
+        if screen is None:
+            return
+        area = screen.availableGeometry()
+        self.move(
+            area.center().x() - self.width() // 2,
+            area.center().y() - self.height() // 2,
+        )
 
 
 class MainWindow(QMainWindow):
@@ -1275,8 +1466,8 @@ class MainWindow(QMainWindow):
         persist_preferences: bool = True,
     ) -> None:
         super().__init__()
-        self.resize(1360, 860)
-        self.setMinimumSize(960, 660)
+        self.resize(1120, 720)
+        self.setMinimumSize(880, 600)
         if APP_ICON_PATH.is_file():
             self.setWindowIcon(QIcon(str(APP_ICON_PATH)))
         self._settings_store = (
@@ -1690,7 +1881,13 @@ def main() -> int:
         )
 
     sys.excepthook = show_unhandled_error
-    window.show()
+    if "--no-splash" in sys.argv:
+        window.show()
+    else:
+        splash = BrandSplash()
+        splash.finished.connect(window.show)
+        splash.show()
+        splash.start()
     return app.exec()
 
 

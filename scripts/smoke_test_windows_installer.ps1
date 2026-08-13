@@ -1,6 +1,7 @@
 param(
     [Parameter(Mandatory = $true)]
     [string]$InstallerPath,
+    [string]$PackageVersion = "0.7.0",
     [string]$TestRoot = ""
 )
 
@@ -32,7 +33,7 @@ if ($installProcess.ExitCode -ne 0) {
 
 $applicationPath = Join-Path $installDirectory "BIMChange-Agent.exe"
 $uninstallerPath = Join-Path $installDirectory "unins000.exe"
-$brandIconPath = Join-Path $installDirectory "BIMChange-Agent-0.5.0.ico"
+$brandIconPath = Join-Path $installDirectory "BIMChange-Agent-$PackageVersion.ico"
 if (-not (Test-Path -LiteralPath $applicationPath -PathType Leaf)) {
     throw "Installed application was not found: $applicationPath"
 }

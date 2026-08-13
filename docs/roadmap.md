@@ -6,9 +6,9 @@ The roadmap is evidence-driven and intentionally leaves room for adjustment. It 
 
 ## Current position / 当前定位
 
-The research release is complete and reproducible. The public Windows engineering preview proves a bounded end-user workflow: two IFC4 files, deterministic comparison, normalized Change Records, a desktop report, export, and an optional AI explanation boundary.
+The research release is complete and reproducible. The public v0.7.0 Windows product provides a bounded end-user workflow: two IFC4 files, deterministic comparison, normalized Change Records, a desktop report, export, and an optional AI explanation boundary.
 
-研究发布闭环已经完整可复现。公开的 Windows 工程预览已验证一条收窄的普通用户路径：两个 IFC4 文件、确定性比较、规范化 Change Records、桌面报告、导出及可选 AI 解读边界。
+研究发布闭环已经完整可复现。公开的 v0.7.0 Windows 产品提供一条边界明确的用户路径：两个 IFC4 文件、确定性比较、规范化 Change Records、桌面报告、导出及可选 AI 解读边界。
 
 The support claim remains deliberately narrow. One or two authorized representative IFC4 files are sufficient for the next smoke checks; this phase is not intended to become a broad compatibility study or a promise of arbitrary IFC support.
 
@@ -23,11 +23,11 @@ The support claim remains deliberately narrow. One or two authorized representat
 
 The agreed audience, visual language, information architecture, settings boundary, and first UI acceptance slice are recorded in [product experience design](product-experience-design.md).
 
-The per-user Windows installer workflow and its verification boundary are recorded in [Windows installer development](windows-installer.md). v0.5.0 is the first release to use this path.
+The per-user Windows installer workflow and its verification boundary are recorded in [Windows installer development](windows-installer.md). v0.5.0 was the first release to use this path; v0.7.0 continues it.
 
 已达成一致的目标用户、视觉语言、信息架构、设置边界和首个 UI 验收切片记录在[产品体验设计](product-experience-design.md)中。
 
-当前用户 Windows 安装流程及其验证边界记录在 [Windows 安装包开发](windows-installer.md)中；v0.5.0 是首个采用该路径发布的版本。
+当前用户 Windows 安装流程及其验证边界记录在 [Windows 安装包开发](windows-installer.md)中；v0.5.0 首次采用该路径，v0.7.0 延续该路径。
 
 ## Research directions / 研究方向
 

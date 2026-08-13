@@ -16,7 +16,9 @@ from PySide6.QtWidgets import QAbstractItemView
 
 from bimchange_agent.desktop_app import (
     AISettingsDialog,
+    BRAND_ANIMATION_PATH,
     DISPLAY_VERSION,
+    BrandSplash,
     DesktopAISettings,
     DesktopPreferences,
     MainWindow,
@@ -78,13 +80,16 @@ class DesktopDesignTests(unittest.TestCase):
             window.apply_theme()
             self.assertEqual(window.file_page.title.text(), "Compare two IFC versions")
             self.assertIn("#17191C", window.styleSheet())
+            self.assertIn("combo-chevron-dark.xpm", window.styleSheet())
+            self.assertLessEqual(window.width(), 1120)
+            self.assertLessEqual(window.height(), 720)
             window.ai_toggle.setChecked(True)
             self.assertTrue(window.ai_settings.enabled)
             self.assertIn("bounded records sent", window.ai_toggle_label.text())
             QTest.qWait(220)
             self.assertAlmostEqual(window.ai_toggle.position, 1.0, places=2)
             self.assertFalse(window.windowIcon().isNull())
-            self.assertEqual(DISPLAY_VERSION, "0.5.0")
+            self.assertEqual(DISPLAY_VERSION, "0.7.0")
             window.brand_mark.setBusy(True)
             self.assertTrue(window.brand_mark.busy)
             self.assertTrue(window.brand_mark.isAnimating())
@@ -119,7 +124,16 @@ class DesktopDesignTests(unittest.TestCase):
                 synthetic_artifact(),
                 root / "change-records.json",
                 root / "report.html",
-                explanation=None,
+                explanation={
+                    "provider": "offline-test",
+                    "model": "synthetic-model",
+                    "explanation": {
+                        "summary": "Two supported changes were found.",
+                        "key_changes": ["A beam was added."],
+                        "rational_analysis": "Review the wall property change first.",
+                        "limitations": ["Synthetic evidence only."],
+                    },
+                },
             )
             self.assertEqual(window.report_page.table.rowCount(), 2)
             self.assertEqual(
@@ -128,17 +142,32 @@ class DesktopDesignTests(unittest.TestCase):
             )
             self.assertFalse(window.report_page.splitter.opaqueResize())
             window.stack.setCurrentWidget(window.report_page)
-            window.resize(1100, 700)
+            window.resize(1000, 680)
             window.show()
             self.app.processEvents()
             self.assertEqual(
                 window.report_page.splitter.orientation(), Qt.Orientation.Vertical
             )
+            window.report_page.splitter.setSizes([1, 10_000])
+            self.app.processEvents()
+            vertical_sizes = window.report_page.splitter.sizes()
+            self.assertGreaterEqual(vertical_sizes[0], 90)
+            self.assertGreaterEqual(vertical_sizes[1], 90)
             window.resize(1400, 820)
             self.app.processEvents()
             self.assertEqual(
                 window.report_page.splitter.orientation(), Qt.Orientation.Horizontal
             )
+            window.report_page.splitter.setSizes([10_000, 1])
+            self.app.processEvents()
+            horizontal_sizes = window.report_page.splitter.sizes()
+            self.assertGreaterEqual(horizontal_sizes[0], 520)
+            self.assertGreaterEqual(horizontal_sizes[1], 340)
+            self.assertIn(
+                "Brief rational analysis",
+                window.report_page.ai_output.toPlainText(),
+            )
+            self.assertNotIn('"summary"', window.report_page.ai_output.toPlainText())
             window.report_page.search_filter.setText("WALL-002")
             self.app.processEvents()
             self.assertEqual(window.report_page.table.rowCount(), 1)
@@ -150,6 +179,15 @@ class DesktopDesignTests(unittest.TestCase):
             self.assertEqual(window.report_page.table.rowCount(), 1)
             self.assertIn("Showing 1 of 2 changes", window.report_page.result_count.text())
             window.close()
+
+    def test_brand_splash_uses_packaged_animation(self) -> None:
+        self.assertTrue(BRAND_ANIMATION_PATH.is_file())
+        splash = BrandSplash()
+        self.assertTrue(splash.movie.isValid())
+        self.assertLessEqual(splash.width(), 720)
+        self.assertAlmostEqual(splash.width() / splash.height(), 1120 / 360, places=1)
+        splash.movie.stop()
+        splash.close()
 
 
 if __name__ == "__main__":

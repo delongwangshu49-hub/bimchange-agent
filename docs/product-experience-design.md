@@ -6,9 +6,9 @@ This document defines the desktop experience direction without assigning a relea
 
 ## Audience and outcome / 用户与目标
 
-The primary audience is practising BIM professionals. The same workflow should remain clear enough to demonstrate the project credibly in a portfolio. A user should be able to select two IFC versions, understand analysis progress, review supported changes, inspect evidence, and export a report without learning the research implementation.
+The primary audience is practising BIM professionals reviewing bounded IFC revisions. A user should be able to select two IFC versions, understand analysis progress, review supported changes, inspect evidence, and export a report without learning the underlying implementation.
 
-主要用户是实际 BIM 工程人员，同时兼顾作品集展示。用户无需理解研究实现，即可完成选择两个 IFC 版本、理解分析进度、审阅受支持变更、查看证据并导出报告。
+主要用户是审阅明确边界内 IFC 版本的实际 BIM 工程人员。用户无需理解底层实现，即可完成选择两个 IFC 版本、理解分析进度、审阅受支持变更、查看证据并导出报告。
 
 ## Visual direction / 视觉方向
 
@@ -64,12 +64,16 @@ Before an adapter is selectable, synthetic offline tests must cover its endpoint
 - AI enablement uses an accessible animated switch with explicit `local only` and `bounded records sent` states. The thumb moves horizontally over 180 ms; AI remains off by default.
 - Provider failures retain the deterministic report and are classified into configuration, authentication, endpoint/model, rate/quota, provider availability, network, timeout, invalid JSON, and response-shape categories without exposing keys or response bodies.
 - Change tables scroll per pixel and update in batches. Splitters use deferred (non-opaque) resize to avoid repeatedly repainting the full table while the user drags a divider.
+- Report splitters enforce usable minimum and maximum pane sizes throughout dragging; neither the table nor evidence pane can be collapsed beyond the review boundary.
+- Combo-box arrows are supplied explicitly for light and dark themes, and the default 1120×720 window keeps the primary workflow compact without compromising the minimum 920×640 layout.
 - At narrower widths, the evidence pane moves below the table so the five primary fields keep the full content width. Elided cells expose their complete value through a tooltip and the evidence pane.
 - Corners follow a restrained Windows-like radius. The dark theme is graphite and neutral gray rather than yellow-brown, with muted terracotta reserved for active state and focus.
 
 - AI 启用采用具备无障碍名称的动画开关，明确区分“仅本地”和“发送受限记录”；滑块在 180ms 内横向移动，默认仍为关闭。
 - 服务商失败不会影响确定性报告，并区分设置、认证、端点/模型、限流/额度、服务不可用、网络、超时、无效 JSON 与响应结构；不显示 Key 或服务商响应正文。
 - 变更表使用逐像素滚动和批量刷新；分隔条采用延迟调整，拖拽时不持续重绘整张表格。
+- 报告分隔条在拖拽过程中持续限制可用的最小与最大面板尺寸，表格和证据面板都不会被压缩到审阅边界之外。
+- 下拉箭头在深浅色主题中均使用显式资源；默认 1120×720 窗口在不破坏 920×640 最小布局的前提下保持紧凑。
 - 窄窗口下证据面板移到表格下方，使五个主要字段获得完整横向宽度；被截断的单元格可通过 Tooltip 和证据面板查看完整值。
 - 圆角采用克制的 Windows 风格；深色主题改为石墨与中性灰，仅用低饱和陶土色表达激活与焦点状态。
 
@@ -78,5 +82,3 @@ Before an adapter is selectable, synthetic offline tests must cover its endpoint
 The app icon depicts two BIM revisions, a highlighted changed zone, and a traceable evidence marker. The same source is supplied as a transparent PNG for the application/taskbar and as a multi-resolution ICO embedded in the Windows executable and installer. A square product-cover PNG is retained for future release artwork.
 
 应用图标以两个 BIM 版本、高亮变化区域和可追溯证据标记构成。透明 PNG 用于应用与任务栏，多尺寸 ICO 嵌入 Windows EXE 和安装器；同时保留方形产品封面 PNG，供后续 Release 视觉使用。
-
-0.5.0 在页头加入同一品牌标记，并只使用三类低干扰动效：悬停轻微抬升、分析过程缓慢呼吸、完成时短促回落。动效不覆盖表格和报告内容，不使用持续旋转、闪烁或大面积背景动画。

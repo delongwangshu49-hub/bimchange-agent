@@ -38,6 +38,7 @@ class ReportingTests(unittest.TestCase):
                     "explanation": {
                         "summary": "<img src=x onerror=alert(1)>",
                         "key_changes": [],
+                        "rational_analysis": "Evidence-bounded priority note.",
                         "limitations": [],
                     },
                 },
@@ -45,6 +46,13 @@ class ReportingTests(unittest.TestCase):
             self.assertNotIn("<script>alert(1)</script>", injected)
             self.assertNotIn("<img src=x onerror=alert(1)>", injected)
             self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", injected)
+            self.assertIn("自然语言摘要", injected)
+            self.assertNotIn('"key_changes"', injected)
+
+            english = build_html_report(artifact, language="en")
+            self.assertIn('<html lang="en">', english)
+            self.assertIn("Change summary", english)
+            self.assertNotIn("变更摘要", english)
 
 
 if __name__ == "__main__":

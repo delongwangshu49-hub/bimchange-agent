@@ -59,8 +59,8 @@ def synthetic_artifact() -> dict[str, object]:
         },
     ]
     return {
-        "source": {"file_name": "campus-core-v12.ifc"},
-        "revised": {"file_name": "campus-core-v13.ifc"},
+        "source": {"file_name": "sample-baseline.ifc"},
+        "revised": {"file_name": "sample-revised.ifc"},
         "summary": {
             "total_supported": 3,
             "added": 1,
@@ -106,7 +106,7 @@ def main(output_dir: Path) -> None:
         preferences=DesktopPreferences(language="zh_CN", theme="light"),
         persist_preferences=False,
     )
-    window.resize(1240, 820)
+    window.resize(1120, 720)
     window.show()
     save_state(window, output_dir / "desktop-light-zh-home.png")
     window.ai_toggle.setChecked(True)
@@ -120,14 +120,32 @@ def main(output_dir: Path) -> None:
         synthetic_artifact(),
         output_dir / "synthetic-change-records.json",
         output_dir / "synthetic-report.html",
-        explanation=None,
+        explanation={
+            "provider": "offline-sample",
+            "model": "synthetic-model",
+            "explanation": {
+                "summary": "本次示例包含三项受支持的变化：新增、删除与属性修改各一项。",
+                "key_changes": [
+                    "新增一根 IfcBeam。",
+                    "删除一根 IfcColumn。",
+                    "一面 IfcWall 的 IsExternal 属性发生变化。",
+                ],
+                "rational_analysis": "建议先核对属性语义变化，再结合原始模型审阅新增与删除构件。",
+                "limitations": [
+                    "这是完全合成的界面示例，不代表真实项目结论。"
+                ],
+            },
+        },
     )
     window.stack.setCurrentWidget(window.report_page)
     save_state(window, output_dir / "desktop-light-zh-report.png")
-    window.resize(980, 680)
+    window.report_page.review_tabs.setCurrentIndex(1)
+    save_state(window, output_dir / "desktop-light-zh-ai-report.png")
+    window.report_page.review_tabs.setCurrentIndex(0)
+    window.resize(920, 640)
     save_state(window, output_dir / "desktop-light-zh-report-minimum.png")
 
-    window.resize(1240, 820)
+    window.resize(1120, 720)
     window.preferences = DesktopPreferences(language="en", theme="dark")
     window.retranslate_ui()
     window.apply_theme()
@@ -143,6 +161,7 @@ def main(output_dir: Path) -> None:
         "desktop-light-zh-home.png",
         "desktop-light-zh-ai-on.png",
         "desktop-light-zh-report.png",
+        "desktop-light-zh-ai-report.png",
         "desktop-light-zh-report-minimum.png",
         "desktop-light-zh-settings.png",
         "desktop-light-zh-settings-ai.png",
