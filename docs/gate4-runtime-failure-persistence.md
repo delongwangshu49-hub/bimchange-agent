@@ -12,7 +12,7 @@ The frozen runner correctly treated non-empty but Schema-invalid model output as
 
 冻结运行器正确地把非空但 Schema 非法的模型输出视为实验失败，而不是基础设施重试；但 Gate 4 外壳会在保存原始响应、精确用量和失败记录前终止整个进程。执行 50、72、73 和 78 共观察到四次此类失败。期间没有读取参考答案，也没有对留出答案进行评分或据此修改提示词、Schema、工作流逻辑或评分规则。
 
-The first paid attempt also returned before the sandbox denied creation of the result directory. That response and the four pre-amendment Schema failures lack checkpointed token metadata. The frozen CNY 2.50 contingency reserve covers these unmetered attempts. The last checkpointed conservative estimate is CNY 1.46357, so any reviewed resume must start with provider-attributed spend of at least CNY 3.96357 unless a higher provider debit is available.
+The first paid attempt also returned before the sandbox denied creation of the result directory. That response and the four pre-amendment Schema failures lack checkpointed token metadata. The frozen CNY 2.50 contingency reserve covers these unmetered attempts. The last checkpointed conservative estimate is CNY 1.46357, so any reviewed continuation must start with provider-attributed spend of at least CNY 3.96357 unless a higher provider debit is available.
 
 第一次付费尝试返回后，沙箱拒绝创建结果目录，因此该响应与修订前的四次 Schema 失败都没有保存 token 元数据。冻结的 CNY 2.50 应急储备用于覆盖这些未计量尝试。最后一次 checkpoint 的保守估算为 CNY 1.46357，因此通过审核后的续跑必须至少以 CNY 3.96357 作为提供商归因费用起点；若提供商显示更高扣费，则使用更高值。
 
@@ -32,12 +32,12 @@ The 37 protected Gate 3 files must remain byte-identical to commit `abcb095858ea
 
 37 个受保护 Gate 3 文件必须继续与提交 `abcb095858ea45a1727d68d91063376ef77381ad` 字节一致。问题集、调度、盲审选择、运行前审核、审核状态、最终清单、模型配置、提示词、Schema、工作流逻辑、评分规则、重复顺序、排除规则和预算阈值均保持不变。
 
-The 74 valid candidates already retained through execution 78 are not affected by the missing failure-persistence branch. The four pre-amendment failures remain failures and are not retried; their manually retained records explicitly state that raw responses and token metadata were unavailable after process termination. A reviewed resume begins at execution 79.
+The 74 valid candidates already retained through execution 78 are not affected by the missing failure-persistence branch. The four pre-amendment failures remain failures and are not retried; their manually retained records explicitly state that raw responses and token metadata were unavailable after process termination. A reviewed continuation begins at execution 79.
 
 截至执行 78 已保留的 74 个有效候选不受缺失的失败持久化分支影响。修订前的四次失败继续作为失败保留且不得重试；其人工保留记录明确说明进程终止后无法取得原始响应和 token 元数据。通过审核后的续跑从执行 79 开始。
 
 ## Verification and authorization boundary
 
-Offline tests must prove that raw responses and exact usage are persisted, model-output failures advance once without retry, and infrastructure failures remain fatal. Foundation guard and the protected Gate 3 byte comparison must pass. No paid call may resume until the amendment is reviewed, publicly recorded, merged, and followed by a renewed exact live-call authorization.
+Offline tests must prove that raw responses and exact usage are persisted, model-output failures advance once without retry, and infrastructure failures remain fatal. Foundation guard and the protected Gate 3 byte comparison must pass. No paid call may continue until the amendment is reviewed, publicly recorded, merged, and followed by a renewed exact live-call authorization.
 
 离线测试必须证明：原始响应和精确用量能够保存；模型输出失败只推进一次且不重试；基础设施失败仍会导致停止。foundation guard 与受保护 Gate 3 字节比较必须通过。在本修订完成审核、公开记录、合并并再次获得精确实时调用授权前，不得恢复任何付费调用。
