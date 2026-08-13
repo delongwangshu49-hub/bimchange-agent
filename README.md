@@ -1,7 +1,7 @@
 # BIMChange-Agent
 
 <p align="center">
-  <img src="src/bimchange_agent/resources/branding/bimchange-cover.png" width="260" alt="BIMChange-Agent product mark">
+    <img src="docs/assets/brand/bimchange-logo-evolution.gif" width="960" alt="BIMChange-Agent logo evolution: one building separates into two revisions while the BIMChange-Agent wordmark draws from left to right">
 </p>
 
 **Auditable IFC revision review built from structured evidence.**
