@@ -174,6 +174,24 @@ Before the Windows product workflow was assembled, the project progressed throug
 
 Detailed frozen evidence remains available in [Gate 3 development results](docs/gate3-development-results.md), [Gate 4 held-out results](docs/gate4-held-out-results.md), and the [Gate 4 result artifacts](evals/results/held_out/gate4-controlled-heldout-v0.1.0/).
 
+## Possible directions / 可能方向
+
+BIMChange-Agent is expected to continue through evidence-gated increments rather than a fixed feature calendar. The directions below are working possibilities, not delivery commitments; their order, scope, or inclusion may change with reproducible findings, maintenance cost, and user feedback.
+
+BIMChange-Agent 后续更可能按“证据通过后再增量推进”的方式演进，而不是绑定固定功能日历。以下内容是当前可能方向，不构成交付承诺；其顺序、范围或是否进入产品，均可能随可复现结果、维护成本和用户反馈调整。
+
+| Direction / 方向 | What may be explored / 可能探索 | Decision gate / 决策条件 |
+|---|---|---|
+| **Product reliability and review experience** / 产品可靠性与审阅体验 | Clearer diagnostics, error recovery, accessibility, long-field and high-DPI behaviour, packaging, and a more coherent review flow. / 更清晰的诊断与错误恢复、可访问性、长字段与高 DPI 表现、安装交付及更连贯的审阅流程。 | Reproducible issues, bounded Windows regression checks, and maintainable packaging. / 具备可复现问题、有界 Windows 回归与可维护的交付方案。 |
+| **Evidence navigation and audit trails** / 证据导航与审计链 | Tighter links from a report row and GlobalId to deterministic evidence, trace manifests, and review-friendly exports. / 加强报告记录及 GlobalId 与确定性证据、追溯清单和便于审阅的导出之间的联系。 | Unique evidence resolution, repeatable generation, and failure-closed tamper checks. / 证据可唯一解析、可重复生成，并能对受控篡改失败关闭。 |
+| **Optional AI explanation** / 可选 AI 解读 | Provider-specific adapters, clearer uncertainty, citation discipline, and tests of factual faithfulness to existing Change Records. / 按服务商完善适配、加强不确定性表达与引用纪律，并检验解读对既有 Change Records 的事实忠实度。 | Explicit activation, provider-specific protocol tests, privacy disclosure, and evidence-based evaluation. / 明确启用、逐服务商协议测试、隐私披露与基于证据的评估。 |
+| **Local spatial context** / 局部空间上下文 | A bounded view of changed elements, nearby context, or storeys, with report-to-GlobalId highlighting. / 对变化构件、局部邻域或楼层进行有界展示，并支持从报告定位到相同 GlobalId。 | A lightweight conversion/viewing path that preserves performance and privacy; this would not imply a full BIM viewer or general geometry-diff support. / 需先验证轻量转换与查看路径、性能和隐私；这不等同于完整 BIM 查看器或通用几何差分支持。 |
+| **External-validity and schema exploration** / 外部有效性与模式探索 | Additional independent, authorised samples or exporters may be used to test repeatability. IFC2X3 may continue as a bounded experimental track. / 可能使用更多独立、获授权的样本或导出来源检验重复性；IFC2X3 可继续作为有界实验方向。 | Pre-registration, independent traceability, failure-closed validation, product regression, and a separate support decision. / 需要预注册、独立追溯、失败关闭验证、产品回归与单独支持决策。 |
+
+A direction would enter the supported product boundary only after its evidence, privacy, regression, and release conditions are separately satisfied. Until then, the current v0.7.0 boundary remains authoritative.
+
+任何方向只有在证据、隐私、回归与发布条件分别满足后，才可能进入产品支持边界。在此之前，当前 v0.7.0 边界仍为权威声明。
+
 ## Feedback / 反馈
 
 Please [open an issue](https://github.com/delongwangshu49-hub/bimchange-agent/issues/new/choose) with the application version, Windows version, IFC schema, approximate file sizes, and reproducible steps. Never upload confidential IFC files, API keys, or unredacted reports to a public issue.
