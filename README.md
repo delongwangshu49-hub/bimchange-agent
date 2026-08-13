@@ -134,6 +134,46 @@ See the [Chinese changelog](CHANGELOG.zh-CN.md), [v0.7.0 release record](docs/re
 
 版本变化与使用边界详见[中文更新日志](CHANGELOG.zh-CN.md)、[v0.7.0 发布记录](docs/releases/v0.7.0.md)、[隐私与安全边界](docs/privacy-and-security.md)及 [Windows 安装包说明](docs/windows-installer.md)。
 
+## Experimental lineage / 实验沿革
+
+Before the Windows product workflow was assembled, the project progressed through a bounded sequence of reproducible experiments:
+
+1. **Deterministic foundation.** Synthetic IFC4 revisions were generated and checked with deterministic validators so every expected change had a known evidence trail.
+2. **Development comparison.** A minimal agent workflow was compared with direct-model and tool-using baselines, while per-question checkpoints and structured outputs were tested offline.
+3. **Frozen held-out evaluation.** Prompts, questions, schedules, scoring rules, budgets, and protected baselines were frozen before execution. Three workflows each ran 120 scheduled executions across 40 held-out questions and three repetitions.
+4. **Post-run audit.** Exact match, Change F1, evidence support, repeatability, paired bootstrap contrasts, and a blinded manual audit were reported from frozen artifacts.
+
+在 Windows 产品工作流成形之前，项目依次完成了确定性合成样例与验证、最小智能体及基线对比、调用前冻结的独立留出评测，以及运行后的重复性、不确定性与盲法人工审计。以下图表属于早期实验记录，用于说明方法演进与证据链；它们不扩大 v0.7.0 的产品支持边界，也不表示 IFC2X3 已获产品支持。
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/assets/gate4/workflow-performance.png" alt="Gate 4 workflow performance across direct model, tool-using agent, and proposed workflow"></td>
+    <td width="50%"><img src="docs/assets/gate4/category-exact-match.png" alt="Semantic exact match by held-out question category"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Overall workflow comparison / 工作流总体对比</sub></td>
+    <td align="center"><sub>Category-level exact match / 分类精确匹配</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/assets/gate4/repetition-stability.png" alt="Run-to-run variation across three repetitions"></td>
+    <td width="50%"><img src="docs/assets/gate4/question-repeatability.png" alt="Question-level exact-match repeatability"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Run-to-run stability / 三次重复稳定性</sub></td>
+    <td align="center"><sub>Question-level repeatability / 问题级可重复性</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/assets/gate4/bootstrap-contrasts.png" alt="Question-clustered paired bootstrap contrasts"></td>
+    <td width="50%"><img src="docs/assets/gate4/manual-audit.png" alt="Blinded manual audit of citation verification and exceptional claims"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Paired bootstrap contrasts / 配对 Bootstrap 对比</sub></td>
+    <td align="center"><sub>Blinded manual audit / 盲法人工审计</sub></td>
+  </tr>
+</table>
+
+Detailed frozen evidence remains available in [Gate 3 development results](docs/gate3-development-results.md), [Gate 4 held-out results](docs/gate4-held-out-results.md), and the [Gate 4 result artifacts](evals/results/held_out/gate4-controlled-heldout-v0.1.0/).
+
 ## Feedback / 反馈
 
 Please [open an issue](https://github.com/delongwangshu49-hub/bimchange-agent/issues/new/choose) with the application version, Windows version, IFC schema, approximate file sizes, and reproducible steps. Never upload confidential IFC files, API keys, or unredacted reports to a public issue.
