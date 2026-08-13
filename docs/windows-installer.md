@@ -1,8 +1,8 @@
 # Windows installer development / Windows 安装包开发
 
-The public `v0.2.0-preview.1` remains a historical portable ZIP. v0.5.0 is the first release produced through the per-user installer path described here.
+The public `v0.2.0-preview.1` remains a historical portable ZIP. v0.5.0 was the first release produced through the per-user installer path described here; v0.7.0 is the current product release.
 
-公开的 `v0.2.0-preview.1` 作为历史便携 ZIP 保留。v0.5.0 是首个使用本文当前用户安装路径生成的发布版本。
+公开的 `v0.2.0-preview.1` 作为历史便携 ZIP 保留。v0.5.0 是首个使用本文当前用户安装路径生成的发布版本；v0.7.0 是当前产品版本。
 
 ## Packaging shape / 封装结构
 
@@ -22,7 +22,7 @@ The PyInstaller executable and Inno Setup package both embed `packaging/windows/
 
 PyInstaller EXE 与 Inno Setup 安装包均嵌入 `packaging/windows/BIMChange-Agent.ico`；运行时还设置匹配的 PNG 和稳定 Windows AppUserModelID，使窗口、任务栏、桌面快捷方式、开始菜单、安装器与卸载项保持统一产品标识。
 
-从 0.5.0 起，开始菜单与桌面快捷方式显式引用安装目录中的版本化独立 ICO，而不是只依赖 EXE 图标。安装升级时会先移除同名旧快捷方式再重建，以降低 Windows 图标缓存继续显示旧图案的概率。EXE 与安装器同时写入 0.5.0 Windows 版本资源。
+从 0.5.0 起，开始菜单与桌面快捷方式显式引用安装目录中的版本化独立 ICO，而不是只依赖 EXE 图标。安装升级时会先移除同名旧快捷方式再重建，以降低 Windows 图标缓存继续显示旧图案的概率。0.7.0 的 EXE 与安装器均写入对应 Windows 版本资源。
 
 ## Build / 构建
 
@@ -33,12 +33,12 @@ Use a clean output directory and the intended product version until a release is
 ```powershell
 .\scripts\build_windows_portable.ps1 `
   -OutputRoot .\artifacts\product-dev `
-  -PackageVersion 0.5.0
+  -PackageVersion 0.7.0
 
 .\scripts\build_windows_installer.ps1 `
-  -PortableDirectory .\artifacts\product-dev\BIMChange-Agent-0.5.0-win-x64 `
+  -PortableDirectory .\artifacts\product-dev\BIMChange-Agent-0.7.0-win-x64 `
   -OutputRoot .\artifacts\product-dev `
-  -PackageVersion 0.5.0
+  -PackageVersion 0.7.0
 ```
 
 The installer build emits an EXE and SHA-256 sidecar. The source directory must already contain `BIMChange-Agent.exe`; existing outputs are rejected instead of overwritten.
@@ -49,7 +49,7 @@ The installer build emits an EXE and SHA-256 sidecar. The source directory must 
 
 ```powershell
 .\scripts\smoke_test_windows_installer.ps1 `
-  -InstallerPath .\artifacts\product-dev\BIMChange-Agent-0.5.0-win-x64-setup.exe
+  -InstallerPath .\artifacts\product-dev\BIMChange-Agent-0.7.0-win-x64-setup.exe
 ```
 
 This check exercises only installation, process startup, and uninstall. It does not open an IFC, call an AI provider, assess model output quality, scan for malware, or prove compatibility on another Windows machine.
