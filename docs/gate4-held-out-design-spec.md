@@ -254,11 +254,11 @@ Execution will use three complete repetition blocks. Workflow order will rotate 
 3. repetition 3: Proposed, Direct LLM, Tool-Using Agent.
    第三次重复：Proposed、Direct LLM、Tool-Using Agent。
 
-The exact question order within every block will be fixed in a pre-generated schedule and hashed before calls. Failed infrastructure attempts may be resumed from checkpoints under the same configuration. A non-empty but Schema-invalid or factually wrong response is an experimental failure, not an infrastructure retry.
+The exact question order within every block will be fixed in a pre-generated schedule and hashed before calls. Failed infrastructure attempts may continue from checkpoints under the same configuration. A non-empty but Schema-invalid or factually wrong response is an experimental failure, not an infrastructure retry.
 
 每个区组内的准确问题顺序将在调用前由预生成计划固定并计算哈希。基础设施失败可以在相同配置下从检查点续跑。非空但 Schema 非法或事实错误的响应属于实验失败，而不是基础设施重试。
 
-The provisional total cost ceiling is USD 0.75. The ceiling includes all retained primary calls, validators, repairs, and transient retries. If the ceiling is reached, execution stops without changing prompts or excluding difficult questions. The incomplete block is reported and resumed only under the identical frozen configuration after explicit review.
+The provisional total cost ceiling is USD 0.75. The ceiling includes all retained primary calls, validators, repairs, and transient retries. If the ceiling is reached, execution stops without changing prompts or excluding difficult questions. The incomplete block is reported and continued only under the identical frozen configuration after explicit review.
 
 临时总费用硬上限为 0.75 美元。该上限包含所有保留的主调用、Validator、修复与瞬态重试。达到上限后必须停止执行，不得修改提示词或排除困难问题。未完成区组应如实报告，且只有在明确审核后才能用完全相同的冻结配置续跑。
 
