@@ -40,7 +40,7 @@ The total estimated cost of the retained final runs was USD 0.027420. Discarded 
   长推理有时会耗尽较短输出限额；目前所有答案条件统一使用 16,000-token 上限。
 - Provider-success responses can still contain empty structured output; these are retried at most twice and recorded in usage.<br>
   提供方返回成功时仍可能出现空的结构化输出；此类情况最多重试两次，并记录在使用量中。
-- Long local runs checkpoint per question and resume under the same cumulative budget.<br>
+- Long local runs checkpoint per question and continue under the same cumulative budget.<br>
   较长的本地运行按问题保存检查点，并在同一累计预算约束下恢复。
 
 ## Limitations / 局限
