@@ -8,7 +8,7 @@ The roadmap is evidence-driven and intentionally leaves room for adjustment. It 
 
 The research release is complete and reproducible. The public Windows engineering preview proves a bounded end-user workflow: two IFC4 files, deterministic comparison, normalized Change Records, a desktop report, export, and an optional AI explanation boundary.
 
-科研发布闭环已经完整可复现。公开的 Windows 工程预览已验证一条收窄的普通用户路径：两个 IFC4 文件、确定性比较、规范化 Change Records、桌面报告、导出及可选 AI 解读边界。
+研究发布闭环已经完整可复现。公开的 Windows 工程预览已验证一条收窄的普通用户路径：两个 IFC4 文件、确定性比较、规范化 Change Records、桌面报告、导出及可选 AI 解读边界。
 
 The support claim remains deliberately narrow. One or two authorized representative IFC4 files are sufficient for the next smoke checks; this phase is not intended to become a broad compatibility study or a promise of arbitrary IFC support.
 
@@ -29,7 +29,7 @@ The per-user Windows installer workflow and its verification boundary are record
 
 当前用户 Windows 安装流程及其验证边界记录在 [Windows 安装包开发](windows-installer.md)中；v0.5.0 是首个采用该路径发布的版本。
 
-## Research directions / 科研方向
+## Research directions / 研究方向
 
 The initial directions are intentionally connected to product decisions:
 

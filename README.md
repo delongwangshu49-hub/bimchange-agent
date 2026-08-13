@@ -10,7 +10,7 @@
 
 BIMChange-Agent is an offline-first Windows application and research project for evidence-grounded IFC revision review. It combines bounded deterministic IFC4 comparison, normalized Change Records, optional provider-based AI explanation, and a reproducible research track that guides product evolution.
 
-BIMChange-Agent 是一个离线优先、由科研证据驱动的 Windows IFC 版本变更审阅工具：提供受限的确定性 IFC4 比较、规范化 Change Records、可选的多服务商 AI 解读，以及持续反哺产品的可复现科研路线。
+BIMChange-Agent 是一个离线优先、由研究证据驱动的 Windows IFC 版本变更审阅工具：提供受限的确定性 IFC4 比较、规范化 Change Records、可选的多服务商 AI 解读，以及持续反哺产品的可复现研究路线。
 
 [![Windows Release](https://img.shields.io/badge/windows_release-v0.5.0-9B5438)](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.5.0)
 [![Research Release](https://img.shields.io/badge/research_release-v0.1.0-6F7872)](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.1.0)
@@ -38,7 +38,7 @@ Download `BIMChange-Agent-0.5.0-win-x64-setup.exe` from the [v0.5.0 release](htt
 
 The application supports exact IFC4, at most 50 MiB and 5,000 `IfcElement` objects per file, and requires at least 50% shared element GlobalIds on the smaller side. Supported normalized changes are addition, deletion, and property-value modification. IFC2X3 work remains research-only and is not enabled in the product.
 
-当前产品仅支持精确 IFC4、单文件不超过 50 MiB、每版最多 5,000 个 `IfcElement`，且较小一侧至少 50% 的构件 GlobalId 重合；当前规范化新增、删除与属性值修改。IFC2X3 仍只处于科研验证阶段，未在产品中启用。
+当前产品仅支持精确 IFC4、单文件不超过 50 MiB、每版最多 5,000 个 `IfcElement`，且较小一侧至少 50% 的构件 GlobalId 重合；当前规范化新增、删除与属性值修改。IFC2X3 仍只处于研究验证阶段，未在产品中启用。
 
 Welcome to try it and [open an issue](https://github.com/delongwangshu49-hub/bimchange-agent/issues/new/choose). Include the version, Windows version, IFC schema, approximate file sizes, and reproducible steps—but never upload confidential IFC files, API keys, or unredacted reports to a public issue.
 
@@ -83,7 +83,7 @@ The deterministic path stays local and is authoritative. AI is off by default an
 | **Windows desktop application / Windows 桌面应用** | bounded old/new IFC4 pair / 受限新旧 IFC4 文件对 | filtered in-app review plus JSON/HTML export / 可筛选应用内审阅及 JSON/HTML 导出 |
 | **Query changes / 查询变更** | JSON filters + schema-valid Change Records / JSON 筛选条件与符合 Schema 的变更记录 | validated matches with stable IDs, old/new values, source hash, and evidence selector / 带稳定 ID、新旧值、来源哈希和证据选择器的校验后结果 |
 | **Verify end to end / 端到端验证** | included sample and query / 仓库自带样例与查询 | a PASS record proving the quickstart used zero model calls / 证明快速开始未调用模型的 PASS 记录 |
-| **Reproduce Gate 4 / 复现 Gate 4** | frozen runs, scores, audit artifacts / 冻结运行、评分与审计产物 | independently verified summary, report, and research charts / 经独立验证的汇总、报告与科研图表 |
+| **Reproduce Gate 4 / 复现 Gate 4** | frozen runs, scores, audit artifacts / 冻结运行、评分与审计产物 | independently verified summary, report, and research charts / 经独立验证的汇总、报告与研究图表 |
 
 ## Quickstart / 快速开始
 
@@ -207,7 +207,7 @@ This query path consumes **already normalized** Change Records. It does not turn
 
 当前可用的是受限 IFC4 桌面比较、IFC 检查、Change Records 查询和研究复现；任意 IFC、三维预览与 Revit 集成仍不在支持范围内。
 
-## Gate 4 research snapshot / Gate 4 科研结果
+## Gate 4 research snapshot / Gate 4 研究结果
 
 ![Gate 4 workflow performance](docs/assets/gate4/workflow-performance.svg)
 
@@ -240,7 +240,7 @@ Verify the published evaluation without generating model output:
 
 Rebuild and verify the research chart matrix from the frozen machine-readable summary:
 
-从冻结的机器可读汇总重建并验证科研图表矩阵：
+从冻结的机器可读汇总重建并验证研究图表矩阵：
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements-visualization.txt
@@ -279,7 +279,7 @@ constraints-preview.txt   exact dependency set used for the Windows preview buil
 
 The v0.2.0 Preview 1 checkpoint adds a bounded IFC4 diff/normalization service, installable `inspect/diff/query` commands, a PySide6 desktop flow, JSON/HTML reports, and an optional DeepSeek explanation boundary. It is an engineering checkpoint—not a replacement for the frozen v0.1.0 research release or evidence package. See the [preview contract](docs/product-preview-v0.2.md), [privacy and security boundary](docs/privacy-and-security.md), [release notes](docs/releases/v0.2.0-preview.1.md), and [roadmap](docs/roadmap.md).
 
-v0.2.0 Preview 1 定档包含受限 IFC4 差分/规范化、可安装 `inspect/diff/query`、PySide6 桌面流程、JSON/HTML 报告和可选 DeepSeek 解读边界。它是工程检查点，不替代冻结的 v0.1.0 科研发布与证据包。详见[预览契约](docs/product-preview-v0.2.md)、[隐私与安全边界](docs/privacy-and-security.md)、[版本说明](docs/releases/v0.2.0-preview.1.md)和[路线图](docs/roadmap.md)。
+v0.2.0 Preview 1 定档包含受限 IFC4 差分/规范化、可安装 `inspect/diff/query`、PySide6 桌面流程、JSON/HTML 报告和可选 DeepSeek 解读边界。它是工程检查点，不替代冻结的 v0.1.0 研究发布与证据包。详见[预览契约](docs/product-preview-v0.2.md)、[隐私与安全边界](docs/privacy-and-security.md)、[版本说明](docs/releases/v0.2.0-preview.1.md)和[路线图](docs/roadmap.md)。
 
 1. **Keep the bounded core trustworthy** — use a small number of authorized representative IFC4 files as smoke checks, classify clear failures, and keep the support claim narrow.
 2. **Improve the review experience** — turn the existing upload-to-report path into a more legible, guided, and visually coherent desktop experience before broadening technical scope.
@@ -287,7 +287,7 @@ v0.2.0 Preview 1 定档包含受限 IFC4 差分/规范化、可安装 `inspect/d
 4. **Build research-backed capability** — study evidence traceability, AI-explanation reliability, and review efficiency so feature decisions have measurable support.
 5. **Explore spatial change context as a side track** — a later local viewer should show changed elements and a small spatial context, colour-code change types, and connect report rows to `GlobalId`; it is not a commitment to build a general-purpose BIM viewer.
 
-后续主线是：用少量获授权 IFC4 小样本完成烟雾验证，保持支持边界收窄；随后优先提升上传、分析、报告、错误提示和导出的整体审阅体验；在确定性 Change Records 仍为事实源的前提下，逐家补齐可选 AI 服务商的适配、隐私边界和离线请求/错误测试。科研副线将围绕证据可追溯性、AI 解读可靠性和审阅效率展开。三维作为穿插探索，目标是把变化构件及其局部空间上下文以颜色和 `GlobalId` 高亮呈现，而不是承诺完整 BIM 浏览器。详见[路线图](docs/roadmap.md)、[科研与能力探索方向](docs/research-directions.md)和[后续三维预览选项](docs/three-dimensional-preview-options.md)。
+后续主线是：用少量获授权 IFC4 小样本完成烟雾验证，保持支持边界收窄；随后优先提升上传、分析、报告、错误提示和导出的整体审阅体验；在确定性 Change Records 仍为事实源的前提下，逐家补齐可选 AI 服务商的适配、隐私边界和离线请求/错误测试。研究副线将围绕证据可追溯性、AI 解读可靠性和审阅效率展开。三维作为穿插探索，目标是把变化构件及其局部空间上下文以颜色和 `GlobalId` 高亮呈现，而不是承诺完整 BIM 浏览器。详见[路线图](docs/roadmap.md)、[研究与能力探索方向](docs/research-directions.md)和[后续三维预览选项](docs/three-dimensional-preview-options.md)。
 
 ## License, attribution, and safety
 

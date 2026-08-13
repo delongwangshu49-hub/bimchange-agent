@@ -1,10 +1,10 @@
-# Research directions / 科研与能力探索方向
+# Research directions / 研究与能力探索方向
 
 ## Why this exists / 文档目的
 
 Research work should strengthen the product's trustworthiness and guide future capability choices. It is not a separate promise of a large evaluation programme.
 
-科研工作应增强产品可信度，并为后续能力选择提供依据；它不是对大规模评测计划的单独承诺。
+研究工作应增强产品可信度，并为后续能力选择提供依据；它不是对大规模评测计划的单独承诺。
 
 ## Direction 1 — evidence traceability / 证据可追溯性
 
