@@ -17,7 +17,10 @@ SOURCE_ROOT = REPOSITORY_ROOT / "src"
 if str(SOURCE_ROOT) not in sys.path:
     sys.path.insert(0, str(SOURCE_ROOT))
 
-from bimchange_agent.desktop_app import MainWindow  # noqa: E402
+from bimchange_agent.desktop_app import (  # noqa: E402
+    DesktopPreferences,
+    MainWindow,
+)
 from bimchange_agent.product_core import (  # noqa: E402
     CHANGE_RECORD_FILE_NAME,
     diff_ifc_pair,
@@ -30,7 +33,11 @@ def main(output_dir: Path) -> None:
     output_dir = output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     app = QApplication.instance() or QApplication([])
-    window = MainWindow(report_root=output_dir / "reports")
+    window = MainWindow(
+        report_root=output_dir / "reports",
+        preferences=DesktopPreferences(language="zh_CN", theme="light"),
+        persist_preferences=False,
+    )
     window.resize(1240, 820)
     window.show()
     app.processEvents()
