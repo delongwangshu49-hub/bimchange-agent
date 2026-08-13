@@ -108,11 +108,11 @@ class ProductCoreTests(unittest.TestCase):
                     {"change_types": "added"},
                 )
 
-    def test_provider_catalog_enables_only_deepseek(self) -> None:
+    def test_provider_catalog_enables_four_explicit_adapters(self) -> None:
         enabled = [item.provider_id for item in provider_catalog() if item.status == "enabled"]
-        self.assertEqual(enabled, ["deepseek"])
+        self.assertEqual(enabled, ["deepseek", "openai", "anthropic", "google"])
         with self.assertRaises(ProviderConfigurationError):
-            require_enabled_provider("openai")
+            require_enabled_provider("unknown-provider")
 
     def test_deepseek_request_is_bounded_and_has_no_key(self) -> None:
         provider = DeepSeekExplanationProvider()

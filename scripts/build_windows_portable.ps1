@@ -1,10 +1,10 @@
 param(
-    [string]$OutputRoot = ""
+    [string]$OutputRoot = "",
+    [string]$PackageVersion = "0.5.0"
 )
 
 $ErrorActionPreference = "Stop"
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
-$packageVersion = "0.2.0-preview.1"
 $packageName = "BIMChange-Agent-$packageVersion-win-x64"
 
 if ($env:OS -ne "Windows_NT") {
@@ -56,6 +56,8 @@ if ($LASTEXITCODE -ne 0) { throw "Failed to install desktop build dependencies."
     --onedir `
     --windowed `
     --name "BIMChange-Agent" `
+    --icon (Join-Path $repositoryRoot "packaging\windows\BIMChange-Agent.ico") `
+    --version-file (Join-Path $repositoryRoot "packaging\windows\BIMChange-Agent.version-info.txt") `
     --distpath $distRoot `
     --workpath $workRoot `
     --specpath $specRoot `

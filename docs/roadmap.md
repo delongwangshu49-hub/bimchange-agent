@@ -18,8 +18,16 @@ The support claim remains deliberately narrow. One or two authorized representat
 
 1. **Trustworthy bounded core** — preserve the deterministic Change Record as the source of fact; fix only clear, reproducible failures and make boundaries and recovery messages understandable.
 2. **Polished review experience** — improve the path from file selection to report, including hierarchy, loading and failure states, change summaries, filtering, export, onboarding, and feedback. Visual work is a product-quality goal, not decoration.
-3. **Provider-ready AI layer** — maintain a common provider interface and user-selected settings. DeepSeek remains the initial enabled integration; other providers can be shown as planned until each has confirmed request format, privacy disclosure, offline request/error tests, and a deliberate enablement decision. IFC files, local paths, and API keys must remain outside the transmitted report payload and persisted artifacts.
+3. **Provider-ready AI layer** — maintain a common provider interface and user-selected settings. DeepSeek, OpenAI, Anthropic, and Google Gemini are selectable after provider-specific request formats, privacy disclosure, offline request/error fixtures, and a deliberate enablement decision. These checks are offline adapter conformance, not evidence of a paid live call. IFC files, local paths, and API keys must remain outside the transmitted report payload and persisted artifacts.
 4. **Research-backed evolution** — use small, auditable studies to guide capability choices rather than adding features because they appear impressive.
+
+The agreed audience, visual language, information architecture, settings boundary, and first UI acceptance slice are recorded in [product experience design](product-experience-design.md).
+
+The per-user Windows installer workflow and its verification boundary are recorded in [Windows installer development](windows-installer.md). v0.5.0 is the first release to use this path.
+
+已达成一致的目标用户、视觉语言、信息架构、设置边界和首个 UI 验收切片记录在[产品体验设计](product-experience-design.md)中。
+
+当前用户 Windows 安装流程及其验证边界记录在 [Windows 安装包开发](windows-installer.md)中；v0.5.0 是首个采用该路径发布的版本。
 
 ## Research directions / 科研方向
 

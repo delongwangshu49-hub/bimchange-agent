@@ -30,7 +30,9 @@ class DesktopSmokeTests(unittest.TestCase):
 
     def test_home_to_report_flow_without_ai(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            window = MainWindow(report_root=Path(directory))
+            window = MainWindow(
+                report_root=Path(directory), persist_preferences=False
+            )
             self.assertEqual(window.stack.currentIndex(), 0)
             self.assertFalse(window.ai_settings.enabled)
             window.file_page.source_zone.set_file(SOURCE)
@@ -53,7 +55,9 @@ class DesktopSmokeTests(unittest.TestCase):
 
     def test_same_file_and_worker_failures_show_dialogs(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            window = MainWindow(report_root=Path(directory))
+            window = MainWindow(
+                report_root=Path(directory), persist_preferences=False
+            )
             window.file_page.source_zone.set_file(SOURCE)
             window.file_page.revised_zone.set_file(SOURCE)
             with patch.object(QMessageBox, "warning", return_value=None) as warning:
@@ -78,7 +82,9 @@ class DesktopSmokeTests(unittest.TestCase):
 
     def test_invalid_selection_and_export_failure_show_dialogs(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            window = MainWindow(report_root=Path(directory))
+            window = MainWindow(
+                report_root=Path(directory), persist_preferences=False
+            )
             missing = Path(directory) / "missing.ifc"
             with (
                 patch(
@@ -113,7 +119,9 @@ class DesktopSmokeTests(unittest.TestCase):
             root = Path(directory)
             unsupported = root / "unsupported-ifc2x3.ifc"
             ifcopenshell.file(schema="IFC2X3").write(str(unsupported))
-            window = MainWindow(report_root=root / "reports")
+            window = MainWindow(
+                report_root=root / "reports", persist_preferences=False
+            )
             window.file_page.source_zone.set_file(unsupported)
             window.file_page.revised_zone.set_file(REVISED)
             with patch.object(QMessageBox, "critical", return_value=None) as critical:

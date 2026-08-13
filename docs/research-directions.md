@@ -46,9 +46,9 @@ On the repository-controlled fixture, and separately on one authorised local IFC
 
 在仓库受控 fixture，以及一组未随仓库公开的本地授权 IFC4 A/B/C 样本上，技术闸门均达到：证据唯一解析率 100%、两次干净重建一致、固定 13 项篡改全部拒绝、误接受 0、路径泄漏 0、模型/API 调用 0。本地样本结果只是有界外部复现，不证明通用 IFC4 兼容性、专业工程正确性或用户收益。
 
-One authorised IFC2X3 file has passed a path-free inventory for readability and complete, unique IfcRoot GlobalIds. Because no controlled same-schema revision pair is registered yet, it is only a schema-boundary observation. It does not change the product's exact IFC4 boundary and does not support an IFC2X3 diff or traceability claim.
+One authorised IFC2X3 file has now been extended, without overwriting the source, into a preregistered same-schema controlled revision pair. Two independent revision builds were byte-identical, and two fixed IfcDiff runs matched the six-entry ledger exactly: two additions, two deletions, and two property-value modifications, with no extra semantic changes. The normalized research Change Records were byte-identical; the raw IfcDiff files differed only in JSON object-key order while their canonical semantics matched. This is one bounded controlled-pair replication. It does not change the product's exact IFC4 boundary, establish general IFC2X3 compatibility, or yet establish IFC2X3 R1 traceability.
 
-一个授权 IFC2X3 文件已通过不记录路径的可读性与 IfcRoot GlobalId 完整唯一性盘点。由于尚未登记同模式受控修订对，它目前只构成模式边界观察，不改变产品的精确 IFC4 边界，也不支持 IFC2X3 差分或追溯已通过的表述。
+一个授权 IFC2X3 文件现已在不覆盖源文件的前提下扩展为预注册的同模式受控修订对。两次独立修订构建逐字节一致；两次固定 IfcDiff 运行均与六条台账精确相符：2 新增、2 删除、2 属性值修改，且没有额外语义变化。规范化研究 Change Records 逐字节一致；原始 IfcDiff 文件只在 JSON 对象键顺序上不同，规范化语义一致。这只是一个有界受控修订对复现，不改变产品的精确 IFC4 边界，不证明通用 IFC2X3 兼容性，也尚未证明 IFC2X3 的 R1 追溯通过。
 
 The prepared single-developer review protocol remains unexecuted. If used later, its results will be reported only as design diagnostics, never as a population user study.
 

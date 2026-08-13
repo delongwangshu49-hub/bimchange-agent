@@ -1,5 +1,5 @@
-BIMChange-Agent 0.2.0 Preview 1（Windows x64）
-================================================
+BIMChange-Agent 0.5.0（Windows x64）
+===================================
 
 开始使用
 --------
@@ -9,18 +9,18 @@ BIMChange-Agent 0.2.0 Preview 1（Windows x64）
 4. 点击“开始分析”。完成后程序会自动进入报告页。
 5. 可在报告页导出 JSON 或 HTML，或打开本次报告文件夹。
 
-首版边界
+当前边界
 --------
 - 仅支持 Windows 10/11 x64 与精确 IFC4。
 - 每个文件不超过 50 MiB，每版最多 5,000 个 IfcElement。
 - 新旧模型较小一侧至少 50% 的 GlobalId 需重合。
 - 当前规范化新增、删除、属性值修改；不承诺适用于任意 IFC 项目。
-- 首版不包含三维模型预览或 Revit 集成。
+- 当前不包含三维模型预览或 Revit 集成。
 
 AI 设置与隐私
 -------------
 - AI 默认关闭；本地确定性差分不需要 API Key。
-- 首版界面仅启用 DeepSeek，其他服务商显示为后续支持。
+- 设置中心提供 DeepSeek、OpenAI、Anthropic 与 Google Gemini 的独立配置入口；实际可用性取决于用户账户、服务状态及相应配置。
 - API Key 仅保存在本次程序运行的内存中，不写入配置或报告。
 - 开启 AI 时，仅发送最多 200 条规范化 Change Records，不上传 IFC 文件或本地文件名。
 - Change Records 仍可能包含构件名、楼层与属性值；只有项目允许时才开启 AI。
@@ -28,9 +28,9 @@ AI 设置与隐私
 - 自动工作报告保存在本机 LocalAppData；只有点击导出时才写入用户选择的位置。
 - 导出的 JSON/HTML 可能含项目派生信息，请勿未经检查上传到公共平台。
 
-预览说明
+版本说明
 --------
-这是 0.2.0 Preview 1 早期工程预览，不代表最终产品效果。请勿将它理解为对所有 IFC 文件的通用支持。
+这是 0.5.0 产品体验迭代版，不代表对所有 IFC 文件的通用支持。
 程序尚未进行代码签名，Windows SmartScreen 可能显示未知发布者提示；请只从本项目官方 GitHub Release 下载并核对 SHA-256。
 欢迎试用、提出问题和建议；反馈时请描述软件版本、Windows 版本、IFC Schema、文件大小与复现步骤，请勿公开上传敏感 IFC、API Key 或未经脱敏的报告。
 问题反馈：https://github.com/delongwangshu49-hub/bimchange-agent/issues
