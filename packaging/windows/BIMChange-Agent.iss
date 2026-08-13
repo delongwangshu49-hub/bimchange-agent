@@ -5,7 +5,7 @@
   #error OutputDir must point to the installer artifact directory.
 #endif
 #ifndef AppVersion
-  #define AppVersion "0.5.0"
+  #define AppVersion "0.7.0"
 #endif
 #ifndef OutputBaseName
   #define OutputBaseName "BIMChange-Agent-setup"
@@ -14,7 +14,7 @@
 #define AppName "BIMChange-Agent"
 #define AppPublisher "BIMChange-Agent contributors"
 #define AppExeName "BIMChange-Agent.exe"
-#define AppIconName "BIMChange-Agent-0.5.0.ico"
+#define AppIconName "BIMChange-Agent-" + AppVersion + ".ico"
 
 [Setup]
 AppId={{B90303A8-681C-4D53-A53D-18AA7B742C4E}
@@ -42,8 +42,8 @@ UninstallDisplayIcon={app}\{#AppIconName}
 UninstallDisplayName={#AppName}
 VersionInfoDescription={#AppName} Windows installer
 VersionInfoProductName={#AppName}
-VersionInfoProductVersion=0.5.0.0
-VersionInfoVersion=0.5.0.0
+VersionInfoProductVersion={#AppVersion}.0
+VersionInfoVersion={#AppVersion}.0
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
