@@ -1,5 +1,9 @@
 # BIMChange-Agent
 
+<p align="center">
+  <img src="docs/assets/brand/bimchange-logo-evolution.gif" width="960" alt="BIMChange-Agent logo evolution: one building separates into two revisions while the BIMChange-Agent wordmark draws from left to right">
+</p>
+
 **Auditable IFC revision intelligence, built from structured evidence.**
 
 **以结构化证据为基础、可审计的 IFC 版本变更智能。**
