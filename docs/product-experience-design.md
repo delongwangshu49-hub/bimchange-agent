@@ -8,7 +8,7 @@ This document defines the desktop experience direction without assigning a relea
 
 The primary audience is practising BIM professionals. The same workflow should remain clear enough to demonstrate the project credibly in a portfolio. A user should be able to select two IFC versions, understand analysis progress, review supported changes, inspect evidence, and export a report without learning the research implementation.
 
-主要用户是实际 BIM 工程人员，同时兼顾作品集展示。用户无需理解科研实现，即可完成选择两个 IFC 版本、理解分析进度、审阅受支持变更、查看证据并导出报告。
+主要用户是实际 BIM 工程人员，同时兼顾作品集展示。用户无需理解研究实现，即可完成选择两个 IFC 版本、理解分析进度、审阅受支持变更、查看证据并导出报告。
 
 ## Visual direction / 视觉方向
 
