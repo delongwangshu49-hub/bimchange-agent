@@ -46,6 +46,8 @@ The screenshots below use synthetic records only. They contain no real project f
 
 以下截图只使用合成记录，不包含真实项目文件、本地路径、API Key 或个人身份信息。
 
+![BIMChange-Agent 0.7.0 English dark file selection](docs/assets/product-v0.7.0/desktop-dark-en-home.png)
+
 ![BIMChange-Agent 0.7.0 file selection](docs/assets/product-v0.7.0/desktop-light-zh-home.png)
 
 ![BIMChange-Agent 0.7.0 synthetic review report](docs/assets/product-v0.7.0/desktop-light-zh-report.png)
