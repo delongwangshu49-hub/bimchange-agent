@@ -12,6 +12,8 @@ jobs:
   test:
     name: Windows offline tests
     runs-on: windows-latest
+    env:
+      QT_QPA_PLATFORM: offscreen
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,7 +21,30 @@ jobs:
           python-version: "3.13"
       - name: Install project and desktop dependencies
         run: python -m pip install -e ".[desktop]"
-      - name: Run offline test suite
-        run: python -m unittest discover -s tests -v
+      - name: Run offline unit tests
+        shell: pwsh
+        run: |
+          python -m unittest tests.test_ai_provider_adapters -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest tests.test_desktop_design -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest tests.test_product_core -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest tests.test_reporting -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Run isolated desktop smoke tests
+        shell: pwsh
+        run: |
+          $tests = @(
+            "tests.test_desktop_ui.DesktopSmokeTests.test_disabling_ai_clears_key_and_official_endpoint_is_locked",
+            "tests.test_desktop_ui.DesktopSmokeTests.test_home_to_report_flow_without_ai",
+            "tests.test_desktop_ui.DesktopSmokeTests.test_invalid_selection_and_export_failure_show_dialogs",
+            "tests.test_desktop_ui.DesktopSmokeTests.test_same_file_and_worker_failures_show_dialogs",
+            "tests.test_desktop_ui.DesktopSmokeTests.test_unsupported_ifc_reaches_background_error_dialog_and_recovers"
+          )
+          foreach ($test in $tests) {
+            python -m unittest $test -v
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
       - name: Run reproducible quickstart smoke test
         run: python scripts/test_quickstart.py
