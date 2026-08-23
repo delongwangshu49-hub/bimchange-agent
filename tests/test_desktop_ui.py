@@ -16,6 +16,8 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 from PySide6.QtWidgets import QApplication, QMessageBox
 
 from bimchange_agent.desktop_app import AISettingsDialog, DesktopAISettings, MainWindow
+from bimchange_agent.product_core import load_json
+from research.r3_geometry.protocol import generate_revision
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
@@ -45,9 +47,46 @@ class DesktopSmokeTests(unittest.TestCase):
                 time.sleep(0.01)
             self.assertEqual(window.stack.currentIndex(), 1)
             self.assertEqual(window.report_page.card_labels["total_supported"].text(), "3")
+            self.assertEqual(window.report_page.card_labels["geometry_modified"].text(), "0")
             self.assertEqual(window.report_page.table.rowCount(), 3)
             self.assertIsNotNone(window.report_page.html_path)
             self.assertTrue(window.report_page.html_path.is_file())
+            while window.thread is not None and time.monotonic() < deadline:
+                self.app.processEvents()
+                time.sleep(0.01)
+            window.close()
+
+    def test_default_desktop_reports_placement_translation(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            revised = root / "translation.ifc"
+            generate_revision(SOURCE, revised, variant="translation")
+            window = MainWindow(report_root=root / "reports", persist_preferences=False)
+            window.file_page.source_zone.set_file(SOURCE)
+            window.file_page.revised_zone.set_file(revised)
+            window.start_analysis()
+            deadline = time.monotonic() + 15
+            while window.stack.currentIndex() != 1 and time.monotonic() < deadline:
+                self.app.processEvents()
+                time.sleep(0.01)
+            self.assertEqual(window.stack.currentIndex(), 1)
+            self.assertEqual(window.report_page.card_labels["total_supported"].text(), "1")
+            self.assertEqual(window.report_page.card_labels["geometry_modified"].text(), "1")
+            self.assertEqual(window.report_page.table.rowCount(), 1)
+            detail = window.report_page.detail_body.toPlainText()
+            self.assertIn("放置平移", detail)
+            self.assertIn("0.25", detail)
+            self.assertIn("origin_m", detail)
+            self.assertIn("geometry_changed", detail)
+            self.assertIsNotNone(window.report_page.artifact_path)
+            artifact = load_json(window.report_page.artifact_path)
+            self.assertEqual(
+                artifact["schema_version"], "0.3.0-preview.1-candidate"
+            )
+            self.assertIsNotNone(window.report_page.html_path)
+            report = window.report_page.html_path.read_text(encoding="utf-8")
+            self.assertIn("placement_translation", report)
+            self.assertNotIn(str(REPOSITORY_ROOT), report)
             while window.thread is not None and time.monotonic() < deadline:
                 self.app.processEvents()
                 time.sleep(0.01)

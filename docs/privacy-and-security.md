@@ -1,8 +1,8 @@
 # Privacy and security boundary / 隐私与安全边界
 
-This page describes v0.2.0 Preview 1 behavior. It is a design and verification record, not a security certification.
+This page describes the v0.8.0-rc.1 privacy boundary while retaining the historical preview design principles. It is a design and verification record, not a security certification.
 
-本文说明 v0.2.0 Preview 1 的行为边界，是设计与验证记录，不代表安全认证。
+本文说明 v0.8.0-rc.1 的隐私边界，并延续早期预览版的设计原则；它是设计与验证记录，不代表安全认证。
 
 ## Data flow
 
@@ -12,7 +12,7 @@ This page describes v0.2.0 Preview 1 behavior. It is a design and verification r
 | Deterministic inspect and diff / 确定性检查与差分 | No / 否 | Working JSON/HTML under Windows LocalAppData / 工作 JSON/HTML 保存到 Windows LocalAppData |
 | Export JSON or HTML / 导出 JSON 或 HTML | No automatic upload / 不自动上传 | Written only to the user-selected path / 仅写入用户选择的位置 |
 | AI disabled / AI 关闭 | No provider request / 不请求服务商 | No API Key required / 不需要 API Key |
-| DeepSeek enabled / DeepSeek 开启 | Yes, one HTTPS request / 是，发出 HTTPS 请求 | API Key remains in process memory only / API Key 仅保存在进程内存 |
+| AI provider enabled / AI 服务商开启 | Yes, one HTTPS request to the selected provider / 是，向所选服务商发出一次 HTTPS 请求 | API Key remains in process memory only / API Key 仅保存在进程内存 |
 
 The program does not read `.env.local`, browser credentials, GitHub credentials, or unrelated files. It does not upload IFC files. It does not provide telemetry or automatic update traffic in this preview.
 
@@ -20,9 +20,9 @@ The program does not read `.env.local`, browser credentials, GitHub credentials,
 
 ## Optional AI disclosure
 
-AI is off by default. When explicitly enabled, the request omits absolute paths and source/revised file names, caps input at 200 normalized changes, and uses an absolute HTTPS endpoint without embedded credentials, query strings, or fragments. Normalized records can still contain project-derived data such as element names, storey names, GlobalIds, tags, property names, and old/new values. Use AI only when the project permits those fields to be processed by the selected provider.
+AI is off by default. When explicitly enabled, the request omits absolute paths and source/revised file names, caps input at 200 normalized changes, and uses an absolute HTTPS endpoint without embedded credentials, query strings, or fragments. Normalized records can still contain project-derived data such as element names, storey names, GlobalIds, tags, property names, old/new values, evidence selectors, and—for supported translations—project-world origins and displacement vectors. Use AI only when the project permits those fields to be processed by the selected provider.
 
-AI 默认关闭。用户明确开启后，请求会移除绝对路径和新旧文件名，最多发送 200 条规范化变更，并要求不含嵌入凭据、查询串或片段的绝对 HTTPS 端点。但规范化记录仍可能包含构件名称、楼层名称、GlobalId、Tag、属性名和新旧值等项目派生数据；只有项目允许这些字段由服务商处理时才开启 AI。
+AI 默认关闭。用户明确开启后，请求会移除绝对路径和新旧文件名，最多发送 200 条规范化变更，并要求不含嵌入凭据、查询串或片段的绝对 HTTPS 端点。但规范化记录仍可能包含构件名称、楼层名称、GlobalId、Tag、属性名、新旧值、证据位置，以及受支持平移的项目世界坐标原点和位移向量等项目派生数据；只有项目允许这些字段由服务商处理时才开启 AI。
 
 The provider response is capped at 2 MiB, parsed as JSON, checked for the expected explanation shape, and HTML-escaped before report rendering. AI failure is non-blocking: the local deterministic report remains available and the desktop shows a warning.
 
@@ -40,7 +40,7 @@ The provider response is capped at 2 MiB, parsed as JSON, checked for the expect
 ## User responsibilities
 
 - Keep AI off for confidential work unless external processing is authorized.
-- Review JSON/HTML before sharing; reports contain hashes and project-derived change evidence.
+- Review JSON/HTML before sharing; reports contain hashes and project-derived change evidence, including geometry coordinates when present.
 - Never paste API Keys into issues, screenshots, reports, or chat messages.
 - Do not upload confidential IFC files to public GitHub issues. Share a minimal synthetic reproducer or private description instead.
 - Verify the Release SHA-256. The preview is not code-signed, so an unknown-publisher warning is expected.

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bimchange-agent://research/r3a-trace-manifest-0.1.0-candidate",
+  "type": "object",
+  "required": ["protocol_id", "manifest_schema_version", "artifacts", "detector", "entries", "summary", "model_calls_made"],
+  "properties": {
+    "protocol_id": {"const": "r3a-placement-translation-0.1.0-candidate"},
+    "manifest_schema_version": {"const": "0.1.0-candidate"},
+    "artifacts": {
+      "type": "object",
+      "required": ["source", "revised", "ledger", "raw_result", "geometry_records"],
+      "properties": {
+        "source": {"$ref": "#/$defs/file"},
+        "revised": {"$ref": "#/$defs/file"},
+        "ledger": {"$ref": "#/$defs/json_file"},
+        "raw_result": {"$ref": "#/$defs/json_file"},
+        "geometry_records": {"$ref": "#/$defs/json_file"}
+      },
+      "additionalProperties": false
+    },
+    "detector": {"type": "object"},
+    "entries": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "object"}},
+    "summary": {
+      "const": {
+        "supported_change_records": 1,
+        "resolved_unique": 1,
+        "trace_resolution_rate": 1.0,
+        "supported_change_types": ["geometry_modified"],
+        "supported_geometry_subtypes": ["placement_translation"]
+      }
+    },
+    "model_calls_made": {"const": 0}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "file": {
+      "type": "object",
+      "required": ["role_name", "sha256"],
+      "properties": {"role_name": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}},
+      "additionalProperties": false
+    },
+    "json_file": {
+      "type": "object",
+      "required": ["role_name", "sha256", "canonical_json_sha256"],
+      "properties": {
+        "role_name": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "canonical_json_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

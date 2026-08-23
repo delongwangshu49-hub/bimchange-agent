@@ -10,7 +10,14 @@ from typing import Sequence
 
 from jsonschema import ValidationError
 
+from .geometry_candidate_reporting import write_geometry_candidate_html
+from .geometry_product_candidate import (
+    diff_ifc_pair_geometry_candidate,
+    query_geometry_candidate_artifact,
+    validate_candidate_artifact,
+)
 from .product_core import ProductBoundaryError, diff_ifc_pair, inspect_ifc
+from .product_core import load_json
 from .product_query import query_product_artifact
 
 
@@ -28,6 +35,14 @@ def _parser() -> argparse.ArgumentParser:
     diff_parser.add_argument("revised_ifc", type=Path)
     diff_parser.add_argument("--output-dir", type=Path, required=True)
 
+    geometry_diff_parser = subparsers.add_parser(
+        "diff-geometry-candidate",
+        help="run the explicit placement-translation backend candidate",
+    )
+    geometry_diff_parser.add_argument("source_ifc", type=Path)
+    geometry_diff_parser.add_argument("revised_ifc", type=Path)
+    geometry_diff_parser.add_argument("--output-dir", type=Path, required=True)
+
     query_parser = subparsers.add_parser(
         "query", help="filter one normalized v0.2 preview artifact"
     )
@@ -40,6 +55,31 @@ def _parser() -> argparse.ArgumentParser:
     )
     query_parser.add_argument("--property-set")
     query_parser.add_argument("--property-name")
+
+    geometry_query_parser = subparsers.add_parser(
+        "query-geometry-candidate",
+        help="filter one explicit geometry candidate artifact",
+    )
+    geometry_query_parser.add_argument("artifact", type=Path)
+    geometry_query_parser.add_argument("--change-type", action="append", dest="change_types")
+    geometry_query_parser.add_argument("--entity-type", action="append", dest="entity_types")
+    geometry_query_parser.add_argument("--global-id", action="append", dest="global_ids")
+    geometry_query_parser.add_argument("--storey", action="append", dest="building_storey_names")
+    geometry_query_parser.add_argument("--property-set")
+    geometry_query_parser.add_argument("--property-name")
+    geometry_query_parser.add_argument(
+        "--geometry-subtype", action="append", dest="geometry_subtypes"
+    )
+
+    geometry_report_parser = subparsers.add_parser(
+        "report-geometry-candidate",
+        help="export a self-contained HTML report for a geometry candidate artifact",
+    )
+    geometry_report_parser.add_argument("artifact", type=Path)
+    geometry_report_parser.add_argument("--output", type=Path, required=True)
+    geometry_report_parser.add_argument(
+        "--language", choices=("zh_CN", "en"), default="zh_CN"
+    )
     return parser
 
 
@@ -51,6 +91,7 @@ def _filters(namespace: argparse.Namespace) -> dict[str, object]:
         "building_storey_names",
         "property_set",
         "property_name",
+        "geometry_subtypes",
     )
     return {
         key: value
@@ -69,8 +110,27 @@ def main(argv: Sequence[str] | None = None) -> int:
             result = diff_ifc_pair(
                 args.source_ifc, args.revised_ifc, args.output_dir
             )
-        else:
+        elif args.command == "diff-geometry-candidate":
+            result = diff_ifc_pair_geometry_candidate(
+                args.source_ifc, args.revised_ifc, args.output_dir
+            )
+        elif args.command == "query":
             result = query_product_artifact(args.artifact, _filters(args))
+        elif args.command == "query-geometry-candidate":
+            result = query_geometry_candidate_artifact(
+                args.artifact, _filters(args)
+            )
+        else:
+            artifact = load_json(args.artifact)
+            validate_candidate_artifact(artifact)
+            output = write_geometry_candidate_html(
+                artifact, args.output, language=args.language
+            )
+            result = {
+                "status": "PASS",
+                "output": str(output),
+                "model_calls_made": 0,
+            }
     except (
         FileNotFoundError,
         OSError,

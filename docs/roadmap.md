@@ -6,13 +6,13 @@ The roadmap is evidence-driven and intentionally leaves room for adjustment. It 
 
 ## Current position / 当前定位
 
-The research release is complete and reproducible. The public v0.7.0 Windows product provides a bounded end-user workflow: two IFC4 files, deterministic comparison, normalized Change Records, a desktop report, export, and an optional AI explanation boundary.
+The research release is complete and reproducible. The v0.8.0-rc.1 Windows candidate extends the bounded end-user workflow with one research-gated geometry semantic: verified placement-only translation. Additions, deletions, property-value modifications, desktop review, export, and the optional AI explanation boundary remain in place.
 
-研究发布闭环已经完整可复现。公开的 v0.7.0 Windows 产品提供一条边界明确的用户路径：两个 IFC4 文件、确定性比较、规范化 Change Records、桌面报告、导出及可选 AI 解读边界。
+研究发布闭环已经完整可复现。v0.8.0-rc.1 Windows 候选在既有有界用户路径上加入一种经过研究闸门验证的几何语义：经验证的纯放置平移。新增、删除、属性值修改、桌面审阅、导出与可选 AI 解读边界继续保留。
 
-The support claim remains deliberately narrow. One or two authorized representative IFC4 files are sufficient for the next smoke checks; this phase is not intended to become a broad compatibility study or a promise of arbitrary IFC support.
+The support claim remains deliberately narrow. One authorized local IFC4 acceptance pair exercised all four supported categories in the desktop workflow, but the private files and outputs remain outside the repository. This is not a broad compatibility study or a promise of arbitrary IFC support.
 
-支持声明仍保持主动收窄。下一阶段用一到两个获得授权的代表性 IFC4 文件完成烟雾验证即可；这不是大规模兼容性研究，也不构成对任意 IFC 支持的承诺。
+支持声明仍保持主动收窄。一组获得授权的本地 IFC4 验收对已在桌面流程中覆盖四类受支持变化，但私有文件与输出不进入仓库。这不是大规模兼容性研究，也不构成对任意 IFC 支持的承诺。
 
 ## Product direction / 产品主线
 
@@ -23,11 +23,11 @@ The support claim remains deliberately narrow. One or two authorized representat
 
 The agreed audience, visual language, information architecture, settings boundary, and first UI acceptance slice are recorded in [product experience design](product-experience-design.md).
 
-The per-user Windows installer workflow and its verification boundary are recorded in [Windows installer development](windows-installer.md). v0.5.0 was the first release to use this path; v0.7.0 continues it.
+The per-user Windows installer workflow and its verification boundary are recorded in [Windows installer development](windows-installer.md). v0.5.0 was the first release to use this path; v0.8.0-rc.1 continues it as a prerelease candidate.
 
 已达成一致的目标用户、视觉语言、信息架构、设置边界和首个 UI 验收切片记录在[产品体验设计](product-experience-design.md)中。
 
-当前用户 Windows 安装流程及其验证边界记录在 [Windows 安装包开发](windows-installer.md)中；v0.5.0 首次采用该路径，v0.7.0 延续该路径。
+当前用户 Windows 安装流程及其验证边界记录在 [Windows 安装包开发](windows-installer.md)中；v0.5.0 首次采用该路径，v0.8.0-rc.1 以预发布候选形式延续该路径。
 
 ## Research directions / 研究方向
 
