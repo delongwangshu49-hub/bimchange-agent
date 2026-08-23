@@ -42,9 +42,9 @@ Download `BIMChange-Agent-0.8.0-rc.1-win-x64-setup.exe` and its SHA-256 sidecar 
 
 ## Product view / 产品界面
 
-The first screenshot shows the v0.8.0-rc.1 geometry-translation review using a repository-controlled synthetic acceptance pair. The remaining screenshots preserve the established v0.7.0 product presentation, also with synthetic records. They contain no real project files, local paths, API keys, or personal identifiers.
+The first screenshot shows the v0.8.0-rc.1 geometry-translation review using a locally generated synthetic acceptance pair. The remaining screenshots preserve the established v0.7.0 product presentation, also with synthetic records. They contain no real project files, local paths, API keys, or personal identifiers.
 
-首张截图展示 v0.8.0-rc.1 使用仓库受控合成验收文件进行几何平移审阅；其余截图保留既有 v0.7.0 产品呈现，同样只使用合成记录。所有截图均不包含真实项目文件、本地路径、API Key 或个人身份信息。
+首张截图展示 v0.8.0-rc.1 使用本地生成的合成验收文件进行几何平移审阅；其余截图保留既有 v0.7.0 产品呈现，同样只使用合成记录。所有截图均不包含真实项目文件、本地路径、API Key 或个人身份信息。
 
 ![BIMChange-Agent 0.8.0-rc.1 synthetic geometry translation review](docs/assets/product-v0.8.0-rc.1/desktop-dark-zh-geometry-review.png)
 
