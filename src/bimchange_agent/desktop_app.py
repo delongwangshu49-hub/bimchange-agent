@@ -91,17 +91,16 @@ from .desktop_design import (
     stylesheet,
     text,
 )
+from .geometry_product_candidate import diff_ifc_pair_geometry_candidate
 from .product_core import (
-    CHANGE_RECORD_FILE_NAME,
     ProductBoundaryError,
-    diff_ifc_pair,
     load_json,
 )
 from .reporting import write_html_report
 
 
 APP_NAME = "BIMChange-Agent"
-DISPLAY_VERSION = "0.7.0"
+DISPLAY_VERSION = "0.8.0-rc.1"
 HTML_REPORT_FILE_NAME = "report.html"
 APP_ICON_PATH = (
     Path(__file__).resolve().parent
@@ -805,6 +804,7 @@ class ReportPage(QWidget):
             ("added", "metric_added"),
             ("deleted", "metric_deleted"),
             ("property_modified", "metric_modified"),
+            ("geometry_modified", "metric_geometry"),
             ("unsupported", "metric_unsupported"),
         )
         self.card_captions: dict[str, QLabel] = {}
@@ -944,7 +944,7 @@ class ReportPage(QWidget):
             f"{artifact['source']['file_name']}  →  {artifact['revised']['file_name']}"
         )
         for key, label in self.card_labels.items():
-            label.setText(str(artifact["summary"][key]))
+            label.setText(str(artifact["summary"].get(key, 0)))
         self._populate_filters()
         self._refresh_table()
         if explanation is None:
@@ -995,7 +995,17 @@ class ReportPage(QWidget):
         visible: list[tuple[int, dict[str, Any]]] = []
         for index, change in enumerate(self.all_changes):
             storey = change["location"]["building_storey"]
-            field = change["field"]
+            field_text = self._display_field(change)
+            geometry = change.get("geometry_change")
+            geometry_search = ""
+            if isinstance(geometry, dict):
+                geometry_search = " ".join(
+                    (
+                        str(geometry.get("subtype", "")),
+                        self._display_value(geometry.get("delta")),
+                        self._display_value(geometry.get("distance")),
+                    )
+                )
             searchable = " ".join(
                 (
                     change["change_type"],
@@ -1003,7 +1013,8 @@ class ReportPage(QWidget):
                     change["entity_type"],
                     change["global_id"],
                     storey["name"] if storey else "",
-                    f"{field['property_set']}.{field['name']}" if field else "",
+                    field_text,
+                    geometry_search,
                     self._display_value(change["old_value"]),
                     self._display_value(change["new_value"]),
                 )
@@ -1024,13 +1035,12 @@ class ReportPage(QWidget):
             self.table.setRowCount(len(visible))
             for row, (change_index, change) in enumerate(visible):
                 storey = change["location"]["building_storey"]
-                field = change["field"]
                 values = (
                     self._display_change_type(change["change_type"]),
                     change["entity_type"],
                     change["global_id"],
                     storey["name"] if storey else "—",
-                    f"{field['property_set']}.{field['name']}" if field else "—",
+                    self._display_field(change),
                 )
                 for column, value in enumerate(values):
                     item = QTableWidgetItem(value)
@@ -1119,26 +1129,35 @@ class ReportPage(QWidget):
             return
         change = self.all_changes[change_index]
         storey = change["location"]["building_storey"]
-        field = change["field"]
+        geometry = change.get("geometry_change")
         evidence = change.get("evidence", {})
         evidence_selector = evidence.get("selector", "—")
         if isinstance(evidence_selector, (dict, list)):
             evidence_selector = json.dumps(
                 evidence_selector, ensure_ascii=False, sort_keys=True
             )
-        rows = (
+        rows = [
             ("detail_change", self._display_change_type(change["change_type"])),
             ("detail_entity", change["entity_type"]),
             ("detail_guid", change["global_id"]),
             ("detail_storey", storey["name"] if storey else "—"),
-            (
-                "detail_field",
-                f"{field['property_set']}.{field['name']}" if field else "—",
-            ),
+            ("detail_field", self._display_field(change)),
             ("detail_old", self._display_value(change["old_value"])),
             ("detail_new", self._display_value(change["new_value"])),
             ("detail_evidence", str(evidence_selector)),
-        )
+        ]
+        if isinstance(geometry, dict):
+            rows.extend(
+                (
+                    (
+                        "detail_geometry_subtype",
+                        self._display_geometry_subtype(geometry["subtype"]),
+                    ),
+                    ("detail_delta", self._display_value(geometry["delta"])),
+                    ("detail_distance", self._display_value(geometry["distance"])),
+                    ("detail_unit", str(geometry["length_unit"])),
+                )
+            )
         self.detail_body.setPlainText(
             "\n\n".join(f"{text(self.language, key)}\n{value}" for key, value in rows)
         )
@@ -1147,6 +1166,24 @@ class ReportPage(QWidget):
         key = f"change_{value}"
         translated = text(self.language, key)
         return value if translated == key else translated
+
+    def _display_geometry_subtype(self, value: str) -> str:
+        key = f"geometry_{value}"
+        translated = text(self.language, key)
+        return value if translated == key else translated
+
+    def _display_field(self, change: dict[str, Any]) -> str:
+        field = change["field"]
+        if field is not None:
+            return f"{field['property_set']}.{field['name']}"
+        geometry = change.get("geometry_change")
+        if not isinstance(geometry, dict):
+            return "—"
+        return (
+            f"{self._display_geometry_subtype(geometry['subtype'])} · "
+            f"Δ {self._display_value(geometry['delta'])} {geometry['length_unit']} · "
+            f"{self._display_value(geometry['distance'])} {geometry['length_unit']}"
+        )
 
     def set_language(self, language: str) -> None:
         self.language = language
@@ -1293,7 +1330,9 @@ class AnalysisWorker(QObject):
     def run(self) -> None:
         try:
             self.progress.emit(text(self.language, "progress_compare"))
-            result = diff_ifc_pair(self.source, self.revised, self.output_dir)
+            result = diff_ifc_pair_geometry_candidate(
+                self.source, self.revised, self.output_dir
+            )
             artifact_path = Path(result["change_records"])
             artifact = load_json(artifact_path)
             explanation = None
