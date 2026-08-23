@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bimchange-agent://research/r3a-geometry-records-0.1.0-candidate",
+  "type": "object",
+  "required": ["schema_version", "schema", "protocol_id", "source", "revised", "detector", "tolerances", "ledger_sha256", "changes", "model_calls_made"],
+  "properties": {
+    "schema_version": {"const": "0.1.0-candidate"},
+    "schema": {"const": "bimchange-agent://research/r3a-geometry-records-0.1.0-candidate"},
+    "protocol_id": {"const": "r3a-placement-translation-0.1.0-candidate"},
+    "source": {"$ref": "#/$defs/ifc_binding"},
+    "revised": {"$ref": "#/$defs/ifc_binding"},
+    "detector": {"$ref": "#/$defs/detector"},
+    "tolerances": {
+      "type": "object",
+      "required": ["mesh_quantization_m", "rotation_tolerance", "translation_agreement_tolerance_m", "translation_support_threshold_m"],
+      "properties": {
+        "mesh_quantization_m": {"const": 0.000001},
+        "rotation_tolerance": {"const": 1e-8},
+        "translation_agreement_tolerance_m": {"const": 1e-8},
+        "translation_support_threshold_m": {"type": "number", "minimum": 0.0001}
+      },
+      "additionalProperties": false
+    },
+    "ledger_sha256": {"$ref": "#/$defs/sha256"},
+    "changes": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/change"}},
+    "model_calls_made": {"const": 0}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "guid": {"type": "string", "pattern": "^[0-3][0-9A-Za-z_$]{21}$"},
+    "ifc_binding": {
+      "type": "object",
+      "required": ["role_name", "sha256", "ifc_schema"],
+      "properties": {
+        "role_name": {"enum": ["source.ifc", "revised.ifc"]},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "ifc_schema": {"const": "IFC4"}
+      },
+      "additionalProperties": false
+    },
+    "detector": {
+      "type": "object",
+      "required": ["name", "version", "configuration", "verification"],
+      "properties": {
+        "name": {"const": "IfcDiff"},
+        "version": {"const": "0.8.5"},
+        "configuration": {
+          "const": {"relationships": ["geometry"], "is_shallow": false, "filter_elements": null}
+        },
+        "verification": {"const": "reexecute_and_compare_normalized_semantics"}
+      },
+      "additionalProperties": false
+    },
+    "reference": {
+      "type": ["object", "null"],
+      "properties": {
+        "entity_type": {"type": "string", "pattern": "^Ifc"},
+        "global_id": {"$ref": "#/$defs/guid"},
+        "name": {"type": ["string", "null"]}
+      },
+      "required": ["entity_type", "global_id", "name"],
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object",
+      "required": ["spatial_container", "building_storey"],
+      "properties": {
+        "spatial_container": {"$ref": "#/$defs/reference"},
+        "building_storey": {"$ref": "#/$defs/reference"}
+      },
+      "additionalProperties": false
+    },
+    "change": {
+      "type": "object",
+      "required": ["change_id", "change_type", "entity_type", "global_id", "location", "field", "geometry_change", "evidence"],
+      "properties": {
+        "change_id": {"type": "string", "pattern": "^chg-[0-9a-f]{16}$"},
+        "change_type": {"const": "geometry_modified"},
+        "entity_type": {"type": "string", "pattern": "^Ifc"},
+        "global_id": {"$ref": "#/$defs/guid"},
+        "location": {"$ref": "#/$defs/location"},
+        "field": {"type": "null"},
+        "geometry_change": {
+          "type": "object",
+          "required": ["subtype", "coordinate_frame", "length_unit", "old_origin", "new_origin", "delta", "distance", "local_shape_unchanged"],
+          "properties": {
+            "subtype": {"const": "placement_translation"},
+            "coordinate_frame": {"const": "project_world"},
+            "length_unit": {"const": "m"},
+            "old_origin": {"$ref": "#/$defs/vector"},
+            "new_origin": {"$ref": "#/$defs/vector"},
+            "delta": {"$ref": "#/$defs/vector"},
+            "distance": {"type": "number", "minimum": 0.0001},
+            "local_shape_unchanged": {"const": true}
+          },
+          "additionalProperties": false
+        },
+        "evidence": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "vector": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}
+  }
+}
