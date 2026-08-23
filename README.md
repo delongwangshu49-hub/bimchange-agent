@@ -42,9 +42,9 @@ Download `BIMChange-Agent-0.8.0-rc.1-win-x64-setup.exe` and its SHA-256 sidecar 
 
 ## Product view / 产品界面
 
-The first screenshot shows the v0.8.0-rc.1 geometry-translation review using a locally generated synthetic acceptance pair. The remaining screenshots preserve the established v0.7.0 product presentation, also with synthetic records. They contain no real project files, local paths, API keys, or personal identifiers.
+v0.8.0-rc.1 brings additions, deletions, property modifications, and verified placement-only translation into one review workspace. The first view highlights geometry-translation summaries, filtering, and evidence-linked details; the following views show the bilingual desktop workflow from file selection to report review.
 
-首张截图展示 v0.8.0-rc.1 使用本地生成的合成验收文件进行几何平移审阅；其余截图保留既有 v0.7.0 产品呈现，同样只使用合成记录。所有截图均不包含真实项目文件、本地路径、API Key 或个人身份信息。
+v0.8.0-rc.1 将新增、删除、属性修改与经验证的纯放置平移统一呈现在同一审阅工作区。首张截图重点展示几何平移汇总、筛选与证据关联详情；后续截图展示从文件选择到报告审阅的双语桌面流程。
 
 ![BIMChange-Agent 0.8.0-rc.1 synthetic geometry translation review](docs/assets/product-v0.8.0-rc.1/desktop-dark-zh-geometry-review.png)
 
