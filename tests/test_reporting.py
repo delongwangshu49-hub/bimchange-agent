@@ -6,8 +6,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from bimchange_agent.geometry_product_candidate import (
+    CHANGE_RECORD_FILE_NAME as GEOMETRY_CHANGE_RECORD_FILE_NAME,
+    diff_ifc_pair_geometry_candidate,
+)
 from bimchange_agent.product_core import CHANGE_RECORD_FILE_NAME, diff_ifc_pair, load_json
 from bimchange_agent.reporting import build_html_report, write_html_report
+from research.r3_geometry.protocol import generate_revision
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +58,28 @@ class ReportingTests(unittest.TestCase):
             self.assertIn('<html lang="en">', english)
             self.assertIn("Change summary", english)
             self.assertNotIn("变更摘要", english)
+
+    def test_unified_html_report_renders_geometry_candidate(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            revised = root / "translation.ifc"
+            generate_revision(SOURCE, revised, variant="translation")
+            output = root / "candidate"
+            diff_ifc_pair_geometry_candidate(SOURCE, revised, output)
+            artifact = load_json(output / GEOMETRY_CHANGE_RECORD_FILE_NAME)
+
+            first = build_html_report(artifact, language="en")
+            second = build_html_report(artifact, language="en")
+            self.assertEqual(first, second)
+            self.assertIn("Geometry translations", first)
+            self.assertIn("placement_translation", first)
+            self.assertIn("[0.25, 0.0, 0.0] m", first)
+            self.assertIn("geometry_changed", first)
+            self.assertNotIn(str(REPOSITORY_ROOT), first)
+            path = write_html_report(
+                artifact, root / "unified-geometry-report.html", language="en"
+            )
+            self.assertTrue(path.is_file())
 
 
 if __name__ == "__main__":

@@ -17,6 +17,7 @@ from bimchange_agent.ai_providers import (
     ProviderSettings,
     create_explanation_provider,
     default_provider_settings,
+    explanation_input,
     provider_catalog,
 )
 
@@ -41,6 +42,34 @@ EXPLANATION = {
     "key_changes": ["A beam was added."],
     "rational_analysis": "Review the added beam before lower-priority metadata changes.",
     "limitations": ["Review the source model."],
+}
+
+CANDIDATE_GEOMETRY_ARTIFACT = {
+    "schema_version": "0.3.0-preview.1-candidate",
+    "source": {
+        "file_name": "redacted-geometry-old.ifc",
+        "absolute_path": "__LOCAL_ONLY__/redacted-geometry-old.ifc",
+    },
+    "revised": {"file_name": "redacted-geometry-new.ifc"},
+    "summary": {"total_supported": 1, "geometry_modified": 1},
+    "warnings": [],
+    "changes": [
+        {
+            "change_type": "geometry_modified",
+            "entity_type": "IfcWall",
+            "global_id": "SYNTHETIC-GEOMETRY-001",
+            "field": None,
+            "geometry_change": {
+                "subtype": "placement_translation",
+                "delta": [0.25, 0.0, 0.0],
+                "distance": 0.25,
+                "length_unit": "m",
+            },
+            "evidence": {
+                "selector": "changed.SYNTHETIC-GEOMETRY-001.geometry_changed"
+            },
+        }
+    ],
 }
 
 
@@ -94,6 +123,29 @@ class ProviderAdapterTests(unittest.TestCase):
                     or "x-api-key" in headers
                     or "x-goog-api-key" in headers
                 )
+
+    def test_candidate_geometry_explanation_input_keeps_semantics_not_paths(self) -> None:
+        bounded = explanation_input(CANDIDATE_GEOMETRY_ARTIFACT)
+        serialized = json.dumps(bounded, ensure_ascii=False)
+        self.assertIn("placement_translation", serialized)
+        self.assertIn("SYNTHETIC-GEOMETRY-001", serialized)
+        self.assertNotIn("redacted-geometry-old.ifc", serialized)
+        self.assertNotIn("redacted-geometry-new.ifc", serialized)
+        self.assertNotIn("__LOCAL_ONLY__", serialized)
+        for provider in (
+            DeepSeekExplanationProvider(),
+            OpenAIExplanationProvider(),
+            AnthropicExplanationProvider(),
+            GoogleExplanationProvider(),
+        ):
+            with self.subTest(provider=provider.provider_id):
+                request = json.dumps(
+                    provider.build_request(CANDIDATE_GEOMETRY_ARTIFACT),
+                    ensure_ascii=False,
+                )
+                self.assertIn("placement_translation", request)
+                self.assertNotIn("redacted-geometry-old.ifc", request)
+                self.assertNotIn("__LOCAL_ONLY__", request)
 
     def test_request_shapes_follow_each_provider_protocol(self) -> None:
         deepseek = DeepSeekExplanationProvider().build_request(ARTIFACT)

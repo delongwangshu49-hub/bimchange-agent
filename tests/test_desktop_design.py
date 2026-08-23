@@ -47,15 +47,38 @@ def synthetic_artifact() -> dict[str, object]:
             "new_value": True,
             "evidence": {"selector": "changed/SYNTHETIC-WALL-002"},
         },
+        {
+            "change_type": "geometry_modified",
+            "entity_type": "IfcBeam",
+            "global_id": "SYNTHETIC-BEAM-003",
+            "location": {"building_storey": {"name": "Level 02"}},
+            "field": None,
+            "old_value": {"origin_m": [1.0, 2.0, 3.0]},
+            "new_value": {"origin_m": [1.25, 2.0, 3.0]},
+            "geometry_change": {
+                "subtype": "placement_translation",
+                "coordinate_frame": "project_world",
+                "length_unit": "m",
+                "old_origin": [1.0, 2.0, 3.0],
+                "new_origin": [1.25, 2.0, 3.0],
+                "delta": [0.25, 0.0, 0.0],
+                "distance": 0.25,
+                "local_shape_unchanged": True,
+            },
+            "evidence": {
+                "selector": "changed.SYNTHETIC-BEAM-003.geometry_changed"
+            },
+        },
     ]
     return {
         "source": {"file_name": "previous.ifc"},
         "revised": {"file_name": "revised.ifc"},
         "summary": {
-            "total_supported": 2,
+            "total_supported": 3,
             "added": 1,
             "deleted": 0,
             "property_modified": 1,
+            "geometry_modified": 1,
             "unsupported": 0,
         },
         "changes": changes,
@@ -89,7 +112,7 @@ class DesktopDesignTests(unittest.TestCase):
             QTest.qWait(220)
             self.assertAlmostEqual(window.ai_toggle.position, 1.0, places=2)
             self.assertFalse(window.windowIcon().isNull())
-            self.assertEqual(DISPLAY_VERSION, "0.7.0")
+            self.assertEqual(DISPLAY_VERSION, "0.8.0-rc.1")
             window.brand_mark.setBusy(True)
             self.assertTrue(window.brand_mark.busy)
             self.assertTrue(window.brand_mark.isAnimating())
@@ -135,7 +158,10 @@ class DesktopDesignTests(unittest.TestCase):
                     },
                 },
             )
-            self.assertEqual(window.report_page.table.rowCount(), 2)
+            self.assertEqual(window.report_page.table.rowCount(), 3)
+            self.assertEqual(
+                window.report_page.card_labels["geometry_modified"].text(), "1"
+            )
             self.assertEqual(
                 window.report_page.table.verticalScrollMode(),
                 QAbstractItemView.ScrollMode.ScrollPerPixel,
@@ -177,7 +203,16 @@ class DesktopDesignTests(unittest.TestCase):
             window.report_page.type_filter.setCurrentIndex(index)
             self.app.processEvents()
             self.assertEqual(window.report_page.table.rowCount(), 1)
-            self.assertIn("Showing 1 of 2 changes", window.report_page.result_count.text())
+            self.assertIn("Showing 1 of 3 changes", window.report_page.result_count.text())
+            geometry_index = window.report_page.type_filter.findData(
+                "geometry_modified"
+            )
+            window.report_page.type_filter.setCurrentIndex(geometry_index)
+            self.app.processEvents()
+            self.assertEqual(window.report_page.table.rowCount(), 1)
+            detail = window.report_page.detail_body.toPlainText()
+            self.assertIn("Placement translation", detail)
+            self.assertIn("0.25", detail)
             window.close()
 
     def test_brand_splash_uses_packaged_animation(self) -> None:
