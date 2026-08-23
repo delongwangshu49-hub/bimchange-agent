@@ -13,7 +13,7 @@ BIMChange-Agent is an offline-first Windows application for comparing two bounde
 BIMChange-Agent 是一款离线优先的 Windows 应用，用于比较两个处于明确支持边界内的 IFC4 版本。确定性比较会生成规范化 Change Records，可供筛选、证据审阅及 JSON 或 HTML 导出。v0.8.0-rc.1 还在这条本地路径中加入一种主动收窄的几何语义：只有通过独立重建检查的放置平移才会被归类。可选 AI 层可将记录转换为简洁的自然语言摘要与理性分析，但不会替代本地结果。
 
 [![Windows Preview](https://img.shields.io/badge/windows_preview-v0.8.0--rc.1-9B5438)](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.8.0-rc.1)
-[![Research Release](https://img.shields.io/badge/research_release-v0.1.0-6F7872)](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.1.0)
+[![Research Lineage](https://img.shields.io/badge/research_lineage-v0.1.0-6F7872)](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.1.0)
 ![Python](https://img.shields.io/badge/validated-Python_3.13-2D302F)
 ![Platform](https://img.shields.io/badge/desktop-Windows_x64-918674)
 
@@ -42,9 +42,11 @@ Download `BIMChange-Agent-0.8.0-rc.1-win-x64-setup.exe` and its SHA-256 sidecar 
 
 ## Product view / 产品界面
 
-The screenshots below preserve the established v0.7.0 product presentation and use synthetic records only. v0.8.0-rc.1 retains this review flow and adds a geometry-translation summary, filter, detail, and export path. The screenshots contain no real project files, local paths, API keys, or personal identifiers.
+The first screenshot shows the v0.8.0-rc.1 geometry-translation review using a repository-controlled synthetic acceptance pair. The remaining screenshots preserve the established v0.7.0 product presentation, also with synthetic records. They contain no real project files, local paths, API keys, or personal identifiers.
 
-以下截图保留既有 v0.7.0 产品呈现，并只使用合成记录。v0.8.0-rc.1 延续同一审阅流程，新增几何平移的汇总、筛选、详情与导出路径。截图不包含真实项目文件、本地路径、API Key 或个人身份信息。
+首张截图展示 v0.8.0-rc.1 使用仓库受控合成验收文件进行几何平移审阅；其余截图保留既有 v0.7.0 产品呈现，同样只使用合成记录。所有截图均不包含真实项目文件、本地路径、API Key 或个人身份信息。
+
+![BIMChange-Agent 0.8.0-rc.1 synthetic geometry translation review](docs/assets/product-v0.8.0-rc.1/desktop-dark-zh-geometry-review.png)
 
 ![BIMChange-Agent 0.7.0 English dark file selection](docs/assets/product-v0.7.0/desktop-dark-en-home.png)
 
