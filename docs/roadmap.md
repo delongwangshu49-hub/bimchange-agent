@@ -6,13 +6,17 @@ The roadmap is evidence-driven and intentionally leaves room for adjustment. It 
 
 ## Current position / 当前定位
 
-The research release is complete and reproducible. The v0.8.0-rc.1 Windows candidate extends the bounded end-user workflow with one research-gated geometry semantic: verified placement-only translation. Additions, deletions, property-value modifications, desktop review, export, and the optional AI explanation boundary remain in place.
+The research release is complete and reproducible. The v0.9.0 stable release brings the complete bounded R3 slice into the default Windows workflow: existing addition, deletion, and property-value semantics; verified placement-only translation; controlled rectangular-extrusion dimensions; one topology-preserving tessellated shape subtype; and four direct relationship families. Desktop review, export, and the optional AI explanation boundary remain in place.
 
-研究发布闭环已经完整可复现。v0.8.0-rc.1 Windows 候选在既有有界用户路径上加入一种经过研究闸门验证的几何语义：经验证的纯放置平移。新增、删除、属性值修改、桌面审阅、导出与可选 AI 解读边界继续保留。
+研究发布闭环已经完整可复现。v0.9.0 稳定版把完整有界 R3 子集纳入默认 Windows 流程：既有新增、删除与属性值语义，经验证的纯放置平移，受控矩形拉伸尺寸，一种拓扑不变网格形状子类型，以及四类直接关系变化。桌面审阅、导出与可选 AI 解读边界继续保留。
 
-The support claim remains deliberately narrow. One authorized local IFC4 acceptance pair exercised all four supported categories in the desktop workflow, but the private files and outputs remain outside the repository. This is not a broad compatibility study or a promise of arbitrary IFC support.
+The frozen [complete R3 stable boundary](r3-complete.md) records the exact reconstruction rules, detector decisions, gate measurements, and explicit exclusions for v0.9.0.
 
-支持声明仍保持主动收窄。一组获得授权的本地 IFC4 验收对已在桌面流程中覆盖四类受支持变化，但私有文件与输出不进入仓库。这不是大规模兼容性研究，也不构成对任意 IFC 支持的承诺。
+已冻结的[完整 R3 稳定边界](r3-complete.md)记录了 v0.9.0 的精确重建规则、检测器决策、闸门度量与明确排除项。
+
+The support claim remains deliberately narrow. One program-generated synthetic IFC4 acceptance pair exercises all four supported categories in the desktop workflow and yields 10 supported records. This is not a broad compatibility study or a promise of arbitrary IFC support.
+
+支持声明仍保持主动收窄。一组程序生成的合成 IFC4 验收对在桌面流程中覆盖四类受支持变化，并生成 10 条受支持记录。这不是大规模兼容性研究，也不构成对任意 IFC 支持的承诺。
 
 ## Product direction / 产品主线
 
@@ -23,11 +27,11 @@ The support claim remains deliberately narrow. One authorized local IFC4 accepta
 
 The agreed audience, visual language, information architecture, settings boundary, and first UI acceptance slice are recorded in [product experience design](product-experience-design.md).
 
-The per-user Windows installer workflow and its verification boundary are recorded in [Windows installer development](windows-installer.md). v0.5.0 was the first release to use this path; v0.8.0-rc.1 continues it as a prerelease candidate.
+The per-user Windows installer workflow and its verification boundary are recorded in [Windows installer development](windows-installer.md). v0.5.0 was the first release to use this path; v0.9.0 continues it as a stable build.
 
 已达成一致的目标用户、视觉语言、信息架构、设置边界和首个 UI 验收切片记录在[产品体验设计](product-experience-design.md)中。
 
-当前用户 Windows 安装流程及其验证边界记录在 [Windows 安装包开发](windows-installer.md)中；v0.5.0 首次采用该路径，v0.8.0-rc.1 以预发布候选形式延续该路径。
+当前用户 Windows 安装流程及其验证边界记录在 [Windows 安装包开发](windows-installer.md)中；v0.5.0 首次采用该路径，v0.9.0 以稳定构建形式延续该路径。
 
 ## Research directions / 研究方向
 

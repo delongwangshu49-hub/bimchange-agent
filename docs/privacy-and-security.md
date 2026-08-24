@@ -1,8 +1,8 @@
 # Privacy and security boundary / 隐私与安全边界
 
-This page describes the v0.8.0-rc.1 privacy boundary while retaining the historical preview design principles. It is a design and verification record, not a security certification.
+This page describes the v0.9.0 privacy boundary while retaining the historical preview design principles. It is a design and verification record, not a security certification.
 
-本文说明 v0.8.0-rc.1 的隐私边界，并延续早期预览版的设计原则；它是设计与验证记录，不代表安全认证。
+本文说明 v0.9.0 的隐私边界，并延续早期预览版的设计原则；它是设计与验证记录，不代表安全认证。
 
 ## Data flow
 
@@ -14,9 +14,9 @@ This page describes the v0.8.0-rc.1 privacy boundary while retaining the histori
 | AI disabled / AI 关闭 | No provider request / 不请求服务商 | No API Key required / 不需要 API Key |
 | AI provider enabled / AI 服务商开启 | Yes, one HTTPS request to the selected provider / 是，向所选服务商发出一次 HTTPS 请求 | API Key remains in process memory only / API Key 仅保存在进程内存 |
 
-The program does not read `.env.local`, browser credentials, GitHub credentials, or unrelated files. It does not upload IFC files. It does not provide telemetry or automatic update traffic in this preview.
+The program does not read `.env.local`, browser credentials, GitHub credentials, or unrelated files. It does not upload IFC files. It does not provide telemetry or automatic update traffic.
 
-程序不读取 `.env.local`、浏览器凭据、GitHub 凭据或无关文件；不上传 IFC 文件；本预览版没有遥测或自动更新网络请求。
+程序不读取 `.env.local`、浏览器凭据、GitHub 凭据或无关文件；不上传 IFC 文件；没有遥测或自动更新网络请求。
 
 ## Optional AI disclosure
 
@@ -43,6 +43,6 @@ The provider response is capped at 2 MiB, parsed as JSON, checked for the expect
 - Review JSON/HTML before sharing; reports contain hashes and project-derived change evidence, including geometry coordinates when present.
 - Never paste API Keys into issues, screenshots, reports, or chat messages.
 - Do not upload confidential IFC files to public GitHub issues. Share a minimal synthetic reproducer or private description instead.
-- Verify the Release SHA-256. The preview is not code-signed, so an unknown-publisher warning is expected.
+- Verify the Release SHA-256. The Windows build is not code-signed, so an unknown-publisher warning is expected.
 
 Security reports should follow [`SECURITY.md`](../SECURITY.md).
