@@ -112,7 +112,7 @@ class DesktopDesignTests(unittest.TestCase):
             QTest.qWait(220)
             self.assertAlmostEqual(window.ai_toggle.position, 1.0, places=2)
             self.assertFalse(window.windowIcon().isNull())
-            self.assertEqual(DISPLAY_VERSION, "0.8.0-rc.1")
+            self.assertEqual(DISPLAY_VERSION, "0.9.0")
             window.brand_mark.setBusy(True)
             self.assertTrue(window.brand_mark.busy)
             self.assertTrue(window.brand_mark.isAnimating())

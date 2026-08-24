@@ -81,7 +81,7 @@ class DesktopSmokeTests(unittest.TestCase):
             self.assertIsNotNone(window.report_page.artifact_path)
             artifact = load_json(window.report_page.artifact_path)
             self.assertEqual(
-                artifact["schema_version"], "0.3.0-preview.1-candidate"
+                artifact["schema_version"], "0.4.0"
             )
             self.assertIsNotNone(window.report_page.html_path)
             report = window.report_page.html_path.read_text(encoding="utf-8")
