@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bimchange-agent://schemas/product-change-record-0.4.0",
+  "type": "object",
+  "required": ["schema_version", "schema", "generator", "limits", "source", "revised", "pair_diagnostics", "summary", "warnings", "changes", "unsupported_changes", "model_calls_made"],
+  "properties": {
+    "schema_version": {"const": "0.4.0"},
+    "schema": {"const": "bimchange-agent://schemas/product-change-record-0.4.0"},
+    "generator": {
+      "type": "object",
+      "required": ["name", "version", "detector", "relationships", "is_shallow", "detectors"],
+      "properties": {
+        "name": {"const": "BIMChange-Agent"}, "version": {"type": "string"},
+        "detector": {"const": "IfcDiff 0.8.5"}, "relationships": {"const": ["property", "geometry"]},
+        "is_shallow": {"const": false},
+        "detectors": {"const": ["direct_ifc_chain_comparison", "IfcDiff 0.8.5"]}
+      },
+      "additionalProperties": false
+    },
+    "limits": {
+      "type": "object",
+      "required": ["required_schema", "max_file_mib", "max_elements", "min_shared_guid_ratio", "geometry_subtypes", "relationship_subtypes"],
+      "properties": {
+        "required_schema": {"const": "IFC4"}, "max_file_mib": {"type": "integer", "minimum": 1},
+        "max_elements": {"type": "integer", "minimum": 1},
+        "min_shared_guid_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+        "geometry_subtypes": {"const": ["extrusion_dimension_change", "placement_translation", "tessellated_vertex_geometry_change"]},
+        "relationship_subtypes": {"const": ["aggregation_change", "material_assignment_change", "spatial_containment_change", "type_assignment_change"]}
+      },
+      "additionalProperties": false
+    },
+    "source": {"$ref": "#/$defs/model"}, "revised": {"$ref": "#/$defs/model"},
+    "pair_diagnostics": {
+      "type": "object", "required": ["shared_element_guid_count", "shared_element_guid_ratio"],
+      "properties": {"shared_element_guid_count": {"type": "integer", "minimum": 0}, "shared_element_guid_ratio": {"type": "number", "minimum": 0, "maximum": 1}},
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["total_supported", "added", "deleted", "property_modified", "geometry_modified", "relationship_modified", "unsupported"],
+      "properties": {
+        "total_supported": {"type": "integer", "minimum": 0}, "added": {"type": "integer", "minimum": 0},
+        "deleted": {"type": "integer", "minimum": 0}, "property_modified": {"type": "integer", "minimum": 0},
+        "geometry_modified": {"type": "integer", "minimum": 0}, "relationship_modified": {"type": "integer", "minimum": 0},
+        "unsupported": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "warnings": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "changes": {"type": "array", "items": {"$ref": "#/$defs/change"}},
+    "unsupported_changes": {"type": "array", "items": {"$ref": "#/$defs/unsupported"}},
+    "model_calls_made": {"const": 0}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "guid": {"type": "string", "pattern": "^[0-3][0-9A-Za-z_$]{21}$"},
+    "model": {
+      "type": "object", "required": ["file_name", "sha256", "file_size_bytes", "ifc_schema", "entity_count", "element_count", "duplicate_root_guid_count"],
+      "properties": {
+        "file_name": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"},
+        "file_size_bytes": {"type": "integer", "minimum": 1}, "ifc_schema": {"const": "IFC4"},
+        "entity_count": {"type": "integer", "minimum": 1}, "element_count": {"type": "integer", "minimum": 1},
+        "duplicate_root_guid_count": {"const": 0}
+      }, "additionalProperties": false
+    },
+    "reference": {
+      "type": "object", "required": ["entity_type", "global_id", "name"],
+      "properties": {"entity_type": {"type": "string", "pattern": "^Ifc"}, "global_id": {"$ref": "#/$defs/guid"}, "name": {"type": ["string", "null"]}},
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object", "required": ["spatial_container", "building_storey"],
+      "properties": {"spatial_container": {"oneOf": [{"$ref": "#/$defs/reference"}, {"type": "null"}]}, "building_storey": {"oneOf": [{"$ref": "#/$defs/reference"}, {"type": "null"}]}},
+      "additionalProperties": false
+    },
+    "field": {
+      "type": "object", "required": ["kind", "property_set", "name"],
+      "properties": {"kind": {"const": "property"}, "property_set": {"type": "string", "minLength": 1}, "name": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    },
+    "dimension": {
+      "type": "object", "required": ["field", "old_m", "new_m", "delta_m"],
+      "properties": {"field": {"enum": ["profile_x_m", "profile_y_m", "extrusion_depth_m"]}, "old_m": {"type": "number", "exclusiveMinimum": 0}, "new_m": {"type": "number", "exclusiveMinimum": 0}, "delta_m": {"type": "number"}},
+      "additionalProperties": false
+    },
+    "geometry": {
+      "oneOf": [
+        {
+          "type": "object", "required": ["subtype", "coordinate_frame", "length_unit", "old_origin", "new_origin", "delta", "distance", "local_shape_unchanged"],
+          "properties": {"subtype": {"const": "placement_translation"}, "coordinate_frame": {"const": "project_world"}, "length_unit": {"const": "m"}, "old_origin": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}, "new_origin": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}, "delta": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}, "distance": {"type": "number", "minimum": 0.0001}, "local_shape_unchanged": {"const": true}},
+          "additionalProperties": false
+        },
+        {
+          "type": "object", "required": ["subtype", "length_unit", "changed_dimensions", "dimension_tolerance_m", "ifcdiff_geometry_changed"],
+          "properties": {"subtype": {"const": "extrusion_dimension_change"}, "length_unit": {"const": "m"}, "changed_dimensions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/dimension"}}, "dimension_tolerance_m": {"type": "number", "minimum": 0.000001}, "ifcdiff_geometry_changed": {"type": "boolean"}},
+          "additionalProperties": false
+        },
+        {
+          "type": "object", "required": ["subtype", "length_unit", "changed_vertex_count", "max_vertex_displacement_m", "topology_unchanged", "old_local_shape_sha256", "new_local_shape_sha256"],
+          "properties": {"subtype": {"const": "tessellated_vertex_geometry_change"}, "length_unit": {"const": "m"}, "changed_vertex_count": {"type": "integer", "minimum": 1}, "max_vertex_displacement_m": {"type": "number", "exclusiveMinimum": 0}, "topology_unchanged": {"const": true}, "old_local_shape_sha256": {"$ref": "#/$defs/sha256"}, "new_local_shape_sha256": {"$ref": "#/$defs/sha256"}},
+          "additionalProperties": false
+        }
+      ]
+    },
+    "relationship": {
+      "type": "object", "required": ["subtype", "relationship", "old_relation", "new_relation"],
+      "properties": {"subtype": {"enum": ["spatial_containment_change", "aggregation_change", "type_assignment_change", "material_assignment_change"]}, "relationship": {"enum": ["container", "aggregate", "type", "material"]}, "old_relation": {}, "new_relation": {}},
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object", "required": ["reference_source", "detector", "result_file", "selector"],
+      "properties": {"reference_source": {"enum": ["ifcdiff", "ifcdiff+ifc_reconstruction", "direct_ifc_reconstruction"]}, "detector": {"type": "string", "minLength": 1}, "result_file": {"type": "string", "minLength": 1}, "selector": {"type": "string", "minLength": 1}, "reconstruction": {"type": "object"}},
+      "additionalProperties": false
+    },
+    "change": {
+      "type": "object", "required": ["change_id", "change_type", "entity_type", "global_id", "location", "field", "old_value", "new_value", "geometry_change", "relationship_change", "evidence"],
+      "properties": {"change_id": {"type": "string", "pattern": "^chg-[0-9a-f]{16}$"}, "change_type": {"enum": ["added", "deleted", "property_modified", "geometry_modified", "relationship_modified"]}, "entity_type": {"type": "string", "pattern": "^Ifc"}, "global_id": {"$ref": "#/$defs/guid"}, "location": {"$ref": "#/$defs/location"}, "field": {"oneOf": [{"$ref": "#/$defs/field"}, {"type": "null"}]}, "old_value": {}, "new_value": {}, "geometry_change": {"oneOf": [{"$ref": "#/$defs/geometry"}, {"type": "null"}]}, "relationship_change": {"oneOf": [{"$ref": "#/$defs/relationship"}, {"type": "null"}]}, "evidence": {"$ref": "#/$defs/evidence"}},
+      "allOf": [
+        {"if": {"properties": {"change_type": {"const": "geometry_modified"}}}, "then": {"properties": {"geometry_change": {"$ref": "#/$defs/geometry"}, "relationship_change": {"type": "null"}}}},
+        {"if": {"properties": {"change_type": {"const": "relationship_modified"}}}, "then": {"properties": {"geometry_change": {"type": "null"}, "relationship_change": {"$ref": "#/$defs/relationship"}}}},
+        {"if": {"properties": {"change_type": {"enum": ["added", "deleted", "property_modified"]}}}, "then": {"properties": {"geometry_change": {"type": "null"}, "relationship_change": {"type": "null"}}}}
+      ],
+      "additionalProperties": false
+    },
+    "unsupported": {
+      "type": "object", "required": ["global_id", "reason", "selector"],
+      "properties": {"global_id": {"type": "string", "minLength": 1}, "reason": {"type": "string", "minLength": 1}, "selector": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    }
+  }
+}
