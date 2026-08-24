@@ -1,4 +1,4 @@
-"""PySide6 desktop shell for the bounded Windows product preview."""
+"""PySide6 desktop shell for the bounded Windows product."""
 
 from __future__ import annotations
 
@@ -91,7 +91,7 @@ from .desktop_design import (
     stylesheet,
     text,
 )
-from .geometry_product_candidate import diff_ifc_pair_geometry_candidate
+from .r3_product import diff_ifc_pair_r3
 from .product_core import (
     ProductBoundaryError,
     load_json,
@@ -100,7 +100,7 @@ from .reporting import write_html_report
 
 
 APP_NAME = "BIMChange-Agent"
-DISPLAY_VERSION = "0.8.0-rc.1"
+DISPLAY_VERSION = "0.9.0"
 HTML_REPORT_FILE_NAME = "report.html"
 APP_ICON_PATH = (
     Path(__file__).resolve().parent
@@ -805,6 +805,7 @@ class ReportPage(QWidget):
             ("deleted", "metric_deleted"),
             ("property_modified", "metric_modified"),
             ("geometry_modified", "metric_geometry"),
+            ("relationship_modified", "metric_relationship"),
             ("unsupported", "metric_unsupported"),
         )
         self.card_captions: dict[str, QLabel] = {}
@@ -997,6 +998,7 @@ class ReportPage(QWidget):
             storey = change["location"]["building_storey"]
             field_text = self._display_field(change)
             geometry = change.get("geometry_change")
+            relationship = change.get("relationship_change")
             geometry_search = ""
             if isinstance(geometry, dict):
                 geometry_search = " ".join(
@@ -1004,6 +1006,16 @@ class ReportPage(QWidget):
                         str(geometry.get("subtype", "")),
                         self._display_value(geometry.get("delta")),
                         self._display_value(geometry.get("distance")),
+                    )
+                )
+            relationship_search = ""
+            if isinstance(relationship, dict):
+                relationship_search = " ".join(
+                    (
+                        str(relationship.get("subtype", "")),
+                        str(relationship.get("relationship", "")),
+                        self._display_value(relationship.get("old_relation")),
+                        self._display_value(relationship.get("new_relation")),
                     )
                 )
             searchable = " ".join(
@@ -1015,6 +1027,7 @@ class ReportPage(QWidget):
                     storey["name"] if storey else "",
                     field_text,
                     geometry_search,
+                    relationship_search,
                     self._display_value(change["old_value"]),
                     self._display_value(change["new_value"]),
                 )
@@ -1130,6 +1143,7 @@ class ReportPage(QWidget):
         change = self.all_changes[change_index]
         storey = change["location"]["building_storey"]
         geometry = change.get("geometry_change")
+        relationship = change.get("relationship_change")
         evidence = change.get("evidence", {})
         evidence_selector = evidence.get("selector", "—")
         if isinstance(evidence_selector, (dict, list)):
@@ -1147,17 +1161,16 @@ class ReportPage(QWidget):
             ("detail_evidence", str(evidence_selector)),
         ]
         if isinstance(geometry, dict):
-            rows.extend(
-                (
-                    (
-                        "detail_geometry_subtype",
-                        self._display_geometry_subtype(geometry["subtype"]),
-                    ),
-                    ("detail_delta", self._display_value(geometry["delta"])),
-                    ("detail_distance", self._display_value(geometry["distance"])),
-                    ("detail_unit", str(geometry["length_unit"])),
-                )
-            )
+            rows.append(("detail_geometry_subtype", self._display_geometry_subtype(geometry["subtype"])))
+            if geometry["subtype"] == "placement_translation":
+                rows.extend((("detail_delta", self._display_value(geometry["delta"])), ("detail_distance", self._display_value(geometry["distance"]))))
+            elif geometry["subtype"] == "extrusion_dimension_change":
+                rows.append(("detail_delta", self._display_value(geometry["changed_dimensions"])))
+            else:
+                rows.extend((("detail_delta", self._display_value(geometry["changed_vertex_count"])), ("detail_distance", self._display_value(geometry["max_vertex_displacement_m"]))))
+            rows.append(("detail_unit", str(geometry["length_unit"])))
+        if isinstance(relationship, dict):
+            rows.append(("detail_relationship_subtype", self._display_relationship_subtype(relationship["subtype"])))
         self.detail_body.setPlainText(
             "\n\n".join(f"{text(self.language, key)}\n{value}" for key, value in rows)
         )
@@ -1172,18 +1185,34 @@ class ReportPage(QWidget):
         translated = text(self.language, key)
         return value if translated == key else translated
 
+    def _display_relationship_subtype(self, value: str) -> str:
+        key = f"relationship_{value}"
+        translated = text(self.language, key)
+        return value if translated == key else translated
+
     def _display_field(self, change: dict[str, Any]) -> str:
         field = change["field"]
         if field is not None:
             return f"{field['property_set']}.{field['name']}"
         geometry = change.get("geometry_change")
-        if not isinstance(geometry, dict):
-            return "—"
-        return (
-            f"{self._display_geometry_subtype(geometry['subtype'])} · "
-            f"Δ {self._display_value(geometry['delta'])} {geometry['length_unit']} · "
-            f"{self._display_value(geometry['distance'])} {geometry['length_unit']}"
-        )
+        if isinstance(geometry, dict):
+            if geometry["subtype"] == "placement_translation":
+                return (
+                    f"{self._display_geometry_subtype(geometry['subtype'])} · "
+                    f"Δ {self._display_value(geometry['delta'])} {geometry['length_unit']} · "
+                    f"{self._display_value(geometry['distance'])} {geometry['length_unit']}"
+                )
+            if geometry["subtype"] == "extrusion_dimension_change":
+                fields = ", ".join(item["field"] for item in geometry["changed_dimensions"])
+                return f"{self._display_geometry_subtype(geometry['subtype'])} · {fields}"
+            return (
+                f"{self._display_geometry_subtype(geometry['subtype'])} · "
+                f"{geometry['changed_vertex_count']} vertices · max Δ {geometry['max_vertex_displacement_m']} m"
+            )
+        relationship = change.get("relationship_change")
+        if isinstance(relationship, dict):
+            return self._display_relationship_subtype(relationship["subtype"])
+        return "—"
 
     def set_language(self, language: str) -> None:
         self.language = language
@@ -1330,7 +1359,7 @@ class AnalysisWorker(QObject):
     def run(self) -> None:
         try:
             self.progress.emit(text(self.language, "progress_compare"))
-            result = diff_ifc_pair_geometry_candidate(
+            result = diff_ifc_pair_r3(
                 self.source, self.revised, self.output_dir
             )
             artifact_path = Path(result["change_records"])

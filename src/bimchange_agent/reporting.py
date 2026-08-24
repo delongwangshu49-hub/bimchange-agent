@@ -12,6 +12,10 @@ from .geometry_product_candidate import (
     SCHEMA_VERSION as GEOMETRY_SCHEMA_VERSION,
     validate_candidate_artifact,
 )
+from .r3_product import (
+    SCHEMA_VERSION as R3_SCHEMA_VERSION,
+    validate_r3_artifact,
+)
 from .product_core import validate_product_artifact
 
 
@@ -19,7 +23,7 @@ REPORT_TEXT = {
     "zh_CN": {
         "html_lang": "zh-CN",
         "title": "BIMChange-Agent 分析报告",
-        "subtitle": "受限 IFC4 预览 · 确定性差分为权威数据源 · AI 仅用于可选解释",
+        "subtitle": "有界 IFC4 稳定版 · 确定性差分为权威数据源 · AI 仅用于可选解释",
         "previous": "旧版本",
         "revised": "新版本",
         "summary": "变更摘要",
@@ -28,6 +32,8 @@ REPORT_TEXT = {
         "deleted": "删除",
         "modified": "属性修改",
         "geometry": "几何平移",
+        "geometry_all": "几何变化",
+        "relationship": "关系变化",
         "unsupported": "未支持",
         "details": "变更明细",
         "type": "类型",
@@ -59,7 +65,7 @@ REPORT_TEXT = {
     "en": {
         "html_lang": "en",
         "title": "BIMChange-Agent analysis report",
-        "subtitle": "Bounded IFC4 preview · deterministic diff is authoritative · AI is optional explanation only",
+        "subtitle": "Bounded IFC4 stable release · deterministic diff is authoritative · AI is optional explanation only",
         "previous": "Previous version",
         "revised": "Revised version",
         "summary": "Change summary",
@@ -68,6 +74,8 @@ REPORT_TEXT = {
         "deleted": "Deleted",
         "modified": "Property changes",
         "geometry": "Geometry translations",
+        "geometry_all": "Geometry changes",
+        "relationship": "Relationship changes",
         "unsupported": "Unsupported",
         "details": "Change details",
         "type": "Type",
@@ -116,7 +124,9 @@ def _escape(value: Any) -> str:
 
 
 def _validate_report_artifact(artifact: dict[str, Any]) -> None:
-    if artifact.get("schema_version") == GEOMETRY_SCHEMA_VERSION:
+    if artifact.get("schema_version") == R3_SCHEMA_VERSION:
+        validate_r3_artifact(artifact)
+    elif artifact.get("schema_version") == GEOMETRY_SCHEMA_VERSION:
         validate_candidate_artifact(artifact)
     else:
         validate_product_artifact(artifact)
@@ -127,14 +137,27 @@ def _field_text(change: dict[str, Any], language: str) -> str:
     if field is not None:
         return f"{field['property_set']}.{field['name']}"
     geometry = change.get("geometry_change")
-    if not isinstance(geometry, dict):
-        return "—"
-    return (
-        f"{geometry['subtype']} · {_label(language, 'delta')} "
-        f"{_text(geometry['delta'])} {geometry['length_unit']} · "
-        f"{_label(language, 'distance')} {_text(geometry['distance'])} "
-        f"{geometry['length_unit']}"
-    )
+    if isinstance(geometry, dict):
+        if geometry["subtype"] == "placement_translation":
+            return (
+                f"{geometry['subtype']} · {_label(language, 'delta')} "
+                f"{_text(geometry['delta'])} {geometry['length_unit']} · "
+                f"{_label(language, 'distance')} {_text(geometry['distance'])} {geometry['length_unit']}"
+            )
+        if geometry["subtype"] == "extrusion_dimension_change":
+            dimensions = ", ".join(
+                f"{item['field']}: {_text(item['old_m'])} → {_text(item['new_m'])} m"
+                for item in geometry["changed_dimensions"]
+            )
+            return f"{geometry['subtype']} · {dimensions}"
+        return (
+            f"{geometry['subtype']} · vertices {geometry['changed_vertex_count']} · "
+            f"max Δ {_text(geometry['max_vertex_displacement_m'])} m"
+        )
+    relationship = change.get("relationship_change")
+    if isinstance(relationship, dict):
+        return f"{relationship['subtype']} · {relationship['relationship']}"
+    return "—"
 
 
 def _change_rows(artifact: dict[str, Any], language: str) -> str:
@@ -224,9 +247,16 @@ def build_html_report(
     summary = artifact["summary"]
     geometry_card = ""
     if "geometry_modified" in summary:
+        geometry_label = "geometry_all" if artifact.get("schema_version") == R3_SCHEMA_VERSION else "geometry"
         geometry_card = (
-            f"<div class=\"card\">{_label(language, 'geometry')}"
+            f"<div class=\"card\">{_label(language, geometry_label)}"
             f"<strong>{summary['geometry_modified']}</strong></div>"
+        )
+    relationship_card = ""
+    if "relationship_modified" in summary:
+        relationship_card = (
+            f"<div class=\"card\">{_label(language, 'relationship')}"
+            f"<strong>{summary['relationship_modified']}</strong></div>"
         )
     unsupported_section = ""
     if artifact["unsupported_changes"]:
@@ -286,6 +316,7 @@ def build_html_report(
       <div class="card">{_label(language, 'deleted')}<strong>{summary['deleted']}</strong></div>
       <div class="card">{_label(language, 'modified')}<strong>{summary['property_modified']}</strong></div>
       {geometry_card}
+      {relationship_card}
       <div class="card">{_label(language, 'unsupported')}<strong>{summary['unsupported']}</strong></div>
     </div>
   </section>

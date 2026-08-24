@@ -1,3 +1,3 @@
 """Core deterministic components for BIMChange-Agent."""
 
-__version__ = "0.8.0rc1"
+__version__ = "0.9.0"
