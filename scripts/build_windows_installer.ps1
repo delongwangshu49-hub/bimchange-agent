@@ -2,7 +2,8 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$PortableDirectory,
     [string]$OutputRoot = "",
-    [string]$PackageVersion = "0.7.0",
+    [string]$PackageVersion = "0.9.0",
+    [string]$FileVersion = "0.9.0.0",
     [string]$IsccPath = ""
 )
 
