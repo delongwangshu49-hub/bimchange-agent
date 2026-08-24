@@ -1,4 +1,4 @@
-BIMChange-Agent 0.8.0-rc.1（Windows x64）
+BIMChange-Agent 0.9.0（Windows x64 稳定版）
 ===================================
 
 开始使用
@@ -15,8 +15,10 @@ BIMChange-Agent 0.8.0-rc.1（Windows x64）
 - 仅支持 Windows 10/11 x64 与精确 IFC4。
 - 每个文件不超过 50 MiB，每版最多 5,000 个 IfcElement。
 - 新旧模型较小一侧至少 50% 的 GlobalId 需重合。
-- 当前规范化新增、删除、属性值修改，以及满足双通道重建和阈值门的 IFC4 放置平移。
-- 旋转、一般尺寸/形状变化、无法重建的几何变化及低阈值位移保持未支持；没有几何记录不等于几何未变化。
+- 当前规范化新增、删除、属性值修改，以及受控纯放置平移、矩形拉伸参数尺寸、网格顶点形状和四类直接关系变化。
+- 拉伸尺寸仅限单一 Body `IfcExtrudedAreaSolid` + `IfcRectangleProfileDef`；网格形状仅限拓扑不变的单一 Body `IfcTriangulatedFaceSet`。
+- 关系变化仅限直接空间包含、聚合/分解、类型指派和直接材料关联。
+- 旋转、其他轮廓/实体、网格拓扑变化、洞口/投影、嵌套材料用法、无法重建结果及混合语义保持未支持；没有几何记录不等于几何未变化。
 - 当前不包含三维模型预览或 Revit 集成。
 
 AI 设置与隐私
@@ -33,7 +35,7 @@ AI 设置与隐私
 
 版本说明
 --------
-这是 0.8.0-rc.1 候选验收包，用于验证 placement translation 的默认桌面纵向切片，不代表稳定发布或对所有 IFC 文件的通用支持。
+这是 0.9.0 稳定版。其完整 R3 支持边界来自程序生成合成 IFC4、确定性重建、重复运行、篡改拒绝、桌面回归与 Windows 安装验收；仍不代表任意 IFC 支持、跨导出器兼容性或专业工程正确性。
 程序尚未进行代码签名，Windows SmartScreen 可能显示未知发布者提示；请只从本项目官方 GitHub Release 下载并核对 SHA-256。
 欢迎试用、提出问题和建议；反馈时请描述软件版本、Windows 版本、IFC Schema、文件大小与复现步骤，请勿公开上传敏感 IFC、API Key 或未经脱敏的报告。
 问题反馈：https://github.com/delongwangshu49-hub/bimchange-agent/issues

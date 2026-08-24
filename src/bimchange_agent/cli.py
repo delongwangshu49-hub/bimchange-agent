@@ -19,6 +19,12 @@ from .geometry_product_candidate import (
 from .product_core import ProductBoundaryError, diff_ifc_pair, inspect_ifc
 from .product_core import load_json
 from .product_query import query_product_artifact
+from .r3_product import (
+    diff_ifc_pair_r3,
+    query_r3_artifact,
+    validate_r3_artifact,
+)
+from .reporting import write_html_report
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -80,6 +86,32 @@ def _parser() -> argparse.ArgumentParser:
     geometry_report_parser.add_argument(
         "--language", choices=("zh_CN", "en"), default="zh_CN"
     )
+    r3_diff_parser = subparsers.add_parser(
+        "diff-r3", help="run the complete bounded R3 comparison"
+    )
+    r3_diff_parser.add_argument("source_ifc", type=Path)
+    r3_diff_parser.add_argument("revised_ifc", type=Path)
+    r3_diff_parser.add_argument("--output-dir", type=Path, required=True)
+
+    r3_query_parser = subparsers.add_parser(
+        "query-r3", help="filter one complete R3 artifact"
+    )
+    r3_query_parser.add_argument("artifact", type=Path)
+    r3_query_parser.add_argument("--change-type", action="append", dest="change_types")
+    r3_query_parser.add_argument("--entity-type", action="append", dest="entity_types")
+    r3_query_parser.add_argument("--global-id", action="append", dest="global_ids")
+    r3_query_parser.add_argument("--storey", action="append", dest="building_storey_names")
+    r3_query_parser.add_argument("--property-set")
+    r3_query_parser.add_argument("--property-name")
+    r3_query_parser.add_argument("--geometry-subtype", action="append", dest="geometry_subtypes")
+    r3_query_parser.add_argument("--relationship-subtype", action="append", dest="relationship_subtypes")
+
+    r3_report_parser = subparsers.add_parser(
+        "report-r3", help="export bilingual-capable HTML for an R3 artifact"
+    )
+    r3_report_parser.add_argument("artifact", type=Path)
+    r3_report_parser.add_argument("--output", type=Path, required=True)
+    r3_report_parser.add_argument("--language", choices=("zh_CN", "en"), default="zh_CN")
     return parser
 
 
@@ -92,6 +124,7 @@ def _filters(namespace: argparse.Namespace) -> dict[str, object]:
         "property_set",
         "property_name",
         "geometry_subtypes",
+        "relationship_subtypes",
     )
     return {
         key: value
@@ -114,12 +147,23 @@ def main(argv: Sequence[str] | None = None) -> int:
             result = diff_ifc_pair_geometry_candidate(
                 args.source_ifc, args.revised_ifc, args.output_dir
             )
+        elif args.command == "diff-r3":
+            result = diff_ifc_pair_r3(
+                args.source_ifc, args.revised_ifc, args.output_dir
+            )
         elif args.command == "query":
             result = query_product_artifact(args.artifact, _filters(args))
         elif args.command == "query-geometry-candidate":
             result = query_geometry_candidate_artifact(
                 args.artifact, _filters(args)
             )
+        elif args.command == "query-r3":
+            result = query_r3_artifact(args.artifact, _filters(args))
+        elif args.command == "report-r3":
+            artifact = load_json(args.artifact)
+            validate_r3_artifact(artifact)
+            output = write_html_report(artifact, args.output, language=args.language)
+            result = {"status": "PASS", "output": str(output), "model_calls_made": 0}
         else:
             artifact = load_json(args.artifact)
             validate_candidate_artifact(artifact)

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bimchange-agent://research/r3-complete-records-0.1.0-candidate",
+  "type": "object",
+  "required": ["schema", "protocol_id", "detectors", "cases", "model_calls_made"],
+  "properties": {
+    "schema": {"const": "bimchange-agent://research/r3-complete-records-0.1.0-candidate"},
+    "protocol_id": {"const": "r3-complete-0.1.0"},
+    "detectors": {
+      "type": "object",
+      "required": ["primary", "supplemental"],
+      "properties": {
+        "primary": {"const": "direct_ifc_chain_comparison"},
+        "supplemental": {"const": "IfcDiff 0.8.5"}
+      },
+      "additionalProperties": false
+    },
+    "cases": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["case_id", "source_role", "revised_role", "source_sha256", "revised_sha256", "record"],
+        "properties": {
+          "case_id": {"type": "string", "pattern": "^R3-[A-Z0-9-]+$"},
+          "source_role": {"type": "string", "pattern": "^cases/[a-z0-9-]+/source\\.ifc$"},
+          "revised_role": {"type": "string", "pattern": "^cases/[a-z0-9-]+/revised\\.ifc$"},
+          "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "revised_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "record": {
+            "type": "object",
+            "required": ["change_type", "global_id", "entity_type", "evidence"],
+            "properties": {
+              "change_type": {"enum": ["geometry_modified", "relationship_modified"]},
+              "global_id": {"type": "string", "pattern": "^[0-3][0-9A-Za-z_$]{21}$"},
+              "entity_type": {"type": "string", "pattern": "^Ifc"},
+              "evidence": {"type": "object"}
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "model_calls_made": {"const": 0}
+  },
+  "additionalProperties": false
+}
