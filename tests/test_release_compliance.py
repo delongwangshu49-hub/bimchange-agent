@@ -20,6 +20,36 @@ def load_script(name):
 
 
 class ComplianceToolTests(unittest.TestCase):
+    def test_boost_headers_cover_direct_includes_and_preserve_existing_bytes(self):
+        preparer = load_script('prepare_boost_headers')
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for module, name in (('logic', 'logic/tribool.hpp'), ('uuid', 'uuid/uuid.hpp'),
+                                 ('numeric/ublas', 'numeric/ublas/matrix.hpp')):
+                path = root/'boost/libs'/module/'include/boost'/name
+                path.parent.mkdir(parents=True)
+                path.write_bytes(b'upstream\r\n')
+            for directory in ('ifcparse', 'ifcgeom', 'ifcwrap', 'serializers'):
+                (root/'ifc/src'/directory).mkdir(parents=True)
+            (root/'ifc/src/ifcparse/test.h').write_text('#include <boost/numeric/ublas/matrix.hpp>\n')
+            result = preparer.complete_headers(root/'boost', root/'include', root/'ifc')
+            self.assertEqual(result['header_files'], 3)
+            self.assertEqual((root/'include/boost/logic/tribool.hpp').read_bytes(), b'upstream\r\n')
+            (root/'include/boost/logic/tribool.hpp').write_bytes(b'different')
+            with self.assertRaisesRegex(ValueError, 'differs from source'):
+                preparer.complete_headers(root/'boost', root/'include', root/'ifc')
+            self.assertEqual((root/'include/boost/logic/tribool.hpp').read_bytes(), b'different')
+            (root/'ifc/src/ifcparse/test.h').write_text('#include <boost/absent.hpp>\n')
+            with self.assertRaisesRegex(ValueError, 'headers absent'):
+                preparer.complete_headers(root/'boost', root/'new-include', root/'ifc')
+            self.assertFalse((root/'new-include').exists())
+
+    def test_native_pipeline_preflights_headers_and_saves_occt_before_ifc(self):
+        workflow = (ROOT/'.github/workflows/native-ifc.yml').read_text()
+        self.assertLess(workflow.index('Build Boost and preflight'), workflow.index('Build OpenCASCADE'))
+        self.assertLess(workflow.index('actions/cache/save@v4'), workflow.index('Build IfcOpenShell without CGAL'))
+        self.assertIn('native-ifc-built-dependencies', workflow)
+
     def test_native_extractor_preserves_bytes_and_refuses_overwrite(self):
         extractor = load_script('extract_native_source')
         with tempfile.TemporaryDirectory() as temporary:

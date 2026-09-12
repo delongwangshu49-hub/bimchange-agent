@@ -38,14 +38,37 @@ jobs:
         run: |
           ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage Prepare
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-      - name: Build OpenCASCADE shared libraries
-        shell: pwsh
-        timeout-minutes: 60
-        run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage OCCT
-      - name: Build Boost libraries
+      - name: Build Boost and preflight all direct IFC Boost headers
         shell: pwsh
         timeout-minutes: 10
         run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage Boost
+      - name: Identify exact runner image for dependency cache
+        id: cache-platform
+        shell: pwsh
+        run: |
+          if (-not $env:ImageVersion) { throw 'Missing runner image version for cache identity.' }
+          "image=$env:ImageVersion" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+      - name: Restore successful OCCT dependency
+        id: occt-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ runner.temp }}/native-ifc/install/occt
+            ${{ runner.temp }}/native-ifc/evidence/OCCT-CMakeCache.txt
+          key: occt-781-shared-v1-${{ runner.os }}-${{ steps.cache-platform.outputs.image }}-${{ hashFiles('packaging/native-sources.json') }}
+      - name: Build OpenCASCADE shared libraries
+        if: steps.occt-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        timeout-minutes: 60
+        run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage OCCT
+      - name: Save successful OCCT before downstream compilation
+        if: steps.occt-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ${{ runner.temp }}/native-ifc/install/occt
+            ${{ runner.temp }}/native-ifc/evidence/OCCT-CMakeCache.txt
+          key: ${{ steps.occt-cache.outputs.cache-primary-key }}
       - name: Build IfcOpenShell without CGAL
         shell: pwsh
         timeout-minutes: 85
@@ -70,6 +93,16 @@ jobs:
           name: native-ifc-validation
           path: ${{ runner.temp }}/native-ifc/wheels
           if-no-files-found: error
+      - name: Retain built dependencies even if IFC fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-ifc-built-dependencies
+          path: |
+            ${{ runner.temp }}/native-ifc/install/occt
+            ${{ runner.temp }}/native-ifc/install/boost
+            ${{ runner.temp }}/native-ifc/evidence
+          if-no-files-found: warn
       - name: Retain downloaded source archives
         if: always()
         uses: actions/upload-artifact@v4

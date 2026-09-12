@@ -62,3 +62,4 @@ scripts/bundle_dependency_sources.py
 packaging/licenses/INNO-SETUP.txt
 scripts/assemble_release_evidence.py
 scripts/extract_native_source.py
+scripts/prepare_boost_headers.py

@@ -64,6 +64,7 @@ Invoke-Checked 'cmake' (@('-S',$trees.occt,'-B',$occtBuild)+$generator+@(
     '-DUSE_VTK=OFF','-DUSE_RAPIDJSON=OFF','-DBUILD_DOC_Overview=OFF'))
 Invoke-Checked 'cmake' @('--build',$occtBuild,'--config','Release','--parallel','4')
 Invoke-Checked 'cmake' @('--install',$occtBuild,'--config','Release')
+Copy-Item -LiteralPath (Join-Path $occtBuild 'CMakeCache.txt') -Destination (Join-Path $evidenceRoot 'OCCT-CMakeCache.txt')
 }
 $boostBuild=Join-Path $nativeRoot 'boost-build'
 $boostInstall=Join-Path $installRoot 'boost'
@@ -75,6 +76,9 @@ Invoke-Checked 'cmake' (@('-S',$trees.boost,'-B',$boostBuild)+$generator+@(
     '-DBOOST_IOSTREAMS_ENABLE_LZMA=OFF','-DBOOST_IOSTREAMS_ENABLE_ZSTD=OFF'))
 Invoke-Checked 'cmake' @('--build',$boostBuild,'--config','Release','--parallel','4')
 Invoke-Checked 'cmake' @('--install',$boostBuild,'--config','Release')
+Invoke-Checked 'python' @((Join-Path $PSScriptRoot 'prepare_boost_headers.py'),$trees.boost,
+    (Join-Path $boostInstall 'include/boost-1_86'),$trees.ifcopenshell)
+Copy-Item -LiteralPath (Join-Path $boostBuild 'CMakeCache.txt') -Destination (Join-Path $evidenceRoot 'Boost-CMakeCache.txt')
 }
 $ifcBuild=Join-Path $nativeRoot 'ifc-build'
 $ifcInstall=Join-Path $installRoot 'ifc'
@@ -95,8 +99,11 @@ Invoke-Checked 'cmake' (@('-S',(Join-Path $trees.ifcopenshell 'cmake'),'-B',$ifc
     "-DPYTHON_INCLUDE_DIR=$pythonBase/include","-DPYTHON_LIBRARY=$pythonBase/libs/python313.lib",
     "-DPYTHON_MODULE_INSTALL_DIR=$ifcInstall","-DCMAKE_INSTALL_PREFIX=$ifcInstall"))
 Copy-Item -LiteralPath (Join-Path $ifcBuild 'CMakeCache.txt') -Destination (Join-Path $evidenceRoot 'IfcOpenShell-CMakeCache.txt')
-Copy-Item -LiteralPath (Join-Path $occtBuild 'CMakeCache.txt') -Destination (Join-Path $evidenceRoot 'OCCT-CMakeCache.txt')
-Copy-Item -LiteralPath (Join-Path $boostBuild 'CMakeCache.txt') -Destination (Join-Path $evidenceRoot 'Boost-CMakeCache.txt')
+foreach ($dependency in @('OCCT','Boost')) {
+    if (-not (Test-Path -LiteralPath (Join-Path $evidenceRoot "$dependency-CMakeCache.txt"))) {
+        throw "Missing dependency build evidence: $dependency"
+    }
+}
 Invoke-Checked 'cmake' @('--build',$ifcBuild,'--config','Release','--target','ifcopenshell_wrapper','--parallel','2')
 Invoke-Checked 'cmake' @('--install',$ifcBuild,'--config','Release')
 }
