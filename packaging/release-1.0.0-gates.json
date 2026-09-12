@@ -1,11 +1,18 @@
 {
   "version": "1.0.0",
-  "status": "LOCAL_PREPARATION_NOT_FOR_DISTRIBUTION",
+  "status": "FINAL_ARTIFACT_GATES_PASSED",
   "source_upload_authorized": true,
-  "source_upload_scope": "Reviewed source, documentation and synthetic public images; no validation binary assets or stable Release",
-  "exact_binary_license_inventory_reviewed": false,
-  "corresponding_source_materials_ready": false,
-  "final_binary_smoke_passed": false,
-  "isolated_install_upgrade_uninstall_passed": false,
-  "public_upload_authorized": false
+  "source_upload_scope": "Reviewed source, documentation and synthetic public images; frozen history preserved, private artifacts excluded",
+  "exact_binary_license_inventory_reviewed": true,
+  "corresponding_source_materials_ready": true,
+  "final_binary_smoke_passed": true,
+  "isolated_install_upgrade_uninstall_passed": true,
+  "public_upload_authorized": true,
+  "public_upload_authorization_scope": "Maintainer approved completing technical release gates and publishing v1.0.0 with installer and Latest; no project relicensing, commercial-license purchase, or live-installation changes are authorized.",
+  "native_license_finding": "Resolved by the documented same-base-revision no-CGAL build with an explicit SWIG interface patch; original metadata, patch, notices and corresponding sources retained. Both CGAL kernels rejected; OpenCASCADE and eight IFC schemas verified.",
+  "payload_manifest_sha256": "4b5ffdb468810681534e77a522964046e4fbad79c16f97fca7d77f5899ca3a38",
+  "portable_sha256": "51bf29c42c998f7aeb60019638979be1bf00a1e5b4ece628d0092c02f4f217bb",
+  "native_build_run": "https://github.com/delongwangshu49-hub/bimchange-agent/actions/runs/34696249588",
+  "installer_sha256": "4c076fd5b2fe021c88002b206af836eadd1609406efdff42b62a237484cd2dea",
+  "installer_acceptance_run": "https://github.com/delongwangshu49-hub/bimchange-agent/actions/runs/34700346091"
 }

@@ -11,8 +11,7 @@ on:
         required: true
         type: string
 permissions:
-  # Temporarily authorized for draft asset access; restore after acceptance.
-  contents: write
+  contents: read
 jobs:
   acceptance:
     runs-on: windows-2022
@@ -23,7 +22,7 @@ jobs:
         with:
           python-version: '3.13'
           architecture: x64
-      - name: Retrieve exact staged assets, without publishing
+      - name: Retrieve exact release assets, without publishing
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
@@ -32,12 +31,12 @@ jobs:
         run: |
           $ErrorActionPreference='Stop'
           if ($env:EXPECTED_INSTALLER -notmatch '^[a-f0-9]{64}$' -or $env:EXPECTED_MANIFEST -notmatch '^[a-f0-9]{64}$') { throw 'Invalid digest inputs.' }
-          $draft=gh release view v1.0.0 --repo $env:GITHUB_REPOSITORY --json isDraft | ConvertFrom-Json
-          if ($LASTEXITCODE -ne 0 -or -not $draft.isDraft) { throw 'Expected an unpublished v1.0.0 draft.' }
+          $release=gh release view v1.0.0 --repo $env:GITHUB_REPOSITORY --json tagName | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0 -or $release.tagName -ne 'v1.0.0') { throw 'Expected the exact v1.0.0 release.' }
           $assets=Join-Path $env:RUNNER_TEMP 'staged-assets'
           New-Item -ItemType Directory -Path $assets | Out-Null
           gh release download v1.0.0 --repo $env:GITHUB_REPOSITORY --dir $assets --pattern 'BIMChange-Agent-1.0.0-win-x64-setup.exe' --pattern 'payload-manifest.json'
-          if ($LASTEXITCODE -ne 0) { throw 'Draft download failed.' }
+          if ($LASTEXITCODE -ne 0) { throw 'Release asset download failed.' }
           if ((Get-FileHash "$assets/BIMChange-Agent-1.0.0-win-x64-setup.exe").Hash.ToLowerInvariant() -ne $env:EXPECTED_INSTALLER) { throw 'Installer hash mismatch.' }
           if ((Get-FileHash "$assets/payload-manifest.json").Hash.ToLowerInvariant() -ne $env:EXPECTED_MANIFEST) { throw 'Manifest hash mismatch.' }
           gh release download v0.9.0 --repo $env:GITHUB_REPOSITORY --dir $assets --pattern 'BIMChange-Agent-0.9.0-win-x64-setup.exe' --pattern 'BIMChange-Agent-0.9.0-win-x64-setup.exe.sha256.txt'

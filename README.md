@@ -20,9 +20,9 @@ BIMChange-Agent **1.0.0 正式版**是一款离线优先的 Windows IFC4 版本�
 [Features / 功能](#features--功能) · [3D review / 三维审阅](#local-3d-review--局部三维审阅) · [Install / 安装](#download-and-install--下载与安装) · [Research / 研究](#experimental-lineage--实验沿革) · [Related project / 相关项目](#related-project--相关项目)
 
 > [!IMPORTANT]
-> **Binary release preparation:** the maintainer has authorized this 1.0.0 source/documentation update, but 1.0.0 binaries are not yet published. Binary redistribution remains gated by the [release checklist](docs/releases/v1.0.0-release-checklist.md). [v0.9.0](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.9.0) remains the previously published stable release.
+> **1.0.0 stable:** get the Windows installer or portable ZIP from [v1.0.0 Releases](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v1.0.0). SHA-256 checksums, third-party notices, corresponding sources and exact-artifact acceptance receipts accompany the downloads. See the [final audit](docs/releases/v1.0.0-release-audit.md).
 >
-> **二进制发布准备状态：**作者已授权本次 1.0.0 源码与文档更新，但 1.0.0 二进制尚未发布，仍须完成[发布检查清单](docs/releases/v1.0.0-release-checklist.md)。此前已发布的稳定版本仍为 [v0.9.0](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.9.0)。
+> **1.0.0 正式版：**从 [v1.0.0 Releases](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v1.0.0) 下载 Windows 安装器或便携 ZIP，同时提供 SHA-256、第三方声明、对应源码和准确产物验收回执。详见[最终审计](docs/releases/v1.0.0-release-audit.md)。
 
 ## Product view / 产品界面
 
@@ -89,17 +89,18 @@ The view is deliberately local: one target plus at most two unchanged neighbors 
 
 ## Download and install / 下载与安装
 
-For now, use the previously published [v0.9.0 release](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.9.0), which does not include the new local 3D view. The planned 1.0.0 assets are listed below; **do not rename an older/private build to these names**.
+Download the [1.0.0 stable release](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v1.0.0). Choose the installer for normal use, or extract the entire portable ZIP into a new folder. Do not copy only the EXE or merge a portable ZIP into an older version's directory.
 
-当前可下载此前发布的 [v0.9.0](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v0.9.0)，该版本不含新增局部三维。以下是 1.0.0 计划使用的发布文件名，**不得把旧版或私有构建直接改名冒充**。
+下载 [1.0.0 正式版](https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v1.0.0)。日常使用推荐安装器；便携版请完整解压到新文件夹，不要只复制 EXE，也不要直接合并到旧版便携目录。
 
-- `BIMChange-Agent-1.0.0-win-x64-setup.exe` + SHA-256 sidecar / 安装器及校验文件。
-- `BIMChange-Agent-1.0.0-win-x64.zip` + SHA-256 sidecar / 便携包及校验文件。
+- [BIMChange-Agent-1.0.0-win-x64-setup.exe](https://github.com/delongwangshu49-hub/bimchange-agent/releases/download/v1.0.0/BIMChange-Agent-1.0.0-win-x64-setup.exe) — installer / 安装器。
+- [BIMChange-Agent-1.0.0-win-x64.zip](https://github.com/delongwangshu49-hub/bimchange-agent/releases/download/v1.0.0/BIMChange-Agent-1.0.0-win-x64.zip) — portable / 便携包。
+- [SHA256SUMS.txt](https://github.com/delongwangshu49-hub/bimchange-agent/releases/download/v1.0.0/SHA256SUMS.txt) — checksums / 校验清单。
 - Matching third-party notices and corresponding-source materials / 匹配的第三方声明与对应源码材料。
 
-After publication: verify the SHA-256, run the per-user installer, and launch from the Start Menu. No Python is needed for packaged builds. Unsigned builds may trigger SmartScreen; a checksum verifies file identity, not publisher trust.
+Verify the SHA-256, run the per-user installer, and launch from the Start Menu. No Python is needed for packaged builds. The installer and portable EXE are unsigned and may trigger SmartScreen; a checksum verifies file identity, not publisher trust.
 
-发布后：核对 SHA-256，运行当前用户安装器，从开始菜单启动。打包版无需 Python。未签名构建可能触发 SmartScreen；校验和确认文件一致性，不等于发布者身份认证。
+核对 SHA-256，运行当前用户安装器，从开始菜单启动。打包版无需 Python。安装器与便携 EXE 均未签名，可能触发 SmartScreen；校验和确认文件一致性，不等于发布者身份认证。
 
 Select the previous and revised IFC files, keep AI off for local-only review, and start analysis. Filter the results, inspect evidence and 3D, then export when needed.
 
@@ -138,12 +139,12 @@ AI 不会替代本地报告，也可能出错；服务商失败时确定性报�
 
 ## Source quickstart / 源码快速开始
 
-Validated environment: Windows x64, Python 3.13, PowerShell 7. These commands target the 1.0.0 source after it is published; the remote repository may still contain the older version during preparation.
+Validated environment: Windows x64, Python 3.13, PowerShell 7. These commands select the 1.0.0 source tag. Source development installs upstream dependencies; reproducing the distributed no-CGAL runtime requires the [packaging procedure](docs/windows-installer.md), not simply repackaging this development environment.
 
-验证环境：Windows x64、Python 3.13、PowerShell 7。下列命令针对发布后的 1.0.0 源码；准备期间远端可能仍为旧版。
+验证环境：Windows x64、Python 3.13、PowerShell 7。下列命令选择 1.0.0 源码标签。源码开发安装使用上游依赖；要重现正式分发的无 CGAL 运行时，须遵循[打包流程](docs/windows-installer.md)，不能直接重打开发环境。
 
 ```powershell
-git clone https://github.com/delongwangshu49-hub/bimchange-agent.git
+git clone --branch v1.0.0 https://github.com/delongwangshu49-hub/bimchange-agent.git
 cd bimchange-agent
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -c constraints-preview.txt -e ".[desktop]"
@@ -166,9 +167,9 @@ For CLI queries and controlled fixtures, see the [bilingual quickstart](docs/qui
 
 ## Verification and evidence / 验证与证据
 
-Current release-preparation checks are tracked separately in the [1.0.0 checklist](docs/releases/v1.0.0-release-checklist.md). Historical results below are retained, not relabeled as fresh 1.0.0 evidence.
+Current exact-artifact checks are recorded in the [1.0.0 final audit](docs/releases/v1.0.0-release-audit.md) and [checklist](docs/releases/v1.0.0-release-checklist.md). Historical results below are retained, not relabeled as fresh 1.0.0 evidence.
 
-本次发布准备检查单独记录在 [1.0.0 清单](docs/releases/v1.0.0-release-checklist.md)。以下历史结果原样保留其含义，不冒充本次新测结果。
+本次准确产物检查单独记录在 [1.0.0 最终审计](docs/releases/v1.0.0-release-audit.md)与[清单](docs/releases/v1.0.0-release-checklist.md)。以下历史结果原样保留其含义，不冒充本次新测结果。
 
 | Evidence slice / 证据切片 | Historical measured result / 历史实测结果 |
 |---|---|

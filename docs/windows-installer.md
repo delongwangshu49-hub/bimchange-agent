@@ -1,8 +1,8 @@
 # Windows packaging / Windows 打包
 
-Version 1.0.0 is prepared locally. v0.9.0 remains the previously published stable release; v0.5.0 introduced the per-user installer, and v0.2.0-preview.1 remains a historical portable ZIP.
+Version 1.0.0 provides the stable Windows installer and portable ZIP, with exact-artifact evidence in the [final audit](releases/v1.0.0-release-audit.md). v0.9.0 is the tested upgrade baseline; v0.5.0 introduced the per-user installer, and v0.2.0-preview.1 remains a historical portable ZIP.
 
-1.0.0 正在本地准备；此前已公开稳定版仍为 v0.9.0。v0.5.0 引入当前用户安装器，v0.2.0-preview.1 保留为历史便携 ZIP。
+1.0.0 提供正式 Windows 安装器与便携 ZIP，准确产物证据见[最终审计](releases/v1.0.0-release-audit.md)。v0.9.0 为升级验收基线；v0.5.0 引入当前用户安装器，v0.2.0-preview.1 保留为历史便携 ZIP。
 
 ## Identity / 标识
 
