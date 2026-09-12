@@ -45,8 +45,10 @@ foreach ($entry in $manifest) {
     }
     $destination=Join-Path $sourceRoot $entry.id
     if (-not (Test-Path -LiteralPath $destination)) {
-        New-Item -ItemType Directory -Path $destination | Out-Null
-        Invoke-Checked 'tar.exe' @('-xf',$archive,'-C',$destination,'--strip-components=1')
+        Invoke-Checked 'python' @((Join-Path $PSScriptRoot 'extract_native_source.py'),$archive,$destination)
+    }
+    if (-not (Test-Path -LiteralPath (Join-Path $destination '.source-extraction-complete.json'))) {
+        throw "Incomplete source extraction: $destination. Use a fresh disposable build root."
     }
     $trees[$entry.id]=$destination
 }

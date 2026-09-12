@@ -61,3 +61,4 @@ scripts/audit_release_payload.py
 scripts/bundle_dependency_sources.py
 packaging/licenses/INNO-SETUP.txt
 scripts/assemble_release_evidence.py
+scripts/extract_native_source.py

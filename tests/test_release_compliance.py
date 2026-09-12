@@ -20,6 +20,42 @@ def load_script(name):
 
 
 class ComplianceToolTests(unittest.TestCase):
+    def test_native_extractor_preserves_bytes_and_refuses_overwrite(self):
+        extractor = load_script('extract_native_source')
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            with tarfile.open(root/'source.tar', 'w') as archive:
+                entry = tarfile.TarInfo('component/include/test.h')
+                content = b'exact upstream bytes\r\n'
+                entry.size = len(content)
+                archive.addfile(entry, io.BytesIO(content))
+            result = extractor.extract(root/'source.tar', root/'output')
+            self.assertEqual(result['files'], 1)
+            self.assertEqual((root/'output/include/test.h').read_bytes(), content)
+            self.assertTrue((root/'output/.source-extraction-complete.json').is_file())
+            with self.assertRaises(FileExistsError):
+                extractor.extract(root/'source.tar', root/'output')
+
+    def test_native_extractor_rejects_traversal_links_and_multiple_roots(self):
+        extractor = load_script('extract_native_source')
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for index, name in enumerate(('component/../escape', '/absolute', 'component/C:escape', 'second/file')):
+                archive_path = root/f'{index}.tar'
+                with tarfile.open(archive_path, 'w') as archive:
+                    archive.addfile(tarfile.TarInfo('component/first'))
+                    archive.addfile(tarfile.TarInfo(name))
+                with self.assertRaises(ValueError):
+                    extractor.extract(archive_path, root/f'output{index}')
+                self.assertFalse((root/f'output{index}/.source-extraction-complete.json').exists())
+            with tarfile.open(root/'link.tar', 'w') as archive:
+                entry = tarfile.TarInfo('component/link')
+                entry.type = tarfile.SYMTYPE
+                entry.linkname = '../outside'
+                archive.addfile(entry)
+            with self.assertRaises(ValueError):
+                extractor.extract(root/'link.tar', root/'linked')
+
     def test_complete_evidence_is_bound_to_payload_and_sources(self):
         verifier = load_script('verify_release')
         digest = lambda content: hashlib.sha256(content).hexdigest()
