@@ -11,7 +11,8 @@ on:
         required: true
         type: string
 permissions:
-  contents: read
+  # Temporarily authorized for draft asset access; restore after acceptance.
+  contents: write
 jobs:
   acceptance:
     runs-on: windows-2022
