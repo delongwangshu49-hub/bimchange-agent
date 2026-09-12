@@ -117,6 +117,12 @@ print(json.dumps({'status':'PASS','version':w.version(),'schemas':sorted(expecte
                   "occt_commit": "bd2a789f15235755ce4d1a3b07379a2e062fdc2e", "native_imports": imports,
                   "native_files": [{"name": p.name, "sha256": digest(p)} for p in sorted(package.glob("*.dll"))]})
     proof["native_files"].append({"name": binaries[0].name, "sha256": digest(package / binaries[0].name)})
+    patch = root / 'evidence/ifc-swig.patch'
+    patch_receipt = json.loads((root / 'evidence/ifc-swig-patch.json').read_text())
+    if digest(patch) != patch_receipt['patch_sha256']:
+        raise RuntimeError('Upstream interface patch digest mismatch')
+    proof['upstream_build_patch'] = patch_receipt
+    shutil.copy2(patch, metadata / 'ifc-swig.patch')
     (metadata / "NO-CGAL-BUILD.json").write_text(json.dumps(proof, indent=2), encoding="utf-8")
     (root / "evidence/native-proof.json").write_text(json.dumps(proof, indent=2), encoding="utf-8")
     record = io.StringIO(newline="")

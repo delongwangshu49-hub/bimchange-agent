@@ -3,6 +3,7 @@ import importlib.util
 import hashlib
 import io
 import json
+import os
 from pathlib import Path
 import tarfile
 import tempfile
@@ -20,6 +21,52 @@ def load_script(name):
 
 
 class ComplianceToolTests(unittest.TestCase):
+    def test_checkpoint_preserves_unchanged_inputs_and_rejects_unsafe_paths(self):
+        checkpoint = load_script('native_ifc_checkpoint')
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)/'native'
+            repo = Path(temporary)/'repo'
+            for path in (repo/'packaging/native-sources.json', repo/'scripts/build_ifcopenshell_no_cgal.ps1',
+                         repo/'.native-sources/ifcopenshell/src/same.h',
+                         repo/'.native-sources/ifcopenshell/src/changed.h',
+                         root/'ifc-build/CMakeCache.txt', root/'ifc-build/good.obj'):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b'original')
+                os.utime(path, ns=(1000000000000000000, 1000000000000000000))
+            archive = Path(temporary)/'checkpoint.zip'
+            checkpoint.save(root, repo, archive)
+            with self.assertRaisesRegex(ValueError, 'overwrite'):
+                checkpoint.restore(root, repo, archive)
+            (root/'ifc-build').rename(root/'preserved-build')
+            unchanged = repo/'.native-sources/ifcopenshell/src/same.h'
+            changed = repo/'.native-sources/ifcopenshell/src/changed.h'
+            os.utime(unchanged, ns=(1100000000000000000, 1100000000000000000))
+            changed.write_bytes(b'new source')
+            changed_time = changed.stat().st_mtime_ns
+            checkpoint.restore(root, repo, archive)
+            self.assertEqual(unchanged.stat().st_mtime_ns, 1000000000000000000)
+            self.assertEqual(changed.stat().st_mtime_ns, changed_time)
+            self.assertEqual((root/'ifc-build/good.obj').read_bytes(), b'original')
+            self.assertEqual((root/'ifc-build/good.obj').stat().st_mtime_ns, 1000000000000000000)
+            for name in ('../bad', '/bad', 'ifc-build/../bad', 'install/boost/bad', 'ifc-build/C:/bad', 'ifc-build\\bad'):
+                with self.assertRaises(ValueError):
+                    checkpoint.safe_output(root, name)
+            (repo/'packaging/native-sources.json').write_bytes(b'changed pins')
+            with self.assertRaisesRegex(ValueError, 'mismatch'):
+                checkpoint.restore(root, repo, archive)
+
+    def test_swig_patch_fails_closed_and_preflight_precedes_core(self):
+        patcher = load_script('apply_ifc_swig_fix')
+        with self.assertRaisesRegex(ValueError, 'Unexpected upstream'):
+            patcher.patched(patcher.ANCHOR + patcher.DECLARATIONS)
+        build = (ROOT/'scripts/build_ifcopenshell_no_cgal.ps1').read_text()
+        self.assertLess(build.index('/t:PrepareForBuild,CustomBuild,ClCompile'),
+                        build.index("'--target','ifcopenshell_wrapper'"))
+        workflow = (ROOT/'.github/workflows/native-ifc.yml').read_text()
+        self.assertIn('run-id: 34691147135', workflow)
+        self.assertIn('native-ifc-checkpoint', workflow)
+        self.assertIn('no automatic rebuild', workflow)
+
     def test_boost_headers_cover_direct_includes_and_preserve_existing_bytes(self):
         preparer = load_script('prepare_boost_headers')
         with tempfile.TemporaryDirectory() as temporary:

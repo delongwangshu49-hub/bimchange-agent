@@ -1,8 +1,18 @@
 name: Native IFC without CGAL
 on:
   workflow_dispatch:
+    inputs:
+      reuse_dependencies:
+        description: 'Reuse verified successful OCCT/Boost from run 34691147135 (no rebuild fallback)'
+        type: boolean
+        default: true
+      checkpoint_run_id:
+        description: 'Optional compatible run with native-ifc-checkpoint; blank for first IFC build'
+        type: string
+        default: ''
 permissions:
   contents: read
+  actions: read
 jobs:
   build:
     runs-on: windows-2022
@@ -39,6 +49,7 @@ jobs:
           ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage Prepare
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Build Boost and preflight all direct IFC Boost headers
+        if: ${{ !inputs.reuse_dependencies }}
         shell: pwsh
         timeout-minutes: 10
         run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage Boost
@@ -49,6 +60,7 @@ jobs:
           if (-not $env:ImageVersion) { throw 'Missing runner image version for cache identity.' }
           "image=$env:ImageVersion" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
       - name: Restore successful OCCT dependency
+        if: ${{ !inputs.reuse_dependencies }}
         id: occt-cache
         uses: actions/cache/restore@v4
         with:
@@ -57,22 +69,75 @@ jobs:
             ${{ runner.temp }}/native-ifc/evidence/OCCT-CMakeCache.txt
           key: occt-781-shared-v1-${{ runner.os }}-${{ steps.cache-platform.outputs.image }}-${{ hashFiles('packaging/native-sources.json') }}
       - name: Build OpenCASCADE shared libraries
-        if: steps.occt-cache.outputs.cache-hit != 'true'
+        if: ${{ !inputs.reuse_dependencies && steps.occt-cache.outputs.cache-hit != 'true' }}
         shell: pwsh
         timeout-minutes: 60
         run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage OCCT
       - name: Save successful OCCT before downstream compilation
-        if: steps.occt-cache.outputs.cache-hit != 'true'
+        if: ${{ !inputs.reuse_dependencies && steps.occt-cache.outputs.cache-hit != 'true' }}
         uses: actions/cache/save@v4
         with:
           path: |
             ${{ runner.temp }}/native-ifc/install/occt
             ${{ runner.temp }}/native-ifc/evidence/OCCT-CMakeCache.txt
           key: ${{ steps.occt-cache.outputs.cache-primary-key }}
+      - name: Download already-built OCCT and Boost (no recompilation)
+        if: inputs.reuse_dependencies
+        uses: actions/download-artifact@v4
+        with:
+          name: native-ifc-built-dependencies
+          run-id: 34691147135
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/native-ifc
+      - name: Verify reused dependency identity (fail closed)
+        if: inputs.reuse_dependencies
+        shell: pwsh
+        run: |
+          if ($env:ImageVersion -ne '20260907.297.1') { throw 'Dependency runner image mismatch; no automatic rebuild.' }
+          $checks=@{
+            'OCCT-CMakeCache.txt'='e5c8f398ba2824070b98259f869f4de30127126fcabea7c9e297846927f1bdb6'
+            'Boost-CMakeCache.txt'='58481c246bcc196bae7d2ace034a238d23137d086fc8056dd4d94153e365a034'
+          }
+          foreach ($name in $checks.Keys) {
+            $file=Join-Path "$env:RUNNER_TEMP/native-ifc/evidence" $name
+            if ((Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash.ToLowerInvariant() -ne $checks[$name]) {
+              throw "Reused dependency evidence mismatch: $name"
+            }
+          }
+          if (-not (Test-Path "$env:RUNNER_TEMP/native-ifc/install/boost/lib/libboost_regex-vc143-mt-x64-1_86.lib")) { throw 'Boost library missing' }
+          if (-not (Get-ChildItem "$env:RUNNER_TEMP/native-ifc/install/occt" -Filter TKernel.dll -Recurse)) { throw 'OCCT DLL missing' }
+          Write-Host 'Verified OCCT and Boost reuse; both compilation stages skipped.'
+      - name: Download optional IFC intermediate checkpoint
+        if: inputs.checkpoint_run_id != ''
+        uses: actions/download-artifact@v4
+        with:
+          name: native-ifc-checkpoint
+          run-id: ${{ inputs.checkpoint_run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/ifc-checkpoint
       - name: Build IfcOpenShell without CGAL
         shell: pwsh
         timeout-minutes: 85
-        run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage IFC
+        env:
+          CHECKPOINT_RUN_ID: ${{ inputs.checkpoint_run_id }}
+        run: |
+          if ($env:CHECKPOINT_RUN_ID) { $env:NATIVE_IFC_CHECKPOINT="$env:RUNNER_TEMP/ifc-checkpoint/checkpoint.zip" }
+          ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage IFC
+      - name: Save IFC intermediate objects even after compilation failure
+        if: always()
+        shell: pwsh
+        timeout-minutes: 10
+        run: |
+          python ./scripts/native_ifc_checkpoint.py save "$env:RUNNER_TEMP/native-ifc" "$env:GITHUB_WORKSPACE" "$env:RUNNER_TEMP/ifc-saved-checkpoint/checkpoint.zip"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain IFC incremental checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-ifc-checkpoint
+          path: ${{ runner.temp }}/ifc-saved-checkpoint/checkpoint.zip
+          compression-level: 0
+          if-no-files-found: warn
       - name: Assemble wheel and verify native kernels
         shell: pwsh
         timeout-minutes: 5

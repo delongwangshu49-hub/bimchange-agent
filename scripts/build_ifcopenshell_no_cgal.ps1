@@ -83,6 +83,11 @@ Copy-Item -LiteralPath (Join-Path $boostBuild 'CMakeCache.txt') -Destination (Jo
 $ifcBuild=Join-Path $nativeRoot 'ifc-build'
 $ifcInstall=Join-Path $installRoot 'ifc'
 if ($Stage -in @('All','IFC')) {
+Invoke-Checked 'python' @((Join-Path $PSScriptRoot 'apply_ifc_swig_fix.py'),$trees.ifcopenshell,$evidenceRoot)
+if ($env:NATIVE_IFC_CHECKPOINT) {
+    Invoke-Checked 'python' @((Join-Path $PSScriptRoot 'native_ifc_checkpoint.py'),'restore',
+        $nativeRoot,$repoRoot,$env:NATIVE_IFC_CHECKPOINT)
+}
 $pythonBase=(& python -c 'import sys; print(sys.base_prefix)').Trim()
 $pythonExecutable=(& python -c 'import sys; print(sys.executable)').Trim()
 $occConfig=(Get-ChildItem -LiteralPath $occtInstall -Filter OpenCASCADEConfig.cmake -Recurse | Select-Object -First 1).DirectoryName
@@ -104,6 +109,15 @@ foreach ($dependency in @('OCCT','Boost')) {
         throw "Missing dependency build evidence: $dependency"
     }
 }
+# Compile the wrapper BEFORE the expensive core libraries. No linking here;
+# the subsequent ordinary CMake build still builds/verifies every dependency.
+$vswhere=Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer/vswhere.exe'
+$msbuild=(& $vswhere -latest -products '*' -requires Microsoft.Component.MSBuild -find 'MSBuild/**/Bin/MSBuild.exe' | Select-Object -First 1)
+if (-not $msbuild) { throw 'MSBuild unavailable for early wrapper compilation.' }
+$wrapperProject=Join-Path $ifcBuild 'ifcwrap/ifcopenshell_wrapper.vcxproj'
+if (-not (Test-Path -LiteralPath $wrapperProject)) { throw 'Expected wrapper project missing.' }
+Invoke-Checked $msbuild @($wrapperProject,'/t:PrepareForBuild,CustomBuild,ClCompile','/p:BuildProjectReferences=false','/p:Configuration=Release','/p:Platform=x64','/verbosity:minimal')
+Write-Host 'Early wrapper C++ compilation PASS; continuing native core build.'
 Invoke-Checked 'cmake' @('--build',$ifcBuild,'--config','Release','--target','ifcopenshell_wrapper','--parallel','2')
 Invoke-Checked 'cmake' @('--install',$ifcBuild,'--config','Release')
 }
