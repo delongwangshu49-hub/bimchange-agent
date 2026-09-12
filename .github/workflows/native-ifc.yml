@@ -104,7 +104,7 @@ jobs:
               throw "Reused dependency evidence mismatch: $name"
             }
           }
-          if (-not (Test-Path "$env:RUNNER_TEMP/native-ifc/install/boost/lib/libboost_regex-vc143-mt-x64-1_86.lib")) { throw 'Boost library missing' }
+          if (-not (Test-Path "$env:RUNNER_TEMP/native-ifc/install/boost/lib/libboost_program_options-vc143-mt-x64-1_86.lib")) { throw 'Boost library missing' }
           if (-not (Get-ChildItem "$env:RUNNER_TEMP/native-ifc/install/occt" -Filter TKernel.dll -Recurse)) { throw 'OCCT DLL missing' }
           Write-Host 'Verified OCCT and Boost reuse; both compilation stages skipped.'
       - name: Download optional IFC intermediate checkpoint
