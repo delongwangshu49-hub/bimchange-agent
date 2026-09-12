@@ -97,10 +97,13 @@ from .product_core import (
     load_json,
 )
 from .reporting import write_html_report
+from .r4_webengine_candidate import R4SpatialContextPane
 
 
 APP_NAME = "BIMChange-Agent"
-DISPLAY_VERSION = "0.9.0"
+from . import __version__
+
+DISPLAY_VERSION = __version__
 HTML_REPORT_FILE_NAME = "report.html"
 APP_ICON_PATH = (
     Path(__file__).resolve().parent
@@ -775,6 +778,11 @@ class ReportPage(QWidget):
         self.html_path: Path | None = None
         self.artifact: dict[str, Any] | None = None
         self.all_changes: list[dict[str, Any]] = []
+        self._search_cache: dict[int, str] = {}
+        self._search_timer = QTimer(self)
+        self._search_timer.setSingleShot(True)
+        self._search_timer.setInterval(120)
+        self._search_timer.timeout.connect(self._refresh_table)
         self.explanation: dict[str, Any] | None = None
         layout = QVBoxLayout(self)
         layout.setContentsMargins(32, 24, 32, 28)
@@ -832,7 +840,7 @@ class ReportPage(QWidget):
         filter_layout.setContentsMargins(12, 10, 12, 10)
         self.search_filter = QLineEdit()
         self.search_filter.setClearButtonEnabled(True)
-        self.search_filter.textChanged.connect(self._refresh_table)
+        self.search_filter.textChanged.connect(self._schedule_search)
         filter_layout.addWidget(self.search_filter, stretch=2)
         self.type_filter = QComboBox()
         self.type_filter.currentIndexChanged.connect(self._refresh_table)
@@ -907,6 +915,10 @@ class ReportPage(QWidget):
         ai_layout.addWidget(self.ai_output)
         self.review_tabs.addTab(detail_page, "")
         self.review_tabs.addTab(ai_page, "")
+        self.spatial_context = R4SpatialContextPane()
+        self.spatial_context.set_language(self.language)
+        self.review_tabs.addTab(self.spatial_context, "")
+        self.review_tabs.currentChanged.connect(self._review_tab_changed)
         self.splitter.addWidget(self.review_tabs)
         self.splitter.setStretchFactor(0, 3)
         self.splitter.setStretchFactor(1, 1)
@@ -935,12 +947,17 @@ class ReportPage(QWidget):
         artifact_path: Path,
         html_path: Path,
         explanation: dict[str, Any] | None,
+        source_ifc: Path | None = None,
+        revised_ifc: Path | None = None,
     ) -> None:
         self.artifact_path = artifact_path
         self.html_path = html_path
         self.artifact = artifact
         self.all_changes = list(artifact["changes"])
+        self._search_cache.clear()
+        self._search_timer.stop()
         self.explanation = explanation
+        self.spatial_context.set_inputs(source_ifc, revised_ifc, artifact)
         self.file_pair.setText(
             f"{artifact['source']['file_name']}  →  {artifact['revised']['file_name']}"
         )
@@ -988,7 +1005,16 @@ class ReportPage(QWidget):
             combo.setCurrentIndex(max(0, index))
         del blockers
 
+    def _schedule_search(self, *_args: object) -> None:
+        if len(self.all_changes) > 200:
+            self._search_timer.start()
+        else:
+            self._refresh_table()
+
     def _refresh_table(self, *_args: object) -> None:
+        self._search_timer.stop()
+        selected_items = self.table.selectedItems()
+        previous_index = selected_items[0].data(Qt.ItemDataRole.UserRole) if selected_items else None
         query = self.search_filter.text().strip().casefold()
         change_type = str(self.type_filter.currentData() or "")
         entity_type = str(self.entity_filter.currentData() or "")
@@ -996,42 +1022,45 @@ class ReportPage(QWidget):
         visible: list[tuple[int, dict[str, Any]]] = []
         for index, change in enumerate(self.all_changes):
             storey = change["location"]["building_storey"]
-            field_text = self._display_field(change)
-            geometry = change.get("geometry_change")
-            relationship = change.get("relationship_change")
-            geometry_search = ""
-            if isinstance(geometry, dict):
-                geometry_search = " ".join(
-                    (
-                        str(geometry.get("subtype", "")),
-                        self._display_value(geometry.get("delta")),
-                        self._display_value(geometry.get("distance")),
+            if index not in self._search_cache:
+                field_text = self._display_field(change)
+                geometry = change.get("geometry_change")
+                relationship = change.get("relationship_change")
+                geometry_search = ""
+                if isinstance(geometry, dict):
+                    geometry_search = " ".join(
+                        (
+                            str(geometry.get("subtype", "")),
+                            self._display_value(geometry.get("delta")),
+                            self._display_value(geometry.get("distance")),
+                        )
                     )
-                )
-            relationship_search = ""
-            if isinstance(relationship, dict):
-                relationship_search = " ".join(
-                    (
-                        str(relationship.get("subtype", "")),
-                        str(relationship.get("relationship", "")),
-                        self._display_value(relationship.get("old_relation")),
-                        self._display_value(relationship.get("new_relation")),
+                relationship_search = ""
+                if isinstance(relationship, dict):
+                    relationship_search = " ".join(
+                        (
+                            str(relationship.get("subtype", "")),
+                            str(relationship.get("relationship", "")),
+                            self._display_value(relationship.get("old_relation")),
+                            self._display_value(relationship.get("new_relation")),
+                        )
                     )
-                )
-            searchable = " ".join(
-                (
-                    change["change_type"],
-                    self._display_change_type(change["change_type"]),
-                    change["entity_type"],
-                    change["global_id"],
-                    storey["name"] if storey else "",
-                    field_text,
-                    geometry_search,
-                    relationship_search,
-                    self._display_value(change["old_value"]),
-                    self._display_value(change["new_value"]),
-                )
-            ).casefold()
+                searchable = " ".join(
+                    (
+                        change["change_type"],
+                        self._display_change_type(change["change_type"]),
+                        change["entity_type"],
+                        change["global_id"],
+                        storey["name"] if storey else "",
+                        field_text,
+                        geometry_search,
+                        relationship_search,
+                        self._display_value(change["old_value"]),
+                        self._display_value(change["new_value"]),
+                    )
+                ).casefold()
+                self._search_cache[index] = searchable
+            searchable = self._search_cache[index]
             if query and query not in searchable:
                 continue
             if change_type and change["change_type"] != change_type:
@@ -1061,7 +1090,8 @@ class ReportPage(QWidget):
                     item.setToolTip(value)
                     self.table.setItem(row, column, item)
             if visible:
-                self.table.selectRow(0)
+                row = next((row for row, (index, _) in enumerate(visible) if index == previous_index), 0)
+                self.table.selectRow(row)
             else:
                 self.table.clearSelection()
         finally:
@@ -1080,6 +1110,7 @@ class ReportPage(QWidget):
             self._update_detail()
         else:
             self.detail_body.setPlainText(text(self.language, "detail_empty"))
+            self.spatial_context.clear_selection()
 
     def resizeEvent(self, event: QResizeEvent) -> None:
         """Give the change table full width before asking users to scroll sideways."""
@@ -1115,6 +1146,9 @@ class ReportPage(QWidget):
     def _clamp_splitter(self, *_args: object) -> None:
         """Keep either pane from being dragged outside its usable boundary."""
 
+        from shiboken6 import isValid
+        if not isValid(self.splitter):
+            return
         sizes = self.splitter.sizes()
         if len(sizes) != 2:
             return
@@ -1135,6 +1169,7 @@ class ReportPage(QWidget):
         selected = self.table.selectedItems()
         if not selected:
             self.detail_body.setPlainText(text(self.language, "detail_empty"))
+            self.spatial_context.clear_selection()
             return
         change_index = selected[0].data(Qt.ItemDataRole.UserRole)
         if not isinstance(change_index, int) or change_index >= len(self.all_changes):
@@ -1174,6 +1209,22 @@ class ReportPage(QWidget):
         self.detail_body.setPlainText(
             "\n\n".join(f"{text(self.language, key)}\n{value}" for key, value in rows)
         )
+        if self.review_tabs.currentIndex() == 2:
+            self._show_selected_spatial_context(change)
+
+    @Slot(int)
+    def _review_tab_changed(self, index: int) -> None:
+        if index != 2:
+            return
+        selected = self.table.selectedItems()
+        if not selected:
+            return
+        change_index = selected[0].data(Qt.ItemDataRole.UserRole)
+        if isinstance(change_index, int) and change_index < len(self.all_changes):
+            self._show_selected_spatial_context(self.all_changes[change_index])
+
+    def _show_selected_spatial_context(self, change: dict[str, Any]) -> None:
+        self.spatial_context.show_change(change)
 
     def _display_change_type(self, value: str) -> str:
         key = f"change_{value}"
@@ -1218,6 +1269,8 @@ class ReportPage(QWidget):
         self.language = language
         self.retranslate_ui()
         self._populate_filters()
+        self._search_cache.clear()
+        self.spatial_context.set_language(language)
         if self.artifact is not None:
             self._refresh_table()
         if self.explanation is None:
@@ -1245,6 +1298,7 @@ class ReportPage(QWidget):
         )
         self.review_tabs.setTabText(0, text(self.language, "detail_title"))
         self.review_tabs.setTabText(1, text(self.language, "ai_output_title"))
+        self.review_tabs.setTabText(2, text(self.language, "spatial_context_title"))
         self.export_json.setText(text(self.language, "export_json"))
         self.export_html.setText(text(self.language, "export_html"))
         self.open_folder.setText(text(self.language, "open_folder"))
@@ -1829,7 +1883,12 @@ class MainWindow(QMainWindow):
         explanation: dict[str, Any] | None,
     ) -> None:
         self.report_page.load_report(
-            artifact, artifact_path, html_path, explanation
+            artifact,
+            artifact_path,
+            html_path,
+            explanation,
+            source_ifc=self.file_page.source_zone.path,
+            revised_ifc=self.file_page.revised_zone.path,
         )
         self.stack.setCurrentWidget(self.report_page)
         self.progress_panel.hide()
@@ -1881,6 +1940,7 @@ class MainWindow(QMainWindow):
             )
             event.ignore()
             return
+        self.report_page.spatial_context.close()
         super().closeEvent(event)
 
     def showEvent(self, event: QShowEvent) -> None:

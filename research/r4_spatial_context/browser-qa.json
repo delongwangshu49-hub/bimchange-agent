@@ -1,0 +1,42 @@
+{
+  "qa_version": "r4-local-spatial-context-browser-qa-0.1.0",
+  "date": "2026-08-25",
+  "browser": "Codex in-app Chromium browser",
+  "origin": "http://127.0.0.1:8765",
+  "viewport_pixels": [1380, 1080],
+  "external_resources_observed": 0,
+  "console_warnings": 0,
+  "console_errors": 0,
+  "scenes": [
+    {
+      "change_id": "r4-change-deleted-wall",
+      "target_global_id": "2E4uGrGMXJzgENQr_VGwy4",
+      "selected_ifc_role": "source",
+      "target_count": 1,
+      "context_count": 2,
+      "highlight_colour": "#D84A3A",
+      "rendered": true
+    },
+    {
+      "change_id": "r4-change-added-beam",
+      "target_global_id": "3WOi9vgBbN$BLkWrr3NeFb",
+      "selected_ifc_role": "revised",
+      "target_count": 1,
+      "context_count": 2,
+      "highlight_colour": "#2E9D62",
+      "rendered": true
+    },
+    {
+      "change_id": "r4-change-modified-column",
+      "target_global_id": "1rWRgK515L1Q1DmQQ$thk0",
+      "selected_ifc_role": "revised",
+      "target_count": 1,
+      "context_count": 1,
+      "highlight_colour": "#E39B2E",
+      "rendered": true
+    }
+  ],
+  "result": "PASSED",
+  "stable_product_claim": "NOT_PERMITTED"
+}
+

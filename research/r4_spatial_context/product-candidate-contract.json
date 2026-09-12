@@ -1,0 +1,59 @@
+{
+  "contract_version": "r4-local-spatial-product-candidate-0.1.0",
+  "status": "FROZEN_FOR_ISOLATED_PRODUCT_CANDIDATE",
+  "stable_r3_artifact_schema": "0.4.0",
+  "fact_source": "validated_change_record",
+  "row_mapping": {
+    "key": "global_id",
+    "row_index_is_authoritative": false,
+    "target_cardinality": 1,
+    "deleted_ifc_role": "source",
+    "added_ifc_role": "revised",
+    "property_modified_ifc_role": "revised",
+    "geometry_modified_ifc_role": "revised",
+    "relationship_modified_ifc_role": "revised"
+  },
+  "context": {
+    "relationship": "direct_IfcRelContainedInSpatialStructure",
+    "same_storey_only": true,
+    "maximum_distance_m": 6.0,
+    "maximum_neighbours": 2,
+    "exclude_all_changed_targets": true,
+    "selection_order": ["distance_m", "global_id"]
+  },
+  "viewer": {
+    "entrypoint": "embedded_local_threejs",
+    "uploads": false,
+    "cdn": false,
+    "external_navigation": false,
+    "network_allowlist": "loopback_ephemeral_server_only",
+    "profile": "off_the_record",
+    "selected_row_highlight": true
+  },
+  "failure_codes": [
+    "target_global_id_missing",
+    "target_global_id_duplicate",
+    "target_absent_from_selected_revision",
+    "target_geometry_unavailable",
+    "direct_storey_unavailable",
+    "context_conversion_failed",
+    "scene_hash_mismatch",
+    "viewer_dependency_unavailable"
+  ],
+  "failure_behaviour": {
+    "show_scene": false,
+    "preserve_deterministic_report": true,
+    "show_local_error": true,
+    "infer_spatial_context": false
+  },
+  "product_boundary": {
+    "exact_ifc4_only": true,
+    "general_bim_viewer": false,
+    "general_geometry_difference": false,
+    "professional_spatial_judgement": false,
+    "ifc2x3": "NOT_PERMITTED",
+    "stable_release": "NOT_PERMITTED_LICENSE_BUNDLE_INCOMPLETE",
+    "private_candidate": "PASSED",
+    "public_distribution": "BLOCKED"
+  }
+}

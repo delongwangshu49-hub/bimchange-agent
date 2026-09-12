@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "status": "LOCAL_PREPARATION_NOT_FOR_DISTRIBUTION",
+  "source_upload_authorized": true,
+  "source_upload_scope": "Reviewed source, documentation and synthetic public images; no validation binary assets or stable Release",
+  "exact_binary_license_inventory_reviewed": false,
+  "corresponding_source_materials_ready": false,
+  "final_binary_smoke_passed": false,
+  "isolated_install_upgrade_uninstall_passed": false,
+  "public_upload_authorized": false
+}

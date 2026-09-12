@@ -1,68 +1,61 @@
-# Windows installer development / Windows 安装包开发
+# Windows packaging / Windows 打包
 
-The public `v0.2.0-preview.1` remains a historical portable ZIP. v0.5.0 was the first release produced through the per-user installer path described here; v0.9.0 is the current stable release.
+Version 1.0.0 is prepared locally. v0.9.0 remains the previously published stable release; v0.5.0 introduced the per-user installer, and v0.2.0-preview.1 remains a historical portable ZIP.
 
-公开的 `v0.2.0-preview.1` 作为历史便携 ZIP 保留。v0.5.0 是首个使用本文当前用户安装路径生成的发布版本；v0.9.0 是当前稳定版。
+1.0.0 正在本地准备；此前已公开稳定版仍为 v0.9.0。v0.5.0 引入当前用户安装器，v0.2.0-preview.1 保留为历史便携 ZIP。
 
-## Packaging shape / 封装结构
+## Identity / 标识
 
-1. `scripts/build_windows_portable.ps1` builds the allowlisted PyInstaller `onedir` application and its portable ZIP.
-2. `scripts/build_windows_installer.ps1` compiles that exact directory with Inno Setup 7.
-3. `scripts/smoke_test_windows_installer.ps1` silently installs to an isolated directory, starts the application without opening any IFC, then silently uninstalls it.
+Application and Python package: `1.0.0`. Windows file/product resource: `1.0.0 / 1.0.0.0`. The stable AppId remains `B90303A8-681C-4D53-A53D-18AA7B742C4E`, separate from the historical R4 private candidate. Runtime/installer/shortcuts retain the existing product icon and animated branding.
 
-1. `scripts/build_windows_portable.ps1` 从显式白名单构建 PyInstaller `onedir` 程序与便携 ZIP。
-2. `scripts/build_windows_installer.ps1` 使用 Inno Setup 7 编译完全相同的目录。
-3. `scripts/smoke_test_windows_installer.ps1` 静默安装到隔离目录，不打开任何 IFC 即启动程序，随后静默卸载。
+应用与 Python 包为 `1.0.0`，Windows 版本资源为 `1.0.0 / 1.0.0.0`。稳定 AppId 保持不变，与历史 R4 私有候选版分离；运行时、安装器与快捷方式保留既有图标及动态品牌资源。
 
-The installer is per-user by default under `%LOCALAPPDATA%\Programs\BIMChange-Agent`, creates a Start Menu shortcut, offers an unchecked desktop-shortcut task, supports Simplified Chinese and English, registers an uninstaller, and does not require administrator rights unless the user deliberately changes the install scope.
+The installer defaults to the current user under LocalAppData, with English/Chinese pages, Start Menu entry, optional desktop shortcut and an uninstaller. Compilation does not authorize installation or replacement of the user's existing copy.
 
-The PyInstaller executable and Inno Setup package both embed `packaging/windows/BIMChange-Agent.ico`. The runtime also assigns the matching PNG and a stable Windows AppUserModelID, so the window, taskbar, desktop shortcut, Start Menu entry, setup, and uninstall entry use the product identity consistently.
+默认在当前用户 LocalAppData 下安装，提供中英页面、开始菜单、可选桌面快捷方式和卸载器。编译不等于授权安装或替换用户在用软件。
 
-安装器默认按当前用户安装到 `%LOCALAPPDATA%\Programs\BIMChange-Agent`，创建开始菜单快捷方式，可选创建桌面快捷方式，支持简体中文与英文，注册卸载程序；除非用户主动改变安装范围，否则不需要管理员权限。
+## Local validation build / 本地验证构建
 
-PyInstaller EXE 与 Inno Setup 安装包均嵌入 `packaging/windows/BIMChange-Agent.ico`；运行时还设置匹配的 PNG 和稳定 Windows AppUserModelID，使窗口、任务栏、桌面快捷方式、开始菜单、安装器与卸载项保持统一产品标识。
+Use PowerShell 7 and 64-bit Python 3.13. Choose new output directories; existing packages are never overwritten.
 
-从 0.5.0 起，开始菜单与桌面快捷方式显式引用安装目录中的版本化独立 ICO，而不是只依赖 EXE 图标。安装升级时会先移除同名旧快捷方式再重建，以降低 Windows 图标缓存继续显示旧图案的概率。0.9.0 的 EXE 与安装器均写入对应 Windows 版本资源。
-
-## Build / 构建
-
-Use a clean output directory and the intended product version until a release is explicitly authorized:
-
-在明确授权发布之前，请使用空输出目录和明确的产品版本号：
+使用 PowerShell 7 与 64 位 Python 3.13，选择新输出目录，不覆盖现有包。
 
 ```powershell
 .\scripts\build_windows_portable.ps1 `
-  -OutputRoot .\artifacts\product-dev `
-  -PackageVersion 0.9.0
+  -PythonExecutable .\.venv\Scripts\python.exe `
+  -OutputRoot .\artifacts\validation-1.0.0
 
 .\scripts\build_windows_installer.ps1 `
-  -PortableDirectory .\artifacts\product-dev\BIMChange-Agent-0.9.0-win-x64 `
-  -OutputRoot .\artifacts\product-dev `
-  -PackageVersion 0.9.0 `
-  -FileVersion 0.9.0.0
+  -PythonExecutable .\.venv\Scripts\python.exe `
+  -PortableDirectory .\artifacts\validation-1.0.0\BIMChange-Agent-1.0.0-win-x64-NOT-FOR-DISTRIBUTION `
+  -OutputRoot .\artifacts\installer-validation-1.0.0
 ```
 
-The installer build emits an EXE and SHA-256 sidecar. The source directory must already contain `BIMChange-Agent.exe`; existing outputs are rejected instead of overwritten.
+The portable builder uses an isolated environment and explicit source copy, pins dependencies, includes local WebEngine/viewer assets, audits known host-tool DLL contamination, omits generated IfcOpenShell parser fixtures and unused DevTools resource packs, and retains dynamic libraries. Budgets: unpacked ≤600 MiB, ZIP ≤350 MiB, installer ≤250 MiB. These checks do not imply a complete dependency-license audit.
 
-安装器构建会输出 EXE 与 SHA-256 校验文件。输入目录必须已包含 `BIMChange-Agent.exe`；若输出已存在，脚本会拒绝覆盖。
+便携构建使用隔离环境和显式源码复制，固定依赖，包含本地 WebEngine/查看器资源，审计已知宿主工具 DLL 混入，移除生成包中的 IfcOpenShell 解析测试样本及未用 DevTools 资源包，保留动态库。体积上限：解包 600 MiB、ZIP 350 MiB、安装器 250 MiB；这些检查不等于完整依赖许可审计。
 
-## Smoke test / 烟雾验证
+Both builders default to `NOT-FOR-DISTRIBUTION` names. The installer rejects an EXE with the wrong product version. `-PublicRelease` runs `scripts/verify_release.py --public` and fails while any gate is unsatisfied; do not edit gate values without matching evidence or rename validation outputs.
 
-```powershell
-.\scripts\smoke_test_windows_installer.ps1 `
-  -InstallerPath .\artifacts\product-dev\BIMChange-Agent-0.9.0-win-x64-setup.exe
-```
+两种构建默认使用禁止分发名称。安装器拒绝错误版本的 EXE。`-PublicRelease` 检查公开条件，任一条件未通过则停止；不得无证据修改条件值或改名发布验证产物。
 
-This check exercises only installation, process startup, and uninstall. It does not open an IFC, call an AI provider, assess model output quality, scan for malware, or prove compatibility on another Windows machine.
+## Required acceptance / 必需验收
 
-该检查只覆盖安装、进程启动和卸载；不打开 IFC，不调用 AI 服务商，不评估模型输出质量，不替代恶意软件扫描，也不证明其他 Windows 机器上的兼容性。
+1. Run offline unit, R3/R4 and native WebEngine suites. / 运行离线单测、R3/R4 与原生三维测试。
+2. Run `BIMChange-Agent.exe --smoke-r4 SOURCE REVISED REPORT NEW_OUTPUT` against the final package, using a newly generated public synthetic pair. This verifies actual rendering, selection/cache, black grid, idle behavior and cleanup. / 用公开合成对验证最终包的实际渲染、选择/缓存、黑底网格、静止行为与清理。
+3. After explicit approval and confirming installed-product state, use an isolated Windows environment to test install, launch, upgrade and uninstall. The stable AppId can affect an existing installation even if the destination folder differs. / 获明确授权并检查安装状态后，在隔离 Windows 环境验证安装、启动、升级、卸载；相同稳定 AppId 即使目录不同也可能影响在用安装。
+4. Audit exact dependency licenses/corresponding sources, regenerate checksums for final assets, then obtain publication authorization. / 审计精确依赖许可/对应源码、生成最终校验值，再取得发布授权。
 
-## Release boundary / 发布边界
+Prior smoke results are not proof for a rebuilt package. Local validation and native 3D success do not prove another machine's compatibility or engineering correctness.
 
-Development installers are unsigned. Windows may show an unknown-publisher warning. Code signing, public Release upload, auto-update, upgrade migration, and broader machine compatibility require separate release authorization and validation.
+旧包烟雾结果不能证明重建包通过；本机验证和原生三维成功不证明其他机器兼容性或工程正确性。
 
-开发安装包未签名，Windows 可能显示未知发布者警告。代码签名、公开 Release 上传、自动更新、升级迁移与更广机器兼容性均需要独立的发布授权和验证。
+## Distribution boundary / 分发边界
 
-The locally used Inno Setup 7.1.0 compiler identifies this installation as non-commercial. Any commercial distribution must first obtain the applicable Inno Setup commercial licence or deliberately migrate to another installer tool after a licence review.
+See the [release checklist](releases/v1.0.0-release-checklist.md). No tag, commit, push or Release upload occurs in these build scripts. Unsigned EXEs may trigger SmartScreen. Exact licensing materials remain a blocking prerequisite, not something solved by changing a label.
 
-本机使用的 Inno Setup 7.1.0 编译器将当前安装标识为非商业用途。任何商业分发都必须先取得适用的 Inno Setup 商业许可，或在许可证复核后明确迁移到其他安装器工具。
+详见[发布清单](releases/v1.0.0-release-checklist.md)。构建脚本不执行标签、提交、推送或 Release 上传。未签名 EXE 可能触发 SmartScreen。精确许可材料是阻断条件，不是更换标签即可解决的问题。
+
+The local Inno Setup installation previously identified itself as non-commercial. Commercial distribution would require a separately verified applicable license or a reviewed alternative; this task neither purchases one nor changes distribution policy.
+
+本机 Inno Setup 安装此前标识为非商业用途。商业分发须另行核实适用许可或经复核选择替代工具，本任务不购买许可、不改变分发政策。

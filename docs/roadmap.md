@@ -6,6 +6,10 @@ The roadmap is evidence-driven and intentionally leaves room for adjustment. It 
 
 ## Current position / 当前定位
 
+**1.0.0 preparation update:** the local product now combines the unchanged R3 contract with actual-mesh local 3D, black reference grid and background/cache/on-demand rendering improvements. Public binary distribution still awaits the [release gates](releases/v1.0.0-release-checklist.md). The v0.9.0 description below is retained as historical context, not the current local feature list.
+
+**1.0.0 准备更新：**本地产品已整合不变的 R3 契约、构件原形局部三维、黑底参考网格和后台/缓存/按需渲染优化。公开二进制分发仍待[发布条件](releases/v1.0.0-release-checklist.md)闭环。下述 v0.9.0 内容保留为历史背景，不是当前本地功能清单。
+
 The research release is complete and reproducible. The v0.9.0 stable release brings the complete bounded R3 slice into the default Windows workflow: existing addition, deletion, and property-value semantics; verified placement-only translation; controlled rectangular-extrusion dimensions; one topology-preserving tessellated shape subtype; and four direct relationship families. Desktop review, export, and the optional AI explanation boundary remain in place.
 
 研究发布闭环已经完整可复现。v0.9.0 稳定版把完整有界 R3 子集纳入默认 Windows 流程：既有新增、删除与属性值语义，经验证的纯放置平移，受控矩形拉伸尺寸，一种拓扑不变网格形状子类型，以及四类直接关系变化。桌面审阅、导出与可选 AI 解读边界继续保留。
@@ -44,6 +48,10 @@ The initial directions are intentionally connected to product decisions:
 这些方向分别对应：规范化变更如何回链到确定性证据与人工审阅动作；可选 AI 解读是否忠实于已提供 Change Records、避免杜撰并表达不确定性；报告结构、筛选和空间上下文是否能减少定位与理解变更的时间。详见 [research directions](research-directions.md)。
 
 ## Spatial change context / 变化位置的空间化呈现
+
+The initial plan below is historical. Its bounded local-view slice is implemented for 1.0.0; full-model viewing, overlays and general geometry visual diffs remain outside support. See [local 3D review](local-3d-review.md).
+
+以下初始计划为历史记录，其有界局部查看切片已在 1.0.0 实现；全模型、叠模与通用几何可视差分仍不在支持内，见[局部三维审阅](local-3d-review.md)。
 
 Three-dimensional work is feasible but is a secondary exploration, not the next required product gate. Its target is not a full-building BIM viewer. The useful first outcome is a local, bounded visual context:
 

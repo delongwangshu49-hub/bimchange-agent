@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'">
+  <title>BIMChange-Agent R4 local spatial context proof</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <aside>
+      <p class="eyebrow">R4 RESEARCH PROOF</p>
+      <h1>Local spatial context</h1>
+      <p class="boundary">Synthetic IFC4 only · deterministic Change Records remain the fact source.</p>
+      <div id="change-list" aria-label="Synthetic change records"></div>
+      <dl id="details"></dl>
+    </aside>
+    <section class="stage" aria-label="Local 3D scene">
+      <canvas id="viewer"></canvas>
+      <div id="status" role="status">Loading local proof…</div>
+      <div class="legend"><span class="target-dot"></span> target <span class="context-dot"></span> bounded context</div>
+    </section>
+  </main>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

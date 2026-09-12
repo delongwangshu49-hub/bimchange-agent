@@ -1,16 +1,25 @@
 param(
     [string]$OutputRoot = "",
-    [string]$PackageVersion = "0.9.0"
+    [string]$PackageVersion = "1.0.0",
+    [string]$PythonExecutable = "python",
+    [string]$PreparedEnvironment = "",
+    [switch]$PublicRelease
 )
 
 $ErrorActionPreference = "Stop"
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
-$packageName = "BIMChange-Agent-$packageVersion-win-x64"
+if ($PackageVersion -ne "1.0.0") { throw "This build definition is frozen for 1.0.0." }
+if ($PublicRelease) {
+    & $PythonExecutable (Join-Path $repositoryRoot 'scripts\verify_release.py') --public
+    if ($LASTEXITCODE -ne 0) { throw 'Public release gates are not satisfied.' }
+}
+$suffix = if ($PublicRelease) { "" } else { "-NOT-FOR-DISTRIBUTION" }
+$packageName = "BIMChange-Agent-$packageVersion-win-x64$suffix"
 
 if ($env:OS -ne "Windows_NT") {
     throw "This packaging script supports Windows only."
 }
-$pythonArchitecture = (python -c "import platform; print(platform.architecture()[0])").Trim()
+$pythonArchitecture = (& $PythonExecutable -c "import platform; print(platform.architecture()[0])").Trim()
 if ($LASTEXITCODE -ne 0 -or $pythonArchitecture -ne "64bit") {
     throw "A working 64-bit Python is required to build the Windows x64 package."
 }
@@ -23,12 +32,20 @@ New-Item -ItemType Directory -Force -Path $resolvedOutputParent | Out-Null
 $portableDirectory = Join-Path $resolvedOutputParent $packageName
 $zipPath = Join-Path $resolvedOutputParent ($packageName + ".zip")
 $checksumPath = $zipPath + ".sha256.txt"
+$maximumUnpackedBytes = 600MB
+$maximumZipBytes = 350MB
 if ((Test-Path -LiteralPath $portableDirectory) -or (Test-Path -LiteralPath $zipPath)) {
     throw "Output already exists. Choose an empty output directory: $resolvedOutputParent"
 }
 
-$buildRoot = Join-Path $env:TEMP ("bimchange-desktop-build-" + [guid]::NewGuid().ToString("N"))
+$buildRoot = Join-Path $env:TEMP ("bimchange-1.0.0-validation-build-" + [guid]::NewGuid().ToString("N"))
 $buildEnvironment = Join-Path $buildRoot "venv"
+if ($PreparedEnvironment) {
+    $buildEnvironment = [IO.Path]::GetFullPath($PreparedEnvironment)
+    if (-not (Test-Path -LiteralPath (Join-Path $buildEnvironment 'Scripts\python.exe'))) {
+        throw 'PreparedEnvironment must be an existing isolated build virtual environment.'
+    }
+}
 $sourceRoot = Join-Path $buildRoot "source"
 $distRoot = Join-Path $buildRoot "dist"
 $workRoot = Join-Path $buildRoot "work"
@@ -44,12 +61,25 @@ Copy-Item -LiteralPath (Join-Path $repositoryRoot "LICENSE") -Destination $sourc
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "constraints-preview.txt") -Destination $sourceRoot
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "src") -Destination $sourceRoot -Recurse
 
-python -m venv $buildEnvironment
 $buildPython = Join-Path $buildEnvironment "Scripts\python.exe"
-& $buildPython -m pip install --upgrade pip
-if ($LASTEXITCODE -ne 0) { throw "Failed to prepare pip in the isolated build environment." }
-& $buildPython -m pip install -c (Join-Path $sourceRoot "constraints-preview.txt") "${sourceRoot}[desktop-build]"
+if (-not $PreparedEnvironment) {
+    & $PythonExecutable -m venv $buildEnvironment
+    & $buildPython -m pip install --upgrade pip
+    if ($LASTEXITCODE -ne 0) { throw "Failed to prepare pip in the isolated build environment." }
+    & $buildPython -m pip install -c (Join-Path $sourceRoot "constraints-preview.txt") "${sourceRoot}[desktop-build]"
+} else {
+    & $buildPython -m pip install --no-deps --force-reinstall $sourceRoot
+}
 if ($LASTEXITCODE -ne 0) { throw "Failed to install desktop build dependencies." }
+& $buildPython -m pip check
+if ($LASTEXITCODE -ne 0) { throw "Build dependency consistency check failed." }
+# DLL discovery must not pick up optional ICU/OpenSSL binaries from unrelated
+# host tools such as Poppler. This changes only the current build environment.
+$previousBuildPath = $env:PATH
+$basePython = (& $buildPython -c "import sys; print(sys.base_prefix)").Trim()
+$env:PATH = @((Join-Path $buildEnvironment 'Scripts'), $basePython,
+    (Join-Path $env:SystemRoot 'System32'), $env:SystemRoot) -join ';'
+try {
 & $buildPython -m PyInstaller `
     --noconfirm `
     --clean `
@@ -64,17 +94,62 @@ if ($LASTEXITCODE -ne 0) { throw "Failed to install desktop build dependencies."
     --collect-all ifcopenshell `
     --collect-data bimchange_agent `
     --hidden-import ifcdiff `
+    --hidden-import bimchange_agent.r4_webengine_runtime `
+    --hidden-import PySide6.QtWebEngineCore `
+    --hidden-import PySide6.QtWebEngineWidgets `
     (Join-Path $repositoryRoot "scripts\desktop_entry.py")
 if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed." }
+} finally {
+    $env:PATH = $previousBuildPath
+}
 
 $builtApplication = Join-Path $distRoot "BIMChange-Agent"
 if (-not (Test-Path -LiteralPath (Join-Path $builtApplication "BIMChange-Agent.exe"))) {
     throw "PyInstaller did not create the expected executable."
 }
+& $buildPython (Join-Path $repositoryRoot 'scripts\audit_r4_build_dependencies.py') `
+    (Join-Path $workRoot 'BIMChange-Agent\Analysis-00.toc') $builtApplication
+if ($LASTEXITCODE -ne 0) { throw 'Generated DLL provenance audit failed.' }
+
+# `--collect-all ifcopenshell` includes parser test fixtures that are not used by
+# the desktop product. Remove only that exact generated directory so packaged
+# `.ifc` resources are limited to IfcOpenShell's runtime Pset schemas.
+$bundledFixtureDirectory = Join-Path $builtApplication "_internal\ifcopenshell\simple_spf\fixtures"
+if (Test-Path -LiteralPath $bundledFixtureDirectory -PathType Container) {
+    $resolvedBuiltApplication = [System.IO.Path]::GetFullPath($builtApplication)
+    $resolvedFixtureDirectory = [System.IO.Path]::GetFullPath($bundledFixtureDirectory)
+    if (-not $resolvedFixtureDirectory.StartsWith(
+        $resolvedBuiltApplication + [System.IO.Path]::DirectorySeparatorChar,
+        [System.StringComparison]::OrdinalIgnoreCase
+    )) {
+        throw "Bundled fixture directory escaped the generated application root."
+    }
+    Remove-Item -LiteralPath $resolvedFixtureDirectory -Recurse -Force
+}
 
 Copy-Item -LiteralPath $builtApplication -Destination $portableDirectory -Recurse
-Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\README-START-HERE.txt") -Destination $portableDirectory
+
+# Chromium's DevTools front-end payload is not used by the locked-down R4
+# viewer (remote debugging is never enabled). PyInstaller collects both the
+# release and debug variants by default, adding more than 80 MiB to the
+# unpacked candidate. Keep the runtime resource packs, but omit DevTools-only
+# packs and verify the resulting package with the native WebEngine smoke gate.
+$webEngineResources = Join-Path $portableDirectory "_internal\PySide6\resources"
+foreach ($devToolsPack in @(
+    "qtwebengine_devtools_resources.pak",
+    "qtwebengine_devtools_resources.debug.pak"
+)) {
+    $devToolsPath = Join-Path $webEngineResources $devToolsPack
+    if (Test-Path -LiteralPath $devToolsPath) {
+        Remove-Item -LiteralPath $devToolsPath -Force
+    }
+}
+
+Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\README-START-HERE.txt") -Destination (Join-Path $portableDirectory "README-START-HERE.txt")
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "LICENSE") -Destination $portableDirectory
+if (-not $PublicRelease) {
+    Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\1.0.0-NOT-FOR-DISTRIBUTION.txt") -Destination $portableDirectory
+}
 $licenseOutput = Join-Path $portableDirectory "licenses"
 New-Item -ItemType Directory -Force -Path $licenseOutput | Out-Null
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\THIRD-PARTY-NOTICES.txt") -Destination $portableDirectory
@@ -86,6 +161,7 @@ if (-not (Test-Path -LiteralPath $pythonLicense)) {
     throw "Python runtime license was not found: $pythonLicense"
 }
 Copy-Item -LiteralPath $pythonLicense -Destination (Join-Path $licenseOutput "PYTHON-LICENSE.txt")
+Copy-Item -LiteralPath (Join-Path $repositoryRoot "src\bimchange_agent\resources\r4_viewer\vendor\THREE-LICENSE.txt") -Destination (Join-Path $licenseOutput "THREE-MIT.txt")
 $metadataOutput = Join-Path $licenseOutput "python-package-metadata"
 New-Item -ItemType Directory -Force -Path $metadataOutput | Out-Null
 $sitePackages = Join-Path $buildEnvironment "Lib\site-packages"
@@ -96,7 +172,7 @@ $runtimeDistributionPatterns = @(
     "shapely-*.dist-info", "isodate-*.dist-info", "python_dateutil-*.dist-info",
     "six-*.dist-info", "lark-*.dist-info", "typing_extensions-*.dist-info",
     "deepdiff-*.dist-info", "cachebox-*.dist-info", "orderly_set-*.dist-info",
-    "pyside6_essentials-*.dist-info", "shiboken6-*.dist-info"
+    "pyside6_essentials-*.dist-info", "pyside6_addons-*.dist-info", "shiboken6-*.dist-info"
 )
 foreach ($pattern in $runtimeDistributionPatterns) {
     foreach ($distribution in Get-ChildItem -LiteralPath $sitePackages -Directory -Filter $pattern) {
@@ -112,16 +188,25 @@ foreach ($pattern in $runtimeDistributionPatterns) {
         }
     }
 }
+$unpackedBytes = (Get-ChildItem -LiteralPath $portableDirectory -File -Recurse | Measure-Object -Property Length -Sum).Sum
+if ($unpackedBytes -gt $maximumUnpackedBytes) {
+    throw "1.0.0 build exceeds the 600 MiB unpacked budget: $unpackedBytes bytes."
+}
 Compress-Archive -LiteralPath $portableDirectory -DestinationPath $zipPath -CompressionLevel Optimal
+$zipBytes = (Get-Item -LiteralPath $zipPath).Length
+if ($zipBytes -gt $maximumZipBytes) {
+    throw "1.0.0 build exceeds the 350 MiB portable ZIP budget: $zipBytes bytes."
+}
 $hash = (Get-FileHash -LiteralPath $zipPath -Algorithm SHA256).Hash.ToLowerInvariant()
 Set-Content -LiteralPath $checksumPath -Value "$hash  $($packageName).zip" -Encoding utf8NoBOM
 
 Write-Output ([ordered]@{
     status = "PASS"
+    distribution_status = $(if ($PublicRelease) { "PUBLIC_GATES_PASSED" } else { "NOT_FOR_DISTRIBUTION" })
     portable_directory = $portableDirectory
     zip = $zipPath
     sha256 = $hash
-    zip_bytes = (Get-Item -LiteralPath $zipPath).Length
-    unpacked_bytes = (Get-ChildItem -LiteralPath $portableDirectory -File -Recurse | Measure-Object -Property Length -Sum).Sum
+    zip_bytes = $zipBytes
+    unpacked_bytes = $unpackedBytes
     build_root = $buildRoot
 } | ConvertTo-Json)

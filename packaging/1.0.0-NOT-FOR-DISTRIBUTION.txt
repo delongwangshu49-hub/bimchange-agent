@@ -1,0 +1,12 @@
+BIMChange-Agent 1.0.0 — LOCAL RELEASE VALIDATION ONLY
+本地发布验证包，尚未允许公开分发
+
+The application version is 1.0.0. This marker describes distribution status,
+not another feature version. Exact Qt/Chromium notices, corresponding-source
+materials and final installer acceptance must be completed before release.
+Do not rename this package into a public asset or remove this marker as a
+substitute for the release gates. No GitHub upload has been authorized.
+
+应用版本为 1.0.0；此标记描述分发状态，不是另一个功能版本。
+精确匹配的 Qt/Chromium 声明、对应源码材料及最终安装验收仍须闭环。
+不得通过改名或删除标记绕过发布条件。GitHub 上传尚未获授权。

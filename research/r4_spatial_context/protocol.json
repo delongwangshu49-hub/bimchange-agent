@@ -1,0 +1,70 @@
+{
+  "protocol_version": "r4-local-spatial-context-0.1.0",
+  "status": "frozen",
+  "frozen_at": "2026-08-25T00:00:00+08:00",
+  "input_boundary": {
+    "schema": "IFC4",
+    "data": "program_generated_only",
+    "external_project_files": false,
+    "model_or_api_calls": 0
+  },
+  "scene_selection": {
+    "deleted": "source",
+    "added": "revised",
+    "property_modified": "revised",
+    "geometry_modified": "revised",
+    "relationship_modified": "revised"
+  },
+  "context_policy": {
+    "relationship": "direct_IfcRelContainedInSpatialStructure",
+    "same_storey_only": true,
+    "distance_measure": "world_aabb_centre_euclidean_m",
+    "maximum_distance_m": 6.0,
+    "maximum_neighbours": 2,
+    "exclude_all_changed_targets": true,
+    "sort": ["distance_m", "global_id"]
+  },
+  "mapping": {
+    "format": "glb_2_0",
+    "authoritative_field": "node.extras.global_id",
+    "target_cardinality": 1,
+    "scene_global_ids_unique": true,
+    "node_name_authoritative": false
+  },
+  "viewer": {
+    "renderer": "three.js",
+    "network": false,
+    "cdn": false,
+    "uploads": false,
+    "qt_webengine_embedding": "NOT_PERMITTED_UNTIL_RESEARCH_GATE_PASSES"
+  },
+  "colours": {
+    "deleted": "#D84A3A",
+    "added": "#2E9D62",
+    "property_modified": "#E39B2E",
+    "context": "#8B949E",
+    "background": "#11161C"
+  },
+  "budgets": {
+    "maximum_scene_elements": 3,
+    "maximum_scene_glb_bytes": 1048576,
+    "maximum_complete_bundle_bytes": 10485760,
+    "maximum_clean_build_seconds": 10.0,
+    "maximum_first_local_render_seconds": 5.0
+  },
+  "repeatability_runs": 2,
+  "tamper_cases": [
+    "input_hash",
+    "scene_hash",
+    "target_global_id",
+    "target_node_omission",
+    "target_node_duplication",
+    "selected_ifc_role",
+    "highlight_colour",
+    "absolute_path",
+    "external_url",
+    "glb_payload"
+  ],
+  "product_claim": "NOT_PERMITTED"
+}
+

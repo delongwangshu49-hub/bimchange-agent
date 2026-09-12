@@ -1,41 +1,77 @@
-BIMChange-Agent 0.9.0（Windows x64 稳定版）
-===================================
+BIMChange-Agent 1.0.0 — Windows x64 / 正式版
+=================================================
 
-开始使用
---------
-1. 将整个 ZIP 解压到一个普通文件夹；不要直接在压缩包内运行。
-2. 双击 BIMChange-Agent.exe。
-3. 在首页分别选择或拖入“旧版 IFC”和“新版 IFC”。
-4. 点击“开始分析”。完成后程序会自动进入报告页。
-5. 可在报告页导出 JSON 或 HTML，或打开本次报告文件夹。
-6. 如需 AI 解读，请在设置中选择服务商并仅在项目允许时启用；中文界面请求中文输出，英文界面请求英文输出。
+Distribution status / 分发状态
+-----------------------------
+If a NOT-FOR-DISTRIBUTION notice accompanies this directory, it is a local
+validation build only. Application version 1.0.0 does not itself authorize
+public redistribution. Follow the release checklist before sharing binaries.
+若本目录附带 NOT-FOR-DISTRIBUTION 声明，则仅为本地验证包。
+应用版本 1.0.0 本身不代表已获公开分发许可；分享二进制前须通过发布清单。
 
-当前边界
---------
-- 仅支持 Windows 10/11 x64 与精确 IFC4。
-- 每个文件不超过 50 MiB，每版最多 5,000 个 IfcElement。
-- 新旧模型较小一侧至少 50% 的 GlobalId 需重合。
-- 当前规范化新增、删除、属性值修改，以及受控纯放置平移、矩形拉伸参数尺寸、网格顶点形状和四类直接关系变化。
-- 拉伸尺寸仅限单一 Body `IfcExtrudedAreaSolid` + `IfcRectangleProfileDef`；网格形状仅限拓扑不变的单一 Body `IfcTriangulatedFaceSet`。
-- 关系变化仅限直接空间包含、聚合/分解、类型指派和直接材料关联。
-- 旋转、其他轮廓/实体、网格拓扑变化、洞口/投影、嵌套材料用法、无法重建结果及混合语义保持未支持；没有几何记录不等于几何未变化。
-- 当前不包含三维模型预览或 Revit 集成。
+Getting started / 开始使用
+--------------------------
+1. Extract the entire portable ZIP before running BIMChange-Agent.exe.
+   将便携 ZIP 完整解压后运行 BIMChange-Agent.exe。
+2. Select or drop the previous IFC and revised IFC, then start analysis.
+   选择或拖入旧版与新版 IFC，然后开始分析。
+3. Keep AI off for local-only comparison and 3D review.
+   保持 AI 关闭即可完全本地比较并查看三维。
+4. Filter records, inspect evidence, select Spatial context to locate the
+   actual colored mesh; use focus, fit context, orbit/pan/zoom and fading.
+   筛选记录、查看证据，在“局部三维”查看构件原形着色；
+   支持定位构件、查看周围、旋转/平移/缩放和周围淡化。
+5. Export JSON or standalone HTML when needed; HTML contains the report,
+   not the interactive 3D scene. Check project-derived data before sharing.
+   按需导出 JSON 或独立 HTML；HTML 为报告，不包含交互三维。
+   分享前检查项目派生数据。
 
-AI 设置与隐私
--------------
-- AI 默认关闭；本地确定性差分不需要 API Key。
-- 设置中心提供 DeepSeek、OpenAI、Anthropic 与 Google Gemini 的独立配置入口；实际可用性取决于用户账户、服务状态及相应配置。
-- API Key 仅保存在本次程序运行的内存中，不写入配置或报告。
-- 开启 AI 时，仅发送最多 200 条规范化 Change Records，不上传 IFC 文件或本地文件名。
-- Change Records 仍可能包含构件名、楼层与属性值；只有项目允许时才开启 AI。
-- AI 解释失败不会影响本地差分报告的生成。
-- AI 解读以自然语言摘要、简短理性分析和局限性呈现；它可能存在错误，不能替代原始 IFC、规范化记录与人工审阅。
-- 自动工作报告保存在本机 LocalAppData；只有点击导出时才写入用户选择的位置。
-- 导出的 JSON/HTML 可能含项目派生信息，请勿未经检查上传到公共平台。
+Support / 支持边界
+-------------------
+Exact IFC4; <=50 MiB per file; <=5,000 IfcElement per revision;
+>=50% shared GlobalIds on the smaller side.
+仅精确 IFC4；单文件 <=50 MiB；每版 <=5,000 个构件；
+较小一侧 GlobalId 重合率 >=50%。
 
-版本说明
---------
-这是 0.9.0 稳定版。其完整 R3 支持边界来自程序生成合成 IFC4、确定性重建、重复运行、篡改拒绝、桌面回归与 Windows 安装验收；仍不代表任意 IFC 支持、跨导出器兼容性或专业工程正确性。
-程序尚未进行代码签名，Windows SmartScreen 可能显示未知发布者提示；请只从本项目官方 GitHub Release 下载并核对 SHA-256。
-欢迎试用、提出问题和建议；反馈时请描述软件版本、Windows 版本、IFC Schema、文件大小与复现步骤，请勿公开上传敏感 IFC、API Key 或未经脱敏的报告。
-问题反馈：https://github.com/delongwangshu49-hub/bimchange-agent/issues
+Addition/deletion/property values, controlled translation, rectangular
+extrusion dimensions, topology-preserving tessellation, four direct
+relationship families. No arbitrary geometry-diff or IFC2X3 claim.
+新增/删除/属性值、受控平移、矩形拉伸尺寸、拓扑不变网格及四类直接关系；
+不承诺任意几何差分或 IFC2X3 支持。
+
+3D: one target plus at most two unchanged neighbors, same direct storey,
+within 6 m. Missing or ambiguous geometry/context is unavailable.
+Black XY grid is a visual reference, not building axes or an actual floor.
+三维：一个目标及同一直接楼层、6 米内最多两个未变化邻居。
+缺失或歧义几何/上下文会提示不可用。黑底 XY 网格是视觉参考，
+不是建筑轴网或实际楼板。不存在完整 BIM 查看器或 Revit 集成。
+
+AI and privacy / AI 与隐私
+--------------------------
+AI is optional, off by default: DeepSeek, OpenAI, Anthropic, Google Gemini.
+Enabled AI receives up to 200 normalized records plus counts; values may
+include project identifiers, storeys, properties and geometry coordinates.
+IFC/GLB files and input file names/paths are not uploaded.
+The API key goes to the provider for authentication, not into the model
+prompt or reports; it remains only in application session memory.
+AI errors do not invalidate the local deterministic report.
+AI 可选且默认关闭，支持四类服务商；开启后发送最多 200 条规范化记录
+及汇总，可能含项目标识、楼层、属性和坐标。不上传 IFC/GLB 和输入
+文件名/路径。API Key 用于服务商认证，不放入模型提示或报告，
+应用仅在当前会话内存保留。AI 失败不影响本地确定性报告。
+
+Working reports use LocalAppData. 3D uses temporary local meshes and a
+session-restricted loopback server. Normal close cleans its session;
+crashes may leave temporary files. Export only to the path you choose.
+工作报告保存在 LocalAppData；三维使用临时网格与会话受限回环服务。
+正常关闭清理会话，崩溃可能残留临时文件。导出写入用户所选路径。
+
+Unsigned builds may trigger SmartScreen. Download published builds only
+from the official project and verify SHA-256. Do not upload private IFC,
+keys or unredacted reports to public issues.
+未签名构建可能触发 SmartScreen。仅从官方项目下载公开构建并核对
+SHA-256；请勿公开上传私人 IFC、密钥或未经脱敏的报告。
+
+Project: https://github.com/delongwangshu49-hub/bimchange-agent
+Related project by the same author / 同作者相关项目:
+https://github.com/delongwangshu49-hub/ifc-clashtrace

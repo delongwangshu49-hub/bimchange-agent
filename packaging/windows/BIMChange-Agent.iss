@@ -5,10 +5,10 @@
   #error OutputDir must point to the installer artifact directory.
 #endif
 #ifndef AppVersion
-  #define AppVersion "0.9.0"
+  #define AppVersion "1.0.0"
 #endif
 #ifndef AppFileVersion
-  #define AppFileVersion "0.9.0.0"
+  #define AppFileVersion "1.0.0.0"
 #endif
 #ifndef OutputBaseName
   #define OutputBaseName "BIMChange-Agent-setup"

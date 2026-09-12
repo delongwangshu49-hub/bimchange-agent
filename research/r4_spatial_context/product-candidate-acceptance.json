@@ -1,0 +1,81 @@
+{
+  "acceptance_version": "r4-local-spatial-product-candidate-acceptance-0.1.0",
+  "date": "2026-08-25",
+  "status": "LOCAL_PRIVATE_PRODUCT_CANDIDATE_PASSED_PUBLIC_DISTRIBUTION_BLOCKED",
+  "stable_r3_artifact_schema": "0.4.0",
+  "standalone_research": {
+    "status": "STANDALONE_RESEARCH_GATE_PASSED",
+    "clean_builds": 2,
+    "byte_identical_files": 17,
+    "unique_target_resolution_rate": 1.0,
+    "tamper_rejected": 10,
+    "tamper_total": 10,
+    "browser_scenes_rendered": 3,
+    "external_resources_observed": 0,
+    "model_or_api_calls": 0
+  },
+  "source_regression": {
+    "passed": 50,
+    "skipped_opt_in_webengine": 2,
+    "seconds": 8.860,
+    "r4_research_unittests_passed": 2,
+    "r4_research_unittest_seconds": 0.486
+  },
+  "native_webengine": {
+    "passed": 2,
+    "failed": 0,
+    "seconds": 4.644,
+    "resources_from_packaged_candidate": true,
+    "devtools_resource_packs_present": false,
+    "profile_off_the_record": true,
+    "report_row_global_id_match": true,
+    "all_served_paths_tokenized": true,
+    "non_allowlisted_requests_blocked": true
+  },
+  "windows_portable": {
+    "distribution_status": "NOT_FOR_DISTRIBUTION",
+    "package_name": "BIMChange-Agent-0.10.0-r4-private-candidate-win-x64-NOT-FOR-DISTRIBUTION",
+    "main_window_launch": "PASSED",
+    "file_count": 3719,
+    "unpacked_bytes": 627954526,
+    "unpacked_budget_bytes": 629145600,
+    "zip_bytes": 254390115,
+    "zip_budget_bytes": 367001600,
+    "sha256": "14cb219ff42f3484ab516fbba9cb19054ef94e140809f5ef7ecc3acc60fc91f8",
+    "checksum_sidecar_matches": true,
+    "qt_webengine_process_present": true,
+    "qt_webengine_core_present": true,
+    "local_viewer_assets_present": true,
+    "not_for_distribution_marker_present": true,
+    "packaged_ifc_files": 3,
+    "workspace_path_hit_files": 0,
+    "user_identifier_hit_files": 0,
+    "broad_credential_regex_vendor_false_positives": 1,
+    "display_version": "0.10.0-r4-private-candidate",
+    "pe_file_version": "0.10.0.0"
+  },
+  "windows_installer": {
+    "distribution_status": "NOT_FOR_DISTRIBUTION",
+    "installer_name": "BIMChange-Agent-0.10.0-r4-private-candidate-win-x64-setup-NOT-FOR-DISTRIBUTION.exe",
+    "bytes": 162224759,
+    "budget_bytes": 262144000,
+    "sha256": "cf9f88599a395b3dd3a84f36633ae15162f11ecb2bea8995b3680ece134d732e",
+    "checksum_sidecar_matches": true,
+    "authenticode": "NotSigned",
+    "app_id": "7C651476-64A2-4EFA-B061-06C90A1F0724",
+    "stable_install_identity_isolated": true,
+    "installed_payload_files_verified": 3719,
+    "installed_payload_hashes_match": true,
+    "installed_executable_started": true,
+    "uninstall_removed_executable": true,
+    "workspace_path_hit_files": 0,
+    "user_identifier_hit_files": 0
+  },
+  "release_gate": {
+    "installer_built": true,
+    "installer_scope": "LOCAL_MANUAL_VALIDATION_ONLY",
+    "github_modified": false,
+    "public_distribution": "BLOCKED",
+    "reason": "Complete exact Qt WebEngine and Chromium third-party redistribution materials have not been collected and verified from the PySide6-Addons payload."
+  }
+}

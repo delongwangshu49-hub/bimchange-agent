@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bimchange-agent"
-version = "0.9.0"
+version = "1.0.0"
 description = "Evidence-grounded IFC revision analysis for bounded Windows workflows"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
@@ -22,9 +22,15 @@ bimchange = "bimchange_agent.cli:main"
 bimchange-desktop = "bimchange_agent.desktop_app:main"
 
 [project.optional-dependencies]
-desktop = ["PySide6-Essentials==6.11.1"]
+desktop = ["PySide6-Essentials==6.11.1", "PySide6-Addons==6.11.1"]
 desktop-build = [
   "PySide6-Essentials==6.11.1",
+  "PySide6-Addons==6.11.1",
+  "pyinstaller==6.22.0",
+]
+r4-desktop-candidate = [
+  "PySide6-Essentials==6.11.1",
+  "PySide6-Addons==6.11.1",
   "pyinstaller==6.22.0",
 ]
 
@@ -32,4 +38,18 @@ desktop-build = [
 where = ["src"]
 
 [tool.setuptools.package-data]
-bimchange_agent = ["resources/*.json", "resources/branding/*.png", "resources/branding/*.gif", "resources/branding/*.xpm"]
+bimchange_agent = [
+  "resources/*.json",
+  "resources/branding/*.png",
+  "resources/branding/*.gif",
+  "resources/branding/*.xpm",
+  "resources/r4_viewer/*.html",
+  "resources/r4_viewer/*.js",
+  "resources/r4_viewer/*.css",
+  "resources/r4_viewer/*.md",
+  "resources/r4_viewer/vendor/*.js",
+  "resources/r4_viewer/vendor/*.txt",
+  "resources/r4_viewer/vendor/addons/loaders/*.js",
+  "resources/r4_viewer/vendor/addons/controls/*.js",
+  "resources/r4_viewer/vendor/addons/utils/*.js",
+]

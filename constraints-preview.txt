@@ -3,6 +3,7 @@ ifcopenshell==0.8.5
 ifcdiff==0.8.5
 jsonschema==4.25.1
 PySide6-Essentials==6.11.1
+PySide6-Addons==6.11.1
 shiboken6==6.11.1
 numpy==2.5.1
 shapely==2.1.2

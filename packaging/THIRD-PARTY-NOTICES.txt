@@ -1,42 +1,59 @@
-BIMChange-Agent 0.2.0 Preview 1 — Third-party notices
-========================================================
+BIMChange-Agent 1.0.0 — Third-party notice index
+===============================================
 
-The original BIMChange-Agent code is distributed under the MIT License found
-in the package root. The Windows portable package also bundles dynamically
-loaded Python and native libraries. Their upstream licenses remain in force.
+STATUS: INCOMPLETE FOR PUBLIC BINARY REDISTRIBUTION.
+状态：公开二进制分发材料尚未完整闭环。
 
-Key bundled components
-----------------------
-- Python 3.13 runtime — Python Software Foundation License 2.0
+Original BIMChange-Agent code is MIT licensed (LICENSE). Dependencies are
+not relicensed by that file. This index is not an exhaustive license
+inventory, source offer, legal opinion, or permission to redistribute an
+arbitrary PyInstaller collection.
+
+Declared components / 声明组件
+------------------------------
+- Python runtime: PSF license and upstream third-party notices.
   https://www.python.org/downloads/
-- PySide6 Essentials / Shiboken6 6.11.1 and Qt 6 runtime libraries — used
-  under LGPL-3.0-only for this community preview
+- PySide6 Essentials, Addons, Shiboken6 6.11.1 / Qt 6.11.1:
+  module-specific licenses, not one blanket LGPL declaration.
   https://doc.qt.io/qtforpython-6/
-- IfcOpenShell / IfcDiff 0.8.5 — LGPL-3.0-or-later
+- Qt WebEngine: Qt-specific terms plus Chromium and its third-party terms.
+  https://doc.qt.io/qt-6.11/qtwebengine-licensing.html
+  Online 6.11 documentation can advance to 6.11.2; it is NOT proof of the
+  exact notices/source inventory for the bundled 6.11.1 binary.
+- Three.js r184: MIT; original notice retained beside the vendored files and
+  copied into validation packages as licenses/THREE-MIT.txt.
+- IfcOpenShell / IfcDiff 0.8.5: upstream LGPL terms and dependency notices.
   https://github.com/IfcOpenShell/IfcOpenShell
-- NumPy — BSD-3-Clause and additional bundled notices
-  https://numpy.org/
-- Shapely — BSD-3-Clause
-  https://shapely.readthedocs.io/
-- jsonschema, attrs, referencing, rpds-py, lark, deepdiff and supporting
-  Python packages — permissive MIT/BSD/Apache/PSF-family licenses as stated in
-  their package metadata and upstream repositories.
+- NumPy, Shapely and supporting Python packages: their package metadata,
+  license directories and any separately embedded native-library notices.
+  Metadata is a starting point, not proof of complete binary coverage.
 
-LGPL distribution note
-----------------------
-Qt, PySide6, Shiboken6, IfcOpenShell and IfcDiff are not relicensed under MIT.
-The portable package keeps their native libraries as separate dynamically
-loaded files in the application directory. Recipients may inspect and replace
-compatible library files for debugging or modification. BIMChange-Agent does
-not apply technical restrictions that prohibit such replacement.
+Distribution review / 分发复核
+------------------------------
+The generated application keeps native libraries as dynamically loaded
+files. No technical restriction is added to prevent compatible library
+replacement or debugging modifications. This fact alone does not discharge
+all notice, source and installation-information obligations.
 
-Copies of GPL-3.0 and LGPL-3.0 accompany the binary under licenses/. The
-Python runtime license accompanies the package as licenses/PYTHON-LICENSE.txt.
-Corresponding source is available from the upstream URLs above; the exact
-BIMChange-Agent source for this preview is available from its matching public
-Git tag:
-https://github.com/delongwangshu49-hub/bimchange-agent
+Generic GPL/LGPL texts, Python's runtime license and selected wheel metadata
+are copied into validation packages. Complete exact-version Qt/Chromium and
+native dependency attributions/corresponding-source materials must still be
+assembled and checked against the FINAL binary file list. Do not claim a
+matching public source tag exists before it is actually published.
 
-This notice is informational and does not replace the license texts or legal
-advice. If a bundled component's notice conflicts with this summary, the
-component's own license and upstream notice control.
+PyInstaller may collect unused QML/plugins, including components with
+different licensing. Qt Quick 3D is documented as GPLv3/commercial:
+https://doc.qt.io/qt-6.11/qtquick3d-index.html
+Its presence must not be swept into a blanket LGPL statement. Remove unused
+modules through a tested dependency-minimization build or establish the
+appropriate distribution route; do not silently change the project's MIT
+license or assume a commercial license has been purchased.
+
+See docs/releases/v1.0.0-release-checklist.md and
+packaging/release-1.0.0-gates.json. Validation builds remain
+NOT-FOR-DISTRIBUTION until all required reviews and tests pass.
+
+原创代码 MIT 不覆盖依赖。当前验证包中的许可证原文与元数据仅是材料基础；
+精确对应的 Qt/Chromium、原生依赖声明及对应源码仍须与最终二进制逐项核对。
+不得把未使用 QML/插件一概声明为 LGPL，也不得虚构商业许可、源码供应承诺
+或尚不存在的公开标签。未通过发布条件前保持禁止公开分发。

@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 import tempfile
 import unittest
+from copy import deepcopy
 from pathlib import Path
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
@@ -22,6 +23,7 @@ from bimchange_agent.desktop_app import (
     DesktopAISettings,
     DesktopPreferences,
     MainWindow,
+    ReportPage,
 )
 
 
@@ -90,6 +92,28 @@ class DesktopDesignTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.app = QApplication.instance() or QApplication([])
 
+    def test_large_search_is_debounced_and_preserves_selection(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            artifact = synthetic_artifact()
+            template = artifact["changes"][0]
+            artifact["changes"] = [dict(deepcopy(template), global_id=f"BEAM-{i:04}") for i in range(350)]
+            page = ReportPage(language="en")
+            page.load_report(artifact, Path(directory) / "report.json", Path(directory) / "report.html", None)
+            page.table.selectRow(123)
+            page.search_filter.setText("BEAM-01")
+            self.assertTrue(page._search_timer.isActive())
+            self.assertEqual(page.table.rowCount(), 350)
+            QTest.qWait(180)
+            self.assertEqual(page.table.rowCount(), 100)
+            self.assertIn("BEAM-0123", page.detail_body.toPlainText())
+            self.assertEqual(len(page._search_cache), 350)
+            page.search_filter.setText("no-such-element")
+            QTest.qWait(180)
+            self.assertEqual(page.table.rowCount(), 0)
+            self.assertIsNone(page.spatial_context.current_global_id)
+            page.spatial_context.close()
+            page.close()
+
     def test_language_theme_and_ai_toggle_apply_without_persistence(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             window = MainWindow(
@@ -112,7 +136,7 @@ class DesktopDesignTests(unittest.TestCase):
             QTest.qWait(220)
             self.assertAlmostEqual(window.ai_toggle.position, 1.0, places=2)
             self.assertFalse(window.windowIcon().isNull())
-            self.assertEqual(DISPLAY_VERSION, "0.9.0")
+            self.assertEqual(DISPLAY_VERSION, "1.0.0")
             window.brand_mark.setBusy(True)
             self.assertTrue(window.brand_mark.busy)
             self.assertTrue(window.brand_mark.isAnimating())

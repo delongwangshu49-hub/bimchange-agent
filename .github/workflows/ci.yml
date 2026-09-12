@@ -48,3 +48,12 @@ jobs:
           }
       - name: Run reproducible quickstart smoke test
         run: python scripts/test_quickstart.py
+      - name: Verify 1.0.0 release identity and retained assets
+        run: python scripts/verify_release.py
+      - name: Run offline spatial and release-preparation regression
+        shell: pwsh
+        run: |
+          python -m unittest tests.test_r4_scene_worker tests.test_r4_spatial_candidate tests.test_release_preparation -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest research.r3_complete.test_geometry research.r3_complete.test_relationships research.r3_complete.test_shape research.r3_complete.test_minimal_acceptance research.r4_spatial_context.test_spatial_context -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

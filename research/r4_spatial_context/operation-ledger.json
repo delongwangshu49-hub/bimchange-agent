@@ -1,0 +1,78 @@
+{
+  "ledger_version": "r4-local-spatial-context-ledger-0.1.0",
+  "guid_namespace": "873cf259-7bf0-4e4b-9da4-62122d60c6d7",
+  "length_unit": "m",
+  "storeys": [
+    {
+      "label": "storey-ground",
+      "global_id": "2G8SdSRG1M0fkv8X4gbmMW",
+      "name": "Ground Floor",
+      "elevation_m": 0.0
+    },
+    {
+      "label": "storey-level-01",
+      "global_id": "2H5xQskrHTa8qIlOVMBwjz",
+      "name": "Level 01",
+      "elevation_m": 4.0
+    }
+  ],
+  "changes": [
+    {
+      "change_id": "r4-change-deleted-wall",
+      "change_type": "deleted",
+      "entity_type": "IfcWall",
+      "global_id": "2E4uGrGMXJzgENQr_VGwy4",
+      "storey_global_id": "2G8SdSRG1M0fkv8X4gbmMW",
+      "selected_ifc_role": "source",
+      "operation": "remove_product_in_revised"
+    },
+    {
+      "change_id": "r4-change-added-beam",
+      "change_type": "added",
+      "entity_type": "IfcBeam",
+      "global_id": "3WOi9vgBbN$BLkWrr3NeFb",
+      "storey_global_id": "2G8SdSRG1M0fkv8X4gbmMW",
+      "selected_ifc_role": "revised",
+      "operation": "create_product_in_revised"
+    },
+    {
+      "change_id": "r4-change-modified-column",
+      "change_type": "property_modified",
+      "entity_type": "IfcColumn",
+      "global_id": "1rWRgK515L1Q1DmQQ$thk0",
+      "storey_global_id": "2G8SdSRG1M0fkv8X4gbmMW",
+      "selected_ifc_role": "revised",
+      "operation": "set_Pset_R4Proof.ReviewMark_source_to_revised"
+    }
+  ],
+  "unchanged_context": [
+    {
+      "label": "context-ground-near-a",
+      "global_id": "2_ziaCmybMwgMYq8E8soAh",
+      "storey_global_id": "2G8SdSRG1M0fkv8X4gbmMW"
+    },
+    {
+      "label": "context-ground-near-b",
+      "global_id": "3rTnc5Rq1SERGvDJv$dVZ8",
+      "storey_global_id": "2G8SdSRG1M0fkv8X4gbmMW"
+    },
+    {
+      "label": "context-ground-far",
+      "global_id": "3IATyjF4HIJQ07KpomcSjB",
+      "storey_global_id": "2G8SdSRG1M0fkv8X4gbmMW"
+    },
+    {
+      "label": "distractor-level-01",
+      "global_id": "0Vzu7Na_1MYvdpxZss5zK0",
+      "storey_global_id": "2H5xQskrHTa8qIlOVMBwjz"
+    }
+  ],
+  "negative_controls": [
+    "far_same_storey_element_is_outside_6m",
+    "other_storey_element_is_never_context",
+    "other_changed_targets_are_never_context",
+    "deleted_target_is_absent_from_revised",
+    "added_target_is_absent_from_source"
+  ]
+}
+

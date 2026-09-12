@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/bimchange-agent/r4-spatial-context-0.1.0.schema.json",
+  "title": "BIMChange-Agent R4 local spatial context proof manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_version",
+    "inputs",
+    "context_policy",
+    "viewer",
+    "scenes",
+    "metrics"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "protocol_version": {"const": "r4-local-spatial-context-0.1.0"},
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "revised"],
+      "properties": {
+        "source": {"$ref": "#/$defs/input"},
+        "revised": {"$ref": "#/$defs/input"}
+      }
+    },
+    "context_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximum_distance_m", "maximum_neighbours", "same_storey_only"],
+      "properties": {
+        "maximum_distance_m": {"const": 6.0},
+        "maximum_neighbours": {"const": 2},
+        "same_storey_only": {"const": true}
+      }
+    },
+    "viewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entrypoint", "local_assets", "cdn", "uploads"],
+      "properties": {
+        "entrypoint": {"$ref": "#/$defs/relativePath"},
+        "local_assets": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/relativePath"}
+        },
+        "cdn": {"const": false},
+        "uploads": {"const": false}
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/scene"}
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["payload_bytes_excluding_manifest", "model_or_api_calls", "privacy_violations"],
+      "properties": {
+        "payload_bytes_excluding_manifest": {"type": "integer", "minimum": 1},
+        "model_or_api_calls": {"const": 0},
+        "privacy_violations": {"const": 0}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "globalId": {"type": "string", "pattern": "^[0-9A-Za-z_$]{22}$"},
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?![/\\\\])(?!.*(?:^|[/\\\\])\\.\\.(?:[/\\\\]|$))(?!.*://).+$"
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "file", "sha256", "schema"],
+      "properties": {
+        "role": {"enum": ["source", "revised"]},
+        "file": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "schema": {"const": "IFC4"}
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["global_id", "entity_type", "storey_global_id", "storey_name", "role", "distance_m"],
+      "properties": {
+        "global_id": {"$ref": "#/$defs/globalId"},
+        "entity_type": {"type": "string", "pattern": "^Ifc[A-Za-z0-9]+$"},
+        "storey_global_id": {"$ref": "#/$defs/globalId"},
+        "storey_name": {"type": "string", "minLength": 1},
+        "role": {"enum": ["target", "context"]},
+        "distance_m": {"type": "number", "minimum": 0}
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "position", "near", "far"],
+      "properties": {
+        "target": {"$ref": "#/$defs/vector3"},
+        "position": {"$ref": "#/$defs/vector3"},
+        "near": {"type": "number", "exclusiveMinimum": 0},
+        "far": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "vector3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "number"}
+    },
+    "scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "change_id",
+        "change_type",
+        "target_global_id",
+        "selected_ifc_role",
+        "file",
+        "sha256",
+        "highlight_colour",
+        "context_colour",
+        "nodes",
+        "camera"
+      ],
+      "properties": {
+        "change_id": {"type": "string", "pattern": "^r4-change-[a-z0-9-]+$"},
+        "change_type": {"enum": ["deleted", "added", "property_modified"]},
+        "target_global_id": {"$ref": "#/$defs/globalId"},
+        "selected_ifc_role": {"enum": ["source", "revised"]},
+        "file": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "highlight_colour": {"type": "string", "pattern": "^#[0-9A-F]{6}$"},
+        "context_colour": {"const": "#8B949E"},
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/node"}
+        },
+        "camera": {"$ref": "#/$defs/camera"}
+      }
+    }
+  }
+}

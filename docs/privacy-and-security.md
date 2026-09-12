@@ -1,8 +1,8 @@
 # Privacy and security boundary / 隐私与安全边界
 
-This page describes the v0.9.0 privacy boundary while retaining the historical preview design principles. It is a design and verification record, not a security certification.
+This page describes the 1.0.0 privacy boundary while retaining the historical design principles. It is a design and verification record, not a security certification.
 
-本文说明 v0.9.0 的隐私边界，并延续早期预览版的设计原则；它是设计与验证记录，不代表安全认证。
+本文说明 1.0.0 的隐私边界，并延续早期设计原则；它是设计与验证记录，不代表安全认证。
 
 ## Data flow
 
@@ -10,6 +10,7 @@ This page describes the v0.9.0 privacy boundary while retaining the historical p
 |---|---|---|
 | Select or drop IFC / 选择或拖入 IFC | No / 否 | Original IFC is not copied / 不复制原始 IFC |
 | Deterministic inspect and diff / 确定性检查与差分 | No / 否 | Working JSON/HTML under Windows LocalAppData / 工作 JSON/HTML 保存到 Windows LocalAppData |
+| Local 3D / 局部三维 | No; session-restricted loopback only / 否，仅会话受限的本机回环请求 | Temporary GLB/manifest; in-memory browser profile and caches / 临时 GLB/清单；内存浏览器配置和缓存 |
 | Export JSON or HTML / 导出 JSON 或 HTML | No automatic upload / 不自动上传 | Written only to the user-selected path / 仅写入用户选择的位置 |
 | AI disabled / AI 关闭 | No provider request / 不请求服务商 | No API Key required / 不需要 API Key |
 | AI provider enabled / AI 服务商开启 | Yes, one HTTPS request to the selected provider / 是，向所选服务商发出一次 HTTPS 请求 | API Key remains in process memory only / API Key 仅保存在进程内存 |
@@ -19,6 +20,14 @@ The program does not read `.env.local`, browser credentials, GitHub credentials,
 程序不读取 `.env.local`、浏览器凭据、GitHub 凭据或无关文件；不上传 IFC 文件；没有遥测或自动更新网络请求。
 
 ## Optional AI disclosure
+
+The API key is transmitted to the selected provider for authentication, not included in the model prompt or exported report. It is not persisted by the application. Turning AI off does not make previously sent data disappear from the provider.
+
+API Key 会发送给所选服务商用于身份认证，不放入模型提示或导出报告，应用不持久化保存。关闭 AI 不会使已发送数据从服务商处消失。
+
+Local 3D uses only packaged viewer assets and tokenized local resources. It blocks external navigation/requests and rechecks input hashes before using cached results. Normal window close removes the session directory and worker; crashes can leave local temporary data. See [3D review](local-3d-review.md). JSON/HTML exports may contain project-derived data and must be reviewed before sharing.
+
+局部三维仅使用随包资源和带令牌的本地资源，阻止外部导航/请求，使用缓存前重新检查输入哈希。正常关闭清理会话目录和子进程，崩溃可能留下本机临时数据，详见[三维审阅](local-3d-review.md)。导出 JSON/HTML 可能含项目派生数据，分享前必须检查。
 
 AI is off by default. When explicitly enabled, the request omits absolute paths and source/revised file names, caps input at 200 normalized changes, and uses an absolute HTTPS endpoint without embedded credentials, query strings, or fragments. Normalized records can still contain project-derived data such as element names, storey names, GlobalIds, tags, property names, old/new values, evidence selectors, and—for supported translations—project-world origins and displacement vectors. Use AI only when the project permits those fields to be processed by the selected provider.
 
