@@ -35,9 +35,9 @@ The portable builder uses an isolated environment and explicit source copy, pins
 
 便携构建使用隔离环境和显式源码复制，固定依赖，包含本地 WebEngine/查看器资源，审计已知宿主工具 DLL 混入，移除生成包中的 IfcOpenShell 解析测试样本及未用 DevTools 资源包，保留动态库。体积上限：解包 600 MiB、ZIP 350 MiB、安装器 250 MiB；这些检查不等于完整依赖许可审计。
 
-Both builders default to `NOT-FOR-DISTRIBUTION` names. The installer rejects an EXE with the wrong product version. `-PublicRelease` runs `scripts/verify_release.py --public` and fails while any gate is unsatisfied; do not edit gate values without matching evidence or rename validation outputs.
+Both builders default to `NOT-FOR-DISTRIBUTION` names. The installer rejects an EXE with the wrong product version. `-ReleaseCandidate` assembles fresh, officially named but unpublished artifacts for exact-artifact testing. The portable candidate additionally requires the audited no-CGAL wheel, its SHA256 and the complete notices directory. `-PublicRelease` is deliberately rejected: building and publishing are separate phases. Run `scripts/verify_release.py --public --evidence EVIDENCE_DIRECTORY` after acceptance; never rename private outputs or change gates without evidence.
 
-两种构建默认使用禁止分发名称。安装器拒绝错误版本的 EXE。`-PublicRelease` 检查公开条件，任一条件未通过则停止；不得无证据修改条件值或改名发布验证产物。
+两种构建默认使用禁止分发名称。安装器拒绝错误版本的 EXE。`-ReleaseCandidate` 新建使用正式名称、但尚未发布的待验收产物；便携候选包另须传入已审计的无 CGAL wheel、SHA256 与完整许可目录。`-PublicRelease` 明确拒绝执行：构建与发布分为两阶段。验收后运行 `scripts/verify_release.py --public --evidence EVIDENCE_DIRECTORY`；不得改名发布旧私有包或无证据修改条件。
 
 ## Required acceptance / 必需验收
 
@@ -56,6 +56,6 @@ See the [release checklist](releases/v1.0.0-release-checklist.md). No tag, commi
 
 详见[发布清单](releases/v1.0.0-release-checklist.md)。构建脚本不执行标签、提交、推送或 Release 上传。未签名 EXE 可能触发 SmartScreen。精确许可材料是阻断条件，不是更换标签即可解决的问题。
 
-The local Inno Setup installation previously identified itself as non-commercial. Commercial distribution would require a separately verified applicable license or a reviewed alternative; this task neither purchases one nor changes distribution policy.
+The installed Inno Setup 7.1.0 license expressly permits use for any purpose, including commercial use, subject to its notice and attribution conditions. The publisher separately requests commercial users to purchase a commercial license. The bundled license text and compiler identity must be retained; this task makes no purchase and does not relicense BIMChange-Agent.
 
-本机 Inno Setup 安装此前标识为非商业用途。商业分发须另行核实适用许可或经复核选择替代工具，本任务不购买许可、不改变分发政策。
+已完整核对本机 Inno Setup 7.1.0 的许可文本：其明确允许包括商业用途在内的使用，并要求保留声明等条件；发布方另外请求商业用户购买商业许可。须保留适用许可文本与编译器标识；本任务不购买许可，也不改变 BIMChange-Agent 的许可。

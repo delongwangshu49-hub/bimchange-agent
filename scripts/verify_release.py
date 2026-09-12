@@ -19,7 +19,52 @@ GATES = ("exact_binary_license_inventory_reviewed", "corresponding_source_materi
          "public_upload_authorized")
 
 
-def verify(public=False):
+def verify_evidence(directory):
+    """Bind acceptance receipts to the exact assets about to be uploaded."""
+    directory = Path(directory).resolve()
+    manifest = json.loads((directory / 'release-evidence.json').read_text(encoding='utf-8'))
+    required = {'installer', 'portable', 'qt_sources', 'native_python_sources',
+                'notices', 'payload_manifest', 'frozen_smoke', 'installer_acceptance',
+                'license_review', 'source_inventory'}
+    entries = manifest['files']
+    if not required <= set(entries) or manifest.get('version') != '1.0.0':
+        raise ValueError('Incomplete release evidence')
+    resolved = {}
+    for role, entry in entries.items():
+        path = (directory / entry['path']).resolve()
+        path.relative_to(directory)
+        with path.open('rb') as stream:
+            digest = hashlib.file_digest(stream, 'sha256').hexdigest()
+        if digest != entry['sha256']:
+            raise ValueError(f'Evidence digest mismatch: {role}')
+        resolved[role] = path
+    def read(role):
+        return json.loads(resolved[role].read_text(encoding='utf-8-sig'))
+    payload, installed, smoke, review = map(read, ('payload_manifest', 'installer_acceptance', 'frozen_smoke', 'license_review'))
+    if any(item.get('status') != 'PASS' for item in (payload, installed, smoke, review)):
+        raise ValueError('An acceptance receipt is not PASS')
+    if payload['zip']['sha256'] != entries['portable']['sha256']:
+        raise ValueError('Portable bytes do not match tested payload')
+    if installed['installer_sha256'] != entries['installer']['sha256'] or installed['payload_manifest_sha256'] != entries['payload_manifest']['sha256']:
+        raise ValueError('Installer acceptance belongs to different artifacts')
+    if installed['payload_files_verified'] != len(payload['files']) or installed['upgrade_from'] != '0.9.0':
+        raise ValueError('Incomplete installed-payload/upgrade verification')
+    for key in ('fresh_install', 'desktop_startup', 'offline_comparison', 'preferences_preserved',
+                'shortcut_target_and_icon', 'uninstall_executable_and_registry_removed', 'input_files_unchanged'):
+        if installed.get(key) is not True:
+            raise ValueError(f'Installer check missing: {key}')
+    if smoke.get('frozen') is not True or smoke.get('errors') or smoke.get('session_removed') is not True:
+        raise ValueError('Final frozen smoke did not pass')
+    if manifest.get('smoke_payload_manifest_sha256') != entries['payload_manifest']['sha256']:
+        raise ValueError('Frozen smoke is not bound to the staged payload')
+    if review.get('payload_manifest_sha256') != entries['payload_manifest']['sha256']:
+        raise ValueError('License review is not bound to the staged payload')
+    if read('source_inventory')['notice_zip_sha256'] != entries['notices']['sha256']:
+        raise ValueError('Notices do not match corresponding-source inventory')
+    return len(entries)
+
+
+def verify(public=False, evidence=None):
     failures = []
     project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     if __version__ != "1.0.0" or project["project"]["version"] != __version__:
@@ -54,9 +99,19 @@ def verify(public=False):
     pending = [key for key in GATES if gates.get(key) is not True]
     if public and pending:
         failures.extend(f"Public gate pending: {key}" for key in pending)
+    evidence_count = 0
+    if public:
+        if evidence is None:
+            failures.append('Public release requires --evidence with hash-bound final artifacts')
+        else:
+            try:
+                evidence_count = verify_evidence(evidence)
+            except (OSError, ValueError, KeyError, TypeError) as error:
+                failures.append(f'Public evidence failed: {error}')
     return {"status": "FAIL" if failures else "PASS", "version": __version__,
             "scope": "public-release" if public else "local-source-document-check",
-            "public_ready": not pending and not failures, "pending_public_gates": pending,
+            "public_ready": public and bool(evidence_count) and not pending and not failures,
+            "evidence_files_verified": evidence_count, "pending_public_gates": pending,
             "readme_local_targets_checked": len(checked), "logo_sha256": LOGO_SHA256,
             "failures": failures}
 
@@ -64,6 +119,8 @@ def verify(public=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--public", action="store_true")
-    result = verify(parser.parse_args().public)
+    parser.add_argument("--evidence", type=Path)
+    args = parser.parse_args()
+    result = verify(args.public, args.evidence)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     raise SystemExit(0 if result["status"] == "PASS" else 1)

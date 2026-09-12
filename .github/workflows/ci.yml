@@ -53,7 +53,7 @@ jobs:
       - name: Run offline spatial and release-preparation regression
         shell: pwsh
         run: |
-          python -m unittest tests.test_r4_scene_worker tests.test_r4_spatial_candidate tests.test_release_preparation -v
+          python -m unittest tests.test_r4_scene_worker tests.test_r4_spatial_candidate tests.test_release_preparation tests.test_release_compliance -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest research.r3_complete.test_geometry research.r3_complete.test_relationships research.r3_complete.test_shape research.r3_complete.test_minimal_acceptance research.r4_spatial_context.test_spatial_context -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

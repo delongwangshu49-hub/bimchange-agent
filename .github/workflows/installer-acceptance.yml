@@ -1,0 +1,70 @@
+name: Exact installer acceptance
+on:
+  workflow_dispatch:
+    inputs:
+      installer_sha256:
+        description: SHA256 of the staged 1.0.0 installer
+        required: true
+        type: string
+      manifest_sha256:
+        description: SHA256 of payload-manifest.json
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: windows-2022
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          architecture: x64
+      - name: Retrieve exact staged assets, without publishing
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_INSTALLER: ${{ inputs.installer_sha256 }}
+          EXPECTED_MANIFEST: ${{ inputs.manifest_sha256 }}
+        run: |
+          $ErrorActionPreference='Stop'
+          if ($env:EXPECTED_INSTALLER -notmatch '^[a-f0-9]{64}$' -or $env:EXPECTED_MANIFEST -notmatch '^[a-f0-9]{64}$') { throw 'Invalid digest inputs.' }
+          $draft=gh release view v1.0.0 --repo $env:GITHUB_REPOSITORY --json isDraft | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0 -or -not $draft.isDraft) { throw 'Expected an unpublished v1.0.0 draft.' }
+          $assets=Join-Path $env:RUNNER_TEMP 'staged-assets'
+          New-Item -ItemType Directory -Path $assets | Out-Null
+          gh release download v1.0.0 --repo $env:GITHUB_REPOSITORY --dir $assets --pattern 'BIMChange-Agent-1.0.0-win-x64-setup.exe' --pattern 'payload-manifest.json'
+          if ($LASTEXITCODE -ne 0) { throw 'Draft download failed.' }
+          if ((Get-FileHash "$assets/BIMChange-Agent-1.0.0-win-x64-setup.exe").Hash.ToLowerInvariant() -ne $env:EXPECTED_INSTALLER) { throw 'Installer hash mismatch.' }
+          if ((Get-FileHash "$assets/payload-manifest.json").Hash.ToLowerInvariant() -ne $env:EXPECTED_MANIFEST) { throw 'Manifest hash mismatch.' }
+          gh release download v0.9.0 --repo $env:GITHUB_REPOSITORY --dir $assets --pattern 'BIMChange-Agent-0.9.0-win-x64-setup.exe' --pattern 'BIMChange-Agent-0.9.0-win-x64-setup.exe.sha256.txt'
+          if ($LASTEXITCODE -ne 0) { throw 'Upgrade baseline download failed.' }
+          $priorHash=((Get-Content "$assets/BIMChange-Agent-0.9.0-win-x64-setup.exe.sha256.txt" -Raw).Trim() -split '\s+')[0]
+          if ((Get-FileHash "$assets/BIMChange-Agent-0.9.0-win-x64-setup.exe").Hash.ToLowerInvariant() -ne $priorHash.ToLowerInvariant()) { throw 'Upgrade baseline checksum mismatch.' }
+      - name: Generate public synthetic inputs
+        shell: pwsh
+        run: |
+          python -m pip install -c constraints-preview.txt .
+          if ($LASTEXITCODE -ne 0) { throw 'Fixture dependencies failed.' }
+          python scripts/generate_public_demo.py "$env:RUNNER_TEMP/public-demo"
+          if ($LASTEXITCODE -ne 0) { throw 'Synthetic fixture generation failed.' }
+      - name: Fresh install, upgrade from 0.9.0, and uninstall
+        shell: pwsh
+        run: |
+          ./scripts/test_release_installer.ps1 `
+            -InstallerPath "$env:RUNNER_TEMP/staged-assets/BIMChange-Agent-1.0.0-win-x64-setup.exe" `
+            -PreviousInstallerPath "$env:RUNNER_TEMP/staged-assets/BIMChange-Agent-0.9.0-win-x64-setup.exe" `
+            -PayloadManifest "$env:RUNNER_TEMP/staged-assets/payload-manifest.json" `
+            -SourceIfc "$env:RUNNER_TEMP/public-demo/demo-source.ifc" `
+            -RevisedIfc "$env:RUNNER_TEMP/public-demo/demo-revised.ifc" `
+            -TestRoot "$env:RUNNER_TEMP/installer-acceptance"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: installer-acceptance-evidence
+          path: |
+            ${{ runner.temp }}/installer-acceptance/*.json
+            ${{ runner.temp }}/installer-acceptance/*.log
+          if-no-files-found: warn

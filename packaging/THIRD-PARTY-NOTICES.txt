@@ -1,59 +1,81 @@
-BIMChange-Agent 1.0.0 — Third-party notice index
-===============================================
+BIMChange-Agent 1.0.0 — Third-party notices / 第三方声明
+======================================================
 
-STATUS: INCOMPLETE FOR PUBLIC BINARY REDISTRIBUTION.
-状态：公开二进制分发材料尚未完整闭环。
+BIMChange-Agent's own code is MIT licensed; see LICENSE. That license does
+not replace the licenses below. This index describes the reviewed no-CGAL
+configuration, not historical/private builds or arbitrary Qt collections.
+Public distribution also requires the exact-artifact acceptance receipt and
+source attachments; a staged package is not ready merely because this file exists.
 
-Original BIMChange-Agent code is MIT licensed (LICENSE). Dependencies are
-not relicensed by that file. This index is not an exhaustive license
-inventory, source offer, legal opinion, or permission to redistribute an
-arbitrary PyInstaller collection.
+本项目自有代码保持 MIT；第三方代码仍适用各自许可。本索引针对经审阅的无 CGAL
+配置，不涵盖历史/私有包或任意 Qt 模块组合。公开分发还必须有最终产物验收回执
+及对应源码附件，不能仅凭本文件宣布已发布。
 
-Declared components / 声明组件
+Included materials / 随包材料
+-------------------------------
+- licenses/UPSTREAM-NOTICES.zip: original source LICENSE/COPYING/NOTICE,
+  copyright/author files, OCCT exception and Qt/Chromium attribution metadata,
+  with a per-file SHA-256 index. This preserves some development-only and
+  unlinked components too; presence here is not a binary-usage claim.
+- licenses/source-inventory.json: exact source archive names, sizes, hashes.
+- licenses/python-package-metadata: installed distribution metadata/notices,
+  including the custom IfcOpenShell build receipt and native DLL imports.
+- licenses/PYTHON-LICENSE.txt: the actual Windows runtime's full license,
+  Microsoft Distributable Code conditions and bundled-library terms.
+- licenses/THREE-MIT.txt, LGPL-3.0.txt and GPL-3.0.txt: retained license texts.
+- licenses/INNO-SETUP.txt: Inno Setup 7.1.0 compiler/distributor notice.
+- CORRESPONDING-SOURCE.txt: source attachments, replacement and build routes.
+
+随包材料保留上游原文，不以中文摘要替代。部分源码组件未链接到应用；其许可证
+不因此成为应用整体许可。Microsoft 代码条件不改变本项目自有源码的 MIT。
+
+Principal runtime components / 主要运行组件
+------------------------------------------
+Python 3.13.15: PSF and incorporated third-party terms, including OpenSSL
+3.0.21, libffi and SQLite. Windows redistributables are for Microsoft Windows.
+
+PySide6 Essentials/Addons and Shiboken6 6.11.1: Qt for Python's LGPLv3 route.
+Selected Qt 6.11.1 libraries: Core, Gui, Network, OpenGL, Pdf, Positioning,
+PrintSupport, Qml, QmlMeta, QmlModels, QmlWorkerScript, Quick, QuickWidgets,
+Svg, Test, WebChannel, WebEngineCore, WebEngineWidgets and Widgets.
+The Qt-specific runtime components use their LGPLv3 option. Original alternative
+license references in metadata are retained, not described as purchased licenses.
+Quick3D, Charts, Graphs, VirtualKeyboard, QML import catalog, QML debugging and
+GPS provider plugins are excluded from this configuration.
+The supplied opengl32sw.dll is Mesa llvmpipe (embedded version 11.2.2), with
+MIT/Boost and incorporated notices retained from Qt 6.11.1's unmodified
+qtdoc/doc/src/legal/licenses.qdoc, including LLVM attribution. It is not a
+Qt-specific LGPL library. The Windows installer is built with Inno Setup.
+
+Qt WebEngine and Qt PDF embed Chromium/PDFium and separately licensed components,
+including LGPL-2.1 code such as FFmpeg and BSD/MIT/Apache/other permissive code.
+Their source-tree notices and matching 6.11.1 sources accompany this distribution;
+these are not reduced to a single Qt license. The archive inventory identifies
+the supplied version, not rolling online documentation.
+
+IfcOpenShell 0.8.5+nocgal.1: same-revision rebuild under LGPLv3-or-later, CGAL
+disabled, retaining OpenCASCADE and all eight IFC schemas. Its receipt records
+the revision, disabled-kernel runtime checks and native DLLs.
+Open CASCADE Technology 7.8.1: LGPL-2.1 with OCCT additional exception; built as
+replaceable shared DLLs. Boost 1.86.0: Boost Software License. Eigen 3.3.9:
+MPL-2.0 for the used Eigen core; notices also cover unused source modules.
+IfcDiff 0.8.5: LGPLv3-or-later. The version substitution 0.0.0 to 0.8.5 is an
+upstream packaging change; readable Python source is in the supplied IfcOpenShell
+tree and can be installed using its upstream packaging.
+
+Shapely 2.1.2: BSD-3-Clause, plus GEOS 3.13.1 (LGPL-2.1-or-later).
+NumPy 2.5.1: BSD and bundled BLAS/LAPACK/native-library terms. Supporting Python
+distributions retain their metadata licenses. Rust extensions retain their own
+and statically included crates' notices; locked crate sources are supplied too.
+Three.js r184: MIT. PyInstaller 6.22.0 bootloader: GPL with its bootloader
+distribution exception, which does not impose GPL on this application's code.
+
+Library modification / 库修改
 ------------------------------
-- Python runtime: PSF license and upstream third-party notices.
-  https://www.python.org/downloads/
-- PySide6 Essentials, Addons, Shiboken6 6.11.1 / Qt 6.11.1:
-  module-specific licenses, not one blanket LGPL declaration.
-  https://doc.qt.io/qtforpython-6/
-- Qt WebEngine: Qt-specific terms plus Chromium and its third-party terms.
-  https://doc.qt.io/qt-6.11/qtwebengine-licensing.html
-  Online 6.11 documentation can advance to 6.11.2; it is NOT proof of the
-  exact notices/source inventory for the bundled 6.11.1 binary.
-- Three.js r184: MIT; original notice retained beside the vendored files and
-  copied into validation packages as licenses/THREE-MIT.txt.
-- IfcOpenShell / IfcDiff 0.8.5: upstream LGPL terms and dependency notices.
-  https://github.com/IfcOpenShell/IfcOpenShell
-- NumPy, Shapely and supporting Python packages: their package metadata,
-  license directories and any separately embedded native-library notices.
-  Metadata is a starting point, not proof of complete binary coverage.
+Libraries remain replaceable. Modification, relinking and reverse engineering
+for debugging modified LGPL components are permitted. No activation/signature
+lock is imposed. See CORRESPONDING-SOURCE.txt and the full licenses. No commercial
+license purchase or project relicensing is implied. No warranty is supplied.
 
-Distribution review / 分发复核
-------------------------------
-The generated application keeps native libraries as dynamically loaded
-files. No technical restriction is added to prevent compatible library
-replacement or debugging modifications. This fact alone does not discharge
-all notice, source and installation-information obligations.
-
-Generic GPL/LGPL texts, Python's runtime license and selected wheel metadata
-are copied into validation packages. Complete exact-version Qt/Chromium and
-native dependency attributions/corresponding-source materials must still be
-assembled and checked against the FINAL binary file list. Do not claim a
-matching public source tag exists before it is actually published.
-
-PyInstaller may collect unused QML/plugins, including components with
-different licensing. Qt Quick 3D is documented as GPLv3/commercial:
-https://doc.qt.io/qt-6.11/qtquick3d-index.html
-Its presence must not be swept into a blanket LGPL statement. Remove unused
-modules through a tested dependency-minimization build or establish the
-appropriate distribution route; do not silently change the project's MIT
-license or assume a commercial license has been purchased.
-
-See docs/releases/v1.0.0-release-checklist.md and
-packaging/release-1.0.0-gates.json. Validation builds remain
-NOT-FOR-DISTRIBUTION until all required reviews and tests pass.
-
-原创代码 MIT 不覆盖依赖。当前验证包中的许可证原文与元数据仅是材料基础；
-精确对应的 Qt/Chromium、原生依赖声明及对应源码仍须与最终二进制逐项核对。
-不得把未使用 QML/插件一概声明为 LGPL，也不得虚构商业许可、源码供应承诺
-或尚不存在的公开标签。未通过发布条件前保持禁止公开分发。
+原生库可替换；允许为调试修改后的 LGPL 组件而修改、重链接及逆向工程。没有激活
+或签名锁定。具体以原文许可为准，不暗示购买商业许可或更改项目许可，不提供担保。

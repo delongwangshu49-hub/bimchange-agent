@@ -1,0 +1,58 @@
+BIMChange-Agent 1.0.0 - Source and replacement information
+BIMChange-Agent 1.0.0 - 对应源码与替换说明
+
+The application's own source remains MIT-licensed. Third-party components retain
+their respective licenses. Recipients may modify/replace the LGPL libraries and
+reverse-engineer this combined application for debugging those modifications.
+There is no application activation, signature enforcement, or technical lock on
+library replacement. Keep a backup and use matching architecture and ABI.
+
+本项目自有源码保持 MIT。第三方组件保留各自许可。允许修改/替换 LGPL 库以及为调试
+这些修改对组合程序进行逆向工程；没有激活、签名强制或库替换锁定。请备份并保持
+架构和 ABI 兼容。源程序与同版本构建说明可用于重建整个应用。
+
+Release files and application source:
+https://github.com/delongwangshu49-hub/bimchange-agent/releases/tag/v1.0.0
+https://github.com/delongwangshu49-hub/bimchange-agent/tree/v1.0.0
+
+The release is intended to include Qt/PySide and other dependency source bundles,
+SHA-256 inventories and original license notices. Do not treat a staged package
+as publicly ready until these attachments and the final acceptance receipt are
+present. Sources are provided as files, not a promise to obtain them on request.
+
+发布附件提供 Qt/PySide、其他依赖源码包、SHA-256 清单和原始许可声明；暂存安装包
+只有在附件与最终验收回执齐备后才可公开。源码直接随附件提供，不以未来承诺替代。
+
+Qt/PySide 6.11.1: replace ABI-compatible DLLs, Python extension modules, plugins,
+resources and QtWebEngineProcess together under _internal/PySide6 and shiboken6.
+Qt WebEngine's Chromium/FFmpeg and Qt PDF/PDFium sources are included in the
+qtwebengine-everywhere-src-6.11.1 source archive. The other Qt module archives and
+pyside-setup archive contain their upstream build scripts and instructions.
+Windows builds require a supported MSVC toolchain, CMake/Ninja and the additional
+WebEngine build prerequisites described in that exact source tree. Alternatively
+rebuild compatible PySide wheels, install them in an isolated build environment,
+and rebuild this application using scripts/build_windows_portable.ps1.
+
+IfcOpenShell: upstream revision 1c5b825d8ef05ab9d14a15dac12e9eae2f5a37c2,
+WITH_CGAL=OFF and WITH_OPENCASCADE=ON; all eight IFC schemas are retained.
+The Windows wheel is a local 0.8.5+nocgal.1 build, not the unmodified PyPI binary.
+OCCT 7.8.1, revision bd2a789f15235755ce4d1a3b07379a2e062fdc2e, is built as shared
+libraries. Replace the extension, regenerated SWIG wrapper and its OCCT DLLs
+together under _internal/ifcopenshell. The dedicated native-ifc.yml workflow and
+scripts/build_ifcopenshell_no_cgal.ps1 / assemble_no_cgal_wheel.py record the build.
+The build receipt records exact inputs/configuration and DLL imports. Optional
+CGAL, IFCXML, HDF5, COLLADA, upstream glTF/USD/RocksDB backends are not built;
+the product's own GLB generation, STEP IFC comparison and OpenCASCADE mesh path
+are retained and must pass regression tests. This does not add support claims.
+
+GEOS 3.13.1: LGPL-2.1-or-later; source archive and upstream build instructions are
+included. Compatible GEOS libraries can be replaced under _internal/shapely.libs;
+rebuilding the Shapely 2.1.2 wheel and application is another supported route.
+Python, NumPy, other Python packages, Rust crate dependencies and build-tool
+sources/notices are identified in the inventory. The source collection includes
+some development-only components; their presence in a source archive does not
+mean their binaries are included in the application.
+
+Library substitution changes the tested software and may affect correctness or
+stability. Run the offline unit/research and frozen 3D checks on your rebuilt
+application. No warranty is supplied; see the individual licenses.

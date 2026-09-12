@@ -3,6 +3,10 @@ param(
     [string]$PackageVersion = "1.0.0",
     [string]$PythonExecutable = "python",
     [string]$PreparedEnvironment = "",
+    [string]$NativeIfcWheel = "",
+    [string]$NativeIfcWheelSha256 = "",
+    [string]$NoticesDirectory = "",
+    [switch]$ReleaseCandidate,
     [switch]$PublicRelease
 )
 
@@ -10,10 +14,19 @@ $ErrorActionPreference = "Stop"
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
 if ($PackageVersion -ne "1.0.0") { throw "This build definition is frozen for 1.0.0." }
 if ($PublicRelease) {
-    & $PythonExecutable (Join-Path $repositoryRoot 'scripts\verify_release.py') --public
-    if ($LASTEXITCODE -ne 0) { throw 'Public release gates are not satisfied.' }
+    throw 'Assemble with -ReleaseCandidate, verify the exact artifacts, then run verify_release.py --public before publishing. Builds do not publish.'
 }
-$suffix = if ($PublicRelease) { "" } else { "-NOT-FOR-DISTRIBUTION" }
+if ($ReleaseCandidate -and (-not $NativeIfcWheel -or -not $NativeIfcWheelSha256 -or -not $NoticesDirectory)) {
+    throw 'A release candidate requires the audited native wheel digest and notices directory.'
+}
+if ($ReleaseCandidate) {
+    $gates = Get-Content -Raw (Join-Path $repositoryRoot 'packaging/release-1.0.0-gates.json') | ConvertFrom-Json
+    if (-not $gates.public_upload_authorized) { throw 'Release candidate preparation is not authorized.' }
+    foreach ($required in @('UPSTREAM-NOTICES.zip','source-inventory.json')) {
+        if (-not (Test-Path -LiteralPath (Join-Path $NoticesDirectory $required))) { throw "Missing notices: $required" }
+    }
+}
+$suffix = if ($ReleaseCandidate) { "" } else { "-NOT-FOR-DISTRIBUTION" }
 $packageName = "BIMChange-Agent-$packageVersion-win-x64$suffix"
 
 if ($env:OS -ne "Windows_NT") {
@@ -71,6 +84,15 @@ if (-not $PreparedEnvironment) {
     & $buildPython -m pip install --no-deps --force-reinstall $sourceRoot
 }
 if ($LASTEXITCODE -ne 0) { throw "Failed to install desktop build dependencies." }
+if ($NativeIfcWheel) {
+    if (-not $NativeIfcWheelSha256 -or (Get-FileHash -LiteralPath $NativeIfcWheel -Algorithm SHA256).Hash.ToLowerInvariant() -ne $NativeIfcWheelSha256.ToLowerInvariant()) {
+        throw 'Native IfcOpenShell wheel digest mismatch.'
+    }
+    & $buildPython -m pip install --no-deps --force-reinstall $NativeIfcWheel
+    if ($LASTEXITCODE -ne 0) { throw 'Native dependency installation failed.' }
+    & $buildPython -c "import importlib.metadata as m,json; d=m.distribution('ifcopenshell'); p=json.loads(d.read_text('NO-CGAL-BUILD.json')); assert d.version=='0.8.5+nocgal.1'; assert p['status']=='PASS'; assert set(p['disabled_kernels'])=={'cgal','cgal-simple'}; print('Audited no-CGAL dependency installed')"
+    if ($LASTEXITCODE -ne 0) { throw 'Native dependency provenance check failed.' }
+}
 & $buildPython -m pip check
 if ($LASTEXITCODE -ne 0) { throw "Build dependency consistency check failed." }
 # DLL discovery must not pick up optional ICU/OpenSSL binaries from unrelated
@@ -93,6 +115,7 @@ try {
     --specpath $specRoot `
     --collect-all ifcopenshell `
     --collect-data bimchange_agent `
+    --additional-hooks-dir (Join-Path $repositoryRoot "packaging\hooks") `
     --hidden-import ifcdiff `
     --hidden-import bimchange_agent.r4_webengine_runtime `
     --hidden-import PySide6.QtWebEngineCore `
@@ -110,6 +133,8 @@ if (-not (Test-Path -LiteralPath (Join-Path $builtApplication "BIMChange-Agent.e
 & $buildPython (Join-Path $repositoryRoot 'scripts\audit_r4_build_dependencies.py') `
     (Join-Path $workRoot 'BIMChange-Agent\Analysis-00.toc') $builtApplication
 if ($LASTEXITCODE -ne 0) { throw 'Generated DLL provenance audit failed.' }
+& $buildPython (Join-Path $repositoryRoot 'scripts\audit_qt_bundle.py') $builtApplication
+if ($LASTEXITCODE -ne 0) { throw 'Qt module minimization audit failed.' }
 
 # `--collect-all ifcopenshell` includes parser test fixtures that are not used by
 # the desktop product. Remove only that exact generated directory so packaged
@@ -147,14 +172,20 @@ foreach ($devToolsPack in @(
 
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\README-START-HERE.txt") -Destination (Join-Path $portableDirectory "README-START-HERE.txt")
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "LICENSE") -Destination $portableDirectory
-if (-not $PublicRelease) {
+if (-not $ReleaseCandidate) {
     Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\1.0.0-NOT-FOR-DISTRIBUTION.txt") -Destination $portableDirectory
 }
 $licenseOutput = Join-Path $portableDirectory "licenses"
 New-Item -ItemType Directory -Force -Path $licenseOutput | Out-Null
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\THIRD-PARTY-NOTICES.txt") -Destination $portableDirectory
+if ($NoticesDirectory) {
+    Copy-Item -LiteralPath (Join-Path $NoticesDirectory 'UPSTREAM-NOTICES.zip') -Destination $licenseOutput
+    Copy-Item -LiteralPath (Join-Path $NoticesDirectory 'source-inventory.json') -Destination $licenseOutput
+    Copy-Item -LiteralPath (Join-Path $repositoryRoot 'packaging/CORRESPONDING-SOURCE.txt') -Destination $portableDirectory
+}
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\licenses\GPL-3.0.txt") -Destination $licenseOutput
 Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\licenses\LGPL-3.0.txt") -Destination $licenseOutput
+Copy-Item -LiteralPath (Join-Path $repositoryRoot "packaging\licenses\INNO-SETUP.txt") -Destination $licenseOutput
 $pythonBase = (& $buildPython -c "import sys; print(sys.base_prefix)").Trim()
 $pythonLicense = Join-Path $pythonBase "LICENSE.txt"
 if (-not (Test-Path -LiteralPath $pythonLicense)) {
@@ -186,6 +217,8 @@ foreach ($pattern in $runtimeDistributionPatterns) {
         if (Test-Path -LiteralPath $licenses) {
             Copy-Item -LiteralPath $licenses -Destination $distributionOutput -Recurse
         }
+        $nativeProof = Join-Path $distribution.FullName 'NO-CGAL-BUILD.json'
+        if (Test-Path -LiteralPath $nativeProof) { Copy-Item -LiteralPath $nativeProof -Destination $distributionOutput }
     }
 }
 $unpackedBytes = (Get-ChildItem -LiteralPath $portableDirectory -File -Recurse | Measure-Object -Property Length -Sum).Sum
@@ -202,7 +235,7 @@ Set-Content -LiteralPath $checksumPath -Value "$hash  $($packageName).zip" -Enco
 
 Write-Output ([ordered]@{
     status = "PASS"
-    distribution_status = $(if ($PublicRelease) { "PUBLIC_GATES_PASSED" } else { "NOT_FOR_DISTRIBUTION" })
+    distribution_status = $(if ($ReleaseCandidate) { "STAGED_FINAL_ARTIFACT_VERIFICATION_REQUIRED" } else { "NOT_FOR_DISTRIBUTION" })
     portable_directory = $portableDirectory
     zip = $zipPath
     sha256 = $hash

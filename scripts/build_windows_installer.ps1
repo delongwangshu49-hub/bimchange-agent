@@ -6,6 +6,7 @@ param(
     [string]$FileVersion = "1.0.0.0",
     [string]$IsccPath = "",
     [string]$PythonExecutable = "python",
+    [switch]$ReleaseCandidate,
     [switch]$PublicRelease
 )
 
@@ -16,8 +17,7 @@ if ($PackageVersion -ne "1.0.0" -or $FileVersion -ne "1.0.0.0") {
     throw "This installer definition is frozen for 1.0.0 / 1.0.0.0."
 }
 if ($PublicRelease) {
-    & $PythonExecutable (Join-Path $repositoryRoot 'scripts\verify_release.py') --public
-    if ($LASTEXITCODE -ne 0) { throw 'Public release gates are not satisfied.' }
+    throw 'Assemble with -ReleaseCandidate; verify the exact installer before publishing.'
 }
 
 if ($env:OS -ne "Windows_NT") {
@@ -36,7 +36,10 @@ if (-not (Test-Path -LiteralPath $applicationPath -PathType Leaf)) {
 $resourceVersion = (Get-Item -LiteralPath $applicationPath).VersionInfo.ProductVersion
 if ($resourceVersion -ne "1.0.0") { throw "Portable executable is not 1.0.0: $resourceVersion" }
 $privateMarkers = Get-ChildItem -LiteralPath $resolvedPortableDirectory -File -Filter '*NOT-FOR-DISTRIBUTION*'
-if ($PublicRelease -and $privateMarkers) { throw 'Validation/private packages cannot become public installers.' }
+if ($ReleaseCandidate -and $privateMarkers) { throw 'Validation/private packages cannot become release-candidate installers.' }
+if ($ReleaseCandidate -and -not (Test-Path -LiteralPath (Join-Path $resolvedPortableDirectory 'licenses/UPSTREAM-NOTICES.zip'))) {
+    throw 'Release-candidate notices are missing.'
+}
 if (-not (Test-Path -LiteralPath $installerScript -PathType Leaf)) {
     throw "Installer definition was not found: $installerScript"
 }
@@ -57,7 +60,7 @@ if (-not $IsccPath -or -not (Test-Path -LiteralPath $IsccPath -PathType Leaf)) {
 }
 
 New-Item -ItemType Directory -Force -Path $resolvedOutputRoot | Out-Null
-$suffix = if ($PublicRelease) { "" } else { "-NOT-FOR-DISTRIBUTION" }
+$suffix = if ($ReleaseCandidate) { "" } else { "-NOT-FOR-DISTRIBUTION" }
 $outputBaseName = "BIMChange-Agent-$PackageVersion-win-x64-setup$suffix"
 $installerPath = Join-Path $resolvedOutputRoot ($outputBaseName + ".exe")
 $checksumPath = $installerPath + ".sha256.txt"
@@ -92,7 +95,7 @@ $signature = Get-AuthenticodeSignature -LiteralPath $installerPath
 
 Write-Output ([ordered]@{
     status = "PASS"
-    distribution_status = $(if ($PublicRelease) { "PUBLIC_GATES_PASSED" } else { "NOT_FOR_DISTRIBUTION" })
+    distribution_status = $(if ($ReleaseCandidate) { "STAGED_FINAL_ARTIFACT_VERIFICATION_REQUIRED" } else { "NOT_FOR_DISTRIBUTION" })
     installer = $installerPath
     sha256 = $hash
     bytes = (Get-Item -LiteralPath $installerPath).Length

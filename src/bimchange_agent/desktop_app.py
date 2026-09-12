@@ -1982,7 +1982,7 @@ def main() -> int:
         if len(arguments) != 3:
             return 2
         try:
-            diff_ifc_pair(Path(arguments[0]), Path(arguments[1]), Path(arguments[2]))
+            diff_ifc_pair_r3(Path(arguments[0]), Path(arguments[1]), Path(arguments[2]))
         except Exception:
             return 2
         return 0
