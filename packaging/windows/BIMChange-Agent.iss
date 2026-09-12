@@ -60,6 +60,9 @@ Source: "{#SourceDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs 
 Source: "BIMChange-Agent.ico"; DestDir: "{app}"; DestName: "{#AppIconName}"; Flags: ignoreversion
 
 [InstallDelete]
+; Obsolete bundled 0.9.0 plugin, absent from the audited 1.0.0 payload.
+; Remove only this application runtime file; preserve models and preferences.
+Type: files; Name: "{app}\_internal\PySide6\plugins\generic\qtuiotouchplugin.dll"
 Type: files; Name: "{autodesktop}\{#AppName}.lnk"
 Type: files; Name: "{group}\{#AppName}.lnk"
 

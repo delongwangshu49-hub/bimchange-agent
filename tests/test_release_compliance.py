@@ -240,6 +240,9 @@ class ComplianceToolTests(unittest.TestCase):
         for guard in ("GITHUB_ACTIONS", "RUNNER_OS", "RUNNER_TEMP", "Existing stable installation detected",
                       "Existing user preferences detected", "Installed hash mismatch"):
             self.assertIn(guard, script)
+        installer = (ROOT / "packaging/windows/BIMChange-Agent.iss").read_text()
+        self.assertIn('Type: files; Name: "{app}\\_internal\\PySide6\\plugins\\generic\\qtuiotouchplugin.dll"', installer)
+        self.assertNotIn('Type: filesandordirs', installer)
 
     def test_native_source_revisions_are_pinned(self):
         manifest = json.loads((ROOT / "packaging/native-sources.json").read_text())
