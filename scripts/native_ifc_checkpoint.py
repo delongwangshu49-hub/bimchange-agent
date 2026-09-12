@@ -37,6 +37,8 @@ def inputs(root, repo):
 
 
 def safe_output(root, name):
+    # Windows CI's temporary directory may use a DOS 8.3 alias (RUNNER~1).
+    root = Path(root).resolve()
     relative = PurePosixPath(name)
     if '\\' in name or ':' in name or relative.is_absolute() or '..' in relative.parts:
         raise ValueError('Unsafe checkpoint path')
