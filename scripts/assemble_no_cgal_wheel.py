@@ -107,8 +107,11 @@ print(json.dumps({'status':'PASS','version':w.version(),'schemas':sorted(expecte
 '''
     environment = dict(os.environ, PYTHONPATH=str(staging))
     result = subprocess.run([sys.executable, "-c", check], env=environment, cwd=root,
-                            capture_output=True, text=True, check=True)
+                            capture_output=True, text=True)
     print(result.stdout)
+    if result.returncode:
+        print(result.stderr, file=sys.stderr)
+        result.check_returncode()
     proof = json.loads(result.stdout.strip().splitlines()[-1])
     proof.update({"wheel_version": version, "ifcopenshell_commit": "1c5b825d8ef05ab9d14a15dac12e9eae2f5a37c2",
                   "occt_commit": "bd2a789f15235755ce4d1a3b07379a2e062fdc2e", "native_imports": imports,

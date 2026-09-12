@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import sys
 import time
 from pathlib import Path
@@ -109,5 +110,8 @@ def main() -> int:
         pane.close()
         app.processEvents()
         result["session_removed"] = not root or not root.exists()
+        if getattr(sys, "frozen", False):
+            with Path(sys.executable).open("rb") as executable:
+                result["executable_sha256"] = hashlib.file_digest(executable, "sha256").hexdigest()
         (output / "result.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     return 0 if result["status"] == "PASS" and result["session_removed"] else 1

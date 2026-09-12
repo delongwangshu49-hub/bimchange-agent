@@ -20,6 +20,49 @@ def load_script(name):
 
 
 class ComplianceToolTests(unittest.TestCase):
+    def test_complete_evidence_is_bound_to_payload_and_sources(self):
+        verifier = load_script('verify_release')
+        digest = lambda content: hashlib.sha256(content).hexdigest()
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            entries = {}
+            def put(role, data):
+                content = json.dumps(data).encode() if isinstance(data, dict) else data
+                (root / role).write_bytes(content)
+                entries[role] = {'path': role, 'sha256': digest(content)}
+            put('installer', b'installer')
+            put('portable', b'portable')
+            put('notices', b'notices')
+            put('payload_manifest', {'status': 'PASS', 'files': [{'path': 'BIMChange-Agent.exe', 'sha256': digest(b'executable')}],
+                                     'zip': {'sha256': entries['portable']['sha256']}})
+            installed = {key: True for key in ('fresh_install', 'desktop_startup', 'offline_comparison',
+                         'preferences_preserved', 'shortcut_target_and_icon',
+                         'uninstall_executable_and_registry_removed', 'input_files_unchanged')}
+            installed.update(status='PASS', installer_sha256=entries['installer']['sha256'],
+                             payload_manifest_sha256=entries['payload_manifest']['sha256'],
+                             payload_files_verified=1, upgrade_from='0.9.0')
+            put('installer_acceptance', installed)
+            put('frozen_smoke', {'status': 'PASS', 'frozen': True, 'errors': [], 'session_removed': True,
+                                 'executable_sha256': digest(b'executable')})
+            put('license_review', {'status': 'PASS', 'payload_manifest_sha256': entries['payload_manifest']['sha256']})
+            source_entries = []
+            for role in ('qt_sources', 'native_python_sources'):
+                archive_name = role+'.tar.gz'
+                with zipfile.ZipFile(root / role, 'w') as archive:
+                    archive.writestr(archive_name, b'source')
+                entries[role] = {'path': role, 'sha256': digest((root / role).read_bytes())}
+                source_entries.append({'file': archive_name, 'sha256': digest(b'source')})
+            put('source_inventory', {'notice_zip_sha256': entries['notices']['sha256'], 'archives': source_entries})
+            evidence = {'version': '1.0.0', 'files': entries,
+                        'smoke_payload_manifest_sha256': entries['payload_manifest']['sha256']}
+            (root / 'release-evidence.json').write_text(json.dumps(evidence))
+            self.assertEqual(verifier.verify_evidence(root), 10)
+            installed['installer_sha256'] = digest(b'different installer')
+            put('installer_acceptance', installed)
+            (root / 'release-evidence.json').write_text(json.dumps(evidence))
+            with self.assertRaisesRegex(ValueError, 'different artifacts'):
+                verifier.verify_evidence(root)
+
     def test_public_verifier_rejects_missing_or_changed_evidence(self):
         verifier = load_script('verify_release')
         self.assertFalse(verifier.verify(public=True)['public_ready'])

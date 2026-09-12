@@ -1,5 +1,8 @@
-param([Parameter(Mandatory=$true)][string]$BuildRoot)
+param([Parameter(Mandatory=$true)][string]$BuildRoot,
+    [ValidateSet('Prepare','OCCT','Boost','IFC','Pack','All')][string]$Stage='All')
 $ErrorActionPreference='Stop'
+$ProgressPreference='SilentlyContinue'
+Write-Host "[$([DateTime]::UtcNow.ToString('o'))] Native build stage: $Stage"
 if ($PSVersionTable.PSVersion.Major -lt 7) { throw 'PowerShell 7 is required.' }
 if ($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_OS -ne 'Windows') {
     throw 'Use the dedicated disposable Windows CI runner, not an existing desktop installation.'
@@ -11,6 +14,7 @@ if (-not $nativeRoot.StartsWith([IO.Path]::GetFullPath($env:RUNNER_TEMP)+[IO.Pat
 }
 New-Item -ItemType Directory -Force -Path $nativeRoot | Out-Null
 function Invoke-Checked([string]$Program, [string[]]$Arguments) {
+    Write-Host "[$([DateTime]::UtcNow.ToString('o'))] $Program $($Arguments -join ' ')"
     & $Program @Arguments
     if ($LASTEXITCODE -ne 0) { throw "$Program failed: $LASTEXITCODE" }
 }
@@ -27,11 +31,15 @@ foreach ($entry in $manifest) {
         $checkout = Join-Path $repoRoot ".native-sources/$($entry.id)"
         $revision = (& git -C $checkout rev-parse HEAD).Trim()
         if ($LASTEXITCODE -ne 0 -or $revision -ne $entry.commit) { throw 'Native source revision mismatch.' }
-        Invoke-Checked 'git' @('-C',$checkout,'archive','--format=tar',"--prefix=$($entry.id)/","--output=$archive",'HEAD')
+        Write-Host "Verified source $($entry.id): $revision (source archive supplied separately with the release)"
         $trees[$entry.id]=$checkout
         continue
     }
-    if (-not (Test-Path -LiteralPath $archive)) { Invoke-WebRequest -Uri $entry.url -OutFile $archive }
+    if (-not (Test-Path -LiteralPath $archive)) {
+        if ($Stage -notin @('All','Prepare')) { throw 'Run Prepare first.' }
+        Invoke-Checked 'curl.exe' @('--fail','--location','--show-error','--connect-timeout','20',
+            '--max-time','180','--retry','1','--output',$archive,$entry.url)
+    }
     if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256) {
         throw "Source digest mismatch: $($entry.name)"
     }
@@ -42,9 +50,11 @@ foreach ($entry in $manifest) {
     }
     $trees[$entry.id]=$destination
 }
+if ($Stage -eq 'Prepare') { Write-Host 'Source preparation PASS'; exit 0 }
 $generator=@('-G','Visual Studio 17 2022','-A','x64')
 $occtBuild=Join-Path $nativeRoot 'occt-build'
 $occtInstall=Join-Path $installRoot 'occt'
+if ($Stage -in @('All','OCCT')) {
 Invoke-Checked 'cmake' (@('-S',$trees.occt,'-B',$occtBuild)+$generator+@(
     "-DCMAKE_INSTALL_PREFIX=$occtInstall",'-DINSTALL_DIR_LAYOUT=Unix','-DBUILD_LIBRARY_TYPE=Shared',
     '-DBUILD_MODULE_Draw=OFF','-DBUILD_MODULE_Visualization=ON','-DUSE_FREETYPE=OFF',
@@ -52,8 +62,10 @@ Invoke-Checked 'cmake' (@('-S',$trees.occt,'-B',$occtBuild)+$generator+@(
     '-DUSE_VTK=OFF','-DUSE_RAPIDJSON=OFF','-DBUILD_DOC_Overview=OFF'))
 Invoke-Checked 'cmake' @('--build',$occtBuild,'--config','Release','--parallel','4')
 Invoke-Checked 'cmake' @('--install',$occtBuild,'--config','Release')
+}
 $boostBuild=Join-Path $nativeRoot 'boost-build'
 $boostInstall=Join-Path $installRoot 'boost'
+if ($Stage -in @('All','Boost')) {
 Invoke-Checked 'cmake' (@('-S',$trees.boost,'-B',$boostBuild)+$generator+@(
     "-DCMAKE_INSTALL_PREFIX=$boostInstall",'-DBUILD_SHARED_LIBS=OFF','-DBUILD_TESTING=OFF',
     '-DBOOST_INCLUDE_LIBRARIES=system;program_options;regex;thread;date_time;iostreams',
@@ -61,8 +73,10 @@ Invoke-Checked 'cmake' (@('-S',$trees.boost,'-B',$boostBuild)+$generator+@(
     '-DBOOST_IOSTREAMS_ENABLE_LZMA=OFF','-DBOOST_IOSTREAMS_ENABLE_ZSTD=OFF'))
 Invoke-Checked 'cmake' @('--build',$boostBuild,'--config','Release','--parallel','4')
 Invoke-Checked 'cmake' @('--install',$boostBuild,'--config','Release')
+}
 $ifcBuild=Join-Path $nativeRoot 'ifc-build'
 $ifcInstall=Join-Path $installRoot 'ifc'
+if ($Stage -in @('All','IFC')) {
 $pythonBase=(& python -c 'import sys; print(sys.base_prefix)').Trim()
 $pythonExecutable=(& python -c 'import sys; print(sys.executable)').Trim()
 $occConfig=(Get-ChildItem -LiteralPath $occtInstall -Filter OpenCASCADEConfig.cmake -Recurse | Select-Object -First 1).DirectoryName
@@ -83,4 +97,7 @@ Copy-Item -LiteralPath (Join-Path $occtBuild 'CMakeCache.txt') -Destination (Joi
 Copy-Item -LiteralPath (Join-Path $boostBuild 'CMakeCache.txt') -Destination (Join-Path $evidenceRoot 'Boost-CMakeCache.txt')
 Invoke-Checked 'cmake' @('--build',$ifcBuild,'--config','Release','--target','ifcopenshell_wrapper','--parallel','2')
 Invoke-Checked 'cmake' @('--install',$ifcBuild,'--config','Release')
+}
+if ($Stage -in @('All','Pack')) {
 Invoke-Checked 'python' @((Join-Path $repoRoot 'scripts/assemble_no_cgal_wheel.py'),$nativeRoot)
+}

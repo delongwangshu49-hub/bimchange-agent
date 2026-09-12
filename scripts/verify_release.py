@@ -7,6 +7,7 @@ import json
 import re
 import sys
 import tomllib
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,12 +56,31 @@ def verify_evidence(directory):
             raise ValueError(f'Installer check missing: {key}')
     if smoke.get('frozen') is not True or smoke.get('errors') or smoke.get('session_removed') is not True:
         raise ValueError('Final frozen smoke did not pass')
+    executables = [entry for entry in payload['files'] if entry['path'] == 'BIMChange-Agent.exe']
+    if len(executables) != 1 or smoke.get('executable_sha256') != executables[0]['sha256']:
+        raise ValueError('Frozen smoke executable does not match final payload')
     if manifest.get('smoke_payload_manifest_sha256') != entries['payload_manifest']['sha256']:
         raise ValueError('Frozen smoke is not bound to the staged payload')
     if review.get('payload_manifest_sha256') != entries['payload_manifest']['sha256']:
         raise ValueError('License review is not bound to the staged payload')
-    if read('source_inventory')['notice_zip_sha256'] != entries['notices']['sha256']:
+    inventory = read('source_inventory')
+    if inventory['notice_zip_sha256'] != entries['notices']['sha256']:
         raise ValueError('Notices do not match corresponding-source inventory')
+    source_entries = {entry['file']: entry for entry in inventory['archives']}
+    supplied = set()
+    for role in ('qt_sources', 'native_python_sources'):
+        with zipfile.ZipFile(resolved[role]) as archive:
+            for name in archive.namelist():
+                if name == 'SOURCE-INVENTORY.json':
+                    continue
+                if name not in source_entries or name in supplied:
+                    raise ValueError('Unexpected or repeated corresponding source')
+                with archive.open(name) as stream:
+                    if hashlib.file_digest(stream, 'sha256').hexdigest() != source_entries[name]['sha256']:
+                        raise ValueError('Corresponding source archive digest mismatch')
+                supplied.add(name)
+    if supplied != set(source_entries):
+        raise ValueError('Missing corresponding source archives')
     return len(entries)
 
 

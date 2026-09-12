@@ -60,3 +60,4 @@ tests/test_release_compliance.py
 scripts/audit_release_payload.py
 scripts/bundle_dependency_sources.py
 packaging/licenses/INNO-SETUP.txt
+scripts/assemble_release_evidence.py

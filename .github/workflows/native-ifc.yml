@@ -32,11 +32,28 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m pip install -c constraints-preview.txt ifcopenshell==0.8.5
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-      - name: Build same-revision OpenCASCADE-only dependency
+      - name: Prepare and verify sources (bounded downloads)
         shell: pwsh
+        timeout-minutes: 10
         run: |
-          & 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -File scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc"
+          ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage Prepare
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build OpenCASCADE shared libraries
+        shell: pwsh
+        timeout-minutes: 60
+        run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage OCCT
+      - name: Build Boost libraries
+        shell: pwsh
+        timeout-minutes: 10
+        run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage Boost
+      - name: Build IfcOpenShell without CGAL
+        shell: pwsh
+        timeout-minutes: 85
+        run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage IFC
+      - name: Assemble wheel and verify native kernels
+        shell: pwsh
+        timeout-minutes: 5
+        run: ./scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc" -Stage Pack
       - name: Retain build evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -53,7 +70,8 @@ jobs:
           name: native-ifc-validation
           path: ${{ runner.temp }}/native-ifc/wheels
           if-no-files-found: error
-      - name: Retain exact dependency sources
+      - name: Retain downloaded source archives
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: native-ifc-sources
