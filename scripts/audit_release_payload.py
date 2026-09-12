@@ -31,6 +31,9 @@ def audit(package, output, archive=None):
     proof=json.loads(proofs[0].read_text())
     if proof.get('status')!='PASS' or set(proof.get('disabled_kernels',{}))!={'cgal','cgal-simple'}:
         raise ValueError('Native kernel gate not satisfied')
+    patch = proofs[0].with_name('ifc-swig.patch')
+    if not patch.is_file() or sha(patch) != proof.get('upstream_build_patch', {}).get('patch_sha256'):
+        raise ValueError('Missing or changed upstream interface patch')
     for entry in proof['native_files']:
         actual=package/'_internal/ifcopenshell'/entry['name']
         if not actual.is_file() or sha(actual)!=entry['sha256']:

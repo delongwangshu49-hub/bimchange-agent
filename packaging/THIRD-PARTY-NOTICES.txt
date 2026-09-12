@@ -55,7 +55,9 @@ the supplied version, not rolling online documentation.
 
 IfcOpenShell 0.8.5+nocgal.1: same-revision rebuild under LGPLv3-or-later, CGAL
 disabled, retaining OpenCASCADE and all eight IFC schemas. Its receipt records
-the revision, disabled-kernel runtime checks and native DLLs.
+the revision, disabled-kernel runtime checks and native DLLs. Two shared SWIG
+type declarations are moved outside the CGAL guard; the complete LGPL upstream
+interface patch and digest are retained alongside NO-CGAL-BUILD.json.
 Open CASCADE Technology 7.8.1: LGPL-2.1 with OCCT additional exception; built as
 replaceable shared DLLs. Boost 1.86.0: Boost Software License. Eigen 3.3.9:
 MPL-2.0 for the used Eigen core; notices also cover unused source modules.

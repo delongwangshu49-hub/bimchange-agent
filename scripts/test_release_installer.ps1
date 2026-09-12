@@ -40,6 +40,11 @@ function Verify-Payload([string]$Directory) {
         if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { throw "Missing installed file: $($entry.path)" }
         if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256) { throw "Installed hash mismatch: $($entry.path)" }
     }
+    $expectedBinaryPaths=@($payload.files | Where-Object { [IO.Path]::GetExtension($_.path) -in @('.exe','.dll','.pyd') } | ForEach-Object { $_.path.Replace('/','\').ToLowerInvariant() })
+    $unexpected=@(Get-ChildItem -LiteralPath $Directory -Recurse -File | Where-Object {
+        $_.Extension -in @('.exe','.dll','.pyd') -and $_.Name -ne 'unins000.exe'
+    } | ForEach-Object { [IO.Path]::GetRelativePath($Directory,$_.FullName).ToLowerInvariant() } | Where-Object { $_ -notin $expectedBinaryPaths })
+    if ($unexpected) { throw "Unexpected retained runtime binaries: $($unexpected -join ', ')" }
     if ((Get-Item -LiteralPath (Join-Path $Directory 'BIMChange-Agent.exe')).VersionInfo.ProductVersion -ne '1.0.0') { throw 'Installed version mismatch.' }
     if ((Get-ItemProperty -LiteralPath "HKCU:\$uninstallKey").DisplayVersion -ne '1.0.0') { throw 'Uninstall registration version mismatch.' }
     $shortcut=Join-Path ([Environment]::GetFolderPath('Programs')) 'BIMChange-Agent/BIMChange-Agent.lnk'

@@ -219,6 +219,8 @@ foreach ($pattern in $runtimeDistributionPatterns) {
         }
         $nativeProof = Join-Path $distribution.FullName 'NO-CGAL-BUILD.json'
         if (Test-Path -LiteralPath $nativeProof) { Copy-Item -LiteralPath $nativeProof -Destination $distributionOutput }
+        $nativePatch = Join-Path $distribution.FullName 'ifc-swig.patch'
+        if (Test-Path -LiteralPath $nativePatch) { Copy-Item -LiteralPath $nativePatch -Destination $distributionOutput }
     }
 }
 $unpackedBytes = (Get-ChildItem -LiteralPath $portableDirectory -File -Recurse | Measure-Object -Property Length -Sum).Sum

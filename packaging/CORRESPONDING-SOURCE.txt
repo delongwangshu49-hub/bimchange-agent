@@ -40,6 +40,12 @@ OCCT 7.8.1, revision bd2a789f15235755ce4d1a3b07379a2e062fdc2e, is built as share
 libraries. Replace the extension, regenerated SWIG wrapper and its OCCT DLLs
 together under _internal/ifcopenshell. The dedicated native-ifc.yml workflow and
 scripts/build_ifcopenshell_no_cgal.ps1 / assemble_no_cgal_wheel.py record the build.
+The upstream interface has a minimal patch moving shared OpaqueCoordinate SWIG
+declarations outside the CGAL guard. The complete ifc-swig.patch is supplied in
+licenses/python-package-metadata/ifcopenshell-0.8.5+nocgal.1.dist-info; apply it
+to the supplied upstream tree, or use scripts/apply_ifc_swig_fix.py. Its digest
+is recorded in NO-CGAL-BUILD.json. No native geometry algorithm is changed.
+
 The build receipt records exact inputs/configuration and DLL imports. Optional
 CGAL, IFCXML, HDF5, COLLADA, upstream glTF/USD/RocksDB backends are not built;
 the product's own GLB generation, STEP IFC comparison and OpenCASCADE mesh path
