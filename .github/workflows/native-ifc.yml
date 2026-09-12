@@ -1,0 +1,62 @@
+name: Native IFC without CGAL
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2022
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: IfcOpenShell/IfcOpenShell
+          ref: 1c5b825d8ef05ab9d14a15dac12e9eae2f5a37c2
+          path: .native-sources/ifcopenshell
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: Open-Cascade-SAS/OCCT
+          ref: bd2a789f15235755ce4d1a3b07379a2e062fdc2e
+          path: .native-sources/occt
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          architecture: x64
+      - name: Install isolated build tools
+        shell: pwsh
+        run: |
+          python -m pip install cmake==3.31.6 swig==4.4.1 pefile==2024.8.26 wheel==0.45.1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip install -c constraints-preview.txt ifcopenshell==0.8.5
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build same-revision OpenCASCADE-only dependency
+        shell: pwsh
+        run: |
+          & 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -File scripts/build_ifcopenshell_no_cgal.ps1 -BuildRoot "$env:RUNNER_TEMP/native-ifc"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain build evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-ifc-evidence
+          path: |
+            ${{ runner.temp }}/native-ifc/evidence
+            ${{ runner.temp }}/native-ifc/*-build/CMakeCache.txt
+            ${{ runner.temp }}/native-ifc/*-build/CMakeFiles/CMakeConfigureLog.yaml
+          if-no-files-found: warn
+      - name: Retain private validation wheel
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-ifc-validation
+          path: ${{ runner.temp }}/native-ifc/wheels
+          if-no-files-found: error
+      - name: Retain exact dependency sources
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-ifc-sources
+          path: ${{ runner.temp }}/native-ifc/archives
+          compression-level: 6
+          if-no-files-found: error

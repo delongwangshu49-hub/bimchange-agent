@@ -1,0 +1,6 @@
+[
+  {"id":"ifcopenshell","name":"ifcopenshell-1c5b825-source.tar","repository":"IfcOpenShell/IfcOpenShell","commit":"1c5b825d8ef05ab9d14a15dac12e9eae2f5a37c2"},
+  {"id":"occt","name":"occt-7.8.1-source.tar","repository":"Open-Cascade-SAS/OCCT","commit":"bd2a789f15235755ce4d1a3b07379a2e062fdc2e"},
+  {"id":"boost","name":"boost-1.86.0-cmake.tar.xz","url":"https://github.com/boostorg/boost/releases/download/boost-1.86.0/boost-1.86.0-cmake.tar.xz","sha256":"2c5ec5edcdff47ff55e27ed9560b0a0b94b07bd07ed9928b476150e16b0efc57"},
+  {"id":"eigen","name":"eigen-3.3.9-source.tar.gz","url":"https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.tar.gz","sha256":"7985975b787340124786f092b3a07d594b2e9cd53bbfe5f3d9b1daee7d55f56f"}
+]
